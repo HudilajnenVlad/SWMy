@@ -1,0 +1,63 @@
+<section class="swp-best-results">
+  <div class="swp-bar swp-best-bar">
+    <span class="swp-bar-title">{{localize "SW25.Bestiary.Found" found=found total=total}}</span>
+    {{#if refName}}<span class="swp-best-ref" data-tooltip="SW25.Browser.RefHint"><i class="fa-solid fa-user"></i> {{refName}}</span>{{/if}}
+    <span class="swp-tools">
+      {{#each barTools}}<a class="swp-tool" data-action="barTool" data-tool="{{id}}" data-tooltip="{{tooltip}}"><i class="{{icon}}"></i></a>{{/each}}
+    </span>
+  </div>
+  <div class="swp-best-scroll">
+    <table class="swp-table swp-best-table">
+      <thead><tr>
+        {{#each columns}}
+        <th class="{{cls}}" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}>
+          {{#if sortable}}<a data-action="sortBy" data-key="{{key}}">{{label}}{{#if sorted}} <i class="fa-solid fa-caret-{{sortDir}}"></i>{{/if}}</a>{{else}}{{label}}{{/if}}
+        </th>
+        {{/each}}
+        <th class="tools"></th>
+      </tr></thead>
+      <tbody>
+        {{#each rows}}
+        <tr class="swp-row {{#if expanded}}open{{/if}}" data-uuid="{{uuid}}">
+          {{#each cells}}
+          {{#if level}}<th class="{{cls}}">{{text}}</th>
+          {{else if name}}
+          <td class="name">
+            <div class="swp-name-cell">
+              <a class="swp-caret" data-action="toggleRow"><i class="fa-solid fa-caret-{{#if ../expanded}}down{{else}}right{{/if}}"></i></a>
+              <img class="swp-row-img" src="{{../img}}" alt="" data-action="openEntry" data-tooltip="SW25.Browser.Open">
+              <span class="swp-name-text">
+                <a class="swp-name-link" data-action="toggleRow">{{../name}}</a>
+                {{#if ../subtitle}}<small class="swp-sub">{{../subtitle}}</small>{{/if}}
+              </span>
+            </div>
+          </td>
+          {{else}}<td class="{{cls}}" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}>{{#if html}}{{{html}}}{{else}}{{text}}{{/if}}</td>
+          {{/if}}
+          {{/each}}
+          <td class="swp-tools-cell">
+            <span class="swp-row-tools always">
+              {{#each @root.rowTools}}<a data-action="{{action}}" {{#if tool}}data-tool="{{tool}}"{{/if}} data-tooltip="{{tooltip}}"><i class="{{icon}}"></i></a>{{/each}}
+            </span>
+          </td>
+        </tr>
+        {{#if expanded}}
+        <tr class="swp-details-row" data-uuid="{{uuid}}"><td colspan="{{@root.colspan}}">
+          <div class="swp-best-detail">
+            {{{detail}}}
+            <div class="swp-best-actions">
+              {{#each @root.rowTools}}
+              <button type="button" class="swp-btn-wide {{#unless @first}}{{else}}light{{/unless}}" data-action="{{action}}" {{#if tool}}data-tool="{{tool}}"{{/if}}><i class="{{icon}}"></i> {{tooltip}}</button>
+              {{/each}}
+              <span class="swp-hint">{{localize "SW25.Browser.DragHint"}}</span>
+            </div>
+          </div>
+        </td></tr>
+        {{/if}}
+        {{else}}
+        <tr class="swp-empty-row"><td colspan="{{@root.colspan}}">{{localize "SW25.Browser.NothingFound"}}</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>

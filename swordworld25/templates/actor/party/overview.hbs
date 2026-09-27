@@ -1,0 +1,124 @@
+<section class="tab swp-tab swp-party-overview {{tab.cssClass}}" data-group="primary" data-tab="overview">
+  {{#if members.length}}
+  <div class="swp-block swp-party-summary">
+    <div class="swp-bar">
+      <span class="swp-bar-title">{{#if (eq summaryView "languages")}}{{localize "SW25.Party.Languages"}}{{else}}{{localize "SW25.Party.Checks"}}{{/if}}</span>
+      <span class="swp-party-switch">
+        <a class="{{#if (eq summaryView 'skills')}}on{{/if}}" data-action="summaryView" data-view="skills"><i class="fa-solid fa-dice-d6"></i> {{localize "SW25.Party.Checks"}}</a>
+        <a class="{{#if (eq summaryView 'languages')}}on{{/if}}" data-action="summaryView" data-view="languages"><i class="fa-solid fa-language"></i> {{localize "SW25.Party.Languages"}}</a>
+      </span>
+    </div>
+
+    {{#if (eq summaryView "languages")}}
+    <div class="swp-party-langs">
+      {{#each languages}}
+      <span class="swp-lang {{#if common}}common{{/if}}" data-tooltip="{{tooltip}}">{{label}} <small>{{speak}}/{{@root.characterCount}}{{#if write}} · <i class="fa-solid fa-pen-nib"></i>{{write}}{{/if}}</small></span>
+      {{else}}
+      <p class="swp-none">{{localize "SW25.Party.NoLanguages"}}</p>
+      {{/each}}
+    </div>
+    <p class="swp-hint pad">{{localize "SW25.Party.LanguagesHint"}}</p>
+    {{else}}
+    {{#if checks.key.length}}
+    <div class="swp-party-keys">
+      {{#each checks.key}}
+      <a class="swp-box swp-party-key {{#if canRoll}}swp-roll{{/if}}" {{#if canRoll}}data-action="rollBest" data-check="{{key}}" data-actor-id="{{actorId}}"{{/if}} data-tooltip="{{tooltip}}">
+        <span class="swp-legend">{{label}}</span>
+        <span class="swp-num">{{value}}</span>
+        <span class="swp-party-who">{{name}}</span>
+      </a>
+      {{/each}}
+    </div>
+    {{/if}}
+    {{#if checks.groups.length}}
+    <table class="swp-table swp-party-checks">
+      <tbody>
+        {{#each checks.groups}}
+        <tr>
+          <th class="grp">{{localize label}}</th>
+          <td class="list">
+            {{#each checks}}<a class="swp-party-check {{#if canRoll}}roll{{/if}}" {{#if canRoll}}data-action="rollBest" data-check="{{key}}" data-actor-id="{{actorId}}"{{/if}} data-tooltip="{{tooltip}}">{{label}} <b>{{value}}</b> <small>{{name}}</small></a>{{/each}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+    {{#if checks.empty}}<p class="swp-none">{{localize "SW25.Party.NoChecks"}}</p>{{/if}}
+    <p class="swp-hint pad">{{localize "SW25.Party.ChecksHint"}}</p>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  <div class="swp-party-members">
+    {{#each members}}
+    <article class="swp-member {{#if limited}}limited{{/if}}" data-member-id="{{id}}">
+      <div class="swp-titlebar">
+        <span class="swp-level-box" data-tooltip="SW25.Party.LevelHint">{{sw25Default level "—"}}</span>
+        <span class="swp-namebar">
+          <a class="swp-namebar-text" data-action="memberOpen" data-tooltip="SW25.Party.OpenMember">{{name}}</a>
+          <span class="swp-member-tools">
+            {{#if @root.scene}}
+            <a class="swp-tool {{#if onScene}}on{{/if}}" data-action="memberToken" data-tooltip="{{#if onScene}}SW25.Party.ShowToken{{else}}SW25.Party.PlaceToken{{/if}}"><i class="fa-solid {{#if onScene}}fa-crosshairs{{else}}fa-location-dot{{/if}}"></i></a>
+            {{/if}}
+            {{#if @root.editable}}<a class="swp-tool" data-action="memberRemove" data-tooltip="SW25.Party.Remove"><i class="fa-solid fa-xmark"></i></a>{{/if}}
+          </span>
+        </span>
+      </div>
+
+      <div class="swp-member-body">
+        <a class="swp-member-portrait" data-action="memberOpen">
+          <img src="{{img}}" alt="{{name}}">
+          {{#if tokenImg}}<img class="swp-member-token" src="{{tokenImg}}" alt="" data-tooltip="SW25.Party.TokenArt">{{/if}}
+        </a>
+        <div class="swp-member-main">
+          {{#if subtitle}}<p class="swp-member-sub">{{subtitle}}</p>{{/if}}
+          {{#if classes.length}}
+          <p class="swp-member-classes">{{#each classes}}<span>{{label}} <b>{{level}}</b></span>{{/each}}</p>
+          {{/if}}
+          {{#unless limited}}
+          <div class="swp-res hp" style="--pct: {{hp.pct}}%">
+            <span class="swp-res-label">{{localize "SW25.HP"}}</span>
+            <span class="swp-res-box"><span class="swp-res-value">{{hp.value}}</span><span class="max">/{{hp.max}}</span></span>
+            <span class="swp-res-track"><span></span></span>
+          </div>
+          <div class="swp-res mp" style="--pct: {{mp.pct}}%">
+            <span class="swp-res-label">{{localize "SW25.MP"}}</span>
+            <span class="swp-res-box"><span class="swp-res-value">{{mp.value}}</span><span class="max">/{{mp.max}}</span></span>
+            <span class="swp-res-track"><span></span></span>
+          </div>
+          {{else}}
+          <p class="swp-hint">{{localize "SW25.Party.Limited"}}</p>
+          {{/unless}}
+        </div>
+      </div>
+
+      {{#unless limited}}
+      <div class="swp-member-stats">
+        {{#each stats}}<span class="swp-member-stat" data-tooltip="{{tooltip}}"><small>{{localize label}}</small><b>{{value}}</b></span>{{/each}}
+      </div>
+      {{#if checks.length}}
+      <p class="swp-member-checks">{{#each checks}}<span>{{label}} <b>{{value}}</b></span>{{/each}}</p>
+      {{/if}}
+      <div class="swp-member-foot">
+        {{#each magic}}<span class="swp-tag" data-tooltip="SW25.MagicPower"><i class="{{icon}}"></i> {{label}} <b>{{power}}</b></span>{{/each}}
+        {{#if character}}
+        <span class="swp-tag" data-tooltip="SW25.Money"><i class="fa-solid fa-coins"></i> <b>{{money}}</b> G</span>
+        <span class="swp-tag" data-tooltip="SW25.Exp.Unspent">{{localize "SW25.Exp.label"}} <b>{{exp}}</b></span>
+        <span class="swp-tag {{#if graceUsed}}off{{/if}}" data-tooltip="SW25.Race.ChangeFateUsed"><i class="fa-solid fa-star"></i> {{localize "SW25.Party.Grace"}}{{#if graceUsed}} <b>✗</b>{{/if}}</span>
+        {{/if}}
+        {{#each statuses}}<img class="swp-member-status" src="{{img}}" alt="{{name}}" data-tooltip="{{name}}">{{/each}}
+      </div>
+      {{/unless}}
+    </article>
+    {{/each}}
+
+    {{#if editable}}
+    <div class="swp-member-add">
+      <i class="fa-solid fa-user-plus"></i>
+      <span>{{localize "SW25.Party.AddHint"}}</span>
+      {{#if canAddPCs}}<button type="button" class="swp-btn-wide" data-action="addPlayerCharacters">{{localize "SW25.Party.AddPCs"}}</button>{{/if}}
+    </div>
+    {{/if}}
+  </div>
+</section>

@@ -1,0 +1,234 @@
+[
+  {
+    "name": "Custom-Forged Weapon",
+    "source": {
+      "book": "CR2",
+      "page": 242
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "Per ±1 Min STR: B +300G, A +1,000G, S +3,000G, SS +6,000G (CR III p.246)",
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Raise or lower a weapon's Min STR by up to 3; its Power changes by the same amount.",
+    "description": "A weapon can be forged with Min STR changed by up to ±3 from the listed value (never below 1); Power changes by the same amount. Guns cannot be custom-forged. The cost per point is added to the price; modifying an owned weapon takes one week. Name: 'Custom-Forged <weapon>' or any name.",
+    "modifiers": []
+  },
+  {
+    "name": "Silvered Weapon",
+    "source": {
+      "book": "CR2",
+      "page": 243
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "B +1,000G, A +2,000G, S +4,000G, SS +6,000G (CR III p.246)",
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Buy a weapon silvered: it bypasses [Normal Weapon Immunity] and can hit silver weak points.",
+    "description": "Silvered weapons ignore the [Normal Weapon Immunity] unique skill and trigger silver-related weak points. Only available when buying the weapon (owned weapons cannot be re-forged); weapons already marked Silvered cannot be silvered again. Name prefix 'Silvered'.",
+    "modifiers": []
+  },
+  {
+    "name": "Magic Weapon +1",
+    "source": {
+      "book": "CR2",
+      "page": 243
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "B +5,000G, A +10,000G, S +20,000G; not available for SS rank (CR III p.246)",
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Weapon gains Accuracy +1 and Extra Damage +1 and becomes a magic weapon.",
+    "description": "The weapon gains +1 to Accuracy checks and +1 Extra Damage (its damage stays physical). Can be bought with the weapon or applied to an owned one in one month; not possible for items that are already magic weapons. Name suffix '+1'.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1
+      },
+      {
+        "key": "damage",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Fairy Weapon",
+    "source": {
+      "book": "CR2",
+      "page": 244
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "Per type: B +1,500G, A +3,000G, S +6,000G, SS +9,000G (CR III p.246)",
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Weapon becomes magic; a password (Minor Action) adds a chosen element type to its damage.",
+    "description": "The weapon counts as a Magic Weapon. Speaking its password as a Minor Action gives its damage the type chosen at enhancement time (earth, water/ice, fire, wind or lightning) until another password is spoken. Can be applied several times for more types (one active at a time); each application takes one month. Name prefix 'Fairy (<types>)'.",
+    "modifiers": []
+  },
+  {
+    "name": "Magic Armor +1",
+    "source": {
+      "book": "CR2",
+      "page": 244
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "B +5,000G, A +10,000G, S +20,000G; not available for SS rank (CR III p.246)",
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Nonmetallic or metal armor gains Defense +1.",
+    "description": "Armor Defense +1. Only for nonmetallic or metal armor, not shields, and not for items that are already magical. Applying it to owned armor takes one month. Name suffix '+1'.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Bulletproof Armor",
+    "source": {
+      "book": "CR2",
+      "page": 245
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "B +1,500G, A +3,000G, S +6,000G, SS +9,000G (CR III p.246); repair 250/500/1,000G (B/A/S) per use",
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Armor's Defense also reduces Gun and Magic Arrow damage, up to 6 times.",
+    "description": "When the wearer is hit by a Gun shooting attack or a Magic Arrow/Quarrel, the damage is reduced by the armor's own Defense (no feat or temporary bonuses). Works 6 times; used charges can be restored for 250/500/1,000G (B/A/S rank) each, one day per charge. New enhancement takes one week. Nonmetallic or metal armor only. Name prefix 'Bulletproofed'.",
+    "modifiers": []
+  },
+  {
+    "name": "Ignidite Processing",
+    "source": {
+      "book": "CR3",
+      "page": 245
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "B +5,000G, A +10,000G, S +20,000G, SS +40,000G; also 100 reputation and a Dark Dwarf Blacksmith connection",
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Weapon Power +5 (SS rank +10) and it becomes a magic weapon.",
+    "description": "The weapon's Power increases by +5 (+10 for SS rank) and it counts as a magic weapon (damage stays physical). Requires spending 100 reputation and a Dark Dwarf Blacksmith acquaintance; processing takes one week and such weapons are never sold ready-made. Name prefix 'Ignidite'.",
+    "modifiers": [
+      {
+        "key": "weaponPower",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "name": "Extra Manatite Armor",
+    "source": {
+      "book": "CR3",
+      "page": 246
+    },
+    "itemType": "improvement",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "B +5,000G, A +10,000G, S +20,000G, SS +30,000G (metal armor or shield)",
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "summary": "Metal armor or shield: Min STR +3 and Defense +1.",
+    "description": "Manatite plating raises the item's Min STR by 3 and its Defense by 1. Only for metal armor and shields. Can be bought processed or applied to an owned item in one week. Name prefix 'Manatite'.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 1
+      }
+    ]
+  }
+]

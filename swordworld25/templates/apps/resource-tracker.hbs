@@ -1,0 +1,121 @@
+<div class="swp-tracker">
+  {{#if actor}}
+  <header class="swp-tracker-head">
+    <img src="{{actor.img}}" alt="" data-action="openSheet" data-tooltip="SW25.Tracker.OpenSheet">
+    <div class="swp-tracker-name">
+      <a data-action="openSheet">{{actor.name}}</a>
+      {{#if level}}<small>{{localize "SW25.Level"}} {{level}}</small>{{/if}}
+    </div>
+    <a class="swp-btn" data-action="spellbook" data-tooltip="SW25.Spellbook.Title"><i class="fa-solid fa-book-sparkles"></i></a>
+    <a class="swp-btn light" data-action="collapse" data-tooltip="SW25.Tracker.CollapseHint"><i class="fa-solid fa-chevron-up"></i></a>
+  </header>
+
+  {{#if sections.length}}
+  <div class="swp-tracker-sections">
+    {{#each sections}}
+    <a class="swp-tracker-section {{#if active}}on{{/if}}" data-action="section" data-index="{{index}}" style="--pct: {{pct}}%" data-tooltip="SW25.Tracker.SectionHint">
+      <span>{{label}}</span><b>{{hp.value}}/{{hp.max}}</b>
+    </a>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#each vitals}}
+  <div class="swp-tracker-vital" data-row="{{key}}">
+    <div class="swp-res {{key}}" style="--pct: {{pct}}%">
+      <span class="swp-res-label">{{label}}</span>
+      <span class="swp-res-box"><span class="swp-res-value">{{value}}</span><span class="max">/{{max}}</span></span>
+      <span class="swp-res-track"><span></span></span>
+    </div>
+    {{#if @root.owner}}{{> steps down=down up=up}}{{/if}}
+  </div>
+  {{/each}}
+
+  {{#if stats.length}}
+  <div class="swp-tracker-stats">
+    {{#each stats}}<span class="swp-tracker-stat" data-tooltip="{{tooltip}}"><small>{{label}}</small><b>{{value}}</b></span>{{/each}}
+  </div>
+  {{/if}}
+
+  {{#if attacks}}
+  <div class="swp-tracker-block swp-tracker-attacks">
+    <span class="swp-tracker-title">{{localize "SW25.Tracker.Attacks"}}</span>
+    {{#each attacks.weapons}}
+    <div class="swp-tracker-attack" data-item-id="{{id}}">
+      <a class="name" data-action="attack" data-tooltip="SW25.Tracker.AttackHint"><img src="{{img}}" alt=""><span>{{name}}</span></a>
+      <a class="val acc" data-action="attack" data-tooltip="SW25.Accuracy">{{accuracy}}</a>
+      <a class="val dmg" {{#unless gun}}data-action="weaponDamage" data-tooltip="SW25.Tracker.DamageHint"{{/unless}}>{{power}} <span class="swp-circ">{{critical}}</span> {{#unless gun}}{{extra}}{{/unless}}</a>
+    </div>
+    {{/each}}
+    {{#each attacks.sections}}
+    <div class="swp-tracker-attack" data-index="{{index}}">
+      <a class="name" data-action="sectionAttack" data-tooltip="SW25.Tracker.AttackHint"><span>{{style}}{{#if label}} <small>({{label}})</small>{{/if}}</span></a>
+      <a class="val acc" data-action="sectionAttack" data-tooltip="SW25.Accuracy">{{accuracy}}</a>
+      <span class="val dmg">{{damage}}</span>
+    </div>
+    {{/each}}
+    {{#each attacks.abilities}}
+    <div class="swp-tracker-attack skill" data-item-id="{{id}}">
+      <a class="name" data-action="ability" data-tooltip="SW25.Tracker.SkillHint"><span>{{#if icons}}<b class="swp-marks">{{icons}}</b> {{/if}}{{name}}</span></a>
+      {{#if check}}<a class="val acc" data-action="ability" data-tooltip="SW25.Tracker.SkillHint">{{check}}</a>{{else}}<span class="val acc"></span>{{/if}}
+      <span class="val dmg">{{damage}}</span>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if resources.length}}
+  <div class="swp-tracker-block">
+    {{#each resources}}
+    <div class="swp-tracker-res" data-row="{{key}}" style="--pct: {{pct}}%; --res-color: {{color}}">
+      <span class="label">{{label}}</span>
+      <b class="value">{{value}}{{#if max}}<small>/{{max}}</small>{{/if}}</b>
+      {{#if ../owner}}{{> steps down="SW25.Tracker.Decrease" up="SW25.Tracker.Increase"}}{{/if}}
+      <span class="bar"><span></span></span>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if rhythm}}
+  <div class="swp-tracker-block swp-tracker-rhythm">
+    <span class="swp-tracker-title">{{localize "SW25.Rhythm.label"}}</span>
+    {{#each rhythm}}
+    <span class="swp-tracker-counter" data-tooltip="{{localize label}}">
+      {{#if @root.owner}}<a class="swp-mini" data-action="rhythm" data-key="{{key}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>{{/if}}
+      <b>{{icon}}{{value}}</b>
+      {{#if @root.owner}}<a class="swp-mini" data-action="rhythm" data-key="{{key}}" data-delta="1"><i class="fa-solid fa-plus"></i></a>{{/if}}
+    </span>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if cards}}
+  <table class="swp-table swp-card-table swp-tracker-cards">
+    <thead><tr><th class="name">{{localize "SW25.Card.MaterialCards"}}</th>{{#each cardRanks}}<th>{{this}}</th>{{/each}}</tr></thead>
+    <tbody>
+      {{#each cards}}
+      <tr class="card-{{color}}"><th class="name"><span class="swp-card-swatch"></span>{{localize label}}</th>{{#each ranks}}<td>{{value}}</td>{{/each}}</tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{/if}}
+
+  {{#if statuses.length}}
+  <div class="swp-tracker-statuses">
+    {{#each statuses}}
+    <a class="swp-tracker-status" {{#if @root.owner}}data-action="removeStatus"{{/if}} data-id="{{id}}" data-tooltip="{{name}}{{#if duration}} · {{duration}}{{/if}}{{#if @root.owner}} — {{localize 'SW25.Tracker.RemoveHint'}}{{/if}}"><img src="{{img}}" alt=""></a>
+    {{/each}}
+  </div>
+  {{/if}}
+  {{/if}}
+</div>
+
+{{#*inline "steps"}}
+<span class="swp-tracker-btns">
+  <a class="swp-step many" data-action="amount" data-sign="-1" data-tooltip="{{localize down}}: {{localize 'SW25.Tracker.ManyHint'}}">−−−</a>
+  <a class="swp-step" data-action="step" data-delta="-1" data-tooltip="{{localize down}} 1">−</a>
+  <a class="swp-step" data-action="step" data-delta="1" data-tooltip="{{localize up}} 1">+</a>
+  <a class="swp-step many" data-action="amount" data-sign="1" data-tooltip="{{localize up}}: {{localize 'SW25.Tracker.ManyHint'}}">+++</a>
+</span>
+{{/inline}}

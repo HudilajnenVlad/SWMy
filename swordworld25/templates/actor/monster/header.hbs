@@ -1,0 +1,58 @@
+<header class="swp-mheader">
+  <div class="swp-portrait-wrap small">
+    <div class="swp-portrait"><img src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}"></div>
+  </div>
+
+  <div class="swp-mhead-main">
+    <div class="swp-titlebar">
+      <span class="swp-level-box" data-tooltip="{{#if isMount}}SW25.Mount.CurrentLevel{{else}}SW25.Monster.Level{{/if}}">
+        {{#if hidden}}?
+        {{else if isMount}}{{system.currentLevel}}
+        {{else if edit}}<input type="number" name="system.level" value="{{system.level}}" min="0" step="1">
+        {{else}}{{system.level}}{{/if}}
+      </span>
+      <span class="swp-namebar">
+        <input class="swp-name" type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'Name'}}">
+        {{#if isMount}}<span class="swp-namebar-note">{{localize "SW25.Mount.Price"}}: {{priceLabel}}</span>
+        {{else}}{{#unless (or edit hidden)}}<span class="swp-namebar-note">{{localize classificationLabel}}</span>{{/unless}}{{/if}}
+      </span>
+    </div>
+
+    {{#unless hidden}}
+    <div class="swp-vitals">
+      <div class="swp-res hp" style="--pct: {{system.hp.pct}}%" data-tooltip="SW25.Monster.TotalHint">
+        <span class="swp-res-label">{{localize "SW25.HP"}}</span>
+        <span class="swp-res-box"><span class="swp-res-value">{{system.hp.value}}</span><span class="max">/{{system.hp.max}}</span></span>
+        <span class="swp-res-track"><span></span></span>
+      </div>
+      <div class="swp-res mp" style="--pct: {{sw25Pct system.mp.value system.mp.max}}%" data-tooltip="SW25.Monster.TotalHint">
+        <span class="swp-res-label">{{localize "SW25.MP"}}</span>
+        <span class="swp-res-box"><span class="swp-res-value">{{system.mp.value}}</span><span class="max">/{{system.mp.max}}</span></span>
+        <span class="swp-res-track"><span></span></span>
+      </div>
+      {{#if activeStatuses.length}}
+      <div class="swp-statuses">
+        {{#each activeStatuses}}<a data-action="statusToggle" data-status="{{id}}" data-tooltip="{{name}}"><img src="{{img}}" alt="{{name}}"></a>{{/each}}
+      </div>
+      {{/if}}
+    </div>
+    <div class="swp-mhead-row">
+      {{#unless isMount}}
+      <span class="swp-tag" data-tooltip="SW25.Monster.RepWeakHint">{{localize "SW25.Monster.RepWeak"}} <b>{{sw25Default system.reputation "—"}}/{{sw25Default system.weakness "—"}}</b></span>
+      <span class="swp-tag" data-tooltip="SW25.Monster.ExpHint">{{localize "SW25.Exp.label"}} <b>{{expValue}}</b></span>
+      {{#if system.swordShards}}<span class="swp-tag" data-tooltip="SW25.Monster.ShardHint"><i class="fa-solid fa-gem"></i> {{system.swordShards}}</span>{{/if}}
+      {{/unless}}
+      <span class="swp-tag" data-tooltip="SW25.Monster.FixedValues"><i class="fa-solid fa-dice"></i> {{localize useFixedLabel}}</span>
+      <span class="swp-head-tools">
+        {{#if isGM}}
+        <a class="swp-btn {{#if system.identified}}on{{/if}}" data-action="toggleIdentified" data-tooltip="SW25.Monster.Identified"><i class="fa-solid fa-eye"></i></a>
+        <a class="swp-btn {{#if system.weakPointRevealed}}on{{/if}}" data-action="toggleWeakPoint" data-tooltip="SW25.Monster.WeakPointRevealed"><i class="fa-solid fa-crosshairs"></i></a>
+        <a class="swp-btn" data-action="fullHeal" data-tooltip="SW25.Monster.FullHeal"><i class="fa-solid fa-heart-pulse"></i></a>
+        {{#unless isMount}}{{#if editable}}<a class="swp-btn" data-action="openTemplate" data-tooltip="SW25.Template.Apply"><i class="fa-solid fa-wand-magic-sparkles"></i></a>{{/if}}{{/unless}}
+        {{/if}}
+        {{#if editable}}<a class="swp-btn {{#if edit}}on{{/if}}" data-action="toggleEdit" data-tooltip="SW25.Monster.EditMode"><i class="fa-solid fa-pen-ruler"></i></a>{{/if}}
+      </span>
+    </div>
+    {{/unless}}
+  </div>
+</header>

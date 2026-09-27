@@ -1,0 +1,668 @@
+[
+  {
+    "name": "Antibody",
+    "source": {
+      "book": "CR2",
+      "page": 184
+    },
+    "level": 1,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Fortitude and Willpower +4 against poison and disease effects.",
+    "description": "While active, the user adds +4 to Fortitude and Willpower checks made to resist Poison-type or Disease-type effects.",
+    "modifiers": [
+      {
+        "key": "fortitude",
+        "value": 4,
+        "condition": "vs poison or disease"
+      },
+      {
+        "key": "willpower",
+        "value": 4,
+        "condition": "vs poison or disease"
+      }
+    ]
+  },
+  {
+    "name": "Owl Sight",
+    "source": {
+      "book": "CR2",
+      "page": 184
+    },
+    "level": 1,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "summary": "Gain Darkvision.",
+    "description": "The user gains Darkvision for the duration, seeing in darkness as well as in daylight.",
+    "modifiers": []
+  },
+  {
+    "name": "Gazelle Feet",
+    "source": {
+      "book": "CR2",
+      "page": 184
+    },
+    "level": 1,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Evasion +1.",
+    "description": "The user adds +1 to Evasion checks for the duration.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Cat's Eyes",
+    "source": {
+      "book": "CR2",
+      "page": 184
+    },
+    "level": 1,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Accuracy +1.",
+    "description": "The user adds +1 to Accuracy checks for the duration.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Scale Leggings",
+    "source": {
+      "book": "CR2",
+      "page": 184
+    },
+    "level": 1,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "summary": "Move freely underwater, ignoring water penalties (no water breathing).",
+    "description": "The user ignores movement restrictions and all other penalties for being in water and can move freely while submerged. It does not allow breathing underwater.",
+    "modifiers": []
+  },
+  {
+    "name": "Strong Blood",
+    "source": {
+      "book": "CR2",
+      "page": 185
+    },
+    "level": 1,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Fire and water/ice damage taken -5.",
+    "description": "Whenever the user takes fire-type or water/ice-type damage, the total is reduced by 5.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -5,
+        "condition": "fire or water/ice damage"
+      }
+    ]
+  },
+  {
+    "name": "Chic Chick",
+    "source": {
+      "book": "CR2",
+      "page": 185
+    },
+    "level": 1,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "summary": "Jump checks +5 and fall damage -20; does not grant flight.",
+    "description": "The user adds +5 to Jump checks and reduces any fall damage taken by 20. The technique does not let the user fly.",
+    "modifiers": [
+      {
+        "key": "check.jump",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "name": "Dragon Tail",
+    "source": {
+      "book": "CR2",
+      "page": 185
+    },
+    "level": 1,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": true,
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "summary": "Grow a Tail (Wrestling weapon); with an existing tail, Accuracy +1 or Extra Damage +2 instead.",
+    "description": "The user grows a Tail, a Wrestling-category weapon. A user who already has a tail instead gains Accuracy +1 or Extra Damage +2 per use; this stacks up to a total of Accuracy +2 and damage +4. Can be used once per round.",
+    "modifiers": []
+  },
+  {
+    "name": "Beetleskin",
+    "source": {
+      "book": "CR2",
+      "page": 185
+    },
+    "level": 1,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Defense +2.",
+    "description": "The user's Defense increases by 2 for the duration.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Bear Muscle",
+    "source": {
+      "book": "CR2",
+      "page": 185
+    },
+    "level": 1,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Strength modifier +2 (the Strength score is unchanged).",
+    "description": "The user's Strength modifier is increased by 2; the Strength score itself does not change.",
+    "modifiers": [
+      {
+        "key": "mod.str",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Meditation",
+    "source": {
+      "book": "CR2",
+      "page": 186
+    },
+    "level": 1,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Willpower +4 against psychic effects.",
+    "description": "The user adds +4 to Willpower checks made against Psychic-type effects.",
+    "modifiers": [
+      {
+        "key": "willpower",
+        "value": 4,
+        "condition": "vs psychic effects"
+      }
+    ]
+  },
+  {
+    "name": "Rabbit Ears",
+    "source": {
+      "book": "CR2",
+      "page": 186
+    },
+    "level": 1,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "summary": "Listen and Danger Sense checks +2.",
+    "description": "The user adds +2 to Listen checks and Danger Sense checks for the duration.",
+    "modifiers": [
+      {
+        "key": "check.listen",
+        "value": 2
+      },
+      {
+        "key": "check.dangerSense",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Centaur Legs",
+    "source": {
+      "book": "CR2",
+      "page": 187
+    },
+    "level": 5,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "summary": "Agility +6.",
+    "description": "The user's Agility score increases by 6. Fixed-value characters instead get +1 to Initiative and Evasion; the GM may adjust other values as appropriate.",
+    "modifiers": [
+      {
+        "key": "ability.agi",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "name": "Animal Shape",
+    "source": {
+      "book": "CR2",
+      "page": 187
+    },
+    "level": 5,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "summary": "Transform into an everyday animal (e.g. dog, cat, horse, pig).",
+    "description": "The user turns into an everyday animal (e.g. dog, cat, horse, pig); it cannot be used while wearing weapons, armor or costumes. Ability scores are unchanged and speech and skills remain usable, but the animal form cannot hold items or weapons or wear armor or clothing, and its only attack is Punch. It does not grant the ability to talk with animals.",
+    "modifiers": []
+  },
+  {
+    "name": "Giant Arms",
+    "source": {
+      "book": "CR2",
+      "page": 187
+    },
+    "level": 5,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "summary": "Strength +12.",
+    "description": "The user's Strength score increases by 12. Fixed-value characters instead get +2 damage; the GM may adjust other values as appropriate.",
+    "modifiers": [
+      {
+        "key": "ability.str",
+        "value": 12
+      }
+    ]
+  },
+  {
+    "name": "Sphinx Knowledge",
+    "source": {
+      "book": "CR2",
+      "page": 187
+    },
+    "level": 5,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "summary": "Intelligence +6.",
+    "description": "The user's Intelligence score increases by 6. Fixed-value characters instead get +1 to Magic Power or another Intelligence-based value chosen by the GM.",
+    "modifiers": [
+      {
+        "key": "ability.int",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "name": "Daemonfinger",
+    "source": {
+      "book": "CR2",
+      "page": 187
+    },
+    "level": 5,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "summary": "Dexterity +6.",
+    "description": "The user's Dexterity score increases by 6. Fixed-value characters instead get +1 Accuracy; the GM may adjust other values as appropriate.",
+    "modifiers": [
+      {
+        "key": "ability.dex",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "name": "Fire Breath",
+    "source": {
+      "book": "CR2",
+      "page": 188
+    },
+    "level": 5,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Major Action fire breath: Power 10 fire magic damage, 1(10m)/Shot, 1 area (3m radius)/5, Half.",
+    "description": "While active, the user can spit fire as a Major Action. It is resolved like a spell (check standard value: Enhancer level + Intelligence modifier) with Range/Area 1(10m)/Shot, Target 1 area (3m radius)/5 and Resistance Half; it deals fire-type magic damage of Power 10 + Enhancer level + Intelligence modifier (Critical Value 10). [Magic Convergence] and [Magic Control] can be applied to it, [Metamagic/Area] cannot.",
+    "modifiers": []
+  },
+  {
+    "name": "Recovery",
+    "source": {
+      "book": "CR2",
+      "page": 188
+    },
+    "level": 5,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": true,
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "summary": "Recover HP equal to your Enhancer level.",
+    "description": "The user immediately regains HP equal to their Enhancer level. Can be used once per round.",
+    "modifiers": []
+  },
+  {
+    "name": "Wide Wings",
+    "source": {
+      "book": "CR2",
+      "page": 188
+    },
+    "level": 5,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": true,
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "summary": "Gain flight (10m movement); if already able to fly, movement +20m (max bonus +30m).",
+    "description": "The user grows wings and can fly with a movement speed of 10m. If the user can already fly, movement speed instead increases by 20m, accumulating up to a maximum bonus of +30m. Can be used once per round.",
+    "modifiers": []
+  },
+  {
+    "name": "Chameleon Camouflage",
+    "source": {
+      "book": "CR3",
+      "page": 173
+    },
+    "level": 10,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Hide +4; characters with five-senses perception cannot see you from 10m or more.",
+    "description": "The user adds +4 to Hide checks. Characters perceiving with the five senses cannot see the user from 10m or farther away (or from another area in Simplified Combat), which counts as invisibility (CR II p. 69).",
+    "modifiers": [
+      {
+        "key": "check.hide",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "name": "Kraken Stability",
+    "source": {
+      "book": "CR3",
+      "page": 173
+    },
+    "level": 10,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Cannot be knocked prone or targeted by Throw attacks.",
+    "description": "The user cannot be the target of Throw attacks and does not fall prone from any effect while standing directly on the ground or on the bottom of a body of water. It does not stop a rider from falling off a mount.",
+    "modifiers": []
+  },
+  {
+    "name": "Jii Prophecy",
+    "source": {
+      "book": "CR3",
+      "page": 173
+    },
+    "level": 10,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "1 hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "summary": "Initiative and Danger Sense checks +2.",
+    "description": "The user adds +2 to the success value of Initiative checks and Danger Sense checks for the duration.",
+    "modifiers": [
+      {
+        "key": "initiative",
+        "value": 2
+      },
+      {
+        "key": "check.dangerSense",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Strider Walk",
+    "source": {
+      "book": "CR3",
+      "page": 173
+    },
+    "level": 10,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "summary": "Walk on the surface of water or clouds.",
+    "description": "The user can walk on water or on clouds. A Full Move cannot be taken while moving this way.",
+    "modifiers": []
+  },
+  {
+    "name": "Spider Web",
+    "source": {
+      "book": "CR3",
+      "page": 174
+    },
+    "level": 10,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "summary": "Shoot silk threads that work like the Magitech spell [Wire Anchor].",
+    "description": "The user can shoot strong silk threads from the fingertips that function like the Magitech spell [Wire Anchor] (CR I p. 246). Any check this requires uses Enhancer level + Strength modifier.",
+    "modifiers": []
+  },
+  {
+    "name": "Titan's Foot",
+    "source": {
+      "book": "CR3",
+      "page": 174
+    },
+    "level": 10,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "summary": "Kick 1m-radius holes through walls, doors, floors and similar structures.",
+    "description": "During the duration, the user can kick a hole of 1m radius through a wall, door, floor or other structure as a Major Action; if it is thicker than 1m, the hole is a hemisphere of 1m radius. This is loud. It does not work on structures of iron/steel or harder, nor on a position (area or coordinates) occupied by other characters.",
+    "modifiers": []
+  },
+  {
+    "name": "Troll Vitals",
+    "source": {
+      "book": "CR3",
+      "page": 174
+    },
+    "level": 10,
+    "combatPrep": true,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Magic damage taken -4.",
+    "description": "Any magic damage the user receives during the duration is reduced by 4.",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -4
+      }
+    ]
+  },
+  {
+    "name": "Balloon Seed Shot",
+    "source": {
+      "book": "CR3",
+      "page": 174
+    },
+    "level": 10,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "summary": "Attack with a thrown weapon (using the mouth) as a Minor Action.",
+    "description": "The user can attack with a thrown weapon as a Minor Action, at most once per round (Accuracy: Enhancer level + Dexterity modifier; Extra Damage: Enhancer level + Strength modifier).",
+    "modifiers": []
+  },
+  {
+    "name": "Fenrir's Bite",
+    "source": {
+      "book": "CR3",
+      "page": 175
+    },
+    "level": 10,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": true,
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "summary": "Grow fangs: a Bite wrestling weapon usable for a Minor Action attack.",
+    "description": "The user gains a Bite (wrestling weapon, CR III p. 214) and can attack with it as a Minor Action once per round, using Enhancer level + Dexterity modifier for Accuracy and Enhancer level + Strength modifier for Extra Damage; it can also be used for a normal Major Action melee attack with a warrior-type class (Fighter, Grappler, Fencer). A user who already has a Bite instead gains Accuracy +1 or Extra Damage +2 per use, up to Accuracy +2 and damage +4. Can be used once per round.",
+    "modifiers": []
+  },
+  {
+    "name": "Healthy Body",
+    "source": {
+      "book": "CR3",
+      "page": 175
+    },
+    "level": 10,
+    "combatPrep": false,
+    "mpCost": 3,
+    "oncePerRound": false,
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "summary": "End one poison, disease or psychic effect affecting you.",
+    "description": "The user picks one poison-, disease- or psychic-type effect they are suffering from and cancels it without any success value comparison. Effects that are both curse and psychic type cannot be cancelled.",
+    "modifiers": []
+  }
+]

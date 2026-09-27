@@ -1,0 +1,316 @@
+[
+  {
+    "name": "Finale: Spring Breeze",
+    "source": {
+      "book": "CR2",
+      "page": 197
+    },
+    "level": 1,
+    "cost": {
+      "up": 2,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "half",
+    "types": [
+      "wind"
+    ],
+    "targets": "1 character",
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 10 wind magic damage to 1 character.",
+    "description": "One target character takes Power 10 + Bardic Power wind-type magic damage (Critical Value 10); a successful Willpower check halves it."
+  },
+  {
+    "name": "Finale: Summer Vitality",
+    "source": {
+      "book": "CR2",
+      "page": 197
+    },
+    "level": 1,
+    "cost": {
+      "up": 1,
+      "down": 0,
+      "heart": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "targets": "1 character",
+    "effect": {
+      "kind": "heal",
+      "power": 20,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Restores 1 character's HP by Power 20.",
+    "description": "One target character recovers Power 20 + Bardic Power HP (no critical). Each target can benefit only once per hour. Undead, Magitech and Construct characters are unaffected."
+  },
+  {
+    "name": "Finale: Autumn Harvest",
+    "source": {
+      "book": "CR2",
+      "page": 197
+    },
+    "level": 1,
+    "cost": {
+      "up": 0,
+      "down": 1,
+      "heart": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "targets": "1 character",
+    "effect": {
+      "kind": "mpHeal",
+      "power": 0,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Restores 1 character's MP by Power 0.",
+    "description": "One target character recovers Power 0 + Bardic Power MP (no critical). Each target can benefit only once per day. Undead, Magitech and Construct characters are unaffected."
+  },
+  {
+    "name": "Finale: Winter's Chill",
+    "source": {
+      "book": "CR2",
+      "page": 197
+    },
+    "level": 1,
+    "cost": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "targets": "1 character",
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 10 water/ice magic damage to 1 character.",
+    "description": "One target character takes Power 10 + Bardic Power water/ice-type magic damage (Critical Value 10); a successful Willpower check halves it."
+  },
+  {
+    "name": "Finale: Beast's Roar",
+    "source": {
+      "book": "CR2",
+      "page": 198
+    },
+    "level": 5,
+    "cost": {
+      "up": 4,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "half",
+    "types": [
+      "bludgeoning"
+    ],
+    "targets": "up to 3 characters",
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 20 bludgeoning magic damage to up to 3 characters.",
+    "description": "Up to 3 target characters each take Power 20 + Bardic Power bludgeoning-type magic damage (Critical Value 10); a successful Willpower check halves it."
+  },
+  {
+    "name": "Finale: Breath of the Meadows",
+    "source": {
+      "book": "CR2",
+      "page": 198
+    },
+    "level": 5,
+    "cost": {
+      "up": 2,
+      "down": 0,
+      "heart": 2
+    },
+    "resistance": "optional",
+    "types": [],
+    "targets": "up to 3 characters",
+    "effect": {
+      "kind": "heal",
+      "power": 30,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Restores up to 3 characters' HP by Power 30.",
+    "description": "Up to 3 target characters each recover Power 30 + Bardic Power HP (no critical). Each target can benefit only once per hour. Undead, Magitech and Construct characters are unaffected."
+  },
+  {
+    "name": "Finale: Banquet of Flowers",
+    "source": {
+      "book": "CR2",
+      "page": 198
+    },
+    "level": 5,
+    "cost": {
+      "up": 0,
+      "down": 2,
+      "heart": 2
+    },
+    "resistance": "optional",
+    "types": [],
+    "targets": "up to 3 characters",
+    "effect": {
+      "kind": "mpHeal",
+      "power": 10,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Restores up to 3 characters' MP by Power 10.",
+    "description": "Up to 3 target characters each recover Power 10 + Bardic Power MP (no critical). Each target can benefit only once per day. Undead, Magitech and Construct characters are unaffected."
+  },
+  {
+    "name": "Finale: Screaming Snake-pit Symphony",
+    "source": {
+      "book": "CR2",
+      "page": 198
+    },
+    "level": 5,
+    "cost": {
+      "up": 0,
+      "down": 4,
+      "heart": 0
+    },
+    "resistance": "half",
+    "types": [
+      "curse"
+    ],
+    "targets": "up to 3 characters",
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 20 curse magic damage to up to 3 characters.",
+    "description": "Up to 3 target characters each take Power 20 + Bardic Power curse-type magic damage (Critical Value 10); a successful Willpower check halves it."
+  },
+  {
+    "name": "Finale: Dance of the Fire Dragon",
+    "source": {
+      "book": "CR3",
+      "page": 178
+    },
+    "level": 10,
+    "cost": {
+      "up": 6,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "half",
+    "types": [
+      "fire",
+      "wind"
+    ],
+    "targets": "up to 5 characters",
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 30 fire and wind magic damage to up to 5 characters.",
+    "description": "Up to 5 target characters each take Power 30 + Bardic Power magic damage of both the fire and wind types (Critical Value 10); a successful Willpower check halves it."
+  },
+  {
+    "name": "Finale: Roar of the Water Dragon",
+    "source": {
+      "book": "CR3",
+      "page": 179
+    },
+    "level": 10,
+    "cost": {
+      "up": 0,
+      "down": 6,
+      "heart": 0
+    },
+    "resistance": "half",
+    "types": [
+      "water",
+      "lightning"
+    ],
+    "targets": "up to 5 characters",
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 30 water/ice and lightning magic damage to up to 5 characters.",
+    "description": "Up to 5 target characters each take Power 30 + Bardic Power magic damage of both the water/ice and lightning types (Critical Value 10); a successful Willpower check halves it."
+  },
+  {
+    "name": "Finale: Blue Moon Light",
+    "source": {
+      "book": "CR3",
+      "page": 179
+    },
+    "level": 10,
+    "cost": {
+      "up": 0,
+      "down": 3,
+      "heart": 3
+    },
+    "resistance": "optional",
+    "types": [],
+    "targets": "up to 5 characters",
+    "effect": {
+      "kind": "mpHeal",
+      "power": 20,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Restores up to 5 characters' MP by Power 20.",
+    "description": "Up to 5 target characters each recover Power 20 + Bardic Power MP (no critical). Each target can benefit only once per day. Undead, Magitech and Construct characters are unaffected."
+  },
+  {
+    "name": "Finale: Bright Sunshine",
+    "source": {
+      "book": "CR3",
+      "page": 179
+    },
+    "level": 10,
+    "cost": {
+      "up": 3,
+      "down": 0,
+      "heart": 3
+    },
+    "resistance": "optional",
+    "types": [],
+    "targets": "up to 5 characters",
+    "effect": {
+      "kind": "heal",
+      "power": 40,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Restores up to 5 characters' HP by Power 40.",
+    "description": "Up to 5 target characters each recover Power 40 + Bardic Power HP (no critical). Each target can benefit only once per hour. Undead, Magitech and Construct characters are unaffected."
+  }
+]

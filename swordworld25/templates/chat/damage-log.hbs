@@ -1,0 +1,24 @@
+<div class="sw25 swp swp-chat swp-chat-log {{#if heal}}heal{{else}}damage{{/if}}">
+  <img class="swp-chat-img" src="{{img}}" alt="">
+  <div class="swp-chat-logbody">
+    <div class="swp-chat-logtitle">
+      <b>{{name}}</b>{{#if section}} <small>({{section}})</small>{{/if}}
+      {{#if heal}}{{localize "SW25.Log.Healed" amount=applied resource=resource}}{{else}}{{localize "SW25.Log.Took" amount=applied resource=resource}}{{/if}}
+    </div>
+    <div class="swp-chat-logmain">
+      <span class="swp-chat-total small">{{#if heal}}+{{else}}−{{/if}}{{applied}}</span>
+      {{#if sectionsText}}<span class="swp-chat-logres">{{sectionsText}}</span>
+      {{else}}<span class="swp-chat-logres">{{resource}} {{before}} → <b>{{after}}</b></span>{{/if}}
+    </div>
+    {{#if (or source kind types breakdown.length)}}
+    <div class="swp-chat-parts">{{#if source}}<b>{{source}}</b>{{#if (or kind types)}} · {{/if}}{{/if}}{{kind}}{{#if types}}{{#if kind}} · {{/if}}{{types}}{{/if}}{{#each breakdown}} · {{label}} {{value}}{{/each}}</div>
+    {{/if}}
+    {{#if down}}
+    <span class="swp-stamp failure">{{#if isCharacter}}{{localize "SW25.Log.Unconscious"}}{{else}}{{localize "SW25.Log.Down"}}{{/if}}</span>
+    {{/if}}
+  </div>
+  <div class="swp-chat-logtools">
+    {{#if (and down isCharacter)}}<button type="button" class="swp-mini" data-action="deathCheck" data-actor="{{actorUuid}}" data-tooltip="SW25.Check.death"><i class="fa-solid fa-skull"></i></button>{{/if}}
+    <button type="button" class="swp-mini" data-action="undo" data-gm-only data-tooltip="SW25.Log.Undo"><i class="fa-solid fa-rotate-left"></i></button>
+  </div>
+</div>

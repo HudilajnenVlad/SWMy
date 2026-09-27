@@ -1,0 +1,295 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="combat">
+
+  {{!-- Monster Knowledge · Initiative · Movement --}}
+  <div class="swp-grid swp-grid-checks">
+    <div class="swp-formula">
+      <div class="swp-formula-classes">
+        {{#each mk.classes}}<span class="swp-cb-label {{#if owned}}on{{/if}} {{#if best}}best{{/if}}"><span class="swp-cb"></span>{{label}}{{#if owned}} <b>{{level}}</b>{{/if}}</span>{{/each}}
+        <small class="swp-formula-note">{{localize "SW25.Sheet.ClassLevels"}}</small>
+      </div>
+      <span class="swp-op-text">+ {{localize mk.abilityAbbr}} <b>{{mk.mod}}</b> =</span>
+      <a class="swp-box swp-roll swp-formula-value" data-action="monsterKnowledge" data-tooltip="SW25.Sheet.MonsterKnowledgeHint">
+        <span class="swp-legend center">{{localize "SW25.Check.monsterKnowledge"}}</span>
+        <span class="swp-num">{{#if mk.straight}}—{{else}}{{mk.value}}{{/if}}</span>
+        <i class="fa-solid fa-dice-d6 swp-roll-icon"></i>
+      </a>
+    </div>
+
+    <div class="swp-formula">
+      <div class="swp-formula-classes">
+        {{#each init.classes}}<span class="swp-cb-label {{#if owned}}on{{/if}} {{#if best}}best{{/if}}"><span class="swp-cb"></span>{{label}}{{#if owned}} <b>{{level}}</b>{{/if}}</span>{{/each}}
+        <small class="swp-formula-note">{{localize "SW25.Sheet.ClassLevels"}}</small>
+      </div>
+      <span class="swp-op-text">+ {{localize init.abilityAbbr}} <b>{{init.mod}}</b> =</span>
+      <a class="swp-box swp-roll swp-formula-value" data-action="rollCheck" data-check="initiative">
+        <span class="swp-legend center">{{localize "SW25.Check.initiative"}}</span>
+        <span class="swp-num">{{#if init.straight}}—{{else}}{{init.value}}{{/if}}</span>
+        <i class="fa-solid fa-dice-d6 swp-roll-icon"></i>
+      </a>
+    </div>
+
+    <div class="swp-move">
+      <div class="swp-move-row">
+        <div class="swp-box swp-move-box">
+          <span class="swp-legend center">{{localize "SW25.Sheet.LimitedMove"}}</span>
+          <span class="swp-num">{{movement.limited}}</span><span class="swp-unit-corner">m</span>
+        </div>
+        <div class="swp-box swp-move-box">
+          <span class="swp-legend center">{{localize "SW25.Sheet.NormalMove"}}</span>
+          <span class="swp-side-label">{{localize "SW25.AbilityAbbr.agi"}}</span>
+          <span class="swp-num">{{movement.normal}}</span><span class="swp-unit-corner">m</span>
+        </div>
+        <span class="swp-op">×3=</span>
+        <div class="swp-box swp-move-box">
+          <span class="swp-legend center">{{localize "SW25.Sheet.FullMove"}}</span>
+          <span class="swp-num">{{movement.full}}</span><span class="swp-unit-corner">m</span>
+        </div>
+      </div>
+      <div class="swp-bracket swp-small">
+        <span class="swp-bracket-title">{{localize "SW25.Sheet.MovementEnhancements"}}</span>
+        {{#each movement.lines}}<span class="swp-enh" {{#if condition}}data-tooltip="{{condition}}"{{/if}}>{{source}} <b>{{value}}</b></span>{{else}}<span class="swp-placeholder">—</span>{{/each}}
+      </div>
+    </div>
+  </div>
+
+  {{!-- Warrior classes: Base Accuracy and Extra Damage --}}
+  <div class="swp-warriors">
+    <div class="swp-formula-classes grid">
+      {{#each warriors.chips}}<span class="swp-cb-label {{#if owned}}on{{/if}}"><span class="swp-cb"></span>{{label}}{{#if owned}} <b>{{level}}</b>{{/if}}</span>{{/each}}
+      <small class="swp-formula-note">{{localize "SW25.Sheet.ClassLevels"}}</small>
+    </div>
+    <div class="swp-warrior-ops">
+      <span class="swp-op-text">+ {{localize "SW25.AbilityAbbr.dex"}} <b>{{warriors.dexMod}}</b> =</span>
+      <span class="swp-op-text">+ {{localize "SW25.AbilityAbbr.str"}} <b>{{warriors.strMod}}</b> =</span>
+    </div>
+    <div class="swp-warrior-values">
+      <div class="swp-labeled-row"><span class="swp-kanji">※</span>{{localize "SW25.Sheet.BaseAccuracy"}}
+        <span class="swp-values">{{#each warriors.rows}}<span data-tooltip="{{label}} {{level}}"><small>{{label}}</small> <b>{{accuracy}}</b></span>{{else}}<b>—</b>{{/each}}</span>
+      </div>
+      <div class="swp-labeled-row"><span class="swp-kanji">※</span>{{localize "SW25.ExtraDamage"}}
+        <span class="swp-values">{{#each warriors.rows}}<span data-tooltip="{{label}} {{level}}"><small>{{label}}</small> <b>{{damage}}</b></span>{{else}}<b>—</b>{{/each}}</span>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Weapons --}}
+  <div class="swp-block swp-weapons">
+    <table class="swp-table swp-weapon-table">
+      <thead>
+        <tr>
+          <th class="eq"></th>
+          <th class="name">{{localize "SW25.Sheet.WeaponName"}}</th>
+          <th class="stance">{{localize "SW25.Sheet.Stance"}}</th>
+          <th class="minstr">{{localize "SW25.MinStr"}}</th>
+          <th class="wacc">{{localize "SW25.Sheet.WeaponAccuracy"}}</th>
+          <th class="hl">{{localize "SW25.Sheet.TotalAccuracy"}}</th>
+          <th class="power">{{localize "SW25.Power"}}</th>
+          {{#each (sw25Range 2 12)}}<th class="pw"><span class="swp-circ">{{this}}</span></th>{{/each}}
+          <th class="crit">{{localize "SW25.CritValue"}}</th>
+          <th class="wextra">{{localize "SW25.ExtraDamage"}}</th>
+          <th class="hl">{{localize "SW25.Sheet.TotalExtraDamage"}}</th>
+          <th class="tools">
+            <a class="swp-tool" data-action="powerTable" data-tooltip="SW25.PowerTable.Title"><i class="fa-solid fa-table-cells"></i></a>
+            <a class="swp-tool" data-action="openCompendium" data-pack="weapons" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each weapons}}
+        <tr class="swp-row draggable {{#unless equipped}}unequipped{{/unless}} {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+          <td class="eq"><a class="swp-equip {{#if equipped}}on{{/if}}" data-action="itemToggleEquip" data-tooltip="SW25.Equip"><i class="fa-solid fa-hand-fist"></i></a></td>
+          {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this subtitle=category}}
+          <td class="stance">
+            {{#if multiMode}}<a class="swp-stance-toggle" data-action="weaponMode" data-tooltip="SW25.Sheet.SwitchStance">{{stance}} <i class="fa-solid fa-rotate"></i></a>{{else}}{{stance}}{{/if}}
+          </td>
+          <td class="minstr {{#if strWarning}}warn{{/if}}" {{#if strWarning}}data-tooltip="{{localize 'SW25.StrPenalty'}} {{strPenalty}}"{{/if}}>{{minStr}}</td>
+          <td class="wacc">{{weaponAccuracy}}</td>
+          <td class="hl"><a class="swp-pill" data-action="itemUse" data-tooltip="SW25.Attack">{{accuracy}}</a></td>
+          <td class="power">{{power}}</td>
+          {{#each powerRow}}<td class="pw {{#if crit}}crit{{/if}} {{#if fumble}}fumble{{/if}}">{{value}}</td>{{/each}}
+          <td class="crit">{{critical}}</td>
+          <td class="wextra">{{weaponExtra}}</td>
+          <td class="hl">{{#if isGun}}<a class="swp-pill" data-action="itemUse" data-tooltip="SW25.Gun.ByBullet">{{extraDamage}}</a>{{else}}<a class="swp-pill" data-action="weaponDamage" data-tooltip="SW25.Sheet.RollDamage">{{extraDamage}}</a>{{/if}}</td>
+          <td class="tools"><span class="swp-row-tools">
+            <a data-action="itemChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i></a>
+            <a data-action="itemDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>
+          </span></td>
+        </tr>
+        {{#if expanded}}
+        <tr class="swp-details-row"><td colspan="23" data-item-id="{{id}}">
+          <div class="swp-weapon-details">
+            <span class="swp-kv"><span>{{localize "SW25.Category"}}</span> {{category}}</span>
+            <span class="swp-kv"><span>{{localize "SW25.Rank"}}</span> {{rank}}</span>
+            {{#if system.range}}<span class="swp-kv"><span>{{localize "SW25.Range.label"}}</span> {{system.range}}</span>{{/if}}
+            <label class="swp-kv"><span>{{localize "SW25.AttackClass"}}</span>
+              <select data-item-field="system.attackClass">{{selectOptions attackOptions selected=attackClass}}</select>
+            </label>
+            {{#if multiMode}}<span class="swp-kv"><span>{{localize "SW25.Mode"}}</span>
+              {{#each modes}}<a class="swp-mode {{#if active}}on{{/if}}" data-action="weaponMode" data-mode="{{index}}">{{label}}</a>{{/each}}
+            </span>{{/if}}
+          </div>
+          {{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}
+        </td></tr>
+        {{/if}}
+        {{/each}}
+        <tr class="swp-drop-row"><td colspan="23">
+          <i class="fa-solid fa-arrow-down-to-bracket"></i> {{localize "SW25.Sheet.DropWeapon"}}
+          <a class="swp-mini" data-action="itemCreate" data-type="weapon" data-tooltip="SW25.Item.Create"><i class="fa-solid fa-plus"></i></a>
+        </td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="swp-bracket">
+    <span class="swp-bracket-title">{{localize "SW25.Sheet.AttackEnhancements"}}</span>
+    {{#each attackLines}}<span class="swp-enh {{#if condition}}cond{{/if}}" {{#if condition}}data-tooltip="{{condition}}"{{/if}}>{{source}}: {{label}} <b>{{value}}</b></span>{{/each}}
+    {{#each declarable}}<span class="swp-enh declare" data-item-id="{{id}}"><a data-action="itemChat" data-tooltip="SW25.Feat.DeclareHint"><i class="fa-solid {{#if major}}fa-play{{else}}fa-bullhorn{{/if}}"></i> {{name}}</a></span>{{/each}}
+    {{#unless attackLines.length}}{{#unless declarable.length}}<span class="swp-placeholder">—</span>{{/unless}}{{/unless}}
+  </div>
+
+  <div class="swp-grid swp-grid-gear">
+    {{!-- Accessories by equipment section --}}
+    <div class="swp-block swp-accessories">
+      <table class="swp-table swp-slot-table">
+        <thead><tr>
+          <th class="slot">{{localize "SW25.Sheet.Section"}}</th>
+          <th class="name">{{localize "SW25.Sheet.AccessoryName"}}</th>
+          <th class="tools"><a class="swp-tool" data-action="openCompendium" data-pack="gear" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a></th>
+        </tr></thead>
+        <tbody>
+          {{#each accessorySlots}}
+          <tr class="swp-slot {{#if over}}over{{/if}}" data-slot="{{slot}}">
+            <th class="slot">{{localize label}}</th>
+            <td class="name">
+              {{#each items}}
+              <span class="swp-worn" data-item-id="{{id}}">
+                <img src="{{img}}" alt=""><a data-action="itemEdit" {{#if summary}}data-tooltip="{{summary}}"{{/if}}>{{name}}</a>
+                <a class="swp-mini" data-action="slotClear" data-tooltip="SW25.Sheet.TakeOff"><i class="fa-solid fa-xmark"></i></a>
+              </span>
+              {{/each}}
+              {{#if candidates.length}}
+              <select class="swp-slot-select" data-slot-assign="{{slot}}">
+                <option value="">{{#if items.length}}+{{else}}{{localize "SW25.Sheet.Wear"}}{{/if}}</option>
+                {{#each candidates}}<option value="{{id}}">{{name}}</option>{{/each}}
+              </select>
+              {{/if}}
+            </td>
+            <td class="tools">{{#if over}}<i class="fa-solid fa-triangle-exclamation warn" data-tooltip="SW25.Sheet.SlotOver"></i>{{/if}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    {{!-- Evasion, armor and defense --}}
+    <div class="swp-stack">
+      <div class="swp-formula swp-evasion">
+        <div class="swp-formula-classes">
+          {{#each evasion.chips}}<span class="swp-cb-label {{#if owned}}on{{/if}} {{#if best}}best{{/if}}"><span class="swp-cb"></span>{{label}}{{#if owned}} <b>{{level}}</b>{{/if}}</span>{{/each}}
+          <select class="swp-evasion-select" name="system.settings.evasionClass" data-tooltip="SW25.EvasionClass">{{selectOptions evasion.options selected=system.settings.evasionClass}}</select>
+        </div>
+        <span class="swp-op-text">+ {{localize "SW25.AbilityAbbr.agi"}} <b>{{evasion.mod}}</b> =</span>
+        <div class="swp-box swp-formula-value">
+          <span class="swp-legend center"><span class="swp-kanji">※</span>{{localize "SW25.Sheet.BaseEvasion"}}</span>
+          <span class="swp-num">{{#if evasion.straight}}—{{else}}{{evasion.base}}{{/if}}</span>
+        </div>
+      </div>
+
+      <div class="swp-block swp-armor">
+        <table class="swp-table swp-armor-table">
+          <thead><tr>
+            <th class="eq"></th>
+            <th class="name">{{localize "SW25.Sheet.ArmorName"}}</th>
+            <th>{{localize "SW25.MinStr"}}</th>
+            <th>{{localize "SW25.Evasion"}}</th>
+            <th>{{localize "SW25.Defense"}}</th>
+            <th class="tools"><a class="swp-tool" data-action="openCompendium" data-pack="armor" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a></th>
+          </tr></thead>
+          <tbody>
+            {{#each armors}}
+            <tr class="swp-row draggable {{#unless equipped}}unequipped{{/unless}} {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+              <td class="eq"><a class="swp-equip {{#if equipped}}on{{/if}}" data-action="itemToggleEquip" data-tooltip="SW25.Equip"><i class="fa-solid {{#if isShield}}fa-shield-halved{{else}}fa-shirt{{/if}}"></i></a></td>
+              {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this subtitle=typeLabel}}
+              <td class="{{#if strWarning}}warn{{/if}}">{{minStr}}</td>
+              <td>{{evasion}}</td>
+              <td>{{defense}}</td>
+              <td class="tools"><span class="swp-row-tools"><a data-action="itemDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></span></td>
+            </tr>
+            {{#if expanded}}<tr class="swp-details-row"><td colspan="6" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+            {{else}}
+            <tr class="swp-drop-row"><td colspan="6"><i class="fa-solid fa-arrow-down-to-bracket"></i> {{localize "SW25.Sheet.DropArmor"}}</td></tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="swp-defense-row">
+        {{#if magicPowers.length}}
+        <div class="swp-magic-circles">
+          <span class="swp-circles-title"><span class="swp-kanji">※</span>{{localize "SW25.Sheet.MagicPower"}}</span>
+          {{#each magicPowers}}
+          <a class="swp-power-circle" data-action="openSpellbook" data-tab="{{tab}}" data-tooltip="{{localize 'SW25.Sheet.OpenSpellbookFor' name=label}}">
+            <span class="swp-circle-big"><span class="swp-num">{{value}}</span></span>
+            <span class="swp-circle-label">{{label}}</span>
+          </a>
+          {{/each}}
+        </div>
+        {{/if}}
+        <div class="swp-totals">
+          <div class="swp-totals-box">
+            <a class="swp-total" data-action="rollCheck" data-check="evasion" data-tooltip="SW25.Check.evasion">
+              <span class="swp-total-label">{{localize "SW25.Sheet.TotalEvasion"}}</span>
+              <span class="swp-pill big">{{#if system.evasionStraight}}—{{else}}{{system.evasion}}{{/if}}</span>
+            </a>
+            <div class="swp-total">
+              <span class="swp-total-label">{{localize "SW25.Sheet.TotalDefense"}}</span>
+              <span class="swp-pill big static">{{system.defense}}</span>
+            </div>
+          </div>
+          <div class="swp-bracket swp-small">
+            <span class="swp-bracket-title">{{localize "SW25.Sheet.DefenseEnhancements"}}</span>
+            {{#each defenseLines}}<span class="swp-enh {{#if condition}}cond{{/if}}" {{#if condition}}data-tooltip="{{condition}}"{{/if}}>{{source}}: {{label}} <b>{{value}}</b></span>{{else}}<span class="swp-placeholder">—</span>{{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- HP / MP / Fortitude / Willpower --}}
+  <div class="swp-vital-block">
+    <div class="swp-vital hp" data-resource-box style="--pct: {{system.hp.pct}}%">
+      <span class="swp-vital-label">{{localize "SW25.HP"}}</span>
+      <span class="swp-vital-box"><input type="number" data-vital="hp" value="{{system.hp.value}}" step="1"><small>/ {{system.hp.max}}</small></span>
+      <span class="swp-vital-track"><span class="fill"></span>
+        <span class="swp-vital-tools">
+          <input class="swp-amount" type="number" min="0" placeholder="0" data-tooltip="SW25.Sheet.AmountHint">
+          <a class="swp-mini" data-action="resourceHit" data-resource="hp" data-mode="damage" data-tooltip="SW25.Sheet.TakeDamage"><i class="fa-solid fa-heart-crack"></i></a>
+          <a class="swp-mini" data-action="resourceHit" data-resource="hp" data-mode="heal" data-tooltip="SW25.Sheet.Heal"><i class="fa-solid fa-heart-circle-plus"></i></a>
+          {{#if (lte system.hp.value 0)}}<a class="swp-mini danger" data-action="deathCheck" data-tooltip="SW25.Check.death"><i class="fa-solid fa-skull"></i></a>{{/if}}
+        </span>
+      </span>
+    </div>
+    <a class="swp-box swp-roll swp-resist" data-action="rollCheck" data-check="fortitude">
+      <span class="swp-legend">{{localize "SW25.Check.fortitude"}}</span>
+      <span class="swp-num">{{system.fortitude}}</span>
+      <i class="fa-solid fa-dice-d6 swp-roll-icon"></i>
+    </a>
+    <div class="swp-vital mp" data-resource-box style="--pct: {{system.mp.pct}}%">
+      <span class="swp-vital-label">{{localize "SW25.MP"}}</span>
+      <span class="swp-vital-box"><input type="number" data-vital="mp" value="{{system.mp.value}}" step="1"><small>/ {{system.mp.max}}</small></span>
+      <span class="swp-vital-track"><span class="fill"></span>
+        <span class="swp-vital-tools">
+          <input class="swp-amount" type="number" min="0" placeholder="0" data-tooltip="SW25.Sheet.AmountHint">
+          <a class="swp-mini" data-action="resourceHit" data-resource="mp" data-mode="damage" data-tooltip="SW25.Sheet.SpendMP"><i class="fa-solid fa-minus"></i></a>
+          <a class="swp-mini" data-action="resourceHit" data-resource="mp" data-mode="heal" data-tooltip="SW25.Sheet.RestoreMP"><i class="fa-solid fa-plus"></i></a>
+        </span>
+      </span>
+    </div>
+    <a class="swp-box swp-roll swp-resist" data-action="rollCheck" data-check="willpower">
+      <span class="swp-legend">{{localize "SW25.Check.willpower"}}</span>
+      <span class="swp-num">{{system.willpower}}</span>
+      <i class="fa-solid fa-dice-d6 swp-roll-icon"></i>
+    </a>
+  </div>
+  <p class="swp-footnote">{{localize "SW25.Sheet.Formulas"}}</p>
+</section>

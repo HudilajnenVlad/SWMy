@@ -1,0 +1,33 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.GearType.label"}}<select name="system.itemType">{{selectOptions choices.gearTypes selected=system.itemType localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Quantity"}}<input type="number" name="system.quantity" value="{{system.quantity}}" min="0"></label>
+  <label class="swp-field">{{localize "SW25.Price"}}<input type="number" name="system.price" value="{{system.price}}" min="0"></label>
+  <label class="swp-field">{{localize "SW25.PriceText"}}<input type="text" name="system.priceText" value="{{system.priceText}}"></label>
+  <label class="swp-field">{{localize "SW25.Stance"}}<input type="text" name="system.stance" value="{{system.stance}}"></label>
+  <label class="swp-field">{{localize "SW25.Gear.Popularity"}}<input type="number" name="system.popularity" value="{{system.popularity}}"></label>
+  <label class="swp-field">{{localize "SW25.Gear.Uses"}}<span class="swp-pair"><input type="number" name="system.uses.value" value="{{system.uses.value}}" min="0"> / <input type="number" name="system.uses.max" value="{{system.uses.max}}" min="0"></span></label>
+  <label class="swp-field">{{localize "SW25.Gear.Mako"}}<span class="swp-pair"><input type="number" name="system.mako.value" value="{{system.mako.value}}" min="0"> / <input type="number" name="system.mako.max" value="{{system.mako.max}}" min="0"></span></label>
+  <label class="swp-field wide">{{localize "SW25.Gear.ClassReq"}}<span class="swp-pair"><select name="system.classReq.class">{{selectOptions choices.classes selected=system.classReq.class localize=true blank="—"}}</select><input type="number" name="system.classReq.level" value="{{system.classReq.level}}" min="0"></span></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.magic" {{checked system.magic}}> {{localize "SW25.Magic.Item"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.consumable" {{checked system.consumable}}> {{localize "SW25.Gear.Consumable"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.equipped" {{checked system.equipped}}> {{localize "SW25.Equipped"}}</label>
+</div>
+
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Slot.label"}}</legend>
+  <div class="swp-chip-grid">{{#each slots}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleSlot" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>
+
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Gear.UseEffect"}}</legend>
+  <div class="swp-field-grid">
+    <label class="swp-field">{{localize "SW25.UseKind.label"}}<select name="system.use.kind">{{selectOptions choices.useKinds selected=system.use.kind localize=true}}</select></label>
+    <label class="swp-field">{{localize "SW25.Power"}}<input type="number" name="system.use.power" value="{{system.use.power}}" min="0" max="100"></label>
+    <label class="swp-field">{{localize "SW25.CritValue"}}<input type="number" name="system.use.critical" value="{{system.use.critical}}"></label>
+    <label class="swp-field">{{localize "SW25.Gear.Extra"}}<input type="number" name="system.use.extra" value="{{system.use.extra}}"></label>
+    <label class="swp-field wide">{{localize "SW25.UseBonus.label"}}<select name="system.use.bonus">{{selectOptions choices.useBonuses selected=system.use.bonus localize=true blank="—"}}</select></label>
+  </div>
+  <div class="swp-chip-grid">{{#each damageTypes}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleType" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>

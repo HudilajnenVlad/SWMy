@@ -1,0 +1,1132 @@
+[
+  {
+    "name": "Mount Contract",
+    "source": {
+      "book": "CR3",
+      "page": 248
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "250+ (the mount's rental price)",
+    "reputation": null,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Guild contract for one animal/mythical beast mount type: rent that type for free and carry it as a statue.",
+    "description": "Bought once per mount type at that mount's rental price (the second price in its data, 250G for a Horse). Afterwards the jockey may rent that type from the Rider's Guild at no further cost as often as wished; only one contract per type can be held. The jockey must carry it to ride the rented mount and apply Stunts. Attaching it to the jockey's mount (Major Action) turns the mount into a statue; removing it (Major Action) brings it back. Reusable; if lost it must be bought again at the same price.",
+    "modifiers": []
+  },
+  {
+    "name": "Mount Contract Sphere",
+    "source": {
+      "book": "CR3",
+      "page": 248
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "300+ (the mount's rental price)",
+    "reputation": null,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Guild contract sphere for one magitech mount type: rent that type for free and store it in the sphere.",
+    "description": "Magitech counterpart of the Mount Contract, bought once per vehicle type at its rental price (300G for a Mini Manabike); afterwards that type can be rented for free. Storing or releasing the vehicle takes a Major Action and 1 MP from the jockey holding the sphere; stored vehicles are unaffected by time. Reusable.",
+    "modifiers": []
+  },
+  {
+    "name": "Proprietary Mount Contract",
+    "source": {
+      "book": "CR3",
+      "page": 248
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 0,
+    "priceText": null,
+    "reputation": null,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Free ownership deed issued with a purchased animal/mythical beast mount; also turns it into a statue.",
+    "description": "Given by the Rider's Guild when a mount is bought, made out in the owner's name; the mount obeys only its owner, and every section of an owned mount gets +10 maximum HP. Attaching or removing it turns the mount into a statue and back (Major Action each). Ownership is transferred at the Guild with both parties present; the deed becomes void if the mount dies.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "name": "Proprietary Mount Sphere",
+    "source": {
+      "book": "CR3",
+      "page": 248
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 0,
+    "priceText": null,
+    "reputation": null,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Free ownership sphere issued with a purchased magitech mount; stores and releases it.",
+    "description": "Given when a magitech mount is bought; the owned vehicle gets +10 maximum HP. Storing or releasing it takes a Major Action and 1 MP from the owner holding the sphere. Void once the vehicle is destroyed.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "name": "Mount Reduction Tag I",
+    "source": {
+      "book": "CR3",
+      "page": 249
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 100,
+    "priceText": null,
+    "reputation": null,
+    "magic": true,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": 3
+    },
+    "summary": "Single-use tag: turns the jockey's animal/mythical beast mount of level 3 or lower into a statue and back with a Minor Action.",
+    "description": "Sticking the tag on the jockey's own animal or mythical beast mount of level 3 or lower shrinks it into a palm-sized statue; peeling it off restores the mount. Either step is a Minor Action or can be done in Combat Preparation. The tag is spent once removed. Two tagged statues near each other break each other's magic, so only one mount can be carried with a tag at a time. Can also hold a bonded wild mount (p. 97).",
+    "modifiers": []
+  },
+  {
+    "name": "Mount Reduction Tag II",
+    "source": {
+      "book": "CR3",
+      "page": 249
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 500,
+    "priceText": null,
+    "reputation": null,
+    "magic": true,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": 7
+    },
+    "summary": "Single-use tag: turns the jockey's animal/mythical beast mount of level 7 or lower into a statue and back with a Minor Action.",
+    "description": "Sticking the tag on the jockey's own animal or mythical beast mount of level 7 or lower shrinks it into a palm-sized statue; peeling it off restores the mount. Either step is a Minor Action or can be done in Combat Preparation. The tag is spent once removed. Two tagged statues near each other break each other's magic, so only one mount can be carried with a tag at a time. Can also hold a bonded wild mount (p. 97).",
+    "modifiers": []
+  },
+  {
+    "name": "Mount Reduction Tag III",
+    "source": {
+      "book": "CR3",
+      "page": 249
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 2000,
+    "priceText": null,
+    "reputation": null,
+    "magic": true,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": 13
+    },
+    "summary": "Single-use tag: turns the jockey's animal/mythical beast mount of level 13 or lower into a statue and back with a Minor Action.",
+    "description": "Sticking the tag on the jockey's own animal or mythical beast mount of level 13 or lower shrinks it into a palm-sized statue; peeling it off restores the mount. Either step is a Minor Action or can be done in Combat Preparation. The tag is spent once removed. Two tagged statues near each other break each other's magic, so only one mount can be carried with a tag at a time. Can also hold a bonded wild mount (p. 97).",
+    "modifiers": []
+  },
+  {
+    "name": "Manabike Storage Sphere",
+    "source": {
+      "book": "CR3",
+      "page": 249
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 10000,
+    "priceText": null,
+    "reputation": null,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "carry",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Reusable sphere that stores or releases a magitech mount as a Minor Action (1 MP).",
+    "description": "Holding the sphere, the jockey stores or releases their magitech mount as a Minor Action (also possible in Combat Preparation), paying 1 MP. Unlike Reduction Tags these do not interfere with each other, so several can be carried and used.",
+    "modifiers": []
+  },
+  {
+    "name": "Secret Medicine of Section Regeneration",
+    "source": {
+      "book": "CR3",
+      "page": 249
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "Various (see each mount's data)",
+    "reputation": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "effect",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "regeneration",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Restores a disabled section of an animal/mythical beast mount to working order at 1 HP (10 minutes).",
+    "description": "Applied to a Disabled Section (p. 99) of an animal or mythical beast mount, it makes the section functional again with 1 HP after 10 minutes. The price is listed per mount (regeneration price, e.g. Tilgris 3,000G). Healing a rented mount this way before returning it avoids an Infamous Jockey Title.",
+    "modifiers": []
+  },
+  {
+    "name": "Restore Kit",
+    "source": {
+      "book": "CR3",
+      "page": 249
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 5000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "effect",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "regeneration",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Repairs a destroyed magitech mount back to 1 HP (1 hour).",
+    "description": "Used on a destroyed magitech mount, it restores the vehicle to working order with 1 HP after 1 hour of repairs. Fixing a rented vehicle before returning it avoids an Infamous Jockey Title.",
+    "modifiers": []
+  },
+  {
+    "name": "Big Horn",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 800,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": true,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (blunt): Damage +1.",
+    "description": "Weapon for animal or mythical beast mounts; the equipped section's attacks get Damage +1 and count as blunt. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Sideblade",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 800,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": true,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (edged): Accuracy -1 and Damage +2.",
+    "description": "Weapon for magitech mounts; the equipped section's attacks get Accuracy -1 and Damage +2 and count as edged. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -1
+      },
+      {
+        "key": "damage",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Iron Rivet",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 2000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": true,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (blunt): Damage +2.",
+    "description": "Weapon for animal or mythical beast mounts; the equipped section's attacks get Damage +2 and count as blunt. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Flicker Hammer",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 3000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast",
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": true,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (blunt): Accuracy +1.",
+    "description": "Weapon for animal, mythical beast or magitech mounts; the equipped section's attacks get Accuracy +1 and count as blunt. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Flicker Star",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 3000,
+    "priceText": null,
+    "reputation": 20,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast",
+        "magitech"
+      ],
+      "proprietaryOnly": true,
+      "edged": true,
+      "blunt": true,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (edged/blunt): Accuracy +1. Proprietary mounts only.",
+    "description": "Weapon for animal, mythical beast or magitech mounts; the equipped section's attacks get Accuracy +1 and count as edged or blunt (chosen for each attack). Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced. Purchased (proprietary) mounts only; cannot be put on a rental mount.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Blade Horn",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 5000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": true,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (edged): Damage +3.",
+    "description": "Weapon for animal or mythical beast mounts; the equipped section's attacks get Damage +3 and count as edged. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "name": "Metal Horn",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 5000,
+    "priceText": null,
+    "reputation": 20,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": true,
+      "edged": true,
+      "blunt": true,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (edged/blunt): Damage +3. Proprietary mounts only.",
+    "description": "Weapon for animal or mythical beast mounts; the equipped section's attacks get Damage +3 and count as edged or blunt (chosen for each attack). Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced. Purchased (proprietary) mounts only; cannot be put on a rental mount.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "name": "Manatite Plating",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 15000,
+    "priceText": null,
+    "reputation": null,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast",
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": true,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (blunt): Damage +4.",
+    "description": "Weapon for animal, mythical beast or magitech mounts; the equipped section's attacks get Damage +4 and count as blunt. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "name": "Manatite Horn",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 15000,
+    "priceText": null,
+    "reputation": 50,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "weapon",
+      "classifications": [
+        "animal",
+        "mythicalBeast",
+        "magitech"
+      ],
+      "proprietaryOnly": true,
+      "edged": true,
+      "blunt": true,
+      "maxLevel": null
+    },
+    "summary": "Mount weapon (edged/blunt): Damage +4. Proprietary mounts only.",
+    "description": "Weapon for animal, mythical beast or magitech mounts; the equipped section's attacks get Damage +4 and count as edged or blunt (chosen for each attack). Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced. Purchased (proprietary) mounts only; cannot be put on a rental mount.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "name": "Leather Barding",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 300,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: Defense +1.",
+    "description": "Armor for animal or mythical beast mounts; the equipped section gets Defense +1. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Chain Barding",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 1000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: Defense +2.",
+    "description": "Armor for animal or mythical beast mounts; the equipped section gets Defense +2. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Anti-Magic Seal",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 2000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: magic damage taken -1.",
+    "description": "Armor for magitech mounts; the equipped section gets magic damage taken -1. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "name": "Plate Barding",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 3000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: Defense +3.",
+    "description": "Armor for animal or mythical beast mounts; the equipped section gets Defense +3. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "name": "Blank Plate",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 3000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: maximum HP +10.",
+    "description": "Armor for magitech mounts; the equipped section gets maximum HP +10. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "name": "Wind Coat",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 4000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "animal",
+        "mythicalBeast"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: Evasion +1 and Defense +2.",
+    "description": "Armor for animal or mythical beast mounts; the equipped section gets Evasion +1 and Defense +2. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1
+      },
+      {
+        "key": "defense",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Resist Barrier",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 8000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: magic damage taken -2.",
+    "description": "Armor for magitech mounts; the equipped section gets magic damage taken -2. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -2
+      }
+    ]
+  },
+  {
+    "name": "Gardner Shell",
+    "source": {
+      "book": "CR3",
+      "page": 250
+    },
+    "itemType": "mountItem",
+    "slot": [],
+    "stance": null,
+    "price": 12000,
+    "priceText": null,
+    "reputation": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": 0,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "mount": {
+      "category": "armor",
+      "classifications": [
+        "animal",
+        "mythicalBeast",
+        "magitech"
+      ],
+      "proprietaryOnly": false,
+      "edged": false,
+      "blunt": false,
+      "maxLevel": null
+    },
+    "summary": "Mount armor: Evasion -1 and Defense +4.",
+    "description": "Armor for animal, mythical beast or magitech mounts; the equipped section gets Evasion -1 and Defense +4. Each mount (or each section of a multi-section mount) can wear one mount weapon and one mount armor, affecting only that section; it can be moved between mounts but never enhanced.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -1
+      },
+      {
+        "key": "defense",
+        "value": 4
+      }
+    ]
+  }
+]

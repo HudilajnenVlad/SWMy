@@ -1,0 +1,83 @@
+{
+  "id": "swordworld25",
+  "title": "Sword World 2.5",
+  "description": "An automated Sword World 2.5 game system: character and monster sheets, power-table damage rolls with criticals, spellcasting and resistance workflow, conditions, spellbook window, token resource trackers and compendiums built from Core Rulebooks I–III.",
+  "version": "0.1.0",
+  "authors": [
+    { "name": "SWMy" }
+  ],
+  "url": "https://github.com/HudilajnenVlad/SWMy",
+  "compatibility": {
+    "minimum": "13.345",
+    "verified": "13.348"
+  },
+  "esmodules": ["module/swordworld25.mjs"],
+  "styles": ["styles/paper-base.css", "styles/sheet-character.css", "styles/sheet-monster.css", "styles/sheet-item.css", "styles/sheet-party.css", "styles/apps.css", "styles/chat.css"],
+  "languages": [
+    { "lang": "en", "name": "English", "path": "lang/en.json" },
+    { "lang": "ru", "name": "Русский", "path": "lang/ru.json" }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": { "htmlFields": ["details.biography", "details.notes"] },
+      "monster": { "htmlFields": ["details.description", "details.notes"] },
+      "mount": { "htmlFields": ["details.description", "details.notes"] },
+      "party": { "htmlFields": ["notes"] }
+    },
+    "Item": {
+      "race": { "htmlFields": ["description"] },
+      "class": { "htmlFields": ["description"] },
+      "weapon": { "htmlFields": ["description"] },
+      "armor": { "htmlFields": ["description"] },
+      "gear": { "htmlFields": ["description"] },
+      "spell": { "htmlFields": ["description"] },
+      "feat": { "htmlFields": ["description"] },
+      "technique": { "htmlFields": ["description"] },
+      "spellsong": { "htmlFields": ["description"] },
+      "finale": { "htmlFields": ["description"] },
+      "stunt": { "htmlFields": ["description"] },
+      "evocation": { "htmlFields": ["description"] },
+      "ability": { "htmlFields": ["description"] },
+      "effect": { "htmlFields": ["description"] }
+    }
+  },
+  "packs": [
+    { "name": "races", "label": "Races", "type": "Item", "system": "swordworld25", "path": "packs/races", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "classes", "label": "Classes", "type": "Item", "system": "swordworld25", "path": "packs/classes", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "feats", "label": "Combat Feats", "type": "Item", "system": "swordworld25", "path": "packs/feats", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "spells", "label": "Spells", "type": "Item", "system": "swordworld25", "path": "packs/spells", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "class-abilities", "label": "Techniques, Songs, Stunts & Evocations", "type": "Item", "system": "swordworld25", "path": "packs/class-abilities", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "weapons", "label": "Weapons", "type": "Item", "system": "swordworld25", "path": "packs/weapons", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "armor", "label": "Armor & Shields", "type": "Item", "system": "swordworld25", "path": "packs/armor", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "gear", "label": "Items & Accessories", "type": "Item", "system": "swordworld25", "path": "packs/gear", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "effects", "label": "Conditions & Effects", "type": "Item", "system": "swordworld25", "path": "packs/effects", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "bestiary", "label": "Bestiary", "type": "Actor", "system": "swordworld25", "path": "packs/bestiary", "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" } },
+    { "name": "mounts", "label": "Mounts", "type": "Actor", "system": "swordworld25", "path": "packs/mounts", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "macros", "label": "Macros", "type": "Macro", "system": "swordworld25", "path": "packs/macros", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } }
+  ],
+  "packFolders": [
+    {
+      "name": "Sword World 2.5",
+      "sorting": "m",
+      "color": "#5b1e1e",
+      "packs": [],
+      "folders": [
+        { "name": "Character Options", "sorting": "m", "packs": ["races", "classes", "feats", "spells", "class-abilities"] },
+        { "name": "Equipment", "sorting": "m", "packs": ["weapons", "armor", "gear"] },
+        { "name": "Game Master", "sorting": "m", "packs": ["bestiary", "mounts", "effects", "macros"] }
+      ]
+    }
+  ],
+  "socket": true,
+  "grid": { "distance": 1, "units": "m", "diagonals": 0 },
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "mp",
+  "initiative": "2d6",
+  "background": "systems/swordworld25/assets/banner.svg",
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["styles", "templates", "lang"]
+    }
+  }
+}

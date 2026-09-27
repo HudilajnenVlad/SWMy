@@ -1,0 +1,4016 @@
+[
+  {
+    "name": "Horse",
+    "source": {
+      "book": "CR3",
+      "page": 254
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 5000,
+      "rent": 250,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 1,
+    "levelMax": 4,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "30 (4 Legs)/-",
+      "ground": 30,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 1,
+        "fortitude": 4,
+        "willpower": 3,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 3,
+            "damage": "2d",
+            "evasion": 2,
+            "defense": 1,
+            "hp": 22,
+            "mp": 8
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "fortitude": 5,
+        "willpower": 4,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 4,
+            "damage": "2d+1",
+            "evasion": 3,
+            "defense": 2,
+            "hp": 26,
+            "mp": 9
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "fortitude": 6,
+        "willpower": 5,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 5,
+            "damage": "2d+2",
+            "evasion": 4,
+            "defense": 3,
+            "hp": 30,
+            "mp": 10
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "fortitude": 7,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 6,
+            "damage": "2d+3",
+            "evasion": 5,
+            "defense": 4,
+            "hp": 34,
+            "mp": 11
+          }
+        ]
+      }
+    ],
+    "abilities": [],
+    "description": "The everyday riding horse of Alframe: cheap and easy to handle. Non-Riders may also ride it and buy it on the open market; an owned Horse may be trained up into a War Horse at the Rider's Guild (7,500G + 30 reputation, p. 99)."
+  },
+  {
+    "name": "Fast Horse",
+    "source": {
+      "book": "CR3",
+      "page": 247
+    },
+    "monsterRef": null,
+    "renownedOf": "Horse",
+    "classification": "animal",
+    "price": {
+      "buy": 5000,
+      "rent": null,
+      "regen": null,
+      "reputation": 30
+    },
+    "levelMin": 1,
+    "levelMax": 4,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "35 (4 Legs)/-",
+      "ground": 35,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 1,
+        "fortitude": 4,
+        "willpower": 3,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 3,
+            "damage": "2d",
+            "evasion": 2,
+            "defense": 1,
+            "hp": 22,
+            "mp": 8
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "fortitude": 5,
+        "willpower": 4,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 4,
+            "damage": "2d+1",
+            "evasion": 3,
+            "defense": 2,
+            "hp": 26,
+            "mp": 9
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "fortitude": 6,
+        "willpower": 5,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 5,
+            "damage": "2d+2",
+            "evasion": 4,
+            "defense": 3,
+            "hp": 30,
+            "mp": 10
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "fortitude": 7,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 6,
+            "damage": "2d+3",
+            "evasion": 5,
+            "defense": 4,
+            "hp": 34,
+            "mp": 11
+          }
+        ]
+      }
+    ],
+    "abilities": [],
+    "description": "Renowned version of the Horse: identical data except Movement Speed +5. Purchase only (5,000G + 30 reputation); cannot be rented. Can be promoted to an Exceptional Horse like its base horse, paying the gold fee plus the difference in reputation (p. 99)."
+  },
+  {
+    "name": "War Horse",
+    "source": {
+      "book": "CR3",
+      "page": 254
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 10000,
+      "rent": 1000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 4,
+    "levelMax": 7,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "25 (4 Legs)/-",
+      "ground": 25,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 4,
+        "fortitude": 7,
+        "willpower": 7,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 6,
+            "damage": "2d+4",
+            "evasion": 5,
+            "defense": 4,
+            "hp": 40,
+            "mp": 15
+          }
+        ]
+      },
+      {
+        "level": 5,
+        "fortitude": 8,
+        "willpower": 8,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 7,
+            "damage": "2d+6",
+            "evasion": 6,
+            "defense": 5,
+            "hp": 45,
+            "mp": 17
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "fortitude": 10,
+        "willpower": 9,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 8,
+            "damage": "2d+7",
+            "evasion": 7,
+            "defense": 6,
+            "hp": 50,
+            "mp": 19
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "fortitude": 11,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 9,
+            "damage": "2d+9",
+            "evasion": 8,
+            "defense": 7,
+            "hp": 55,
+            "mp": 21
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Techniques",
+        "tags": [
+          "minor",
+          "prep"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Has access to the Enhancer techniques [Bear Muscle] and [Beetleskin].",
+        "description": "As a Minor Action or in Combat Preparation the mount may activate the Enhancer techniques [Bear Muscle] and [Beetleskin]. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "A horse trained for battle. Also sold on the open market and rideable without the Rider class; an owned War Horse may be trained up into a Legendary Horse (15,000G + 40 reputation, p. 99)."
+  },
+  {
+    "name": "Exceptional Horse",
+    "source": {
+      "book": "CR3",
+      "page": 247
+    },
+    "monsterRef": null,
+    "renownedOf": "War Horse",
+    "classification": "animal",
+    "price": {
+      "buy": 10000,
+      "rent": null,
+      "regen": null,
+      "reputation": 60
+    },
+    "levelMin": 4,
+    "levelMax": 7,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "30 (4 Legs)/-",
+      "ground": 30,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 4,
+        "fortitude": 7,
+        "willpower": 7,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 6,
+            "damage": "2d+4",
+            "evasion": 5,
+            "defense": 4,
+            "hp": 40,
+            "mp": 15
+          }
+        ]
+      },
+      {
+        "level": 5,
+        "fortitude": 8,
+        "willpower": 8,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 7,
+            "damage": "2d+6",
+            "evasion": 6,
+            "defense": 5,
+            "hp": 45,
+            "mp": 17
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "fortitude": 10,
+        "willpower": 9,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 8,
+            "damage": "2d+7",
+            "evasion": 7,
+            "defense": 6,
+            "hp": 50,
+            "mp": 19
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "fortitude": 11,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 9,
+            "damage": "2d+9",
+            "evasion": 8,
+            "defense": 7,
+            "hp": 55,
+            "mp": 21
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Techniques",
+        "tags": [
+          "minor",
+          "prep"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Has access to the Enhancer techniques [Bear Muscle] and [Beetleskin].",
+        "description": "As a Minor Action or in Combat Preparation the mount may activate the Enhancer techniques [Bear Muscle] and [Beetleskin]. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "Renowned version of the War Horse: identical data except Movement Speed +5. Purchase only (10,000G + 60 reputation); cannot be rented. Can be promoted to a Daredevil Horse like its base horse, paying the gold fee plus the difference in reputation (p. 99)."
+  },
+  {
+    "name": "Legendary Horse",
+    "source": {
+      "book": "CR3",
+      "page": 254
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 20000,
+      "rent": 2000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 7,
+    "levelMax": 10,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "25 (4 Legs)/-",
+      "ground": 25,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 7,
+        "fortitude": 11,
+        "willpower": 11,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 10,
+            "damage": "2d+10",
+            "evasion": 9,
+            "defense": 8,
+            "hp": 62,
+            "mp": 25
+          }
+        ]
+      },
+      {
+        "level": 8,
+        "fortitude": 12,
+        "willpower": 12,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 11,
+            "damage": "2d+12",
+            "evasion": 10,
+            "defense": 9,
+            "hp": 68,
+            "mp": 28
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "fortitude": 13,
+        "willpower": 13,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 13,
+            "damage": "2d+13",
+            "evasion": 12,
+            "defense": 10,
+            "hp": 74,
+            "mp": 31
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "fortitude": 15,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 14,
+            "damage": "2d+15",
+            "evasion": 13,
+            "defense": 11,
+            "hp": 80,
+            "mp": 34
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Techniques",
+        "tags": [
+          "minor",
+          "prep"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Has access to the Enhancer techniques [Bear Muscle] and [Beetleskin].",
+        "description": "As a Minor Action or in Combat Preparation the mount may activate the Enhancer techniques [Bear Muscle] and [Beetleskin]. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Indomitable",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Perfect Release",
+        "enhance": null,
+        "summary": "Can keep fighting at 0 HP or less if it passes a Death Check; dies on a failure.",
+        "description": "Once the Legendary Horse's HP is 0 or lower it rolls a Death Check: success lets it stay on its feet and act as usual, failure kills it. Requires the jockey to know [Unique Skill Perfect Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "A superb steed ridden by generals and high nobility. An owned Legendary Horse may be trained up into a Divine Horse (40,000G + 50 reputation, p. 99)."
+  },
+  {
+    "name": "Daredevil Horse",
+    "source": {
+      "book": "CR3",
+      "page": 247
+    },
+    "monsterRef": null,
+    "renownedOf": "Legendary Horse",
+    "classification": "animal",
+    "price": {
+      "buy": 20000,
+      "rent": null,
+      "regen": null,
+      "reputation": 100
+    },
+    "levelMin": 7,
+    "levelMax": 10,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "30 (4 Legs)/-",
+      "ground": 30,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 7,
+        "fortitude": 11,
+        "willpower": 11,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 10,
+            "damage": "2d+10",
+            "evasion": 9,
+            "defense": 8,
+            "hp": 62,
+            "mp": 25
+          }
+        ]
+      },
+      {
+        "level": 8,
+        "fortitude": 12,
+        "willpower": 12,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 11,
+            "damage": "2d+12",
+            "evasion": 10,
+            "defense": 9,
+            "hp": 68,
+            "mp": 28
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "fortitude": 13,
+        "willpower": 13,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 13,
+            "damage": "2d+13",
+            "evasion": 12,
+            "defense": 10,
+            "hp": 74,
+            "mp": 31
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "fortitude": 15,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 14,
+            "damage": "2d+15",
+            "evasion": 13,
+            "defense": 11,
+            "hp": 80,
+            "mp": 34
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Techniques",
+        "tags": [
+          "minor",
+          "prep"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Has access to the Enhancer techniques [Bear Muscle] and [Beetleskin].",
+        "description": "As a Minor Action or in Combat Preparation the mount may activate the Enhancer techniques [Bear Muscle] and [Beetleskin]. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Indomitable",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Perfect Release",
+        "enhance": null,
+        "summary": "Can keep fighting at 0 HP or less if it passes a Death Check; dies on a failure.",
+        "description": "Once the Legendary Horse's HP is 0 or lower it rolls a Death Check: success lets it stay on its feet and act as usual, failure kills it. Requires the jockey to know [Unique Skill Perfect Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "Renowned version of the Legendary Horse: identical data except Movement Speed +5. Purchase only (20,000G + 100 reputation); cannot be rented. Can be promoted to a King of Horses like its base horse, paying the gold fee plus the difference in reputation (p. 99)."
+  },
+  {
+    "name": "Divine Horse",
+    "source": {
+      "book": "CR3",
+      "page": 255
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 50000,
+      "rent": 5000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 10,
+    "levelMax": 13,
+    "intelligence": "Low",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "30 (4 Legs)/-",
+      "ground": 30,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 10,
+        "fortitude": 15,
+        "willpower": 15,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 14,
+            "damage": "2d+16",
+            "evasion": 13,
+            "defense": 12,
+            "hp": 88,
+            "mp": 40
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "fortitude": 16,
+        "willpower": 16,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 15,
+            "damage": "2d+17",
+            "evasion": 14,
+            "defense": 14,
+            "hp": 95,
+            "mp": 44
+          }
+        ]
+      },
+      {
+        "level": 12,
+        "fortitude": 17,
+        "willpower": 17,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 16,
+            "damage": "2d+19",
+            "evasion": 15,
+            "defense": 15,
+            "hp": 102,
+            "mp": 48
+          }
+        ]
+      },
+      {
+        "level": 13,
+        "fortitude": 18,
+        "willpower": 18,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 17,
+            "damage": "2d+21",
+            "evasion": 16,
+            "defense": 16,
+            "hp": 109,
+            "mp": 52
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Techniques",
+        "tags": [
+          "minor",
+          "prep"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Has access to the Enhancer techniques [Bear Muscle], [Beetleskin], [Recovery (5 HP)] and [Strong Blood].",
+        "description": "As a Minor Action or in Combat Preparation the mount may activate the Enhancer techniques [Bear Muscle], [Beetleskin], [Recovery (5 HP)] and [Strong Blood]. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Indomitable",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Perfect Release",
+        "enhance": null,
+        "summary": "Can keep fighting at 0 HP or less if it passes a Death Check; dies on a failure.",
+        "description": "Once the Divine Horse's HP is 0 or lower it rolls a Death Check: success lets it stay on its feet and act as usual, failure kills it. Requires the jockey to know [Unique Skill Perfect Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "The finest of horses, said to be consecrated to the gods."
+  },
+  {
+    "name": "King of Horses",
+    "source": {
+      "book": "CR3",
+      "page": 247
+    },
+    "monsterRef": null,
+    "renownedOf": "Divine Horse",
+    "classification": "animal",
+    "price": {
+      "buy": 50000,
+      "rent": null,
+      "regen": null,
+      "reputation": 150
+    },
+    "levelMin": 10,
+    "levelMax": 13,
+    "intelligence": "Low",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "35 (4 Legs)/-",
+      "ground": 35,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 10,
+        "fortitude": 15,
+        "willpower": 15,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 14,
+            "damage": "2d+16",
+            "evasion": 13,
+            "defense": 12,
+            "hp": 88,
+            "mp": 40
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "fortitude": 16,
+        "willpower": 16,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 15,
+            "damage": "2d+17",
+            "evasion": 14,
+            "defense": 14,
+            "hp": 95,
+            "mp": 44
+          }
+        ]
+      },
+      {
+        "level": 12,
+        "fortitude": 17,
+        "willpower": 17,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 16,
+            "damage": "2d+19",
+            "evasion": 15,
+            "defense": 15,
+            "hp": 102,
+            "mp": 48
+          }
+        ]
+      },
+      {
+        "level": 13,
+        "fortitude": 18,
+        "willpower": 18,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 17,
+            "damage": "2d+21",
+            "evasion": 16,
+            "defense": 16,
+            "hp": 109,
+            "mp": 52
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Techniques",
+        "tags": [
+          "minor",
+          "prep"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Has access to the Enhancer techniques [Bear Muscle], [Beetleskin], [Recovery (5 HP)] and [Strong Blood].",
+        "description": "As a Minor Action or in Combat Preparation the mount may activate the Enhancer techniques [Bear Muscle], [Beetleskin], [Recovery (5 HP)] and [Strong Blood]. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Indomitable",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Perfect Release",
+        "enhance": null,
+        "summary": "Can keep fighting at 0 HP or less if it passes a Death Check; dies on a failure.",
+        "description": "Once the Divine Horse's HP is 0 or lower it rolls a Death Check: success lets it stay on its feet and act as usual, failure kills it. Requires the jockey to know [Unique Skill Perfect Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "Renowned version of the Divine Horse: identical data except Movement Speed +5. Purchase only (50,000G + 150 reputation); cannot be rented."
+  },
+  {
+    "name": "Dowles",
+    "source": {
+      "book": "CR3",
+      "page": 255
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 4500,
+      "rent": 300,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 2,
+    "levelMax": 4,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "20/-",
+      "ground": 20,
+      "groundMode": null,
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 2,
+        "fortitude": 4,
+        "willpower": 2,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 4,
+            "damage": "2d+3",
+            "evasion": 2,
+            "defense": 4,
+            "hp": 20,
+            "mp": 5
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "fortitude": 5,
+        "willpower": 4,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 5,
+            "damage": "2d+4",
+            "evasion": 3,
+            "defense": 5,
+            "hp": 24,
+            "mp": 6
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "fortitude": 6,
+        "willpower": 5,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 6,
+            "damage": "2d+5",
+            "evasion": 4,
+            "defense": 6,
+            "hp": 28,
+            "mp": 7
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tail Sweep",
+        "tags": [
+          "declared"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Declared: one Tail attack hits up to 5 characters in the same skirmish; not on consecutive turns.",
+        "description": "Declared with a Tail attack: the attack may target up to 5 characters in its skirmish. It cannot be declared again on the following turn.",
+        "modifiers": []
+      }
+    ],
+    "description": "A placid, herbivorous two-legged reptile over 2 m tall that roams the plains in herds; Guild training makes it as nimble as a small horse."
+  },
+  {
+    "name": "Dondowles",
+    "source": {
+      "book": "CR3",
+      "page": 256
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 9000,
+      "rent": 900,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 5,
+    "levelMax": 7,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "20/-",
+      "ground": 20,
+      "groundMode": null,
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 5,
+        "fortitude": 8,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 8,
+            "damage": "2d+8",
+            "evasion": 5,
+            "defense": 8,
+            "hp": 39,
+            "mp": 10
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "fortitude": 9,
+        "willpower": 8,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 9,
+            "damage": "2d+9",
+            "evasion": 6,
+            "defense": 9,
+            "hp": 45,
+            "mp": 12
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "fortitude": 10,
+        "willpower": 9,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 10,
+            "damage": "2d+10",
+            "evasion": 7,
+            "defense": 10,
+            "hp": 51,
+            "mp": 14
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tail Sweep",
+        "tags": [
+          "declared"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Declared: one Tail attack hits up to 5 characters in the same skirmish; not on consecutive turns.",
+        "description": "Declared with a Tail attack: the attack may target up to 5 characters in its skirmish. It cannot be declared again on the following turn.",
+        "modifiers": []
+      },
+      {
+        "name": "Wind Breath",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "fortitude",
+          "result": "half",
+          "base": "riderInt"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "wind"
+          ],
+          "power": 10,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(20m)/Shot",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 20,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 Character",
+          "kind": "character",
+          "areaCount": null,
+          "radius": null,
+          "count": null
+        },
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Wind blast at 1 character within 20m: Power 10 + Rider level + Int mod wind magic damage; the mount pays 5 MP.",
+        "description": "Major Action: fires a ball of wind at Range/Area 2(20m)/Shot, Target 1 Character; the attack does wind magic damage of Power 10 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Fortitude against the jockey's Rider level plus Intelligence modifier to take half. Costs the mount 5 MP. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "A Dowles whose mighty lungs have been trained to blast air at enemies."
+  },
+  {
+    "name": "Mordondowles",
+    "source": {
+      "book": "CR3",
+      "page": 256
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 30000,
+      "rent": 3000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 10,
+    "levelMax": 12,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "20/-",
+      "ground": 20,
+      "groundMode": null,
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 10,
+        "fortitude": 14,
+        "willpower": 12,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 14,
+            "damage": "2d+15",
+            "evasion": 12,
+            "defense": 13,
+            "hp": 84,
+            "mp": 15
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "fortitude": 15,
+        "willpower": 13,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 15,
+            "damage": "2d+17",
+            "evasion": 13,
+            "defense": 14,
+            "hp": 91,
+            "mp": 18
+          }
+        ]
+      },
+      {
+        "level": 12,
+        "fortitude": 16,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Tail",
+            "accuracy": 16,
+            "damage": "2d+19",
+            "evasion": 14,
+            "defense": 15,
+            "hp": 98,
+            "mp": 21
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tail Sweep",
+        "tags": [
+          "declared"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Declared: one Tail attack hits up to 5 characters in the same skirmish; not on consecutive turns.",
+        "description": "Declared with a Tail attack: the attack may target up to 5 characters in its skirmish. It cannot be declared again on the following turn.",
+        "modifiers": []
+      },
+      {
+        "name": "Wind Breath",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "fortitude",
+          "result": "half",
+          "base": "riderInt"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "wind"
+          ],
+          "power": 10,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(20m)/Shot",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 20,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 Character",
+          "kind": "character",
+          "areaCount": null,
+          "radius": null,
+          "count": null
+        },
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Wind blast at 1 character within 20m: Power 10 + Rider level + Int mod wind magic damage; the mount pays 5 MP.",
+        "description": "Major Action: fires a ball of wind at Range/Area 2(20m)/Shot, Target 1 Character; the attack does wind magic damage of Power 10 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Fortitude against the jockey's Rider level plus Intelligence modifier to take half. Costs the mount 5 MP. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Gale Breath",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "fortitude",
+          "result": "half",
+          "base": "riderInt"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "wind"
+          ],
+          "power": 10,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(20m)/Shot",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 20,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (3m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 3,
+          "count": 5
+        },
+        "prerequisite": "Unique Skill Perfect Release",
+        "enhance": null,
+        "summary": "Wind blast on an area (3m radius, up to 5 targets) within 20m: Power 10 + Rider level + Int mod wind magic damage; the mount pays 7 MP.",
+        "description": "Major Action: fires a mass of wind at Range/Area 2(20m)/Shot, Target 1 area (3m Radius)/5; the attack does wind magic damage of Power 10 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Fortitude against the jockey's Rider level plus Intelligence modifier to take half. Costs the mount 7 MP. Requires the jockey to know [Unique Skill Perfect Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "A rare Dondowles bred over many generations to about 3 m tall, unknown in the wild; a mount fit for top-ranked adventurers."
+  },
+  {
+    "name": "Dolphin",
+    "source": {
+      "book": "CR3",
+      "page": 257
+    },
+    "monsterRef": {
+      "book": "CR3",
+      "page": 343
+    },
+    "renownedOf": null,
+    "classification": "animal",
+    "price": {
+      "buy": 6000,
+      "rent": 600,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 2,
+    "levelMax": 5,
+    "intelligence": "Animal",
+    "perception": "Five Senses",
+    "languages": [
+      "Sea Animal"
+    ],
+    "weakPoint": {
+      "text": "Fire Damage +3 pts.",
+      "kind": "damage",
+      "damageType": "fire",
+      "value": 3
+    },
+    "movement": {
+      "text": "-/25 (Swimming)",
+      "ground": null,
+      "groundMode": null,
+      "air": 25,
+      "airMode": "Swimming"
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 2,
+        "fortitude": 4,
+        "willpower": 4,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 4,
+            "damage": "2d+2",
+            "evasion": 3,
+            "defense": 3,
+            "hp": 23,
+            "mp": 9
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "fortitude": 5,
+        "willpower": 5,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 5,
+            "damage": "2d+3",
+            "evasion": 4,
+            "defense": 3,
+            "hp": 30,
+            "mp": 11
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 6,
+            "damage": "2d+4",
+            "evasion": 5,
+            "defense": 4,
+            "hp": 37,
+            "mp": 13
+          }
+        ]
+      },
+      {
+        "level": 5,
+        "fortitude": 7,
+        "willpower": 7,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 7,
+            "damage": "2d+5",
+            "evasion": 6,
+            "defense": 5,
+            "hp": 44,
+            "mp": 15
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Underwater",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Moves and acts only in water, with no penalties there; its jockey ignores water penalties to action checks.",
+        "description": "The Dolphin can neither move nor act out of the water, but in water it suffers no restrictions or penalties. Its jockey may ride at the surface or submerged and in both cases takes no action-check penalties for being in water; normally the jockey still cannot breathe or speak while under water.",
+        "modifiers": []
+      }
+    ],
+    "description": "An aquatic mount that lets its jockey travel freely on and under the water; some coastal Rider's Guild branches rent it."
+  },
+  {
+    "name": "Pegasus",
+    "source": {
+      "book": "CR3",
+      "page": 257
+    },
+    "monsterRef": {
+      "book": "CR3",
+      "page": 392
+    },
+    "renownedOf": null,
+    "classification": "mythicalBeast",
+    "price": {
+      "buy": 20000,
+      "rent": 2000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 5,
+    "levelMax": 7,
+    "intelligence": "Average",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Accuracy +1",
+      "kind": "accuracy",
+      "damageType": null,
+      "value": 1
+    },
+    "movement": {
+      "text": "20 (4 Legs)/40 (Flying)",
+      "ground": 20,
+      "groundMode": "4 Legs",
+      "air": 40,
+      "airMode": "Flying"
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 5,
+        "fortitude": 7,
+        "willpower": 7,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 7,
+            "damage": "2d+5",
+            "evasion": 6,
+            "defense": 3,
+            "hp": 41,
+            "mp": 23
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "fortitude": 8,
+        "willpower": 8,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 8,
+            "damage": "2d+6",
+            "evasion": 7,
+            "defense": 5,
+            "hp": 46,
+            "mp": 26
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "fortitude": 9,
+        "willpower": 9,
+        "sections": [
+          {
+            "style": "Hoof",
+            "accuracy": 9,
+            "damage": "2d+8",
+            "evasion": 8,
+            "defense": 6,
+            "hp": 51,
+            "mp": 29
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Flight",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Mount and jockey both get +1 to melee Accuracy and +1 to Evasion against melee attacks.",
+        "description": "Being airborne gives both the mount and the jockey riding it +1 on Accuracy checks for melee attacks and +1 on Evasion checks against melee attacks (the modifiers cover the mount; apply the jockey's bonus on the jockey).",
+        "modifiers": [
+          {
+            "key": "accuracyMelee",
+            "value": 1
+          },
+          {
+            "key": "evasion",
+            "value": 1,
+            "condition": "vs melee attacks"
+          }
+        ]
+      },
+      {
+        "name": "Poison/Disease Immunity",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Poison- and disease-type effects and damage can always be treated as Resistance: Optional.",
+        "description": "Any effect or damage of the poison or disease type that would affect the mount may be treated as Resistance: Optional, i.e. it can always choose not to be affected.",
+        "modifiers": []
+      },
+      {
+        "name": "Mounted = 1 Character",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Carries 1 extra character besides the jockey under the Mounted rules (p. 91).",
+        "description": "Besides the jockey, 1 other character may ride along as Mounted characters (p. 91): no passenger penalties, they move with the mount but otherwise act on their own turn (actions allowed with a Limited Move); getting on is a Major Action, getting off a Minor Action. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "A white winged horse; a weak fighter, but it flies and can carry a second rider."
+  },
+  {
+    "name": "Emerald Raccoon",
+    "source": {
+      "book": "CR3",
+      "page": 258
+    },
+    "monsterRef": {
+      "book": "CR3",
+      "page": 392
+    },
+    "renownedOf": null,
+    "classification": "mythicalBeast",
+    "price": {
+      "buy": 25000,
+      "rent": 2500,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 6,
+    "levelMax": 8,
+    "intelligence": "Average",
+    "perception": "Five Senses (Darkvision)",
+    "languages": [
+      "Lycant",
+      "Sylvan"
+    ],
+    "weakPoint": {
+      "text": "Earth Damage +3 pts.",
+      "kind": "damage",
+      "damageType": "earth",
+      "value": 3
+    },
+    "movement": {
+      "text": "16 (4 Legs)/-",
+      "ground": 16,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 6,
+        "fortitude": 8,
+        "willpower": 9,
+        "sections": [
+          {
+            "style": "Arm",
+            "accuracy": 8,
+            "damage": "2d+8",
+            "evasion": 8,
+            "defense": 6,
+            "hp": 52,
+            "mp": 48
+          }
+        ]
+      },
+      {
+        "level": 7,
+        "fortitude": 9,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Arm",
+            "accuracy": 9,
+            "damage": "2d+9",
+            "evasion": 9,
+            "defense": 7,
+            "hp": 57,
+            "mp": 51
+          }
+        ]
+      },
+      {
+        "level": 8,
+        "fortitude": 10,
+        "willpower": 11,
+        "sections": [
+          {
+            "style": "Arm",
+            "accuracy": 11,
+            "damage": "2d+10",
+            "evasion": 10,
+            "defense": 8,
+            "hp": 62,
+            "mp": 54
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Fairy Magic",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": {
+          "system": "fairy",
+          "level": 6,
+          "power": 9,
+          "deity": null
+        },
+        "fairyTypes": [
+          "earth",
+          "water",
+          "wind",
+          "light"
+        ],
+        "rangeArea": null,
+        "prerequisite": "Magic Command",
+        "enhance": null,
+        "summary": "Casts Fairy Magic up to level 6 (earth, light, water/ice, wind); Magic Power 9.",
+        "description": "Can cast Fairy Magic spells of level 6 or lower belonging to the earth, light, water/ice or wind type, with Magic Power 9, when ordered to through [Magic Command]. Requires the jockey to know [Magic Command]. (The book prints a passive icon for this ability.)",
+        "modifiers": []
+      },
+      {
+        "name": "Magic Aptitude",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Knows the combat feats [Targeting] and [Metamagic/Targets].",
+        "description": "The combat feats [Targeting] and [Metamagic/Targets] are available to it. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      }
+    ],
+    "description": "A green-furred Mythical Beast resembling a raccoon dog that has befriended humanoids; a poor attacker but a strong Fairy Magic caster."
+  },
+  {
+    "name": "Tilgris",
+    "source": {
+      "book": "CR3",
+      "page": 258
+    },
+    "monsterRef": {
+      "book": "CR3",
+      "page": 394
+    },
+    "renownedOf": null,
+    "classification": "mythicalBeast",
+    "price": {
+      "buy": 60000,
+      "rent": 6000,
+      "regen": 3000,
+      "reputation": null
+    },
+    "levelMin": 8,
+    "levelMax": 10,
+    "intelligence": "Average",
+    "perception": "Five Senses",
+    "languages": [],
+    "weakPoint": {
+      "text": "Slashing Damage +3 pts.",
+      "kind": "damage",
+      "damageType": "slashing",
+      "value": 3
+    },
+    "movement": {
+      "text": "30 (4 Legs)/-",
+      "ground": 30,
+      "groundMode": "4 Legs",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": "Front",
+        "main": true,
+        "count": 1
+      },
+      {
+        "name": "Back",
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": "Front",
+    "levels": [
+      {
+        "level": 8,
+        "fortitude": 11,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Claws",
+            "accuracy": 11,
+            "damage": "2d+8",
+            "evasion": 11,
+            "defense": 8,
+            "hp": 69,
+            "mp": 24
+          },
+          {
+            "style": "Tail",
+            "accuracy": 10,
+            "damage": "2d+10",
+            "evasion": 10,
+            "defense": 8,
+            "hp": 77,
+            "mp": 12
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "fortitude": 12,
+        "willpower": 11,
+        "sections": [
+          {
+            "style": "Claws",
+            "accuracy": 12,
+            "damage": "2d+9",
+            "evasion": 12,
+            "defense": 9,
+            "hp": 76,
+            "mp": 28
+          },
+          {
+            "style": "Tail",
+            "accuracy": 11,
+            "damage": "2d+12",
+            "evasion": 11,
+            "defense": 9,
+            "hp": 84,
+            "mp": 14
+          }
+        ]
+      },
+      {
+        "level": 10,
+        "fortitude": 13,
+        "willpower": 12,
+        "sections": [
+          {
+            "style": "Claws",
+            "accuracy": 13,
+            "damage": "2d+11",
+            "evasion": 13,
+            "defense": 10,
+            "hp": 83,
+            "mp": 32
+          },
+          {
+            "style": "Tail",
+            "accuracy": 12,
+            "damage": "2d+14",
+            "evasion": 12,
+            "defense": 10,
+            "hp": 93,
+            "mp": 16
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Double Attack",
+        "tags": [
+          "passive"
+        ],
+        "section": "Front",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Two Claws attacks per Major Action.",
+        "description": "The Front section makes 2 Claws attacks with one Major Action. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Lightning Breath",
+        "tags": [
+          "major"
+        ],
+        "section": "Front",
+        "check": {
+          "value": null,
+          "vs": "fortitude",
+          "result": "half",
+          "base": "riderInt"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "lightning",
+            "water"
+          ],
+          "power": 20,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(20m)/Shot",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 20,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (3m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 3,
+          "count": 5
+        },
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Lightning on an area (3m radius, up to 5 targets) within 20m: Power 20 + Rider level + Int mod lightning and water/ice magic damage; not on consecutive turns.",
+        "description": "Major Action: spits lightning at Range/Area 2(20m)/Shot, Target 1 area (3m Radius)/5; the attack does lightning and water/ice magic damage of Power 20 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Fortitude against the jockey's Rider level plus Intelligence modifier to take half. Not usable two turns in a row.",
+        "modifiers": []
+      },
+      {
+        "name": "Long Tail",
+        "tags": [
+          "passive"
+        ],
+        "section": "Back",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "1(10m)/Target",
+          "range": "ranged",
+          "areas": 1,
+          "meters": 10,
+          "area": "target",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Tail attacks reach up to 10m.",
+        "description": "The Back section's Tail attacks are made at Range/Area 1(10m)/Target instead of only in melee reach.",
+        "modifiers": []
+      },
+      {
+        "name": "Painful Strike",
+        "tags": [
+          "passive"
+        ],
+        "section": "Back",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "+7 damage when the damage roll's 2d show 10 or more.",
+        "description": "If the 2d of its damage roll total 10 or higher, the attack deals 7 extra damage.",
+        "modifiers": [
+          {
+            "key": "damage",
+            "value": 7,
+            "condition": "Back (Tail) attacks when the 2d of the damage roll show 10 or more"
+          }
+        ]
+      }
+    ],
+    "description": "A huge tiger-like Mythical Beast of deep forests and mountains, territorial and reclusive, yet a fine mount for a rider it has bonded with."
+  },
+  {
+    "name": "Draconet",
+    "source": {
+      "book": "CR3",
+      "page": 259
+    },
+    "monsterRef": {
+      "book": "CR3",
+      "page": 396
+    },
+    "renownedOf": null,
+    "classification": "mythicalBeast",
+    "price": {
+      "buy": 120000,
+      "rent": 12000,
+      "regen": 4000,
+      "reputation": null
+    },
+    "levelMin": 10,
+    "levelMax": 12,
+    "intelligence": "Average",
+    "perception": "Five Senses (Darkvision)",
+    "languages": [
+      "Dragonic"
+    ],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "13/25 (Flying)",
+      "ground": 13,
+      "groundMode": null,
+      "air": 25,
+      "airMode": "Flying"
+    },
+    "sections": [
+      {
+        "name": "Body",
+        "main": true,
+        "count": 1
+      },
+      {
+        "name": "Wing",
+        "main": false,
+        "count": 2
+      }
+    ],
+    "mainSection": "Body",
+    "levels": [
+      {
+        "level": 10,
+        "fortitude": 13,
+        "willpower": 12,
+        "sections": [
+          {
+            "style": "Bite",
+            "accuracy": 13,
+            "damage": "2d+14",
+            "evasion": 12,
+            "defense": 12,
+            "hp": 105,
+            "mp": 32
+          },
+          {
+            "style": "Wing",
+            "accuracy": 12,
+            "damage": "2d+9",
+            "evasion": 10,
+            "defense": 10,
+            "hp": 66,
+            "mp": 16
+          }
+        ]
+      },
+      {
+        "level": 11,
+        "fortitude": 14,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Bite",
+            "accuracy": 14,
+            "damage": "2d+15",
+            "evasion": 13,
+            "defense": 13,
+            "hp": 113,
+            "mp": 36
+          },
+          {
+            "style": "Wing",
+            "accuracy": 13,
+            "damage": "2d+11",
+            "evasion": 11,
+            "defense": 11,
+            "hp": 71,
+            "mp": 18
+          }
+        ]
+      },
+      {
+        "level": 12,
+        "fortitude": 15,
+        "willpower": 15,
+        "sections": [
+          {
+            "style": "Bite",
+            "accuracy": 15,
+            "damage": "2d+17",
+            "evasion": 14,
+            "defense": 14,
+            "hp": 121,
+            "mp": 40
+          },
+          {
+            "style": "Wing",
+            "accuracy": 14,
+            "damage": "2d+12",
+            "evasion": 12,
+            "defense": 12,
+            "hp": 76,
+            "mp": 20
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "**Immunity",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Immune to one element (earth, energy, fire, lightning, water/ice or wind) picked when rented or bought.",
+        "description": "When the mount is rented or bought, pick earth, energy, fire, lightning, water/ice or wind. The Draconet ignores all effects and damage of that type. The same choice sets the type of its [**Breath].",
+        "modifiers": []
+      },
+      {
+        "name": "**Breath",
+        "tags": [
+          "major"
+        ],
+        "section": "Body",
+        "check": {
+          "value": null,
+          "vs": "fortitude",
+          "result": "half",
+          "base": "riderInt"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [],
+          "power": 20,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(20m)/Shot",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 20,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (3m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 3,
+          "count": 5
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Perfect Release",
+        "summary": "Breath of the chosen element on an area (3m radius, up to 5 targets) within 20m: Power 20 + Rider level + Int mod magic damage; not on consecutive turns.",
+        "description": "Major Action: breathes at Range/Area 2(20m)/Shot, Target 1 area (3m Radius)/5; the attack does [**Immunity]-type magic damage of Power 20 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Fortitude against the jockey's Rider level plus Intelligence modifier to take half. Not usable two turns in a row. Enhance: if the jockey knows [Unique Skill Perfect Release], the breath may instead target 1 Character. Without [Targeting], a single-target breath can go astray.",
+        "modifiers": []
+      },
+      {
+        "name": "Flight",
+        "tags": [
+          "passive"
+        ],
+        "section": "Wing",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Mount and jockey both get +1 to melee Accuracy and +1 to Evasion against melee attacks.",
+        "description": "Being airborne gives both the mount and the jockey riding it +1 on Accuracy checks for melee attacks and +1 on Evasion checks against melee attacks (the modifiers cover the mount; apply the jockey's bonus on the jockey). Unavailable while either Wing is at 0 HP or less.",
+        "modifiers": [
+          {
+            "key": "accuracyMelee",
+            "value": 1
+          },
+          {
+            "key": "evasion",
+            "value": 1,
+            "condition": "vs melee attacks"
+          }
+        ]
+      },
+      {
+        "name": "All-Out Attack",
+        "tags": [
+          "declared"
+        ],
+        "section": "Wing",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "risk": {
+          "text": "Evasion checks -3 for a Wing that used it this turn",
+          "modifiers": [
+            {
+              "key": "evasion",
+              "value": -3
+            }
+          ]
+        },
+        "summary": "Declared: the Wing's next attack deals +8 damage; that Wing has Evasion -3 this turn.",
+        "description": "A Wing may declare it to add 8 damage to its next attack; every Wing that declared it this turn suffers -3 on its Evasion checks. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": [
+          {
+            "key": "damage",
+            "value": 8,
+            "scope": "use"
+          }
+        ]
+      }
+    ],
+    "description": "A very young and hot-tempered dragon that only expert jockeys can ride; few Guild branches keep one. It can talk with a jockey who shares its language."
+  },
+  {
+    "name": "Lesser Dragon",
+    "source": {
+      "book": "CR3",
+      "page": 260
+    },
+    "monsterRef": {
+      "book": "CR2",
+      "page": 396
+    },
+    "renownedOf": null,
+    "classification": "mythicalBeast",
+    "price": {
+      "buy": 360000,
+      "rent": 36000,
+      "regen": 9000,
+      "reputation": null
+    },
+    "levelMin": 13,
+    "levelMax": 15,
+    "intelligence": "High",
+    "perception": "Five Senses (Darkvision)",
+    "languages": [
+      "Trade Common",
+      "Arcana",
+      "Dragonic"
+    ],
+    "weakPoint": {
+      "text": "Physical Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "physical",
+      "value": 2
+    },
+    "movement": {
+      "text": "15/30 (Flying)",
+      "ground": 15,
+      "groundMode": null,
+      "air": 30,
+      "airMode": "Flying"
+    },
+    "sections": [
+      {
+        "name": "Head",
+        "main": true,
+        "count": 1
+      },
+      {
+        "name": "Body",
+        "main": false,
+        "count": 1
+      },
+      {
+        "name": "Wings",
+        "main": false,
+        "count": 2
+      }
+    ],
+    "mainSection": "Head",
+    "levels": [
+      {
+        "level": 13,
+        "fortitude": 17,
+        "willpower": 17,
+        "sections": [
+          {
+            "style": "Bite",
+            "accuracy": 17,
+            "damage": "2d+18",
+            "evasion": 15,
+            "defense": 14,
+            "hp": 119,
+            "mp": 84
+          },
+          {
+            "style": "Tail",
+            "accuracy": 16,
+            "damage": "2d+16",
+            "evasion": 13,
+            "defense": 16,
+            "hp": 133,
+            "mp": 30
+          },
+          {
+            "style": "Wing",
+            "accuracy": 15,
+            "damage": "2d+14",
+            "evasion": 13,
+            "defense": 13,
+            "hp": 84,
+            "mp": 28
+          }
+        ]
+      },
+      {
+        "level": 14,
+        "fortitude": 18,
+        "willpower": 18,
+        "sections": [
+          {
+            "style": "Bite",
+            "accuracy": 18,
+            "damage": "2d+20",
+            "evasion": 16,
+            "defense": 15,
+            "hp": 128,
+            "mp": 90
+          },
+          {
+            "style": "Tail",
+            "accuracy": 17,
+            "damage": "2d+17",
+            "evasion": 14,
+            "defense": 18,
+            "hp": 142,
+            "mp": 36
+          },
+          {
+            "style": "Wing",
+            "accuracy": 17,
+            "damage": "2d+16",
+            "evasion": 14,
+            "defense": 14,
+            "hp": 90,
+            "mp": 32
+          }
+        ]
+      },
+      {
+        "level": 15,
+        "fortitude": 19,
+        "willpower": 19,
+        "sections": [
+          {
+            "style": "Bite",
+            "accuracy": 19,
+            "damage": "2d+22",
+            "evasion": 17,
+            "defense": 16,
+            "hp": 137,
+            "mp": 96
+          },
+          {
+            "style": "Tail",
+            "accuracy": 18,
+            "damage": "2d+18",
+            "evasion": 15,
+            "defense": 20,
+            "hp": 151,
+            "mp": 42
+          },
+          {
+            "style": "Wing",
+            "accuracy": 18,
+            "damage": "2d+18",
+            "evasion": 15,
+            "defense": 15,
+            "hp": 96,
+            "mp": 36
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "**Immunity",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Immune to one element (earth, energy, fire, lightning, water/ice or wind) picked when rented or bought.",
+        "description": "When the mount is rented or bought, pick earth, energy, fire, lightning, water/ice or wind. The Lesser Dragon ignores all effects and damage of that type. The same choice sets the type of its [**Breath].",
+        "modifiers": []
+      },
+      {
+        "name": "Techniques",
+        "tags": [
+          "minor",
+          "prep"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Has access to the Enhancer techniques [Beetleskin], [Recovery (7 HP)] and [Strong Blood].",
+        "description": "As a Minor Action or in Combat Preparation the mount may activate the Enhancer techniques [Beetleskin], [Recovery (7 HP)] and [Strong Blood].",
+        "modifiers": []
+      },
+      {
+        "name": "Truespeech Magic",
+        "tags": [
+          "major"
+        ],
+        "section": "Head",
+        "check": null,
+        "damage": null,
+        "spellcasting": {
+          "system": "truespeech",
+          "level": 10,
+          "power": 14,
+          "deity": null
+        },
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Magic Command",
+        "enhance": null,
+        "summary": "Casts Truespeech Magic up to level 10; Magic Power 14.",
+        "description": "Can cast Truespeech Magic spells of level 10 or lower with Magic Power 14 when ordered to through [Magic Command]. Requires the jockey to know [Magic Command]. (Printed on one line with Spiritualism Magic at the same level and Magic Power.)",
+        "modifiers": []
+      },
+      {
+        "name": "Spiritualism Magic",
+        "tags": [
+          "major"
+        ],
+        "section": "Head",
+        "check": null,
+        "damage": null,
+        "spellcasting": {
+          "system": "spiritualism",
+          "level": 10,
+          "power": 14,
+          "deity": null
+        },
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Magic Command",
+        "enhance": null,
+        "summary": "Casts Spiritualism Magic up to level 10; Magic Power 14.",
+        "description": "Can cast Spiritualism Magic spells of level 10 or lower with Magic Power 14 when ordered to through [Magic Command]. Requires the jockey to know [Magic Command]. (Printed on one line with Truespeech Magic at the same level and Magic Power.)",
+        "modifiers": []
+      },
+      {
+        "name": "Magic Aptitude",
+        "tags": [
+          "passive",
+          "declared",
+          "major"
+        ],
+        "section": "Head",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Perfect Release",
+        "enhance": null,
+        "summary": "Knows [Magic Control], [Magic Convergence], [Targeting], [Universal Metamagic] and [Wordbreak].",
+        "description": "It may use the combat feats [Magic Control], [Magic Convergence], [Targeting], [Universal Metamagic] and [Wordbreak]. Requires the jockey to know [Unique Skill Perfect Release].",
+        "modifiers": []
+      },
+      {
+        "name": "**Breath",
+        "tags": [
+          "major"
+        ],
+        "section": "Head",
+        "check": {
+          "value": null,
+          "vs": "fortitude",
+          "result": "half",
+          "base": "riderInt"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [],
+          "power": 30,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(20m)/Shot",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 20,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (6m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 6,
+          "count": 5
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Perfect Release",
+        "summary": "Breath of the chosen element on an area (6m radius, up to 5 targets) within 20m: Power 30 + Rider level + Int mod magic damage; not on consecutive turns.",
+        "description": "Major Action: breathes at Range/Area 2(20m)/Shot, Target 1 area (6m Radius)/5; the attack does [**Immunity]-type magic damage of Power 30 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Fortitude against the jockey's Rider level plus Intelligence modifier to take half. Not usable two turns in a row. Enhance: if the jockey knows [Unique Skill Perfect Release], the breath may instead target 1 Character.",
+        "modifiers": []
+      },
+      {
+        "name": "Mounted = 2 Character",
+        "tags": [
+          "passive"
+        ],
+        "section": "Body",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "Carries 2 extra characters besides the jockey under the Mounted rules (p. 91).",
+        "description": "Besides the jockey, 2 other characters may ride along as Mounted characters (p. 91): no passenger penalties, they move with the mount but otherwise act on their own turn (actions allowed with a Limited Move); getting on is a Major Action, getting off a Minor Action. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Tail Sweep",
+        "tags": [
+          "declared"
+        ],
+        "section": "Body",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Declared: one Tail attack hits up to 5 characters in the same skirmish; not on consecutive turns.",
+        "description": "Declared with a Tail attack: the attack may target up to 5 characters in its skirmish. It cannot be declared again on the following turn.",
+        "modifiers": []
+      },
+      {
+        "name": "Attack Obstacle = Impossible • None",
+        "tags": [
+          "passive"
+        ],
+        "section": "Body",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "The Head cannot be attacked in melee while the Body is up.",
+        "description": "The Body shields the Head: melee attacks cannot target the Head section (no effect on ranged attacks). The protection ends once the Body is at 0 HP or less.",
+        "modifiers": []
+      },
+      {
+        "name": "Flight",
+        "tags": [
+          "passive"
+        ],
+        "section": "Wings",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Mount and jockey both get +1 to melee Accuracy and +1 to Evasion against melee attacks.",
+        "description": "Being airborne gives both the mount and the jockey riding it +1 on Accuracy checks for melee attacks and +1 on Evasion checks against melee attacks (the modifiers cover the mount; apply the jockey's bonus on the jockey). Unavailable while either Wing is at 0 HP or less.",
+        "modifiers": [
+          {
+            "key": "accuracyMelee",
+            "value": 1
+          },
+          {
+            "key": "evasion",
+            "value": 1,
+            "condition": "vs melee attacks"
+          }
+        ]
+      },
+      {
+        "name": "All-Out Attack",
+        "tags": [
+          "declared"
+        ],
+        "section": "Wings",
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "risk": {
+          "text": "Evasion checks -3 for a Wing that used it this turn",
+          "modifiers": [
+            {
+              "key": "evasion",
+              "value": -3
+            }
+          ]
+        },
+        "summary": "Declared: the Wing's next attack deals +8 damage; that Wing has Evasion -3 this turn.",
+        "description": "A Wing may declare it to add 8 damage to its next attack; every Wing that declared it this turn suffers -3 on its Evasion checks. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": [
+          {
+            "key": "damage",
+            "value": 8,
+            "scope": "use"
+          }
+        ]
+      }
+    ],
+    "description": "A dragon under 500 years old that has outgrown the Draconet stage; the rare jockeys able to ride one are called Dragoons and are respected across whole realms."
+  },
+  {
+    "name": "Mini Manabike",
+    "source": {
+      "book": "CR3",
+      "page": 261
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "magitech",
+    "price": {
+      "buy": 3000,
+      "rent": 300,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 1,
+    "levelMax": 2,
+    "intelligence": "None",
+    "perception": "Mechanical",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "30 (Wheels)",
+      "ground": 30,
+      "groundMode": "Wheels",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 1,
+        "fortitude": 3,
+        "willpower": 3,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 3,
+            "damage": "2d+2",
+            "evasion": 1,
+            "defense": 3,
+            "hp": 25,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "fortitude": 3,
+        "willpower": 3,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 4,
+            "damage": "2d+3",
+            "evasion": 2,
+            "defense": 3,
+            "hp": 25,
+            "mp": null
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Off-Road Handling",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Ignores every -2 penalty caused by poor mobility (bad footing).",
+        "description": "The vehicle is never subject to the -2 penalties imposed for poor mobility conditions such as bad footing.",
+        "modifiers": []
+      }
+    ],
+    "description": "A small, easy magitech bike for beginners, also sold outside the Rider's Guild and rideable without the Rider class."
+  },
+  {
+    "name": "Manabike",
+    "source": {
+      "book": "CR3",
+      "page": 261
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "magitech",
+    "price": {
+      "buy": 10000,
+      "rent": 1000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 3,
+    "levelMax": 6,
+    "intelligence": "None",
+    "perception": "Mechanical",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "50 (Wheels)",
+      "ground": 50,
+      "groundMode": "Wheels",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 3,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 5,
+            "damage": "2d+4",
+            "evasion": 5,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 7,
+            "damage": "2d+6",
+            "evasion": 7,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 5,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 8,
+            "damage": "2d+8",
+            "evasion": 8,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 9,
+            "damage": "2d+10",
+            "evasion": 9,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Off-Road Handling",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Ignores every -2 penalty caused by poor mobility (bad footing).",
+        "description": "The vehicle is never subject to the -2 penalties imposed for poor mobility conditions such as bad footing.",
+        "modifiers": []
+      },
+      {
+        "name": "Grenade Launcher",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "willpower",
+          "result": "half",
+          "base": "riderDex"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "fire"
+          ],
+          "power": 10,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "1(10m)/Shot",
+          "range": "ranged",
+          "areas": 1,
+          "meters": 10,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (3m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 3,
+          "count": 5
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Release",
+        "summary": "Grenade on an area (3m radius, up to 5 targets) within 10m: Power 10 + Rider level + Int mod fire magic damage; jockey pays 10 MP; reload needed.",
+        "description": "Major Action: launches a grenade at Range/Area 1(10m)/Shot, Target 1 area (3m Radius)/5; the attack does fire magic damage of Power 10 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Willpower against the jockey's Rider level plus Dexterity modifier to take half. The jockey spends 10 MP. The bike may only make a Limited Move that turn (a Normal Move if the jockey knows [Unique Skill Release]). After each shot the jockey must spend a Major Action reloading before it fires again; grenades never run out.",
+        "modifiers": []
+      }
+    ],
+    "description": "The popular all-round magitech motorbike, sold both on the market and by the Rider's Guild; rideable without the Rider class."
+  },
+  {
+    "name": "Manabike G",
+    "source": {
+      "book": "CR3",
+      "page": 248
+    },
+    "monsterRef": null,
+    "renownedOf": "Manabike",
+    "classification": "magitech",
+    "price": {
+      "buy": 10000,
+      "rent": null,
+      "regen": null,
+      "reputation": 60
+    },
+    "levelMin": 3,
+    "levelMax": 6,
+    "intelligence": "None",
+    "perception": "Mechanical",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "55 (Wheels)",
+      "ground": 55,
+      "groundMode": "Wheels",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 3,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 5,
+            "damage": "2d+4",
+            "evasion": 5,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 4,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 7,
+            "damage": "2d+6",
+            "evasion": 7,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 5,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 8,
+            "damage": "2d+8",
+            "evasion": 8,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 6,
+        "fortitude": 6,
+        "willpower": 6,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 9,
+            "damage": "2d+10",
+            "evasion": 9,
+            "defense": 5,
+            "hp": 40,
+            "mp": null
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Off-Road Handling",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Ignores every -2 penalty caused by poor mobility (bad footing).",
+        "description": "The vehicle is never subject to the -2 penalties imposed for poor mobility conditions such as bad footing.",
+        "modifiers": []
+      },
+      {
+        "name": "Grenade Launcher",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "willpower",
+          "result": "half",
+          "base": "riderDex"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "fire"
+          ],
+          "power": 10,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "1(10m)/Shot",
+          "range": "ranged",
+          "areas": 1,
+          "meters": 10,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (3m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 3,
+          "count": 5
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Release",
+        "summary": "Grenade on an area (3m radius, up to 5 targets) within 10m: Power 10 + Rider level + Int mod fire magic damage; jockey pays 10 MP; reload needed.",
+        "description": "Major Action: launches a grenade at Range/Area 1(10m)/Shot, Target 1 area (3m Radius)/5; the attack does fire magic damage of Power 10 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Willpower against the jockey's Rider level plus Dexterity modifier to take half. The jockey spends 10 MP. The bike may only make a Limited Move that turn (a Normal Move if the jockey knows [Unique Skill Release]). After each shot the jockey must spend a Major Action reloading before it fires again; grenades never run out.",
+        "modifiers": []
+      }
+    ],
+    "description": "Renowned version of the Manabike: identical data except Movement Speed +5. Purchase only (10,000G + 60 reputation); cannot be rented."
+  },
+  {
+    "name": "Superior Manabike",
+    "source": {
+      "book": "CR3",
+      "page": 262
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "magitech",
+    "price": {
+      "buy": 20000,
+      "rent": 2000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 7,
+    "levelMax": 9,
+    "intelligence": "None",
+    "perception": "Mechanical",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "50 (Wheels)",
+      "ground": 50,
+      "groundMode": "Wheels",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 7,
+        "fortitude": 10,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 9,
+            "damage": "2d+10",
+            "evasion": 9,
+            "defense": 9,
+            "hp": 75,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 8,
+        "fortitude": 10,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 11,
+            "damage": "2d+12",
+            "evasion": 11,
+            "defense": 9,
+            "hp": 75,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "fortitude": 10,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 12,
+            "damage": "2d+14",
+            "evasion": 12,
+            "defense": 9,
+            "hp": 75,
+            "mp": null
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Off-Road Handling",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Ignores every -2 penalty caused by poor mobility (bad footing).",
+        "description": "The vehicle is never subject to the -2 penalties imposed for poor mobility conditions such as bad footing.",
+        "modifiers": []
+      },
+      {
+        "name": "Grenade Launcher",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "willpower",
+          "result": "half",
+          "base": "riderDex"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "fire"
+          ],
+          "power": 10,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "1(10m)/Shot",
+          "range": "ranged",
+          "areas": 1,
+          "meters": 10,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (3m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 3,
+          "count": 5
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Release",
+        "summary": "Grenade on an area (3m radius, up to 5 targets) within 10m: Power 10 + Rider level + Int mod fire magic damage; jockey pays 10 MP; reload needed.",
+        "description": "Major Action: launches a grenade at Range/Area 1(10m)/Shot, Target 1 area (3m Radius)/5; the attack does fire magic damage of Power 10 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Willpower against the jockey's Rider level plus Dexterity modifier to take half. The jockey spends 10 MP. The bike may only make a Limited Move that turn (a Normal Move if the jockey knows [Unique Skill Release]). After each shot the jockey must spend a Major Action reloading before it fires again; grenades never run out.",
+        "modifiers": []
+      }
+    ],
+    "description": "A bigger, tougher high-performance manabike built for combat and sold only by the Rider's Guild."
+  },
+  {
+    "name": "Superior Manabike K",
+    "source": {
+      "book": "CR3",
+      "page": 248
+    },
+    "monsterRef": null,
+    "renownedOf": "Superior Manabike",
+    "classification": "magitech",
+    "price": {
+      "buy": 20000,
+      "rent": null,
+      "regen": null,
+      "reputation": 100
+    },
+    "levelMin": 7,
+    "levelMax": 9,
+    "intelligence": "None",
+    "perception": "Mechanical",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "55 (Wheels)",
+      "ground": 55,
+      "groundMode": "Wheels",
+      "air": null,
+      "airMode": null
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 7,
+        "fortitude": 10,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 9,
+            "damage": "2d+10",
+            "evasion": 9,
+            "defense": 9,
+            "hp": 75,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 8,
+        "fortitude": 10,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 11,
+            "damage": "2d+12",
+            "evasion": 11,
+            "defense": 9,
+            "hp": 75,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 9,
+        "fortitude": 10,
+        "willpower": 10,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 12,
+            "damage": "2d+14",
+            "evasion": 12,
+            "defense": 9,
+            "hp": 75,
+            "mp": null
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Off-Road Handling",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Ignores every -2 penalty caused by poor mobility (bad footing).",
+        "description": "The vehicle is never subject to the -2 penalties imposed for poor mobility conditions such as bad footing.",
+        "modifiers": []
+      },
+      {
+        "name": "Grenade Launcher",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "willpower",
+          "result": "half",
+          "base": "riderDex"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "fire"
+          ],
+          "power": 10,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "1(10m)/Shot",
+          "range": "ranged",
+          "areas": 1,
+          "meters": 10,
+          "area": "shot",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "target": {
+          "text": "1 area (3m Radius)/5",
+          "kind": "area",
+          "areaCount": "1",
+          "radius": 3,
+          "count": 5
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Release",
+        "summary": "Grenade on an area (3m radius, up to 5 targets) within 10m: Power 10 + Rider level + Int mod fire magic damage; jockey pays 10 MP; reload needed.",
+        "description": "Major Action: launches a grenade at Range/Area 1(10m)/Shot, Target 1 area (3m Radius)/5; the attack does fire magic damage of Power 10 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Willpower against the jockey's Rider level plus Dexterity modifier to take half. The jockey spends 10 MP. The bike may only make a Limited Move that turn (a Normal Move if the jockey knows [Unique Skill Release]). After each shot the jockey must spend a Major Action reloading before it fires again; grenades never run out.",
+        "modifiers": []
+      }
+    ],
+    "description": "Renowned version of the Superior Manabike: identical data except Movement Speed +5. Purchase only (20,000G + 100 reputation); cannot be rented."
+  },
+  {
+    "name": "Skybike",
+    "source": {
+      "book": "CR3",
+      "page": 262
+    },
+    "monsterRef": null,
+    "renownedOf": null,
+    "classification": "magitech",
+    "price": {
+      "buy": 60000,
+      "rent": 6000,
+      "regen": null,
+      "reputation": null
+    },
+    "levelMin": 11,
+    "levelMax": 13,
+    "intelligence": "None",
+    "perception": "Mechanical",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "-/50 (Flying)",
+      "ground": null,
+      "groundMode": null,
+      "air": 50,
+      "airMode": "Flying"
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 11,
+        "fortitude": 14,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 14,
+            "damage": "2d+14",
+            "evasion": 14,
+            "defense": 14,
+            "hp": 120,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 12,
+        "fortitude": 14,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 16,
+            "damage": "2d+16",
+            "evasion": 16,
+            "defense": 14,
+            "hp": 120,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 13,
+        "fortitude": 14,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 17,
+            "damage": "2d+18",
+            "evasion": 17,
+            "defense": 14,
+            "hp": 120,
+            "mp": null
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Flight",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Mount and jockey both get +1 to melee Accuracy and +1 to Evasion against melee attacks.",
+        "description": "Being airborne gives both the mount and the jockey riding it +1 on Accuracy checks for melee attacks and +1 on Evasion checks against melee attacks (the modifiers cover the mount; apply the jockey's bonus on the jockey).",
+        "modifiers": [
+          {
+            "key": "accuracyMelee",
+            "value": 1
+          },
+          {
+            "key": "evasion",
+            "value": 1,
+            "condition": "vs melee attacks"
+          }
+        ]
+      },
+      {
+        "name": "High Speed Retreat",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "With a Full Move, jockey and bike move as if they had [Shadow Sneak]; the bike then takes 40 fixed damage.",
+        "description": "Only with a Full Move: the jockey and the Skybike move as though they had the combat feat [Shadow Sneak] (CR II p. 210). When that move ends the Skybike suffers 40 points of fixed damage. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Laser Gun",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "willpower",
+          "result": "half",
+          "base": "riderDex"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "energy"
+          ],
+          "power": 30,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(30m)/Line",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 30,
+          "area": "line",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Perfect Release",
+        "summary": "Laser along a line up to 30m: Power 30 + Rider level + Int mod energy magic damage; jockey pays 15 MP.",
+        "description": "Major Action: fires a laser at Range/Area 2(30m)/Line; the attack does energy magic damage of Power 30 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Willpower against the jockey's Rider level plus Dexterity modifier to take half. The jockey spends 15 MP. The bike may only make a Limited Move that turn (a Normal Move if the jockey knows [Unique Skill Perfect Release]).",
+        "modifiers": []
+      }
+    ],
+    "description": "A manatite-powered flying manabike offered by the Rider's Guild."
+  },
+  {
+    "name": "Skybike S",
+    "source": {
+      "book": "CR3",
+      "page": 248
+    },
+    "monsterRef": null,
+    "renownedOf": "Skybike",
+    "classification": "magitech",
+    "price": {
+      "buy": 60000,
+      "rent": null,
+      "regen": null,
+      "reputation": 150
+    },
+    "levelMin": 11,
+    "levelMax": 13,
+    "intelligence": "None",
+    "perception": "Mechanical",
+    "languages": [],
+    "weakPoint": {
+      "text": "Magic Damage +2 pts.",
+      "kind": "damage",
+      "damageType": "magic",
+      "value": 2
+    },
+    "movement": {
+      "text": "-/55 (Flying)",
+      "ground": null,
+      "groundMode": null,
+      "air": 55,
+      "airMode": "Flying"
+    },
+    "sections": [
+      {
+        "name": null,
+        "main": false,
+        "count": 1
+      }
+    ],
+    "mainSection": null,
+    "levels": [
+      {
+        "level": 11,
+        "fortitude": 14,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 14,
+            "damage": "2d+14",
+            "evasion": 14,
+            "defense": 14,
+            "hp": 120,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 12,
+        "fortitude": 14,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 16,
+            "damage": "2d+16",
+            "evasion": 16,
+            "defense": 14,
+            "hp": 120,
+            "mp": null
+          }
+        ]
+      },
+      {
+        "level": 13,
+        "fortitude": 14,
+        "willpower": 14,
+        "sections": [
+          {
+            "style": "Tackle",
+            "accuracy": 17,
+            "damage": "2d+18",
+            "evasion": 17,
+            "defense": 14,
+            "hp": 120,
+            "mp": null
+          }
+        ]
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Flight",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": null,
+        "enhance": null,
+        "summary": "Mount and jockey both get +1 to melee Accuracy and +1 to Evasion against melee attacks.",
+        "description": "Being airborne gives both the mount and the jockey riding it +1 on Accuracy checks for melee attacks and +1 on Evasion checks against melee attacks (the modifiers cover the mount; apply the jockey's bonus on the jockey).",
+        "modifiers": [
+          {
+            "key": "accuracyMelee",
+            "value": 1
+          },
+          {
+            "key": "evasion",
+            "value": 1,
+            "condition": "vs melee attacks"
+          }
+        ]
+      },
+      {
+        "name": "High Speed Retreat",
+        "tags": [
+          "passive"
+        ],
+        "section": null,
+        "check": null,
+        "damage": null,
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": null,
+        "prerequisite": "Unique Skill Release",
+        "enhance": null,
+        "summary": "With a Full Move, jockey and bike move as if they had [Shadow Sneak]; the bike then takes 40 fixed damage.",
+        "description": "Only with a Full Move: the jockey and the Skybike move as though they had the combat feat [Shadow Sneak] (CR II p. 210). When that move ends the Skybike suffers 40 points of fixed damage. Requires the jockey to know [Unique Skill Release].",
+        "modifiers": []
+      },
+      {
+        "name": "Laser Gun",
+        "tags": [
+          "major"
+        ],
+        "section": null,
+        "check": {
+          "value": null,
+          "vs": "willpower",
+          "result": "half",
+          "base": "riderDex"
+        },
+        "damage": {
+          "formula": null,
+          "kind": "magic",
+          "types": [
+            "energy"
+          ],
+          "power": 30,
+          "critical": 10,
+          "bonus": "riderInt"
+        },
+        "spellcasting": null,
+        "fairyTypes": null,
+        "rangeArea": {
+          "text": "2(30m)/Line",
+          "range": "ranged",
+          "areas": 2,
+          "meters": 30,
+          "area": "line",
+          "radius": null,
+          "count": null,
+          "areaCount": null
+        },
+        "prerequisite": null,
+        "enhance": "Unique Skill Perfect Release",
+        "summary": "Laser along a line up to 30m: Power 30 + Rider level + Int mod energy magic damage; jockey pays 15 MP.",
+        "description": "Major Action: fires a laser at Range/Area 2(30m)/Line; the attack does energy magic damage of Power 30 (Critical 10), adding the jockey's Rider level and Intelligence modifier; targets roll Willpower against the jockey's Rider level plus Dexterity modifier to take half. The jockey spends 15 MP. The bike may only make a Limited Move that turn (a Normal Move if the jockey knows [Unique Skill Perfect Release]).",
+        "modifiers": []
+      }
+    ],
+    "description": "Renowned version of the Skybike: identical data except Movement Speed +5. Purchase only (60,000G + 150 reputation); cannot be rented."
+  }
+]

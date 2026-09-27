@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Lyphos",
+    "title": "the Divine Ancestor",
+    "category": "ancient",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 325
+    }
+  },
+  {
+    "name": "Tidan",
+    "title": "God of the Sun",
+    "category": "ancient",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 326
+    }
+  },
+  {
+    "name": "Kilhia",
+    "title": "God of Wisdom",
+    "category": "ancient",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 326
+    }
+  },
+  {
+    "name": "Sien",
+    "title": "Goddess of the Moon",
+    "category": "major",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 327
+    }
+  },
+  {
+    "name": "Mirtabar",
+    "title": "Divine Hand",
+    "category": "major",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 327
+    }
+  },
+  {
+    "name": "Eve",
+    "title": "Shield Against the Abyss",
+    "category": "major",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 328
+    }
+  },
+  {
+    "name": "Harula",
+    "title": "Guiding Star",
+    "category": "major",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 328
+    }
+  },
+  {
+    "name": "Furusil",
+    "title": "Goddess of Wind and Rain",
+    "category": "minor",
+    "sword": "first",
+    "source": {
+      "book": "CR1",
+      "page": 329
+    }
+  },
+  {
+    "name": "Asteria",
+    "title": "Goddess of Fairies",
+    "category": "ancient",
+    "sword": "first",
+    "source": {
+      "book": "CR2",
+      "page": 261
+    }
+  },
+  {
+    "name": "Grendal",
+    "title": "Blazing Emperor",
+    "category": "ancient",
+    "sword": "first",
+    "source": {
+      "book": "CR2",
+      "page": 261
+    }
+  },
+  {
+    "name": "Dalion",
+    "title": "God of Trees",
+    "category": "major",
+    "sword": "first",
+    "source": {
+      "book": "CR2",
+      "page": 262
+    }
+  },
+  {
+    "name": "Miritsa",
+    "title": "Goddess of Love and Vengeance",
+    "category": "major",
+    "sword": "first",
+    "source": {
+      "book": "CR2",
+      "page": 262
+    }
+  },
+  {
+    "name": "Strasford",
+    "title": "God of Railroads",
+    "category": "minor",
+    "sword": "first",
+    "source": {
+      "book": "CR2",
+      "page": 262
+    }
+  },
+  {
+    "name": "Dalkhrem",
+    "title": "God of War",
+    "category": "ancient",
+    "sword": "second",
+    "source": {
+      "book": "CR1",
+      "page": 326
+    }
+  },
+  {
+    "name": "Eiryak",
+    "title": "Sea Snatcher",
+    "category": "major",
+    "sword": "second",
+    "source": {
+      "book": "CR2",
+      "page": 324
+    }
+  },
+  {
+    "name": "Zeides",
+    "title": "Immortal Queen",
+    "category": "major",
+    "sword": "second",
+    "source": {
+      "book": "CR2",
+      "page": 324
+    }
+  },
+  {
+    "name": "Laris",
+    "title": "Mad God",
+    "category": "unknown",
+    "sword": "second",
+    "source": {
+      "book": "CR2",
+      "page": 325
+    }
+  }
+]

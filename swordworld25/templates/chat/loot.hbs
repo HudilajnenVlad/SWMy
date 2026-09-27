@@ -1,0 +1,33 @@
+<div class="sw25 swp swp-chat swp-chat-loot">
+  <header class="swp-chat-head">
+    <img class="swp-chat-img" src="{{img}}" alt="">
+    <div class="swp-chat-titles">
+      <span class="swp-chat-title">{{localize "SW25.Loot.Title" name=name}}</span>
+      {{#if looter}}<span class="swp-chat-subtitle">{{looter}}</span>{{/if}}
+    </div>
+  </header>
+  <div class="swp-chat-roll">
+    <span class="swp-legend">{{localize "SW25.Loot.Roll"}}</span>
+    <div class="swp-chat-roll-line">
+      {{#if diceList}}<span class="swp-chat-dice">{{#each diceList}}<span class="swp-chat-die d{{this}}">{{swpDieIcon this}}</span>{{/each}}</span>{{else}}<span class="swp-chat-dice">{{dice}}</span>{{/if}}
+      {{#if bonus}}<span class="swp-chat-base">{{sw25Signed bonus}}</span>{{/if}}
+      <span class="swp-chat-total">{{total}}</span>
+    </div>
+  </div>
+  <table class="swp-loot-table swp-chat-loot-table">
+    <tbody>
+      {{#each rows}}
+      <tr>
+        <th>{{#if always}}{{localize "SW25.Loot.Always"}}{{else}}{{roll}}{{/if}}</th>
+        <td class="item"><b>{{item}}</b>{{#if quantityLabel}} {{quantityLabel}}{{/if}}{{#if cards}} <small data-tooltip="SW25.Loot.Cards">({{cards}})</small>{{/if}}</td>
+        <td class="price">{{priceLabel}}</td>
+      </tr>
+      {{else}}
+      <tr><td colspan="3" class="none">{{localize "SW25.Loot.Nothing"}}</td></tr>
+      {{/each}}
+      {{#if shards}}
+      <tr><th>{{localize "SW25.Loot.Always"}}</th><td class="item"><b>{{localize "SW25.SwordShards"}}</b> ×{{shards}}</td><td class="price"></td></tr>
+      {{/if}}
+    </tbody>
+  </table>
+</div>

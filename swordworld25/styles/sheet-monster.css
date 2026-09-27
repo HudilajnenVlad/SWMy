@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Sword World 2.5 — monster and mount sheets, monster template tool.
+   Laid out like the bestiary stat blocks of the core rulebooks (level box and
+   black name bar, inline info box, gray table headers, two-column unique
+   skills and loot). Builds on paper-base.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Header: portrait, level box + name bar, totals, GM tools
+   -------------------------------------------------------------------------- */
+
+.swp .swp-mheader {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 6px 16px;
+  flex: none;
+  padding: 10px 14px 10px 12px;
+}
+.swp .swp-portrait-wrap.small { width: 104px; height: 122px; }
+.swp .swp-mhead-main { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+
+/* --------------------------------------------------------------------------
+   Stat block
+   -------------------------------------------------------------------------- */
+
+.swp .swp-statblock.active { gap: 10px; }
+
+.swp .swp-weak.revealed { padding: 0 4px; background: var(--swp-hl); }
+.swp .swp-sb-note { margin: -4px 0 0; font-size: 12.5px; }
+.swp .swp-sb-source { margin: -4px 0 0; color: var(--swp-muted); font-size: 11px; text-align: right; }
+
+/* Tables with gray headers and full grid lines */
+
+.swp .swp-sb-table td.style,
+.swp .swp-sb-table th.style { padding-left: 8px; text-align: left; }
+
+.swp .swp-crown { color: var(--swp-gold); font-size: 10px; }
+.swp .swp-sub.inline { display: inline; font-size: 11.5px; }
+.swp .swp-cellroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.swp .swp-cellroll i { font-size: 9px; opacity: 0.3; }
+.swp .swp-cellroll:hover { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-cellroll:hover i { opacity: 0.9; }
+.swp .swp-hpcell { position: relative; display: inline-flex; align-items: center; gap: 2px; padding-bottom: 4px; }
+.swp .swp-hpcell::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--swp-hp) var(--pct, 0%), var(--swp-paper-3) var(--pct, 0%));
+}
+.swp .swp-hpcell.mp::after { background: linear-gradient(90deg, var(--swp-mp) var(--pct, 0%), var(--swp-paper-3) var(--pct, 0%)); }
+.swp .swp-sb-table .swp-hpcell input[type=number] {
+  width: 44px;
+  min-width: 0;
+  height: 22px;
+  border: var(--swp-thin);
+  border-radius: 4px;
+  font-weight: 700;
+}
+.swp .swp-hpcell small { font-size: 11.5px; color: var(--swp-ink-2); }
+.swp .swp-sec.down > td:not(.hp):not(.mp) { color: var(--swp-muted); text-decoration: line-through; }
+.swp .swp-sec.main > td.style { font-weight: 700; }
+.swp .swp-sec-edit { display: flex; align-items: center; gap: 4px; }
+.swp .swp-sb-table .swp-sec-edit input[type=text] { text-align: left; }
+.swp .swp-sb-table .swp-sec-edit input.secname { width: 110px; flex: none; }
+.swp .swp-sec-ordinal {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--swp-ink);
+  color: var(--swp-paper);
+  font-size: 10.5px;
+  font-weight: 700;
+  cursor: help;
+}
+.swp .swp-sections-table td.tools { white-space: nowrap; }
+.swp .swp-sections-table td.tools .swp-mini + .swp-mini { margin-left: 2px; }
+.swp .swp-main-toggle { flex: none; color: var(--swp-muted); opacity: 0.45; }
+.swp .swp-main-toggle.on { color: var(--swp-gold); opacity: 1; }
+
+/* Gray-headed blocks: unique skills and loot */
+
+.swp .swp-skill-cols { columns: 2 250px; column-gap: 1px; column-rule: 1px dotted var(--swp-ink); }
+.swp .swp-skill { padding: 6px 12px 8px; break-inside: avoid; }
+.swp .swp-skill-head { display: flex; align-items: baseline; gap: 4px; }
+.swp .swp-skill-icons { flex: none; font-size: 14px; font-weight: 700; letter-spacing: 1px; cursor: help; }
+.swp .swp-skill-name { font-size: 14px; font-weight: 700; cursor: pointer; }
+.swp .swp-skill-name:hover { text-decoration: underline; }
+.swp .swp-skill-head .swp-row-tools { margin-left: auto; opacity: 0; }
+.swp .swp-skill:hover .swp-row-tools { opacity: 1; }
+.swp .swp-skill-meta { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0 3px; }
+.swp .swp-skill-meta span { padding: 0 5px; border: var(--swp-thin); border-radius: 2px; font-size: 11px; line-height: 17px; }
+.swp .swp-skill-text { font-size: 12.5px; line-height: 1.45; }
+.swp .swp-skill-text p { margin: 0 0 3px; }
+
+.swp .swp-loot-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.swp .swp-loot-table { width: 100%; margin: 0; border: none; border-collapse: collapse; }
+.swp .swp-loot-cols > .swp-loot-table + .swp-loot-table { border-left: var(--swp-thin); }
+.swp .swp-loot-table th,
+.swp .swp-loot-table td { height: 28px; padding: 2px 8px; border: none; font-size: 13px; }
+.swp .swp-loot-table tr + tr > * { border-top: var(--swp-thin); }
+.swp .swp-loot-table th { width: 64px; border-right: var(--swp-thin); background: var(--swp-paper-3); font-weight: 400; text-align: center; white-space: nowrap; }
+.swp .swp-loot-edit td.roll { width: 110px; }
+.swp .swp-loot-edit td input[type=text],
+.swp .swp-loot-edit td input[type=number] {
+  width: 100%;
+  height: 24px;
+  padding: 0 4px;
+  border: 1px dashed var(--swp-muted);
+  border-radius: 3px;
+  background: transparent;
+  font-size: 13px;
+}
+.swp .swp-loot-edit td.name input { text-align: left; }
+
+/* Stat block as a form */
+
+/* Mounts */
+.swp .swp-mount-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin: 5px 0 0;
+  padding-top: 5px;
+  border-top: 1px dashed var(--swp-ink);
+}
+.swp .swp-mount-line select { height: 22px; font-size: 12.5px; }
+.swp .swp-level-table th.lvl { width: 46px; }
+.swp .swp-level-table tbody th.lvl { background: var(--swp-paper-2); }
+.swp .swp-level-table tr.odd > * { background: var(--swp-paper-2); }
+.swp .swp-level-table tr.current > * { background: var(--swp-hl); font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   Monster template tool
+   -------------------------------------------------------------------------- */
+
+.application.swp-template .window-content { display: flex; flex-direction: column; gap: 12px; padding: 12px 14px; overflow-y: auto; }
+.swp-template .swp-tpl-fields { display: flex; flex-direction: column; gap: 10px; }
+.swp-template .swp-tpl-preview { display: flex; flex-direction: column; gap: 8px; padding-top: 12px; border-top: var(--swp-rule); }
+.swp-template .swp-titlebar.small { height: 34px; }
+.swp-template .swp-titlebar.small .swp-level-box { min-width: 40px; font-size: 20px; }
+.swp-template .swp-tpl-preview .swp-sb-info { font-size: 13px; }
+
+/* Narrow windows */
+@container swp (max-width: 620px) {
+  .swp .swp-mheader { grid-template-columns: 84px minmax(0, 1fr); }
+  .swp .swp-portrait-wrap.small { width: 84px; height: 100px; }
+  .swp .swp-loot-cols { grid-template-columns: minmax(0, 1fr); }
+  .swp .swp-loot-cols > .swp-loot-table + .swp-loot-table { border-top: var(--swp-thin); border-left: none; }
+  .swp .swp-sb-table .swp-sec-edit input.secname { width: 70px; }
+}
+
+/* The description grows with its text while it is not being edited */

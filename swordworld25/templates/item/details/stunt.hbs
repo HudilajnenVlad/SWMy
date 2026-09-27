@@ -1,0 +1,9 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="1"></label>
+  <label class="swp-field">{{localize "SW25.Stunt.Action"}}<select name="system.action">{{selectOptions choices.stuntActions selected=system.action localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Stunt.Area"}}<select name="system.area">{{selectOptions choices.stuntAreas selected=system.area localize=true}}</select></label>
+</div>
+<div class="swp-kv-list">
+  <p><b>{{localize "SW25.Stunt.Mounts"}}:</b> {{#each system.mounts}}<span class="swp-tag">{{this}}</span>{{else}}—{{/each}}</p>
+  <p><b>{{localize "SW25.Feat.Prerequisites"}}:</b> {{#each system.prerequisites}}<span class="swp-tag">{{this}}</span>{{else}}—{{/each}}</p>
+</div>

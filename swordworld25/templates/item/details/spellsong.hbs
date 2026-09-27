@@ -1,0 +1,34 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="1"></label>
+  <label class="swp-field">{{localize "SW25.Resistance.label"}}<select name="system.resistance">{{selectOptions choices.resistance selected=system.resistance localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Song.Flourish"}}<input type="number" name="system.flourish" value="{{system.flourish}}"></label>
+  <label class="swp-field wide">{{localize "SW25.Song.Condition"}}<input type="text" name="system.condition.text" value="{{system.condition.text}}"></label>
+  <label class="swp-field wide">{{localize "SW25.Duration.label"}}<input type="text" name="system.duration.text" value="{{system.duration.text}}"></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.singing" {{checked system.singing}}> {{localize "SW25.Song.Singing"}}</label>
+</div>
+<fieldset class="swp-fieldset swp-fieldset-table">
+  <legend>{{localize "SW25.Rhythm.label"}}</legend>
+  <table class="swp-table swp-form-table swp-rhythm-form">
+    <thead><tr><th class="name"></th><th>⮭</th><th>⮯</th><th>♡</th></tr></thead>
+    <tbody>
+      <tr><th class="name">{{localize "SW25.Song.Condition"}}</th>
+        <td><input type="number" name="system.condition.up" value="{{system.condition.up}}" min="0"></td>
+        <td><input type="number" name="system.condition.down" value="{{system.condition.down}}" min="0"></td>
+        <td><input type="number" name="system.condition.heart" value="{{system.condition.heart}}" min="0"></td></tr>
+      <tr><th class="name">{{localize "SW25.Song.BaseRhythm"}}</th>
+        <td><input type="number" name="system.baseRhythm.up" value="{{system.baseRhythm.up}}" min="0"></td>
+        <td><input type="number" name="system.baseRhythm.down" value="{{system.baseRhythm.down}}" min="0"></td>
+        <td><input type="number" name="system.baseRhythm.heart" value="{{system.baseRhythm.heart}}" min="0"></td></tr>
+      <tr><th class="name">{{localize "SW25.Song.ExtraRhythm"}}</th>
+        <td><input type="number" name="system.extraRhythm.up" value="{{system.extraRhythm.up}}" min="0"></td>
+        <td><input type="number" name="system.extraRhythm.down" value="{{system.extraRhythm.down}}" min="0"></td>
+        <td><input type="number" name="system.extraRhythm.heart" value="{{system.extraRhythm.heart}}" min="0"></td></tr>
+    </tbody>
+  </table>
+</fieldset>
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Entry.Type"}}</legend>
+  <div class="swp-chip-grid">{{#each damageTypes}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleType" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>

@@ -1,0 +1,1299 @@
+[
+  {
+    "name": "Cloth Armor",
+    "source": {
+      "book": "CR1",
+      "page": 287
+    },
+    "armorType": "nonmetal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 1,
+    "evasion": 0,
+    "defense": 2,
+    "price": 15,
+    "grappler": "may",
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank nonmetallic armor: Defense 2. Grapplers may equip.",
+    "description": "Grapplers may equip it (they can still attack and evade with the Grappler class).",
+    "modifiers": []
+  },
+  {
+    "name": "Point Guard",
+    "source": {
+      "book": "CR1",
+      "page": 287
+    },
+    "armorType": "nonmetal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 1,
+    "evasion": 1,
+    "defense": 0,
+    "price": 100,
+    "grappler": "only",
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank nonmetallic armor: Evasion +1, Defense 0. Grappler only.",
+    "description": "Grappler only: while wearing it, only the Grappler class can be used for Evasion checks.",
+    "modifiers": []
+  },
+  {
+    "name": "Soft Leather",
+    "source": {
+      "book": "CR1",
+      "page": 287
+    },
+    "armorType": "nonmetal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 7,
+    "evasion": 0,
+    "defense": 3,
+    "price": 150,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank nonmetallic armor: Defense 3.",
+    "description": "Standard nonmetallic armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Hard Leather",
+    "source": {
+      "book": "CR1",
+      "page": 287
+    },
+    "armorType": "nonmetal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 13,
+    "evasion": 0,
+    "defense": 4,
+    "price": 340,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank nonmetallic armor: Defense 4.",
+    "description": "Standard nonmetallic armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Aramid Coat",
+    "source": {
+      "book": "CR1",
+      "page": 287
+    },
+    "armorType": "nonmetal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 5,
+    "evasion": 1,
+    "defense": 2,
+    "price": 750,
+    "grappler": "may",
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank nonmetallic armor: Evasion +1, Defense 2. Grapplers may equip.",
+    "description": "Grapplers may equip it (they can still attack and evade with the Grappler class).",
+    "modifiers": []
+  },
+  {
+    "name": "Breast Armor",
+    "source": {
+      "book": "CR1",
+      "page": 287
+    },
+    "armorType": "nonmetal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 10,
+    "evasion": 0,
+    "defense": 5,
+    "price": 1000,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank nonmetallic armor: Defense 5.",
+    "description": "Standard nonmetallic armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Bone Vest",
+    "source": {
+      "book": "CR1",
+      "page": 287
+    },
+    "armorType": "nonmetal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 16,
+    "evasion": 0,
+    "defense": 6,
+    "price": 2100,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank nonmetallic armor: Defense 6.",
+    "description": "Standard nonmetallic armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Splint Armor",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 15,
+    "evasion": 0,
+    "defense": 5,
+    "price": 520,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank metal armor: Defense 5.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Chainmail",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 18,
+    "evasion": -1,
+    "defense": 6,
+    "price": 760,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank metal armor: Evasion -1, Defense 6.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Plate Armor",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 21,
+    "evasion": -2,
+    "defense": 7,
+    "price": 1200,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank metal armor: Evasion -2, Defense 7.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Suit Armor",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 24,
+    "evasion": -3,
+    "defense": 8,
+    "price": 2500,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank metal armor: Evasion -3, Defense 8. No Full Move; Dexterity -6.",
+    "description": "The wearer cannot make a Full Move and has Dexterity -6.",
+    "modifiers": [
+      {
+        "key": "ability.dex",
+        "value": -6
+      }
+    ]
+  },
+  {
+    "name": "Steel Guard",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 12,
+    "evasion": 0,
+    "defense": 5,
+    "price": 1600,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank metal armor: Defense 5.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Lamellar Armor",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 15,
+    "evasion": 0,
+    "defense": 6,
+    "price": 2400,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank metal armor: Defense 6.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Brigandine",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 18,
+    "evasion": -1,
+    "defense": 7,
+    "price": 3800,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank metal armor: Evasion -1, Defense 7.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Coat of Plates",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 24,
+    "evasion": -2,
+    "defense": 8,
+    "price": 6100,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank metal armor: Evasion -2, Defense 8.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Fortress",
+    "source": {
+      "book": "CR1",
+      "page": 288
+    },
+    "armorType": "metal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 27,
+    "evasion": -3,
+    "defense": 9,
+    "price": 8200,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank metal armor: Evasion -3, Defense 9.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Buckler",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "B",
+    "stance": "1H",
+    "minStr": 1,
+    "evasion": 1,
+    "defense": 0,
+    "price": 60,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank shield: Evasion +1, Defense 0.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Round Shield",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "B",
+    "stance": "1H",
+    "minStr": 8,
+    "evasion": 0,
+    "defense": 1,
+    "price": 100,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank shield: Defense 1.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Kite Shield",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "B",
+    "stance": "1H",
+    "minStr": 13,
+    "evasion": 1,
+    "defense": 1,
+    "price": 500,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank shield: Evasion +1, Defense 1.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Tower Shield",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "B",
+    "stance": "1H",
+    "minStr": 17,
+    "evasion": 0,
+    "defense": 2,
+    "price": 600,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "B-rank shield: Defense 2.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Target Shield",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "1H",
+    "minStr": 7,
+    "evasion": 1,
+    "defense": 1,
+    "price": 680,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank shield: Evasion +1, Defense 1.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Heater Shield",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "1H",
+    "minStr": 10,
+    "evasion": 0,
+    "defense": 2,
+    "price": 1000,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank shield: Defense 2.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Spiked Shield",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "1H",
+    "minStr": 13,
+    "evasion": 1,
+    "defense": 2,
+    "price": 1800,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank shield (Evasion +1, Defense 2) that can also attack; Defense 0 after attacking with it.",
+    "description": "Defense 2/0: doubles as a one-handed weapon (attack data in weapons.json). It can attack alongside the weapon in the other hand without [Dual Wielding]; after it attacks, its Defense is 0 until the start of the wielder's next turn (Details CR I p.303).",
+    "modifiers": []
+  },
+  {
+    "name": "Great Wall",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "1H",
+    "minStr": 20,
+    "evasion": -1,
+    "defense": 3,
+    "price": 1800,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank shield: Evasion -1, Defense 3.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Great Barrier",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "2H",
+    "minStr": 30,
+    "evasion": 1,
+    "defense": 3,
+    "price": 3300,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank two-handed shield (Evasion +1, Defense 3) that can also be used as a weapon.",
+    "description": "Defense 3/3: can be used as a 2H weapon (weapon data in weapons.json) and keeps Defense 3 when used to attack.",
+    "modifiers": []
+  },
+  {
+    "name": "Fine Leather",
+    "source": {
+      "book": "CR2",
+      "page": 220
+    },
+    "armorType": "nonmetal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 6,
+    "evasion": 1,
+    "defense": 4,
+    "price": 2440,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank nonmetallic armor: Evasion +1, Defense 4.",
+    "description": "Standard nonmetallic armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Lynx Vest",
+    "source": {
+      "book": "CR2",
+      "page": 220
+    },
+    "armorType": "nonmetal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 8,
+    "evasion": 2,
+    "defense": 3,
+    "price": 2750,
+    "grappler": "only",
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank nonmetallic armor: Evasion +2, Defense 3. Grappler only.",
+    "description": "Grappler only: while wearing it, only the Grappler class can be used for Evasion checks.",
+    "modifiers": []
+  },
+  {
+    "name": "Tiger Band",
+    "source": {
+      "book": "CR2",
+      "page": 220
+    },
+    "armorType": "nonmetal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 10,
+    "evasion": 1,
+    "defense": 5,
+    "price": 3600,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank nonmetallic armor: Evasion +1, Defense 5.",
+    "description": "Standard nonmetallic armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Dragon Scale",
+    "source": {
+      "book": "CR2",
+      "page": 220
+    },
+    "armorType": "nonmetal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 14,
+    "evasion": 1,
+    "defense": 6,
+    "price": 4500,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank nonmetallic armor: Evasion +1, Defense 6.",
+    "description": "Standard nonmetallic armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Chain",
+    "source": {
+      "book": "CR2",
+      "page": 220
+    },
+    "armorType": "metal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 10,
+    "evasion": 0,
+    "defense": 7,
+    "price": 6000,
+    "grappler": null,
+    "magic": false,
+    "silver": true,
+    "summary": "S-rank metal armor: Defense 7. Silvered.",
+    "description": "Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Full-Metal Armor",
+    "source": {
+      "book": "CR2",
+      "page": 220
+    },
+    "armorType": "metal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 17,
+    "evasion": -1,
+    "defense": 9,
+    "price": 11000,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank metal armor: Evasion -1, Defense 9.",
+    "description": "Standard metal armor with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Plate",
+    "source": {
+      "book": "CR2",
+      "page": 220
+    },
+    "armorType": "metal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 24,
+    "evasion": -2,
+    "defense": 11,
+    "price": 23000,
+    "grappler": null,
+    "magic": false,
+    "silver": true,
+    "summary": "S-rank metal armor: Evasion -2, Defense 11. Silvered.",
+    "description": "Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Mirror Shield",
+    "source": {
+      "book": "CR2",
+      "page": 221
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "1H",
+    "minStr": 5,
+    "evasion": 1,
+    "defense": 0,
+    "price": 870,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank shield (Evasion +1, Defense 0) whose polished face works as a hand mirror.",
+    "description": "While equipped or held, the character counts as holding a mirror in hand during combat (Details CR II p.229).",
+    "modifiers": []
+  },
+  {
+    "name": "Cymbal Shield",
+    "source": {
+      "book": "CR2",
+      "page": 221
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "1H",
+    "minStr": 8,
+    "evasion": 1,
+    "defense": 1,
+    "price": 1020,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "Shield/percussion instrument: successful Evasion yields 1 ⮭ Rhythm, taking physical damage 1 ⮯.",
+    "description": "Special instrument: while equipped as a shield it can be played as percussion (Performance -4 when played, unsuited to melodies). A successful Evasion check generates 1 ⮭ (Uplifting) Rhythm; taking physical damage (even 0 applied) generates 1 ⮯ (Calming) Rhythm (Details CR II p.230).",
+    "modifiers": [
+      {
+        "key": "performance",
+        "value": -4,
+        "condition": "when played as an instrument"
+      }
+    ]
+  },
+  {
+    "name": "Mithril Shield",
+    "source": {
+      "book": "CR2",
+      "page": 221
+    },
+    "armorType": "shield",
+    "rank": "S",
+    "stance": "1H",
+    "minStr": 8,
+    "evasion": 1,
+    "defense": 2,
+    "price": 4700,
+    "grappler": null,
+    "magic": false,
+    "silver": true,
+    "summary": "S-rank shield: Evasion +1, Defense 2. Silvered.",
+    "description": "Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Hoplite Shield",
+    "source": {
+      "book": "CR2",
+      "page": 221
+    },
+    "armorType": "shield",
+    "rank": "S",
+    "stance": "1H",
+    "minStr": 15,
+    "evasion": 0,
+    "defense": 4,
+    "price": 2900,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank shield: Defense 4.",
+    "description": "Standard shield with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Blade Killer",
+    "source": {
+      "book": "CR2",
+      "page": 221
+    },
+    "armorType": "shield",
+    "rank": "S",
+    "stance": "1H",
+    "minStr": 22,
+    "evasion": 0,
+    "defense": 4,
+    "price": 7300,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank shield (Defense 4) that can also be used as a weapon; Defense 2 after attacking.",
+    "description": "Defense 4/2: can be used as a weapon (weapon data in weapons.json); after attacking with it its Defense is 2.",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Coat",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 1,
+    "evasion": 0,
+    "defense": 0,
+    "price": 28000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Defense equals the wearer's Intelligence modifier (maximum 6).",
+    "description": "Its Defense is equal to the wearer's Intelligence modifier, up to 6 (Details CR III p.233, Pop. 10).",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Coat+",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 1,
+    "evasion": 0,
+    "defense": 0,
+    "price": 52000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Defense equals the wearer's Intelligence modifier (maximum 8).",
+    "description": "Its Defense is equal to the wearer's Intelligence modifier, up to 8 (Details CR III p.233, Pop. 10).",
+    "modifiers": []
+  },
+  {
+    "name": "Combat Maid/Butler Outfit",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 10,
+    "evasion": 1,
+    "defense": 0,
+    "price": 24000,
+    "grappler": "may",
+    "magic": true,
+    "silver": false,
+    "summary": "Magic clothing: Evasion +1, magic damage taken -3. Grapplers may equip.",
+    "description": "Magic Damage -3: magic damage taken is reduced by 3 (not poison, disease, curse or psychic damage). Comes as maid or butler clothing; either can be worn regardless of gender. Grapplers may equip it (they can still attack and evade with the Grappler class).",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -3,
+        "condition": "not vs poison, disease, curse or psychic damage"
+      }
+    ]
+  },
+  {
+    "name": "Windbreaker Surcoat",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 12,
+    "evasion": 1,
+    "defense": 3,
+    "price": 10500,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Once a day, automatically negates a wind-type attack or effect.",
+    "description": "Once per day, when the wearer is targeted by a wind-type spell, unique skill or effect, it can negate it (Neg), even if its Resistance is Can't (Details CR III p.233, Pop. 8).",
+    "modifiers": []
+  },
+  {
+    "name": "Astral Guard",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 6,
+    "evasion": 1,
+    "defense": 7,
+    "price": 34000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank nonmetallic armor: Evasion +1, Defense 7, magic damage taken -3.",
+    "description": "Magic Damage -3: magic damage taken is reduced by 3 (not poison, disease, curse or psychic damage).",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -3,
+        "condition": "not vs poison, disease, curse or psychic damage"
+      }
+    ]
+  },
+  {
+    "name": "Silent Cloak",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 11,
+    "evasion": 1,
+    "defense": 8,
+    "price": 38000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Hide checks +2.",
+    "description": "Hide checks +2 while worn (Details CR III p.233, Pop. 10).",
+    "modifiers": [
+      {
+        "key": "check.hide",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Alabaster Shell",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 14,
+    "evasion": 1,
+    "defense": 9,
+    "price": 41000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank nonmetallic armor: Evasion +1, Defense 9.",
+    "description": "Magic nonmetallic armor; no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Phoenix Cloak",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 17,
+    "evasion": 2,
+    "defense": 8,
+    "price": 45000,
+    "grappler": "only",
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank nonmetallic armor: Evasion +2, Defense 8. Grappler only.",
+    "description": "Grappler only: while wearing it, only the Grappler class can be used for Evasion checks.",
+    "modifiers": []
+  },
+  {
+    "name": "Divine Skin",
+    "source": {
+      "book": "CR3",
+      "page": 218
+    },
+    "armorType": "nonmetal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 18,
+    "evasion": 1,
+    "defense": 10,
+    "price": 52000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Willpower +2.",
+    "description": "Willpower checks +2 while worn (Details CR III p.233, Pop. 10).",
+    "modifiers": [
+      {
+        "key": "willpower",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Dontrecia's Armor of Perseverance",
+    "source": {
+      "book": "CR3",
+      "page": 219
+    },
+    "armorType": "metal",
+    "rank": "B",
+    "stance": null,
+    "minStr": 20,
+    "evasion": 0,
+    "defense": 6,
+    "price": 12700,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Defense +2 each time the wearer takes physical damage (stacks until their turn).",
+    "description": "Each time the wearer takes 1 or more applied physical damage, its Defense rises by +2 (cumulative). The bonus ends at the start of the wearer's turn or when they take physical damage with 0 applied (Details CR III p.234, Pop. 10).",
+    "modifiers": []
+  },
+  {
+    "name": "Dontrecia's Great Armor of Perseverance",
+    "source": {
+      "book": "CR3",
+      "page": 219
+    },
+    "armorType": "metal",
+    "rank": "A",
+    "stance": null,
+    "minStr": 21,
+    "evasion": 0,
+    "defense": 8,
+    "price": 26400,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Defense +2 each time the wearer takes physical damage (stacks until their turn).",
+    "description": "Each time the wearer takes 1 or more applied physical damage, its Defense rises by +2 (cumulative). The bonus ends at the start of the wearer's turn or when they take physical damage with 0 applied (Details CR III p.234, Pop. 10).",
+    "modifiers": []
+  },
+  {
+    "name": "Powered Plates",
+    "source": {
+      "book": "CR3",
+      "page": 219
+    },
+    "armorType": "metal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 14,
+    "evasion": 0,
+    "defense": 8,
+    "price": 28000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "After seeing an Evasion check, spend 3 MP for +1 to it.",
+    "description": "After seeing the result of an Evasion check, the wearer may spend 3 MP to add +1 to it, once per check (Details CR III p.234, Pop. 10).",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1,
+        "condition": "spend 3 MP after the roll (once per check)"
+      }
+    ]
+  },
+  {
+    "name": "Dontrecia's Stiff Armor of Perseverance",
+    "source": {
+      "book": "CR3",
+      "page": 219
+    },
+    "armorType": "metal",
+    "rank": "S",
+    "stance": null,
+    "minStr": 22,
+    "evasion": 0,
+    "defense": 10,
+    "price": 54800,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Defense +2 each time the wearer takes physical damage (stacks until their turn).",
+    "description": "Each time the wearer takes 1 or more applied physical damage, its Defense rises by +2 (cumulative). The bonus ends at the start of the wearer's turn or when they take physical damage with 0 applied (Details CR III p.234, Pop. 10).",
+    "modifiers": []
+  },
+  {
+    "name": "Manatite Frame",
+    "source": {
+      "book": "CR3",
+      "page": 219
+    },
+    "armorType": "metal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 18,
+    "evasion": 0,
+    "defense": 11,
+    "price": 62000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank metal armor: Defense 11.",
+    "description": "Magic metal armor; no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Anti-Arquebus",
+    "source": {
+      "book": "CR3",
+      "page": 219
+    },
+    "armorType": "metal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 23,
+    "evasion": 0,
+    "defense": 12,
+    "price": 79000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Damage from Gun shooting attacks -5.",
+    "description": "Damage received from shooting attacks made with Guns is reduced by 5 (Details CR III p.234, Pop. 10).",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -5,
+        "condition": "vs Gun shooting attacks"
+      }
+    ]
+  },
+  {
+    "name": "Imperial",
+    "source": {
+      "book": "CR3",
+      "page": 219
+    },
+    "armorType": "metal",
+    "rank": "SS",
+    "stance": null,
+    "minStr": 30,
+    "evasion": -1,
+    "defense": 14,
+    "price": 100000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank metal armor: Evasion -1, Defense 14, magic damage taken -3.",
+    "description": "Magic Damage -3: magic damage taken is reduced by 3 (not poison, disease, curse or psychic damage).",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -3,
+        "condition": "not vs poison, disease, curse or psychic damage"
+      }
+    ]
+  },
+  {
+    "name": "Asteria's Defense",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "B",
+    "stance": "1H",
+    "minStr": 6,
+    "evasion": 0,
+    "defense": 2,
+    "price": 40000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Damage of earth, water/ice, fire or wind type taken -3.",
+    "description": "While equipped, applied damage from earth, water/ice, fire and wind type sources is reduced by 3, whether physical or magical (Details CR III p.234, Pop. 14).",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -3,
+        "condition": "vs earth, water/ice, fire or wind type damage"
+      }
+    ]
+  },
+  {
+    "name": "Calvaria",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "B",
+    "stance": "1H",
+    "minStr": 14,
+    "evasion": 0,
+    "defense": 3,
+    "price": 67000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "Shield form of the Calvaria; switches to an SS-rank crossbow with a Minor Action.",
+    "description": "Shield form of the Calvaria (crossbow form in weapons.json). A Minor Action before the Major Action switches forms; while a shield it cannot attack, and using it only as a shield needs no [Weapon Master]. It cannot receive shield enhancements such as manatite (Details CR III p.231).",
+    "modifiers": []
+  },
+  {
+    "name": "Knight Shield",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "A",
+    "stance": "1H",
+    "minStr": 15,
+    "evasion": 0,
+    "defense": 2,
+    "price": 1250,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "A-rank shield: Defense 2. Mount Protection (also protects the mount).",
+    "description": "Mount Protection: while riding, its Defense also applies to every section of the mount (without the [Armor Proficiency/Shield] bonus, but including the shield's own enhancements).",
+    "modifiers": []
+  },
+  {
+    "name": "Grand Partner",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "S",
+    "stance": "1H",
+    "minStr": 18,
+    "evasion": 0,
+    "defense": 3,
+    "price": 4800,
+    "grappler": null,
+    "magic": false,
+    "silver": false,
+    "summary": "S-rank shield: Defense 3. Mount Protection (also protects the mount).",
+    "description": "Mount Protection: while riding, its Defense also applies to every section of the mount (without the [Armor Proficiency/Shield] bonus, but including the shield's own enhancements).",
+    "modifiers": []
+  },
+  {
+    "name": "Turtle Shell",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "S",
+    "stance": "1H",
+    "minStr": 5,
+    "evasion": 2,
+    "defense": 1,
+    "price": 19200,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "S-rank shield: Evasion +2, Defense 1.",
+    "description": "Magic shield; no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Half Moon",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "SS",
+    "stance": "1H",
+    "minStr": 6,
+    "evasion": 2,
+    "defense": 2,
+    "price": 33000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank shield: Evasion +2, Defense 2.",
+    "description": "Magic shield; no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Glorious",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "SS",
+    "stance": "1H",
+    "minStr": 15,
+    "evasion": 1,
+    "defense": 5,
+    "price": 47000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank shield: Evasion +1, Defense 5.",
+    "description": "Magic shield; no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Paladin's Pride",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "SS",
+    "stance": "1H",
+    "minStr": 21,
+    "evasion": 0,
+    "defense": 6,
+    "price": 54000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank shield: Defense 6. Mount Protection (also protects the mount).",
+    "description": "Mount Protection: while riding, its Defense also applies to every section of the mount (without the [Armor Proficiency/Shield] bonus, but including the shield's own enhancements).",
+    "modifiers": []
+  },
+  {
+    "name": "Eternal Lord",
+    "source": {
+      "book": "CR3",
+      "page": 220
+    },
+    "armorType": "shield",
+    "rank": "SS",
+    "stance": "1H",
+    "minStr": 24,
+    "evasion": 0,
+    "defense": 7,
+    "price": 65000,
+    "grappler": null,
+    "magic": true,
+    "silver": false,
+    "summary": "SS-rank shield: Defense 7.",
+    "description": "Magic shield; no further special rules.",
+    "modifiers": []
+  }
+]

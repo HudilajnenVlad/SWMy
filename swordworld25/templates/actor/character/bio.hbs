@@ -1,0 +1,26 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="bio">
+  <fieldset class="swp-fieldset swp-profile">
+    <legend>{{localize "SW25.Sheet.HistoryProfile"}}</legend>
+    <div class="swp-lines wrap">
+      <label class="swp-line"><span class="swp-line-label">{{localize "SW25.Bio.Height"}}</span><input type="text" name="system.details.height" value="{{system.details.height}}"></label>
+      <label class="swp-line"><span class="swp-line-label">{{localize "SW25.Bio.Weight"}}</span><input type="text" name="system.details.weight" value="{{system.details.weight}}"></label>
+      <label class="swp-line"><span class="swp-line-label">{{localize "SW25.Bio.Hair"}}</span><input type="text" name="system.details.hair" value="{{system.details.hair}}"></label>
+      <label class="swp-line"><span class="swp-line-label">{{localize "SW25.Bio.Eyes"}}</span><input type="text" name="system.details.eyes" value="{{system.details.eyes}}"></label>
+      <label class="swp-line"><span class="swp-line-label">{{localize "SW25.Bio.Skin"}}</span><input type="text" name="system.details.skin" value="{{system.details.skin}}"></label>
+    </div>
+    <div class="swp-editor">
+      <span class="swp-sub-title">{{localize "SW25.Bio.Biography"}}</span>
+      <prose-mirror name="system.details.biography" value="{{system.details.biography}}" toggled {{#unless editable}}disabled{{/unless}}>
+        {{{enrichedBiography}}}
+      </prose-mirror>
+    </div>
+  </fieldset>
+  <fieldset class="swp-fieldset swp-notes">
+    <legend>{{localize "SW25.Bio.Notes"}}</legend>
+    <div class="swp-editor">
+      <prose-mirror name="system.details.notes" value="{{system.details.notes}}" toggled {{#unless editable}}disabled{{/unless}}>
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+  </fieldset>
+</section>

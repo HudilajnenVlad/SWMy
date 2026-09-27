@@ -1,0 +1,61 @@
+<aside class="swp-best-filters">
+  <label class="swp-book-filter swp-best-search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" name="text" value="{{f.text}}" placeholder="{{searchPlaceholder}}" autocomplete="off">
+  </label>
+  <label class="swp-check swp-best-deep"><input type="checkbox" data-filter="deep" {{checked f.deep}}> {{deepLabel}}</label>
+
+  {{#each facets}}
+  {{#if toggle}}
+  <label class="swp-check swp-best-toggle {{#if checked}}on{{/if}}"><input type="checkbox" data-filter="{{key}}" {{checked checked}}> {{label}} <small>{{count}}</small></label>
+  {{/if}}
+
+  {{#if range}}
+  <div class="swp-best-range" {{#if hint}}data-tooltip="{{hint}}"{{/if}}>
+    <span class="swp-best-title">{{label}}</span>
+    {{#unless onlyMax}}
+    <input type="number" data-filter="{{key}}" data-bound="min" value="{{min}}" placeholder="{{placeholderMin}}">
+    <span>—</span>
+    {{/unless}}
+    <input type="number" data-filter="{{key}}" data-bound="max" value="{{max}}" placeholder="{{placeholderMax}}">
+  </div>
+  {{/if}}
+
+  {{#if chips}}
+  <fieldset class="swp-best-facet">
+    <legend>{{label}}{{#if hint}} <i class="fa-solid fa-circle-info" data-tooltip="{{hint}}"></i>{{/if}}</legend>
+    <div class="swp-best-chips">
+      {{#each options}}
+      <a class="swp-best-chip {{#if on}}on{{/if}}" data-action="toggleFacet" data-facet="{{../key}}" data-value="{{value}}">
+        {{#if icon}}<i class="{{icon}}"></i>{{/if}}{{label}} <small>{{count}}</small>
+      </a>
+      {{/each}}
+    </div>
+  </fieldset>
+  {{/if}}
+
+  {{#if radio}}
+  <fieldset class="swp-best-facet">
+    <legend>{{label}}</legend>
+    <div class="swp-best-radios">
+      {{#each options}}
+      <label class="swp-check"><input type="radio" name="{{../key}}" data-filter="{{../key}}" value="{{value}}" {{checked on}}> {{label}} <small>{{count}}</small></label>
+      {{/each}}
+    </div>
+  </fieldset>
+  {{/if}}
+
+  {{#if select}}
+  <label class="swp-field">{{label}}
+    <select data-filter="{{key}}">
+      <option value="">{{localize "SW25.Bestiary.Any"}}</option>
+      {{#each options}}<option value="{{value}}" {{#if on}}selected{{/if}}>{{label}} ({{count}})</option>{{/each}}
+    </select>
+  </label>
+  {{/if}}
+  {{/each}}
+
+  <button type="button" class="swp-btn-wide light swp-best-reset" data-action="resetFilters" {{#unless hasFilters}}disabled{{/unless}}>
+    <i class="fa-solid fa-filter-circle-xmark"></i> {{localize "SW25.Bestiary.Reset"}}
+  </button>
+</aside>

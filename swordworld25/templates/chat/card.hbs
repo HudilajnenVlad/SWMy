@@ -1,0 +1,152 @@
+<div class="sw25 swp swp-chat kind-{{state.kind}}">
+  <header class="swp-chat-head {{#if state.description}}toggle{{/if}}">
+    <img class="swp-chat-img" src="{{state.img}}" alt="">
+    <div class="swp-chat-titles">
+      <span class="swp-chat-title">{{state.title}}</span>
+      {{#if state.subtitle}}<span class="swp-chat-subtitle">{{state.subtitle}}</span>{{/if}}
+    </div>
+    {{#if state.description}}<i class="fa-solid fa-caret-down swp-chat-caret" data-tooltip="SW25.Card.ToggleDescription"></i>{{/if}}
+  </header>
+
+  {{#if (or state.summary state.details.length state.description)}}
+  <div class="swp-chat-kv">
+    {{#if state.summary}}<span class="k">{{localize "SW25.Entry.Summary"}}</span><span class="v">{{state.summary}}</span>{{/if}}
+    {{#each state.details}}<span class="k">{{label}}</span><span class="v">{{value}}</span>{{/each}}
+    {{#if state.description}}<span class="k swp-chat-desc">{{localize "SW25.Entry.Effect"}}</span><div class="v text swp-chat-desc">{{{state.description}}}</div>{{/if}}
+  </div>
+  {{/if}}
+
+  {{#if check}}
+  <div class="swp-chat-roll {{#if check.autoSuccess}}auto-success{{/if}} {{#if check.autoFailure}}auto-failure{{/if}}">
+    <span class="swp-legend">{{check.label}}</span>
+    <div class="swp-chat-roll-line">
+      {{#if check.noRoll}}
+      <span class="swp-chat-note">{{localize "SW25.Card.NoRoll"}}</span>
+      {{else}}
+        {{#if check.fixed}}
+        <span class="swp-chat-fixed" data-tooltip="SW25.FixedValueHint">{{localize "SW25.Fixed"}}</span>
+        {{else}}
+        <span class="swp-chat-dice">{{#each check.dice}}<span class="swp-chat-die d{{this}}">{{swpDieIcon this}}</span>{{/each}}</span>
+        {{#if check.base}}<span class="swp-chat-base">{{sw25Signed check.base}}</span>{{/if}}
+        {{/if}}
+      <span class="swp-chat-total">{{check.total}}</span>
+      {{/if}}
+    </div>
+    {{#if check.partsLabel}}<div class="swp-chat-parts">{{check.partsLabel}}</div>{{/if}}
+    {{#if (or check.autoSuccess check.autoFailure check.expGained (sw25IsNumber check.targetNumber))}}
+    <div class="swp-chat-stamps">
+      {{#if check.autoSuccess}}<span class="swp-stamp success">{{localize "SW25.AutoSuccess"}}</span>{{/if}}
+      {{#if check.autoFailure}}<span class="swp-stamp failure">{{localize "SW25.AutoFailure"}}</span>{{/if}}
+      {{#if (sw25IsNumber check.targetNumber)}}
+      <span class="swp-stamp {{#if check.success}}success{{else}}failure{{/if}}">{{localize "SW25.TN"}} {{check.targetNumber}}: {{#if check.success}}{{localize "SW25.Success"}}{{else}}{{localize "SW25.Failure"}}{{/if}}</span>
+      {{/if}}
+      {{#if check.expGained}}<span class="swp-stamp exp" data-tooltip="SW25.AutoFailureExp">+50 {{localize "SW25.Exp.label"}}</span>{{/if}}
+    </div>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{#if result}}
+  <div class="swp-chat-roll swp-chat-damage {{#if damage.heal}}heal{{/if}} {{#if damage.mp}}mp{{/if}} {{#if result.fumble}}fumble{{/if}}">
+    <span class="swp-legend">{{#if damage.heal}}{{#if damage.mp}}{{localize "SW25.Card.MPHealing"}}{{else}}{{localize "SW25.Card.Healing"}}{{/if}}{{else}}{{localize "SW25.Damage.label"}}{{/if}}</span>
+    <div class="swp-chat-roll-line">
+      <span class="swp-chat-kind">{{#unless damage.heal}}{{damage.kindLabel}}{{#if damage.typesLabel}} · {{damage.typesLabel}}{{/if}}{{/unless}}</span>
+      <span class="swp-chat-total big">{{result.calculated}}</span>
+    </div>
+    {{#if result.steps.length}}
+    <table class="swp-chat-steps">
+      <tbody>
+        {{#each result.steps}}
+        <tr class="{{#if crit}}crit{{/if}} {{#if fumble}}fumble{{/if}}">
+          <td class="dice">{{#each dice}}<span class="swp-chat-die d{{this}}">{{swpDieIcon this}}</span>{{/each}}</td>
+          <td class="pw">{{#if power}}{{localize "SW25.Power"}} {{power}}{{#if ../result.rollBonus}} <small>({{sw25Signed ../result.rollBonus}})</small>{{/if}}{{/if}}</td>
+          <td class="val">{{value}}</td>
+          <td class="tag">{{#if crit}}<span class="swp-stamp crit">{{localize "SW25.Critical"}}</span>{{/if}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+    <div class="swp-chat-parts">
+      {{#if result.fumble}}{{localize "SW25.Card.Fumble"}}{{else}}{{result.tableTotal}} {{sw25Signed result.extra}}{{#if result.halved}} ÷ 2{{/if}} = <b>{{result.calculated}}</b>{{/if}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if hasTargets}}
+  <div class="swp-chat-targets">
+    {{#each targets}}
+    <div class="swp-chat-target outcome-{{outcomeClass}}">
+      <img src="{{img}}" alt="">
+      <span class="swp-chat-tname">{{name}}{{#if sectionLabel}} <small>({{sectionLabel}})</small>{{/if}}</span>
+      {{#if ../state.contest}}
+        {{#if resist}}
+        {{#if resist.override}}<span class="swp-chat-resist gm" data-tooltip="SW25.Card.OverrideHint">{{localize "SW25.Card.Override"}}</span>
+        {{else}}<span class="swp-chat-resist" data-tooltip="{{../contestLabel}}{{#if resist.fixed}} ({{localize 'SW25.Fixed'}}){{/if}}">{{resist.total}}{{#if resist.autoSuccess}} ★{{/if}}{{#if resist.autoFailure}} ✖{{/if}}</span>{{/if}}
+        {{/if}}
+        {{#if canResist}}
+        <button type="button" class="swp-mini swp-chat-resist-btn" data-action="resist" data-index="{{index}}" data-owner="{{actorUuid}}"><i class="fa-solid fa-shield-halved"></i> {{../contestLabel}}</button>
+        {{/if}}
+        {{#if outcomeLabel}}<span class="swp-outcome {{outcomeClass}}">{{outcomeLabel}}</span>{{/if}}
+        <span class="swp-chat-override" data-gm-only>
+          <a data-action="setOutcome" data-index="{{index}}" data-outcome="{{#if (eq ../state.contest "evasion")}}hit{{else}}affected{{/if}}" data-tooltip="SW25.Card.ForceHit"><i class="fa-solid fa-check"></i></a>
+          <a data-action="setOutcome" data-index="{{index}}" data-outcome="{{#if (eq ../state.contest "evasion")}}miss{{else}}resisted{{/if}}" data-tooltip="SW25.Card.ForceMiss"><i class="fa-solid fa-xmark"></i></a>
+        </span>
+      {{/if}}
+      {{#if (eq ../state.kind "damage")}}
+        <span class="swp-chat-amount {{#if ../damage.heal}}heal{{/if}}">{{amount}}{{#if halved}} <small>(½)</small>{{/if}}</span>
+        <span class="swp-chat-apply" data-owner="{{../state.actorUuid}}">
+          {{#if ../damage.heal}}
+          <button type="button" class="swp-mini" data-action="apply" data-index="{{index}}" data-tooltip="SW25.Card.ApplyHeal"><i class="fa-solid fa-heart-circle-plus"></i></button>
+          {{else}}
+          <button type="button" class="swp-mini" data-action="apply" data-index="{{index}}" data-tooltip="SW25.Card.Apply"><i class="fa-solid fa-heart-crack"></i></button>
+          <button type="button" class="swp-mini" data-action="apply" data-index="{{index}}" data-mult="0.5" data-tooltip="SW25.Card.ApplyHalf">½</button>
+          <button type="button" class="swp-mini" data-action="apply" data-index="{{index}}" data-mult="2" data-tooltip="SW25.Card.ApplyDouble">×2</button>
+          <button type="button" class="swp-mini" data-action="applyHeal" data-index="{{index}}" data-tooltip="SW25.Card.ApplyAsHeal"><i class="fa-solid fa-plus"></i></button>
+          {{/if}}
+          {{#if applied}}<i class="fa-solid fa-circle-check swp-chat-applied" data-tooltip="SW25.Card.Applied"></i>{{/if}}
+        </span>
+      {{/if}}
+      {{#if ../showEffectButton}}
+        {{#unless negated}}<button type="button" class="swp-mini" data-action="applyEffect" data-index="{{index}}" data-owner="{{../state.actorUuid}}" data-tooltip="SW25.Card.ApplyEffect"><i class="fa-solid fa-wand-sparkles"></i></button>{{/unless}}
+        {{#if effectApplied}}<i class="fa-solid fa-circle-check swp-chat-applied" data-tooltip="SW25.Card.EffectOn"></i>{{/if}}
+      {{/if}}
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if (or showDamageButton showEffectButton (eq state.kind "damage"))}}
+  <footer class="swp-chat-foot">
+    {{#if showDamageButton}}
+    <div class="swp-chat-footrow">
+      {{#if showAddTargets}}{{#unless showEffectButton}}{{> addTargets}}{{/unless}}{{/if}}
+      <button type="button" class="swp-btn-wide" data-action="rollDamage" data-owner="{{state.actorUuid}}">
+        <i class="fa-solid fa-burst"></i> {{damage.label}}{{#if damage.power}} · {{localize "SW25.Power"}} {{damage.power}}{{/if}}{{#if damage.formulaLabel}} · {{damage.formulaLabel}}{{/if}}
+      </button>
+    </div>
+    {{/if}}
+    {{#if showEffectButton}}
+    <div class="swp-chat-footrow">
+      {{#if showAddTargets}}{{> addTargets}}{{/if}}
+      <button type="button" class="swp-btn-wide light" data-action="applyEffect" data-owner="{{state.actorUuid}}"><i class="fa-solid fa-wand-sparkles"></i> {{#if hasTargets}}{{localize "SW25.Card.ApplyEffectAll"}}{{else}}{{localize "SW25.Card.ApplyEffectTargets"}}{{/if}}</button>
+    </div>
+    {{/if}}
+    {{#if (eq state.kind "damage")}}
+    <div class="swp-chat-selected" data-owner="{{state.actorUuid}}">
+      {{#if showAddTargets}}{{#unless showEffectButton}}{{> addTargets}}{{/unless}}{{/if}}
+      <span>{{localize "SW25.Card.Targeted"}}</span>
+      {{#if damage.heal}}
+      <button type="button" class="swp-mini" data-action="applyTargets" data-tooltip="SW25.Card.ApplyHeal"><i class="fa-solid fa-heart-circle-plus"></i></button>
+      {{else}}
+      <button type="button" class="swp-mini" data-action="applyTargets" data-tooltip="SW25.Card.Apply"><i class="fa-solid fa-heart-crack"></i></button>
+      <button type="button" class="swp-mini" data-action="applyTargets" data-mult="0.5" data-tooltip="SW25.Card.ApplyHalf">½</button>
+      <button type="button" class="swp-mini" data-action="applyTargets" data-mult="2" data-tooltip="SW25.Card.ApplyDouble">×2</button>
+      {{/if}}
+    </div>
+    {{/if}}
+  </footer>
+  {{/if}}
+</div>
+
+{{#*inline "addTargets"}}<button type="button" class="swp-mini swp-chat-addtargets" data-action="addTargets" data-owner="{{state.actorUuid}}" data-tooltip="SW25.Card.AddTargetsHint" aria-label="{{localize 'SW25.Card.AddTargets'}}"><i class="fa-solid fa-crosshairs"></i></button>{{/inline}}

@@ -1,0 +1,22 @@
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Entry.Marks"}}</legend>
+  <div class="swp-chip-grid">
+    {{#each abilityTags}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleTag" data-key="{{key}}"><span class="swp-cb"></span>{{icon}} {{localize label}}</a>{{/each}}
+  </div>
+</fieldset>
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Section.label"}}<input type="text" name="system.section" value="{{system.section}}"></label>
+  <label class="swp-field">{{localize "SW25.AbilityItem.CheckValue"}}<input type="number" name="system.check.value" value="{{system.check.value}}"></label>
+  <label class="swp-field">{{localize "SW25.AbilityItem.Vs"}}<select name="system.check.vs">{{selectOptions choices.resistVs selected=system.check.vs localize=true blank="—"}}</select></label>
+  <label class="swp-field">{{localize "SW25.Resistance.label"}}<select name="system.check.result">{{selectOptions choices.resistance selected=system.check.result localize=true blank="—"}}</select></label>
+  <label class="swp-field">{{localize "SW25.Damage.label"}}<input type="text" name="system.damage.formula" value="{{system.damage.formula}}" placeholder="2d+5"></label>
+  <label class="swp-field">{{localize "SW25.DamageKind.label"}}<select name="system.damage.kind">{{selectOptions choices.abilityDamageKinds selected=system.damage.kind localize=true blank="—"}}</select></label>
+  <label class="swp-field">{{localize "SW25.Magic.System"}}<select name="system.spellcasting.system">{{selectOptions choices.magic selected=system.spellcasting.system localize=true blank="—"}}</select></label>
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.spellcasting.level" value="{{system.spellcasting.level}}"></label>
+  <label class="swp-field">{{localize "SW25.MagicPower"}}<input type="number" name="system.spellcasting.power" value="{{system.spellcasting.power}}"></label>
+  <label class="swp-field wide">{{localize "SW25.AbilityItem.Prerequisite"}}<input type="text" name="system.prerequisite" value="{{system.prerequisite}}"></label>
+</div>
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Entry.Type"}}</legend>
+  <div class="swp-chip-grid">{{#each damageTypes}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleType" data-path="system.damage.types" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>

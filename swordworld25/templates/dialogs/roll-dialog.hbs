@@ -1,0 +1,37 @@
+<div class="swp-roll">
+  {{#if summary}}<p class="swp-roll-summary"><i class="fa-solid fa-dice-d6"></i> {{summary}}</p>{{/if}}
+
+  {{#each groups}}
+  <fieldset class="swp-fieldset">
+    <legend>{{localize label}}</legend>
+    {{#each options}}
+    <label class="swp-roll-option" {{#if hint}}data-tooltip="{{hint}}"{{/if}}>
+      <input type="checkbox" name="opt.{{id}}" {{checked checked}}>
+      <span class="label">{{label}}</span>
+      {{#if value}}<span class="value">{{sw25Signed value}}</span>{{/if}}
+    </label>
+    {{/each}}
+  </fieldset>
+  {{/each}}
+
+  <div class="swp-field-grid swp-roll-fields">
+    {{#each extraFields}}
+      {{#if (eq type "checkbox")}}
+      <label class="swp-field swp-check"><input type="checkbox" name="extra.{{name}}" {{checked value}}> {{label}}</label>
+      {{else if (eq type "select")}}
+      <label class="swp-field">{{label}}<select name="extra.{{name}}">{{selectOptions options selected=value}}</select></label>
+      {{else}}
+      <label class="swp-field">{{label}}<input type="number" name="extra.{{name}}" value="{{value}}" step="1"></label>
+      {{/if}}
+    {{/each}}
+    <label class="swp-field">{{localize "SW25.Roll.Manual"}}<input type="number" name="manual" value="0" step="1"></label>
+    {{#if targetNumber}}
+    <label class="swp-field">{{localize "SW25.TN"}}<input type="number" name="targetNumber" value="{{defaultTN}}" step="1" placeholder="—"></label>
+    {{/if}}
+    <label class="swp-field">{{localize "SW25.Roll.RollMode"}}<select name="rollMode">{{selectOptions rollModes selected=rollMode localize=true}}</select></label>
+  </div>
+
+  {{#if showFixed}}
+  <label class="swp-check swp-roll-fixed"><input type="checkbox" name="useFixed" {{checked fixedDefault}}> {{localize "SW25.Roll.UseFixed"}}</label>
+  {{/if}}
+</div>

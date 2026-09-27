@@ -1,0 +1,972 @@
+[
+  {
+    "name": "Early Bird",
+    "source": {
+      "book": "CR2",
+      "page": 190
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 1,
+      "down": 0,
+      "heart": 0
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Wakes sleeping characters and keeps listeners from falling asleep.",
+    "description": "Characters in natural sleep wake up; those asleep because of an effect wake only if the Performance check beats that effect's success value. While the song continues, characters in the area cannot fall asleep naturally, and sleep effects aimed at them must win an opposed check against the Bard's Performance check.",
+    "modifiers": []
+  },
+  {
+    "name": "Ambience",
+    "source": {
+      "book": "CR2",
+      "page": 190
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "summary": "Listeners get Accuracy -1.",
+    "description": "Affected characters take -1 on Accuracy checks.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Summon Small Animals",
+    "source": {
+      "book": "CR2",
+      "page": 191
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "bird",
+      "insect"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "cant",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Draws nearby small animals to the Bard.",
+    "description": "Nearby mammals and birds small enough to fit in two cupped hands are drawn to the Bard; the effect starts at once, and all of them have arrived after 3 minutes (18 rounds). Harming any of them ends the effect and scatters the whole group.",
+    "modifiers": []
+  },
+  {
+    "name": "Summon Fish",
+    "source": {
+      "book": "CR2",
+      "page": 191
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "cant",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Draws nearby harmless fish; must be played near water.",
+    "description": "Must be used near water. Harmless fish in the vicinity are drawn in, all of them arriving within 3 minutes (18 rounds). Harming any of them ends the effect and scatters the whole school.",
+    "modifiers": []
+  },
+  {
+    "name": "Cacophony",
+    "source": {
+      "book": "CR2",
+      "page": 191
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "summary": "Listeners get Spellcasting -1.",
+    "description": "Affected characters take -1 on all Spellcasting checks.",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Ballad",
+    "source": {
+      "book": "CR2",
+      "page": 192
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "summary": "Listeners get Evasion -1.",
+    "description": "Affected characters take -1 on Evasion checks.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Morale",
+    "source": {
+      "book": "CR2",
+      "page": 192
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "cant",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 1,
+      "down": 0,
+      "heart": 0
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 1,
+      "down": 0,
+      "heart": 0
+    },
+    "summary": "Listeners get Accuracy +1.",
+    "description": "Affected characters gain +1 on Accuracy checks.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Requiem",
+    "source": {
+      "book": "CR2",
+      "page": 192
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "⮯2♡1",
+      "up": 0,
+      "down": 2,
+      "heart": 1
+    },
+    "resistance": "neg",
+    "types": [],
+    "baseRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Undead listeners take -2 on all actions and checks.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Affects Undead only; affected Undead take -2 on all of their actions and checks.",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Resistance",
+    "source": {
+      "book": "CR2",
+      "page": 192
+    },
+    "level": 1,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "cant",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "flourish": 13,
+    "extraRhythm": {
+      "up": 1,
+      "down": 0,
+      "heart": 0
+    },
+    "summary": "Listeners get Fortitude and Willpower +1.",
+    "description": "Affected characters gain +1 on Fortitude and Willpower checks.",
+    "modifiers": [
+      {
+        "key": "fortitude",
+        "value": 1,
+        "target": "target"
+      },
+      {
+        "key": "willpower",
+        "value": 1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Elements",
+    "source": {
+      "book": "CR2",
+      "page": 193
+    },
+    "level": 5,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "cant",
+    "types": [],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Physical and magic damage of one chosen element +2.",
+    "description": "When playing, the Bard picks one type (earth, fire, water/ice, wind or lightning); physical and magic damage of that type is increased by 2.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "damage of the chosen element only",
+        "target": "target"
+      },
+      {
+        "key": "damageMagic",
+        "value": 2,
+        "condition": "damage of the chosen element only",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Curiosity",
+    "source": {
+      "book": "CR2",
+      "page": 193
+    },
+    "level": 5,
+    "singing": true,
+    "pets": [],
+    "condition": {
+      "text": "♡4",
+      "up": 0,
+      "down": 0,
+      "heart": 4
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Listeners that cannot see the Bard move to where they can.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. A target that cannot see the Bard is compelled to move to a position (area or coordinates) from which it can, or as close as possible if no such place is reachable. Targets that can already see the Bard are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Charming",
+    "source": {
+      "book": "CR2",
+      "page": 193
+    },
+    "level": 5,
+    "singing": true,
+    "pets": [],
+    "condition": {
+      "text": "♡4",
+      "up": 0,
+      "down": 0,
+      "heart": 4
+    },
+    "resistance": "neg",
+    "types": [
+      "psychicWeak"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Listeners are unable to act against the Bard.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Affected targets are unwilling to hurt the Bard. Whenever the Bard is the passive party in a contested check against them, the Bard wins automatically.",
+    "modifiers": []
+  },
+  {
+    "name": "Trance",
+    "source": {
+      "book": "CR2",
+      "page": 194
+    },
+    "level": 5,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "cant",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 2,
+      "down": 0,
+      "heart": 0
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 1,
+      "down": 0,
+      "heart": 0
+    },
+    "summary": "Listeners get Spellcasting +1.",
+    "description": "Affected characters gain +1 on Spellcasting checks.",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": 1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Nostalgia",
+    "source": {
+      "book": "CR2",
+      "page": 194
+    },
+    "level": 5,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "⮯6♡6",
+      "up": 0,
+      "down": 6,
+      "heart": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "psychicWeak"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Listeners long to go home and try to escape the battle.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Affected characters want to return home; in combat they try to withdraw and escape from the battlefield. No effect on a listener who is already home or unable to escape. The effect lasts 1 hour or until the listener gets home.",
+    "modifiers": []
+  },
+  {
+    "name": "Break",
+    "source": {
+      "book": "CR2",
+      "page": 194
+    },
+    "level": 5,
+    "singing": false,
+    "pets": [
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 0,
+      "down": 1,
+      "heart": 0
+    },
+    "summary": "Listeners get Fortitude and Willpower -1.",
+    "description": "Affected characters take -1 on Fortitude and Willpower checks.",
+    "modifiers": [
+      {
+        "key": "fortitude",
+        "value": -1,
+        "target": "target"
+      },
+      {
+        "key": "willpower",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Love Song",
+    "source": {
+      "book": "CR2",
+      "page": 195
+    },
+    "level": 5,
+    "singing": true,
+    "pets": [],
+    "condition": {
+      "text": "⮭6♡6",
+      "up": 6,
+      "down": 0,
+      "heart": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "psychicWeak"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 1,
+      "down": 0,
+      "heart": 0
+    },
+    "summary": "Listeners are driven to seek out the nearest suitable romantic partner.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Affected characters try to be with the closest partner they could be attracted to, regardless of race, with existing lovers or spouses taking priority; if no suitable partner is in the area, there is no effect. The effect lasts 1 hour even after the performance stops.",
+    "modifiers": []
+  },
+  {
+    "name": "Lullaby",
+    "source": {
+      "book": "CR2",
+      "page": 195
+    },
+    "level": 5,
+    "singing": true,
+    "pets": [],
+    "condition": {
+      "text": "⮯4♡4",
+      "up": 0,
+      "down": 4,
+      "heart": 4
+    },
+    "resistance": "neg",
+    "types": [
+      "psychicWeak"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "flourish": 18,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 1
+    },
+    "summary": "Listeners grow drowsy: no movement or active actions; forced Action checks -4.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Affected characters are too drowsy to move or act actively, and take -4 on any Action check they are forced to make. The drowsiness ends after the normal 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": -4,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Clap",
+    "source": {
+      "book": "CR3",
+      "page": 176
+    },
+    "level": 10,
+    "singing": false,
+    "pets": [
+      "bird"
+    ],
+    "condition": {
+      "text": "⮭4♡2",
+      "up": 4,
+      "down": 0,
+      "heart": 2
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 24,
+    "extraRhythm": {
+      "up": 2,
+      "down": 0,
+      "heart": 0
+    },
+    "summary": "Listeners drop everything held in their hands and cannot use Stance items.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. When the effect takes hold, targets drop every weapon, shield and item they hold or wear in their hands. While affected they may attack only with weapons not wielded in hand (Kicks, Tails, Bites, etc.) and cannot use Stance items.",
+    "modifiers": []
+  },
+  {
+    "name": "Chorus",
+    "source": {
+      "book": "CR3",
+      "page": 176
+    },
+    "level": 10,
+    "singing": true,
+    "pets": [],
+    "condition": {
+      "text": "♡6",
+      "up": 0,
+      "down": 0,
+      "heart": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 24,
+    "extraRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "summary": "Listeners sing along: Limited Move only, no vocal spells, golem commands or passwords.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Targets sing along with the Bard. They are restricted to a Limited Move, and can neither cast spells needing vocalization nor instruct golems or say passwords.",
+    "modifiers": []
+  },
+  {
+    "name": "Dare",
+    "source": {
+      "book": "CR3",
+      "page": 177
+    },
+    "level": 10,
+    "singing": false,
+    "pets": [
+      "frog"
+    ],
+    "condition": {
+      "text": "None",
+      "up": 0,
+      "down": 0,
+      "heart": 0
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "flourish": 24,
+    "extraRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "summary": "Listeners cannot declare active combat feats.",
+    "description": "Targets lose the ability to declare active combat feats, including unique skills based on them.",
+    "modifiers": []
+  },
+  {
+    "name": "Dance",
+    "source": {
+      "book": "CR3",
+      "page": 177
+    },
+    "level": 10,
+    "singing": false,
+    "pets": [],
+    "condition": {
+      "text": "⮭4♡2",
+      "up": 4,
+      "down": 0,
+      "heart": 2
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 24,
+    "extraRhythm": {
+      "up": 2,
+      "down": 0,
+      "heart": 0
+    },
+    "summary": "Listeners dance: Accuracy and Evasion -2 (not for checks made with the Grappler class).",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Targets take -2 on Accuracy and Evasion checks. Checks made using the Grappler class are not penalized.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -2,
+        "target": "target"
+      },
+      {
+        "key": "evasion",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Fall",
+    "source": {
+      "book": "CR3",
+      "page": 177
+    },
+    "level": 10,
+    "singing": false,
+    "pets": [
+      "insect"
+    ],
+    "condition": {
+      "text": "⮯6",
+      "up": 0,
+      "down": 6,
+      "heart": 0
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "flourish": 24,
+    "extraRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "summary": "Flying listeners fall and cannot fly while affected.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. A target in the air is forced to fall (see Forced Fall, CR II p. 79) and cannot fly again while affected; the [Sword's Grace/Wings of the Wind] ability is unusable and the [Flying] unique skill is lost. Characters whose only movement is through the air (e.g. Flying or Floating) cannot move.",
+    "modifiers": []
+  },
+  {
+    "name": "Reduction",
+    "source": {
+      "book": "CR3",
+      "page": 178
+    },
+    "level": 10,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "⮯2♡4",
+      "up": 0,
+      "down": 2,
+      "heart": 4
+    },
+    "resistance": "cant",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 24,
+    "extraRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "summary": "Spells cast within range cost 1 less MP (not below 1).",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. The MP cost of spells cast within range is reduced by 1, to a minimum of 1. With [Metamagic/**], the reduction is applied before the Metamagic increase. Other MP costs (techniques, items, etc.) are unaffected.",
+    "modifiers": [
+      {
+        "key": "mp.cost",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Lazy",
+    "source": {
+      "book": "CR3",
+      "page": 178
+    },
+    "level": 10,
+    "singing": false,
+    "pets": [
+      "bird",
+      "frog",
+      "insect"
+    ],
+    "condition": {
+      "text": "⮯4♡2",
+      "up": 0,
+      "down": 4,
+      "heart": 2
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "baseRhythm": {
+      "up": 0,
+      "down": 0,
+      "heart": 2
+    },
+    "flourish": 24,
+    "extraRhythm": {
+      "up": 0,
+      "down": 2,
+      "heart": 0
+    },
+    "summary": "Listeners get -1 on all Skill Checks.",
+    "description": "Only takes effect if the Bard has accumulated the listed Rhythm. Targets take -1 on all Skill Checks.",
+    "modifiers": [
+      {
+        "key": "allChecks",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  }
+]

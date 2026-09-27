@@ -1,0 +1,1769 @@
+[
+  {
+    "name": "Human",
+    "key": "human",
+    "source": {
+      "book": "CR1",
+      "page": 63
+    },
+    "summary": "The most numerous humanoids; adaptable, with the power to change fate.",
+    "abilityDice": {
+      "dex": "2d",
+      "agi": "2d",
+      "str": "2d",
+      "vit": "2d",
+      "int": "2d",
+      "spi": "2d"
+    },
+    "languages": "Trade Common and a Regional Dialect (speak, read, write)",
+    "restrictedClasses": [],
+    "darkvision": false,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Sword's Grace / Change Fate",
+        "level": 1,
+        "description": "Once per day, after rolling 2d for a check, a power table roll or a loot roll, turn both dice to their opposite faces (1↔6, 2↔5, 3↔4). Double 1s become double 6s (automatic success)."
+      },
+      {
+        "name": "Change Fate (enhanced)",
+        "level": 6,
+        "description": "Add +1 to the flipped result. Only double 1s → double 6s gives an automatic success; a power table result is capped at 12."
+      },
+      {
+        "name": "Change Fate (enhanced II)",
+        "level": 11,
+        "description": "The bonus to the flipped result becomes +2."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Artificer",
+        "classes": "Artificer",
+        "skill": 8,
+        "body": 4,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "5",
+        "name": "Sorcerer",
+        "classes": "Sorcerer",
+        "skill": 6,
+        "body": 5,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "6",
+        "name": "Agile Warrior",
+        "classes": "Scout & Fencer",
+        "skill": 10,
+        "body": 7,
+        "mind": 4,
+        "exp": 2000
+      },
+      {
+        "roll": "7",
+        "name": "Normal",
+        "classes": "None",
+        "skill": 7,
+        "body": 7,
+        "mind": 7,
+        "exp": 3000
+      },
+      {
+        "roll": "8",
+        "name": "Mercenary",
+        "classes": "Fighter or Grappler",
+        "skill": 7,
+        "body": 10,
+        "mind": 4,
+        "exp": 2000
+      },
+      {
+        "roll": "9-10",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 4,
+        "body": 8,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "11-12",
+        "name": "Conjurer",
+        "classes": "Conjurer",
+        "skill": 7,
+        "body": 4,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "GM",
+        "name": "Adventurer (roll 2d for each base score)",
+        "classes": "None",
+        "skill": 0,
+        "body": 0,
+        "mind": 0,
+        "exp": 3000,
+        "gmOnly": true
+      },
+      {
+        "roll": "2-4 (CR II)",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 9,
+        "body": 5,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "5 (CR II)",
+        "name": "Swordman",
+        "classes": "Fencer",
+        "skill": 9,
+        "body": 6,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "6 (CR II)",
+        "name": "Brawler",
+        "classes": "Grappler",
+        "skill": 8,
+        "body": 8,
+        "mind": 5,
+        "exp": 2000
+      },
+      {
+        "roll": "7 (CR II)",
+        "name": "Warrior",
+        "classes": "Fighter",
+        "skill": 7,
+        "body": 9,
+        "mind": 5,
+        "exp": 2000
+      },
+      {
+        "roll": "8 (CR II)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 6,
+        "body": 8,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "9 (CR II)",
+        "name": "Poet",
+        "classes": "Bard",
+        "skill": 5,
+        "body": 7,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12 (CR II)",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 5,
+        "body": 6,
+        "mind": 10,
+        "exp": 2000
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Elf",
+    "key": "elf",
+    "source": {
+      "book": "CR1",
+      "page": 64
+    },
+    "summary": "Graceful, long-lived and gifted with magic; at home in water.",
+    "abilityDice": {
+      "dex": "2d",
+      "agi": "2d",
+      "str": "1d",
+      "vit": "2d",
+      "int": "2d",
+      "spi": "2d"
+    },
+    "languages": "Elven and Trade Common (speak, read, write)",
+    "restrictedClasses": [],
+    "darkvision": true,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Darkvision",
+        "level": 1,
+        "description": "Sees in darkness as in daylight (no darkness penalties)."
+      },
+      {
+        "name": "Sword's Grace / Gentle Water",
+        "level": 1,
+        "description": "Moves freely underwater (no underwater penalties), can speak there and hold its breath for 1 hour. +2 to Fortitude and Willpower checks against poison- and disease-type effects."
+      },
+      {
+        "name": "Gentle Water (enhanced)",
+        "level": 6,
+        "description": "One ally holding the elf's hand also moves freely underwater, holds breath for 1 hour and gains the +2 against poison/disease."
+      },
+      {
+        "name": "Gentle Water (enhanced II)",
+        "level": 11,
+        "description": "Once per day, soaking the whole body in water for 1 hour recovers HP and MP as if sleeping 6 hours."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-3",
+        "name": "Sworder",
+        "classes": "Fencer",
+        "skill": 12,
+        "body": 5,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "4",
+        "name": "Herbalist",
+        "classes": "Sage & Ranger",
+        "skill": 10,
+        "body": 5,
+        "mind": 11,
+        "exp": 2000
+      },
+      {
+        "roll": "5-6",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 9,
+        "body": 5,
+        "mind": 12,
+        "exp": 2000
+      },
+      {
+        "roll": "7",
+        "name": "Conjurer",
+        "classes": "Conjurer",
+        "skill": 9,
+        "body": 4,
+        "mind": 13,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Sorcerer",
+        "classes": "Sorcerer",
+        "skill": 10,
+        "body": 3,
+        "mind": 13,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 13,
+        "body": 5,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "2-4 (CR II)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 11,
+        "body": 5,
+        "mind": 10,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (CR II)",
+        "name": "Scout",
+        "classes": "Scout",
+        "skill": 12,
+        "body": 4,
+        "mind": 10,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (CR II)",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 10,
+        "body": 2,
+        "mind": 14,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9 (CR II)",
+        "name": "Brawler",
+        "classes": "Grappler",
+        "skill": 11,
+        "body": 4,
+        "mind": 11,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12 (CR II)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 9,
+        "body": 3,
+        "mind": 14,
+        "exp": 2500
+      }
+    ],
+    "modifiers": [
+      {
+        "key": "fortitude",
+        "value": 2,
+        "condition": "vs poison or disease effects"
+      },
+      {
+        "key": "willpower",
+        "value": 2,
+        "condition": "vs poison or disease effects"
+      }
+    ]
+  },
+  {
+    "name": "Dwarf",
+    "key": "dwarf",
+    "source": {
+      "book": "CR1",
+      "page": 65
+    },
+    "summary": "Short, hardy warriors and craftsmen, untouched by fire.",
+    "abilityDice": {
+      "dex": "2d+6",
+      "agi": "1d",
+      "str": "2d",
+      "vit": "2d",
+      "int": "1d",
+      "spi": "2d+6"
+    },
+    "languages": "Dwarven and Trade Common (speak, read, write)",
+    "restrictedClasses": [],
+    "darkvision": true,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Darkvision",
+        "level": 1,
+        "description": "Sees in darkness as in daylight."
+      },
+      {
+        "name": "Sword's Grace / Body of Flame",
+        "level": 1,
+        "description": "Takes no damage from fire-type attacks (physical or magical) and is unaffected by fire; its belongings do not burn unless it wishes."
+      },
+      {
+        "name": "Body of Flame (enhanced)",
+        "level": 6,
+        "description": "One ally holding the dwarf's hand also becomes immune to fire damage and burning."
+      },
+      {
+        "name": "Body of Flame (enhanced II)",
+        "level": 11,
+        "description": "Energy-type damage is halved; against Half-resistance energy effects a successful resistance negates them."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 6,
+        "body": 8,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6",
+        "name": "Warrior",
+        "classes": "Fighter",
+        "skill": 4,
+        "body": 11,
+        "mind": 5,
+        "exp": 2000
+      },
+      {
+        "roll": "7",
+        "name": "Brawler",
+        "classes": "Grappler",
+        "skill": 5,
+        "body": 10,
+        "mind": 5,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 4,
+        "body": 7,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12",
+        "name": "Artificer",
+        "classes": "Artificer",
+        "skill": 6,
+        "body": 7,
+        "mind": 7,
+        "exp": 2000
+      },
+      {
+        "roll": "2-4 (CR II)",
+        "name": "Scholar",
+        "classes": "Sage",
+        "skill": 3,
+        "body": 8,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (CR II)",
+        "name": "Wanderer",
+        "classes": "Ranger",
+        "skill": 6,
+        "body": 9,
+        "mind": 5,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (CR II)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 5,
+        "body": 9,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "8-9 (CR II)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 4,
+        "body": 8,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12 (CR II)",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 5,
+        "body": 6,
+        "mind": 9,
+        "exp": 2000
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Tabbit",
+    "key": "tabbit",
+    "source": {
+      "book": "CR1",
+      "page": 66
+    },
+    "summary": "Rabbit-like scholars with a talent for arcane magic and a sense for danger.",
+    "abilityDice": {
+      "dex": "1d",
+      "agi": "1d",
+      "str": "1d",
+      "vit": "2d",
+      "int": "2d+6",
+      "spi": "2d"
+    },
+    "languages": "Trade Common (speak, read, write); Ancient Celestial (read only)",
+    "restrictedClasses": [
+      "priest"
+    ],
+    "darkvision": false,
+    "noMP": false,
+    "extraCheckOptions": [
+      {
+        "check": "dangerSense",
+        "source": "adventurer",
+        "ability": "int",
+        "minLevel": 1
+      },
+      {
+        "check": "spotTrap",
+        "source": "adventurer",
+        "ability": "int",
+        "minLevel": 6
+      }
+    ],
+    "traits": [
+      {
+        "name": "Sixth Sense",
+        "level": 1,
+        "description": "Can make Danger Sense checks with Adventurer level + INT modifier."
+      },
+      {
+        "name": "Sixth Sense (enhanced)",
+        "level": 6,
+        "description": "Spot Trap checks may also use Adventurer level + INT modifier."
+      },
+      {
+        "name": "Sixth Sense (enhanced II)",
+        "level": 11,
+        "description": "+4 to Danger Sense and Spot Trap checks.",
+        "modifiers": [
+          {
+            "key": "check.dangerSense",
+            "value": 4
+          },
+          {
+            "key": "check.spotTrap",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "name": "No Divine Magic",
+        "level": 1,
+        "description": "Cannot learn the Priest class."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-5",
+        "name": "Conjurer",
+        "classes": "Conjurer",
+        "skill": 6,
+        "body": 6,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "6-7",
+        "name": "Sorcerer",
+        "classes": "Sorcerer",
+        "skill": 5,
+        "body": 7,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Sage",
+        "classes": "Sage",
+        "skill": 5,
+        "body": 8,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12",
+        "name": "Artificer",
+        "classes": "Artificer",
+        "skill": 8,
+        "body": 5,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "2-5 (CR II)",
+        "name": "Magician",
+        "classes": "Sorcerer & Conjurer",
+        "skill": 5,
+        "body": 6,
+        "mind": 11,
+        "exp": 1000
+      },
+      {
+        "roll": "6-7 (CR II)",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 7,
+        "body": 5,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9 (CR II)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 6,
+        "body": 7,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12 (CR II)",
+        "name": "Apothecary",
+        "classes": "Ranger",
+        "skill": 7,
+        "body": 6,
+        "mind": 9,
+        "exp": 2500
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Runefolk",
+    "key": "runefolk",
+    "source": {
+      "book": "CR1",
+      "page": 67
+    },
+    "summary": "Artificial people built by the Magitech Civilization; can trade HP for MP.",
+    "abilityDice": {
+      "dex": "2d",
+      "agi": "1d",
+      "str": "2d",
+      "vit": "2d",
+      "int": "2d",
+      "spi": "1d"
+    },
+    "languages": "Magitech and Trade Common (speak, read, write)",
+    "restrictedClasses": [
+      "priest",
+      "fairytamer"
+    ],
+    "darkvision": true,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Darkvision",
+        "level": 1,
+        "description": "Sees in darkness as in daylight."
+      },
+      {
+        "name": "HP Conversion",
+        "level": 1,
+        "description": "Once per day as a Major Action, lose any amount of HP and recover the same amount of MP."
+      },
+      {
+        "name": "HP Conversion (enhanced)",
+        "level": 6,
+        "description": "HP Conversion becomes a Minor Action and can be used during Combat Preparation."
+      },
+      {
+        "name": "HP Conversion (enhanced II)",
+        "level": 11,
+        "description": "HP Conversion can be used twice per day."
+      },
+      {
+        "name": "Cannot hear gods or see fairies",
+        "level": 1,
+        "description": "Cannot learn the Priest or Fairy Tamer classes; fairies are invisible to runefolk."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Scholar",
+        "classes": "Sage",
+        "skill": 8,
+        "body": 10,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 12,
+        "body": 8,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "7",
+        "name": "Warrior",
+        "classes": "Fighter or Grappler",
+        "skill": 9,
+        "body": 12,
+        "mind": 5,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Artificer",
+        "classes": "Artificer",
+        "skill": 12,
+        "body": 8,
+        "mind": 6,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12",
+        "name": "Sorcerer",
+        "classes": "Sorcerer",
+        "skill": 9,
+        "body": 8,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "2-4 (CR II)",
+        "name": "Scout",
+        "classes": "Scout",
+        "skill": 12,
+        "body": 6,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (CR II)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 10,
+        "body": 8,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (CR II)",
+        "name": "Agile Warrior",
+        "classes": "Fencer",
+        "skill": 11,
+        "body": 9,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "8-9 (CR II)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 8,
+        "body": 9,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12 (CR II)",
+        "name": "Conjurer",
+        "classes": "Conjurer",
+        "skill": 7,
+        "body": 9,
+        "mind": 10,
+        "exp": 2000
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Nightmare",
+    "key": "nightmare",
+    "source": {
+      "book": "CR1",
+      "page": 68
+    },
+    "summary": "Born with a soulscar to humans, elves, dwarves or lildraken; magical warriors with an alternate form.",
+    "abilityDice": {
+      "dex": "2d",
+      "agi": "2d",
+      "str": "1d",
+      "vit": "1d",
+      "int": "2d",
+      "spi": "2d"
+    },
+    "languages": "Same as the race of birth",
+    "restrictedClasses": [],
+    "darkvision": false,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Alternate Form",
+        "level": 1,
+        "description": "Transform as a Minor Action or during Combat Preparation (reverting takes a Major Action). While transformed: no armor penalty to spellcasting and no need to speak or draw magic characters. Toggle the 'Alternate Form' condition."
+      },
+      {
+        "name": "Weakness",
+        "level": 1,
+        "description": "Takes +2 damage from silvered weapons and from the element of the birth race (Human: earth, Elf: water/ice, Dwarf: fire, Lildraken: wind)."
+      },
+      {
+        "name": "Alternate Form (enhanced)",
+        "level": 6,
+        "description": "While transformed, melee attacks, ranged attacks and damaging spells deal +1 damage.",
+        "modifiers": [
+          {
+            "key": "damage",
+            "value": 1,
+            "condition": "in Alternate Form"
+          },
+          {
+            "key": "damageMagic",
+            "value": 1,
+            "condition": "in Alternate Form"
+          }
+        ]
+      },
+      {
+        "name": "Alternate Form (enhanced II)",
+        "level": 11,
+        "description": "While transformed, +1 to Accuracy and Spellcasting checks.",
+        "modifiers": [
+          {
+            "key": "accuracy",
+            "value": 1,
+            "condition": "in Alternate Form"
+          },
+          {
+            "key": "spellcasting",
+            "value": 1,
+            "condition": "in Alternate Form"
+          }
+        ]
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Sorcerer",
+        "classes": "Sorcerer",
+        "skill": 5,
+        "body": 13,
+        "mind": 12,
+        "exp": 2000
+      },
+      {
+        "roll": "5-6",
+        "name": "Warrior",
+        "classes": "Fighter or Grappler",
+        "skill": 7,
+        "body": 15,
+        "mind": 8,
+        "exp": 2000
+      },
+      {
+        "roll": "7",
+        "name": "Agile Warrior",
+        "classes": "Fencer & Scout",
+        "skill": 11,
+        "body": 13,
+        "mind": 6,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 6,
+        "body": 14,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12",
+        "name": "Artificer",
+        "classes": "Artificer",
+        "skill": 9,
+        "body": 9,
+        "mind": 12,
+        "exp": 2000
+      },
+      {
+        "roll": "2-4 (CR II)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 8,
+        "body": 13,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (CR II)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 9,
+        "body": 14,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (CR II)",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 10,
+        "body": 10,
+        "mind": 10,
+        "exp": 2500
+      },
+      {
+        "roll": "8-9 (CR II)",
+        "name": "Wanderer",
+        "classes": "Ranger",
+        "skill": 9,
+        "body": 12,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12 (CR II)",
+        "name": "Conjurer",
+        "classes": "Conjurer",
+        "skill": 6,
+        "body": 11,
+        "mind": 13,
+        "exp": 2000
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Lykant",
+    "key": "lykant",
+    "source": {
+      "book": "CR1",
+      "page": 69
+    },
+    "summary": "Beast-eared humanoids of Alframe who can take a bestial form.",
+    "abilityDice": {
+      "dex": "1d",
+      "agi": "1d+3",
+      "str": "2d",
+      "vit": "2d",
+      "int": "1d+6",
+      "spi": "1d"
+    },
+    "languages": "Lycant and Trade Common (speak, read, write)",
+    "restrictedClasses": [],
+    "darkvision": false,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Darkvision (Beast Form)",
+        "level": 1,
+        "description": "Sees in darkness as in daylight, but only in Beast Form."
+      },
+      {
+        "name": "Beast Form",
+        "level": 1,
+        "description": "Transform or revert as a Major Action. In Beast Form: +2 Strength modifier; can only speak Lycant; cannot use Truespeech, Spiritualism, Magitech or Fairy Magic (Divine Magic is fine). Toggle the 'Beast Form' condition."
+      },
+      {
+        "name": "Beast Form (enhanced)",
+        "level": 6,
+        "description": "Once per day, transform as a Minor Action or during Combat Preparation."
+      },
+      {
+        "name": "Beast Form (enhanced II)",
+        "level": 11,
+        "description": "In Beast Form also +1 Agility modifier."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Scout",
+        "classes": "Scout",
+        "skill": 13,
+        "body": 5,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6",
+        "name": "Warrior",
+        "classes": "Fighter",
+        "skill": 10,
+        "body": 9,
+        "mind": 6,
+        "exp": 2000
+      },
+      {
+        "roll": "7",
+        "name": "Brawler",
+        "classes": "Grappler",
+        "skill": 11,
+        "body": 7,
+        "mind": 7,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Agile Warrior",
+        "classes": "Fencer",
+        "skill": 12,
+        "body": 6,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12",
+        "name": "Hunter",
+        "classes": "Ranger",
+        "skill": 9,
+        "body": 8,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "2-4 (CR II)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 8,
+        "body": 9,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (CR II)",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 11,
+        "body": 8,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (CR II)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 10,
+        "body": 8,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "8-9 (CR II)",
+        "name": "Scholar",
+        "classes": "Sage",
+        "skill": 10,
+        "body": 7,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12 (CR II)",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 9,
+        "body": 7,
+        "mind": 9,
+        "exp": 2000
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Lildraken",
+    "key": "lildraken",
+    "source": {
+      "book": "CR2",
+      "page": 26
+    },
+    "summary": "Small upright dragon-folk with scales, a tail and wings.",
+    "abilityDice": {
+      "dex": "1d",
+      "agi": "2d",
+      "str": "2d",
+      "vit": "2d+6",
+      "int": "1d",
+      "spi": "2d"
+    },
+    "languages": "Trade Common (speak, read, write); Dragonic (speak)",
+    "restrictedClasses": [],
+    "darkvision": false,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Scaly Hide",
+        "level": 1,
+        "description": "+1 Defense (applied automatically)."
+      },
+      {
+        "name": "Tail Whip",
+        "level": 1,
+        "description": "Has the Wrestling weapon 'Tail'."
+      },
+      {
+        "name": "Sword's Grace / Wings of the Wind",
+        "level": 1,
+        "description": "Fly for up to 1 minute (6 rounds) per day: +1 to melee Accuracy and Evasion while flying, no Full Move, can carry up to 200 kg."
+      },
+      {
+        "name": "Wings of the Wind (enhanced)",
+        "level": 6,
+        "description": "Full Move is allowed while flying."
+      },
+      {
+        "name": "Wings of the Wind (enhanced II)",
+        "level": 11,
+        "description": "Flight lasts up to 2 minutes (12 rounds) per day."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-3",
+        "name": "Hunter",
+        "classes": "Ranger",
+        "skill": 6,
+        "body": 12,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "4-5",
+        "name": "Brawler",
+        "classes": "Grappler",
+        "skill": 6,
+        "body": 13,
+        "mind": 6,
+        "exp": 2000
+      },
+      {
+        "roll": "6-8",
+        "name": "Warrior",
+        "classes": "Fighter",
+        "skill": 5,
+        "body": 14,
+        "mind": 6,
+        "exp": 2000
+      },
+      {
+        "roll": "9-10",
+        "name": "Merchant",
+        "classes": "Sage",
+        "skill": 5,
+        "body": 11,
+        "mind": 9,
+        "exp": 2500
+      },
+      {
+        "roll": "11-12",
+        "name": "Priest",
+        "classes": "Priest",
+        "skill": 4,
+        "body": 13,
+        "mind": 8,
+        "exp": 2000
+      },
+      {
+        "roll": "2-4 (alt)",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 7,
+        "body": 12,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (alt)",
+        "name": "Agile Warrior",
+        "classes": "Fencer",
+        "skill": 6,
+        "body": 11,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (alt)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 5,
+        "body": 12,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "8-9 (alt)",
+        "name": "Magician",
+        "classes": "Sorcerer or Conjurer",
+        "skill": 4,
+        "body": 12,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12 (alt)",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 3,
+        "body": 12,
+        "mind": 10,
+        "exp": 2000
+      }
+    ],
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Grassrunner",
+    "key": "grassrunner",
+    "source": {
+      "book": "CR2",
+      "page": 27
+    },
+    "summary": "Small cheerful wanderers who have no MP but shrug off magic.",
+    "abilityDice": {
+      "dex": "2d",
+      "agi": "2d",
+      "str": "1d",
+      "vit": "2d+6",
+      "int": "1d",
+      "spi": "2d+6"
+    },
+    "languages": "Grassrunner and Trade Common (speak, read, write)",
+    "restrictedClasses": [],
+    "darkvision": false,
+    "noMP": true,
+    "traits": [
+      {
+        "name": "Mana Interference",
+        "level": 1,
+        "description": "Never has MP, even from classes (mako stones can still pay costs). A successful Willpower check against a spell negates it completely."
+      },
+      {
+        "name": "Natural Communication",
+        "level": 1,
+        "description": "Understands plants and animals a little (senses danger or something amiss)."
+      },
+      {
+        "name": "Mana Interference (enhanced)",
+        "level": 6,
+        "description": "Once per day as a Major Action, try to break a spell (Touch, 1 spell): Adventurer level + Spirit modifier against its success value."
+      },
+      {
+        "name": "Mana Interference (enhanced II)",
+        "level": 11,
+        "description": "+1 Accuracy, Evasion and Hide against monsters with 'Perception: Magic'.",
+        "modifiers": [
+          {
+            "key": "accuracy",
+            "value": 1,
+            "condition": "against a monster with Perception: Magic"
+          },
+          {
+            "key": "evasion",
+            "value": 1,
+            "condition": "against a monster with Perception: Magic"
+          },
+          {
+            "key": "check.hide",
+            "value": 1,
+            "condition": "against a monster with Perception: Magic"
+          }
+        ]
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Thief",
+        "classes": "Scout",
+        "skill": 13,
+        "body": 0,
+        "mind": 12,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6",
+        "name": "Light Warrior",
+        "classes": "Fencer",
+        "skill": 14,
+        "body": 1,
+        "mind": 10,
+        "exp": 2500
+      },
+      {
+        "roll": "7",
+        "name": "Wanderer",
+        "classes": "Ranger",
+        "skill": 12,
+        "body": 1,
+        "mind": 12,
+        "exp": 2500
+      },
+      {
+        "roll": "8-9",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 14,
+        "body": 0,
+        "mind": 11,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12",
+        "name": "Hobbyist",
+        "classes": "Sage or Bard",
+        "skill": 12,
+        "body": 0,
+        "mind": 13,
+        "exp": 2500
+      },
+      {
+        "roll": "2-4 (alt)",
+        "name": "Scholar",
+        "classes": "Sage",
+        "skill": 11,
+        "body": 1,
+        "mind": 13,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (alt)",
+        "name": "Brawler",
+        "classes": "Grappler",
+        "skill": 14,
+        "body": 2,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "7 (alt)",
+        "name": "Traveler",
+        "classes": "None",
+        "skill": 11,
+        "body": 2,
+        "mind": 12,
+        "exp": 3000
+      },
+      {
+        "roll": "8-9 (alt)",
+        "name": "Scout",
+        "classes": "Fencer & Scout",
+        "skill": 15,
+        "body": 0,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12 (alt)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 12,
+        "body": 0,
+        "mind": 13,
+        "exp": 2500
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Meria",
+    "key": "meria",
+    "source": {
+      "book": "CR2",
+      "page": 28
+    },
+    "summary": "Plant-like humanoids with flowers; they never sleep and regrow each morning.",
+    "abilityDice": {
+      "dex": "1d",
+      "agi": "1d",
+      "str": "1d",
+      "vit": "2d+6",
+      "int": "1d",
+      "spi": "1d"
+    },
+    "languages": "Trade Common (speak, read, write); Sylvan (speak)",
+    "restrictedClasses": [],
+    "darkvision": false,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Thriving Life",
+        "level": 1,
+        "description": "Needs no sleep. At 6:00 a.m. recovers 20% of max HP (rounded up) and all MP; sleeping gives no recovery."
+      },
+      {
+        "name": "Thriving Life (enhanced)",
+        "level": 6,
+        "description": "+4 to Fortitude and Death checks in natural environments and under sunlight.",
+        "modifiers": [
+          {
+            "key": "fortitude",
+            "value": 4,
+            "condition": "in a natural environment or sunlight"
+          },
+          {
+            "key": "check.death",
+            "value": 4,
+            "condition": "in a natural environment or sunlight"
+          }
+        ]
+      },
+      {
+        "name": "Thriving Life (enhanced II)",
+        "level": 11,
+        "description": "Also recovers HP and MP at 6:00 p.m."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Wanderer",
+        "classes": "Ranger",
+        "skill": 9,
+        "body": 8,
+        "mind": 12,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 8,
+        "body": 8,
+        "mind": 13,
+        "exp": 2000
+      },
+      {
+        "roll": "7",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 8,
+        "body": 7,
+        "mind": 14,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Sorcerer",
+        "classes": "Sorcerer",
+        "skill": 8,
+        "body": 6,
+        "mind": 15,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12",
+        "name": "Conjurer",
+        "classes": "Conjurer",
+        "skill": 7,
+        "body": 6,
+        "mind": 16,
+        "exp": 2000
+      },
+      {
+        "roll": "2-4 (alt)",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 10,
+        "body": 7,
+        "mind": 12,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (alt)",
+        "name": "Light Warrior",
+        "classes": "Fencer",
+        "skill": 10,
+        "body": 8,
+        "mind": 11,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (alt)",
+        "name": "Magician",
+        "classes": "Sorcerer & Conjurer",
+        "skill": 8,
+        "body": 5,
+        "mind": 16,
+        "exp": 1000
+      },
+      {
+        "roll": "8-9 (alt)",
+        "name": "Bard",
+        "classes": "Bard",
+        "skill": 7,
+        "body": 7,
+        "mind": 15,
+        "exp": 2500
+      },
+      {
+        "roll": "10-12 (alt)",
+        "name": "Bodybuilder",
+        "classes": "Enhancer",
+        "skill": 9,
+        "body": 9,
+        "mind": 11,
+        "exp": 2500
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Tiens",
+    "key": "tiens",
+    "source": {
+      "book": "CR3",
+      "page": 66
+    },
+    "summary": "Jewel-marked guardians of the Wall of the Abyss who can speak mind to mind.",
+    "abilityDice": {
+      "dex": "2d",
+      "agi": "2d",
+      "str": "1d",
+      "vit": "1d+3",
+      "int": "2d",
+      "spi": "2d+3"
+    },
+    "languages": "Trade Common (speak, read, write); Daemonic (speak)",
+    "restrictedClasses": [],
+    "darkvision": false,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Intercommunication",
+        "level": 1,
+        "description": "Communicate with any visible or well-known character within 10 m regardless of language. Can inspire an animal or mythical-beast mount: +1 Accuracy and Evasion for 1 minute, once every 6 hours."
+      },
+      {
+        "name": "Intercommunication (enhanced)",
+        "level": 6,
+        "description": "Range becomes 30 m."
+      },
+      {
+        "name": "Intercommunication (enhanced II)",
+        "level": 11,
+        "description": "The mount inspiration bonus becomes +2."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Cavalier",
+        "classes": "Rider",
+        "skill": 10,
+        "body": 11,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6",
+        "name": "Brawler",
+        "classes": "Grappler",
+        "skill": 9,
+        "body": 13,
+        "mind": 6,
+        "exp": 2000
+      },
+      {
+        "roll": "7",
+        "name": "Warrior",
+        "classes": "Fighter",
+        "skill": 8,
+        "body": 12,
+        "mind": 8,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 7,
+        "body": 12,
+        "mind": 9,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12",
+        "name": "Sorcerer",
+        "classes": "Sorcerer",
+        "skill": 6,
+        "body": 12,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "2-4 (alt)",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 11,
+        "body": 12,
+        "mind": 5,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (alt)",
+        "name": "Scout",
+        "classes": "Scout",
+        "skill": 10,
+        "body": 10,
+        "mind": 8,
+        "exp": 2500
+      },
+      {
+        "roll": "7 (alt)",
+        "name": "Magic Warrior",
+        "classes": "Fighter & Sorcerer",
+        "skill": 9,
+        "body": 11,
+        "mind": 8,
+        "exp": 1000
+      },
+      {
+        "roll": "8-9 (alt)",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 7,
+        "body": 11,
+        "mind": 10,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12 (alt)",
+        "name": "Scholar",
+        "classes": "Sage",
+        "skill": 8,
+        "body": 11,
+        "mind": 9,
+        "exp": 2500
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "name": "Leprechaun",
+    "key": "leprechaun",
+    "source": {
+      "book": "CR3",
+      "page": 67
+    },
+    "summary": "Small reclusive artisans who can turn invisible and wear extra trinkets.",
+    "abilityDice": {
+      "dex": "2d",
+      "agi": "1d",
+      "str": "2d",
+      "vit": "2d",
+      "int": "2d",
+      "spi": "2d"
+    },
+    "languages": "Magitech and Trade Common (speak, read, write)",
+    "restrictedClasses": [],
+    "darkvision": true,
+    "noMP": false,
+    "traits": [
+      {
+        "name": "Darkvision",
+        "level": 1,
+        "description": "Sees in darkness as in daylight."
+      },
+      {
+        "name": "Invisible Hand",
+        "level": 1,
+        "description": "Can wear two accessories in the 'Other' section."
+      },
+      {
+        "name": "Unseen Artisan",
+        "level": 1,
+        "description": "Major Action, 5 MP: become invisible as with the Truespeech spell Conceal Self, without its equipment restrictions."
+      },
+      {
+        "name": "Invisible Hand (enhanced)",
+        "level": 6,
+        "description": "Three 'Other' accessories."
+      },
+      {
+        "name": "Invisible Hand (enhanced II)",
+        "level": 11,
+        "description": "Once per round, swap an accessory as a Minor Action."
+      }
+    ],
+    "backgrounds": [
+      {
+        "roll": "2-4",
+        "name": "Agile Warrior",
+        "classes": "Fencer",
+        "skill": 13,
+        "body": 5,
+        "mind": 5,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6",
+        "name": "Archer",
+        "classes": "Marksman",
+        "skill": 12,
+        "body": 6,
+        "mind": 5,
+        "exp": 2500
+      },
+      {
+        "roll": "7",
+        "name": "Spy",
+        "classes": "Scout",
+        "skill": 14,
+        "body": 4,
+        "mind": 5,
+        "exp": 2500
+      },
+      {
+        "roll": "8-9",
+        "name": "Feytouched",
+        "classes": "Fairy Tamer",
+        "skill": 11,
+        "body": 4,
+        "mind": 8,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12",
+        "name": "Agile Warrior",
+        "classes": "Fencer",
+        "skill": 11,
+        "body": 5,
+        "mind": 7,
+        "exp": 2500
+      },
+      {
+        "roll": "2-4 (alt)",
+        "name": "Wanderer",
+        "classes": "Ranger",
+        "skill": 12,
+        "body": 5,
+        "mind": 6,
+        "exp": 2500
+      },
+      {
+        "roll": "5-6 (alt)",
+        "name": "Hobbyist",
+        "classes": "Sage & Bard",
+        "skill": 13,
+        "body": 4,
+        "mind": 6,
+        "exp": 2000
+      },
+      {
+        "roll": "7 (alt)",
+        "name": "Artificer",
+        "classes": "Artificer",
+        "skill": 12,
+        "body": 4,
+        "mind": 7,
+        "exp": 2000
+      },
+      {
+        "roll": "8-9 (alt)",
+        "name": "Cleric",
+        "classes": "Priest",
+        "skill": 10,
+        "body": 5,
+        "mind": 8,
+        "exp": 2000
+      },
+      {
+        "roll": "10-12 (alt)",
+        "name": "Magician",
+        "classes": "Sorcerer or Conjurer",
+        "skill": 11,
+        "body": 3,
+        "mind": 9,
+        "exp": 2000
+      }
+    ],
+    "modifiers": []
+  }
+]

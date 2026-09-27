@@ -1,0 +1,10 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="notes">
+  <fieldset class="swp-fieldset">
+    <legend>{{localize "SW25.Bio.Notes"}} <small class="swp-sub inline">({{localize "SW25.Monster.GMOnly"}})</small></legend>
+    <div class="swp-editor">
+      <prose-mirror name="system.details.notes" value="{{system.details.notes}}" toggled {{#unless editable}}disabled{{/unless}}>
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+  </fieldset>
+</section>

@@ -1,0 +1,13 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="1"></label>
+  <label class="swp-field">{{localize "SW25.Resistance.label"}}<select name="system.resistance">{{selectOptions choices.resistance selected=system.resistance localize=true}}</select></label>
+  <label class="swp-field wide">{{localize "SW25.Finale.Targets"}}<input type="text" name="system.targets" value="{{system.targets}}"></label>
+  <label class="swp-field">⮭ {{localize "SW25.Rhythm.up"}}<input type="number" name="system.cost.up" value="{{system.cost.up}}" min="0"></label>
+  <label class="swp-field">⮯ {{localize "SW25.Rhythm.down"}}<input type="number" name="system.cost.down" value="{{system.cost.down}}" min="0"></label>
+  <label class="swp-field">♡ {{localize "SW25.Rhythm.heart"}}<input type="number" name="system.cost.heart" value="{{system.cost.heart}}" min="0"></label>
+</div>
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Entry.Type"}}</legend>
+  <div class="swp-chip-grid">{{#each damageTypes}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleType" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>
+{{> "systems/swordworld25/templates/item/parts/effect.hbs"}}

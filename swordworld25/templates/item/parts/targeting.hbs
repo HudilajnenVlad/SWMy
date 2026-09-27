@@ -1,0 +1,14 @@
+{{!-- Target / range / duration fields of spells and evocations. --}}
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Targeting"}}</legend>
+  <div class="swp-field-grid">
+    <label class="swp-field wide">{{localize "SW25.Target.label"}}<input type="text" name="system.target.text" value="{{system.target.text}}" placeholder="1 Character"></label>
+    <label class="swp-field">{{localize "SW25.Target.kind"}}<select name="system.target.kind">{{selectOptions choices.targetKinds selected=system.target.kind localize=true}}</select></label>
+    <label class="swp-field wide">{{localize "SW25.RangeArea"}}<input type="text" name="system.rangeArea.text" value="{{system.rangeArea.text}}" placeholder="2(30m)/Target"></label>
+    <label class="swp-field">{{localize "SW25.Range.label"}}<select name="system.rangeArea.range">{{selectOptions choices.rangeKinds selected=system.rangeArea.range localize=true}}</select></label>
+    <label class="swp-field">{{localize "SW25.Area.label"}}<select name="system.rangeArea.area">{{selectOptions choices.areaKinds selected=system.rangeArea.area localize=true}}</select></label>
+    <label class="swp-field wide">{{localize "SW25.Duration.label"}}<input type="text" name="system.duration.text" value="{{system.duration.text}}" placeholder="3 minutes (18 r)"></label>
+    <label class="swp-field">{{localize "SW25.Duration.unit"}}<select name="system.duration.unit">{{selectOptions choices.durationUnits selected=system.duration.unit localize=true}}</select></label>
+    <label class="swp-field">{{localize "SW25.Duration.value"}}<input type="number" name="system.duration.value" value="{{system.duration.value}}"></label>
+  </div>
+</fieldset>

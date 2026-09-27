@@ -1,0 +1,2771 @@
+[
+  {
+    "name": "Solid Bullet",
+    "source": {
+      "book": "CR1",
+      "page": 242
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": 20,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Charges a loaded bullet: a hit deals Power 20 + Magic Power magic damage.",
+    "description": "Cast on a bullet loaded in a gun in the caster's hand, normally just before firing; the Critical Value is the gun's. If the shot hits, it deals Power 20 + Magic Power magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Targeting Sight",
+    "source": {
+      "book": "CR1",
+      "page": 242
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The magisphere becomes a sighting scope: the caster gets Accuracy +1.",
+    "description": "The magisphere turns into a scope that sharpens the caster's aim, giving +1 to the caster's Accuracy checks while it lasts.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Flashlight",
+    "source": {
+      "book": "CR1",
+      "page": 242
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "6 Hours",
+      "unit": "hours",
+      "value": 6
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The magisphere lights a 10m-radius half circle ahead of it, cancelling darkness penalties there.",
+    "description": "The magisphere becomes a lamp that lights a semicircle of 10m radius in front of it; inside the light no darkness penalties apply. In Simplified Combat it lights the caster's area and the adjacent area in front (only the caster's own area if the caster has advanced into the enemy rear area).",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Search",
+    "source": {
+      "book": "CR1",
+      "page": 242
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All areas (10m-50m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": null,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Shows where all magic items in range are; radius 10m/30m/50m for a small/medium/large magisphere.",
+    "description": "The magisphere acts as a detector that reveals the position of every magic item within range, but not the strength or kind of its magic. The radius is 10m with a small magisphere, 30m with a medium one and 50m with a large one.",
+    "modifiers": []
+  },
+  {
+    "name": "Explorer Aid",
+    "source": {
+      "book": "CR1",
+      "page": 243
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 minutes (60 r)",
+      "unit": "rounds",
+      "value": 60
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Sensor magisphere: +2 to the caster's Search and Disable Device checks.",
+    "description": "The magisphere becomes a sensor that supports the caster's sight and hearing, granting +2 on Search and Disable Device checks.",
+    "modifiers": [
+      {
+        "key": "check.search",
+        "value": 2
+      },
+      {
+        "key": "check.disableDevice",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Critical Bullet",
+    "source": {
+      "book": "CR1",
+      "page": 243
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": 20,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Charges a Power 20 bullet that lowers the gun's Critical Value by 1 (minimum 8).",
+    "description": "Cast on a bullet loaded in a gun in the caster's hand, normally just before firing; the Critical Value is the gun's. A hit deals Power 20 + Magic Power magic damage, and the gun's Critical Value is lowered by 1 for this shot (to no less than 8).",
+    "modifiers": [
+      {
+        "key": "critical",
+        "value": -1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Healing Bullet",
+    "source": {
+      "book": "CR1",
+      "page": 243
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "heal",
+      "power": 0,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Charges a healing bullet: the character hit recovers Power 0 + Magic Power HP.",
+    "description": "The bullet heals instead of hurting: the character hit recovers Power 0 + Magic Power HP (no critical). It hits unless the Accuracy check is an automatic failure. Undead, constructs and magitech are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Knocker Bomb",
+    "source": {
+      "book": "CR1",
+      "page": 243
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Plants a bomb on a lock that blows it apart after 10 seconds.",
+    "description": "A small magic bomb set on a lock explodes loudly after 10 seconds (1 round), at the start of the caster's next turn, destroying the lock beyond repair. Ordinary locks are always destroyed; a lock sealed by magic requires a contested check against the Magic Power of that spell.",
+    "modifiers": []
+  },
+  {
+    "name": "Element Bullet",
+    "source": {
+      "book": "CR1",
+      "page": 244
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": 20,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Charges a Power 20 bullet whose damage takes a chosen element (fire, water, wind, earth or lightning).",
+    "description": "Cast on a bullet loaded in a gun in the caster's hand, normally just before firing; the Critical Value is the gun's. A hit deals Power 20 + Magic Power magic damage that also has one type chosen by the caster: fire, water/ice, wind, earth or lightning.",
+    "modifiers": []
+  },
+  {
+    "name": "Effect Weapon",
+    "source": {
+      "book": "CR1",
+      "page": 244
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Target's weapon counts as magical, deals +1 physical damage and gains a chosen elemental type.",
+    "description": "Weapons the target uses for melee or ranged attacks are treated as magic weapons (the damage stays physical) and deal +1 damage. The caster must also pick an element when casting (earth, fire, water/ice, wind or lightning), and those attacks carry that type.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Jump Boots",
+    "source": {
+      "book": "CR1",
+      "page": 244
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Jumping boots multiply the caster's jump distance by 2/3/5 (small/medium/large magisphere).",
+    "description": "The magisphere turns into boots the caster wears at once (other foot accessories need not be removed). Jump distance and height are doubled with a small magisphere, tripled with a medium one and multiplied by 5 with a large one, and the caster takes no falling damage from such jumps.",
+    "modifiers": []
+  },
+  {
+    "name": "Shock Bomb",
+    "source": {
+      "book": "CR1",
+      "page": 244
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant/30 seconds (3 r)",
+      "unit": "instantRounds",
+      "value": 3
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "paralyzed"
+      ]
+    },
+    "summary": "Paralyzing bomb: the target loses 12 Agility (minimum 0).",
+    "description": "The target's Agility drops by 12 (minimum 0), lowering everything derived from it such as movement, Evasion and Initiative. Fixed-value characters instead get movement -12, Initiative -2 and Evasion -2; other abilities are adjusted by the GM.",
+    "modifiers": [
+      {
+        "key": "ability.agi",
+        "value": -12,
+        "target": "target",
+        "actorType": "character"
+      },
+      {
+        "key": "movement",
+        "value": -12,
+        "target": "target",
+        "actorType": "monster"
+      },
+      {
+        "key": "initiative",
+        "value": -2,
+        "target": "target",
+        "actorType": "monster"
+      },
+      {
+        "key": "evasion",
+        "value": -2,
+        "target": "target",
+        "actorType": "monster"
+      }
+    ]
+  },
+  {
+    "name": "Analyze",
+    "source": {
+      "book": "CR1",
+      "page": 245
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Reveals the functions of magitech-era items and the data of magitech monsters (not the weak point).",
+    "description": "The magisphere becomes an analyzer: the caster learns the abilities, effects and uses of items from the Magitech Civilization era and can read a magitech monster's data, except its weak point. It can be cast during Combat Preparation, but only once and before the Monster Knowledge check.",
+    "modifiers": []
+  },
+  {
+    "name": "Quick Loader",
+    "source": {
+      "book": "CR1",
+      "page": 245
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Gun",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Instantly fills one gun to capacity with bullets from the caster's gun belt.",
+    "description": "The magisphere acts as an automatic loader and refills one gun to full capacity from the bullets on the caster's gun belt.",
+    "modifiers": []
+  },
+  {
+    "name": "Automobile",
+    "source": {
+      "book": "CR1",
+      "page": 245
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The magisphere becomes a Mini Manabike or Manabike usable as a mount (revised in CR III).",
+    "description": "CR I version: the magisphere turns into a manabike (speed 50) that anyone can ride, but the pilot must concentrate on driving and can do nothing else. CR III p.155 revises the spell for the riding rules: it now creates a Mini Manabike or a Manabike usable as a mount without a Mount Contract Sphere (mount data CR III p.261), and [Automobile II] is added at level 7. In both versions the transformed magisphere can't be used to cast magitech.",
+    "modifiers": []
+  },
+  {
+    "name": "Smoke Bomb",
+    "source": {
+      "book": "CR1",
+      "page": 245
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant/30 seconds (3 r)",
+      "unit": "instantRounds",
+      "value": 3
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Smoke fills a 5m radius, blocking all light and five-senses vision (even Darkvision).",
+    "description": "A thrown bomb fills a 5m radius with smoke that blocks all light, making vision based on the five senses useless inside, Darkvision included. Creatures with magical or mechanical perception are not hindered.",
+    "modifiers": []
+  },
+  {
+    "name": "Shotgun Bullet",
+    "source": {
+      "book": "CR1",
+      "page": 246
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": 20,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 20 scatter shot against 1 area (3m radius)/5 at Range 1(10m); 2H guns only.",
+    "description": "The shot is treated as Target: 1 area (3m Radius)/5 with Range 1(10m); each character hit takes Power 20 + Magic Power magic damage. Only guns with Stance 2H can fire it. The caster may leave themself out of the targets even if their skirmish is in the area, and a caster with [Magic Control] may declare it for this shot to exclude any characters in the area.",
+    "modifiers": []
+  },
+  {
+    "name": "Grenade",
+    "source": {
+      "book": "CR1",
+      "page": 246
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": "small",
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Thrown bomb: Power 30 fire magic damage in an area; the magisphere is destroyed.",
+    "description": "Deals Power 30 + Magic Power fire magic damage to the targets in the area (halved by a successful Willpower check). The magisphere used to cast it is destroyed.",
+    "modifiers": []
+  },
+  {
+    "name": "Wire Anchor",
+    "source": {
+      "book": "CR1",
+      "page": 246
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object or 1 Entire Character",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "entangled"
+      ]
+    },
+    "summary": "Fires a 30m hooked wire (holds 200kg) to climb or to entangle a target (Evasion -2).",
+    "description": "Shoots a 30m wire with a hook that can bear 200kg, usable for climbing, lifting or bracing; winding it in takes a Major Action and moves 10m per 10 seconds. Against a character, the Spellcasting check is opposed by the target's Evasion; if the target fails it is entangled, taking Evasion -2 and unable to move farther than 30m from the caster, and the caster can reel it in 10m per 10 seconds with a Major Action. If the target has more sections than the caster, it gets no Evasion penalty and reeling pulls the caster toward it instead.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Burst Shot",
+    "source": {
+      "book": "CR1",
+      "page": 247
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "3 Bullets",
+      "kind": "bullets3",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": 30,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Fires three loaded bullets as one shot with Accuracy +2 and Power 30.",
+    "description": "Three bullets loaded in the gun are fired as a single shot with Accuracy +2; a hit deals Power 30 + Magic Power magic damage. The spell fails if the gun holds fewer than 3 bullets.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Create Weapon",
+    "source": {
+      "book": "CR1",
+      "page": 247
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Turns the magisphere into a magic version of any non-magic weapon of rank A or lower.",
+    "description": "The magisphere becomes a magic weapon (it still deals physical damage) chosen from the non-magical weapons of rank A or lower. It appears equipped in the caster's hand (it can also be made as a kick-enhancing weapon) and can be handed to others. While transformed, the magisphere can't be used to cast magitech.",
+    "modifiers": []
+  },
+  {
+    "name": "Set Disguise",
+    "source": {
+      "book": "CR1",
+      "page": 247
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster instantly takes on the look of another Humanoid or Barbarous they know.",
+    "description": "The caster's face, features and even build change to match another Humanoid or Barbarous they know, indistinguishable at a glance. Seeing through the disguise requires a Detect check.",
+    "modifiers": []
+  },
+  {
+    "name": "Resist Bomb",
+    "source": {
+      "book": "CR1",
+      "page": 247
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets take 4 less damage from a chosen element and ignore its non-damage harmful effects.",
+    "description": "On casting, choose fire, water/ice, earth, wind or lightning. Targets in the area take 4 less damage of that type and are unaffected by its harmful effects other than damage.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -4,
+        "condition": "damage of the chosen type",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Stun Bullet",
+    "source": {
+      "book": "CR2",
+      "page": 157
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": 10,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 10 bullet; a character hit may lose Minor Actions and active combat feats for 1 round.",
+    "description": "Cast on a bullet loaded in a gun in the caster's hand, normally just before firing; the Critical Value is the gun's. On a hit it inflicts Power 10 + Magic Power magic damage; a character struck then resists the caster's Spellcasting check with Willpower, and on a failure it can't use Minor Actions or declare active combat feats for a further 10 seconds (1 round).",
+    "modifiers": []
+  },
+  {
+    "name": "Telescope",
+    "source": {
+      "book": "CR2",
+      "page": 157
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Telescope magisphere: see up to 100m / 300m / 1km (small/medium/large).",
+    "description": "The magisphere becomes a telescope for the caster; viewing distance is 100m (small magisphere), 300m (medium) or 1km (large).",
+    "modifiers": []
+  },
+  {
+    "name": "Life Sensor",
+    "source": {
+      "book": "CR2",
+      "page": 157
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Detects living creatures within 30m/50m/100m (small/medium/large magisphere).",
+    "description": "Senses living creatures in range and reveals their size and number of sections. Microscopic creatures and undead, magitech or construct characters are not detected. Range: 30m with a small magisphere, 50m with medium, 100m with large.",
+    "modifiers": []
+  },
+  {
+    "name": "Glider Cloak",
+    "source": {
+      "book": "CR2",
+      "page": 157
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "fly"
+      ]
+    },
+    "summary": "Glider cloak lets the caster fly at 20m per round; +3 MP to use it from the ground.",
+    "description": "The magisphere becomes a glider and the caster can fly with an air movement of 20m per round. Paying 3 extra MP allows the spell to be used while standing on the ground.",
+    "modifiers": []
+  },
+  {
+    "name": "Airtight Armor",
+    "source": {
+      "book": "CR2",
+      "page": 158
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Sealed suit: targets are immune to poison-type effects and can breathe and move underwater.",
+    "description": "The magisphere forms a protective suit around each target, granting complete immunity to poison-type effects and letting it breathe and move freely underwater.",
+    "modifiers": []
+  },
+  {
+    "name": "Flash Bomb",
+    "source": {
+      "book": "CR2",
+      "page": 158
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant/1 minute (6 r)",
+      "unit": "instantRounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "blind"
+      ]
+    },
+    "summary": "Blinding flash: targets with Five Senses or Mechanical perception are blinded unless they resist.",
+    "description": "Each target with Five Senses or Mechanical perception must succeed on a Willpower check or be blinded for 1 minute (6 rounds). The bomb is non-lethal.",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Camera",
+    "source": {
+      "book": "CR2",
+      "page": 158
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(Infinite)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": null,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Records what the caster sees as video: 50/200/1,000 minutes with a small/medium/large magisphere.",
+    "description": "The magisphere records everything in the caster's sight as video, holding up to 50 minutes (small), 200 minutes (medium) or 1,000 minutes (large). Playing it back requires casting the spell again on the same magisphere and 3 minutes (18 rounds) of setup; the video can be projected onto almost any surface or viewed on the magisphere.",
+    "modifiers": []
+  },
+  {
+    "name": "Laser Bullet",
+    "source": {
+      "book": "CR2",
+      "page": 158
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [
+      "energy"
+    ],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": 30,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Energy bullet with Power 30 that lowers the gun's Critical Value by 1 (minimum 8).",
+    "description": "Cast on a bullet loaded in a gun in the caster's hand, normally just before firing; the Critical Value is the gun's. The bullet of light deals Power 30 + Magic Power energy magic damage on a hit, and the gun's Critical Value is lowered by 1 for this shot (minimum 8).",
+    "modifiers": [
+      {
+        "key": "critical",
+        "value": -1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Mana Dictionary",
+    "source": {
+      "book": "CR2",
+      "page": 159
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 minutes (60 r)",
+      "unit": "rounds",
+      "value": 60
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Translates written and spoken languages into a language of the caster's choice.",
+    "description": "The magisphere reads and translates languages into a language the caster names, and can speak the result aloud if the language has a spoken form. It can't decipher codes or solve riddles.",
+    "modifiers": []
+  },
+  {
+    "name": "Medical Kit",
+    "source": {
+      "book": "CR2",
+      "page": 159
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "heal",
+      "power": 50,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "removeStatuses": [
+        "poisoned",
+        "diseased",
+        "petrified",
+        "petrifying"
+      ],
+      "removeTypes": [
+        "poison",
+        "disease"
+      ]
+    },
+    "summary": "Heals Power 50 + Magic Power HP and can cure poison, disease and petrification; takes 10 minutes.",
+    "description": "Heals the target by Power 50 + Magic Power HP (no critical). It works on constructs and magitech but not undead, and Runefolk recover 5 extra points. Poison, disease and petrification can also be removed with a contested check. Casting takes 10 minutes.",
+    "modifiers": []
+  },
+  {
+    "name": "Treat Bullet",
+    "source": {
+      "book": "CR2",
+      "page": 159
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "heal",
+      "power": 30,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Healing bullet: the character hit recovers Power 30 + Magic Power HP; it never crits.",
+    "description": "The bullet heals the character it hits by Power 30 + Magic Power HP and hits unless the Accuracy check is an automatic failure. It never scores a critical, whatever the gun. Undead, constructs and magitech are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Homing Laser",
+    "source": {
+      "book": "CR2",
+      "page": 160
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "bullet",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A bullet charged with [Laser Bullet] curves toward its target: Accuracy +2.",
+    "description": "Can only target a bullet already charged with [Laser Bullet]. The laser can bend in flight, giving +2 to the Accuracy check when it is fired.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Holography",
+    "source": {
+      "book": "CR2",
+      "page": 160
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(Infinite)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": null,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Records up to 1 hour of video and replays it as an editable 3D hologram.",
+    "description": "The magisphere films whatever the caster can see, for up to 1 hour. Casting the spell again on the same magisphere projects the recording as a hologram; the caster can freely resize and alter it within what was recorded, and can also erase or edit parts of it.",
+    "modifiers": []
+  },
+  {
+    "name": "Mind Bomb",
+    "source": {
+      "book": "CR2",
+      "page": 160
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant/30 seconds (3 r)",
+      "unit": "instantRounds",
+      "value": 3
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": "small",
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets get -4 to Spellcasting checks and to the success value of Performance checks.",
+    "description": "Targets suffer -4 on Spellcasting checks and -4 to the success value of Performance checks. Targets that can't hear the bomb are unaffected.",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": -4,
+        "target": "target"
+      },
+      {
+        "key": "performance",
+        "value": -4,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Automobile II",
+    "source": {
+      "book": "CR3",
+      "page": 155
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The magisphere becomes a Superior Manabike usable as a mount.",
+    "description": "Added with the CR III riding rules. The magisphere transforms into a Superior Manabike (mount data CR III p.262) that can be ridden as a mount without a Mount Contract Sphere; while transformed it can't be used to cast magitech.",
+    "modifiers": []
+  },
+  {
+    "name": "Skybike",
+    "source": {
+      "book": "CR3",
+      "page": 156
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The magisphere becomes a flying Skybike usable as a mount.",
+    "description": "The magisphere transforms into a Skybike (mount data CR III p.262) that can be ridden as a mount without a Mount Contract Sphere; while transformed it can't be used to cast magitech.",
+    "modifiers": []
+  },
+  {
+    "name": "Sniper Range",
+    "source": {
+      "book": "CR3",
+      "page": 156
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Extends the target's ranged attack range by +10m/+30m/+500m (small/medium/large), max double.",
+    "description": "The target's ranged attacks reach farther: in Simplified Combat a Range of 1 is treated as 2, while in Standard Combat the range grows by +10m (small magisphere), +30m (medium) or +500m (large), but never beyond twice the original (a 40m range becomes 50m, 70m or 80m).",
+    "modifiers": []
+  },
+  {
+    "name": "Panacea Light",
+    "source": {
+      "book": "CR3",
+      "page": 156
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Clears every psychic-type effect on the targets; no contested check needed.",
+    "description": "A warm light purges every psychic-type effect on the targets, with no contested checks needed.",
+    "modifiers": []
+  },
+  {
+    "name": "Prism Effect",
+    "source": {
+      "book": "CR3",
+      "page": 156
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "small",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Makes the caster invisible to Mechanical perception; such attackers miss on a 1d roll of 4-6.",
+    "description": "Refracted light hides the caster from Mechanical perception, both monsters and recording devices. Whenever a monster relying on Mechanical perception attacks the caster with a weapon or uses an Evasion/Can't effect on them, roll 1d beforehand: on 1-3 the caster must evade normally, on 4-6 it automatically evades without a roll. Five Senses and Magic perception see the caster as usual.",
+    "modifiers": []
+  },
+  {
+    "name": "Cannon Bullet",
+    "source": {
+      "book": "CR3",
+      "page": 157
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "bullet",
+      "power": 40,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 40 shell hitting 1 area (4m radius)/10 at Range 2(20m); 2H guns only.",
+    "description": "The shot becomes Target: 1 area (4m Radius)/10 with Range 2(20m) whatever the gun, dealing Power 40 + Magic Power magic damage on a hit. Only guns with Stance 2H can fire it. The caster may leave themself out even if their skirmish is in the area, and a caster with [Magic Control] may declare it for this shot to exclude any characters in the area.",
+    "modifiers": []
+  },
+  {
+    "name": "Sphere Shed",
+    "source": {
+      "book": "CR3",
+      "page": 157
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Stores one inanimate object (up to 1m radius, 2m tall) inside a magisphere, weightless.",
+    "description": "One non-living object no larger than 1m in radius and 2m tall is stored inside the magisphere and adds no weight; living things and corpses can't be stored. A magisphere holding an object can't be used to cast magitech. Speaking the password (in any language) takes the object out and ends the spell.",
+    "modifiers": []
+  },
+  {
+    "name": "Chaff Grenade",
+    "source": {
+      "book": "CR3",
+      "page": 157
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Chaff stops 'Area: Target' effects from outside the area from targeting anything inside it.",
+    "description": "While it lasts, characters outside the area can't use effects with 'Area: Target' on characters or objects inside it. Effects aimed at a position (area or coordinates) or using another area type (Shot, Line, Breakthrough) work normally, and characters inside can target freely both inside and outside.",
+    "modifiers": []
+  },
+  {
+    "name": "Shower of Healing Bullets",
+    "source": {
+      "book": "CR3",
+      "page": 158
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "heal",
+      "power": 30,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "2H-gun healing shot: Power 30 + Magic Power HP to chosen characters in 1 area (6m radius)/20.",
+    "description": "The shot becomes Target: 1 area (6m Radius)/20 and heals Power 30 + Magic Power HP; it can't crit. Only guns with Stance 2H can fire it, and it hits unless the Accuracy check is an automatic failure. The caster picks any characters in the area (up to 20); undead, magitech and constructs are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Effect Protector",
+    "source": {
+      "book": "CR3",
+      "page": 158
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Barrier nullifies the next 'Resistance: Can't' spell or unique skill aimed at the caster.",
+    "description": "The first 'Resistance: Can't' spell or unique skill that targets the caster afterwards has no effect on them; the magisphere then crumbles to dust and the spell ends. If the spell expires unused or the caster ends it voluntarily, the magisphere is not destroyed.",
+    "modifiers": []
+  },
+  {
+    "name": "Return",
+    "source": {
+      "book": "CR3",
+      "page": 158
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 18,
+      "text": "MP18"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Year",
+      "unit": "days",
+      "value": 365
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Sets a floating magisphere as a return point; the caster can teleport back to it with a Minor Action.",
+    "description": "The magisphere floats immovably at the spot as a return point, and the caster always knows where it is relative to them. With a Minor Action the caster instantly returns there, together with any willing characters touching them or in their skirmish. Returning or casting the spell elsewhere destroys the magisphere for good, and destroying the magisphere ends the spell. Casting takes 10 minutes (60 rounds).",
+    "modifiers": []
+  },
+  {
+    "name": "Minimum Leap",
+    "source": {
+      "book": "CR3",
+      "page": 159
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Teleports the targets up to 10m to a visible spot, passing through walls; once per round.",
+    "description": "Each target is teleported anywhere within 10m that the caster can see, bypassing walls and barriers; it fails if there is no room for the target at the destination. It can be cast only once every 10 seconds (1 round).",
+    "modifiers": []
+  },
+  {
+    "name": "Machine Repair",
+    "source": {
+      "book": "CR3",
+      "page": 159
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 40,
+      "text": "MP40"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Repairs magitech-era or later items and structures (70%+ intact) by consuming 1-3 large magispheres.",
+    "description": "Restores an item or structure made in the Magitech Civilization period or later that still has at least 70% of its parts: 1 large magisphere for human-sized objects, 2 for hut-sized, 3 for anything up to a small fort. The magispheres need not be equipped and are used up. It can also restore the body and functions of Runefolk and magitech characters, but heals no HP and can't revive the dead. Casting takes 1 hour.",
+    "modifiers": []
+  },
+  {
+    "name": "Mana House",
+    "source": {
+      "book": "CR3",
+      "page": 159
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Creates a three-bedroom house for about 5 people that keeps out soulscarred creatures.",
+    "description": "A small house appears (3 bedrooms plus living room, dining room and kitchen) where about 5 people can live comfortably. Like the Swords of Protection, characters with 4 or more soulscars can't come within 20m (those present retreat 20m with a Full Move). The house has 100 HP and Defense 10 and sounds an alarm when attacked or when a Barbarous comes within 10m. The magisphere can't cast other magitech meanwhile, and casting takes 10 minutes (60 rounds).",
+    "modifiers": []
+  },
+  {
+    "name": "Genocide Bullet",
+    "source": {
+      "book": "CR3",
+      "page": 160
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Bullet",
+      "kind": "bullet",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "bullet",
+      "power": 70,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 70 bursting shot hitting 1 area (6m radius)/20 at Range 2(20m); 2H guns only.",
+    "description": "The shot becomes Target: 1 area (6m Radius)/20 with Range 2(20m) whatever the gun, dealing Power 70 + Magic Power magic damage on a hit. Only guns with Stance 2H can fire it. The caster may leave themself out even if their skirmish is in the area, and a caster with [Magic Control] may declare it for this shot to exclude any characters in the area.",
+    "modifiers": []
+  },
+  {
+    "name": "Supernova Bomb",
+    "source": {
+      "book": "CR3",
+      "page": 160
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 24,
+      "text": "MP24"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(100m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 100,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "energy"
+    ],
+    "magisphere": "medium",
+    "effect": {
+      "kind": "damage",
+      "power": 90,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 90 energy magic damage to 1 area (6m radius)/20; the magisphere crumbles to dust.",
+    "description": "Deals Power 90 + Magic Power energy magic damage to the targets (halved by a successful Willpower check). The magisphere used for the spell is destroyed.",
+    "modifiers": []
+  },
+  {
+    "name": "Skyship",
+    "source": {
+      "book": "CR3",
+      "page": 160
+    },
+    "system": "magitech",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 40,
+      "text": "MP40"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": "large",
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Uses 5 large magispheres to create a small airship (Skyship).",
+    "description": "Creates a Skyship (data CR III p.390) using 5 large magispheres, which need not be equipped and can't cast other magitech while the spell lasts. Casting takes 10 minutes (60 rounds).",
+    "modifiers": []
+  }
+]

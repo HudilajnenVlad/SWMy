@@ -1,0 +1,12 @@
+<p class="swp-hint">{{localize "SW25.EffectItem.Hint"}}</p>
+<div class="swp-field-grid">
+  <label class="swp-field wide">{{localize "SW25.Duration.label"}}<input type="text" name="system.duration.text" value="{{system.duration.text}}"></label>
+  <label class="swp-field">{{localize "SW25.Duration.unit"}}<select name="system.duration.unit">{{selectOptions choices.durationUnits selected=system.duration.unit localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Duration.value"}}<input type="number" name="system.duration.value" value="{{system.duration.value}}"></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.stackable" {{checked system.stackable}}> {{localize "SW25.EffectItem.Stackable"}}</label>
+</div>
+<div class="swp-kv-list">
+  <p><b>{{localize "SW25.EffectItem.Statuses"}}:</b> {{#each system.statuses}}<span class="swp-tag">{{this}}</span>{{else}}—{{/each}}</p>
+</div>

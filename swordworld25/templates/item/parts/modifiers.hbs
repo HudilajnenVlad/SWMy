@@ -1,0 +1,34 @@
+{{!-- Automation modifiers table. Hash: path, list, title. --}}
+<div class="swp-block swp-modifiers">
+  <div class="swp-bar">
+    <span class="swp-bar-title">{{localize title}}</span>
+    {{#if @root.editable}}<span class="swp-tools"><a class="swp-tool" data-action="modifierAdd" data-path="{{path}}" data-tooltip="SW25.Entry.AddModifier"><i class="fa-solid fa-plus"></i></a></span>{{/if}}
+  </div>
+  <table class="swp-table swp-form-table">
+    <thead><tr>
+      <th class="name">{{localize "SW25.Mod.Key"}}</th><th class="num">{{localize "SW25.Mod.Value"}}</th><th>{{localize "SW25.Mod.Condition"}}</th>
+      <th>{{localize "SW25.Mod.Scope"}}</th><th>{{localize "SW25.Mod.Target"}}</th><th class="tools"></th>
+    </tr></thead>
+    <tbody>
+      {{#each list}}
+      <tr>
+        <td class="name"><select name="{{../path}}.{{@index}}.key">{{selectOptions @root.modifierKeys selected=key}}</select></td>
+        <td class="num wide swp-mod-value">
+          <input type="number" name="{{../path}}.{{@index}}.value" value="{{value}}" step="1">
+          <input type="text" name="{{../path}}.{{@index}}.formula" value="{{formula}}" placeholder="{{localize 'SW25.Mod.Formula'}}" data-tooltip="SW25.Mod.FormulaHint">
+        </td>
+        <td><input type="text" name="{{../path}}.{{@index}}.condition" value="{{condition}}" placeholder="{{localize 'SW25.Mod.Always'}}"></td>
+        <td><select name="{{../path}}.{{@index}}.scope">{{selectOptions @root.choices.scopes selected=scope localize=true}}</select></td>
+        <td class="swp-mod-target">
+          <select name="{{../path}}.{{@index}}.target">{{selectOptions @root.choices.targets selected=target localize=true}}</select>
+          <select name="{{../path}}.{{@index}}.actorType" data-tooltip="SW25.Mod.ActorType">{{selectOptions @root.choices.actorTypes selected=actorType localize=true}}</select>
+        </td>
+        <td class="tools">{{#if @root.editable}}<a class="swp-mini danger" data-action="modifierDelete" data-path="{{../path}}" data-index="{{@index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>{{/if}}</td>
+      </tr>
+      {{else}}
+      <tr class="swp-empty-row"><td colspan="6">{{localize "SW25.Entry.NoModifiers"}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <p class="swp-hint pad">{{localize "SW25.Mod.Hint"}}</p>
+</div>

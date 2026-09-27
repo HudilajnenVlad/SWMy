@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Sword World 2.5 — item sheets.
+   View mode: the item as a rulebook entry (see "Entry cards" in paper-base.css).
+   Edit mode (✎): the same page as a form. Builds on paper-base.css.
+   ========================================================================== */
+
+.swp .swp-iheader {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 6px 14px;
+  flex: none;
+  padding: 10px 14px 10px 12px;
+}
+.swp .swp-portrait-wrap.icon { width: 80px; height: 80px; }
+.swp .swp-portrait-wrap.icon .swp-portrait img { object-position: center; }
+/* Core status icons are white line art */
+.swp .swp-portrait img[src$=".svg"] { padding: 6px; background: var(--swp-ink); object-fit: contain; }
+.swp .swp-ihead-main { display: flex; flex-direction: column; justify-content: center; gap: 8px; min-width: 0; }
+.swp .swp-iheader .swp-level-box.swp-entry-icon { position: relative; width: 46px; min-width: 46px; font-size: 21px; }
+.swp .swp-iheader .swp-level-box.swp-entry-icon b { right: 2px; bottom: 2px; min-width: 17px; height: 17px; font-size: 11px; }
+.swp .swp-namebar .swp-marks { color: var(--swp-paper); font-size: 15px; }
+.swp .swp-namebar-kv { display: flex; flex: none; align-self: stretch; margin-right: -12px; }
+.swp .swp-namebar-kv .k,
+.swp .swp-namebar-kv .v { display: grid; place-items: center; padding: 0 10px; font-size: 13px; white-space: nowrap; }
+.swp .swp-namebar-kv .k { border-block: var(--swp-rule); background: var(--swp-key); color: var(--swp-ink); font-family: var(--swp-font-neg); font-weight: 600; }
+.swp .swp-namebar-kv .v { min-width: 54px; border: var(--swp-rule); border-left: var(--swp-thin); background: var(--swp-paper); color: var(--swp-ink); font-weight: 700; }
+.swp .swp-tag.type { border-color: var(--swp-ink); background: var(--swp-ink); color: var(--swp-paper); font-weight: 600; }
+.swp .swp-tag.off { border-style: dashed; color: var(--swp-muted); }
+
+/* The window fits its content (height "auto") up to the screen height */
+.application.swp.item { min-height: 260px; max-height: calc(100vh - 12px); }
+
+/* Only two tabs: keep their labels */
+@container swp (min-width: 380px) {
+  .application.swp.item nav.sheet-tabs [data-tab] { padding: 4px 11px 3px; }
+  .application.swp.item nav.sheet-tabs [data-tab] > span { display: inline; }
+  .application.swp.item nav.sheet-tabs [data-tab] i { font-size: 11px; }
+}
+
+/* View mode */
+.swp .swp-item-main.active { gap: 12px; }
+.swp .swp-item-main > .swp-hint { margin-top: -4px; }
+
+/* Edit mode */
+.swp .swp-item-form { display: flex; flex-direction: column; gap: 12px; }
+.swp .swp-item-form > .swp-fieldset { margin-top: 4px; }
+.swp .swp-summary-field > input[type=text] { font-style: italic; }
+.swp .swp-item-desc .swp-sb-desc { border: none; }
+.swp .swp-item-desc prose-mirror:has([contenteditable="true"]) { min-height: 260px; }
+.swp .swp-source-fields { grid-template-columns: repeat(auto-fill, minmax(120px, 160px)); }
+
+@container swp (max-width: 520px) {
+  .swp .swp-iheader { grid-template-columns: 60px minmax(0, 1fr); }
+  .swp .swp-portrait-wrap.icon { width: 60px; height: 60px; }
+  .swp .swp-namebar-kv .k { display: none; }
+}
+
+/* Modifier rows: value + formula, target + actor type stacked */
+.swp .swp-modifiers td.swp-mod-value,
+.swp .swp-modifiers td.swp-mod-target { vertical-align: top; }
+.swp .swp-modifiers td.swp-mod-value > * + *,
+.swp .swp-modifiers td.swp-mod-target > * + * { margin-top: 2px; }
+.swp .swp-modifiers td.swp-mod-value input[type=text] { font-size: 11px; }
+.swp .swp-modifiers .swp-form-table { table-layout: fixed; }
+.swp .swp-modifiers .swp-form-table th.name { width: 25%; }
+.swp .swp-modifiers .swp-form-table th.num { width: 84px; }
+.swp .swp-modifiers .swp-form-table th:nth-child(4) { width: 96px; }
+.swp .swp-modifiers .swp-form-table th:nth-child(5) { width: 124px; }
+.swp .swp-modifiers .swp-form-table th.tools { width: 30px; }
+.swp .swp-modifiers .swp-form-table td select { text-overflow: ellipsis; }

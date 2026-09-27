@@ -1,0 +1,62 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Key"}}<input type="text" name="system.key" value="{{system.key}}"></label>
+  <label class="swp-field wide">{{localize "SW25.Languages"}}<input type="text" name="system.languages" value="{{system.languages}}"></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.darkvision" {{checked system.darkvision}}> {{localize "SW25.Race.Darkvision"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.noMP" {{checked system.noMP}}> {{localize "SW25.Race.NoMP"}}</label>
+</div>
+
+<fieldset class="swp-fieldset swp-fieldset-table">
+  <legend>{{localize "SW25.Race.AbilityDice"}}</legend>
+  <table class="swp-table swp-form-table">
+    <thead><tr>{{#each config.abilities as |a key|}}<th>{{a.letter}} {{localize a.abbr}}</th>{{/each}}</tr></thead>
+    <tbody><tr>{{#each config.abilities as |a key|}}<td><input type="text" name="system.abilityDice.{{key}}" value="{{lookup @root.system.abilityDice key}}"></td>{{/each}}</tr></tbody>
+  </table>
+</fieldset>
+
+<fieldset class="swp-fieldset swp-fieldset-table">
+  <legend>{{localize "SW25.Race.Traits"}}
+    <a class="swp-mini" data-action="arrayAdd" data-path="system.traits" data-template='{"name":"","level":1,"description":""}' data-tooltip="SW25.Entry.AddRow"><i class="fa-solid fa-plus"></i></a>
+  </legend>
+  <table class="swp-table swp-form-table swp-trait-table">
+    <thead><tr><th class="name">{{localize "SW25.Name"}}</th><th data-tooltip="SW25.Race.TraitLevel">{{localize "SW25.Level"}}</th><th class="name">{{localize "SW25.Description"}}</th><th class="tools"></th></tr></thead>
+    <tbody>
+      {{#each system.traits}}
+      <tr>
+        <td class="name"><input type="text" name="system.traits.{{@index}}.name" value="{{name}}" placeholder="{{localize 'SW25.Name'}}"></td>
+        <td class="num"><input type="number" name="system.traits.{{@index}}.level" value="{{level}}" min="1"></td>
+        <td class="name"><textarea name="system.traits.{{@index}}.description" rows="2">{{description}}</textarea></td>
+        <td class="tools"><a class="swp-mini danger" data-action="arrayDelete" data-path="system.traits" data-index="{{@index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+      {{else}}
+      <tr class="swp-empty-row"><td colspan="4">—</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+</fieldset>
+
+<fieldset class="swp-fieldset swp-fieldset-table">
+  <legend>{{localize "SW25.Race.Backgrounds"}}
+    <a class="swp-mini" data-action="arrayAdd" data-path="system.backgrounds" data-template='{"roll":"","name":"","classes":"","skill":0,"body":0,"mind":0,"exp":2000}' data-tooltip="SW25.Entry.AddRow"><i class="fa-solid fa-plus"></i></a>
+  </legend>
+  <table class="swp-table swp-form-table">
+    <thead><tr><th>2d</th><th class="name">{{localize "SW25.Background"}}</th><th class="name">{{localize "SW25.Classes"}}</th><th>{{localize "SW25.Base.skill"}}</th><th>{{localize "SW25.Base.body"}}</th><th>{{localize "SW25.Base.mind"}}</th><th>{{localize "SW25.Exp.label"}}</th><th class="tools"></th></tr></thead>
+    <tbody>
+    {{#each system.backgrounds}}
+      <tr>
+        <td class="num"><input type="text" name="system.backgrounds.{{@index}}.roll" value="{{roll}}"></td>
+        <td class="name"><input type="text" name="system.backgrounds.{{@index}}.name" value="{{name}}"></td>
+        <td class="name"><input type="text" name="system.backgrounds.{{@index}}.classes" value="{{classes}}"></td>
+        <td class="num"><input type="number" name="system.backgrounds.{{@index}}.skill" value="{{skill}}"></td>
+        <td class="num"><input type="number" name="system.backgrounds.{{@index}}.body" value="{{body}}"></td>
+        <td class="num"><input type="number" name="system.backgrounds.{{@index}}.mind" value="{{mind}}"></td>
+        <td class="num wide"><input type="number" name="system.backgrounds.{{@index}}.exp" value="{{exp}}"></td>
+        <td class="tools"><a class="swp-mini danger" data-action="arrayDelete" data-path="system.backgrounds" data-index="{{@index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+    {{else}}
+      <tr class="swp-empty-row"><td colspan="8">—</td></tr>
+    {{/each}}
+    </tbody>
+  </table>
+</fieldset>

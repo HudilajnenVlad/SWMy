@@ -1,0 +1,2687 @@
+[
+  {
+    "name": "Enchant Weapon",
+    "source": {
+      "book": "CR1",
+      "page": 225
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Makes the target's weapons magical, adding +1 physical damage.",
+    "description": "For the duration the target's weapons count as magical and deal +1 physical damage.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Spark",
+    "source": {
+      "book": "CR1",
+      "page": 225
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "lightning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 0,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Small sparks deal Power 0 lightning magic damage to up to 5 targets.",
+    "description": "Deals Power 0 + Magic Power lightning-type magic damage to up to 5 characters in a 3 m radius area. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Dark Mist",
+    "source": {
+      "book": "CR1",
+      "page": 225
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A magical fog gives up to 5 targets -2 to Evasion checks.",
+    "description": "Up to 5 characters in the area that fail to resist have their depth perception disrupted, taking -2 to Evasion checks for 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Protection",
+    "source": {
+      "book": "CR1",
+      "page": 225
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target takes 1 less physical and magic damage.",
+    "description": "Physical and magic damage dealt to the target is reduced by 1. Poison-, disease- and curse-type damage is not reduced.",
+    "modifiers": [
+      {
+        "key": "damageTakenPhysical",
+        "value": -1,
+        "target": "target"
+      },
+      {
+        "key": "damageTakenMagic",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Earth Heal",
+    "source": {
+      "book": "CR1",
+      "page": 226
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": 0,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Heals Power 0 + Magic Power HP; also works on undead, constructs and magitech.",
+    "description": "Restores Power 0 + Magic Power HP to the target. It heals undead, constructs and magitech as well. The healing roll cannot critical.",
+    "modifiers": []
+  },
+  {
+    "name": "Counter Magic",
+    "source": {
+      "book": "CR1",
+      "page": 226
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Gives the target +2 to Willpower checks.",
+    "description": "Invigorates the target's spirit: +2 to Willpower checks for the duration.",
+    "modifiers": [
+      {
+        "key": "willpower",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Command Doll",
+    "source": {
+      "book": "CR1",
+      "page": 226
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Doll",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "One day or until the order is completed",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Animates a doll to carry out one simple order.",
+    "description": "A doll or stuffed toy comes to life and performs one simple task, such as walking a set route; the order cannot include conditions or several commands and cannot be changed. It may repeat the task during the day. The spell ends when the task is complete, becomes impossible, or one day has passed, and the doll turns back into an ordinary doll (doll size limits: CR I p.227).",
+    "modifiers": []
+  },
+  {
+    "name": "Fanaticism",
+    "source": {
+      "book": "CR1",
+      "page": 226
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target gains Accuracy +2 but suffers Evasion -2.",
+    "description": "Fills the target with aggression: +2 to Accuracy checks and -2 to Evasion checks for the duration.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "evasion",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Fire Weapon",
+    "source": {
+      "book": "CR1",
+      "page": 227
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target's attacks count as fire-type magic weapons with +2 physical damage.",
+    "description": "Any weapon the target attacks with (melee or ranged) counts as a fire-type magic weapon, though its damage stays physical, and deals +2 physical damage.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Raging Earth",
+    "source": {
+      "book": "CR1",
+      "page": 227
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "2-3 areas (10m Radius)/Space",
+      "kind": "area",
+      "areaCount": "2-3",
+      "radius": 10,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Everyone in the area regains 3 HP whenever their own turn ends.",
+    "description": "Each character in the affected space recovers 3 HP at the end of its own turn while the spell lasts. Undead, constructs and magitech are healed as well.",
+    "modifiers": [
+      {
+        "key": "regenTurn",
+        "value": 3,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Disguise",
+    "source": {
+      "book": "CR1",
+      "page": 228
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Changes the target's appearance to that of a humanoid or barbarous the caster knows.",
+    "description": "The target, which may also be a golem or undead the caster created, takes on the look of a humanoid or barbarous familiar to the caster. Size, weight, voice, sound and smell stay unchanged, and a Detect check can reveal the true identity.",
+    "modifiers": []
+  },
+  {
+    "name": "Doll Sight",
+    "source": {
+      "book": "CR1",
+      "page": 228
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Doll",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster can see through a doll's eyes.",
+    "description": "The caster shares the viewpoint of a doll or puppet and can look around from where it is, using any special senses they possess. With a Minor Action the caster switches between their own sight and the doll's; they cannot use both at once.",
+    "modifiers": []
+  },
+  {
+    "name": "Forbid Magic",
+    "source": {
+      "book": "CR1",
+      "page": 228
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "neg",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target cannot cast spells of level 3 or lower from one chosen magic system.",
+    "description": "The caster picks one magic system; the target cannot cast spells of that system of level 3 or below for the duration. When several targets are affected via [Metamagic/Targets], the same system applies to all of them.",
+    "modifiers": []
+  },
+  {
+    "name": "Poison Cloud",
+    "source": {
+      "book": "CR1",
+      "page": 228
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/1 minute (6 rounds)",
+      "unit": "instantRounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "poison"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": false,
+      "statuses": [
+        "poisoned"
+      ]
+    },
+    "summary": "Poisons up to 5 targets, who take 3 magic damage whenever their turn ends.",
+    "description": "Up to 5 characters in the area that fail to resist are poisoned: each time one of their turns ends during the following 1 minute (6 rounds), they take 3 magic damage. [Cure Poison], [Dispel Magic] and similar effects remove it.",
+    "modifiers": [
+      {
+        "key": "damageTurn",
+        "value": 3,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Earth Shield",
+    "source": {
+      "book": "CR1",
+      "page": 229
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Gives the target Defense +2.",
+    "description": "Earth power toughens the target's armor and body: +2 Defense for the duration.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Intense Control",
+    "source": {
+      "book": "CR1",
+      "page": 229
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Caster's own doll, golem, undead or familiar: Accuracy/Evasion +2, damage +2, damage taken -2.",
+    "description": "Affects only dolls, golems, undead, familiars and the like that the caster created or commands. The target gains +2 to Accuracy and Evasion checks, deals +2 damage with all its damage, and takes 2 less physical and magic damage.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "evasion",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "damage",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "damageMagic",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "damageTakenPhysical",
+        "value": -2,
+        "target": "target"
+      },
+      {
+        "key": "damageTakenMagic",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Spell Enhance",
+    "source": {
+      "book": "CR1",
+      "page": 229
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Gives the target Magic Power +1.",
+    "description": "Awakens the target's innate magical ability: +1 Magic Power for the duration.",
+    "modifiers": [
+      {
+        "key": "magicPower",
+        "value": 1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Counter Sense",
+    "source": {
+      "book": "CR1",
+      "page": 230
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Warns the caster about the next spell cast on them and where it came from.",
+    "description": "The first time during the duration that the caster becomes the target of a spell, they learn its name and effect and the location of its caster; this spell then ends.",
+    "modifiers": []
+  },
+  {
+    "name": "Stun Cloud",
+    "source": {
+      "book": "CR1",
+      "page": 230
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/30 seconds (3 r)",
+      "unit": "instantRounds",
+      "value": 3
+    },
+    "resistance": "neg",
+    "types": [
+      "poison"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "paralyzed"
+      ]
+    },
+    "summary": "Up to 15 targets cannot declare active combat feats or take Minor Actions.",
+    "description": "A paralyzing poison cloud: up to 15 characters in the area that fail to resist cannot declare active combat feats or take any Minor Actions for 30 seconds (3 rounds).",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Absorb",
+    "source": {
+      "book": "CR1",
+      "page": 230
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/30 seconds (3 r)",
+      "unit": "instantRounds",
+      "value": 3
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Affected targets pay double MP for spells and abilities but regain 3 HP each time.",
+    "description": "Up to 5 characters in the area that fail to resist must spend twice the normal MP on spells and any other MP-consuming ability; each time their cost is doubled this way, they recover 3 HP. Characters that were outside the area at casting are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Remote Doll",
+    "source": {
+      "book": "CR1",
+      "page": 230
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Doll",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster fully controls a doll and senses through it.",
+    "description": "The caster perceives through a doll and moves it like their own body, with the physical and movement abilities of a Human child, and can speak through it. Meanwhile the caster cannot take other actions or use their own body's senses.",
+    "modifiers": []
+  },
+  {
+    "name": "Create Undead",
+    "source": {
+      "book": "CR2",
+      "page": 134
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": null,
+      "text": "MP4+"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Creates an undead servant and gives it a command.",
+    "description": "Makes an undead servant and issues it an order. Available undead types, their required Conjurer levels, materials and MP costs are listed in Conjurer Additions: Golems and Undead (CR II p.87). Casting takes one hour.",
+    "modifiers": []
+  },
+  {
+    "name": "Create Golem",
+    "source": {
+      "book": "CR2",
+      "page": 134
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": null,
+      "text": "MP4+"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Builds a golem servant and gives it a command.",
+    "description": "Makes a golem servant and issues it an order. Available golem types, their required Conjurer levels, materials and MP costs are listed in Conjurer Additions: Golems and Undead (CR II p.87). Casting takes one hour.",
+    "modifiers": []
+  },
+  {
+    "name": "Double Indicate",
+    "source": {
+      "book": "CR2",
+      "page": 135
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster can give one Obey Command to two golems or undead at once.",
+    "description": "While active, a single 'Obey Command' (CR II p.90) from the caster can direct two golems or undead at once, even if they are different types; both get the identical order.",
+    "modifiers": []
+  },
+  {
+    "name": "Drain Touch",
+    "source": {
+      "book": "CR2",
+      "page": 135
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Deals Power 10 curse magic damage by touch and heals the caster by the same amount.",
+    "description": "Deals Power 10 + Magic Power curse-type magic damage; Willpower halves it. The caster regains HP equal to the damage actually dealt, even if the target resisted.",
+    "modifiers": []
+  },
+  {
+    "name": "Resurrection",
+    "source": {
+      "book": "CR2",
+      "page": 135
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Corpse",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Brings a dead character back to life.",
+    "description": "Only works on a corpse, which comes back to life if the spell succeeds (resurrection rules: CR I p.185). Its target number is how many days the target has been dead. The corpse's major organs must be intact, and for humanoids and barbarous also the head and spine. Casting takes one hour.",
+    "modifiers": []
+  },
+  {
+    "name": "Icicle Weapon",
+    "source": {
+      "book": "CR2",
+      "page": 136
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target's attacks count as water/ice-type magic weapons with +3 physical damage.",
+    "description": "Any weapon the target attacks with (melee or ranged) counts as a water/ice-type magic weapon, though its damage stays physical, and deals +3 physical damage.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 3,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Acid Cloud",
+    "source": {
+      "book": "CR2",
+      "page": 136
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "poison"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Acidic air deals Power 20 poison magic damage to up to 15 targets.",
+    "description": "Deals Power 20 + Magic Power poison-type magic damage to up to 15 characters in a 5 m radius area. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Illusion",
+    "source": {
+      "book": "CR2",
+      "page": 136
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Creates a lifelike but intangible illusion within a 3 m radius.",
+    "description": "Creates an image indistinguishable from the real thing that must fit within a 3 m radius; it has no smell, makes no sound and cannot be touched. Unless the caster concentrates to animate it freely, it repeats a simple motion lasting up to roughly one minute. It can also overlay a character or object to change its looks, moving along with it.",
+    "modifiers": []
+  },
+  {
+    "name": "Cremation",
+    "source": {
+      "book": "CR2",
+      "page": 136
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 20 fire magic damage; +5 damage against undead, magitech and constructs.",
+    "description": "Deals Power 20 + Magic Power fire-type magic damage to one target; Willpower halves it. Undead, magitech and construct targets take 5 extra damage, even if they resist.",
+    "modifiers": []
+  },
+  {
+    "name": "Cursed Doll",
+    "source": {
+      "book": "CR2",
+      "page": 137
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Stabbing a doll curses the target for Power 30 curse magic damage.",
+    "description": "Deals Power 30 + Magic Power curse-type magic damage to the target; Willpower halves it. While casting, the caster must stab a doll (held or set on the ground) with their magical implement; the doll breaks and becomes useless.",
+    "modifiers": []
+  },
+  {
+    "name": "Bind Operation",
+    "source": {
+      "book": "CR2",
+      "page": 137
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "temporary",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target can only use Limited Move and takes -2 to all action checks.",
+    "description": "The target may only move with a Limited Move and takes -2 to all action checks. Runefolk characters and construct or magitech monsters take -2 to their Willpower check against this spell. A successful resistance limits the effect to 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Protection II",
+    "source": {
+      "book": "CR2",
+      "page": 137
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target takes 3 less physical and magic damage.",
+    "description": "Physical and magic damage dealt to the target is reduced by 3; poison-, disease- and curse-type damage is not reduced. It cannot coexist with [Protection] on the same target (CR II p.128).",
+    "modifiers": [
+      {
+        "key": "damageTakenPhysical",
+        "value": -3,
+        "target": "target"
+      },
+      {
+        "key": "damageTakenMagic",
+        "value": -3,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Possession",
+    "source": {
+      "book": "CR2",
+      "page": 138
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Calls a dead humanoid's or barbarous's soul into the caster's body.",
+    "description": "A dead humanoid or barbarous soul enters the caster's body and can talk and interact with living people; the caster can make requests but cannot control it, and no class or combat feats (the caster's or the deceased's) can be used. Holding an item tied to the deceased lets the caster choose the soul; otherwise the soul of whichever humanoid or barbarous died most recently within 100 m is called. The spell fails if the soul was revived or has reincarnated, or if no dead are within 100 m.",
+    "modifiers": []
+  },
+  {
+    "name": "Command",
+    "source": {
+      "book": "CR2",
+      "page": 138
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "charmed"
+      ]
+    },
+    "summary": "Seizes control of an undead or construct with low or no intelligence.",
+    "description": "Works only on constructs and undead of Intelligence 'None', 'Animal' or 'Low'. From its next turn on, the caster can give the target new orders as with 'Obey Command' (CR II p.90). If the target has a known controller, the caster must beat that controller's success value; if it acts on its own, the caster must beat its Willpower, which gets +4. Control reverts when the spell ends, and the spell can also re-order the caster's own golems and undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Scape Doll",
+    "source": {
+      "book": "CR2",
+      "page": 139
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Doll",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Brands a doll that can take one instance of damage in the caster's place.",
+    "description": "Brands one doll. When the caster takes physical, fixed or magic damage to HP, they may shift that damage onto the doll at any distance; the brand then disappears, the spell ends and the doll is destroyed. Only one doll can carry the brand at a time.",
+    "modifiers": []
+  },
+  {
+    "name": "Physical Gimmick",
+    "source": {
+      "book": "CR2",
+      "page": 139
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Grows a magical replacement for a missing or damaged body part.",
+    "description": "Replaces one lost or damaged organ (eye, ear, etc.) with a magical substitute that works like the original once the body adapts after 1 week; until then, checks and actions relying on it take -2. The replacement shows up to [Sense Magic] and can be removed by [Dispel Magic]. Only one organ per character can be replaced (one per section for multi-section characters).",
+    "modifiers": []
+  },
+  {
+    "name": "Petri-Cloud",
+    "source": {
+      "book": "CR2",
+      "page": 139
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/1 minute (6 r)",
+      "unit": "instantRounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "petrifying"
+      ]
+    },
+    "summary": "Up to 15 targets that fail to resist are petrified once 1 minute passes.",
+    "description": "Up to 15 characters in the area that fail to resist are turned to stone permanently once 1 minute (6 rounds) passes. The spell fizzles if, before that, the caster falls to 0 HP or less or [Remove Curse] (or similar) succeeds on it. Petrified characters can only be restored by [Cure Stone].",
+    "modifiers": []
+  },
+  {
+    "name": "Earth Heal II",
+    "source": {
+      "book": "CR3",
+      "page": 139
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": 30,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true
+    },
+    "summary": "Heals Power 30 + Magic Power HP; also works on undead, magitech and constructs.",
+    "description": "Restores Power 30 + Magic Power HP to the target, including undead, magitech and constructs. The healing roll cannot critical.",
+    "modifiers": []
+  },
+  {
+    "name": "Sneak",
+    "source": {
+      "book": "CR3",
+      "page": 139
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Hides the target from magical and mechanical perception.",
+    "description": "The target cannot be seen through magical or mechanical perception, nor by magic traps that detect through magical sight; characters perceiving with the Five Senses see it normally. The effect ends at once if the target makes a Full Move, attacks, casts a spell on someone else or otherwise interacts with another character.",
+    "modifiers": []
+  },
+  {
+    "name": "Haste",
+    "source": {
+      "book": "CR3",
+      "page": 139
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 18,
+      "text": "MP18"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Normal Move +12 m, Full Move +36 m, and a chance of an extra Major Action each turn.",
+    "description": "The target's Normal Move distance rises by 12 m and its Full Move by 36 m. Under Simplified Combat, one Normal Move can carry it from one rearguard area to the other when no enemies occupy the frontline area. At the end of each of its turns it may roll 1d, and on 5-6 it takes one extra Major Action (at most once per turn).",
+    "modifiers": [
+      {
+        "key": "movement",
+        "value": 12,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Change Position",
+    "source": {
+      "book": "CR3",
+      "page": 140
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "1 Doll",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster instantly swaps places with a doll.",
+    "description": "The caster trades places with a doll or puppet in range, ignoring walls and barriers; it fails if the doll's spot lacks room for the caster to arrive safely. This lets the caster automatically leave a skirmish. It can be used only once per 10 seconds (1 round).",
+    "modifiers": []
+  },
+  {
+    "name": "Sonic Weapon",
+    "source": {
+      "book": "CR3",
+      "page": 140
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Attacks count as wind-type magic weapons with +2 damage and Critical Value -1.",
+    "description": "Any weapon the target attacks with (melee or ranged) counts as a wind-type magic weapon, though its damage stays physical; it deals +2 physical damage and its Critical Value drops by 1 (not below 8). Fixed-value characters get +4 damage instead.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "critical",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Mana Seal",
+    "source": {
+      "book": "CR3",
+      "page": 140
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 16,
+      "text": "MP16"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target cannot spend more than 10 MP per turn.",
+    "description": "A target that fails to resist is capped at 10 MP spent per turn, whatever it spends the MP on. MP supplied by familiars or Mako Stones is exempt from the cap.",
+    "modifiers": []
+  },
+  {
+    "name": "Raging Earth II",
+    "source": {
+      "book": "CR3",
+      "page": 141
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 18,
+      "text": "MP18"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "2-3 areas (10m Radius)/Space",
+      "kind": "area",
+      "areaCount": "2-3",
+      "radius": 10,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Everyone in the area regains 10 HP whenever their own turn ends.",
+    "description": "Each character in the affected space recovers 10 HP at the end of its own turn while the spell lasts. Undead, magitech and constructs are healed as well.",
+    "modifiers": [
+      {
+        "key": "regenTurn",
+        "value": 10,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Wraith Form",
+    "source": {
+      "book": "CR3",
+      "page": 141
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster's consciousness leaves the body in the form of a Wraith.",
+    "description": "The caster's mind leaves the body as a Wraith (CR III p.369), keeping their levels, classes, weapon skills, HP, MP, Fortitude and Willpower and gaining the Wraith's [Normal Weapon Immunity] (CR III p.327) and [Fog Body]. Meanwhile the body lies unconscious and its senses are unavailable. The caster can return from any distance at will or when the spell ends, but if the body is destroyed or lost first, they remain a Wraith permanently.",
+    "modifiers": []
+  },
+  {
+    "name": "Copy Doll",
+    "source": {
+      "book": "CR3",
+      "page": 142
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Doll",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Year",
+      "unit": "years",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Turns a doll into a perfect double of the caster that they inhabit.",
+    "description": "A doll or stuffed animal becomes identical to the caster in size and appearance, and the caster uses it as their own body with the same physical abilities (it still needs food and sleep). The original body lies unconscious: the caster knows its condition but cannot perceive through it, and dies if it dies. When the spell ends or is ended, the caster returns to the body; if the doll reaches 0 HP, they return and the doll crumbles to dust. Only one Copy Doll can be active at a time.",
+    "modifiers": []
+  },
+  {
+    "name": "Steal Memory",
+    "source": {
+      "book": "CR3",
+      "page": 142
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 19,
+      "text": "MP19"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Takes a chosen memory from the target without them noticing.",
+    "description": "The caster removes one particular memory from the target, who never realizes it is gone. The caster chooses its start and length and casting takes as long as the memory, counted in 10-second (1 round) steps. If the effect ends, the target gets the memories back, but the caster keeps them too.",
+    "modifiers": []
+  },
+  {
+    "name": "Quick Resurrection",
+    "source": {
+      "book": "CR3",
+      "page": 143
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 30,
+      "text": "MP30"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Corpse",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Instantly revives a corpse; the Soulscar Table roll gets +10.",
+    "description": "Brings a corpse back to life at once; its target number equals how many days have passed since death, and the Soulscar Table (CR I p.186) is rolled as for [Resurrection] but with +10. The revived target has 1 HP (in every section), keeps the MP it had just before death, and loses all spells and effects that were on it. If its soulscars reach 5, it rises as a Revenant (CR I p.416) at full HP that attacks this spell's caster first and then everyone else. Undead, constructs, magitech, fairies and daemons can never be revived.",
+    "modifiers": []
+  },
+  {
+    "name": "Death Cloud",
+    "source": {
+      "book": "CR3",
+      "page": 143
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 26,
+      "text": "MP26"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 60,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 60 curse magic damage to up to 20 targets; those downed get -20 on the next Death Check.",
+    "description": "Deals Power 60 + Magic Power curse-type magic damage to up to 20 characters in a 6 m radius area; Willpower halves it. Anyone brought to 0 HP or less by it takes -20 on their next Death Check.",
+    "modifiers": []
+  },
+  {
+    "name": "Revenant Curse",
+    "source": {
+      "book": "CR3",
+      "page": 143
+    },
+    "system": "spiritualism",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 30,
+      "text": "MP30"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "cursed"
+      ]
+    },
+    "summary": "If the target dies while cursed, it rises as a Revenant that obeys the caster.",
+    "description": "If the target dies while the spell lasts, it temporarily gains 5 soulscars and rises as a Revenant (CR I p.416) that obeys the caster absolutely. When the duration expires it remains a Revenant for good and can never be resurrected; if [Remove Curse] cancels the spell before then, the soulscars vanish and the body becomes an ordinary corpse.",
+    "modifiers": []
+  }
+]

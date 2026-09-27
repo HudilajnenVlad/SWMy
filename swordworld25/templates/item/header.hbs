@@ -1,0 +1,29 @@
+<header class="swp-iheader">
+  <div class="swp-portrait-wrap icon">
+    <div class="swp-portrait"><img src="{{item.img}}" data-action="editImage" data-edit="img" alt="{{item.name}}"></div>
+  </div>
+
+  <div class="swp-ihead-main">
+    <div class="swp-titlebar">
+      {{#if entry.icon}}
+      <span class="swp-level-box swp-entry-icon" data-tooltip="{{typeLabel}}"><i class="{{entry.icon}}"></i>{{#if entry.badge}}<b>{{entry.badge}}</b>{{/if}}</span>
+      {{/if}}
+      <span class="swp-namebar">
+        {{#if entry.marks}}<span class="swp-marks" data-tooltip="{{entry.marksTooltip}}">{{entry.marks}}</span>{{/if}}
+        <input class="swp-name" type="text" name="name" value="{{item.name}}" placeholder="{{localize 'Name'}}">
+        {{#each entry.head}}<span class="swp-namebar-kv"><span class="k">{{label}}</span><span class="v">{{value}}</span></span>{{/each}}
+      </span>
+    </div>
+
+    <div class="swp-mhead-row">
+      <span class="swp-tag type">{{typeLabel}}</span>
+      {{#each tags}}<span class="swp-tag {{cls}}" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}>{{#if icon}}<i class="{{icon}}"></i>{{/if}}{{label}}</span>{{/each}}
+      <span class="swp-head-tools">
+        {{#if useButton}}<a class="swp-btn" data-action="use" data-tooltip="{{useButton.tooltip}}"><i class="{{useButton.icon}}"></i></a>{{/if}}
+        <a class="swp-btn" data-action="toChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i></a>
+        {{#if sourceUuid}}<a class="swp-btn" data-action="openSource" data-uuid="{{sourceUuid}}" data-tooltip="SW25.Entry.OpenSource"><i class="fa-solid fa-magnifying-glass"></i></a>{{/if}}
+        {{#if editable}}<a class="swp-btn {{#if edit}}on{{/if}}" data-action="toggleEdit" data-tooltip="SW25.Entry.EditMode"><i class="fa-solid fa-pen-ruler"></i></a>{{/if}}
+      </span>
+    </div>
+  </div>
+</header>

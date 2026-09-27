@@ -1,0 +1,23 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Magic.System"}}<select name="system.magic">{{selectOptions choices.magic selected=system.magic localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="0"></label>
+  {{#if (or (eq system.magic "divine") (eq system.magic "fairy"))}}
+  <label class="swp-field">{{localize "SW25.Magic.Subsystem"}}<select name="system.subsystem">{{selectOptions choices.subsystems selected=system.subsystem localize=true blank="—"}}</select></label>
+  {{/if}}
+  {{#if (eq system.magic "divine")}}<label class="swp-field">{{localize "SW25.Deity"}}<input type="text" name="system.deity" value="{{system.deity}}"></label>{{/if}}
+  {{#if (eq system.magic "magitech")}}<label class="swp-field">{{localize "SW25.Magisphere.label"}}<select name="system.magisphere">{{selectOptions choices.magispheres selected=system.magisphere localize=true blank="—"}}</select></label>{{/if}}
+  <label class="swp-field">MP<input type="number" name="system.cost.mp" value="{{system.cost.mp}}" min="0"></label>
+  <label class="swp-field">{{localize "SW25.Spell.CostText"}}<input type="text" name="system.cost.text" value="{{system.cost.text}}" placeholder="MP5"></label>
+  <label class="swp-field">{{localize "SW25.Resistance.label"}}<select name="system.resistance">{{selectOptions choices.resistance selected=system.resistance localize=true}}</select></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.minorAction" {{checked system.minorAction}}> ⏩ {{localize "SW25.Spell.Minor"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.combatPrep" {{checked system.combatPrep}}> △ {{localize "SW25.Spell.Prep"}}</label>
+  {{#if (eq system.magic "divine")}}<label class="swp-check"><input type="checkbox" name="system.barbarous" {{checked system.barbarous}}> {{localize "SW25.Spellbook.Barbarous"}}</label>{{/if}}
+</div>
+{{> "systems/swordworld25/templates/item/parts/targeting.hbs"}}
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Entry.Type"}}</legend>
+  <div class="swp-chip-grid">{{#each damageTypes}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleType" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>
+{{> "systems/swordworld25/templates/item/parts/effect.hbs"}}

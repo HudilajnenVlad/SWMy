@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Roll Loot (selected monsters)",
+    "img": "icons/containers/bags/coinpouch-simple-leather-tan.webp",
+    "command": "// Roll loot for every selected monster token, using your character's loot bonus\nconst looter = game.user.character ?? null;\nfor (const token of canvas.tokens.controlled) {\n  if (token.actor?.type === \"monster\") await token.actor.rollLoot({ looter });\n}"
+  },
+  {
+    "name": "Open Spellbook",
+    "img": "icons/sundries/books/book-embossed-gold-red.webp",
+    "command": "const actor = canvas.tokens.controlled[0]?.actor ?? game.user.character;\nif (actor) game.sw25.SpellbookApp.openFor(actor);\nelse ui.notifications.warn(\"Select a token first.\");"
+  },
+  {
+    "name": "Roll Check",
+    "img": "icons/dice/d6black.svg",
+    "command": "// Prompt for a check and roll it for the selected token (or your character)\nconst actor = canvas.tokens.controlled[0]?.actor ?? game.user.character;\nif (!actor) return ui.notifications.warn(\"Select a token first.\");\nconst options = Object.keys(CONFIG.SW25.checks).map(k => `<option value=\"${k}\">${game.i18n.localize(`SW25.Check.${k}`)}</option>`).join(\"\");\nconst key = await foundry.applications.api.DialogV2.prompt({\n  window: { title: \"Check\" },\n  content: `<select name=\"check\" style=\"width:100%\">${options}</select>`,\n  ok: { callback: (ev, b) => b.form.elements.check.value }\n});\nif (key) actor.rollCheck(key);"
+  },
+  {
+    "name": "Award Experience (selected)",
+    "img": "icons/sundries/scrolls/scroll-bound-sealed-red.webp",
+    "command": "const value = await foundry.applications.api.DialogV2.prompt({\n  window: { title: \"Award experience\" },\n  content: `<input type=\"number\" name=\"exp\" value=\"1000\" style=\"width:100%\">`,\n  ok: { callback: (ev, b) => Number(b.form.elements.exp.value) || 0 }\n});\nif (!value) return;\nconst actors = canvas.tokens.controlled.map(t => t.actor).filter(a => a?.type === \"character\");\nfor (const a of actors) await a.update({ \"system.exp.value\": a.system.exp.value + value, \"system.exp.total\": a.system.exp.total + value });\nui.notifications.info(`${value} EXP → ${actors.map(a => a.name).join(\", \")}`);"
+  },
+  {
+    "name": "Power Table Roll",
+    "img": "icons/dice/d6black.svg",
+    "command": "// Ask for a power and critical value and roll on the power table\nconst data = await foundry.applications.api.DialogV2.prompt({\n  window: { title: \"Power table\" },\n  content: `<div class=\"form-group\"><label>Power</label><input type=\"number\" name=\"power\" value=\"20\"></div><div class=\"form-group\"><label>Critical value</label><input type=\"number\" name=\"crit\" value=\"10\"></div><div class=\"form-group\"><label>Extra damage</label><input type=\"number\" name=\"extra\" value=\"0\"></div>`,\n  ok: { callback: (ev, b) => ({ power: Number(b.form.elements.power.value), critical: Number(b.form.elements.crit.value), extra: Number(b.form.elements.extra.value) }) }\n});\nif (!data) return;\nconst { result, rolls } = await game.sw25.rollPower(data);\nconst steps = result.steps.map(s => `${s.dice.join(\"+\")} → ${s.value}${s.crit ? \" (crit)\" : \"\"}`).join(\"<br>\");\nChatMessage.create({ rolls, content: `<div class=\"sw25\"><strong>Power ${data.power}</strong><br>${steps}<br>= <strong>${result.calculated}</strong></div>` });"
+  },
+  {
+    "name": "Toggle Monster Fixed Values",
+    "img": "icons/svg/d20-grey.svg",
+    "command": "const current = game.settings.get(\"swordworld25\", \"monsterFixedValues\");\nawait game.settings.set(\"swordworld25\", \"monsterFixedValues\", !current);\nui.notifications.info(`Monster fixed values: ${!current ? \"ON\" : \"OFF\"}`);"
+  }
+]

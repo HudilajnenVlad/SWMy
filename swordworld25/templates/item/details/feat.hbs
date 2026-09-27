@@ -1,0 +1,16 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Feat.Type"}}<select name="system.featType">{{selectOptions choices.featTypes selected=system.featType localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Feat.Acquisition"}}<select name="system.acquisition">{{selectOptions choices.acquisition selected=system.acquisition localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.AdventurerLevelShort"}}<input type="number" name="system.prerequisites.advLevel" value="{{system.prerequisites.advLevel}}" min="0"></label>
+  <label class="swp-field">{{localize "SW25.Feat.AutoGain"}}<span class="swp-pair"><select name="system.autoGain.class">{{selectOptions choices.classes selected=system.autoGain.class localize=true blank="—"}}</select><input type="number" name="system.autoGain.level" value="{{system.autoGain.level}}" min="0"></span></label>
+  <label class="swp-field wide">{{localize "SW25.Feat.Prerequisites"}}<input type="text" name="system.prerequisites.text" value="{{system.prerequisites.text}}" placeholder="[Dual Wielding]"></label>
+  <label class="swp-field wide">{{localize "SW25.Feat.Use"}}<input type="text" name="system.use" value="{{system.use}}"></label>
+  <label class="swp-field wide">{{localize "SW25.Feat.Application"}}<input type="text" name="system.application" value="{{system.application}}"></label>
+  <label class="swp-field wide">{{localize "SW25.Feat.Risk"}}<input type="text" name="system.risk.text" value="{{system.risk.text}}"></label>
+  {{#if system.choice}}
+  <label class="swp-field wide">{{localize "SW25.Feat.Choice"}}<input type="text" name="system.choiceValue" value="{{system.choiceValue}}" placeholder="{{system.choice}}"></label>
+  {{/if}}
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.combatPrep" {{checked system.combatPrep}}> △ {{localize "SW25.Spell.Prep"}}</label>
+</div>

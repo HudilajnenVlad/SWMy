@@ -1,0 +1,510 @@
+/* ==========================================================================
+   Sword World 2.5 — character sheet (after the official SW2.5 character sheet).
+   Builds on paper-base.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+
+.swp .swp-grid-top { grid-template-columns: minmax(440px, 1.4fr) minmax(250px, 1fr); }
+.swp .swp-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.swp .swp-grid-checks { grid-template-columns: 1fr 1fr 1.25fr; align-items: start; }
+.swp .swp-grid-checks > .swp-formula { margin-top: 9px; }
+.swp .swp-grid-gear { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+.swp .swp-grid-inv { grid-template-columns: minmax(230px, 0.9fr) minmax(0, 1.4fr); }
+
+/* --------------------------------------------------------------------------
+   Header: portrait frame, adventurer level medallion, identity lines, HP/MP
+   -------------------------------------------------------------------------- */
+
+.swp .swp-header {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 8px 24px;
+  flex: none;
+  padding: 10px 16px 12px 14px;
+}
+.swp .swp-medallion {
+  position: absolute;
+  right: -34px;
+  bottom: -16px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 90px;
+  padding-top: 5px;
+  background: url("../assets/ui/medallion.svg") center / contain no-repeat;
+  text-align: center;
+  cursor: default;
+}
+.swp .swp-medallion .label { max-width: 50px; font-size: 7.5px; font-weight: 700; line-height: 1.05; overflow-wrap: anywhere; }
+.swp .swp-medallion .value { font-size: 25px; font-weight: 700; line-height: 1.05; }
+.swp .swp-ident { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.swp .swp-name { height: 28px !important; font-size: 21px !important; font-weight: 700; }
+.swp .swp-ident > .swp-lines:first-child .swp-line input { height: 28px; }
+.swp .swp-traits { flex-direction: row; align-items: center; gap: 10px; padding-bottom: 3px; }
+.swp .swp-traits .swp-line-value { flex-wrap: wrap; gap: 4px 6px; }
+.swp .swp-trait {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 6px;
+  border: 1px solid var(--swp-ink);
+  border-radius: 2px;
+  background: var(--swp-paper);
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.swp .swp-trait:hover { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-trait.locked { border-style: dashed; color: var(--swp-muted); }
+.swp .swp-trait small { font-size: 10px; }
+.swp .swp-fate.used { background: var(--swp-paper-3); color: var(--swp-muted); text-decoration: line-through; }
+
+/* --------------------------------------------------------------------------
+   Page I: abilities, classes, packages, feats, languages, honors
+   -------------------------------------------------------------------------- */
+
+.swp .swp-abilities { min-width: 0; }
+.swp .swp-abl-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 16px minmax(50px, 58px) 16px minmax(50px, 58px) 18px minmax(92px, 1fr) 74px;
+  grid-auto-rows: minmax(44px, auto);
+  row-gap: 12px;
+}
+.swp .swp-abl-grid .c1 { grid-column: 1; }
+.swp .swp-abl-grid .c2 { grid-column: 2; }
+.swp .swp-abl-grid .c3 { grid-column: 3; }
+.swp .swp-abl-grid .c4 { grid-column: 4; }
+.swp .swp-abl-grid .c5 { grid-column: 5; }
+.swp .swp-abl-grid .c6 { grid-column: 6; }
+.swp .swp-abl-grid .c7 { grid-column: 7; }
+.swp .swp-abl-grid .c8 { grid-column: 8; }
+.swp .swp-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  align-self: end;
+  min-height: 32px;
+  padding: 3px 3px;
+  background: var(--swp-ink);
+  color: var(--swp-paper);
+  font-family: var(--swp-font-neg);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+  hyphens: auto;
+}
+.swp .swp-head.c8 { margin-left: 5px; }
+.swp .swp-head-tool { color: var(--swp-paper); font-size: 10px; }
+.swp .swp-head-tool:hover { color: var(--swp-gold); }
+.swp .swp-abl-base { grid-column: 1; grid-row: span 2; }
+.swp .swp-abl-base .swp-legend { left: 4px; }
+.swp .swp-abl-base > input { font-size: 22px; }
+/* Absolutely positioned: it paints the grid area without taking part in auto-placement */
+.swp .swp-abl-frame {
+  position: absolute;
+  inset: -6px;
+  z-index: 0;
+  grid-column: 7 / 9;
+  grid-row: 2 / 8;
+  background: var(--swp-gray);
+}
+.swp .swp-abl-score,
+.swp .swp-abl-mod { z-index: 1; }
+.swp .swp-abl-score { margin-right: 6px; }
+.swp .swp-abl-score::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  bottom: 5px;
+  width: 8px;
+  height: 5px;
+  background: var(--swp-ink);
+}
+.swp .swp-abl-score .swp-num,
+.swp .swp-abl-mod .swp-num { font-size: 21px; }
+.swp .swp-abl-mod .swp-num { font-size: 23px; }
+.swp .swp-bonus {
+  position: absolute;
+  left: 3px;
+  bottom: 2px;
+  color: var(--swp-good);
+  font-size: 10.5px;
+  font-weight: 700;
+  cursor: help;
+}
+.swp .swp-bonus-inline { color: var(--swp-good); font-weight: 700; }
+.swp .swp-other {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: 30px;
+  height: 15px;
+  padding: 0 2px;
+  border: none;
+  background: transparent;
+  color: var(--swp-muted) !important;
+  font-size: 10px;
+  text-align: right;
+  opacity: 0;
+}
+.swp .swp-abl-score:hover .swp-other,
+.swp .swp-other:focus,
+.swp .swp-other.nonzero { opacity: 1; }
+.swp .swp-face { color: var(--swp-ink); }
+.swp .swp-abl-tools { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 12px; }
+
+.swp .swp-class-table td.lvl { width: 46px; }
+.swp .swp-class-table td.lvl .swp-num { font-size: 18px; }
+.swp .swp-class-table td.ctl { width: 1%; white-space: nowrap; text-align: right; }
+.swp .swp-class-table td.ctl .swp-mini { margin-left: 2px; }
+.swp .swp-up span { font-size: 10.5px; font-weight: 600; }
+.swp .swp-max { font-size: 11px; color: var(--swp-muted); }
+.swp .swp-exp { display: grid; grid-template-columns: minmax(120px, 150px) minmax(0, 1fr); align-items: center; gap: 12px; margin-top: 9px; }
+.swp .swp-exp-box { height: 44px; }
+.swp .swp-exp-meta { display: flex; flex-direction: column; gap: 3px; font-size: 12px; }
+.swp .swp-exp-meta label { display: flex; align-items: center; gap: 6px; }
+.swp .swp-exp-meta input[type=number] {
+  width: 76px;
+  height: 20px;
+  padding: 0 2px;
+  border: none;
+  border-bottom: var(--swp-thin);
+  border-radius: 0;
+  background: transparent;
+  text-align: right;
+  font-size: 13px;
+}
+
+.swp .swp-pkg-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.swp .swp-pkg { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 8px 10px 10px; }
+.swp .swp-pkg + .swp-pkg { border-left: var(--swp-thin); }
+.swp .swp-pkg-classes { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 3px 10px; min-height: 34px; font-size: 12px; }
+.swp .swp-pkg-formula { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: auto; }
+.swp .swp-pkg-value { min-width: 72px; min-height: 40px; }
+.swp .swp-caret-corner { position: absolute; right: 3px; bottom: 2px; font-size: 10px; color: var(--swp-muted); }
+.swp .swp-pkg-checks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  grid-column: 1 / -1;
+  padding: 6px 10px;
+  border-top: 1px dashed var(--swp-ink);
+  background: var(--swp-paper-2);
+}
+.swp .swp-pkg-checks-title { margin-right: 6px; font-size: 12px; font-weight: 700; }
+.swp .swp-pkg-close { margin-left: auto; }
+.swp .swp-pkg.expanded .swp-pkg-value { background: var(--swp-paper-3); }
+.swp .swp-check-chip {
+  padding: 1px 6px;
+  border: 1px solid var(--swp-ink);
+  border-radius: 2px;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+.swp .swp-check-chip:hover { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-check-chip.straight { border-style: dashed; color: var(--swp-muted); }
+
+.swp .swp-feat-table th.slot { width: 30px; background: var(--swp-paper-2); font-size: 13px; }
+.swp .swp-feat-table th.slot.auto { color: var(--swp-gold); font-size: 10px; }
+.swp .swp-feat-table td.tag { width: 28px; color: var(--swp-ink-2); font-size: 11px; }
+.swp .swp-feat-table tr.over th.slot { background: var(--swp-bad); color: var(--swp-paper); }
+.swp .swp-slot-row.locked > * { color: var(--swp-muted); }
+.swp .swp-slot-row.locked th.slot { background: var(--swp-paper); }
+.swp .swp-slot-row td.name { text-align: left; }
+.swp .swp-learned-table th.slot { width: 30px; background: var(--swp-paper-2); }
+
+.swp .swp-lang-table th.io,
+.swp .swp-lang-table td.io { width: 46px; }
+.swp .swp-lang-table td.del,
+.swp .swp-lang-table th.del { width: 26px; }
+.swp .swp-lang-table tbody td { height: 26px; }
+.swp .swp-lang-table tr:not(.learned) td.name { color: var(--swp-ink-2); }
+.swp .swp-lang-table tr.learned td.name { font-weight: 600; }
+.swp .swp-lang-table input[type=text] {
+  width: 100%;
+  height: 20px;
+  padding: 0 2px;
+  border: none;
+  border-bottom: 1px dotted var(--swp-ink);
+  border-radius: 0;
+  background: transparent;
+  font-size: 13px;
+}
+.swp .swp-lang-table input.dialect { width: 96px; }
+.swp .swp-add-row td { padding: 3px 5px; }
+.swp .swp-add-row select { width: 100%; height: 24px; border-style: dashed; background: transparent; font-size: 12px; color: var(--swp-ink-2); }
+
+.swp .swp-honor-body { display: flex; flex-direction: column; gap: 14px; padding: 8px 12px 12px; }
+.swp .swp-honor-lines { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; }
+.swp .swp-honor-lines .swp-line { flex-direction: row; align-items: flex-end; gap: 6px; }
+.swp .swp-honor-lines .swp-line input { text-align: right; font-weight: 700; }
+.swp .swp-rank-line { grid-column: 1 / -1; }
+.swp .swp-rank-line .swp-line-value { flex: 1; justify-content: flex-end; }
+.swp .swp-rank-name { font-size: 15px; }
+.swp .swp-honor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 4px; }
+.swp .swp-honor-grid .swp-box { height: 40px; }
+.swp .swp-tallies { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.swp .swp-tally-group { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; }
+
+/* --------------------------------------------------------------------------
+   Page II: checks, movement, weapons, accessories, armor, HP/MP
+   -------------------------------------------------------------------------- */
+
+.swp .swp-formula { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.swp .swp-formula-classes {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 2px;
+  min-width: 0;
+  min-height: 52px;
+  padding: 4px 6px 14px;
+  border: var(--swp-rule);
+  font-size: 12.5px;
+}
+.swp .swp-formula-classes.grid { display: grid; grid-template-columns: repeat(2, max-content); gap: 2px 14px; align-content: start; }
+.swp .swp-formula-note { position: absolute; right: 4px; bottom: 1px; font-size: 10px; color: var(--swp-ink-2); }
+.swp .swp-formula-value { flex: 0 0 78px; height: 52px; }
+.swp .swp-evasion-select { width: 100%; max-width: 170px; height: 20px; margin-top: 2px; font-size: 11px; }
+
+.swp .swp-move { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.swp .swp-move-row { display: flex; align-items: center; gap: 6px; margin-top: 9px; }
+.swp .swp-move-box { flex: 1 1 0; height: 52px; min-width: 0; }
+.swp .swp-side-label {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  font-size: 9.5px;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.swp .swp-warriors { display: grid; grid-template-columns: minmax(220px, 1fr) auto minmax(250px, 1.35fr); align-items: stretch; gap: 8px; }
+.swp .swp-warrior-ops { display: flex; flex-direction: column; justify-content: space-around; }
+.swp .swp-warrior-values { display: flex; flex-direction: column; border: var(--swp-rule); }
+.swp .swp-labeled-row { display: flex; align-items: center; gap: 4px; min-height: 30px; padding: 3px 8px; font-size: 13px; font-weight: 600; }
+.swp .swp-labeled-row + .swp-labeled-row { border-top: var(--swp-rule); }
+.swp .swp-values { display: flex; gap: 14px; margin-left: auto; }
+.swp .swp-values small { color: var(--swp-muted); font-weight: 400; }
+.swp .swp-values b { font-size: 18px; }
+
+.swp .swp-weapon-table thead th { padding: 3px 2px; font-size: 10.5px; line-height: 1.1; }
+.swp .swp-weapon-table thead th.name { min-width: 140px; }
+.swp .swp-weapon-table th.hl,
+.swp .swp-weapon-table td.hl { width: 56px; padding: 3px 4px; background: var(--swp-ink); }
+.swp .swp-weapon-table tbody td.hl { border-top-color: var(--swp-ink); }
+.swp .swp-weapon-table td.eq,
+.swp .swp-armor-table td.eq { width: 26px; }
+.swp .swp-weapon-table td.stance { width: 46px; white-space: nowrap; font-size: 12px; }
+.swp .swp-weapon-table td.minstr,
+.swp .swp-weapon-table td.wacc,
+.swp .swp-weapon-table td.power,
+.swp .swp-weapon-table td.crit,
+.swp .swp-weapon-table td.wextra { width: 38px; }
+.swp .swp-weapon-table td.pw { width: 22px; padding: 2px 1px; font-size: 12px; }
+.swp .swp-weapon-table td.pw.fumble { color: var(--swp-muted); }
+.swp .swp-weapon-table td.pw.crit { background: var(--swp-paper-3); font-weight: 700; }
+.swp .swp-weapon-table td.minstr.warn { font-weight: 700; }
+.swp .swp-stance-toggle { padding: 0 4px; border: 1px solid var(--swp-ink); border-radius: 2px; white-space: nowrap; }
+.swp .swp-stance-toggle i { font-size: 8px; }
+.swp .swp-stance-toggle:hover { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-weapon-details { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-bottom: 6px; font-size: 12px; }
+.swp .swp-kv { display: inline-flex; align-items: center; gap: 5px; }
+.swp .swp-kv > span:first-child { color: var(--swp-muted); }
+.swp .swp-kv select { height: 22px; font-size: 12px; }
+.swp .swp-mode { padding: 0 5px; border: 1px solid var(--swp-ink); border-radius: 2px; }
+.swp .swp-mode.on { background: var(--swp-ink); color: var(--swp-paper); }
+
+.swp .swp-slot-table thead th.slot { width: 84px; }
+.swp .swp-slot-table tbody th.slot { padding-left: 8px; font-size: 12.5px; text-align: left; }
+.swp .swp-slot-table tbody td.name { line-height: 1.6; }
+.swp .swp-slot-table tr.over th.slot { color: var(--swp-bad); }
+.swp .swp-worn { display: inline-flex; align-items: center; gap: 4px; margin-right: 8px; white-space: nowrap; }
+.swp .swp-worn img { width: 18px; height: 18px; border: none; }
+.swp .swp-worn a[data-action=itemEdit] { font-weight: 600; }
+.swp .swp-worn .swp-mini { min-width: 16px; height: 16px; font-size: 9px; }
+.swp .swp-slot-select { max-width: 150px; height: 20px; border-style: dashed; background: transparent; color: var(--swp-ink-2); font-size: 11.5px; }
+
+.swp .swp-armor-table thead th:nth-child(n+3):not(.tools) { width: 50px; }
+
+.swp .swp-defense-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px; }
+.swp .swp-magic-circles { position: relative; display: flex; flex: 1 1 200px; flex-wrap: wrap; align-items: flex-start; gap: 6px 10px; padding-top: 20px; }
+.swp .swp-circles-title { position: absolute; top: 0; left: 0; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.swp .swp-totals { display: flex; flex: 0 1 260px; flex-direction: column; gap: 8px; min-width: 220px; margin-left: auto; }
+.swp .swp-totals-box { display: grid; grid-template-columns: 1fr 1fr; border: var(--swp-rule); background: var(--swp-ink); }
+.swp .swp-total { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 3px 6px 7px; color: var(--swp-paper); }
+.swp .swp-total + .swp-total { border-left: 2px solid var(--swp-paper); }
+.swp .swp-total-label { font-family: var(--swp-font-neg); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.swp a.swp-total { cursor: pointer; }
+
+.swp .swp-vital-block { display: grid; grid-template-columns: minmax(0, 1fr) 120px; gap: 10px 12px; }
+.swp .swp-vital { position: relative; display: flex; align-items: stretch; height: 50px; margin-top: 9px; border: var(--swp-rule); }
+.swp .swp-vital.hp { --bar: var(--swp-hp); }
+.swp .swp-vital.mp { --bar: var(--swp-mp); }
+.swp .swp-vital-label {
+  position: absolute;
+  top: -11px;
+  left: 14px;
+  z-index: 1;
+  padding: 0 4px;
+  background: var(--swp-paper);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+.swp .swp-vital-box { display: flex; flex: 0 0 auto; align-items: center; gap: 5px; padding: 6px 8px 6px 6px; background: var(--swp-ink); }
+.swp .swp-vital-box input[type=number] {
+  width: 64px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: var(--swp-paper);
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+.swp .swp-vital-box small { color: var(--swp-paper); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.swp .swp-vital-track { position: relative; display: flex; flex: 1; align-items: center; justify-content: flex-end; padding: 0 8px; }
+.swp .swp-vital-track > .fill { opacity: 0.9; }
+.swp .swp-vital-tools {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: var(--swp-thin);
+  border-radius: 4px;
+  background: var(--swp-paper);
+}
+.swp .swp-amount {
+  width: 46px !important;
+  height: 22px !important;
+  padding: 0 2px !important;
+  border: var(--swp-thin) !important;
+  border-radius: 3px !important;
+  background: var(--swp-paper) !important;
+  text-align: center;
+  font-size: 13px;
+}
+.swp .swp-resist { height: 50px; margin-top: 9px; }
+.swp .swp-resist .swp-num { font-size: 22px; }
+.swp .swp-footnote { margin: -6px 0 0; color: var(--swp-ink-2); font-size: 10.5px; text-align: right; }
+
+/* --------------------------------------------------------------------------
+   Checks, magic, inventory, effects, bio
+   -------------------------------------------------------------------------- */
+
+.swp .swp-check-columns { columns: 2 330px; column-gap: 16px; }
+.swp .swp-check-group { margin-bottom: 14px; break-inside: avoid; }
+.swp .swp-check-table thead th.name { text-align: left; }
+.swp .swp-check-table thead th.src { text-align: left; font-weight: 400; }
+.swp .swp-check-table thead th.val { width: 60px; }
+.swp .swp-letter {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border-radius: 2px;
+  background: var(--swp-paper);
+  color: var(--swp-ink);
+  font-size: 10.5px;
+}
+.swp .swp-check-row { cursor: pointer; }
+.swp .swp-check-row:hover > td:not(.val) { background: var(--swp-paper-2); }
+.swp .swp-check-row.straight > td:not(.val) { color: var(--swp-muted); }
+.swp .swp-check-table td.name { text-align: left; }
+.swp .swp-check-table td.name .swp-sub { display: inline; margin-left: 4px; }
+.swp .swp-check-table td.src { color: var(--swp-ink-2); font-size: 11.5px; text-align: left; }
+.swp .swp-check-table td.val { width: 60px; background: var(--swp-ink); border-top-color: var(--swp-ink); }
+
+.swp .swp-magic-head { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 22px; padding-bottom: 12px; border-bottom: var(--swp-rule); }
+.swp .swp-magic-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.swp .swp-deity { flex: 0 1 280px; flex-direction: row; align-items: flex-end; gap: 6px; }
+.swp .swp-money { display: flex; flex-direction: column; gap: 14px; padding-top: 16px; }
+.swp .swp-money .swp-box { height: 42px; }
+.swp .swp-advset { flex-direction: column; align-items: flex-start; gap: 2px; }
+.swp .swp-advset-list { font-size: 12px; color: var(--swp-ink-2); }
+.swp .swp-consumables { display: flex; flex-direction: column; gap: 5px; }
+.swp .swp-consumable { display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+.swp .swp-cons-name { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.swp .swp-consumable .swp-tick:not(.on) { cursor: default; background: var(--swp-paper-2); border-color: var(--swp-muted); }
+.swp .swp-consumable .swp-tick.on { background: var(--swp-ink); box-shadow: inset 0 0 0 2px var(--swp-paper); }
+.swp .swp-consumable .swp-tick.on:hover { background: var(--swp-gold); }
+.swp .swp-items > legend { width: auto; }
+.swp .swp-gear-table td.qty { width: 96px; }
+.swp .swp-qty { display: inline-flex; align-items: center; gap: 3px; }
+.swp .swp-qty input[type=number] {
+  width: 34px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-bottom: var(--swp-thin);
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+  font-weight: 700;
+}
+.swp .swp-qty .swp-mini { min-width: 16px; height: 16px; font-size: 8px; }
+.swp .swp-gear-table td.uses,
+.swp .swp-gear-table td.price { width: 60px; font-size: 12px; color: var(--swp-ink-2); }
+
+.swp .swp-profile .swp-lines { margin: 4px 0 14px; }
+.swp .swp-editor prose-mirror { display: block; min-height: 180px; }
+.swp .swp-editor .editor-content { padding: 4px; }
+
+/* --------------------------------------------------------------------------
+   Narrow windows
+   -------------------------------------------------------------------------- */
+
+@container swp (max-width: 880px) {
+  .swp .swp-weapon-table .pw { display: none; }
+  .swp .swp-pkg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .swp .swp-pkg:nth-child(3) { border-left: none; }
+  .swp .swp-pkg:nth-child(n+3):not(.swp-pkg-checks) { border-top: var(--swp-thin); }
+}
+@container swp (max-width: 800px) {
+  .swp .swp-grid-top,
+  .swp .swp-grid-2,
+  .swp .swp-grid-gear,
+  .swp .swp-grid-inv { grid-template-columns: minmax(0, 1fr); }
+  .swp .swp-grid-checks { grid-template-columns: 1fr 1fr; }
+  .swp .swp-grid-checks .swp-move { grid-column: 1 / -1; }
+  .swp .swp-warriors { grid-template-columns: minmax(0, 1fr); }
+  .swp .swp-warrior-ops { flex-direction: row; gap: 20px; }
+}
+@container swp (max-width: 600px) {
+  .swp .swp-header { grid-template-columns: 100px minmax(0, 1fr); gap: 8px 22px; }
+  .swp .swp-portrait-wrap { width: 92px; height: 112px; }
+  .swp .swp-medallion { right: -26px; bottom: -14px; width: 62px; height: 72px; }
+  .swp .swp-medallion .label { font-size: 6.5px; max-width: 40px; }
+  .swp .swp-medallion .value { font-size: 20px; }
+  .swp .swp-lines { flex-wrap: wrap; }
+  .swp .swp-line.narrow { flex-basis: 70px; }
+  .swp .swp-grid-checks { grid-template-columns: minmax(0, 1fr); }
+  .swp .swp-pkg-grid { grid-template-columns: minmax(0, 1fr); }
+  .swp .swp-pkg { border-left: none !important; }
+  .swp .swp-pkg + .swp-pkg { border-top: var(--swp-thin); }
+  .swp .swp-vital-block { grid-template-columns: minmax(0, 1fr) 90px; }
+  .swp .swp-weapon-table td.wacc,
+  .swp .swp-weapon-table th.wacc,
+  .swp .swp-weapon-table td.wextra,
+  .swp .swp-weapon-table th.wextra,
+  .swp .swp-weapon-table td.minstr,
+  .swp .swp-weapon-table th.minstr { display: none; }
+}
+
+/* Drag feedback on equipment sections */
+.swp .swp-slot.drop-hover > * { background: var(--swp-hl); }

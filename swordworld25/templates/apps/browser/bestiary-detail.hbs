@@ -1,0 +1,32 @@
+<p class="swp-best-info">
+  <span class="swp-kvp"><b>{{localize "SW25.Monster.Intelligence"}}:</b> {{intelligenceLabel}}</span>
+  <span class="swp-kvp"><b>{{localize "SW25.Monster.Perception"}}:</b> {{perceptionLabel}}</span>
+  <span class="swp-kvp"><b>{{localize "SW25.Monster.Disposition"}}:</b> {{dispositionLabel}}</span>
+  <span class="swp-kvp"><b>{{localize "SW25.Language"}}:</b> {{sw25Default languagesText "—"}}</span>
+  <span class="swp-kvp"><b>{{localize "SW25.WeakPoint.label"}}:</b> {{sw25Default weakText "—"}}</span>
+  <span class="swp-kvp"><b>{{localize "SW25.Monster.MovementSpeed"}}:</b> {{sw25Default movement "—"}}</span>
+  <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> {{fortitudeLabel}}</span>
+  <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> {{willpowerLabel}}</span>
+  {{#if magicText}}<span class="swp-kvp"><b>{{localize "SW25.Bestiary.Trait.magic"}}:</b> {{magicText}}</span>{{/if}}
+  {{#if immunitiesText}}<span class="swp-kvp"><b>{{localize "SW25.Bestiary.Immunities"}}:</b> {{immunitiesText}}</span>{{/if}}
+</p>
+<table class="swp-table swp-sb-table swp-best-sections">
+  <thead><tr>
+    <th class="style">{{localize "SW25.Monster.StyleSection"}}</th><th>{{localize "SW25.Accuracy"}}</th><th>{{localize "SW25.Damage.label"}}</th>
+    <th>{{localize "SW25.Evasion"}}</th><th>{{localize "SW25.Defense"}}</th><th>{{localize "SW25.HP"}}</th><th>{{localize "SW25.MP"}}</th>
+  </tr></thead>
+  <tbody>
+    {{#each sectionRows}}
+    <tr><td class="style">{{#if main}}<i class="fa-solid fa-crown swp-crown"></i> {{/if}}{{style}} <small>({{label}})</small></td>
+      <td>{{accuracyLabel}}</td><td>{{sw25Default damage "—"}}</td><td>{{evasionLabel}}</td><td>{{defense}}</td><td>{{hp}}</td><td>{{mp}}</td></tr>
+    {{/each}}
+  </tbody>
+</table>
+{{#if sectionLine}}<p class="swp-hint">{{localize "SW25.Monster.SectionCount"}}: {{sections}} ({{sectionLine}}){{#if mainSection}} · {{localize "SW25.MainSection"}}: {{mainSection}}{{/if}}</p>{{/if}}
+<div class="swp-best-skills">
+  {{#each skillTags}}<span class="swp-tag">{{#if icons}}<b class="swp-marks">{{icons}}</b> {{/if}}{{name}}{{#if section}} <small>({{section}})</small>{{/if}}</span>{{/each}}
+</div>
+{{#if loot.length}}
+<p class="swp-best-loot"><b>{{localize "SW25.Loot.label"}}:</b> {{#each loot}}<span><small>{{roll}}</small> {{label}}</span>{{/each}}</p>
+{{/if}}
+{{#if summary}}<p class="swp-best-desc">{{summary}}</p>{{/if}}

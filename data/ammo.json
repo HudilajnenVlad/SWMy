@@ -1,0 +1,450 @@
+[
+  {
+    "name": "Arrow (12)",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 10,
+    "priceText": "10G per 12 (1G each)",
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "bow"
+    ],
+    "silver": false,
+    "summary": "12 standard arrows for bows.",
+    "description": "Standard bow ammunition, bought in sets of 12 (single arrows 1G each).",
+    "modifiers": []
+  },
+  {
+    "name": "Silver Arrow",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 5,
+    "priceText": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "bow"
+    ],
+    "silver": true,
+    "summary": "A single silvered arrow.",
+    "description": "Silvered bow ammunition: counts as a silvered weapon attack (e.g. against [Normal Weapon Immunity]).",
+    "modifiers": []
+  },
+  {
+    "name": "Quarrel (12)",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 20,
+    "priceText": "20G per 12 (2G each)",
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "crossbow"
+    ],
+    "silver": false,
+    "summary": "12 standard quarrels for crossbows.",
+    "description": "Standard crossbow ammunition, bought in sets of 12 (single quarrels 2G each).",
+    "modifiers": []
+  },
+  {
+    "name": "Silver Quarrel",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 10,
+    "priceText": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "crossbow"
+    ],
+    "silver": true,
+    "summary": "A single silvered quarrel.",
+    "description": "Silvered crossbow ammunition: counts as a silvered weapon attack (e.g. against [Normal Weapon Immunity]).",
+    "modifiers": []
+  },
+  {
+    "name": "Piercing Arrow/Quarrel (12)",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": null,
+    "priceText": "20G per 12 arrows (2G each) / 30G per 12 quarrels (3G each)",
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "bow",
+      "crossbow"
+    ],
+    "silver": false,
+    "summary": "Power -5 but Critical Value -1.",
+    "description": "Arrows or quarrels that trade power for critical hits: the attack's Power is reduced by 5 and its Critical Value by 1.",
+    "modifiers": [
+      {
+        "key": "weaponPower",
+        "value": -5
+      },
+      {
+        "key": "critical",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "name": "Flash Fang Arrow/Quarrel",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 250,
+    "priceText": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "bow",
+      "crossbow"
+    ],
+    "silver": false,
+    "summary": "Critical Value -1; only lost when it hits with a critical.",
+    "description": "Critical Value -1. The projectile survives the shot and can be picked up again, unless it hits and scores a critical.",
+    "modifiers": [
+      {
+        "key": "critical",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "name": "Bullet (12)",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 50,
+    "priceText": "50G per 12 (5G each)",
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "gun"
+    ],
+    "silver": false,
+    "summary": "12 standard gun bullets.",
+    "description": "Standard gun ammunition, bought in sets of 12 (single bullets 5G each). Loaded from a storage device such as a Gun Belt.",
+    "modifiers": []
+  },
+  {
+    "name": "Silver Bullet",
+    "source": {
+      "book": "CR1",
+      "page": 285
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 25,
+    "priceText": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": null,
+    "ammoFor": [
+      "gun"
+    ],
+    "silver": true,
+    "summary": "A single silvered bullet.",
+    "description": "Silvered gun ammunition: counts as silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Elven Arrow/Quarrel",
+    "source": {
+      "book": "CR2",
+      "page": 219
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 920,
+    "priceText": null,
+    "magic": false,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": 0,
+    "ammoFor": [
+      "bow",
+      "crossbow"
+    ],
+    "silver": false,
+    "summary": "Can be shot underwater; always recoverable.",
+    "description": "Arrow or quarrel that can be shot in water as well as on land (Accuracy -2 underwater). It can always be recovered and reused after shooting (Details CR II p.228).",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -2,
+        "condition": "when shot underwater"
+      }
+    ]
+  },
+  {
+    "name": "Magic Arrow/Quarrel",
+    "source": {
+      "book": "CR2",
+      "page": 219
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 1400,
+    "priceText": null,
+    "magic": true,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": 0,
+    "ammoFor": [
+      "bow",
+      "crossbow"
+    ],
+    "silver": false,
+    "summary": "Attacks count as a magic weapon and deal magic damage; recoverable on a miss.",
+    "description": "Attacks with it are treated as made with a Magic Weapon and deal magic damage. It loses its power when it hits, but a missed shot can be picked up again. Bulletproof Armor and the Unbending Buckle protect against it (Details CR II p.229).",
+    "modifiers": []
+  },
+  {
+    "name": "Green Bullet (12)",
+    "source": {
+      "book": "CR2",
+      "page": 219
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 160,
+    "priceText": "160G per 12 (16G each)",
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": 8,
+    "ammoFor": [
+      "gun"
+    ],
+    "silver": false,
+    "summary": "[Healing Bullet]/[Treat Bullet] fired with it gain Power +10.",
+    "description": "Raises the Power of [Healing Bullet] and [Treat Bullet] fired with it by 10; with any other bullet spell it simply works like a plain bullet (Details CR II p.229).",
+    "modifiers": []
+  },
+  {
+    "name": "Underwater Bullet",
+    "source": {
+      "book": "CR2",
+      "page": 219
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 210,
+    "priceText": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": 8,
+    "ammoFor": [
+      "gun"
+    ],
+    "silver": false,
+    "summary": "Lets a gun shoot underwater.",
+    "description": "Gun ammunition that can be fired in water as well as on land (Details CR II p.229).",
+    "modifiers": []
+  },
+  {
+    "name": "Kaburaya",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 5,
+    "priceText": null,
+    "magic": false,
+    "consumable": true,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": 0,
+    "ammoFor": [
+      "bow"
+    ],
+    "silver": false,
+    "summary": "Whistling arrow that makes a loud sound when shot.",
+    "description": "Bow ammunition that emits a loud whistling sound when shot, audible within 500m of where it hits (Details CR III p.232).",
+    "modifiers": []
+  },
+  {
+    "name": "Dragon Arrow/Quarrel",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "itemType": "ammo",
+    "slot": [],
+    "stance": null,
+    "price": 44800,
+    "priceText": null,
+    "magic": true,
+    "consumable": false,
+    "use": {
+      "kind": "none",
+      "power": null,
+      "critical": null,
+      "extra": null,
+      "bonus": null
+    },
+    "classReq": null,
+    "popularity": 8,
+    "ammoFor": [
+      "bow",
+      "crossbow"
+    ],
+    "silver": false,
+    "summary": "Deals fire magic damage to everything in Area: Line; always recoverable.",
+    "description": "The shot affects everyone in Area: Line and deals fire-type magic damage. With [Targeting] the shooter may exclude any characters in the skirmish. It can always be recovered and reused (Details CR III p.232).",
+    "modifiers": [],
+    "types": [
+      "fire"
+    ]
+  }
+]

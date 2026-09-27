@@ -1,0 +1,1769 @@
+[
+  {
+    "name": "Instant Weapon",
+    "source": {
+      "book": "CR3",
+      "page": 191
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "white"
+      ],
+      "count": 1,
+      "text": "White"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "Power 10",
+        "value": null,
+        "power": 10
+      },
+      "A": {
+        "text": "Power 20",
+        "value": null,
+        "power": 20
+      },
+      "S": {
+        "text": "Power 30",
+        "value": null,
+        "power": 30
+      },
+      "SS": {
+        "text": "Power 50",
+        "value": null,
+        "power": 50
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Creates a B-rank magic melee weapon for the target; Power 10/20/30/50 (B/A/S/SS).",
+    "description": "Creates a melee weapon of any category and gives it to the target. It counts as a B-rank magic weapon (its damage is still physical) with no special properties, Accuracy +0, minimum Strength 1 and Critical Value 10. Its Power depends on the card rank: B 10, A 20, S 30, SS 50.",
+    "modifiers": []
+  },
+  {
+    "name": "Vorpal Weapon",
+    "source": {
+      "book": "CR3",
+      "page": 191
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "red"
+      ],
+      "count": 1,
+      "text": "Red"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "+1 damage",
+        "value": 1,
+        "power": null
+      },
+      "A": {
+        "text": "+2 damage",
+        "value": 2,
+        "power": null
+      },
+      "S": {
+        "text": "+3 damage",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "+6 damage",
+        "value": 6,
+        "power": null
+      }
+    },
+    "modifierKey": "damage",
+    "modifierTarget": "target",
+    "summary": "Target's physical damage +1/+2/+3/+6 (B/A/S/SS).",
+    "description": "For the duration, physical damage dealt by the target increases by the rank value: B +1, A +2, S +3, SS +6.",
+    "modifiers": []
+  },
+  {
+    "name": "Crush Fang",
+    "source": {
+      "book": "CR3",
+      "page": 191
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "red"
+      ],
+      "count": 1,
+      "text": "Red"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "ranks": {
+      "B": {
+        "text": "-1 damage",
+        "value": -1,
+        "power": null
+      },
+      "A": {
+        "text": "-2 damage",
+        "value": -2,
+        "power": null
+      },
+      "S": {
+        "text": "-4 damage",
+        "value": -4,
+        "power": null
+      },
+      "SS": {
+        "text": "-10 damage",
+        "value": -10,
+        "power": null
+      }
+    },
+    "modifierKey": "damage",
+    "modifierTarget": "target",
+    "summary": "Target's physical damage -1/-2/-4/-10 (B/A/S/SS).",
+    "description": "For the duration, physical damage dealt by the target is reduced by the rank value: B -1, A -2, S -4, SS -10.",
+    "modifiers": []
+  },
+  {
+    "name": "Critical Ray",
+    "source": {
+      "book": "CR3",
+      "page": 192
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "gold"
+      ],
+      "count": 1,
+      "text": "Gold"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "Roll +1",
+        "value": 1,
+        "power": null
+      },
+      "A": {
+        "text": "Roll +2",
+        "value": 2,
+        "power": null
+      },
+      "S": {
+        "text": "Roll +3",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "Roll +6",
+        "value": 6,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Target's next physical damage roll (2d) +1/+2/+3/+6 (B/A/S/SS).",
+    "description": "The next time the target rolls 2d for physical damage from a melee or ranged attack, the roll is raised by the rank value (B +1, A +2, S +3, SS +6); if the raised roll reaches the Critical Value, the attack is a critical. The roll cannot exceed 12 on the power table and the bonus is used up after one roll (not applied to additional critical rolls). Fixed-value characters add the value to their damage instead.",
+    "modifiers": [
+      {
+        "key": "powerRoll",
+        "value": 0,
+        "formula": "@rankValue",
+        "target": "target",
+        "actorType": "character"
+      },
+      {
+        "key": "damage",
+        "value": 0,
+        "formula": "@rankValue",
+        "target": "target",
+        "actorType": "monster"
+      }
+    ]
+  },
+  {
+    "name": "Barkmail",
+    "source": {
+      "book": "CR3",
+      "page": 192
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "green"
+      ],
+      "count": 1,
+      "text": "Green"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "+1 Defense",
+        "value": 1,
+        "power": null
+      },
+      "A": {
+        "text": "+2 Defense",
+        "value": 2,
+        "power": null
+      },
+      "S": {
+        "text": "+4 Defense",
+        "value": 4,
+        "power": null
+      },
+      "SS": {
+        "text": "+8 Defense",
+        "value": 8,
+        "power": null
+      }
+    },
+    "modifierKey": "defense",
+    "modifierTarget": "target",
+    "summary": "Target's Defense +1/+2/+4/+8 (B/A/S/SS).",
+    "description": "For the duration, the target's Defense increases by the rank value: B +1, A +2, S +4, SS +8.",
+    "modifiers": []
+  },
+  {
+    "name": "Paralyze Mist",
+    "source": {
+      "book": "CR3",
+      "page": 192
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "green"
+      ],
+      "count": 1,
+      "text": "Green"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "-1 Evasion",
+        "value": -1,
+        "power": null
+      },
+      "S": {
+        "text": "-2 Evasion",
+        "value": -2,
+        "power": null
+      },
+      "SS": {
+        "text": "-4 Evasion",
+        "value": -4,
+        "power": null
+      }
+    },
+    "modifierKey": "evasion",
+    "modifierTarget": "target",
+    "summary": "Target's Evasion -1/-2/-4 (A/S/SS); B-rank has no effect.",
+    "description": "The target takes a penalty on Evasion checks for the duration: A -1, S -2, SS -4. B-rank cards have no effect (printed as \"None\").",
+    "modifiers": []
+  },
+  {
+    "name": "Poison Needle",
+    "source": {
+      "book": "CR3",
+      "page": 192
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "black"
+      ],
+      "count": 1,
+      "text": "Black"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "ranks": {
+      "B": {
+        "text": "1 damage",
+        "value": 1,
+        "power": null
+      },
+      "A": {
+        "text": "3 damage",
+        "value": 3,
+        "power": null
+      },
+      "S": {
+        "text": "5 damage",
+        "value": 5,
+        "power": null
+      },
+      "SS": {
+        "text": "10 damage",
+        "value": 10,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Target takes 1/3/5/10 poison magic damage (B/A/S/SS) at the end of each of the Alchemist's turns.",
+    "description": "The target is poisoned: for the duration, it takes poison-type magic damage each time the using Alchemist's turn ends (B 1, A 3, S 5, SS 10).",
+    "modifiers": [
+      {
+        "key": "damageTurn",
+        "value": 0,
+        "formula": "@rankValue",
+        "target": "target"
+      }
+    ],
+    "turnOfUser": true,
+    "types": [
+      "poison"
+    ]
+  },
+  {
+    "name": "Mirage Daze",
+    "source": {
+      "book": "CR3",
+      "page": 193
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "white"
+      ],
+      "count": 1,
+      "text": "White"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "-1 Accuracy",
+        "value": -1,
+        "power": null
+      },
+      "S": {
+        "text": "-2 Accuracy",
+        "value": -2,
+        "power": null
+      },
+      "SS": {
+        "text": "-4 Accuracy",
+        "value": -4,
+        "power": null
+      }
+    },
+    "modifierKey": "accuracy",
+    "modifierTarget": "target",
+    "summary": "Target's Accuracy -1/-2/-4 (A/S/SS); B-rank has no effect.",
+    "description": "The target takes a penalty on Accuracy checks for the duration: A -1, S -2, SS -4. B-rank cards have no effect (printed as \"None\").",
+    "modifiers": []
+  },
+  {
+    "name": "Heal Spray",
+    "source": {
+      "book": "CR3",
+      "page": 193
+    },
+    "level": 1,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "green"
+      ],
+      "count": 2,
+      "text": "Green x 2"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "3 HP",
+        "value": 3,
+        "power": null
+      },
+      "A": {
+        "text": "10 HP",
+        "value": 10,
+        "power": null
+      },
+      "S": {
+        "text": "20 HP",
+        "value": 20,
+        "power": null
+      },
+      "SS": {
+        "text": "50 HP",
+        "value": 50,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Restores 3/10/20/50 HP (B/A/S/SS); also works on Undead, Magitech and Constructs.",
+    "description": "The target recovers HP by the rank value: B 3, A 10, S 20, SS 50. It also works on Undead, Magitech and Construct characters.",
+    "modifiers": [],
+    "rankEffect": "healHP"
+  },
+  {
+    "name": "Armorust",
+    "source": {
+      "book": "CR3",
+      "page": 193
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "black"
+      ],
+      "count": 2,
+      "text": "Black x 2"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "ranks": {
+      "B": {
+        "text": "-1 Defense",
+        "value": -1,
+        "power": null
+      },
+      "A": {
+        "text": "-3 Defense",
+        "value": -3,
+        "power": null
+      },
+      "S": {
+        "text": "-5 Defense",
+        "value": -5,
+        "power": null
+      },
+      "SS": {
+        "text": "-10 Defense",
+        "value": -10,
+        "power": null
+      }
+    },
+    "modifierKey": "defense",
+    "modifierTarget": "target",
+    "summary": "Target's Defense -1/-3/-5/-10 (B/A/S/SS), minimum 0.",
+    "description": "For the duration, the target's Defense is reduced by the rank value (B -1, A -3, S -5, SS -10), but not below 0.",
+    "modifiers": []
+  },
+  {
+    "name": "Unlock Needle",
+    "source": {
+      "book": "CR3",
+      "page": 193
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "black"
+      ],
+      "count": 2,
+      "text": "Black x 2"
+    },
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "ranks": {
+      "B": {
+        "text": "Success value 12",
+        "value": 12,
+        "power": null
+      },
+      "A": {
+        "text": "Success value 16",
+        "value": 16,
+        "power": null
+      },
+      "S": {
+        "text": "Success value 20",
+        "value": 20,
+        "power": null
+      },
+      "SS": {
+        "text": "Success value 40 (Automatic Success)",
+        "value": 40,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Opens a lock or disarms a trap with a fixed success value of 12/16/20/40 (B/A/S/SS).",
+    "description": "Picks a lock or disarms a trap on the target object with a fixed success value of 12 (B), 16 (A), 20 (S) or 40 (SS); the SS result also counts as an Automatic Success. Items like the Key of Unlocking cannot be used together with it.",
+    "modifiers": [],
+    "rankEffect": "check"
+  },
+  {
+    "name": "Initiative Boost",
+    "source": {
+      "book": "CR3",
+      "page": 194
+    },
+    "level": 5,
+    "minorAction": false,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "red"
+      ],
+      "count": 2,
+      "text": "Red x 2"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "+1 Initiative",
+        "value": 1,
+        "power": null
+      },
+      "A": {
+        "text": "+2 Initiative",
+        "value": 2,
+        "power": null
+      },
+      "S": {
+        "text": "+4 Initiative",
+        "value": 4,
+        "power": null
+      },
+      "SS": {
+        "text": "+8 Initiative",
+        "value": 8,
+        "power": null
+      }
+    },
+    "modifierKey": "initiative",
+    "modifierTarget": "target",
+    "summary": "Initiative check +1/+2/+4/+8 (B/A/S/SS).",
+    "description": "Adds the rank value (B +1, A +2, S +4, SS +8) to the target's Initiative check. Usable during Combat Preparation or as a Major Action, but not as a Minor Action. When used on another character during Combat Preparation, the Alchemist and the target must be placed at the same position (area/coordinates) at the start of the battle.",
+    "modifiers": []
+  },
+  {
+    "name": "Encyclopedia",
+    "source": {
+      "book": "CR3",
+      "page": 194
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "white"
+      ],
+      "count": 2,
+      "text": "White x 2"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "+1 Monster Knowledge",
+        "value": 1,
+        "power": null
+      },
+      "A": {
+        "text": "+2 Monster Knowledge",
+        "value": 2,
+        "power": null
+      },
+      "S": {
+        "text": "+4 Monster Knowledge",
+        "value": 4,
+        "power": null
+      },
+      "SS": {
+        "text": "+8 Monster Knowledge",
+        "value": 8,
+        "power": null
+      }
+    },
+    "modifierKey": "monsterKnowledge",
+    "modifierTarget": "target",
+    "summary": "Next Monster Knowledge check +1/+2/+4/+8 (B/A/S/SS).",
+    "description": "Adds the rank value (B +1, A +2, S +4, SS +8) to the target's Monster Knowledge check; it is used up after one check. When used on another character during Combat Preparation, the Alchemist and the target must be placed at the same position (area/coordinates) at the start of the battle.",
+    "modifiers": []
+  },
+  {
+    "name": "Dispel Needle",
+    "source": {
+      "book": "CR3",
+      "page": 194
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "black"
+      ],
+      "count": 1,
+      "text": "Black"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "Minor Action: no effect; Major Action: normal Evocation check",
+        "value": null,
+        "power": null
+      },
+      "S": {
+        "text": "Minor Action: success value 2; Major Action: Evocation check +2",
+        "value": null,
+        "power": null
+      },
+      "SS": {
+        "text": "Minor Action: normal Evocation check; Major Action: Evocation check +4",
+        "value": null,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Removes technique, spellsong, evocation and monster unique skill effects from the target.",
+    "description": "Ends all technique, spellsong, evocation and monster unique skill effects on the target; spell and item effects and poison- or curse-type effects are not removed. Resolve it as Forced Removal (CR I p. 166), comparing the Evocation check with each effect's success value instead of the target's Willpower. Card rank: A has no effect as a Minor Action and uses a normal check as a Major Action; S has success value 2 as a Minor Action or +2 as a Major Action; SS allows a normal check as a Minor Action or +4 as a Major Action. B-rank cards have no effect (printed as \"None\").",
+    "modifiers": []
+  },
+  {
+    "name": "Bind Ability",
+    "source": {
+      "book": "CR3",
+      "page": 195
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "white"
+      ],
+      "count": 2,
+      "text": "White x 2"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "ranks": {
+      "B": {
+        "text": "-1 to unique skill success values",
+        "value": -1,
+        "power": null
+      },
+      "A": {
+        "text": "-2 to unique skill success values",
+        "value": -2,
+        "power": null
+      },
+      "S": {
+        "text": "-3 to unique skill success values",
+        "value": -3,
+        "power": null
+      },
+      "SS": {
+        "text": "-4 to unique skill success values",
+        "value": -4,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Target's unique skill success values -1/-2/-3/-4 (B/A/S/SS).",
+    "description": "The success values of the target's unique skills take the rank penalty (B -1, A -2, S -3, SS -4). Not affected: Fortitude and Willpower checks, checks that use the monster's basic data (CR I p. 391), abilities tied to PC classes (spells, spellsongs, finales, evocations, etc.), and skills without a success value.",
+    "modifiers": []
+  },
+  {
+    "name": "Vivid Liquid",
+    "source": {
+      "book": "CR3",
+      "page": 195
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "green"
+      ],
+      "count": 2,
+      "text": "Green x 2"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "3 MP",
+        "value": 3,
+        "power": null
+      },
+      "S": {
+        "text": "10 MP",
+        "value": 10,
+        "power": null
+      },
+      "SS": {
+        "text": "20 MP",
+        "value": 20,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Restores 3/10/20 MP (A/S/SS); B-rank has no effect.",
+    "description": "The target recovers MP by the rank value: A 3, S 10, SS 20. B-rank cards have no effect (printed as \"None\").",
+    "modifiers": [],
+    "rankEffect": "healMP"
+  },
+  {
+    "name": "Mana Sprout",
+    "source": {
+      "book": "CR3",
+      "page": 195
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "gold"
+      ],
+      "count": 1,
+      "text": "Gold"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "cant",
+    "ranks": {
+      "B": {
+        "text": "1 MP",
+        "value": 1,
+        "power": null
+      },
+      "A": {
+        "text": "3 MP",
+        "value": 3,
+        "power": null
+      },
+      "S": {
+        "text": "10 MP",
+        "value": 10,
+        "power": null
+      },
+      "SS": {
+        "text": "20 MP",
+        "value": 20,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Target gains 1/3/10/20 temporary MP (B/A/S/SS) for 1 round.",
+    "description": "The target receives temporary MP (B 1, A 3, S 10, SS 20), kept separate from its own MP and spendable freely; whatever is unspent disappears when the duration ends.",
+    "modifiers": []
+  },
+  {
+    "name": "Manadown",
+    "source": {
+      "book": "CR3",
+      "page": 195
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "gold"
+      ],
+      "count": 1,
+      "text": "Gold"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "ranks": {
+      "B": {
+        "text": "-1 magic damage",
+        "value": -1,
+        "power": null
+      },
+      "A": {
+        "text": "-2 magic damage",
+        "value": -2,
+        "power": null
+      },
+      "S": {
+        "text": "-4 magic damage",
+        "value": -4,
+        "power": null
+      },
+      "SS": {
+        "text": "-8 magic damage",
+        "value": -8,
+        "power": null
+      }
+    },
+    "modifierKey": "damageMagic",
+    "modifierTarget": "target",
+    "summary": "Target's magic damage -1/-2/-4/-8 (B/A/S/SS).",
+    "description": "For the duration, magic damage dealt by the target is reduced by the rank value: B -1, A -2, S -4, SS -8.",
+    "modifiers": []
+  },
+  {
+    "name": "Lean Force",
+    "source": {
+      "book": "CR3",
+      "page": 196
+    },
+    "level": 5,
+    "minorAction": true,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "red"
+      ],
+      "count": 2,
+      "text": "Red x 2"
+    },
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "+1 magic damage",
+        "value": 1,
+        "power": null
+      },
+      "S": {
+        "text": "+3 magic damage",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "+6 magic damage",
+        "value": 6,
+        "power": null
+      }
+    },
+    "modifierKey": "damageMagic",
+    "modifierTarget": "target",
+    "summary": "Target's magic damage +1/+3/+6 (A/S/SS); B-rank has no effect.",
+    "description": "For the duration, magic damage dealt by the target increases by the rank value: A +1, S +3, SS +6. B-rank cards have no effect (printed as \"None\").",
+    "modifiers": []
+  },
+  {
+    "name": "Clay Field",
+    "source": {
+      "book": "CR3",
+      "page": 196
+    },
+    "level": 10,
+    "minorAction": false,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "black"
+      ],
+      "count": 3,
+      "text": "Black x 3"
+    },
+    "target": {
+      "text": "All Areas (30m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 30,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "cant",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "10 seconds (1 round)",
+        "value": 1,
+        "power": null
+      },
+      "S": {
+        "text": "30 seconds (3 rounds)",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "3 minutes (18 rounds)",
+        "value": 18,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "30m-radius field: immunity to earth type; wind damage taken +5.",
+    "description": "Every character within the area is immune to earth-type damage and effects, but takes 5 more damage from physical or magic wind-type damage. Duration by card rank: 10 seconds/1 round (A), 30 seconds/3 rounds (S), 3 minutes/18 rounds (SS); B-rank cards have no effect (printed as \"None\").",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": 5,
+        "condition": "wind-type damage",
+        "target": "target"
+      }
+    ],
+    "rankEffect": "duration"
+  },
+  {
+    "name": "Combine Materials",
+    "source": {
+      "book": "CR3",
+      "page": 196
+    },
+    "level": 10,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "white",
+        "black"
+      ],
+      "count": 1,
+      "text": "White x 1 & Black x 1"
+    },
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "10 cards -> 1 A-rank card",
+        "value": null,
+        "power": null
+      },
+      "A": {
+        "text": "8 cards -> 1 S-rank card",
+        "value": null,
+        "power": null
+      },
+      "S": {
+        "text": "6 cards -> 1 SS-rank card",
+        "value": null,
+        "power": null
+      },
+      "SS": {
+        "text": "4 cards -> 1 SS-rank card",
+        "value": null,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "Merge several same-color, same-rank cards and spend them as one card of a higher rank.",
+    "description": "For the duration, the caster can merge several Material Cards of the same color and rank and spend them as one card of the next rank up, also for Evocations that consume several cards; SS cards can only be merged into SS. Cards needed, by the rank used for this Evocation: B 10 cards for one A-rank card, A 8 for one S-rank card, S 6 for one SS-rank card, SS 4 for one SS-rank card.",
+    "modifiers": []
+  },
+  {
+    "name": "Slash Field",
+    "source": {
+      "book": "CR3",
+      "page": 197
+    },
+    "level": 10,
+    "minorAction": false,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "white"
+      ],
+      "count": 3,
+      "text": "White x 3"
+    },
+    "target": {
+      "text": "All Areas (30m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 30,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "cant",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "10 seconds (1 round)",
+        "value": 1,
+        "power": null
+      },
+      "S": {
+        "text": "30 seconds (3 rounds)",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "3 minutes (18 rounds)",
+        "value": 18,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "30m-radius field: immunity to slashing type; bludgeoning damage taken +5.",
+    "description": "Every character within the area is immune to slashing-type damage and effects, but takes 5 more damage from physical or magic bludgeoning-type damage. Duration by card rank: 10 seconds/1 round (A), 30 seconds/3 rounds (S), 3 minutes/18 rounds (SS); B-rank cards have no effect (printed as \"None\").",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": 5,
+        "condition": "bludgeoning-type damage",
+        "target": "target"
+      }
+    ],
+    "rankEffect": "duration"
+  },
+  {
+    "name": "Deluxe Materials",
+    "source": {
+      "book": "CR3",
+      "page": 197
+    },
+    "level": 10,
+    "minorAction": true,
+    "combatPrep": true,
+    "cards": {
+      "colors": [
+        "red",
+        "green"
+      ],
+      "count": 1,
+      "text": "Red x 1 & Green x 1"
+    },
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "ranks": {
+      "B": {
+        "text": "+2 Evocation check",
+        "value": 2,
+        "power": null
+      },
+      "A": {
+        "text": "+4 Evocation check",
+        "value": 4,
+        "power": null
+      },
+      "S": {
+        "text": "+6 Evocation check",
+        "value": 6,
+        "power": null
+      },
+      "SS": {
+        "text": "+10 Evocation check",
+        "value": 10,
+        "power": null
+      }
+    },
+    "modifierKey": "evocation",
+    "modifierTarget": "self",
+    "modifierCondition": "only when the consumed cards are treated as one rank lower",
+    "summary": "Evocation checks +2/+4/+6/+10 (B/A/S/SS) when the consumed cards are treated as one rank lower.",
+    "description": "For the duration, whenever the Alchemist uses an Evocation and treats all consumed Material Cards as one rank lower (SS as S, S as A, A as B), that Evocation check gains the rank bonus: B +2, A +4, S +6, SS +10. Evocations can still be used at their normal rank during the duration, but then get no bonus.",
+    "modifiers": []
+  },
+  {
+    "name": "Barrier Field",
+    "source": {
+      "book": "CR3",
+      "page": 197
+    },
+    "level": 10,
+    "minorAction": false,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "gold"
+      ],
+      "count": 3,
+      "text": "Gold x 3"
+    },
+    "target": {
+      "text": "All Areas (30m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 30,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "cant",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "10 seconds (1 round)",
+        "value": 1,
+        "power": null
+      },
+      "S": {
+        "text": "30 seconds (3 rounds)",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "3 minutes (18 rounds)",
+        "value": 18,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "30m-radius field that characters inside cannot leave by normal movement.",
+    "description": "Characters inside the area cannot leave it by ordinary means such as walking or flying, though others can still enter from outside. It blocks neither vision nor projectiles, spells or other effects, and [Teleport] or similar means of transport can still leave it. Duration by card rank: 10 seconds/1 round (A), 30 seconds/3 rounds (S), 3 minutes/18 rounds (SS); B-rank cards have no effect (printed as \"None\").",
+    "modifiers": [],
+    "rankEffect": "duration"
+  },
+  {
+    "name": "Flame Field",
+    "source": {
+      "book": "CR3",
+      "page": 198
+    },
+    "level": 10,
+    "minorAction": false,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "red"
+      ],
+      "count": 3,
+      "text": "Red x 3"
+    },
+    "target": {
+      "text": "All Areas (30m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 30,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "cant",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "10 seconds (1 round)",
+        "value": 1,
+        "power": null
+      },
+      "S": {
+        "text": "30 seconds (3 rounds)",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "3 minutes (18 rounds)",
+        "value": 18,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "30m-radius field: immunity to fire type; water/ice damage taken +5.",
+    "description": "Every character within the area is immune to fire-type damage and effects, but takes 5 more damage from physical or magic water/ice-type damage. Duration by card rank: 10 seconds/1 round (A), 30 seconds/3 rounds (S), 3 minutes/18 rounds (SS); B-rank cards have no effect (printed as \"None\").",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": 5,
+        "condition": "water/ice-type damage",
+        "target": "target"
+      }
+    ],
+    "rankEffect": "duration"
+  },
+  {
+    "name": "Rest Field",
+    "source": {
+      "book": "CR3",
+      "page": 198
+    },
+    "level": 10,
+    "minorAction": false,
+    "combatPrep": false,
+    "cards": {
+      "colors": [
+        "green"
+      ],
+      "count": 3,
+      "text": "Green x 3"
+    },
+    "target": {
+      "text": "All Areas (30m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 30,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none",
+      "radius": null,
+      "count": null,
+      "areaCount": null
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "cant",
+    "ranks": {
+      "B": null,
+      "A": {
+        "text": "10 seconds (1 round)",
+        "value": 1,
+        "power": null
+      },
+      "S": {
+        "text": "30 seconds (3 rounds)",
+        "value": 3,
+        "power": null
+      },
+      "SS": {
+        "text": "3 minutes (18 rounds)",
+        "value": 18,
+        "power": null
+      }
+    },
+    "modifierKey": null,
+    "modifierTarget": null,
+    "summary": "30m-radius field: HP-restoring spells and effects cost +2 MP and heal +5.",
+    "description": "Inside the area, any HP-healing spell or effect that costs MP costs 2 more MP (this extra cost is doubled too when [Metamagic/**] doubles the cost), and each recovery effect whose cost was raised this way heals 5 more points. Duration by card rank: 10 seconds/1 round (A), 30 seconds/3 rounds (S), 3 minutes/18 rounds (SS); B-rank cards have no effect (printed as \"None\").",
+    "modifiers": [
+      {
+        "key": "mp.cost",
+        "value": 2,
+        "condition": "spells/effects that restore HP",
+        "target": "target"
+      }
+    ],
+    "rankEffect": "duration"
+  }
+]

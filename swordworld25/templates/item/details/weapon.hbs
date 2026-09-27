@@ -1,0 +1,59 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Rank"}}<select name="system.rank">{{selectOptions choices.ranks selected=system.rank}}</select></label>
+  <label class="swp-field">{{localize "SW25.Price"}}<input type="number" name="system.price" value="{{system.price}}" min="0"></label>
+  <label class="swp-field">{{localize "SW25.PriceText"}}<input type="text" name="system.priceText" value="{{system.priceText}}"></label>
+  <label class="swp-field">{{localize "SW25.Range.label"}}<input type="text" name="system.range" value="{{system.range}}" placeholder="10m"></label>
+  <label class="swp-field">{{localize "SW25.Weapon.DefenseBonus"}}<input type="number" name="system.defenseBonus" value="{{system.defenseBonus}}"></label>
+  <label class="swp-field">{{localize "SW25.Quantity"}}<input type="number" name="system.quantity" value="{{system.quantity}}" min="0"></label>
+  <label class="swp-field">{{localize "SW25.Weapon.AttackClass"}}<select name="system.attackClass">{{selectOptions choices.classes selected=system.attackClass localize=true blank="SW25.Auto"}}</select></label>
+  {{#if system.magazine}}<label class="swp-field">{{localize "SW25.Gun.Magazine"}}<span class="swp-pair"><input type="number" name="system.loaded" value="{{system.loaded}}" min="0"> / {{system.magazine}}</span></label>{{/if}}
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.edged" {{checked system.edged}}> {{localize "SW25.Weapon.Edged"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.blunt" {{checked system.blunt}}> {{localize "SW25.Weapon.Blunt"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.magic" {{checked system.magic}}> {{localize "SW25.Magic.Item"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.silver" {{checked system.silver}}> {{localize "SW25.Weapon.Silver"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.grapplerOnly" {{checked system.grapplerOnly}}> {{localize "SW25.Weapon.GrapplerOnly"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.implement" {{checked system.implement}}> {{localize "SW25.Weapon.Implement"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.equipped" {{checked system.equipped}}> {{localize "SW25.Equipped"}}</label>
+</div>
+
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Category"}}</legend>
+  <div class="swp-chip-grid">
+    {{#each categories}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleCategory" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}
+  </div>
+  {{#if (gt system.categories.length 1)}}
+  <label class="swp-field inline">{{localize "SW25.Weapon.CurrentCategory"}}
+    <select name="system.category">{{selectOptions categoryOptions selected=system.category localize=true}}</select>
+  </label>
+  {{/if}}
+</fieldset>
+
+<fieldset class="swp-fieldset swp-fieldset-table">
+  <legend>{{localize "SW25.Weapon.Modes"}}
+    <a class="swp-mini" data-action="arrayAdd" data-path="system.modes" data-template='{"label":"","stance":"1H","minStr":1,"accuracy":0,"power":10,"critical":10,"extraDamage":0}' data-tooltip="SW25.Entry.AddRow"><i class="fa-solid fa-plus"></i></a>
+  </legend>
+  <table class="swp-table swp-form-table">
+    <thead><tr>
+      <th class="name">{{localize "SW25.Mode"}}</th><th>{{localize "SW25.Stance"}}</th><th>{{localize "SW25.MinStr"}}</th><th>{{localize "SW25.AccuracyShort"}}</th>
+      <th>{{localize "SW25.Power"}}</th><th>{{localize "SW25.Entry.CritShort"}}</th><th>{{localize "SW25.ExtraDamageShort"}}</th><th class="tools"></th>
+    </tr></thead>
+    <tbody>
+      {{#each system.modes}}
+      <tr>
+        <td class="name"><input type="text" name="system.modes.{{@index}}.label" value="{{label}}" placeholder="—"></td>
+        <td><input type="text" name="system.modes.{{@index}}.stance" value="{{stance}}"></td>
+        <td><input type="number" name="system.modes.{{@index}}.minStr" value="{{minStr}}"></td>
+        <td><input type="number" name="system.modes.{{@index}}.accuracy" value="{{accuracy}}"></td>
+        <td><input type="number" name="system.modes.{{@index}}.power" value="{{power}}" min="0" max="100"></td>
+        <td><input type="number" name="system.modes.{{@index}}.critical" value="{{critical}}"></td>
+        <td><input type="number" name="system.modes.{{@index}}.extraDamage" value="{{extraDamage}}"></td>
+        <td class="tools"><a class="swp-mini danger" data-action="arrayDelete" data-path="system.modes" data-index="{{@index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+      {{else}}
+      <tr class="swp-empty-row"><td colspan="8">{{localize "SW25.Entry.NoModes"}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+</fieldset>

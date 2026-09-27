@@ -1,0 +1,54 @@
+<section class="tab swp-tab swp-party-stash {{tab.cssClass}}" data-group="primary" data-tab="stash">
+  <div class="swp-stash-grid">
+    <aside class="swp-block swp-stash-side">
+      <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Party.Purse"}}</span></div>
+      <div class="swp-stash-purse">
+        <label class="swp-box swp-stash-fund" data-tooltip="SW25.Party.FundHint">
+          <span class="swp-legend">{{localize "SW25.Party.Fund"}}</span>
+          <input type="number" name="system.money" value="{{system.money}}" min="0" step="1">
+          <span class="swp-unit-corner">G</span>
+        </label>
+        <table class="swp-table swp-stash-purses">
+          <tbody>
+            {{#each purses}}
+            <tr><td class="name"><img src="{{img}}" alt=""> {{name}}</td><td class="num">{{money}} G</td></tr>
+            {{/each}}
+            <tr class="total"><th>{{localize "SW25.Party.Total"}}</th><td class="num"><b>{{totalMoney}} G</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+
+    <div class="swp-block swp-stash-items">
+      <table class="swp-table">
+        <thead><tr>
+          <th class="name">{{localize "SW25.Party.StashItems"}}</th>
+          <th class="qty">{{localize "SW25.Quantity"}}</th>
+          <th class="price">{{localize "SW25.Price"}}</th>
+          <th class="tools"></th>
+        </tr></thead>
+        <tbody>
+          {{#each stash}}
+          <tr class="swp-row draggable {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+            {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this subtitle=typeLabel}}
+            <td class="qty"><input type="number" data-item-field="system.quantity" value="{{quantity}}" min="0" step="1"></td>
+            <td class="price">{{price}}</td>
+            <td class="swp-tools-cell">
+              <span class="swp-row-tools">
+                {{#if @root.editable}}<a data-action="stashGive" data-tooltip="SW25.Party.GiveTo"><i class="fa-solid fa-hand-holding"></i></a>{{/if}}
+                <a data-action="itemChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i></a>
+                <a data-action="itemEdit" data-tooltip="SW25.Edit"><i class="fa-solid fa-pen"></i></a>
+                {{#if @root.editable}}<a data-action="itemDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>{{/if}}
+              </span>
+            </td>
+          </tr>
+          {{#if expanded}}<tr class="swp-details-row"><td colspan="4" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+          {{else}}
+          <tr class="swp-drop-row"><td colspan="4">{{localize "SW25.Party.StashHint"}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{#if stash.length}}<p class="swp-hint pad">{{localize "SW25.Party.StashMoveHint"}}</p>{{/if}}
+    </div>
+  </div>
+</section>

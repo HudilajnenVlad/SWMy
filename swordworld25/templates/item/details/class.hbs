@@ -1,0 +1,37 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Key"}}<input type="text" name="system.key" value="{{system.key}}"></label>
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="0" max="15"></label>
+  <label class="swp-field">{{localize "SW25.Class.Category"}}<select name="system.category">{{selectOptions choices.categories selected=system.category localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Class.Track"}}<select name="system.track">{{selectOptions choices.tracks selected=system.track localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Class.Magic"}}<select name="system.magic">{{selectOptions choices.magic selected=system.magic localize=true blank="—"}}</select></label>
+  <label class="swp-field">{{localize "SW25.Class.AbilityType"}}<input type="text" name="system.abilityType" value="{{system.abilityType}}" placeholder="technique"></label>
+  <label class="swp-field">{{localize "SW25.Class.CriticalMod"}}<input type="number" name="system.critical" value="{{system.critical}}"></label>
+  <label class="swp-field wide">{{localize "SW25.Languages"}}<input type="text" name="system.languages" value="{{system.languages}}"></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.attack.melee" {{checked system.attack.melee}}> {{localize "SW25.Class.Melee"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.attack.wrestlingOnly" {{checked system.attack.wrestlingOnly}}> {{localize "SW25.Class.WrestlingOnly"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.attack.thrown" {{checked system.attack.thrown}}> {{localize "SW25.Class.Thrown"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.attack.shooting" {{checked system.attack.shooting}}> {{localize "SW25.Class.Shooting"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.evasion" {{checked system.evasion}}> {{localize "SW25.Class.Evasion"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.halfStrength" {{checked system.halfStrength}}> {{localize "SW25.Class.HalfStrength"}}</label>
+</div>
+<fieldset class="swp-fieldset swp-fieldset-table">
+  <legend>{{localize "SW25.Class.AutoFeats"}}
+    <a class="swp-mini" data-action="arrayAdd" data-path="system.autoFeats" data-template='{"level":1,"name":""}' data-tooltip="SW25.Entry.AddRow"><i class="fa-solid fa-plus"></i></a>
+  </legend>
+  <table class="swp-table swp-form-table">
+    <thead><tr><th>{{localize "SW25.Level"}}</th><th class="name">{{localize "SW25.Name"}}</th><th class="tools"></th></tr></thead>
+    <tbody>
+      {{#each system.autoFeats}}
+      <tr>
+        <td class="num"><input type="number" name="system.autoFeats.{{@index}}.level" value="{{level}}" min="1"></td>
+        <td class="name"><input type="text" name="system.autoFeats.{{@index}}.name" value="{{name}}"></td>
+        <td class="tools"><a class="swp-mini danger" data-action="arrayDelete" data-path="system.autoFeats" data-index="{{@index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+      {{else}}
+      <tr class="swp-empty-row"><td colspan="3">—</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+</fieldset>

@@ -1,0 +1,338 @@
+<section class="tab swp-tab swp-statblock {{tab.cssClass}}" data-group="primary" data-tab="stats">
+  {{#if hidden}}
+  <div class="swp-banner muted"><i class="fa-solid fa-circle-question"></i> <span>{{localize "SW25.Monster.Unidentified"}}</span></div>
+  {{#if system.details.description}}<div class="swp-sb-desc">{{{enrichedDescription}}}</div>{{/if}}
+  {{else}}
+
+  {{#if edit}}{{#if blank}}{{#unless isMount}}
+  <div class="swp-banner">
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
+    <span>{{localize "SW25.Template.BlankHint"}}</span>
+    <button type="button" class="swp-btn-wide" data-action="openTemplate">{{localize "SW25.Template.Use"}}</button>
+  </div>
+  {{/unless}}{{/if}}{{/if}}
+
+  {{#if edit}}{{> infoEdit}}{{else}}{{> infoView}}{{/if}}
+
+  {{#if isMount}}{{> mountLevels}}{{/if}}
+
+  {{!-- Fighting style (section) table --}}
+  <table class="swp-table swp-sb-table swp-sections-table">
+    <thead>
+      <tr>
+        <th class="style">{{localize "SW25.Monster.StyleSection"}}</th>
+        <th>{{localize "SW25.Accuracy"}}</th>
+        <th>{{localize "SW25.Damage.label"}}</th>
+        <th>{{localize "SW25.Evasion"}}</th>
+        <th>{{localize "SW25.Defense"}}</th>
+        <th>{{localize "SW25.HP"}}</th>
+        <th>{{localize "SW25.MP"}}</th>
+        {{#if (and edit (not isMount))}}<th class="tools"><a class="swp-tool" data-action="sectionAdd" data-tooltip="SW25.Monster.AddSection"><i class="fa-solid fa-plus"></i></a></th>{{/if}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each sections}}
+      <tr class="swp-sec {{#if down}}down{{/if}} {{#if main}}main{{/if}}">
+        {{#if (and @root.edit (not @root.isMount))}}
+        <td class="style">
+          <span class="swp-sec-edit">
+            <a class="swp-main-toggle {{#if main}}on{{/if}}" data-action="sectionMain" data-index="{{index}}" data-tooltip="SW25.MainSection"><i class="fa-solid fa-crown"></i></a>
+            <input type="text" name="system.sections.{{index}}.style" value="{{style}}" placeholder="{{localize 'SW25.Monster.Style'}}">
+            <input class="secname" type="text" name="system.sections.{{index}}.name" value="{{name}}" placeholder="{{localize 'SW25.Section.label'}}" data-tooltip="SW25.Monster.SectionNameHint">
+            {{#if ordinal}}<span class="swp-sec-ordinal" data-tooltip="SW25.Monster.SectionOrdinalHint">{{ordinal}}</span>{{/if}}
+          </span>
+        </td>
+        <td><input type="number" name="system.sections.{{index}}.accuracy" value="{{accuracy}}" step="1"></td>
+        <td><input type="text" name="system.sections.{{index}}.damage" value="{{damage}}" placeholder="2d+0"></td>
+        <td><input type="number" name="system.sections.{{index}}.evasion" value="{{evasion}}" step="1"></td>
+        <td><input type="number" name="system.sections.{{index}}.defense" value="{{defense}}" step="1"></td>
+        <td><input type="number" name="system.sections.{{index}}.hp.max" value="{{srcHP}}" step="1"></td>
+        <td><input type="number" name="system.sections.{{index}}.mp.max" value="{{srcMP}}" step="1"></td>
+        <td class="tools">
+          <a class="swp-mini" data-action="sectionDuplicate" data-index="{{index}}" data-tooltip="SW25.Monster.DuplicateSection"><i class="fa-solid fa-clone"></i></a>
+          <a class="swp-mini danger" data-action="sectionDelete" data-index="{{index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>
+        </td>
+        {{else}}
+        <td class="style">{{#if main}}<i class="fa-solid fa-crown swp-crown" data-tooltip="SW25.MainSection"></i> {{/if}}{{sw25Default style "—"}}{{#if name}} <small class="swp-sub inline">({{label}})</small>{{else if ordinal}} <small class="swp-sub inline">{{ordinal}}</small>{{/if}}</td>
+        <td class="roll">{{#if canAttack}}<a class="swp-cellroll" data-action="sectionAttack" data-index="{{index}}" data-tooltip="SW25.Attack">{{accuracyLabel}} <i class="fa-solid fa-dice-d6"></i></a>{{else}}{{accuracyLabel}}{{/if}}</td>
+        <td>{{sw25Default damage "—"}}</td>
+        <td class="roll">{{#if canEvade}}<a class="swp-cellroll" data-action="sectionEvasion" data-index="{{index}}" data-tooltip="SW25.Check.evasion">{{evasionLabel}} <i class="fa-solid fa-dice-d6"></i></a>{{else}}—{{/if}}</td>
+        <td>{{defenseTotal}}</td>
+        <td class="hp"><span class="swp-hpcell" style="--pct: {{hpPct}}%"><input type="number" name="system.sections.{{index}}.hp.value" value="{{hp.value}}" step="1"><small>/{{hp.max}}</small></span></td>
+        <td class="mp"><span class="swp-hpcell mp" style="--pct: {{sw25Pct mp.value mp.max}}%"><input type="number" name="system.sections.{{index}}.mp.value" value="{{mp.value}}" step="1"><small>/{{mp.max}}</small></span></td>
+        {{/if}}
+      </tr>
+      {{else}}
+      <tr class="swp-empty-row"><td colspan="8">{{localize "SW25.Monster.NoSections"}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{#if system.multiSection}}
+  <p class="swp-sb-note"><b>{{localize "SW25.Monster.SectionCount"}}:</b> {{sections.length}} ({{sectionNames}}){{#if mainSectionLabel}} · <b>{{localize "SW25.MainSection"}}:</b> {{mainSectionLabel}}{{/if}}</p>
+  {{/if}}
+
+  {{!-- Unique skills --}}
+  <div class="swp-sb-block">
+    <div class="swp-sb-bar">
+      <span class="swp-bar-title">{{localize "SW25.Monster.UniqueSkills"}}</span>
+      {{#if editable}}<span class="swp-tools"><a class="swp-tool" data-action="skillCreate" data-tooltip="SW25.Monster.AddSkill"><i class="fa-solid fa-plus"></i></a></span>{{/if}}
+    </div>
+    <div class="swp-skill-cols">
+      {{#each skills}}
+      <div class="swp-skill swp-row draggable" data-item-id="{{id}}">
+        <div class="swp-skill-head">
+          <span class="swp-skill-icons" data-tooltip="{{tagLabels}}">{{icons}}</span>
+          <a class="swp-skill-name" data-action="itemUse" data-tooltip="SW25.Use">{{name}}</a>
+          <span class="swp-row-tools">
+            <a data-action="itemChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i></a>
+            <a data-action="itemEdit" data-tooltip="SW25.Edit"><i class="fa-solid fa-pen"></i></a>
+            <a data-action="itemDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>
+          </span>
+        </div>
+        {{#if (or section checkLabel damage)}}
+        <div class="swp-skill-meta">{{#if section}}<span>{{section}}</span>{{/if}}{{#if checkLabel}}<span>{{checkLabel}}</span>{{/if}}{{#if damage}}<span>{{damage}}</span>{{/if}}</div>
+        {{/if}}
+        <div class="swp-skill-text">{{{text}}}</div>
+      </div>
+      {{else}}
+      <p class="swp-none">{{localize "SW25.Monster.NoSkills"}}</p>
+      {{/each}}
+    </div>
+  </div>
+
+  {{!-- Loot --}}
+  {{#unless isMount}}
+  <div class="swp-sb-block">
+    <div class="swp-sb-bar">
+      <span class="swp-bar-title">{{localize "SW25.Loot.label"}}</span>
+      <span class="swp-tools">
+        <a class="swp-tool" data-action="rollLoot" data-tooltip="SW25.Loot.Roll"><i class="fa-solid fa-dice"></i></a>
+        {{#if edit}}<a class="swp-tool" data-action="lootAdd" data-tooltip="SW25.Loot.Add"><i class="fa-solid fa-plus"></i></a>{{/if}}
+      </span>
+    </div>
+    {{#if edit}}
+    <table class="swp-table swp-loot-edit">
+      <thead><tr>
+        <th class="roll">{{localize "SW25.Loot.RollColumn"}}</th><th class="name">{{localize "SW25.Loot.Item"}}</th>
+        <th>{{localize "SW25.Loot.Price"}}</th><th>{{localize "SW25.Loot.Cards"}}</th><th>{{localize "SW25.Loot.Quantity"}}</th><th class="tools"></th>
+      </tr></thead>
+      <tbody>
+        {{#each loot}}
+        <tr>
+          <td class="roll"><input type="text" name="system.loot.{{index}}.roll" value="{{roll}}" placeholder="2-7 / 8+ / Always"></td>
+          <td class="name"><input type="text" name="system.loot.{{index}}.item" value="{{item}}"></td>
+          <td><input type="number" name="system.loot.{{index}}.price" value="{{price}}"></td>
+          <td><input type="text" name="system.loot.{{index}}.cards" value="{{cards}}" placeholder="White B"></td>
+          <td><input type="text" name="system.loot.{{index}}.quantity" value="{{quantity}}" placeholder="1d"></td>
+          <td class="tools"><a class="swp-mini" data-action="lootDelete" data-index="{{index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></td>
+        </tr>
+        {{else}}
+        <tr class="swp-empty-row"><td colspan="6">{{localize "SW25.Loot.None"}}</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p class="swp-hint pad">{{localize "SW25.Loot.Hint"}}</p>
+    {{else}}
+    {{#if loot.length}}
+    <div class="swp-loot-cols">
+      {{#each lootColumns}}
+      <table class="swp-loot-table"><tbody>
+        {{#each this}}<tr><th>{{roll}}</th><td>{{label}}</td></tr>{{/each}}
+      </tbody></table>
+      {{/each}}
+    </div>
+    {{else}}
+    <p class="swp-none">{{localize "SW25.Loot.None"}}</p>
+    {{/if}}
+    {{/if}}
+  </div>
+  {{/unless}}
+
+  {{!-- Description --}}
+  <div class="swp-sb-desc">
+    <prose-mirror name="system.details.description" value="{{system.details.description}}" toggled {{#unless editable}}disabled{{/unless}}>
+      {{{enrichedDescription}}}
+    </prose-mirror>
+  </div>
+  {{#if sourceLabel}}<p class="swp-sb-source">{{localize "SW25.Source"}}: {{sourceLabel}}</p>{{/if}}
+
+  {{#if otherItems.length}}
+  <div class="swp-block">
+    <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Items"}}</span></div>
+    <table class="swp-table">
+      <tbody>
+        {{#each otherItems}}
+        <tr class="swp-row draggable {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+          {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=true}}
+          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=true}}
+        </tr>
+        {{#if expanded}}<tr class="swp-details-row"><td colspan="2" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{/if}}
+
+  {{> "systems/swordworld25/templates/actor/paper/resources.hbs"}}
+  {{/if}}
+</section>
+
+{{!-- Info box as in the bestiary: labels in bold, values inline --}}
+{{#*inline "infoView"}}
+<div class="swp-sb-info">
+  {{#if isMount}}
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Mount.Range"}}:</b> {{system.levelMin}} – {{system.levelMax}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.Intelligence"}}:</b> {{sw25Default system.intelligence "—"}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.Perception"}}:</b> {{sw25Default system.perception "—"}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Language"}}:</b> {{sw25Default system.languages "—"}}</span>
+  </p>
+  <p>
+    <span class="swp-kvp swp-weak {{#if system.weakPointRevealed}}revealed{{/if}}"><b>{{localize "SW25.WeakPoint.label"}}:</b> {{weakPointLabel}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.MovementSpeed"}}:</b> {{movementLabel}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="fortitude">{{fortitudeLabel}}</a></span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="willpower">{{willpowerLabel}}</a></span>
+  </p>
+  {{> mountJockey}}
+  {{else}}
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.Intelligence"}}:</b> {{sw25Default system.intelligence "—"}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.Perception"}}:</b> {{sw25Default system.perception "—"}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.Disposition"}}:</b> {{sw25Default system.disposition "—"}}</span>
+    {{#if soulscarsShown}}<span class="swp-kvp"><b>{{localize "SW25.Soulscars"}}:</b> {{system.soulscars}}</span>{{/if}}
+  </p>
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Language"}}:</b> {{sw25Default system.languages "—"}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.Habitat"}}:</b> {{sw25Default system.habitat "—"}}</span>
+  </p>
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.RepWeak"}}:</b> {{sw25Default system.reputation "—"}}/{{sw25Default system.weakness "—"}}</span>
+    <span class="swp-kvp swp-weak {{#if system.weakPointRevealed}}revealed{{/if}}"><b>{{localize "SW25.WeakPoint.label"}}:</b> {{weakPointLabel}}{{#if system.weakPointRevealed}} <i class="fa-solid fa-crosshairs" data-tooltip="SW25.Monster.WeakPointRevealed"></i>{{/if}}</span>
+  </p>
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.initiative"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="initiative">{{initiativeLabel}}</a></span>
+    <span class="swp-kvp"><b>{{localize "SW25.Monster.MovementSpeed"}}:</b> {{movementLabel}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="fortitude">{{fortitudeLabel}}</a></span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="willpower">{{willpowerLabel}}</a></span>
+  </p>
+  {{/if}}
+</div>
+{{/inline}}
+
+{{!-- The same box as a form --}}
+{{#*inline "infoEdit"}}
+<div class="swp-sb-info edit">
+  <div class="swp-field-grid">
+    {{#if isMount}}
+    <label class="swp-field narrow"><span>{{localize "SW25.Mount.LevelMin"}}</span><input type="number" name="system.levelMin" value="{{system.levelMin}}" min="1"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Mount.LevelMax"}}</span><input type="number" name="system.levelMax" value="{{system.levelMax}}" min="1"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Mount.PriceBuy"}}</span><input type="number" name="system.price.buy" value="{{system.price.buy}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Mount.PriceRent"}}</span><input type="number" name="system.price.rent" value="{{system.price.rent}}"></label>
+    {{/if}}
+    <label class="swp-field"><span>{{localize "SW25.Monster.Classification"}}</span><select name="system.classification">{{selectOptions classifications selected=system.classification localize=true}}</select></label>
+    <label class="swp-field"><span>{{localize "SW25.Monster.Intelligence"}}</span><input type="text" name="system.intelligence" value="{{system.intelligence}}" list="swp-int-{{actor.id}}"></label>
+    <label class="swp-field"><span>{{localize "SW25.Monster.Perception"}}</span><input type="text" name="system.perception" value="{{system.perception}}" list="swp-per-{{actor.id}}"></label>
+    {{#unless isMount}}
+    <label class="swp-field"><span>{{localize "SW25.Monster.Disposition"}}</span><input type="text" name="system.disposition" value="{{system.disposition}}" list="swp-disp-{{actor.id}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Soulscars"}}</span><input type="number" name="system.soulscars" value="{{system.soulscars}}" min="0" max="5"></label>
+    {{/unless}}
+    <label class="swp-field wide"><span>{{localize "SW25.Language"}}</span><input type="text" name="system.languages" value="{{system.languages}}"></label>
+    {{#unless isMount}}
+    <label class="swp-field wide"><span>{{localize "SW25.Monster.Habitat"}}</span><input type="text" name="system.habitat" value="{{system.habitat}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Monster.Reputation"}}</span><input type="number" name="system.reputation" value="{{system.reputation}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Monster.Weakness"}}</span><input type="number" name="system.weakness" value="{{system.weakness}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Check.initiative"}}</span><input type="number" name="system.initiative" value="{{system.initiative}}"></label>
+    {{/unless}}
+    <label class="swp-field wide"><span>{{localize "SW25.WeakPoint.label"}}</span><input type="text" name="system.weakPoint.text" value="{{system.weakPoint.text}}"></label>
+    <label class="swp-field"><span>{{localize "SW25.WeakPoint.Kind"}}</span><select name="system.weakPoint.kind">{{selectOptions weakPointKinds selected=system.weakPoint.kind localize=true blank="—"}}</select></label>
+    <label class="swp-field"><span>{{localize "SW25.WeakPoint.DamageType"}}</span><input type="text" name="system.weakPoint.damageType" value="{{system.weakPoint.damageType}}" placeholder="{{localize 'SW25.WeakPoint.TypeHint'}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.WeakPoint.Value"}}</span><input type="number" name="system.weakPoint.value" value="{{system.weakPoint.value}}"></label>
+    <label class="swp-field"><span>{{localize "SW25.Monster.MovementSpeed"}}</span><input type="text" name="system.movement.text" value="{{system.movementLabel}}" placeholder="12/- · 20 (4 Legs)/- · -/30 (Flying)"></label>
+    {{#unless isMount}}
+    <label class="swp-field narrow"><span>{{localize "SW25.Check.fortitude"}}</span><input type="number" name="system.fortitude" value="{{system.fortitude}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Check.willpower"}}</span><input type="number" name="system.willpower" value="{{system.willpower}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.SwordShards"}}</span><input type="number" name="system.swordShards" value="{{system.swordShards}}" min="0" data-tooltip="SW25.Monster.ShardHint"></label>
+    {{/unless}}
+    <label class="swp-field"><span>{{localize "SW25.Monster.FixedValues"}}</span><select name="system.useFixed">{{selectOptions useFixedOptions selected=system.useFixed}}</select></label>
+    {{#unless isMount}}
+    <label class="swp-field wide"><span>{{localize "SW25.MainSection"}}</span><input type="text" name="system.mainSection" value="{{system.mainSection}}" list="swp-main-{{actor.id}}" placeholder="{{localize 'SW25.Monster.MainSectionPlaceholder'}}" data-tooltip="SW25.Monster.MainSectionHint"></label>
+    {{/unless}}
+  </div>
+  <datalist id="swp-main-{{actor.id}}"><option value="None"></option>{{#each sectionGroupOptions}}<option value="{{this}}"></option>{{/each}}</datalist>
+  <datalist id="swp-int-{{actor.id}}">{{#each config.intelligenceLevels}}<option value="{{@key}}"></option>{{/each}}</datalist>
+  <datalist id="swp-per-{{actor.id}}"><option value="Five senses"></option><option value="Five senses (Darkvision)"></option><option value="Magic"></option><option value="Mechanical"></option></datalist>
+  <datalist id="swp-disp-{{actor.id}}"><option value="Friendly"></option><option value="Neutral"></option><option value="Hostile"></option><option value="Hungry"></option><option value="Instructed"></option></datalist>
+  {{#if isMount}}{{> mountJockey}}{{/if}}
+</div>
+{{/inline}}
+
+{{#*inline "mountJockey"}}
+<p class="swp-mount-line">
+  <span class="swp-kvp"><b>{{localize "SW25.Mount.Jockey"}}:</b>
+    {{#if jockeyName}}{{jockeyName}} <small>({{localize "SW25.Class.rider"}} {{jockeyRider}})</small> <a class="swp-mini" data-action="clearJockey" data-tooltip="SW25.Mount.ClearJockey"><i class="fa-solid fa-xmark"></i></a>
+    {{else}}<em class="swp-placeholder">{{localize "SW25.Mount.DropJockey"}}</em>{{/if}}
+  </span>
+  {{#if system.jockeyUnqualified}}<span class="swp-kvp warn"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "SW25.Mount.Unqualified" level=system.levelMin}}</span>{{/if}}
+  <span class="swp-kvp"><b>{{localize "SW25.Level"}}:</b>
+    {{#if system.autoLevel}}{{system.currentLevel}}{{else}}<select name="system.level">{{selectOptions levelOptions selected=system.currentLevel}}</select>{{/if}}
+  </span>
+  <label class="swp-kvp swp-check"><input type="checkbox" name="system.autoLevel" {{checked system.autoLevel}}> {{localize "SW25.Mount.AutoLevel"}}</label>
+  <label class="swp-kvp swp-check" data-tooltip="SW25.Mount.ProprietaryHint"><input type="checkbox" name="system.proprietary" {{checked system.proprietary}}> {{localize "SW25.Mount.Proprietary"}}</label>
+</p>
+{{/inline}}
+
+{{!-- Mount stats by level; the current level is highlighted --}}
+{{#*inline "mountLevels"}}
+<table class="swp-table swp-sb-table swp-level-table">
+  <thead>
+    <tr>
+      <th class="lvl" data-tooltip="SW25.Level">{{localize "SW25.Entry.LevelShort"}}</th>
+      <th class="style">{{localize "SW25.Monster.StyleSection"}}</th>
+      <th>{{localize "SW25.Accuracy"}}</th>
+      <th>{{localize "SW25.Damage.label"}}</th>
+      <th>{{localize "SW25.Evasion"}}</th>
+      <th>{{localize "SW25.Defense"}}</th>
+      <th>{{localize "SW25.HP"}}</th>
+      <th>{{localize "SW25.MP"}}</th>
+      <th>{{localize "SW25.Mount.FortShort"}}</th>
+      <th>{{localize "SW25.Mount.WillShort"}}</th>
+      {{#if edit}}<th class="tools"><a class="swp-tool" data-action="levelRowAdd" data-tooltip="SW25.Mount.AddLevel"><i class="fa-solid fa-plus"></i></a></th>{{/if}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each levelRows as |row|}}
+    {{#each row.sections as |s|}}
+    <tr class="{{#if row.current}}current{{/if}} {{#if row.odd}}odd{{/if}}">
+      {{#if s.first}}
+      <th class="lvl" rowspan="{{row.span}}">{{#if @root.edit}}<input type="number" name="system.levels.{{row.index}}.level" value="{{row.level}}">{{else}}{{row.level}}{{/if}}</th>
+      {{/if}}
+      {{#if @root.edit}}
+      <td class="style"><input type="text" name="system.levels.{{row.index}}.sections.{{s.index}}.style" value="{{s.style}}"></td>
+      <td><input type="number" name="system.levels.{{row.index}}.sections.{{s.index}}.accuracy" value="{{s.accuracy}}"></td>
+      <td><input type="text" name="system.levels.{{row.index}}.sections.{{s.index}}.damage" value="{{s.damage}}"></td>
+      <td><input type="number" name="system.levels.{{row.index}}.sections.{{s.index}}.evasion" value="{{s.evasion}}"></td>
+      <td><input type="number" name="system.levels.{{row.index}}.sections.{{s.index}}.defense" value="{{s.defense}}"></td>
+      <td><input type="number" name="system.levels.{{row.index}}.sections.{{s.index}}.hp" value="{{s.hp}}"></td>
+      <td><input type="number" name="system.levels.{{row.index}}.sections.{{s.index}}.mp" value="{{s.mp}}"></td>
+      {{else}}
+      <td class="style">{{s.style}}</td><td>{{sw25Default s.accuracy "—"}}</td><td>{{sw25Default s.damage "—"}}</td>
+      <td>{{sw25Default s.evasion "—"}}</td><td>{{s.defense}}</td><td>{{s.hp}}</td><td>{{s.mp}}</td>
+      {{/if}}
+      {{#if s.first}}
+      {{#if @root.edit}}
+      <td rowspan="{{row.span}}"><input type="number" name="system.levels.{{row.index}}.fortitude" value="{{row.fortitude}}"></td>
+      <td rowspan="{{row.span}}"><input type="number" name="system.levels.{{row.index}}.willpower" value="{{row.willpower}}"></td>
+      <td class="tools" rowspan="{{row.span}}"><a class="swp-mini" data-action="levelRowDelete" data-index="{{row.index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></td>
+      {{else}}
+      <td rowspan="{{row.span}}">{{row.fortitude}}</td>
+      <td rowspan="{{row.span}}">{{row.willpower}}</td>
+      {{/if}}
+      {{/if}}
+    </tr>
+    {{/each}}
+    {{else}}
+    <tr class="swp-empty-row"><td colspan="11">{{localize "SW25.Mount.NoLevels"}}</td></tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/inline}}

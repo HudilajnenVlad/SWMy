@@ -1,0 +1,11 @@
+{{!-- Name cell of an expandable item row. Context: a row from #rowBase. --}}
+<td class="name">
+  <div class="swp-name-cell">
+    <a class="swp-caret" data-action="toggleExpand" aria-label="{{localize 'SW25.Sheet.Details'}}"><i class="fa-solid fa-caret-{{#if expanded}}down{{else}}right{{/if}}"></i></a>
+    <img class="swp-row-img" src="{{img}}" alt="" {{#if useAction}}data-action="itemUse" data-tooltip="SW25.Use"{{/if}}>
+    <span class="swp-name-text">
+      <a class="swp-name-link" data-action="toggleExpand">{{name}}</a>
+      {{#if subtitle}}<small class="swp-sub">{{subtitle}}</small>{{/if}}
+    </span>
+  </div>
+</td>

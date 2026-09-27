@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Fighter", "key": "fighter", "category": "warrior", "track": "major", "source": { "book": "CR1", "page": 87 },
+    "summary": "Front-line warrior: melee and thrown weapons, any armor and shields.",
+    "description": "Warrior-type major class. Uses melee and thrown weapons (Minimum Strength and rank permitting) with any armor and shields. Accuracy = Fighter level + DEX modifier, Evasion = Fighter level + AGI modifier, Extra Damage = Fighter level + STR modifier.",
+    "attack": { "melee": true, "thrown": true }, "evasion": true,
+    "autoFeats": [ { "level": 7, "name": "Toughness" }, { "level": 13, "name": "Battle Master" } ]
+  },
+  {
+    "name": "Grappler", "key": "grappler", "category": "warrior", "track": "major", "source": { "book": "CR1", "page": 87 },
+    "summary": "Unarmed fighter: wrestling weapons only, light armor, automatic Chain Attack.",
+    "description": "Warrior-type major class. Attacks only with Wrestling-category weapons (punches, kicks, throws) and cannot use shields; only armor marked 'Grapplers may equip' / 'Grappler only' allows Grappler attacks and Evasion. Gains [Chain Attack] at level 1. Throw knocks bipedal targets prone.",
+    "attack": { "melee": true, "wrestlingOnly": true }, "evasion": true,
+    "autoFeats": [ { "level": 1, "name": "Chain Attack" }, { "level": 7, "name": "Counter" }, { "level": 13, "name": "Battle Master" } ]
+  },
+  {
+    "name": "Fencer", "key": "fencer", "category": "warrior", "track": "minor", "source": { "book": "CR1", "page": 88 },
+    "summary": "Light warrior: half Strength for equipment, Critical Value −1.",
+    "description": "Warrior-type minor class. Melee and thrown attacks. Strength is halved (rounded up) when checking Minimum Strength of weapons, armor and shields, but attacks made with the Fencer class have Critical Value −1.",
+    "attack": { "melee": true, "thrown": true }, "evasion": true, "halfStrength": true, "critical": -1
+  },
+  {
+    "name": "Marksman", "key": "marksman", "category": "warrior", "track": "minor", "source": { "book": "CR1", "page": 88 },
+    "summary": "Ranged specialist: thrown weapons, bows, crossbows and guns; cannot evade.",
+    "description": "Warrior-type minor class. Makes thrown and shooting attacks (bows, crossbows, guns — shooting attacks are exclusive to Marksmen). Cannot be used for Evasion checks.",
+    "attack": { "thrown": true, "shooting": true }, "evasion": false
+  },
+  {
+    "name": "Sorcerer", "key": "sorcerer", "category": "wizard", "track": "major", "magic": "truespeech", "source": { "book": "CR1", "page": 88 },
+    "summary": "Caster of Truespeech Magic: direct damage and utility spells.",
+    "description": "Wizard-type major class. Casts every Truespeech spell of a level up to the class level. Needs a magical implement, free arms and speech; metal armor gives −4 (non-metal armor with Min STR 10+ gives −2) to Spellcasting. Magic Power = level + INT modifier. Learns Arcana.",
+    "languages": "Arcana"
+  },
+  {
+    "name": "Conjurer", "key": "conjurer", "category": "wizard", "track": "major", "magic": "spiritualism", "source": { "book": "CR1", "page": 88 },
+    "summary": "Caster of Spiritualism Magic: support, dolls, golems and undead.",
+    "description": "Wizard-type major class. Casts every Spiritualism spell up to the class level; from level 3 can create golems and undead. Same casting requirements as Sorcerers. Magic Power = level + INT modifier. Learns Arcana.",
+    "languages": "Arcana"
+  },
+  {
+    "name": "Priest", "key": "priest", "category": "wizard", "track": "major", "magic": "divine", "source": { "book": "CR1", "page": 88 },
+    "summary": "Caster of Divine Magic: healing, protection and the spells of one god.",
+    "description": "Wizard-type major class. Chooses one deity; casts basic Divine spells and that god's specialized spells up to the class level. Needs a holy symbol and speech; no armor restrictions. Magic Power = level + INT modifier."
+  },
+  {
+    "name": "Artificer", "key": "artificer", "category": "wizard", "track": "major", "magic": "magitech", "source": { "book": "CR1", "page": 89 },
+    "summary": "Magitech user: magispheres, guns and bullet spells.",
+    "description": "Wizard-type major class. Casts Magitech spells up to the class level using a magisphere (size matters). Powers guns: bullet spells set the power and Magic Power becomes the gun's Extra Damage. No armor restrictions. Learns Magitech.",
+    "languages": "Magitech"
+  },
+  {
+    "name": "Fairy Tamer", "key": "fairytamer", "category": "wizard", "track": "major", "magic": "fairy", "source": { "book": "CR2", "page": 94 },
+    "summary": "Caster of Fairy Magic: basic spells plus four chosen fairy types.",
+    "description": "Wizard-type major class. Casts basic Fairy Magic and the spells of four chosen types (earth, water/ice, fire, wind, light, darkness; chosen daily) up to the class level. Needs Fairy Tamer's Gems and speech; metal armor gives −4 to Spellcasting. Runefolk cannot take this class. Learns Sylvan (spoken).",
+    "languages": "Sylvan (speak)"
+  },
+  {
+    "name": "Scout", "key": "scout", "category": "other", "track": "minor", "source": { "book": "CR1", "page": 89 },
+    "summary": "Reconnaissance, locks and traps; provides Initiative.",
+    "description": "Other-type minor class. Provides the Technique (DEX), Movement (AGI) and Observation (INT) check packages, Pickpocket, Disguise and the Initiative check. Metal armor penalizes Hide, Acrobatics, Follow and Jump. Scout's Tools are needed for locks and traps.",
+    "autoFeats": [ { "level": 5, "name": "Treasure Hunt" }, { "level": 7, "name": "Fast Action" }, { "level": 9, "name": "Shadow Sneak" }, { "level": 12, "name": "Treasure Master" }, { "level": 15, "name": "Skill Master" } ]
+  },
+  {
+    "name": "Ranger", "key": "ranger", "category": "other", "track": "minor", "source": { "book": "CR1", "page": 89 },
+    "summary": "Wilderness expert and healer with herbs and potions.",
+    "description": "Other-type minor class. Provides the Technique, Movement and Observation packages (several checks only in natural environments), First Aid, Pathology and Herbology. Adds Ranger level + DEX modifier to herb recovery and Ranger level + INT modifier to potion recovery.",
+    "autoFeats": [ { "level": 5, "name": "Survivability" }, { "level": 7, "name": "Indomitable" }, { "level": 9, "name": "Potion Master" }, { "level": 12, "name": "Shukuchi" }, { "level": 15, "name": "Run-and-Gun" } ]
+  },
+  {
+    "name": "Sage", "key": "sage", "category": "other", "track": "minor", "source": { "book": "CR1", "page": 89 },
+    "summary": "Scholar: Knowledge package, Monster Knowledge and weak points; learns languages.",
+    "description": "Other-type minor class. Provides the Knowledge package (INT) and Monster Knowledge checks that can reveal a monster's weak point. Learns to speak or read one language per level.",
+    "autoFeats": [ { "level": 5, "name": "Keen Eyes" }, { "level": 7, "name": "Weakness Exploit" }, { "level": 9, "name": "Mana Save" }, { "level": 12, "name": "Mana Resistance" }, { "level": 15, "name": "Sage's Wisdom" } ]
+  },
+  {
+    "name": "Enhancer", "key": "enhancer", "category": "other", "track": "minor", "abilityType": "technique", "source": { "book": "CR2", "page": 97 },
+    "summary": "Learns one breathing Technique per level (Minor Action, 3 MP, self only).",
+    "description": "Other-type minor class with no checks of its own. Learns one Technique per level (up to the class level). Techniques are Minor Actions costing 3 MP, affect only the user, are not magical and cannot be used when unable to breathe."
+  },
+  {
+    "name": "Bard", "key": "bard", "category": "other", "track": "minor", "abilityType": "spellsong", "source": { "book": "CR2", "page": 100 },
+    "summary": "Plays spellsongs to build rhythm and unleashes finales.",
+    "description": "Other-type minor class. Performance check = Bard level + SPI modifier (Bardic Power). Learns one Spellsong or Finale per level. Spellsongs generate Uplifting/Calming/Enchanting rhythm; finales spend rhythm for damage or healing. Needs an instrument; learns one spoken language per level; also proficient in Insight."
+  },
+  {
+    "name": "Rider", "key": "rider", "category": "other", "track": "minor", "abilityType": "stunt", "source": { "book": "CR3", "page": 84 },
+    "summary": "Jockey: rides and commands mounts, learns one stunt per level.",
+    "description": "Other-type minor class. Provides Riding and the Rider Movement package (AGI), the Rider Knowledge package (INT: Weakness, Cartography, Monster Knowledge without weak points), First Aid and Tumble. Mount level equals the jockey's adventurer level. Learns one Stunt per level."
+  },
+  {
+    "name": "Alchemist", "key": "alchemist", "category": "other", "track": "minor", "abilityType": "evocation", "source": { "book": "CR3", "page": 107 },
+    "summary": "Uses material cards to cast Evocations; knowledge package.",
+    "description": "Other-type minor class. Evocation check = Alchemist level + INT modifier. Learns one Evocation per level; evocations consume material cards (red/green/black/white/gold, ranks B–SS) instead of MP and need an Alchemy Kit. Provides the Alchemist Knowledge package. Learns Magitech.",
+    "languages": "Magitech"
+  }
+]

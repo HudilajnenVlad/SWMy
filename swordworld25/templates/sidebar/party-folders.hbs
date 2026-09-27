@@ -1,0 +1,27 @@
+<li class="swp swp-parties">
+  <ol class="plain">
+    {{#each parties as |party|}}
+    <li class="swp-party-folder flexcol {{#if party.expanded}}expanded{{/if}}" data-party-id="{{party.id}}">
+      <header class="swp-party-header" data-action="togglePartyFolder">
+        <img class="swp-party-img" src="{{party.img}}" alt="">
+        <span class="swp-party-name ellipsis">{{party.name}}</span>
+        <span class="swp-party-count" data-tooltip="SW25.Party.MemberCount">{{party.count}}</span>
+        <button type="button" class="inline-control icon fa-solid fa-scroll" data-action="openPartySheet"
+          data-tooltip="SW25.Party.OpenSheet" aria-label="{{localize 'SW25.Party.OpenSheet'}}"></button>
+      </header>
+      <ol class="subdirectory plain">
+        {{#each party.members}}
+        {{> "templates/sidebar/partials/document-partial.hbs"}}
+        {{else}}
+        <li class="swp-party-blank">{{localize "SW25.Party.DropHint"}}</li>
+        {{/each}}
+      </ol>
+    </li>
+    {{/each}}
+    {{#if canCreateParty}}
+    <li class="swp-party-create">
+      <button type="button" data-action="createParty"><i class="fa-solid fa-people-group" inert></i> {{localize "SW25.Party.Create"}}</button>
+    </li>
+    {{/if}}
+  </ol>
+</li>

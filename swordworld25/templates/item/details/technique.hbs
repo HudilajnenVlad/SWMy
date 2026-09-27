@@ -1,0 +1,11 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="1"></label>
+  <label class="swp-field">MP<input type="number" name="system.mpCost" value="{{system.mpCost}}" min="0"></label>
+  <label class="swp-field wide">{{localize "SW25.Duration.label"}}<input type="text" name="system.duration.text" value="{{system.duration.text}}" placeholder="30 seconds (3 r)"></label>
+  <label class="swp-field">{{localize "SW25.Duration.unit"}}<select name="system.duration.unit">{{selectOptions choices.durationUnits selected=system.duration.unit localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Duration.value"}}<input type="number" name="system.duration.value" value="{{system.duration.value}}"></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.combatPrep" {{checked system.combatPrep}}> △ {{localize "SW25.Spell.Prep"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.oncePerRound" {{checked system.oncePerRound}}> {{localize "SW25.Technique.OncePerRound"}}</label>
+</div>

@@ -1,0 +1,83 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="inventory">
+  <div class="swp-grid swp-grid-inv">
+    <fieldset class="swp-fieldset swp-money">
+      <legend>{{localize "SW25.Sheet.MoneyDepositDebt"}}</legend>
+      <label class="swp-box">
+        <span class="swp-legend">{{localize "SW25.Sheet.Money"}}</span>
+        <input type="number" name="system.money" value="{{system.money}}" step="1"><span class="swp-unit-corner">G</span>
+      </label>
+      <label class="swp-box">
+        <span class="swp-legend">{{localize "SW25.Sheet.Deposit"}}</span>
+        <input type="number" name="system.deposit" value="{{system.deposit}}" step="1"><span class="swp-unit-corner">G</span>
+      </label>
+      <label class="swp-box">
+        <span class="swp-legend">{{localize "SW25.Debt"}}</span>
+        <input type="number" name="system.debt" value="{{system.debt}}" step="1"><span class="swp-unit-corner">G</span>
+      </label>
+    </fieldset>
+
+    <div class="swp-stack">
+      <div class="swp-bracket swp-advset">
+        <span class="swp-cb-label {{#if hasAdventurerSet}}on{{/if}}"><span class="swp-cb"></span><b>{{localize "SW25.Sheet.AdventurerSet"}}</b>
+          {{#unless hasAdventurerSet}}<a class="swp-mini" data-action="addAdventurerSet" data-tooltip="SW25.Sheet.AddAdventurerSet"><i class="fa-solid fa-cart-plus"></i> 100G</a>{{/unless}}
+        </span>
+        <span class="swp-advset-list">{{localize "SW25.Sheet.AdventurerSetContents"}}</span>
+      </div>
+      {{#if consumables.length}}
+      <div class="swp-consumables">
+        <span class="swp-sub-title">{{localize "SW25.Sheet.Consumables"}}</span>
+        {{#each consumables}}
+        <div class="swp-consumable" data-item-id="{{id}}">
+          <span class="swp-cons-name">[ <a data-action="itemEdit">{{name}}</a> ]</span>
+          <span class="swp-tally">{{#each pips}}<a class="swp-tick {{#if on}}on{{/if}}" {{#if on}}data-action="itemUse" data-tooltip="SW25.Use"{{/if}}></a>{{/each}}</span>
+          {{#if more}}<b>{{quantity}}</b>{{/if}}
+        </div>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+
+  <fieldset class="swp-fieldset swp-items">
+    <legend>{{localize "SW25.Sheet.ItemsInPossession"}}
+      <span class="swp-legend-tools">
+        <a class="swp-mini" data-action="openCompendium" data-pack="gear" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a class="swp-mini" data-action="itemCreate" data-type="gear" data-tooltip="SW25.Item.Create"><i class="fa-solid fa-plus"></i></a>
+      </span>
+    </legend>
+    <table class="swp-table swp-gear-table">
+      <thead><tr>
+        <th class="qty">{{localize "SW25.Sheet.Qty"}}</th>
+        <th class="name">{{localize "SW25.Name"}}</th>
+        <th class="uses">{{localize "SW25.Sheet.Uses"}}</th>
+        <th class="price">{{localize "SW25.Sheet.Price"}}</th>
+        <th class="tools"></th>
+      </tr></thead>
+      {{#each inventory}}
+      <tbody>
+        <tr class="swp-subhead"><th colspan="5">{{localize label}}</th></tr>
+        {{#each items}}
+        <tr class="swp-row draggable {{#if expanded}}open{{/if}} {{#if (and canEquip (not equipped))}}unequipped{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+          <td class="qty">
+            <span class="swp-qty">
+              <a class="swp-mini" data-action="itemQuantity" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+              <input type="number" value="{{quantity}}" data-item-field="system.quantity" data-dtype="Number">
+              <a class="swp-mini" data-action="itemQuantity" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+            </span>
+          </td>
+          {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=usable}}
+          <td class="uses">{{uses}}</td>
+          <td class="price">{{price}}</td>
+          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=usable equip=canEquip equipped=equipped}}
+        </tr>
+        {{#if expanded}}<tr class="swp-details-row"><td colspan="5" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+        {{/each}}
+      </tbody>
+      {{else}}
+      <tbody><tr class="swp-drop-row"><td colspan="5"><i class="fa-solid fa-arrow-down-to-bracket"></i> {{localize "SW25.Sheet.DropItems"}}</td></tr></tbody>
+      {{/each}}
+    </table>
+  </fieldset>
+
+  {{> "systems/swordworld25/templates/actor/paper/resources.hbs"}}
+</section>

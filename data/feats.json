@@ -1,0 +1,3635 @@
+[
+  {
+    "name": "Guardian I",
+    "source": {
+      "book": "CR1",
+      "page": 250
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 5 or higher, [Cover]",
+      "advLevel": 5,
+      "classes": [],
+      "feats": [
+        "Cover"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "[Cover] can protect up to 3 designated characters at the same time.",
+    "description": "When declaring [Cover], the master may name up to 3 characters instead of one. Each of them that is in a valid position is shielded from melee attacks, ranged attacks and similar Evasion/Neg effects, so the master may end up intercepting several attacks in one round.",
+    "modifiers": []
+  },
+  {
+    "name": "Dodge",
+    "source": {
+      "book": "CR1",
+      "page": 250
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Shield",
+    "application": null,
+    "risk": null,
+    "summary": "Each Evasion success vs. melee with a shield lowers the Critical Value of your next melee attack by 1.",
+    "description": "Count the Evasion checks the master wins against enemy melee attacks during the round while a shield is equipped. The first melee attack in the master's next turn has its Critical Value lowered by that count (minimum 8); against several targets only one damage roll benefits, and later melee attacks that turn get nothing. The shield is needed only when evading, not when attacking.",
+    "modifiers": []
+  },
+  {
+    "name": "Evasive Maneuvers I",
+    "source": {
+      "book": "CR1",
+      "page": 250
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 3 or higher",
+      "advLevel": 3,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Evasion checks +1.",
+    "description": "The master permanently adds +1 to all Evasion checks.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Tenacity",
+    "source": {
+      "book": "CR1",
+      "page": 250
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Fighter or Grappler or Fencer class level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fighter",
+          "level": 5
+        },
+        {
+          "class": "grappler",
+          "level": 5
+        },
+        {
+          "class": "fencer",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Maximum HP +15.",
+    "description": "The master's maximum HP is raised by 15.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 15,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Twin Strike",
+    "source": {
+      "book": "CR1",
+      "page": 251
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Dual Wielding]",
+      "advLevel": null,
+      "classes": [],
+      "feats": [
+        "Dual Wielding"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "With [Dual Wielding], the second attack may go to a different target.",
+    "description": "When attacking twice through [Dual Wielding], the master sees the outcome of the first attack and then chooses whether the second one targets the same character or another one.",
+    "modifiers": []
+  },
+  {
+    "name": "Targeting",
+    "source": {
+      "book": "CR1",
+      "page": 251
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Your ranged attacks and 'Area: Shot' effects never become stray shots.",
+    "description": "Ranged attacks aimed at a character inside a skirmish, and spells or effects with 'Area: Shot', never risk a stray shot when used by the master.",
+    "modifiers": []
+  },
+  {
+    "name": "Hawk Eye",
+    "source": {
+      "book": "CR1",
+      "page": 251
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Targeting]",
+      "advLevel": null,
+      "classes": [],
+      "feats": [
+        "Targeting"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Enemies and skirmishes no longer block your line of sight for ranged attacks and magic.",
+    "description": "Areas obstructed by hostile characters or skirmishes do not block the master's view; ranged attacks and magic can be used through them.",
+    "modifiers": []
+  },
+  {
+    "name": "Improved Throw I",
+    "source": {
+      "book": "CR1",
+      "page": 252
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Grappler class level 3 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 3
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": null,
+    "risk": null,
+    "summary": "Throw power +10; usable against any target of 1-2 sections.",
+    "description": "The master's Throw gets +10 power and works against any target of at most 2 sections, whatever its legs or movement type. A single Accuracy check is made; the target evades with a section of its choice, and if that fails every section is thrown and takes damage separately. If none of its sections can be attacked in melee (e.g. due to [Attack Obstacle]), the Throw has no effect.",
+    "modifiers": []
+  },
+  {
+    "name": "Dual Technique",
+    "source": {
+      "book": "CR1",
+      "page": 252
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 5 or higher",
+      "advLevel": 5,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Removes the Accuracy penalty of [Dual Wielding].",
+    "description": "The -2 Accuracy penalty on the two attacks made with [Dual Wielding] no longer applies.",
+    "modifiers": []
+  },
+  {
+    "name": "Weapon Proficiency A",
+    "source": {
+      "book": "CR1",
+      "page": 252
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "choice": "weaponCategory",
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Chosen weapon category: +1 damage and A-rank weapons of it can be equipped.",
+    "description": "Printed as [Weapon Proficiency A/**]: pick a weapon category (e.g. Swords, Axes) on acquisition. Weapons of that category deal +1 damage for the master, who may also equip A-rank weapons of it. Can be learned again for other categories, using a separate learning slot each time.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 1,
+        "scope": "effect",
+        "condition": "weapon of the chosen category"
+      }
+    ]
+  },
+  {
+    "name": "Weapon Proficiency S",
+    "source": {
+      "book": "CR1",
+      "page": 252
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "choice": "weaponCategory",
+    "prerequisites": {
+      "text": "[Weapon Proficiency A/**] (same category)/ Adventurer Level 5 or higher",
+      "advLevel": 5,
+      "classes": [],
+      "feats": [
+        "Weapon Proficiency A"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Chosen category (already A): another +2 damage (+3 total) and S-rank weapons of it allowed.",
+    "description": "Printed as [Weapon Proficiency S/**]: pick a category in which the master already has [Weapon Proficiency A]. Weapons of that category deal a further +2 damage (+3 in total) and S-rank weapons of it can be equipped.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "scope": "effect",
+        "condition": "weapon of the chosen category"
+      }
+    ]
+  },
+  {
+    "name": "Stomp",
+    "source": {
+      "book": "CR1",
+      "page": 253
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Grappler class level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": null,
+    "risk": null,
+    "summary": "After a successful Throw, attack the same target with an extra Kick.",
+    "description": "Whenever the master's Throw succeeds, they may follow up with a Kick against that target; if [Improved Throw] threw several sections, the Kick hits one section of choice. This Kick cannot trigger [Chain Attack].",
+    "modifiers": []
+  },
+  {
+    "name": "Ever-Changing I",
+    "source": {
+      "book": "CR1",
+      "page": 253
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Grappler or Fencer class level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 5
+        },
+        {
+          "class": "fencer",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Grappler or Fencer class",
+    "application": null,
+    "risk": null,
+    "summary": "Two active combat feat declarations per round.",
+    "description": "The master may make two active combat feat declarations per round: two different feats on one attack, or one feat on each of two separate attacks (then the same feat may be used twice). Risks of every declaration stack, even when the same feat is repeated.",
+    "modifiers": []
+  },
+  {
+    "name": "Armor Proficiency A",
+    "source": {
+      "book": "CR1",
+      "page": 253
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "choice": "armorCategory",
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Chosen armor category: Defense +1 and A-rank armor of it can be equipped.",
+    "description": "Printed as [Armor Proficiency A/**]: pick an armor category (e.g. Metal Armor, Shield) on acquisition. While equipped with armor of that category the master gains Defense +1 and may equip A-rank items of it. Can be learned for other categories with separate slots; bonuses from different equipped categories stack.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 1,
+        "scope": "effect",
+        "condition": "armor of the chosen category equipped"
+      }
+    ]
+  },
+  {
+    "name": "Armor Proficiency S",
+    "source": {
+      "book": "CR1",
+      "page": 253
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "choice": "armorCategory",
+    "prerequisites": {
+      "text": "[Armor Proficiency A/**] (same category)/ Adventurer Level 5 or higher",
+      "advLevel": 5,
+      "classes": [],
+      "feats": [
+        "Armor Proficiency A"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Chosen category (already A): another Defense +2 (+3 total) and S-rank armor of it allowed.",
+    "description": "Printed as [Armor Proficiency S/**]: pick a category in which the master already has [Armor Proficiency A]. Armor of that category grants a further Defense +2 (+3 in total), and S-rank armor of it can be equipped.",
+    "modifiers": [
+      {
+        "key": "defense",
+        "value": 2,
+        "scope": "effect",
+        "condition": "armor of the chosen category equipped"
+      }
+    ]
+  },
+  {
+    "name": "Metamagic Master",
+    "source": {
+      "book": "CR1",
+      "page": 254
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Universal Metamagic]",
+      "advLevel": null,
+      "classes": [],
+      "feats": [
+        "Universal Metamagic"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "With [Universal Metamagic], choose Metamagic per target of [Metamagic/Targets] and pay MP per target.",
+    "description": "When the master uses [Universal Metamagic] to combine [Metamagic/Targets] with other Metamagic, they decide separately for each target which Metamagic applies to it. The MP cost is worked out for each target individually and then added together, so targets without extra Metamagic stay cheap.",
+    "modifiers": []
+  },
+  {
+    "name": "Dual Wielding",
+    "source": {
+      "book": "CR1",
+      "page": 254
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Wield a one-handed weapon in each hand and attack with both in one Major Action (Accuracy -2 each).",
+    "description": "The master may hold a 'Stance: 1H' weapon (not 1H#) with minimum STR 20 or less in each hand and attack once with each in a single Major Action, each attack at -2 Accuracy. Each hand may use a different warrior-type class for its checks. Both attacks must target the same character, but the second may be dropped after seeing the first result.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -2,
+        "scope": "effect",
+        "condition": "each of the two attacks made with Dual Wielding"
+      }
+    ]
+  },
+  {
+    "name": "MP Save",
+    "source": {
+      "book": "CR1",
+      "page": 254
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "choice": "magicSystem",
+    "prerequisites": {
+      "text": "Adventurer Level 5 or higher",
+      "advLevel": 5,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Chosen wizard-type class: its spells cost 1 MP less (minimum 1).",
+    "description": "Printed as [MP Save/**]: pick one wizard-type class (magic system), e.g. Sorcerer or Priest, on acquisition. Spells cast with that class cost 1 MP less (minimum 1); with [Metamagic/**] the reduction is applied before multiplying. Can be learned for other classes with separate learning slots.",
+    "modifiers": [
+      {
+        "key": "mp.cost",
+        "value": -1,
+        "scope": "effect",
+        "condition": "spells of the chosen class / magic system"
+      }
+    ]
+  },
+  {
+    "name": "Infight I",
+    "source": {
+      "book": "CR1",
+      "page": 255
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Grappler class level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Grappler Class",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": {
+      "text": "Evasion check -2",
+      "modifiers": [
+        {
+          "key": "evasion",
+          "value": -2,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "Lock onto one character for 1 round: Grappler melee Accuracy +2 against it; Evasion -2.",
+    "description": "Declared on one character; not allowed in a turn in which the master attacks (melee or ranged) any other character. For 10 seconds (1 round) the master's Grappler melee attacks against it gain Accuracy +2, and until their next turn they may attack no other character (other sections of the same one are fine). Risk: -2 to all Evasion checks.",
+    "modifiers": [
+      {
+        "key": "accuracyMelee",
+        "value": 2,
+        "scope": "effect",
+        "condition": "against the locked-on character"
+      }
+    ]
+  },
+  {
+    "name": "Decoy Attack I",
+    "source": {
+      "book": "CR1",
+      "page": 255
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "Showy melee attack: Accuracy -2, damage +2; if evaded, the target gets Evasion -1 (stacks to -4).",
+    "description": "Declared for one melee attack, not usable when attacking several targets at once. The attack takes -2 to its Accuracy check (an effect, not a risk) and deals +2 damage on a hit. If the target evades it, the target suffers -1 to Evasion checks for 10 seconds (1 round); this stacks to -4 and ends as soon as the target fails an Evasion check.",
+    "modifiers": [
+      {
+        "key": "accuracyMelee",
+        "value": -2,
+        "scope": "use"
+      },
+      {
+        "key": "damageMelee",
+        "value": 2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Cover I",
+    "source": {
+      "book": "CR1",
+      "page": 256
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": true,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, attacks aimed at one willing ally in your area hit you instead, with no Evasion check.",
+    "description": "Name one willing character on declaring. For 10 seconds (1 round), when that character (in the same area as the master) is targeted by melee or ranged attacks or comparable Evasion/Neg abilities, the master becomes the target, is hit automatically and suffers any attached effects; this happens once per round. It does not work against magic or abilities not resisted by Evasion, nor against attacks hitting both characters at once. The original target is not considered changed, so extra attacks (e.g. [Chain Attack], the second [Dual Wielding] attack) still go to the ally.",
+    "modifiers": []
+  },
+  {
+    "name": "Repeated Strike I",
+    "source": {
+      "book": "CR1",
+      "page": 257
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Fighter class or Fencer class, 2H melee weapon",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "If your 2H melee attack is evaded, immediately attack the same target again.",
+    "description": "Declared with a melee attack using a 'Stance: 2H' weapon. If that attack is evaded, the master may at once make another melee attack with the same weapon against the same target. With a simultaneous multi-target attack, a new Accuracy check is made against every target that evaded, and anyone hit by either attempt takes damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Aimed Attack I",
+    "source": {
+      "book": "CR1",
+      "page": 257
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 weapon attack",
+    "risk": null,
+    "summary": "One weapon attack gets Accuracy +1 but Critical Value +1.",
+    "description": "Declared with one melee or ranged attack; for a simultaneous multi-target attack it covers all targets. The attack gains +1 to its Accuracy check, but its Critical Value rises by 1 for the damage roll; at a Critical Value of 13 or more no critical is possible.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1,
+        "scope": "use"
+      },
+      {
+        "key": "critical",
+        "value": 1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Power Strike I",
+    "source": {
+      "book": "CR1",
+      "page": 257
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 melee attack",
+    "risk": {
+      "text": "Evasion check -2",
+      "modifiers": [
+        {
+          "key": "evasion",
+          "value": -2,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "One melee attack deals +4 damage if it hits; Evasion -2 for the round.",
+    "description": "Declared with one melee attack; on a hit its damage is increased by 4. If several characters are hit at once, one of them is chosen at random (before rolling damage) to receive the bonus. Risk: -2 to Evasion checks.",
+    "modifiers": [
+      {
+        "key": "damageMelee",
+        "value": 4,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Taunting Strike I",
+    "source": {
+      "book": "CR1",
+      "page": 258
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 weapon attack",
+    "risk": null,
+    "summary": "Characters you hit must attack you for 1 round if able; the attack deals 2 less damage.",
+    "description": "Declared with one melee or ranged attack (all targets of a multi-target attack). Each character hit is provoked and must attack the master by any means possible for 10 seconds (1 round). No effect on characters with Intelligence 18+, monsters with 'High' intelligence, targets unable to attack the master or targets in another area. The attack's damage is reduced by 2, yet provocation works even at 0 damage.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": -2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Defensive Stance",
+    "source": {
+      "book": "CR1",
+      "page": 258
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": true,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": {
+      "text": "Most Skill Checks -4",
+      "modifiers": [
+        {
+          "key": "actionChecks",
+          "value": -4,
+          "scope": "effect",
+          "condition": "all checks except Evasion, Fortitude, Willpower and Death"
+        }
+      ]
+    },
+    "summary": "Evasion, Fortitude or Willpower (pick one) +4 for 1 round; most other checks -4.",
+    "description": "Must be declared before any check in the turn (or just before a check forced by an ongoing effect at the start of the turn). Choose Evasion, Fortitude or Willpower: it gets +4 until the start of the master's next turn, and the choice may change with each declaration. Risk: every other check except the two unchosen ones and the Death Check takes -4; if declared in Combat Preparation, that phase's Initiative and Monster Knowledge checks are exempt. Not usable in a turn with a Full Move.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 4,
+        "scope": "effect",
+        "condition": "Evasion chosen"
+      },
+      {
+        "key": "fortitude",
+        "value": 4,
+        "scope": "effect",
+        "condition": "Fortitude chosen"
+      },
+      {
+        "key": "willpower",
+        "value": 4,
+        "scope": "effect",
+        "condition": "Willpower chosen"
+      }
+    ]
+  },
+  {
+    "name": "Cleave I",
+    "source": {
+      "book": "CR1",
+      "page": 259
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Fighter class level 3 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fighter",
+          "level": 3
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Fighter class, 2H melee weapon",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "One 2H melee attack against up to 3 targets in reach with one Accuracy roll; damage -3 each.",
+    "description": "Declared with a melee attack using a non-wrestling 'Stance: 2H' weapon. The master attacks up to 3 targets within reach using a single Accuracy check; damage is rolled separately for each target hit, each reduced by 3.",
+    "modifiers": [
+      {
+        "key": "damageMelee",
+        "value": -3,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Violentcast I",
+    "source": {
+      "book": "CR1",
+      "page": 259
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "1 spell cast",
+    "risk": null,
+    "summary": "Spellcasting check +2 when casting a spell that only deals damage.",
+    "description": "Declared when casting and valid for that cast. If the spell's only effect is damage, the Spellcasting check gains +2 to its success value; spells that deal no damage or have any other effect gain nothing.",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": 2,
+        "scope": "use",
+        "condition": "spell that only deals damage"
+      }
+    ]
+  },
+  {
+    "name": "Lethal Strike I",
+    "source": {
+      "book": "CR1",
+      "page": 259
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 melee attack",
+    "risk": {
+      "text": "Evasion check -2",
+      "modifiers": [
+        {
+          "key": "evasion",
+          "value": -2,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "On a melee hit, power-table rolls of 3-11 count as 1 higher; Evasion -2 for the round.",
+    "description": "Declared with one melee attack. If it hits, each 2d damage roll of 3-11 on the power table is treated as 1 higher (double 1s and double 6s are unchanged), including rolls made for criticals. If several characters are hit, one chosen at random before damage gets the effect. Risk: -2 to Evasion checks.",
+    "modifiers": [
+      {
+        "key": "powerRoll",
+        "value": 1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Metamagic/Power Assurance",
+    "source": {
+      "book": "CR1",
+      "page": 260
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, spells may cost double MP to reroll a power-table damage roll of 4 or less once.",
+    "description": "During the turn it is declared, the master may apply this Metamagic to any spell cast, paying twice the MP. If the spell's 2d damage roll on the power table is 4 or less, it may be rerolled once, keeping either result.",
+    "modifiers": []
+  },
+  {
+    "name": "Metamagic/Accuracy",
+    "source": {
+      "book": "CR1",
+      "page": 260
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, spells may cost double MP to roll the Spellcasting check twice and pick one.",
+    "description": "During the turn it is declared, the master may apply this Metamagic to any spell cast, paying twice the MP. The Spellcasting check is then rolled twice (2d each) and the preferred roll is used.",
+    "modifiers": []
+  },
+  {
+    "name": "Metamagic/Targets",
+    "source": {
+      "book": "CR1",
+      "page": 260
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, single-target spells may take extra targets; MP is multiplied by the number of targets.",
+    "description": "During the turn it is declared, spells whose target is 1 Character (Entire Character and Character X included), One Object or 1 spell may affect several targets, unless their range is Caster or Touch. MP cost is multiplied by the number of targets (x2 for 2, x3 for 3, ...), and one Spellcasting check covers them all.",
+    "modifiers": []
+  },
+  {
+    "name": "Metamagic/Distance",
+    "source": {
+      "book": "CR1",
+      "page": 261
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, multiply a spell's range by an integer; MP is multiplied by the same factor.",
+    "description": "During the turn it is declared, the range of a spell may be multiplied by a whole number (x2, x3, ...) with its MP cost multiplied likewise. Spells with 'Range: Caster' or 'Range: Touch' can't be extended. In Simplified Combat, double MP turns 'Range: 1' into 'Range: 2'.",
+    "modifiers": []
+  },
+  {
+    "name": "Metamagic/Time",
+    "source": {
+      "book": "CR1",
+      "page": 261
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, multiply a spell's duration by an integer; MP is multiplied by the same factor.",
+    "description": "During the turn it is declared, a spell's duration may be multiplied by a whole number with its MP cost multiplied likewise. 'Duration: Instant' and 'Duration: Permanent' spells can't be extended, but the timed part of 'Instant/X' durations can.",
+    "modifiers": []
+  },
+  {
+    "name": "Metamagic/Area",
+    "source": {
+      "book": "CR1",
+      "page": 261
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, widen a 2-5m spell radius (+1m per extra MP multiple, max 6m); capped spells +5 targets/m.",
+    "description": "During the turn it is declared, spells with 'Target: 1 area (XX radius)/Space', '/All' or '/Y' and a radius of 2-5m may be enlarged: +1m doubles the MP cost, +2m triples it, and so on, to at most a 6m radius. Spells with a target cap (/Y) also gain +5 maximum targets per meter added. In Simplified Combat only the target cap can be raised.",
+    "modifiers": []
+  },
+  {
+    "name": "Universal Metamagic",
+    "source": {
+      "book": "CR1",
+      "page": 262
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Any [Metamagic/**]",
+      "advLevel": null,
+      "classes": [],
+      "feats": [],
+      "featsAnyOf": [
+        "Metamagic/Power Assurance",
+        "Metamagic/Accuracy",
+        "Metamagic/Targets",
+        "Metamagic/Distance",
+        "Metamagic/Time",
+        "Metamagic/Area"
+      ]
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "For 1 round, use and combine any Metamagic effects, learned or not; MP multipliers multiply together.",
+    "description": "During the turn it is declared, the master may apply any [Metamagic/**] effect to their spells, even ones they have not learned, and may combine several. The MP multipliers of all combined Metamagic are multiplied together (e.g. x2 and x3 gives x6).",
+    "modifiers": []
+  },
+  {
+    "name": "Magic Convergence",
+    "source": {
+      "book": "CR1",
+      "page": 262
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "1 spell cast",
+    "risk": null,
+    "summary": "Cast a '1 area (XX radius)/Y' spell as 'Target: 1 Character'.",
+    "description": "Applies to the master's next spell this turn: an area spell of the '1 area (XX radius)/Y' kind can be cast so that it targets '1 Character' only.",
+    "modifiers": []
+  },
+  {
+    "name": "Magic Control",
+    "source": {
+      "book": "CR1",
+      "page": 262
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Targeting], [Magic Convergence]",
+      "advLevel": null,
+      "classes": [],
+      "feats": [
+        "Targeting",
+        "Magic Convergence"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 spell cast",
+    "risk": null,
+    "summary": "Exclude any characters you like from a Line or area spell.",
+    "description": "Applies to the master's next spell this turn. For a Line spell or a '1 area (XX radius)/Y' spell, the master may leave out any characters in range from its targets before it takes effect.",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Strike",
+    "source": {
+      "book": "CR1",
+      "page": 263
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Classes",
+    "application": "1 melee attack",
+    "risk": {
+      "text": "Fortitude and Willpower -2",
+      "modifiers": [
+        {
+          "key": "fortitude",
+          "value": -2,
+          "scope": "effect"
+        },
+        {
+          "key": "willpower",
+          "value": -2,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "A melee hit adds your Magic Power to damage; Fortitude and Willpower -2 for the round.",
+    "description": "Declared with one melee attack; on a hit, damage increases by the master's Magic Power. If several characters are hit, one chosen at random before damage gets the increase. Risk: -2 to Fortitude and Willpower checks.",
+    "modifiers": [
+      {
+        "key": "damageMelee",
+        "value": 0,
+        "formula": "@magicPower",
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Multi-Action",
+    "source": {
+      "book": "CR1",
+      "page": 263
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventure Level 5 or higher",
+      "advLevel": 5,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 melee attack or spell cast",
+    "risk": null,
+    "summary": "Melee attack plus spellcast (either order) in one Major Action.",
+    "description": "Once per Major Action the master may combine a melee attack with a spellcast, in either order, one right after the other. It cannot be declared again for the extra action, even with multiple declarations available. Casting requirements still apply, and only a Limited Move is allowed.",
+    "modifiers": []
+  },
+  {
+    "name": "Armor Piercer I",
+    "source": {
+      "book": "CR1",
+      "page": 263
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "On a melee hit the target's Defense is halved (round up); Critical Value +1.",
+    "description": "Declared with one melee attack. If it hits, the target's Defense counts as half (rounded up) for that damage, but the Critical Value rises by 1 (13 or more means no critical). If several characters are hit, one chosen at random before damage is affected.",
+    "modifiers": [
+      {
+        "key": "critical",
+        "value": 1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Snipe",
+    "source": {
+      "book": "CR1",
+      "page": 264
+    },
+    "featType": "major",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Marksman class, 2H ranged weapon",
+    "application": null,
+    "risk": null,
+    "summary": "Aim at a target; if your next Major Action's shot at it wins by 3 or more, total damage is doubled.",
+    "description": "Used as a Major Action on a target the master could shoot at; movement is limited to Limited Move. If the master's next Major Action is a ranged attack on that target whose success value exceeds its Evasion result by 3 or more, total damage is doubled (a margin of 1-2 is a normal hit). Both aiming and shooting must be possible without stray shots; taking another Major Action instead cancels it, and it does not work with anything that attacks several targets at once.",
+    "modifiers": []
+  },
+  {
+    "name": "Wordbreak",
+    "source": {
+      "book": "CR1",
+      "page": 264
+    },
+    "featType": "major",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Touch-range dispel: end one ongoing spell or effect by beating it with a Magic Power check.",
+    "description": "Works as 'Range: Touch' and 'Target: 1 spell' to end one ongoing spell or ability effect lasting longer than 10 seconds (1 round). 'Permanent' and 'Instant' effects, knockdowns (e.g. from a Throw) and continuous states (e.g. being grappled) can't be ended, but 'Instant/X' durations can. The master rolls a check with their Magic Power as the base; the effect ends if the result exceeds the effect's success value (forced removal, CR I p.166).",
+    "modifiers": []
+  },
+  {
+    "name": "Chain Attack",
+    "source": {
+      "book": "CR1",
+      "page": 265
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Grappler class level 1",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "grappler",
+      "level": 1
+    },
+    "use": "Grappler class, 1H wrestling",
+    "application": null,
+    "risk": null,
+    "summary": "After a 1H wrestling attack, make one more 1H wrestling attack against the same target.",
+    "description": "Whenever the master makes a melee attack with a 'Stance: 1H' wrestling weapon, they may attack the same target again with a 1H wrestling weapon (possibly a different one). When attacking twice with [Dual Wielding], only one extra attack is granted, and it does not take the -2 Accuracy penalty.",
+    "modifiers": []
+  },
+  {
+    "name": "Treasure Hunt",
+    "source": {
+      "book": "CR1",
+      "page": 265
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Scout class level 5",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "scout",
+      "level": 5
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Loot Determination rolls +1.",
+    "description": "The master adds +1 to Loot Determination rolls; this stacks with other bonuses to loot rolls.",
+    "modifiers": [
+      {
+        "key": "loot",
+        "value": 1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Survivability",
+    "source": {
+      "book": "CR1",
+      "page": 265
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Ranger class level 5",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "ranger",
+      "level": 5
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Once per day in a natural environment, automatically succeed on a Fortitude or Willpower check.",
+    "description": "Once per day, while in a natural environment (CR I p.101), the master may declare before rolling that a Fortitude or Willpower check succeeds automatically.",
+    "modifiers": []
+  },
+  {
+    "name": "Keen Eyes",
+    "source": {
+      "book": "CR1",
+      "page": 265
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Sage class level 5",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "sage",
+      "level": 5
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Loot Determination rolls +1.",
+    "description": "The master adds +1 to Loot Determination rolls; this stacks with other bonuses to loot rolls.",
+    "modifiers": [
+      {
+        "key": "loot",
+        "value": 1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Footwork",
+    "source": {
+      "book": "CR2",
+      "page": 200
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 9 or higher",
+      "advLevel": 9,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "A Limited Move can cover up to 10m.",
+    "description": "The master may move up to 10m with a Limited Move (never more than their movement if it is below 10). In Simplified Combat, a Limited Move may cross one area.",
+    "modifiers": []
+  },
+  {
+    "name": "Guardian II",
+    "source": {
+      "book": "CR2",
+      "page": 200
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Guardian I]/Adventurer Level 9 or higher",
+      "advLevel": 9,
+      "classes": [],
+      "feats": [
+        "Guardian I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "[Cover] can protect up to 5 designated characters at the same time.",
+    "description": "Works like [Guardian I], but 1 to 5 characters may be named when declaring [Cover]. Replaces [Guardian I].",
+    "modifiers": []
+  },
+  {
+    "name": "Evasive Maneuvers II",
+    "source": {
+      "book": "CR2",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Evasive Maneuvers I]/Fencer Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fencer",
+          "level": 9
+        }
+      ],
+      "feats": [
+        "Evasive Maneuvers I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Fencer class",
+    "application": null,
+    "risk": null,
+    "summary": "Evasion checks made with the Fencer class +2.",
+    "description": "Evasion checks using the Fencer class as their base get +2. Replaces [Evasive Maneuvers I]; when evading with another class, that feat's +1 still applies.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 2,
+        "scope": "effect",
+        "condition": "Evasion check using the Fencer class"
+      },
+      {
+        "key": "evasion",
+        "value": 1,
+        "scope": "effect",
+        "condition": "Evasion check not using the Fencer class (Evasive Maneuvers I)"
+      }
+    ]
+  },
+  {
+    "name": "Archer's Grace",
+    "source": {
+      "book": "CR2",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Marksman Level 7 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "marksman",
+          "level": 7
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Marksman class",
+    "application": null,
+    "risk": null,
+    "summary": "Evade using Marksman level + Agility modifier.",
+    "description": "The master may calculate Evasion as Marksman class level + Agility modifier.",
+    "modifiers": []
+  },
+  {
+    "name": "Intense Finale",
+    "source": {
+      "book": "CR2",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Bard Level 3 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 3
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Bard class",
+    "application": null,
+    "risk": null,
+    "summary": "Finale damage and healing power +10.",
+    "description": "The power used by the master's Finales for damage and recovery is increased by 10.",
+    "modifiers": [
+      {
+        "key": "finalePower",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "name": "Additional Songs I",
+    "source": {
+      "book": "CR2",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Bard Level 1 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 1
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Learn one extra Spellsong or Finale.",
+    "description": "The master may know one additional Spellsong or Finale, for a total of Bard level +1.",
+    "modifiers": []
+  },
+  {
+    "name": "Additional Songs II",
+    "source": {
+      "book": "CR2",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Additional Songs I]/Bard Level 7 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 7
+        }
+      ],
+      "feats": [
+        "Additional Songs I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Learn two extra Spellsongs/Finales in total.",
+    "description": "One more Spellsong or Finale than [Additional Songs I], i.e. Bard level +2 in total. Replaces [Additional Songs I].",
+    "modifiers": []
+  },
+  {
+    "name": "Throwing I",
+    "source": {
+      "book": "CR2",
+      "page": 202
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "None",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Throw potions with a Potion Ball; thrown attacks get Accuracy +1.",
+    "description": "The master can load a potion into a Potion Ball (CR II p.233) and throw it at 'Range: 1 (10m)'; it hits unless the Accuracy check is an automatic failure, and the target receives the potion's effect as 'Resistance: Optional'. The master also gains +1 to Accuracy checks for all thrown attacks.",
+    "modifiers": [
+      {
+        "key": "accuracyRanged",
+        "value": 1,
+        "scope": "effect",
+        "condition": "thrown attacks"
+      }
+    ]
+  },
+  {
+    "name": "Throwing II",
+    "source": {
+      "book": "CR2",
+      "page": 202
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Throwing I]/Adventurer Level 5 or higher",
+      "advLevel": 5,
+      "classes": [],
+      "feats": [
+        "Throwing I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "As [Throwing I]; thrown attacks with range 1 (10m) reach 2 (20m).",
+    "description": "Includes all effects of [Throwing I]. In addition, every thrown attack with 'Range: 1 (10m)', Potion Balls included, becomes 'Range: 2 (20m)'. Replaces [Throwing I].",
+    "modifiers": [
+      {
+        "key": "accuracyRanged",
+        "value": 1,
+        "scope": "effect",
+        "condition": "thrown attacks"
+      }
+    ]
+  },
+  {
+    "name": "Super Tenacity",
+    "source": {
+      "book": "CR2",
+      "page": 202
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Fighter or Grappler 7 or higher, [Tenacity]",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fighter",
+          "level": 7
+        },
+        {
+          "class": "grappler",
+          "level": 7
+        }
+      ],
+      "feats": [
+        "Tenacity"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Maximum HP +15 (+30 together with [Tenacity]).",
+    "description": "The master's maximum HP rises by another 15, for 30 in total with [Tenacity].",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 15,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Special Instrument Proficiency",
+    "source": {
+      "book": "CR2",
+      "page": 202
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Bard Level 1 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 1
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Allows equipping and using Special Instruments.",
+    "description": "The master can equip and use Special Instrument items. Instruments that double as weapons or armor gain no extra damage or Defense from this feat, unlike other proficiency feats.",
+    "modifiers": []
+  },
+  {
+    "name": "Flying Kick",
+    "source": {
+      "book": "CR2",
+      "page": 202
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Grappler Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 9
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": null,
+    "risk": null,
+    "summary": "After a Normal Move of 10m+ (1 area), Kick a target and still take your Major Action.",
+    "description": "After a Normal Move of at least 10m (Standard Combat) or 1 area (Simplified Combat), the master may make a Kick attack against a target and afterwards still take a normal Major Action. This Kick does not trigger [Chain Attack].",
+    "modifiers": []
+  },
+  {
+    "name": "Improved Throw II",
+    "source": {
+      "book": "CR2",
+      "page": 203
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Improved Throw I]/Grappler Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 9
+        }
+      ],
+      "feats": [
+        "Improved Throw I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": null,
+    "risk": null,
+    "summary": "Throw power +20; usable against any target of 1-3 sections.",
+    "description": "The master's Throw gets +20 power and works against any target of at most 3 sections, whatever its legs or movement. One Accuracy check is made; the target evades with a section of its choice, and on a failure all sections are thrown and each takes damage. If none of its sections can be attacked in melee, the Throw has no effect. Replaces [Improved Throw I].",
+    "modifiers": []
+  },
+  {
+    "name": "Harmony",
+    "source": {
+      "book": "CR2",
+      "page": 203
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Bard Level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Bard class",
+    "application": null,
+    "risk": null,
+    "summary": "Your Pet's Spellsong and your own Spellsong can be in effect together.",
+    "description": "The Bard may start another Spellsong while their Pet keeps performing one, and both apply. The Pet's song uses the owner's effect range and the success value of the owner's Performance check (0 if the owner makes none or rolls an automatic failure); during a Finale it copies the Finale's success value. The Pet's Spellsong still generates no Rhythm.",
+    "modifiers": []
+  },
+  {
+    "name": "Block",
+    "source": {
+      "book": "CR2",
+      "page": 203
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 3 or higher",
+      "advLevel": 3,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Count as twice your number of characters (sections) for movement blocking and withdrawal.",
+    "description": "Whenever movement blocking or withdrawal from a skirmish is resolved, the master counts double (twice their characters/sections): when they move, when allies pass through or leave the skirmish, when they block enemy movement and when enemies try to withdraw. In Simplified Combat, a character first placed in the front line also counts double, whichever side acts first.",
+    "modifiers": []
+  },
+  {
+    "name": "Mako Stones Master",
+    "source": {
+      "book": "CR2",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 9 or higher",
+      "advLevel": 9,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Draw MP from up to two mako stones at once for one spell.",
+    "description": "A spell's MP may be paid from a pair of mako stones together, divided between them however the master likes, optionally topped up with the master's own MP.",
+    "modifiers": []
+  },
+  {
+    "name": "Marionette",
+    "source": {
+      "book": "CR2",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 5 or higher",
+      "advLevel": 5,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Commanded golems, undead and fairies may act at any point during your side's turn.",
+    "description": "A golem, undead or fairy that receives the master's 'Obey Command' may act at any point of the allied turns rather than directly after the master. The usual limit of one command per turn for golems/undead and one for fairies still applies.",
+    "modifiers": []
+  },
+  {
+    "name": "Powerful Magic I",
+    "source": {
+      "book": "CR2",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "2 Wizard-type Classes Level 6 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "wizard",
+          "level": 6,
+          "count": 2
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Magic Power +1 for every magic system.",
+    "description": "The master's Magic Power is increased by 1 in every magic system they know.",
+    "modifiers": [
+      {
+        "key": "magicPower",
+        "value": 1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Pinpoint Attack I",
+    "source": {
+      "book": "CR2",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 7 or higher",
+      "advLevel": 7,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Accuracy checks +1.",
+    "description": "The master permanently adds +1 to Accuracy checks.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Muscle Mystery",
+    "source": {
+      "book": "CR2",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Enhancer Level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "enhancer",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Enhancer class",
+    "application": null,
+    "risk": null,
+    "summary": "Enhancer Techniques last three times as long.",
+    "description": "Durations of all the master's Techniques are tripled; Techniques with 'Instant' duration are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Infight II",
+    "source": {
+      "book": "CR2",
+      "page": 205
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Infight I]/Grappler Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 9
+        }
+      ],
+      "feats": [
+        "Infight I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": {
+      "text": "Evasion check -2",
+      "modifiers": [
+        {
+          "key": "evasion",
+          "value": -2,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "As [Infight I] (one target, Accuracy +2), plus +4 damage on hits; Evasion -2.",
+    "description": "Works like [Infight I] (CR I p.255): for 1 round the master's Grappler melee attacks against the chosen character get Accuracy +2 and also deal +4 damage when they hit. Risk: -2 to Evasion checks. Replaces [Infight I].",
+    "modifiers": [
+      {
+        "key": "accuracyMelee",
+        "value": 2,
+        "scope": "effect",
+        "condition": "against the locked-on character"
+      },
+      {
+        "key": "damageMelee",
+        "value": 4,
+        "scope": "effect",
+        "condition": "against the locked-on character"
+      }
+    ]
+  },
+  {
+    "name": "Decoy Attack II",
+    "source": {
+      "book": "CR2",
+      "page": 205
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Decoy Attack I]/Adventure Level 9 or higher",
+      "advLevel": 9,
+      "classes": [],
+      "feats": [
+        "Decoy Attack I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "Accuracy -2, damage +8; if evaded, the target gets Evasion -2 (stacks to -8).",
+    "description": "Works like [Decoy Attack I] (CR I p.255), but a hit deals +8 damage, and each time the attack is evaded the target's Evasion penalty is -2, stacking up to -8. Replaces [Decoy Attack I].",
+    "modifiers": [
+      {
+        "key": "accuracyMelee",
+        "value": -2,
+        "scope": "use"
+      },
+      {
+        "key": "damageMelee",
+        "value": 8,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Rhythm Conversion",
+    "source": {
+      "book": "CR2",
+      "page": 205
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Bard Level 3 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 3
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "Instant",
+    "risk": null,
+    "summary": "Shift 1 point of accumulated Rhythm into another Rhythm.",
+    "description": "Can be declared at any time in the turn: pick a Rhythm with at least 1 accumulated, lower it by 1, and optionally raise another Rhythm by 1. Spellsong conditions are checked at the Performance check, so a later conversion neither triggers nor cancels those effects.",
+    "modifiers": []
+  },
+  {
+    "name": "Mirage Arrow",
+    "source": {
+      "book": "CR2",
+      "page": 206
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Marksman Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "marksman",
+          "level": 9
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Marksman class",
+    "application": "1 ranged attack",
+    "risk": null,
+    "summary": "A thrown or bow attack uses two missiles: roll Accuracy twice and keep the better.",
+    "description": "Declared for one attack with a thrown weapon or bow. Two identical thrown weapons or two pieces of ammunition are used at once, the Accuracy check is rolled twice and the better result is kept; only one hit is dealt to the target.",
+    "modifiers": []
+  },
+  {
+    "name": "Cover II",
+    "source": {
+      "book": "CR2",
+      "page": 206
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": true,
+    "prerequisites": {
+      "text": "[Cover I]/Adventurer Level 7 or higher",
+      "advLevel": 7,
+      "classes": [],
+      "feats": [
+        "Cover I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "Lasts 10 seconds (1 round)",
+    "risk": null,
+    "summary": "[Cover I] that doesn't use up an active feat declaration; still once per round.",
+    "description": "Same effect as [Cover I] (CR I p.256), but declaring it does not count toward the master's active combat feat declarations, so other active feats can still be declared that turn. It can be declared only once per round, even by characters allowed several declarations. Replaces [Cover I].",
+    "modifiers": []
+  },
+  {
+    "name": "Nerve Strike",
+    "source": {
+      "book": "CR2",
+      "page": 206
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Grappler Level 9 and higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 9
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "On a melee hit, physical damage dealt by the target is reduced by 8 for 1 round.",
+    "description": "Declared with one melee attack; not usable against several targets at once. If it hits, physical damage dealt by the target (character or section) is reduced by 8 for 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": -8,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Repeated Strike II",
+    "source": {
+      "book": "CR2",
+      "page": 207
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Repeated Strike I]/Fencer or Fighter Level 7 and higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fencer",
+          "level": 7
+        },
+        {
+          "class": "fighter",
+          "level": 7
+        }
+      ],
+      "feats": [
+        "Repeated Strike I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Fighter class or Fencer class, 2H weapon",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "As [Repeated Strike I]; if the first Accuracy check hits, +4 damage.",
+    "description": "Works like [Repeated Strike I] (CR I p.257), and if the declared attack hits on its first Accuracy check it deals +4 damage. With simultaneous multi-target attacks, targets that evaded can be attacked again, and one character hit by the first check (chosen before damage) gets the +4. Replaces [Repeated Strike I].",
+    "modifiers": [
+      {
+        "key": "damageMelee",
+        "value": 4,
+        "scope": "use",
+        "condition": "the first Accuracy check hits"
+      }
+    ]
+  },
+  {
+    "name": "Critical Cast I",
+    "source": {
+      "book": "CR2",
+      "page": 207
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 7 or higher",
+      "advLevel": 7,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Class",
+    "application": "1 spell cast",
+    "risk": null,
+    "summary": "One spell's power-table damage gets Critical Value -1 (minimum 8).",
+    "description": "Declared when casting a spell, for that cast. If the spell rolls damage on the power table, its Critical Value is lowered by 1, to a minimum of 8.",
+    "modifiers": [
+      {
+        "key": "criticalSpell",
+        "value": -1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Aimed Attack II",
+    "source": {
+      "book": "CR2",
+      "page": 207
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Aimed Attack I]/Adventurer Level 7 or higher",
+      "advLevel": 7,
+      "classes": [],
+      "feats": [
+        "Aimed Attack I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 weapon attack",
+    "risk": null,
+    "summary": "One weapon attack gets Accuracy +2, with no Critical Value change.",
+    "description": "Works like [Aimed Attack I] (CR I p.257), but the Accuracy bonus is +2 and the Critical Value is not changed. Replaces [Aimed Attack I].",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Confident Performer",
+    "source": {
+      "book": "CR2",
+      "page": 207
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Bard Level 3 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 3
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Bard class",
+    "application": "1 finale performance",
+    "risk": null,
+    "summary": "A 'Resistance: Half' Finale becomes 'Resistance: Can't' but can no longer crit.",
+    "description": "Declared when performing a Finale with 'Resistance: Half'. It then counts as 'Resistance: Can't', but its Critical Value becomes 'None'. From then on only effects that change the resistance type or grant immunity can negate it.",
+    "modifiers": []
+  },
+  {
+    "name": "Skillful Play",
+    "source": {
+      "book": "CR2",
+      "page": 208
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Bard Level 7 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "bard",
+          "level": 7
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Bard class",
+    "application": "1 spellsong or finale performance",
+    "risk": null,
+    "summary": "Roll the Performance check twice and use either result.",
+    "description": "Declared when performing a Spellsong or Finale: the Performance check is rolled twice and the master picks the result to use. When success values are compared, the master does this first and the opposing side then rolls only once.",
+    "modifiers": []
+  },
+  {
+    "name": "Power Strike II",
+    "source": {
+      "book": "CR2",
+      "page": 208
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Power Strike I]/Fighter or Grappler Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fighter",
+          "level": 9
+        },
+        {
+          "class": "grappler",
+          "level": 9
+        }
+      ],
+      "feats": [
+        "Power Strike I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Fighter class or Grappler class",
+    "application": "1 melee attack",
+    "risk": {
+      "text": "Evasion check -2",
+      "modifiers": [
+        {
+          "key": "evasion",
+          "value": -2,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "One melee attack deals +12 damage if it hits; Evasion -2 for the round.",
+    "description": "Works like [Power Strike I] (CR I p.257), but a hit deals +12 damage. Risk: -2 to Evasion checks. Replaces [Power Strike I].",
+    "modifiers": [
+      {
+        "key": "damageMelee",
+        "value": 12,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Double Cast",
+    "source": {
+      "book": "CR2",
+      "page": 208
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Wizard-type Class Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "wizard",
+          "level": 9
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Wizard-type Class",
+    "application": "1 spell cast",
+    "risk": null,
+    "summary": "After a Major Action spell, cast one more lower-level spell at Magic Power -10.",
+    "description": "Declared with a spell cast as a Major Action. Right after it, the master may cast one extra spell whose level/rank is at most half (rounded up) of their highest in that spell's magic system; the extra spell uses Magic Power -10 (minimum 0).",
+    "modifiers": [
+      {
+        "key": "magicPower",
+        "value": -10,
+        "scope": "use",
+        "condition": "the additional spell only"
+      }
+    ]
+  },
+  {
+    "name": "Taunting Strike II",
+    "source": {
+      "book": "CR2",
+      "page": 208
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Taunting Strike I]/Fencer Level 7 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fencer",
+          "level": 7
+        }
+      ],
+      "feats": [
+        "Taunting Strike I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Fencer class",
+    "application": "1 weapon attack",
+    "risk": null,
+    "summary": "As [Taunting Strike I]; smart foes aren't forced to attack you but get -2 on their checks.",
+    "description": "Works like [Taunting Strike I] (CR I p.258). Characters with Intelligence 18+ and monsters with 'High' intelligence are now affected too: they need not attack the master but take -2 to the success values of Accuracy, Spellcasting and other ability checks. The effect lasts 10 seconds (1 round) after the hit. Replaces [Taunting Strike I].",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": -2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Tail Swing I",
+    "source": {
+      "book": "CR2",
+      "page": 209
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventure Level 3 or higher",
+      "advLevel": 3,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Tail",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "A Tail attack hits up to 3 characters in the same spot or skirmish; Accuracy -1.",
+    "description": "Declared with a melee attack using the wrestling weapon Tail. It targets up to 3 characters sharing the same coordinates or skirmish with a single Accuracy check at -1; damage is rolled separately for each character hit.",
+    "modifiers": [
+      {
+        "key": "accuracyMelee",
+        "value": -1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Tail Swing II",
+    "source": {
+      "book": "CR2",
+      "page": 209
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Tail Swing I]/Adventure Level 9 or higher",
+      "advLevel": 9,
+      "classes": [],
+      "feats": [
+        "Tail Swing I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Tail",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "A Tail attack hits up to 5 characters, with no Accuracy penalty.",
+    "description": "Works like [Tail Swing I], but it reaches up to 5 characters and the Accuracy check has no penalty. Replaces [Tail Swing I].",
+    "modifiers": []
+  },
+  {
+    "name": "Cleave II",
+    "source": {
+      "book": "CR2",
+      "page": 209
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Cleave I]/Fighter Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fighter",
+          "level": 9
+        }
+      ],
+      "feats": [
+        "Cleave I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Fighter class, 2H melee weapon",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "One 2H melee attack against up to 5 targets in reach, without the damage reduction.",
+    "description": "Works like [Cleave I] (CR I p.259), but it reaches up to 5 characters and damage is not reduced. Replaces [Cleave I].",
+    "modifiers": []
+  },
+  {
+    "name": "Lethal Strike II",
+    "source": {
+      "book": "CR2",
+      "page": 209
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Lethal Strike I]/Adventure Level 7 or higher",
+      "advLevel": 7,
+      "classes": [],
+      "feats": [
+        "Lethal Strike I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 melee attack",
+    "risk": {
+      "text": "Evasion check -1",
+      "modifiers": [
+        {
+          "key": "evasion",
+          "value": -1,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "As [Lethal Strike I] (power roll +1 on a hit), but Evasion is only -1.",
+    "description": "Works like [Lethal Strike I] (CR I p.259), but the Evasion risk is reduced to -1. Replaces [Lethal Strike I].",
+    "modifiers": [
+      {
+        "key": "powerRoll",
+        "value": 1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Armor Piercer II",
+    "source": {
+      "book": "CR2",
+      "page": 210
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Armor Piercer I]/Grappler Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 9
+        }
+      ],
+      "feats": [
+        "Armor Piercer I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "As [Armor Piercer I] (half Defense, Critical Value +1); on a critical the Defense counts as 0.",
+    "description": "Works like [Armor Piercer I] (CR I p.263); in addition, when the damage roll crits, the target's Defense counts as 0. Replaces [Armor Piercer I].",
+    "modifiers": [
+      {
+        "key": "critical",
+        "value": 1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Toughness",
+    "source": {
+      "book": "CR2",
+      "page": 210
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Fighter Level 7",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "fighter",
+      "level": 7
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Maximum HP +15.",
+    "description": "The master's maximum HP is raised by 15.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 15,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Counter",
+    "source": {
+      "book": "CR2",
+      "page": 210
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Grappler Level 7",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "grappler",
+      "level": 7
+    },
+    "use": "Grappler class",
+    "application": null,
+    "risk": null,
+    "summary": "When attacked in melee, answer with your own Accuracy check instead of an Evasion check.",
+    "description": "After seeing an enemy's melee Accuracy result, the master may replace the Evasion check with an Accuracy check using any equipped weapon, becoming the active side. If the master wins, the enemy's attack is cancelled and the enemy takes damage and effects as if hit by the master's weapon. If the enemy wins, its attack hits and the 2d of its damage roll counts as 12 (extra rolls from criticals are rolled normally). Usable once per round, whether it succeeds or not.",
+    "modifiers": []
+  },
+  {
+    "name": "Fast Action",
+    "source": {
+      "book": "CR2",
+      "page": 211
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Scout Level 7",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "scout",
+      "level": 7
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Beat every enemy's Initiative to get one extra Major Action in the first round.",
+    "description": "If the master's Initiative check success value is higher than the best enemy result (or at least the monster's Initiative value), they gain an extra Major Action during round 1.",
+    "modifiers": []
+  },
+  {
+    "name": "Shadow Sneak",
+    "source": {
+      "book": "CR2",
+      "page": 211
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Scout Level 9",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "scout",
+      "level": 9
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Your movement can't be blocked, and you may leave a skirmish without preparing to withdraw.",
+    "description": "Nobody can block the master's movement, and they can walk out of a skirmish whenever they like without a preparation to withdraw.",
+    "modifiers": []
+  },
+  {
+    "name": "Indomitable",
+    "source": {
+      "book": "CR2",
+      "page": 211
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Ranger Level 7",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "ranger",
+      "level": 7
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "At 0 HP or less, a successful Death Check keeps you conscious and acting.",
+    "description": "While at 0 HP or below, if the master succeeds on the Death Check they stay conscious and can keep acting; failing it means death.",
+    "modifiers": []
+  },
+  {
+    "name": "Potion Master",
+    "source": {
+      "book": "CR2",
+      "page": 211
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": true,
+    "prerequisites": {
+      "text": "Gain Ranger Level 9",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "ranger",
+      "level": 9
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Use a potion on yourself during Combat Preparation or as a Minor Action.",
+    "description": "Potions can be used by the master on themselves (not on others) during Combat Preparation or as a Minor Action. Limited to one potion in Combat Preparation or one Minor Action use per round.",
+    "modifiers": []
+  },
+  {
+    "name": "Weakness Exploit",
+    "source": {
+      "book": "CR2",
+      "page": 211
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Sage Level 7",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "sage",
+      "level": 7
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Weak-point bonuses are doubled for you when your Sage Monster Knowledge check meets the weakness value.",
+    "description": "If the master's Sage-based Monster Knowledge result meets or beats the monster's weakness value, the weak-point bonus is doubled for the master only (e.g. Accuracy +1 becomes +2, fire damage +3 becomes +6). Allies still receive the normal bonus.",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Save",
+    "source": {
+      "book": "CR2",
+      "page": 212
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Sage Level 9",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "sage",
+      "level": 9
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "All MP costs -1 (minimum 1).",
+    "description": "Whenever the master spends MP for any reason, the cost is reduced by 1, never below 1. With [Metamagic/**] the reduction is applied before multiplying. It does not lessen MP damage or MP losses that are not spending.",
+    "modifiers": [
+      {
+        "key": "mp.cost",
+        "value": -1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Capacity",
+    "source": {
+      "book": "CR3",
+      "page": 199
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 11 or higher",
+      "advLevel": 11,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Maximum MP +15 (Grassrunners can't learn it).",
+    "description": "The master's maximum MP is raised by 15. Grassrunner characters cannot acquire this feat.",
+    "modifiers": [
+      {
+        "key": "mpMax",
+        "value": 15,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Additional Songs III",
+    "source": {
+      "book": "CR3",
+      "page": 199
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Additional Songs II]/Adventurer Level 13 or higher",
+      "advLevel": 13,
+      "classes": [],
+      "feats": [
+        "Additional Songs II"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Learn three extra Spellsongs/Finales in total.",
+    "description": "One more Spellsong or Finale than [Additional Songs II], i.e. Bard level +3 in total. Replaces [Additional Songs II].",
+    "modifiers": []
+  },
+  {
+    "name": "Peerless Double Swords",
+    "source": {
+      "book": "CR3",
+      "page": 199
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Adventurer Level 11 or higher",
+      "advLevel": 11,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "[Dual Wielding] no longer limits the weapons' minimum STR.",
+    "description": "The minimum-strength limit (20 or less) on weapons wielded with [Dual Wielding] is removed.",
+    "modifiers": []
+  },
+  {
+    "name": "Weapon Master",
+    "source": {
+      "book": "CR3",
+      "page": 199
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Weapon Proficiency S/**] (any category)/ Adventurer Level 11 or higher",
+      "advLevel": 11,
+      "classes": [],
+      "feats": [
+        "Weapon Proficiency S"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Equip weapons of every rank, SS included, in all categories.",
+    "description": "The master may equip weapons of any rank, including SS, in every category; class restrictions still apply.",
+    "modifiers": []
+  },
+  {
+    "name": "Enhanced Evocations I",
+    "source": {
+      "book": "CR3",
+      "page": 200
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Alchemist Level 3 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "alchemist",
+          "level": 3
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Alchemist class",
+    "application": null,
+    "risk": null,
+    "summary": "Evocation checks +1.",
+    "description": "The master adds +1 to the success value of every Evocation check.",
+    "modifiers": [
+      {
+        "key": "evocation",
+        "value": 1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Enhanced Evocations II",
+    "source": {
+      "book": "CR3",
+      "page": 200
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Enhanced Evocations I]/Alchemist Level 9 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "alchemist",
+          "level": 9
+        }
+      ],
+      "feats": [
+        "Enhanced Evocations I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Alchemist class",
+    "application": null,
+    "risk": null,
+    "summary": "Evocation checks +2.",
+    "description": "The master adds +2 to the success value of every Evocation check. Replaces [Enhanced Evocations I].",
+    "modifiers": [
+      {
+        "key": "evocation",
+        "value": 2,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Distant Evocations",
+    "source": {
+      "book": "CR3",
+      "page": 200
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Alchemist Level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "alchemist",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Alchemist class",
+    "application": null,
+    "risk": null,
+    "summary": "Touch evocations reach '1(10m)/Shot'; 1-Character evocations can take more targets for more cards.",
+    "description": "Evocations with 'Range/Area: Touch/-' are treated as '1(10m)/Shot'. Evocations with 'Target: 1 Character' may affect several targets at once by multiplying the Material Cards consumed (double for two targets).",
+    "modifiers": []
+  },
+  {
+    "name": "Ever-Changing II",
+    "source": {
+      "book": "CR3",
+      "page": 200
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Ever-Changing I]/Grappler or Fencer Level 13 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 13
+        },
+        {
+          "class": "fencer",
+          "level": 13
+        }
+      ],
+      "feats": [
+        "Ever-Changing I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Grappler class or Fencer class",
+    "application": null,
+    "risk": null,
+    "summary": "Three active combat feat declarations per round.",
+    "description": "The master may make three active combat feat declarations per round, split freely between one attack (different feats) and separate attacks (the same feat may repeat on different attacks). Risks of every declaration stack. Replaces [Ever-Changing I].",
+    "modifiers": []
+  },
+  {
+    "name": "Armor Master",
+    "source": {
+      "book": "CR3",
+      "page": 200
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Armor Proficiency S/**] (any category)/ Adventurer Level 11 or higher",
+      "advLevel": 11,
+      "classes": [],
+      "feats": [
+        "Armor Proficiency S"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Equip armor of every rank, SS included, in all categories.",
+    "description": "The master may equip armor of any rank, including SS, in every category.",
+    "modifiers": []
+  },
+  {
+    "name": "Powerful Magic II",
+    "source": {
+      "book": "CR3",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Powerful Magic I]/Adventurer Level 11 or higher, 2 Wizard-type Classes Level 10 or higher",
+      "advLevel": 11,
+      "classes": [
+        {
+          "class": "wizard",
+          "level": 10,
+          "count": 2
+        }
+      ],
+      "feats": [
+        "Powerful Magic I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Magic Power +2 for every magic system.",
+    "description": "The master's Magic Power is increased by 2 in every magic system they know. Replaces [Powerful Magic I].",
+    "modifiers": [
+      {
+        "key": "magicPower",
+        "value": 2,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Pinpoint Attack II",
+    "source": {
+      "book": "CR3",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Pinpoint Attack I]/Adventurer Level 13 or higher",
+      "advLevel": 13,
+      "classes": [],
+      "feats": [
+        "Pinpoint Attack I"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Accuracy checks +2.",
+    "description": "The master permanently adds +2 to Accuracy checks. Replaces [Pinpoint Attack I].",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Consecutive Evocation",
+    "source": {
+      "book": "CR3",
+      "page": 201
+    },
+    "featType": "passive",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Alchemist Level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "alchemist",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Use two different Evocations with one Major Action.",
+    "description": "A single Major Action spent on Evocations lets the master use two different Evocations, one after the other. Each has its own Evocation check and its own targets.",
+    "modifiers": []
+  },
+  {
+    "name": "Card Reduction",
+    "source": {
+      "book": "CR3",
+      "page": 201
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Alchemist Level 5 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "alchemist",
+          "level": 5
+        }
+      ],
+      "feats": []
+    },
+    "autoGain": null,
+    "use": "Alchemist class",
+    "application": "1 Evocation use",
+    "risk": null,
+    "summary": "An Evocation with a variable card cost needs 1 fewer Material Card (minimum 1).",
+    "description": "For an Evocation that uses a variable number of Material Cards, one fewer card is needed, to a minimum of one. When the number of targets is increased, apply this reduction first and then multiply by the number of targets.",
+    "modifiers": []
+  },
+  {
+    "name": "Aimed Attack III",
+    "source": {
+      "book": "CR3",
+      "page": 202
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Aimed Attack II]/Adventurer Level 11 or higher",
+      "advLevel": 11,
+      "classes": [],
+      "feats": [
+        "Aimed Attack II"
+      ]
+    },
+    "autoGain": null,
+    "use": null,
+    "application": "1 weapon attack",
+    "risk": null,
+    "summary": "One weapon attack gets Accuracy +3.",
+    "description": "Declared with one melee or ranged attack; for a simultaneous multi-target attack it covers all targets. The attack gains +3 to its Accuracy check. Replaces [Aimed Attack II].",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 3,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Critical Cast II",
+    "source": {
+      "book": "CR3",
+      "page": 202
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Critical Cast I]/Adventurer Level 11 or higher",
+      "advLevel": 11,
+      "classes": [],
+      "feats": [
+        "Critical Cast I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Wizard-Type Class",
+    "application": "1 spell cast",
+    "risk": null,
+    "summary": "As [Critical Cast I]; ignores critical immunity, and half-resisted spells can still crit.",
+    "description": "Includes [Critical Cast I] (Critical Value -1, minimum 8). The target's critical immunity and Critical Value-modifying abilities are ignored, and a 'Resistance: Half' spell can still crit when resisted: total damage including criticals is computed first, then halved. Replaces [Critical Cast I].",
+    "modifiers": [
+      {
+        "key": "criticalSpell",
+        "value": -1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Power Strike III",
+    "source": {
+      "book": "CR3",
+      "page": 202
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Power Strike II]/Fighter Level 15 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fighter",
+          "level": 15
+        }
+      ],
+      "feats": [
+        "Power Strike II"
+      ]
+    },
+    "autoGain": null,
+    "use": "Fighter class, 2H weapon",
+    "application": "1 melee attack",
+    "risk": {
+      "text": "Evasion check -2",
+      "modifiers": [
+        {
+          "key": "evasion",
+          "value": -2,
+          "scope": "effect"
+        }
+      ]
+    },
+    "summary": "One 2H melee attack deals +20 damage if it hits; Evasion -2 for the round.",
+    "description": "Declared with one melee attack; a hit deals +20 damage. If several characters are hit, one chosen at random before damage gets the bonus. Risk: -2 to Evasion checks. Replaces [Power Strike II].",
+    "modifiers": [
+      {
+        "key": "damageMelee",
+        "value": 20,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Violentcast II",
+    "source": {
+      "book": "CR3",
+      "page": 203
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Violentcast I]/Adventurer Level 13 or higher",
+      "advLevel": 13,
+      "classes": [],
+      "feats": [
+        "Violentcast I"
+      ]
+    },
+    "autoGain": null,
+    "use": "Wizard-Type class",
+    "application": "1 spell cast",
+    "risk": null,
+    "summary": "Spellcasting check +3 when casting a spell that only deals damage.",
+    "description": "Declared when casting and valid for that cast. If the spell only deals damage, the Spellcasting check gains +3 to its success value; this includes spells that deal bonus damage under some condition (e.g. against certain monster classifications). Spells without damage or with other effects gain nothing. Replaces [Violentcast I].",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": 3,
+        "scope": "use",
+        "condition": "spell that only deals damage"
+      }
+    ]
+  },
+  {
+    "name": "Lethal Strike III",
+    "source": {
+      "book": "CR3",
+      "page": 203
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Lethal Strike II]/Fencer Level 11 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "fencer",
+          "level": 11
+        }
+      ],
+      "feats": [
+        "Lethal Strike II"
+      ]
+    },
+    "autoGain": null,
+    "use": "Fencer class",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "On a melee hit, power rolls of 3-11 count +1 and critical immunity is ignored; no risk.",
+    "description": "Declared with one melee attack. On a hit, the target's critical immunity and Critical Value-modifying abilities are ignored, and each power-table roll of 3-11 counts as 1 higher (double 1s and 6s unchanged, critical rolls included). If several characters are hit, one chosen at random before damage gets the effect. Replaces [Lethal Strike II].",
+    "modifiers": [
+      {
+        "key": "powerRoll",
+        "value": 1,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Armor Piercer III",
+    "source": {
+      "book": "CR3",
+      "page": 203
+    },
+    "featType": "active",
+    "acquisition": "selective",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "[Armor Piercer II]/Grappler Level 15 or higher",
+      "advLevel": null,
+      "classes": [
+        {
+          "class": "grappler",
+          "level": 15
+        }
+      ],
+      "feats": [
+        "Armor Piercer II"
+      ]
+    },
+    "autoGain": null,
+    "use": "Grappler class",
+    "application": "1 melee attack",
+    "risk": null,
+    "summary": "Halve the target's Defense and ignore critical immunity; Defense 0 on a critical; no Critical Value penalty.",
+    "description": "Declared with one melee attack. On a hit, the target's Defense counts as half (rounded up), its critical immunity and Critical Value-modifying abilities are ignored, and on a critical its Defense counts as 0. The Critical Value is not changed. If several characters are hit, one chosen at random before damage is affected. Replaces [Armor Piercer II].",
+    "modifiers": []
+  },
+  {
+    "name": "Battle Master",
+    "source": {
+      "book": "CR3",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Fighter or Grappler Level 13",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "fighter",
+      "level": 13,
+      "alt": [
+        {
+          "class": "grappler",
+          "level": 13
+        }
+      ]
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Two active combat feat declarations per round.",
+    "description": "Allows two active combat feat declarations in a round. The same feat can't be declared twice for one action, but it may be used on two different actions, or two different feats may be combined on one action. Risks of all declared feats stack.",
+    "modifiers": []
+  },
+  {
+    "name": "Rune Master",
+    "source": {
+      "book": "CR3",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Any Wizard-type Class Level 11",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "wizard",
+      "level": 11
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Two active combat feat declarations per round if at least one is a 'Use: Wizard-Type Class' feat.",
+    "description": "Allows two active combat feat declarations per round, provided at least one of the feats has 'Use: Wizard-Type Class'. The same feat can't be declared twice in one turn.",
+    "modifiers": []
+  },
+  {
+    "name": "Treasure Master",
+    "source": {
+      "book": "CR3",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Scout Level 12",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "scout",
+      "level": 12
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Loot Determination rolls +1.",
+    "description": "The master adds +1 to Loot Determination rolls; this stacks with other bonuses to loot rolls.",
+    "modifiers": [
+      {
+        "key": "loot",
+        "value": 1,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Skill Master",
+    "source": {
+      "book": "CR3",
+      "page": 204
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Scout Level 15",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "scout",
+      "level": 15
+    },
+    "use": "Scout class",
+    "application": null,
+    "risk": null,
+    "summary": "Once per check, reroll the 2d of a skill check that uses your Scout level.",
+    "description": "After seeing the 2d of a skill check whose base uses the Scout class level, the master may reroll it once for that check. If another reroll effect also applies, this only adds one more reroll.",
+    "modifiers": []
+  },
+  {
+    "name": "Shukuchi",
+    "source": {
+      "book": "CR3",
+      "page": 205
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Ranger Level 12",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "ranger",
+      "level": 12
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "After a Full Move you may still take the actions a Normal Move allows.",
+    "description": "In a round in which the master makes a Full Move, they may still perform the actions permitted after a Normal Move. It remains a Full Move, including its -4 Evasion penalty.",
+    "modifiers": []
+  },
+  {
+    "name": "Run-and-Gun",
+    "source": {
+      "book": "CR3",
+      "page": 205
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Ranger Level 15",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "ranger",
+      "level": 15
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "After a Normal Move you may still take the actions a Limited Move allows.",
+    "description": "In a round in which the master makes a Normal Move, they may perform the actions permitted after a Limited Move; the move type itself does not change.",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Resistance",
+    "source": {
+      "book": "CR3",
+      "page": 205
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Sage Level 12",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "sage",
+      "level": 12
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Magic damage taken -5.",
+    "description": "All magic damage the master receives is reduced by 5.",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -5,
+        "scope": "effect"
+      }
+    ]
+  },
+  {
+    "name": "Sage's Wisdom",
+    "source": {
+      "book": "CR3",
+      "page": 205
+    },
+    "featType": "passive",
+    "acquisition": "automatic",
+    "combatPrep": false,
+    "prerequisites": {
+      "text": "Gain Sage Level 15",
+      "advLevel": null,
+      "classes": [],
+      "feats": []
+    },
+    "autoGain": {
+      "class": "sage",
+      "level": 15
+    },
+    "use": null,
+    "application": null,
+    "risk": null,
+    "summary": "Once per check, reroll the 2d of a skill check that uses your Sage level.",
+    "description": "After seeing the 2d of a skill check whose base uses the Sage class level, the master may reroll it once for that check. If another reroll effect also applies, this only adds one more reroll.",
+    "modifiers": []
+  }
+]

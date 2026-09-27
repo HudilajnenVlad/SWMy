@@ -1,0 +1,700 @@
+[
+  {
+    "name": "Intimidation",
+    "source": {
+      "book": "CR3",
+      "page": 181
+    },
+    "level": 1,
+    "action": "minor",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "main",
+    "summary": "Mount glares at a foe: -1 to its Accuracy, Spellcasting and Major Action unique skill checks for 1 round.",
+    "description": "The mount stares down one target in the same skirmish. Contested check: Rider level + Spirit modifier vs. the target's Willpower; on success the target takes -1 on Accuracy, Spellcasting and Major Action unique skill checks for 10 seconds (1 round). Psychic-type effect; usable once per round; the mount spends 5 MP.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -1,
+        "target": "target"
+      },
+      {
+        "key": "spellcasting",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Mind to Mind",
+    "source": {
+      "book": "CR3",
+      "page": 181
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Jockey and mount share their perception.",
+    "description": "Anything perceived by either the jockey or the mount counts as perceived by both, and the better result is used in perception rulings. If either knows [Targeting] or [Hawk Eye], both benefit from it. Only works while the jockey is mounted, even with [Remote Command].",
+    "modifiers": []
+  },
+  {
+    "name": "Remote Command",
+    "source": {
+      "book": "CR3",
+      "page": 182
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "all",
+    "summary": "Command your mount from up to 30m away.",
+    "description": "The jockey can give orders to the mount from up to 30m away; a mount that can hear the jockey carries them out as best it can, and no voice or gesture is needed. Stunts with area Main or All still apply as if the jockey were riding. It does nothing while the jockey is mounted.",
+    "modifiers": []
+  },
+  {
+    "name": "Search Command",
+    "source": {
+      "book": "CR3",
+      "page": 182
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "main",
+    "summary": "Mount can make Notice, Track, Search, Danger Sense and Spot Trap checks (Rider level + Int).",
+    "description": "The mount can make Notice, Track, Search, Danger Sense and Spot Trap checks; for any mount the standard value is Rider level + Intelligence modifier. The jockey normally has to be riding, but standing at the mount's side holding the reins also works. These five checks can be recorded together as the Rider Observation check package.",
+    "modifiers": []
+  },
+  {
+    "name": "Enhance Mount",
+    "source": {
+      "book": "CR3",
+      "page": 182
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "main",
+    "summary": "Mount Accuracy and Evasion +1.",
+    "description": "The mount gains +1 to Accuracy and Evasion. For a multi-section mount only the Main Section benefits; a single-section mount benefits as a whole (area printed as \"Main or All\").",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1
+      },
+      {
+        "key": "evasion",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Mount's Devotion",
+    "source": {
+      "book": "CR3",
+      "page": 183
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "main",
+    "summary": "Mount takes damage that would drop the jockey to 0 HP or less; once per combat.",
+    "description": "When the riding jockey (same area/coordinates) receives physical or magic damage that would bring their HP to 0 or below, the mount may take it instead: once the damage to the jockey is determined, subtract it from the mount's HP. For a multi-section mount only the Main Section can do this. Once per combat.",
+    "modifiers": []
+  },
+  {
+    "name": "Attack Obstruction",
+    "source": {
+      "book": "CR3",
+      "page": 183
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Jockey and passengers Evasion +1.",
+    "description": "While riding, the jockey and any passengers gain +1 on Evasion checks.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Elevated Attack",
+    "source": {
+      "book": "CR3",
+      "page": 183
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Jockey's physical damage +1.",
+    "description": "While riding, the jockey's physical damage increases by 1 for melee, ranged and thrown attacks alike.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Tandem",
+    "source": {
+      "book": "CR3",
+      "page": 183
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Passenger can use both hands; passenger action check penalty is only -1.",
+    "description": "A passenger riding with the jockey has both hands free, and the passenger's action check penalty drops to -1. This applies even when the jockey is not riding.",
+    "modifiers": []
+  },
+  {
+    "name": "Charge",
+    "source": {
+      "book": "CR3",
+      "page": 184
+    },
+    "level": 1,
+    "action": "major",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Melee attack after a Normal Move with Extra Damage based on distance moved.",
+    "description": "After a Normal Move, the jockey or the mount can make this attack as a replacement for an ordinary melee attack, declaring active combat feats as usual. On a hit, Extra Damage is +2 in Simplified Combat, or +1 per 5m moved (rounded up, straight-line distance from start to end point) in Standard/Advanced Combat. Jockey and mount (all sections) together can use it once per turn; no melee attack may precede it and no other action may follow it.",
+    "modifiers": []
+  },
+  {
+    "name": "Magic Command",
+    "source": {
+      "book": "CR3",
+      "page": 184
+    },
+    "level": 1,
+    "action": "major",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "all",
+    "summary": "Order the mount to cast one of its spells.",
+    "description": "As the jockey's first Major Action of the turn, order the mount to cast one of its spells immediately afterwards; this grants exactly one Major Action for the spell, regardless of how many Major Actions the mount has or whether the spell is a Minor Action spell. The mount needs no implement, ignores armor and vocalization restrictions, and can apply its own spellcasting combat feats. Usable twice per day.",
+    "modifiers": []
+  },
+  {
+    "name": "HP Enhancement",
+    "source": {
+      "book": "CR3",
+      "page": 184
+    },
+    "level": 1,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "all",
+    "summary": "Mount's maximum HP +5 (all sections).",
+    "description": "Every section of the mount gains +5 maximum HP.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "name": "Limit Drive",
+    "source": {
+      "book": "CR3",
+      "page": 185
+    },
+    "level": 5,
+    "action": "minor",
+    "prerequisites": [],
+    "mounts": [
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Mount overdrive: Accuracy +2, physical damage +4, Evasion -2 for 1 round; once per combat.",
+    "description": "During the following 10 seconds (1 round), all mount sections gain +2 Accuracy and the mount deals +4 physical damage, but all mount sections and the jockey take -2 on Evasion until the start of the next turn. Once per combat; it cannot be used again until the mount has been recalibrated for 10 minutes.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2
+      },
+      {
+        "key": "damage",
+        "value": 4
+      },
+      {
+        "key": "evasion",
+        "value": -2
+      }
+    ]
+  },
+  {
+    "name": "Lion's Fury",
+    "source": {
+      "book": "CR3",
+      "page": 185
+    },
+    "level": 5,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Up to two mount sections can each take a Major Action.",
+    "description": "On a multi-section mount, any two sections can each take a Major Action; the jockey still acts separately. When two sections act with Major Actions this way, both take -2 to Evasion checks for 1 round (10 seconds) afterwards.",
+    "modifiers": []
+  },
+  {
+    "name": "Steady Command",
+    "source": {
+      "book": "CR3",
+      "page": 185
+    },
+    "level": 5,
+    "action": "minor",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Mount makes a Normal Move while the jockey acts as if on a Limited Move, at -4.",
+    "description": "Usable only when the mount makes a Normal Move. The jockey can take the actions allowed with a Limited Move, but takes -4 on every check made this way, and no mount section can take its own Major Action.",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": -4
+      }
+    ]
+  },
+  {
+    "name": "Riding As One",
+    "source": {
+      "book": "CR3",
+      "page": 186
+    },
+    "level": 5,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Ride with both hands free.",
+    "description": "The jockey steers the mount by commands and weight shifts alone, keeping both hands free for actions while riding.",
+    "modifiers": []
+  },
+  {
+    "name": "Improved Elevated Attack",
+    "source": {
+      "book": "CR3",
+      "page": 186
+    },
+    "level": 5,
+    "action": "passive",
+    "prerequisites": [
+      "Elevated Attack"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Jockey's physical damage +1 more (total +2).",
+    "description": "While riding, the jockey's physical damage increases by a further 1 (total +2 with [Elevated Attack]) for melee, ranged and thrown attacks.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Unique Skill Release",
+    "source": {
+      "book": "CR3",
+      "page": 186
+    },
+    "level": 5,
+    "action": "passive",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Unlocks mount unique skills that require or are enhanced by this stunt.",
+    "description": "The mount can use unique skills marked \"Prerequisite: Unique Skill Release\", and unique skills marked \"Enhance: Unique Skill Release\" work at full effect.",
+    "modifiers": []
+  },
+  {
+    "name": "Trample",
+    "source": {
+      "book": "CR3",
+      "page": 186
+    },
+    "level": 5,
+    "action": "major",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Mount charges through the battlefield, attacking everyone on its path (Breakthrough).",
+    "description": "The mount makes one melee attack against every target along its path, using Range/Area 1(mount's movement in m)/Breakthrough (see p. 118). For each target, choose the attacking section (the jockey may be chosen) and roll Accuracy and damage separately.",
+    "modifiers": []
+  },
+  {
+    "name": "Improved Magic Command",
+    "source": {
+      "book": "CR3",
+      "page": 187
+    },
+    "level": 5,
+    "action": "passive",
+    "prerequisites": [
+      "Magic Command"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "all",
+    "summary": "[Magic Command] can be used 4 times per day.",
+    "description": "The daily uses of [Magic Command] increase to 4.",
+    "modifiers": []
+  },
+  {
+    "name": "Improved HP Enhancement",
+    "source": {
+      "book": "CR3",
+      "page": 187
+    },
+    "level": 5,
+    "action": "passive",
+    "prerequisites": [
+      "HP Enhancement"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Mount's maximum HP +5 more (total +10).",
+    "description": "Every section of the mount gains a further +5 maximum HP (total +10 with [HP Enhancement]).",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "name": "Improved Enhance Mount",
+    "source": {
+      "book": "CR3",
+      "page": 187
+    },
+    "level": 10,
+    "action": "passive",
+    "prerequisites": [
+      "Enhance Mount"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "main",
+    "summary": "Mount Accuracy and Evasion +1 more (total +2).",
+    "description": "The mount gains a further +1 to Accuracy and Evasion (total +2 with [Enhance Mount]). For a multi-section mount only the Main Section benefits; a single-section mount benefits as a whole (area printed as \"Main or All\").",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1
+      },
+      {
+        "key": "evasion",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Mounted Command",
+    "source": {
+      "book": "CR3",
+      "page": 187
+    },
+    "level": 10,
+    "action": "major",
+    "prerequisites": [],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Allies and mounts in chosen areas (30m radius) get Accuracy +2 for 1 round.",
+    "description": "Only usable as a Major Action while the jockey is on their own mount. All willing characters (mounts included) in the areas (30m radius) the jockey designates gain +2 on Accuracy checks for 10 seconds (1 round). The mount can still take its own Major Action.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Greater Elevated Attack",
+    "source": {
+      "book": "CR3",
+      "page": 188
+    },
+    "level": 10,
+    "action": "passive",
+    "prerequisites": [
+      "Improved Elevated Attack"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Jockey's physical damage +2 more (total +4).",
+    "description": "While riding, the jockey's physical damage increases by a further 2 (total +4 with the previous stunts) for melee, ranged and thrown attacks.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Instant Magic Command",
+    "source": {
+      "book": "CR3",
+      "page": 188
+    },
+    "level": 10,
+    "action": "passive",
+    "prerequisites": [
+      "Magic Command"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast"
+    ],
+    "area": "all",
+    "summary": "[Magic Command] also works as a Minor Action or in Combat Preparation.",
+    "description": "[Magic Command] can be given as a Minor Action or in Combat Preparation. If given in Combat Preparation, the mount casts at that time, so only spells castable in Combat Preparation are allowed.",
+    "modifiers": []
+  },
+  {
+    "name": "Super Charge",
+    "source": {
+      "book": "CR3",
+      "page": 188
+    },
+    "level": 10,
+    "action": "passive",
+    "prerequisites": [
+      "Charge"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Use [Charge] even after a Full Move.",
+    "description": "[Charge] can be declared after a Full Move; the usual Evasion -4 for a Full Move still applies. In Simplified Combat, if no hostile characters are in the front line area, the jockey may [Charge] from their rear area into the enemy's rear area for +4 Extra Damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Overdrive",
+    "source": {
+      "book": "CR3",
+      "page": 188
+    },
+    "level": 10,
+    "action": "minor",
+    "prerequisites": [
+      "Limit Drive"
+    ],
+    "mounts": [
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Boosts the next [Limit Drive] to Accuracy +4 and damage +8; jockey and mount take 10 damage.",
+    "description": "Used immediately before [Limit Drive]: that [Limit Drive] gives a further +2 Accuracy (+4 total) and +4 physical damage (+8 total); its Evasion penalty and 10-minute recalibration are unchanged. At the end of the turn, the jockey and every mount section take 10 points of fixed damage.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2
+      },
+      {
+        "key": "damage",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "name": "Improved Attack Obstruction",
+    "source": {
+      "book": "CR3",
+      "page": 189
+    },
+    "level": 10,
+    "action": "passive",
+    "prerequisites": [
+      "Attack Obstruction"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "none",
+    "summary": "Jockey and passengers Evasion +1 more (total +2).",
+    "description": "While riding, the jockey and any passengers gain a further +1 on Evasion checks (total +2 with [Attack Obstruction]).",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Unique Skill Perfect Release",
+    "source": {
+      "book": "CR3",
+      "page": 189
+    },
+    "level": 10,
+    "action": "passive",
+    "prerequisites": [
+      "Unique Skill Release"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Unlocks all mount unique skills that require or are enhanced by this stunt.",
+    "description": "The mount can use unique skills marked \"Prerequisite: Unique Skill Perfect Release\", and those marked \"Enhance: Unique Skill Perfect Release\" work at full effect.",
+    "modifiers": []
+  },
+  {
+    "name": "Orochi's Fury",
+    "source": {
+      "book": "CR3",
+      "page": 189
+    },
+    "level": 10,
+    "action": "major",
+    "prerequisites": [
+      "Lion's Fury"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Every section of the mount can take a Major Action.",
+    "description": "On a multi-section mount, each section can take a Major Action during the mount's turn. As with [Lion's Fury], every section that acts with a Major Action when two or more do takes -2 to Evasion checks for 1 round (10 seconds) afterwards.",
+    "modifiers": []
+  },
+  {
+    "name": "Balance",
+    "source": {
+      "book": "CR3",
+      "page": 189
+    },
+    "level": 10,
+    "action": "passive",
+    "prerequisites": [
+      "Steady Command"
+    ],
+    "mounts": [
+      "animal",
+      "mythicalBeast",
+      "magitech"
+    ],
+    "area": "all",
+    "summary": "Mount can take a Major Action while using [Steady Command].",
+    "description": "While [Steady Command] is used, the mount can still take a Major Action. The jockey still takes the -4 penalty to action checks.",
+    "modifiers": []
+  }
+]

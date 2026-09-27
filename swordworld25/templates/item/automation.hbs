@@ -1,0 +1,38 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="automation">
+  {{> "systems/swordworld25/templates/item/parts/modifiers.hbs" path="system.modifiers" list=system.modifiers title="SW25.Mod.Title"}}
+  {{#if (eq item.type "feat")}}
+    {{> "systems/swordworld25/templates/item/parts/modifiers.hbs" path="system.risk.modifiers" list=system.risk.modifiers title="SW25.Feat.RiskModifiers"}}
+  {{/if}}
+
+  <div class="swp-block">
+    <div class="swp-bar">
+      <span class="swp-bar-title">{{localize "SW25.Effects"}}</span>
+      {{#if editable}}<span class="swp-tools"><a class="swp-tool" data-action="effectCreate" data-tooltip="SW25.Effect.Create"><i class="fa-solid fa-plus"></i></a></span>{{/if}}
+    </div>
+    <table class="swp-table swp-effect-table">
+      <tbody>
+        {{#each effects}}
+        <tr class="swp-row swp-effect-row {{#if disabled}}off{{/if}}" data-effect-id="{{id}}">
+          <td class="img"><img src="{{img}}" alt=""></td>
+          <td class="name">{{name}}{{#if summary}}<div class="swp-effect-summary">{{summary}}</div>{{/if}}</td>
+          <td class="dur">{{#if transfer}}{{localize "SW25.Entry.Transfer"}}{{/if}}</td>
+          <td class="swp-tools-cell">
+            {{#if @root.editable}}
+            <span class="swp-row-tools always">
+              <a data-action="effectToggle" data-tooltip="SW25.Effect.Toggle"><i class="fa-solid {{#if disabled}}fa-toggle-off{{else}}fa-toggle-on{{/if}}"></i></a>
+              <a data-action="effectEdit" data-tooltip="SW25.Edit"><i class="fa-solid fa-pen"></i></a>
+              <a data-action="effectDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>
+            </span>
+            {{else}}
+            <span class="swp-row-tools always"><a data-action="effectEdit" data-tooltip="SW25.Entry.View"><i class="fa-solid fa-eye"></i></a></span>
+            {{/if}}
+          </td>
+        </tr>
+        {{else}}
+        <tr class="swp-empty-row"><td colspan="4">{{localize "SW25.Entry.NoEffects"}}</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p class="swp-hint pad">{{localize "SW25.Effect.ItemHint"}}</p>
+  </div>
+</section>

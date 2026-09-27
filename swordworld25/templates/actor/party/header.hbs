@@ -1,0 +1,42 @@
+<header class="swp-mheader swp-pheader">
+  <div class="swp-portrait-wrap small">
+    <div class="swp-portrait"><img src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}"></div>
+  </div>
+
+  <div class="swp-mhead-main">
+    <div class="swp-titlebar">
+      <span class="swp-level-box" data-tooltip="SW25.Party.AvgLevelHint">{{avgLevel}}</span>
+      <span class="swp-namebar">
+        <input class="swp-name" type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'SW25.Party.DefaultName'}}">
+        <span class="swp-namebar-note">{{localize "TYPES.Actor.party"}}</span>
+      </span>
+    </div>
+
+    <div class="swp-mhead-row">
+      <span class="swp-tag" data-tooltip="SW25.Party.MemberCount"><i class="fa-solid fa-users"></i> <b>{{members.length}}</b></span>
+      <span class="swp-tag" data-tooltip="SW25.Party.MaxLevelHint">{{localize "SW25.Party.MaxLevel"}} <b>{{maxLevel}}</b></span>
+      <span class="swp-tag" data-tooltip="SW25.Party.TotalMoneyHint"><i class="fa-solid fa-coins"></i> <b>{{totalMoney}}</b> G</span>
+      <span class="swp-tag" data-tooltip="SW25.Party.SlowestHint"><i class="fa-solid fa-person-walking"></i> <b>{{slowest}}</b></span>
+      {{#if scene}}<span class="swp-tag" data-tooltip="SW25.Party.SceneHint"><i class="fa-solid fa-map"></i> {{scene.name}}</span>{{/if}}
+    </div>
+
+    {{#if editable}}
+    <div class="swp-party-tools">
+      <button type="button" class="swp-btn-wide light" data-action="partyRest" data-tooltip="SW25.Rest.Hint"><i class="fa-solid fa-bed"></i> {{localize "SW25.Rest.Title"}}</button>
+      <button type="button" class="swp-btn-wide light" data-action="partyNewDay" data-tooltip="SW25.Party.NewDayHint"><i class="fa-solid fa-sun"></i> {{localize "SW25.Rest.NewDay"}}</button>
+      {{#if isGM}}
+      <button type="button" class="swp-btn-wide light" data-action="partyReward" data-tooltip="SW25.Party.RewardHint"><i class="fa-solid fa-star"></i> {{localize "SW25.Party.Reward"}}</button>
+      {{/if}}
+      {{#if scene}}
+      {{#if isGM}}
+      <button type="button" class="swp-btn-wide light" data-action="placeTokens" data-tooltip="SW25.Party.PlaceTokensHint" {{#unless missingTokens}}disabled{{/unless}}><i class="fa-solid fa-location-dot"></i> {{localize "SW25.Party.PlaceTokens"}}</button>
+      {{/if}}
+      <button type="button" class="swp-btn-wide light" data-action="selectTokens" data-tooltip="SW25.Party.SelectTokensHint"><i class="fa-solid fa-object-group"></i> {{localize "SW25.Party.SelectTokens"}}</button>
+      {{/if}}
+      {{#if canAddPCs}}
+      <button type="button" class="swp-btn-wide light" data-action="addPlayerCharacters"><i class="fa-solid fa-user-plus"></i> {{localize "SW25.Party.AddPCs"}}</button>
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
+</header>

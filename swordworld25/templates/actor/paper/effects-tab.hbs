@@ -1,0 +1,60 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="effects">
+  <div class="swp-block swp-effects">
+    <div class="swp-bar">
+      <span class="swp-bar-title">{{localize "SW25.Effects"}}</span>
+      <span class="swp-tools">
+        <a class="swp-tool" data-action="openCompendium" data-pack="effects" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a class="swp-tool" data-action="effectCreate" data-tooltip="SW25.Effect.Create"><i class="fa-solid fa-plus"></i></a>
+      </span>
+    </div>
+    <table class="swp-table swp-effect-table">
+      {{#if effects.temporary.length}}
+      <tbody>
+        <tr class="swp-subhead"><th colspan="4">{{localize "SW25.Effect.Temporary"}}</th></tr>
+        {{#each effects.temporary}}{{> effectRow}}{{/each}}
+      </tbody>
+      {{/if}}
+      {{#if effects.passive.length}}
+      <tbody>
+        <tr class="swp-subhead"><th colspan="4">{{localize "SW25.Effect.Passive"}}</th></tr>
+        {{#each effects.passive}}{{> effectRow}}{{/each}}
+      </tbody>
+      {{/if}}
+      {{#if effects.disabled.length}}
+      <tbody>
+        <tr class="swp-subhead"><th colspan="4">{{localize "SW25.Effect.Inactive"}}</th></tr>
+        {{#each effects.disabled}}{{> effectRow}}{{/each}}
+      </tbody>
+      {{/if}}
+      {{#unless effects.temporary.length}}{{#unless effects.passive.length}}{{#unless effects.disabled.length}}
+      <tbody><tr class="swp-drop-row"><td colspan="4"><i class="fa-solid fa-arrow-down-to-bracket"></i> {{localize "SW25.Sheet.DropEffects"}}</td></tr></tbody>
+      {{/unless}}{{/unless}}{{/unless}}
+    </table>
+  </div>
+
+  <div class="swp-block swp-conditions">
+    <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Conditions"}}</span></div>
+    <div class="swp-status-grid">
+      {{#each statuses}}
+      <a class="swp-status {{#if active}}on{{/if}}" data-action="statusToggle" data-status="{{id}}" data-tooltip="{{name}}">
+        <span class="swp-cb"></span><img src="{{img}}" alt=""><span class="swp-status-name">{{name}}</span>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+{{#*inline "effectRow"}}
+<tr class="swp-effect-row {{#if disabled}}off{{/if}} {{#if suppressed}}off{{/if}}" data-effect-id="{{id}}" data-parent-id="{{parentId}}">
+  <td class="img"><img src="{{img}}" alt=""></td>
+  <td class="name">{{name}}{{#if source}} <small class="swp-sub">{{source}}</small>{{/if}}
+    {{#if summary}}<div class="swp-effect-summary">{{summary}}</div>{{/if}}
+  </td>
+  <td class="dur">{{duration}}</td>
+  <td class="tools"><span class="swp-row-tools always">
+    <a data-action="effectToggle" data-tooltip="SW25.Effect.Toggle"><i class="fa-solid {{#if disabled}}fa-toggle-off{{else}}fa-toggle-on{{/if}}"></i></a>
+    <a data-action="effectEdit" data-tooltip="SW25.Edit"><i class="fa-solid fa-pen"></i></a>
+    {{#unless isItemEffect}}<a data-action="effectDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>{{/unless}}
+  </span></td>
+</tr>
+{{/inline}}

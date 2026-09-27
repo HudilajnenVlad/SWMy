@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 116" width="100" height="116">
+  <!-- Adventurer Level medallion: heavy oval ring with scroll flourishes above and below. -->
+  <defs>
+    <g id="flourish" fill="none" stroke="#161412" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 17 C45 9 36 5.5 29.5 8.5 C24 11 24.5 18 29.5 18.5 C33 18.8 34 15 31.5 13.6" stroke-width="2.3"/>
+      <path d="M50 17 C55 9 64 5.5 70.5 8.5 C76 11 75.5 18 70.5 18.5 C67 18.8 66 15 68.5 13.6" stroke-width="2.3"/>
+      <path d="M41 16.5 C38 13.5 34.5 13.2 33 14.4" stroke-width="1.2"/>
+      <path d="M59 16.5 C62 13.5 65.5 13.2 67 14.4" stroke-width="1.2"/>
+      <path d="M50 3.2 L53.4 8.2 L50 13.2 L46.6 8.2 Z" fill="#161412" stroke-width="1"/>
+    </g>
+  </defs>
+  <ellipse cx="50" cy="58" rx="39" ry="41" fill="#fbfaf7" stroke="#161412" stroke-width="5.2"/>
+  <ellipse cx="50" cy="58" rx="33.2" ry="35.2" fill="none" stroke="#161412" stroke-width="1.2"/>
+  <use xlink:href="#flourish" href="#flourish"/>
+  <use xlink:href="#flourish" href="#flourish" transform="translate(0 116) scale(1 -1)"/>
+</svg>

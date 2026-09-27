@@ -1,0 +1,5535 @@
+[
+  {
+    "name": "Fairy Wish",
+    "source": {
+      "book": "CR2",
+      "page": 161
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A contracted fairy accompanies the caster and can once grant +1 to a check outside combat.",
+    "description": "One of the caster's contracted fairies appears and follows them; they can talk in Sylvan, but the fairy can't be ordered or forced to do anything. Once during the duration, before rolling a check, the caster may ask for its help to get +1; the fairy then vanishes and the spell ends. The spell ends automatically when combat begins (before Combat Preparation), so it never helps Initiative or Monster Knowledge checks.",
+    "modifiers": [
+      {
+        "key": "allChecks",
+        "value": 1,
+        "condition": "once, declared before rolling; ends the spell (not in combat)"
+      }
+    ]
+  },
+  {
+    "name": "Summon Fairy",
+    "source": {
+      "book": "CR2",
+      "page": 161
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 6,
+      "text": "MP6 & Mako Stone 5 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Summons a level 3 fairy of one of the caster's selected types that follows orders.",
+    "description": "Calls a monster-level 3 fairy whose type is among the caster's currently selected types; it is controlled as under \"Obey Command\" (CR II p.90). While the spell lasts the caster can't cast Fairy Magic, and casting it cancels [Fairy Wish]/[Fairy Wish II]. Besides the MP, 5 MP must be paid from a mako stone, which is consumed; no other stone may substitute MP, though MP above 5 in that stone may pay the MP cost. [Metamagic/Time] and [Metamagic/Accuracy] multiply only the MP, not the mako stone.",
+    "modifiers": []
+  },
+  {
+    "name": "Handle Fairy",
+    "source": {
+      "book": "CR2",
+      "page": 162
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "+2 to Evasion, Willpower and Fortitude checks against fairy monsters' attacks and unique skills.",
+    "description": "The caster's knowledge of fairies lets them anticipate their actions: +2 on Evasion, Willpower and Fortitude checks made against attacks or unique skills of fairy monsters.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 2,
+        "condition": "vs fairy monsters"
+      },
+      {
+        "key": "willpower",
+        "value": 2,
+        "condition": "vs fairy monsters"
+      },
+      {
+        "key": "fortitude",
+        "value": 2,
+        "condition": "vs fairy monsters"
+      }
+    ]
+  },
+  {
+    "name": "Summon Fairy II",
+    "source": {
+      "book": "CR2",
+      "page": 162
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 10,
+      "text": "MP10 & Mako Stone 5 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "As [Summon Fairy], but calls a level 5 fairy.",
+    "description": "Same as [Summon Fairy], except that the fairy called is monster level 5.",
+    "modifiers": []
+  },
+  {
+    "name": "Fairy Support",
+    "source": {
+      "book": "CR2",
+      "page": 163
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Once, the target can call on a fairy for +2 to any check, even after rolling.",
+    "description": "Once during the duration, the target may ask the fairy for help to get +2 on any check, even after the dice have been rolled; the spell then ends. [Metamagic/Targets] can't add targets. While it lasts the caster can't cast Fairy Magic, and casting it cancels [Fairy Wish]/[Fairy Wish II].",
+    "modifiers": [
+      {
+        "key": "allChecks",
+        "value": 2,
+        "condition": "once, may be declared after rolling; ends the spell",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Summon Fairy III",
+    "source": {
+      "book": "CR2",
+      "page": 163
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 14,
+      "text": "MP14 & Mako Stone 5 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "As [Summon Fairy], but calls a level 7 fairy.",
+    "description": "Same as [Summon Fairy], except that the fairy called is monster level 7.",
+    "modifiers": []
+  },
+  {
+    "name": "Fairy Wish II",
+    "source": {
+      "book": "CR2",
+      "page": 163
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "6 Hours",
+      "unit": "hours",
+      "value": 6
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "As [Fairy Wish], but the one-time bonus is +2 and it lasts 6 hours.",
+    "description": "Same as [Fairy Wish], except the bonus is +2 and the duration is 6 hours.",
+    "modifiers": [
+      {
+        "key": "allChecks",
+        "value": 2,
+        "condition": "once, declared before rolling; ends the spell (not in combat)"
+      }
+    ]
+  },
+  {
+    "name": "Summon Fairy IV",
+    "source": {
+      "book": "CR2",
+      "page": 163
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 18,
+      "text": "MP18 & Mako Stone 5 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "As [Summon Fairy], but calls a level 9 fairy.",
+    "description": "Same as [Summon Fairy], except that the fairy called is monster level 9.",
+    "modifiers": []
+  },
+  {
+    "name": "Mitigate Fairy",
+    "source": {
+      "book": "CR2",
+      "page": 164
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 1,
+      "text": "MP1+"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "temporary",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Weakens a fairy monster: -2 to all its checks and -2 to the damage it deals. MP = its level.",
+    "description": "Only affects fairy monsters: the fairy suffers -2 on all checks and its physical and magic damage are reduced by 2. The MP cost equals the target's monster level; with [Metamagic/Targets], pay the total for all targets.",
+    "modifiers": [
+      {
+        "key": "allChecks",
+        "value": -2,
+        "target": "target"
+      },
+      {
+        "key": "damage",
+        "value": -2,
+        "target": "target"
+      },
+      {
+        "key": "damageMagic",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Summon Fairy V",
+    "source": {
+      "book": "CR2",
+      "page": 164
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 22,
+      "text": "MP22 & Mako Stone 5 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "As [Summon Fairy], but calls a level 11 fairy.",
+    "description": "Same as [Summon Fairy], except that the fairy called is monster level 11.",
+    "modifiers": []
+  },
+  {
+    "name": "Snare",
+    "source": {
+      "book": "CR2",
+      "page": 164
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "prone"
+      ]
+    },
+    "summary": "Earth fairies grab the target's legs and knock it prone (two-legged, single-section targets only).",
+    "description": "The target falls prone. Characters with multiple sections or that don't move on two legs are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Stone Guard",
+    "source": {
+      "book": "CR2",
+      "page": 164
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Once, the target may reduce physical damage it takes by up to 5; the spell then ends.",
+    "description": "Floating pebbles guard the target. When it takes physical damage, it may choose, after the hit and total damage are known, to reduce that damage by up to 5 points; using this ends the spell.",
+    "modifiers": [
+      {
+        "key": "damageTakenPhysical",
+        "value": -5,
+        "condition": "once, after damage is determined; ends the spell",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Earth Hammer",
+    "source": {
+      "book": "CR2",
+      "page": 165
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 12,
+      "damageKind": "physical",
+      "addMagicPower": true
+    },
+    "summary": "A stone hammer deals Power 10 + Magic Power physical damage; Critical Value 12.",
+    "description": "A hammer of stone rises from the ground and deals Power 10 + Magic Power physical damage with Critical Value 12. For the target's abilities that raise or lower damage, it counts as a magic blunt weapon.",
+    "modifiers": []
+  },
+  {
+    "name": "Pebble Shot",
+    "source": {
+      "book": "CR2",
+      "page": 165
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A high-speed pebble deals Power 10 earth magic damage.",
+    "description": "Deals Power 10 + Magic Power earth magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Entrapment",
+    "source": {
+      "book": "CR2",
+      "page": 165
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "entangled"
+      ]
+    },
+    "summary": "Earthen arms hold the target: movement 0, Evasion -2, can't take off.",
+    "description": "The target's movement becomes 0 and it takes -2 on Evasion checks. Characters with multiple sections or not touching the ground are unaffected; a target caught on the ground can't take off even if it can fly (no [Flying], [Sword's Grace/Wings of the Wind] or similar). As a Major Action the target may try to break free using Fortitude, Willpower or Adventurer Level + Strength modifier as its standard value; beating the caster's success value ends the spell (automatic success uses the +5 rule, CR I p.92).",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Stone Blast",
+    "source": {
+      "book": "CR2",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "The ground itself strikes the target for Power 20 earth magic damage.",
+    "description": "Deals Power 20 + Magic Power earth magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Great Snare",
+    "source": {
+      "book": "CR2",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "prone"
+      ]
+    },
+    "summary": "Knocks targets prone whatever their sections or way of moving (not those off the ground).",
+    "description": "Each target falls prone regardless of its number of sections or how it moves. Characters moving without touching the ground are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Stone Wall",
+    "source": {
+      "book": "CR2",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Raises an opaque stone wall up to 50cm thick, 3m high and 10m long that blocks sight and passage.",
+    "description": "Creates a wall of any stone (never transparent) up to 50cm thick, 3m high and 10m long, standing perpendicular to the ground and not overlapping objects or creatures. It fully blocks sight, creatures, objects, and spells or unique skills with 'Area: Shot' or 'Area: Line'. See the wall rules on CR II p.182.",
+    "modifiers": []
+  },
+  {
+    "name": "Gold Bridge",
+    "source": {
+      "book": "CR2",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Builds a straight stone bridge, stairway or ladder from the caster to a chosen point.",
+    "description": "A stone bridge, stairs or ladder extends in a straight line from the caster to the chosen point, giving safe passage. The caster sets its width up to 3m; it can't pass through objects, creatures or closed gates.",
+    "modifiers": []
+  },
+  {
+    "name": "Tunnel",
+    "source": {
+      "book": "CR2",
+      "page": 167
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Space up to 2x2x10m",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Removes non-magical earth, rock, clay or brick within a space up to 2x2x10m.",
+    "description": "Non-magical earth and rock, and materials made from them such as clay and bricks, vanish from the target space, opening tunnels in the ground or holes in stone walls (including [Stone Wall]). The caster shapes the space as a straight circular or polygonal column within 2x2x10m; it can't bend.",
+    "modifiers": []
+  },
+  {
+    "name": "Purification",
+    "source": {
+      "book": "CR2",
+      "page": 167
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Up to 100l of water",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Turns up to 100 liters of touched water into pure water; liquid poisons need a contested check.",
+    "description": "The caster touches up to 100 liters of water and strips it of impurities and dissolved substances. Liquid poisons and drugs can also be targeted, which requires a contested check.",
+    "modifiers": []
+  },
+  {
+    "name": "Water Screen",
+    "source": {
+      "book": "CR2",
+      "page": 167
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A coat of water reduces fire magic damage the target takes by 3.",
+    "description": "Water covers the target's body; whenever it takes fire magic damage, that damage is reduced by 3.",
+    "modifiers": [
+      {
+        "key": "damageTakenMagic",
+        "value": -3,
+        "condition": "fire-type magic damage",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Ice Bolt",
+    "source": {
+      "book": "CR2",
+      "page": 167
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "An arrow of ice deals Power 10 water/ice magic damage.",
+    "description": "Deals Power 10 + Magic Power water/ice magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Seabed Walk",
+    "source": {
+      "book": "CR2",
+      "page": 168
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets breathe and speak underwater and act on the bottom without penalties.",
+    "description": "Targets can breathe and vocalize underwater, and while moving along the bottom they suffer no movement reduction, action limits or Action Check penalties (CR I p.114). A target that swims (Swim check, Swimming state) takes the normal swimming reductions and penalties.",
+    "modifiers": []
+  },
+  {
+    "name": "Hard Water",
+    "source": {
+      "book": "CR2",
+      "page": 168
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets can stand and move on water as if it were solid ground.",
+    "description": "Targets can stand on the water's surface and move over it as though on land.",
+    "modifiers": []
+  },
+  {
+    "name": "Mist Hide",
+    "source": {
+      "book": "CR2",
+      "page": 168
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A shroud of mist makes the target hard to see: Evasion +2.",
+    "description": "Mist surrounds the target, giving +2 on all its Evasion checks.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Chill Rain",
+    "source": {
+      "book": "CR2",
+      "page": 168
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (4m Radius)/10",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 4,
+      "count": 10
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Freezing rain deals Power 10 water/ice magic damage to up to 10 targets in an area.",
+    "description": "Deals Power 10 + Magic Power water/ice magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Sink",
+    "source": {
+      "book": "CR2",
+      "page": 169
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets lose buoyancy and sink 20m per round to the bottom; Swim checks automatically fail.",
+    "description": "Targets sink at 20m per round until they reach the bottom, taking no falling damage there; they can move along the bottom but can't rise, and their Swim checks automatically fail. Characters with [Sword's Grace/Gentle Water] are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Ice Wall",
+    "source": {
+      "book": "CR2",
+      "page": 169
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Raises a see-through ice wall (50cm x 3m x 10m) that blocks passage but not sight.",
+    "description": "Creates an ice wall 50cm thick, 3m high and 10m long, standing perpendicular to the ground and not in occupied space. It doesn't block line of sight but stops creatures, objects, and spells or unique skills with 'Area: Shot' or 'Area: Line'. See the wall rules on CR II p.182.",
+    "modifiers": []
+  },
+  {
+    "name": "Ice Coffin",
+    "source": {
+      "book": "CR2",
+      "page": 169
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "unconscious"
+      ]
+    },
+    "summary": "Seals a target with 20 HP or less in a coffin of ice: unconscious and ageless until freed.",
+    "description": "Works only if the target has 20 HP or less and fits in the coffin (1m radius, 2m tall; no multi-section characters). The target is encased, unconscious and not aging, and the ice doesn't melt at room temperature. It can be melted with 24 hours of torch fire, 12 hours of bonfire or 100 points of fire magic damage, or dispelled (e.g. [Dispel Magic]); the freed character remains stunned for 1 hour. Breaking the coffin any other way kills the one inside.",
+    "modifiers": []
+  },
+  {
+    "name": "Tinder",
+    "source": {
+      "book": "CR2",
+      "page": 170
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Flammable Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Sets fire to a flammable object that a single match could light.",
+    "description": "Ignites a combustible object, as long as it could be lit with one match.",
+    "modifiers": []
+  },
+  {
+    "name": "Fire Bolt",
+    "source": {
+      "book": "CR2",
+      "page": 170
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A bolt of flame deals Power 10 fire magic damage.",
+    "description": "Deals Power 10 + Magic Power fire magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Flare",
+    "source": {
+      "book": "CR2",
+      "page": 170
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/All",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": "all"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "blind"
+      ]
+    },
+    "summary": "A flash around the caster blinds everyone in a 3m radius for 1 round.",
+    "description": "Characters in the area are blinded for 10 seconds (1 round). Characters with magic perception are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Heat Metal",
+    "source": {
+      "book": "CR2",
+      "page": 170
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Heats the target's metal gear red-hot for Power 30 fire magic damage.",
+    "description": "A metal item or armor on the target glows red-hot for an instant, dealing Power 30 + Magic Power fire magic damage. When the heated item is something held in hand (weapon or tool), the target can drop it on a successful Willpower check and avoid the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Flame Arrow",
+    "source": {
+      "book": "CR2",
+      "page": 171
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "An arrow of fire deals Power 20 fire magic damage.",
+    "description": "Deals Power 20 + Magic Power fire magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Fire Blast",
+    "source": {
+      "book": "CR2",
+      "page": 171
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "An exploding fireball deals Power 10 fire magic damage to up to 5 targets.",
+    "description": "Deals Power 10 + Magic Power fire magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Incineration",
+    "source": {
+      "book": "CR2",
+      "page": 171
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (2m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 2,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Instantly burns away all combustible material within a 2m radius.",
+    "description": "Everything combustible in the area burns away at once. Objects extending beyond the 2m radius burn only inside the area and the fire doesn't spread, so the spell can cut a single hole in a wooden wall.",
+    "modifiers": []
+  },
+  {
+    "name": "Flame Coat",
+    "source": {
+      "book": "CR2",
+      "page": 171
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Fire cloak: target ignores new water/ice-type effects and takes 5 less water/ice damage.",
+    "description": "The target becomes immune to water/ice-type effects (effects already applied stay) and takes 5 less physical and magic damage of the water/ice type.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -5,
+        "condition": "water/ice-type damage",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Fire Wall",
+    "source": {
+      "book": "CR2",
+      "page": 172
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Wall of fire (50cm x 3m x 10m) blocks sight; crossing it deals Power 20 fire magic damage.",
+    "description": "Creates a fire wall 50cm thick, 3m high and 10m long that blocks line of sight but not creatures, objects or 'Area: Shot'/'Area: Line' effects. A character crossing it makes a Willpower check: on a failure it stops before the wall (previous area, or last 1m coordinate) and takes Power 20 + Magic Power fire magic damage; on a success it passes through and takes half. A character forced through always passes, the check only deciding whether damage is halved. See the wall rules on CR II p.182.",
+    "modifiers": []
+  },
+  {
+    "name": "Firestorm",
+    "source": {
+      "book": "CR2",
+      "page": 172
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 13,
+      "text": "MP13"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A storm of fire deals Power 40 fire magic damage to up to 15 targets.",
+    "description": "Deals Power 40 + Magic Power fire magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Wind Voice",
+    "source": {
+      "book": "CR2",
+      "page": 173
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "2(100m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 100,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster can hear sounds in a distant outdoor area and make their voice heard there.",
+    "description": "The caster hears the sounds within the target area and can transmit their voice into it. The area must be outdoors and within the caster's line of sight.",
+    "modifiers": []
+  },
+  {
+    "name": "Wind Guard",
+    "source": {
+      "book": "CR2",
+      "page": 173
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A small shield of air reduces wind-type damage the target takes by 3.",
+    "description": "A little barrier of air deflects the wind; the target takes 3 less damage from all wind-type attacks.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -3,
+        "condition": "wind-type damage",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Windcutter",
+    "source": {
+      "book": "CR2",
+      "page": 173
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A scythe of wind deals Power 10 wind magic damage.",
+    "description": "Deals Power 10 + Magic Power wind magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Hovering",
+    "source": {
+      "book": "CR2",
+      "page": 173
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster floats 10cm above ground or water; Agility is halved.",
+    "description": "A column of wind holds the caster 10cm above the surface, so they can move over ground or water without touching it. Agility is halved for the duration (round up).",
+    "modifiers": []
+  },
+  {
+    "name": "Silent Move",
+    "source": {
+      "book": "CR2",
+      "page": 174
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets' own movements make no sound; speaking or making noise on purpose ends it.",
+    "description": "All sounds caused by the targets' movements (footsteps, opening doors, creaking floors) are silenced, but not noises from things they aren't touching, such as a knocked-over vase. If a target speaks or deliberately makes a noise, it is heard and the spell ends.",
+    "modifiers": []
+  },
+  {
+    "name": "Secret Voice",
+    "source": {
+      "book": "CR2",
+      "page": 174
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(100m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 100,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster and the target can talk privately at a distance without others noticing.",
+    "description": "Caster and target communicate unnoticed by anyone else; the target must be outdoors and within the caster's sight. If [Metamagic/Targets] adds targets, everyone involved, the caster included, hears one another.",
+    "modifiers": []
+  },
+  {
+    "name": "Shoot Arrow",
+    "source": {
+      "book": "CR2",
+      "page": 174
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "physical",
+      "addMagicPower": true
+    },
+    "summary": "Launches a held arrow or heavy arrow for Power 20 + Magic Power physical damage.",
+    "description": "Fires an arrow or heavy arrow the caster is holding (consumed; bullets and stones can't be used), dealing Power 20 + Magic Power physical damage as if shot from a bow or crossbow with Critical Value 10. Special ammunition applies its effects. If all the arrows used are stored in an equipped Arrow Case or similar, [Metamagic/Targets] can be used.",
+    "modifiers": []
+  },
+  {
+    "name": "Missile Protection",
+    "source": {
+      "book": "CR2",
+      "page": 175
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Circling wind deflects projectiles: vs ranged attacks, roll 1d and on 4-6 the attack misses.",
+    "description": "Before the target makes an Evasion check against a ranged weapon or similar attack, roll 1d: on 1-3 it evades normally, on 4-6 the projectile is deflected and misses automatically. Against [Shoot Arrow] it has a 50% chance to evade automatically (otherwise it is hit automatically).",
+    "modifiers": []
+  },
+  {
+    "name": "Sound Pocket",
+    "source": {
+      "book": "CR2",
+      "page": 175
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "neg",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "deaf"
+      ]
+    },
+    "summary": "Seals targets in silence: nobody hears them and they hear nothing (treated as deafened).",
+    "description": "Sounds and voices a target directly makes can't be heard by others, and it hears nothing but itself, counting as deafened (CR II p.71). It is immune to sound- or voice-based effects such as spellsongs and gets +4 on resistance checks against Finales. It doesn't prevent the vocalization needed to cast spells.",
+    "modifiers": [
+      {
+        "key": "willpower",
+        "value": 4,
+        "condition": "resistance vs Finales",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Air Walking",
+    "source": {
+      "book": "CR2",
+      "page": 175
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target can walk and run through the air; falling prone there doesn't make it drop.",
+    "description": "The target moves through the air as if on solid ground. If it falls prone in midair, it stays in place instead of falling.",
+    "modifiers": []
+  },
+  {
+    "name": "Healing Water",
+    "source": {
+      "book": "CR2",
+      "page": 176
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "fixed": 4
+    },
+    "summary": "Creates healing water; a creature that drinks it recovers Magic Power + 4 HP.",
+    "description": "Healing water appears in the caster's palms or a container. A creature that drinks it (Major Action) recovers Magic Power + 4 HP. Undrunk water vanishes after 3 minutes (18 rounds). Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Whisper Heal",
+    "source": {
+      "book": "CR2",
+      "page": 176
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "fixed": 0
+    },
+    "summary": "Up to 5 targets in an area each recover HP equal to the caster's Magic Power.",
+    "description": "Each target recovers HP equal to the caster's Magic Power. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Basic Healing",
+    "source": {
+      "book": "CR2",
+      "page": 176
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "fixed": 4
+    },
+    "summary": "The target recovers Magic Power + 4 HP.",
+    "description": "Restores Magic Power + 4 HP to the target. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Virtual Toughness",
+    "source": {
+      "book": "CR2",
+      "page": 176
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "raiseCurrent": true
+    },
+    "summary": "Temporarily raises the target's current and maximum HP by the caster's Magic Power.",
+    "description": "Both the target's current HP and its maximum HP rise by the caster's Magic Power. When the spell ends, maximum HP returns to normal; current HP is lowered only if it now exceeds the maximum. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 0,
+        "target": "target",
+        "formula": "@magicPower"
+      }
+    ]
+  },
+  {
+    "name": "Nursing",
+    "source": {
+      "book": "CR2",
+      "page": 177
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Slows the target's poisons and diseases: they progress at one third of their normal pace.",
+    "description": "Without a contested check, poison- and disease-type effects on the target progress three times more slowly: periodic damage and other effects occur only every third time, but their duration and recovery time are tripled too. Recasting daily keeps this up even for effects with intervals of 8 hours or more. Poisons and diseases with 'Duration: Instant' are unaffected. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Advanced Healing",
+    "source": {
+      "book": "CR2",
+      "page": 177
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "fixed": 8
+    },
+    "summary": "The target recovers Magic Power + 8 HP.",
+    "description": "Restores Magic Power + 8 HP to the target. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Life Support",
+    "source": {
+      "book": "CR2",
+      "page": 177
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A target at 0 HP or less takes only half damage to its HP.",
+    "description": "Only works on a target with 0 HP or less. While the spell lasts, damage dealt to its HP is halved (rounded up). Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Extended Healing",
+    "source": {
+      "book": "CR2",
+      "page": 177
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "fixed": 12
+    },
+    "summary": "The target recovers Magic Power + 12 HP.",
+    "description": "Restores Magic Power + 12 HP to the target. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Vital Force",
+    "source": {
+      "book": "CR2",
+      "page": 178
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "formula": "@toZero"
+    },
+    "summary": "Raises a target with negative HP to 0 HP.",
+    "description": "If the target's HP is below 0, it is set to 0. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Rich Heal",
+    "source": {
+      "book": "CR2",
+      "page": 178
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "fixed": 6
+    },
+    "summary": "Up to 5 targets in an area each recover Magic Power + 6 HP.",
+    "description": "Each target recovers Magic Power + 6 HP. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Calm",
+    "source": {
+      "book": "CR2",
+      "page": 178
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "charmed",
+        "confused",
+        "frightened"
+      ],
+      "removeTypes": [
+        "psychic"
+      ]
+    },
+    "summary": "Removes psychic-type effects from the targets (a contested check for each effect).",
+    "description": "Ends every psychic-type effect on the targets, restoring a normal state of mind; each effect needs its own contested check.",
+    "modifiers": []
+  },
+  {
+    "name": "Distraction",
+    "source": {
+      "book": "CR2",
+      "page": 178
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Breaks the target's concentration; it can't cast spells for 1 round.",
+    "description": "Chaotic thoughts break the target's concentration, and it can't cast spells for the duration, though it may act freely otherwise.",
+    "modifiers": []
+  },
+  {
+    "name": "Stun",
+    "source": {
+      "book": "CR2",
+      "page": 179
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "psychicWeak"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target automatically fails its next Evasion check; +2 to the Spellcasting check.",
+    "description": "The target's next Evasion check is an automatic failure, after which the spell ends; for a multi-section character only the first Evasion check of any section fails. The caster gets +2 on the Spellcasting check for this spell.",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": 2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Panic Run",
+    "source": {
+      "book": "CR2",
+      "page": 179
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "frightened"
+      ]
+    },
+    "summary": "Frightened targets must withdraw from their skirmish and can't move into one.",
+    "description": "A target in a skirmish must withdraw from it on its turn (if it can't, it must at least get ready to disengage). A target not in a skirmish can't move into one.",
+    "modifiers": []
+  },
+  {
+    "name": "Mind Blank",
+    "source": {
+      "book": "CR2",
+      "page": 179
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets can't perceive the caster and act as if the caster weren't there.",
+    "description": "Targets can't see the caster: guards let them pass, and in combat targets can't attack the caster directly, target them with 'Target: 1 Character' spells (including Entire Character and Character X) or [Magic Control], or block them; the caster may leave a one-on-one melee with them without withdrawing. Any hostile act by the caster toward a target (touching, attacking, targeting with a spell) ends the spell just before it resolves.",
+    "modifiers": []
+  },
+  {
+    "name": "Brave Heart",
+    "source": {
+      "book": "CR2",
+      "page": 179
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets become immune to psychic spells and effects (existing ones remain).",
+    "description": "Targets gain immunity to psychic spells and effects; effects already on them remain.",
+    "modifiers": []
+  },
+  {
+    "name": "Mind Link",
+    "source": {
+      "book": "CR2",
+      "page": 180
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Caster and target share senses and exchange wordless messages at any distance.",
+    "description": "The caster must touch the target when casting; afterwards they share sight, hearing and awareness regardless of distance and can pass messages without words. Neither can lie this way, only leave things out.",
+    "modifiers": []
+  },
+  {
+    "name": "Shocking Wave",
+    "source": {
+      "book": "CR2",
+      "page": 180
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 22,
+      "text": "MP22"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/All",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": "all"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/20 seconds (2 r)",
+      "unit": "instantRounds",
+      "value": 2
+    },
+    "resistance": "neg",
+    "types": [
+      "psychicWeak"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "paralyzed"
+      ]
+    },
+    "summary": "Everyone in a 6m radius can take neither Major nor Minor Actions nor declare combat feats for 2 rounds.",
+    "description": "For the next 20 seconds (2 rounds), characters in the area can take neither Major nor Minor Actions, and can't declare combat feats.",
+    "modifiers": []
+  },
+  {
+    "name": "Insanity",
+    "source": {
+      "book": "CR2",
+      "page": 180
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/Various",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "variants": [
+        {
+          "label": "2d 2-4: berserk",
+          "summary": "Berserk for 3 rounds: Accuracy +2, Evasion -2; no rational actions, treated as Low intelligence, no spells.",
+          "modifiers": [
+            {
+              "key": "accuracy",
+              "value": 2,
+              "target": "target"
+            },
+            {
+              "key": "evasion",
+              "value": -2,
+              "target": "target"
+            }
+          ],
+          "statuses": [
+            "confused"
+          ],
+          "duration": {
+            "text": "30 seconds (3 r)",
+            "unit": "rounds",
+            "value": 3
+          }
+        },
+        {
+          "label": "2d 5-9: Intelligence -12",
+          "summary": "Intelligence -12 (minimum 1) for 18 rounds; fixed values: -2 to Intelligence-based values such as Magic Power.",
+          "modifiers": [
+            {
+              "key": "ability.int",
+              "value": -12,
+              "target": "target",
+              "actorType": "character"
+            },
+            {
+              "key": "magicPower",
+              "value": -2,
+              "target": "target",
+              "actorType": "monster"
+            }
+          ],
+          "duration": {
+            "text": "3 minutes (18 r)",
+            "unit": "rounds",
+            "value": 18
+          }
+        },
+        {
+          "label": "2d 10-12: no Major Actions",
+          "summary": "No Major Actions for 3 rounds (moving, Minor Actions and declaring active combat feats are allowed).",
+          "modifiers": [],
+          "duration": {
+            "text": "30 seconds (3 r)",
+            "unit": "rounds",
+            "value": 3
+          }
+        }
+      ]
+    },
+    "summary": "Targets suffer a random effect rolled on the Madness Table (2d).",
+    "description": "Roll 2d on the Madness Table. 2-4: berserk for 30 seconds (3 rounds), Accuracy +2 and Evasion -2, no rational actions, treated as Low intelligence and unable to cast spells. 5-9: Intelligence -12 (minimum 1) for 3 minutes (18 rounds); fixed-value characters get -2 to Intelligence-based values such as Magic Power. 10-12: no Major Actions for 30 seconds (3 rounds), though moving, Minor Actions and declaring active combat feats are allowed.",
+    "modifiers": []
+  },
+  {
+    "name": "Masking",
+    "source": {
+      "book": "CR2",
+      "page": 181
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Hides the targets from everyone, as if all others were under [Mind Blank].",
+    "description": "All other characters treat the targets as if affected by [Mind Blank]. Each newly met character makes a Willpower check and ends the spell on a success, except characters whose adventurer or monster level is at most the caster's Fairy Tamer level - 4, who get no check. Characters immune to psychic effects are unaffected, but the spell continues. Any hostile act by the caster toward another character ends the spell just before it resolves, regardless of level.",
+    "modifiers": []
+  },
+  {
+    "name": "Avoid Fairy",
+    "source": {
+      "book": "CR3",
+      "page": 161
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 1,
+      "text": "MP1+"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Sends away a fairy of level 15 or lower until it is called again. MP = its level.",
+    "description": "A fairy of level 15 or lower is driven away and won't return until something summons it again. The MP cost equals the target's level; with [Metamagic/Targets], pay the total for all targets.",
+    "modifiers": []
+  },
+  {
+    "name": "Summon Fairy VI",
+    "source": {
+      "book": "CR3",
+      "page": 161
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 26,
+      "text": "MP26 & Mako Stone 5 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "As [Summon Fairy], but calls a level 13 fairy.",
+    "description": "Same as [Summon Fairy], except that the fairy called is monster level 13.",
+    "modifiers": []
+  },
+  {
+    "name": "Neutralize",
+    "source": {
+      "book": "CR3",
+      "page": 161
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 44,
+      "text": "MP44"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Suppresses fire, water/ice, earth and wind in a 6m radius: such effects and magic can't work there.",
+    "description": "Inside the area, effects of the fire, water/ice, earth and wind types are nullified, and nobody can use spells or unique skills of those types there, even from outside the area. All four types are suppressed at once.",
+    "modifiers": []
+  },
+  {
+    "name": "Summon Fairy VII",
+    "source": {
+      "book": "CR3",
+      "page": 162
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 30,
+      "text": "MP30 & Mako Stone 5 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "As [Summon Fairy], but calls a level 15 fairy.",
+    "description": "Same as [Summon Fairy], except that the fairy called is monster level 15.",
+    "modifiers": []
+  },
+  {
+    "name": "Fairy Lord",
+    "source": {
+      "book": "CR3",
+      "page": 162
+    },
+    "system": "fairy",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 51,
+      "text": "MP51 & Mako Stone 10 pts."
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Summons a level 17 fairy lord for 10 seconds (1 round).",
+    "description": "Same as [Summon Fairy], except that it calls a fairy lord of monster level 17, lasts only 10 seconds (1 round), and requires 10 MP from the mako stone.",
+    "modifiers": []
+  },
+  {
+    "name": "Ring Protection",
+    "source": {
+      "book": "CR3",
+      "page": 163
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Orbiting stones: once per round the target may reduce physical damage taken by up to 5.",
+    "description": "Stones circle the target and intercept weapons and other hazards. Once per round, after an attack's total damage is known, the target may choose to reduce physical damage it takes by up to 5 points.",
+    "modifiers": [
+      {
+        "key": "damageTakenPhysical",
+        "value": -5,
+        "condition": "once per round, after damage is determined",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Crack",
+    "source": {
+      "book": "CR3",
+      "page": 163
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/All",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": "all"
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "statuses": [
+        "prone"
+      ]
+    },
+    "summary": "Power 40 earth magic damage to everyone in a 6m radius, knocking them prone.",
+    "description": "Deals Power 40 + Magic Power earth magic damage and knocks the targets prone. Targets in the air or otherwise not touching the ground are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Giant Kick",
+    "source": {
+      "book": "CR3",
+      "page": 163
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 16,
+      "text": "MP16"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 50,
+      "critical": 12,
+      "damageKind": "physical",
+      "addMagicPower": true
+    },
+    "summary": "A giant earthen foot deals Power 50 physical damage (Critical Value 12) and may knock the target prone.",
+    "description": "Deals Power 50 + Magic Power physical damage with Critical Value 12; for damage-modifying abilities it counts as a magic blunt weapon. A single-section target rolls 1d and falls prone on 1-3. A multi-section character can fall prone (same chance) only if every section is targeted with [Metamagic/Targets].",
+    "modifiers": []
+  },
+  {
+    "name": "Great Capture",
+    "source": {
+      "book": "CR3",
+      "page": 164
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "entangled"
+      ]
+    },
+    "summary": "Earthen arms pin targets: movement 0, only Major Action is escaping, all Evasion checks fail.",
+    "description": "Targets' movement becomes 0, they can take no Major Action except trying to escape, and they automatically fail all Evasion checks. They are held against the ground and can't use [Flying] or [Sword's Grace/Wings of the Wind]. As a Major Action a target may try to escape with Fortitude, Willpower or Adventurer Level + Strength modifier, contested by the caster's Spellcasting; success ends the spell.",
+    "modifiers": []
+  },
+  {
+    "name": "Earthquake",
+    "source": {
+      "book": "CR3",
+      "page": 164
+    },
+    "system": "fairy",
+    "subsystem": "earth",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 28,
+      "text": "MP28"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "earth"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": null,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": false,
+      "fixed": 50,
+      "statuses": [
+        "prone"
+      ]
+    },
+    "summary": "Deals a fixed 50 earth magic damage around the caster and knocks targets prone.",
+    "description": "Deals 50 earth magic damage (no power table; halved by Willpower) and knocks targets prone; a multi-section character falls prone only if all its sections are targeted. The caster, hands on the ground, may keep the quake going without further damage: anyone moving through the area gets -2 on all actions and the caster's Evasion checks are at -4. Moving, changing stance, falling prone, being hit by [Distraction] or any other action ends it; sustained for 10 minutes (60 rounds), it collapses all buildings in the area. Creatures not standing on the ground are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Water Edge",
+    "source": {
+      "book": "CR3",
+      "page": 165
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A blade of water deals Power 40 water/ice magic damage.",
+    "description": "Deals Power 40 + Magic Power water/ice magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Current",
+    "source": {
+      "book": "CR3",
+      "page": 165
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 24,
+      "text": "MP24"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Water in sight",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Controls the speed (up to 50 km/h) and direction of a river or stream in sight.",
+    "description": "The caster controls one river or stream in sight within 30m, choosing its speed (up to 50 km/h) and direction, even making it run uphill or taming a waterfall. If the caster is on a boat, it affects the water beneath them instead.",
+    "modifiers": []
+  },
+  {
+    "name": "Ice Storm",
+    "source": {
+      "book": "CR3",
+      "page": 165
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A blizzard deals Power 30 water/ice magic damage to up to 20 targets.",
+    "description": "Deals Power 30 + Magic Power water/ice magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Freeze",
+    "source": {
+      "book": "CR3",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 40 water/ice magic damage and -4 to all the target's checks for 1 round.",
+    "description": "Deals Power 40 + Magic Power water/ice magic damage (halved by a successful Willpower check). The target also suffers -4 on all checks for the next 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "allChecks",
+        "value": -4,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Maelstrom",
+    "source": {
+      "book": "CR3",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "water",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A whirlpool deals Power 40 water/ice magic damage; +5 damage to targets underwater.",
+    "description": "Deals Power 40 + Magic Power water/ice magic damage (halved by a successful Willpower check). Targets that are underwater take +5 damage, even if they resist.",
+    "modifiers": []
+  },
+  {
+    "name": "Fire Javelin",
+    "source": {
+      "book": "CR3",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 50,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A javelin of fire deals Power 50 fire magic damage.",
+    "description": "Deals Power 50 + Magic Power fire magic damage (halved by a successful Willpower check).",
+    "modifiers": []
+  },
+  {
+    "name": "Fire Break",
+    "source": {
+      "book": "CR3",
+      "page": 166
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 19,
+      "text": "MP19"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Space up to 1x100m",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Creates a 1m-wide line up to 100m long that fire cannot cross.",
+    "description": "A 1m-wide zone extends in a straight line up to 100m from the caster; fire can't cross it, and burning objects brought into it go out. It doesn't prevent fire-type damage within the zone.",
+    "modifiers": []
+  },
+  {
+    "name": "Flame Geyser",
+    "source": {
+      "book": "CR3",
+      "page": 167
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 23,
+      "text": "MP23"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Fire erupts in the area: each turn, characters there take Power 20 fire magic damage on 1d 1-3.",
+    "description": "While the spell lasts, each character in the area rolls 1d at the start of its turn; on 1-3 it takes Power 20 + Magic Power fire magic damage. This damage can't crit.",
+    "modifiers": []
+  },
+  {
+    "name": "Fire Mauler",
+    "source": {
+      "book": "CR3",
+      "page": 167
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 16,
+      "text": "MP16"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(50m)/Line",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "line"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 60,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A rolling fireball deals Power 60 fire magic damage along a line.",
+    "description": "A rolling fireball travels along a line from the caster; everyone in its path takes Power 60 + Magic Power fire magic damage (halved by Willpower).",
+    "modifiers": []
+  },
+  {
+    "name": "Fireport",
+    "source": {
+      "book": "CR3",
+      "page": 167
+    },
+    "system": "fairy",
+    "subsystem": "fire",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Wraps targets in harmless fire and teleports them anywhere within 1km.",
+    "description": "Targets are wrapped in flames that deal no damage and are teleported to a destination of the caster's choice within 1km, which must have room for them.",
+    "modifiers": []
+  },
+  {
+    "name": "Down Burst",
+    "source": {
+      "book": "CR3",
+      "page": 168
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 14,
+      "text": "MP14"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/All",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": "all"
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A downdraft grounds targets: no jumping, fliers drop 10m per turn, flight abilities don't work.",
+    "description": "Targets can't jump; a target in the air is forced 10m down at the start of its turn (without falling damage) and can't rise. While affected, characters get no benefit from [Flying], [Sword's Grace/Wings of the Wind] or the [Air Walking] spell.",
+    "modifiers": []
+  },
+  {
+    "name": "Windstorm",
+    "source": {
+      "book": "CR3",
+      "page": 168
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "statuses": [
+        "prone"
+      ]
+    },
+    "summary": "Power 20 wind magic damage to up to 20 targets, knocking them prone.",
+    "description": "Deals Power 20 + Magic Power wind magic damage (halved by a successful Willpower check). Targets also fall prone; a multi-section character falls only if all its sections are targeted.",
+    "modifiers": []
+  },
+  {
+    "name": "Whirlwind",
+    "source": {
+      "book": "CR3",
+      "page": 168
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Wind carries the targets to a known or visible place at up to 50 km/h.",
+    "description": "Targets are flown to a place the caster knows or can see, at up to 50 km/h and up to 100m altitude, as chosen by the carried target. Carried targets can't take Major Actions but may end the spell at any time; released too high, they take falling damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Twister",
+    "source": {
+      "book": "CR3",
+      "page": 169
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": null,
+      "critical": null,
+      "damageKind": "physical",
+      "addMagicPower": false,
+      "fixed": 30
+    },
+    "summary": "A tornado flings targets to a spot of the caster's choice; they take 30 falling damage.",
+    "description": "A tornado lifts the targets and throws them to a spot within the caster's sight and 30m (in Simplified Combat: the target side's rearguard or the frontline area). Landing deals 30 points of falling damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Tornado",
+    "source": {
+      "book": "CR3",
+      "page": 169
+    },
+    "system": "fairy",
+    "subsystem": "wind",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 13,
+      "text": "MP13"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(50m)/Line",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "line"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "statuses": [
+        "prone"
+      ]
+    },
+    "summary": "A tornado along a line deals Power 40 wind magic damage and knocks targets prone.",
+    "description": "Deals Power 40 + Magic Power wind magic damage (halved by a successful Willpower check). Everyone in its path also falls prone; a multi-section monster falls only if all its sections are targeted.",
+    "modifiers": []
+  },
+  {
+    "name": "Restore Health",
+    "source": {
+      "book": "CR3",
+      "page": 169
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "poisoned",
+        "diseased"
+      ],
+      "removeTypes": [
+        "poison",
+        "disease"
+      ]
+    },
+    "summary": "Removes all poison- and disease-type effects from the target without contested checks.",
+    "description": "Cures every poison-type and disease-type effect on the target, with no contested checks. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Invisibility",
+    "source": {
+      "book": "CR3",
+      "page": 169
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 16,
+      "text": "MP16"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "invisible"
+      ]
+    },
+    "summary": "The caster becomes invisible to Five Senses and Mechanical perception for 1 round.",
+    "description": "The caster is completely invisible to characters with Five Senses or Mechanical perception; those with Magic perception still see them.",
+    "modifiers": []
+  },
+  {
+    "name": "Virtual Toughness II",
+    "source": {
+      "book": "CR3",
+      "page": 170
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "raiseCurrent": true
+    },
+    "summary": "Temporarily raises the target's current and maximum HP by Magic Power + 8.",
+    "description": "As [Virtual Toughness], but the target's current and maximum HP rise by the caster's Magic Power + 8. When it ends, maximum HP reverts and current HP is lowered only if above the maximum. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 8,
+        "target": "target",
+        "formula": "@magicPower"
+      }
+    ]
+  },
+  {
+    "name": "Regeneration",
+    "source": {
+      "book": "CR3",
+      "page": 170
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 21,
+      "text": "MP21"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Regrows lost body parts over time (a finger in 1 week, a hand in 2, an arm in a month).",
+    "description": "Regenerates lost body parts; the time depends on the extent: 1 week from the base of a finger, 2 weeks from the wrist down, 1 month for an arm. Each area needs its own casting. No effect on the dead or on undead, magitech and constructs.",
+    "modifiers": []
+  },
+  {
+    "name": "Ultimate Healing",
+    "source": {
+      "book": "CR3",
+      "page": 170
+    },
+    "system": "fairy",
+    "subsystem": "light",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "fixed": 100
+    },
+    "summary": "The target recovers 100 HP.",
+    "description": "Restores exactly 100 HP to the target. Light Fairy Magic has no effect on constructs, magitech or undead.",
+    "modifiers": []
+  },
+  {
+    "name": "Evil Dream",
+    "source": {
+      "book": "CR3",
+      "page": 171
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(Infinite)/-",
+      "range": "ranged",
+      "areas": 2,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "curse",
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Ritual curse: the target suffers nightmares and lack of sleep; needs part of its body.",
+    "description": "Instead of line of sight, the caster needs a piece of the target's body (a lock of hair suffices). Whenever the target sleeps it has nightmares of the caster's choosing and suffers the effects of lack of sleep (CR I p.184). Casting is a 1-hour ritual that must be repeated for 1 hour every day with that body part, paying the MP each time, or the spell ends; the caster can't act during the ritual, and [Distraction] cancels the spell. [Metamagic/Targets] can't be used, but separate rituals can curse several targets.",
+    "modifiers": []
+  },
+  {
+    "name": "Total Sanity",
+    "source": {
+      "book": "CR3",
+      "page": 171
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "charmed",
+        "confused",
+        "frightened"
+      ],
+      "removeTypes": [
+        "psychic"
+      ]
+    },
+    "summary": "Removes all psychic and curse + psychic effects from the targets, no contest needed.",
+    "description": "Removes every psychic-type and curse + psychic-type effect from the targets without comparing success values.",
+    "modifiers": []
+  },
+  {
+    "name": "Forget",
+    "source": {
+      "book": "CR3",
+      "page": 171
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 16,
+      "text": "MP16"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "7 Days",
+      "unit": "days",
+      "value": 7
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target loses all memories of the past week until the spell ends.",
+    "description": "The target instantly forgets everything from the past week, including the fact that it has forgotten. The memories return when the spell ends. Class levels and combat feats are not lost.",
+    "modifiers": []
+  },
+  {
+    "name": "Mindread",
+    "source": {
+      "book": "CR3",
+      "page": 172
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 14,
+      "text": "MP14"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Ask the target one simple question and read the true answer from its mind.",
+    "description": "Right after casting, the caster asks the target one precise, simple question (yes/no, when, why, where, who or how) and reads the answer that comes to its mind; the target can't lie. Vague questions may give unclear or misleading answers, and anything the target sincerely believes comes through as true.",
+    "modifiers": []
+  },
+  {
+    "name": "Mind Crush",
+    "source": {
+      "book": "CR3",
+      "page": 172
+    },
+    "system": "fairy",
+    "subsystem": "dark",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 13,
+      "text": "MP13"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets lose 12 Intelligence and 12 Spirit.",
+    "description": "Targets' Intelligence and Spirit drop by 12, lowering derived values such as Magic Power, Willpower and maximum MP. If either score falls to 0 (it can't go lower), the target is stunned and can neither move nor act. Fixed-value characters instead take -2 to Intelligence- or Spirit-derived values (e.g. Magic Power, Willpower).",
+    "modifiers": [
+      {
+        "key": "ability.int",
+        "value": -12,
+        "target": "target"
+      },
+      {
+        "key": "ability.spi",
+        "value": -12,
+        "target": "target"
+      }
+    ]
+  }
+]

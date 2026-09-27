@@ -1,0 +1,16 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.ArmorType.label"}}<select name="system.armorType">{{selectOptions choices.armorTypes selected=system.armorType localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Rank"}}<select name="system.rank">{{selectOptions choices.ranks selected=system.rank}}</select></label>
+  <label class="swp-field">{{localize "SW25.MinStr"}}<input type="number" name="system.minStr" value="{{system.minStr}}"></label>
+  <label class="swp-field">{{localize "SW25.Evasion"}}<input type="number" name="system.evasion" value="{{system.evasion}}"></label>
+  <label class="swp-field">{{localize "SW25.Defense"}}<input type="number" name="system.defense" value="{{system.defense}}"></label>
+  <label class="swp-field">{{localize "SW25.Price"}}<input type="number" name="system.price" value="{{system.price}}" min="0"></label>
+  <label class="swp-field">{{localize "SW25.PriceText"}}<input type="text" name="system.priceText" value="{{system.priceText}}"></label>
+  <label class="swp-field">{{localize "SW25.Stance"}}<input type="text" name="system.stance" value="{{system.stance}}" placeholder="1H"></label>
+  <label class="swp-field">{{localize "SW25.Grappler.label"}}<select name="system.grappler">{{selectOptions choices.grappler selected=system.grappler localize=true blank="—"}}</select></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.magic" {{checked system.magic}}> {{localize "SW25.Magic.Item"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.silver" {{checked system.silver}}> {{localize "SW25.Weapon.Silver"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.equipped" {{checked system.equipped}}> {{localize "SW25.Equipped"}}</label>
+</div>

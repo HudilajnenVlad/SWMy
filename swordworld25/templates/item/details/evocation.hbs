@@ -1,0 +1,34 @@
+<div class="swp-field-grid">
+  <label class="swp-field">{{localize "SW25.Level"}}<input type="number" name="system.level" value="{{system.level}}" min="1"></label>
+  <label class="swp-field">{{localize "SW25.Resistance.label"}}<select name="system.resistance">{{selectOptions choices.resistance selected=system.resistance localize=true}}</select></label>
+  <label class="swp-field">{{localize "SW25.Card.Count"}}<input type="number" name="system.cards.count" value="{{system.cards.count}}" min="0"></label>
+  <label class="swp-field wide">{{localize "SW25.Card.Cards"}}<input type="text" name="system.cards.text" value="{{system.cards.text}}" placeholder="Red B"></label>
+  <label class="swp-field">{{localize "SW25.Mod.Key"}}<select name="system.modifierKey">{{selectOptions modifierKeys selected=system.modifierKey blank="—"}}</select></label>
+  <label class="swp-field">{{localize "SW25.Mod.Target"}}<select name="system.modifierTarget">{{selectOptions choices.targets selected=system.modifierTarget localize=true}}</select></label>
+</div>
+<div class="swp-checks">
+  <label class="swp-check"><input type="checkbox" name="system.minorAction" {{checked system.minorAction}}> ⏩ {{localize "SW25.Spell.Minor"}}</label>
+  <label class="swp-check"><input type="checkbox" name="system.combatPrep" {{checked system.combatPrep}}> △ {{localize "SW25.Spell.Prep"}}</label>
+</div>
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Card.MaterialCards"}}</legend>
+  <div class="swp-chip-grid">{{#each cardColors}}<a class="swp-cb-label card-{{key}} {{#if active}}on{{/if}}" data-action="toggleColor" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>
+{{> "systems/swordworld25/templates/item/parts/targeting.hbs"}}
+<fieldset class="swp-fieldset swp-fieldset-table">
+  <legend>{{localize "SW25.Card.Rank"}}</legend>
+  <table class="swp-table swp-form-table">
+    <thead><tr><th>{{localize "SW25.Card.Rank"}}</th><th>{{localize "SW25.Available"}}</th><th>{{localize "SW25.Mod.Value"}}</th><th>{{localize "SW25.Power"}}</th><th class="name">{{localize "SW25.Description"}}</th></tr></thead>
+    <tbody>
+    {{#each ranks}}
+      <tr>
+        <th>{{rank}}</th>
+        <td><input type="checkbox" name="system.ranks.{{rank}}.available" {{checked data.available}}></td>
+        <td><input type="number" name="system.ranks.{{rank}}.value" value="{{data.value}}"></td>
+        <td><input type="number" name="system.ranks.{{rank}}.power" value="{{data.power}}" min="0" max="100"></td>
+        <td class="name"><input type="text" name="system.ranks.{{rank}}.text" value="{{data.text}}"></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</fieldset>

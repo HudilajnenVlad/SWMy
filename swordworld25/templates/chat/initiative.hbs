@@ -1,0 +1,26 @@
+<div class="sw25 swp swp-chat swp-chat-initiative">
+  <header class="swp-chat-head">
+    <span class="swp-chat-icon"><i class="fa-solid fa-flag-checkered"></i></span>
+    <div class="swp-chat-titles">
+      <span class="swp-chat-title">{{localize "SW25.Check.initiative"}}</span>
+      <span class="swp-chat-subtitle">{{localize "SW25.Initiative.First" side=first}}</span>
+    </div>
+  </header>
+  <table class="swp-table swp-chat-list">
+    <tbody>
+      {{#each rows}}
+      <tr class="faction-{{faction}}">
+        <td class="img"><img src="{{img}}" alt=""></td>
+        <td class="name">{{name}}</td>
+        <td class="dice">
+          {{#if diceList}}<span class="swp-chat-dice">{{#each diceList}}<span class="swp-chat-die d{{this}}">{{swpDieIcon this}}</span>{{/each}}</span>
+          {{else if dice}}{{dice}}
+          {{else}}<span class="swp-chat-fixed">{{localize "SW25.Fixed"}}</span>{{/if}}
+        </td>
+        <td class="val"><span class="swp-chat-total small">{{value}}</span></td>
+      </tr>
+      {{#if (eq auto "failure")}}<tr class="note"><td colspan="4"><span class="swp-stamp failure">{{localize "SW25.AutoFailure"}}</span></td></tr>{{/if}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>

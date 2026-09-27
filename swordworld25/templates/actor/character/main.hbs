@@ -1,0 +1,321 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="main">
+
+  <div class="swp-grid swp-grid-top">
+    {{!-- Abilities: Base + Correction + Growth = Score → Modifier --}}
+    <div class="swp-abilities">
+      <div class="swp-abl-grid">
+        <span class="swp-head c1">{{localize "SW25.Sheet.BaseAbility"}}</span>
+        <span class="swp-head c3">{{localize "SW25.Sheet.Correction"}}</span>
+        <span class="swp-head c5">{{localize "SW25.Ability.growth"}}
+          <a class="swp-head-tool" data-action="rollGrowth" data-tooltip="SW25.Growth.Roll"><i class="fa-solid fa-dice"></i></a>
+        </span>
+        <span class="swp-head c7">{{localize "SW25.Sheet.AbilityScores"}}</span>
+        <span class="swp-head c8">{{localize "SW25.Sheet.Modifiers"}}</span>
+        <span class="swp-abl-frame" aria-hidden="true"></span>
+        {{#each abilityGroups}}
+        <label class="swp-box swp-abl-base">
+          <span class="swp-legend">{{localize label}}</span>
+          <input type="number" name="system.base.{{key}}" value="{{value}}" step="1">
+        </label>
+        {{#each abilities}}
+        <span class="swp-op c2">+</span>
+        <label class="swp-box swp-abl-corr c3">
+          <span class="swp-legend center">{{letter}}</span>
+          <input type="number" name="system.abilities.{{key}}.rolled" value="{{rolled}}" step="1">
+          {{#if dice}}<span class="swp-note br" data-tooltip="SW25.Ability.RolledHint">{{dice}}</span>{{/if}}
+        </label>
+        <span class="swp-op c4">+</span>
+        <label class="swp-box swp-abl-growth c5">
+          <input type="number" name="system.abilities.{{key}}.growth" value="{{growth}}" step="1">
+          <span class="swp-note br swp-face" data-tooltip="SW25.Sheet.GrowthFace">{{swpDie face}}</span>
+        </label>
+        <span class="swp-op c6">=</span>
+        <div class="swp-box swp-abl-score c7">
+          <span class="swp-legend center">{{localize label}}</span>
+          <span class="swp-num">{{value}}</span>
+          {{#if bonus}}<span class="swp-bonus" data-tooltip="{{bonusTooltip}}">{{sw25Signed bonus}}</span>{{/if}}
+          <input class="swp-other {{#if other}}nonzero{{/if}}" type="number" name="system.abilities.{{key}}.other" value="{{other}}" step="1" data-tooltip="SW25.Ability.OtherHint">
+        </div>
+        <div class="swp-box swp-abl-mod c8">
+          <span class="swp-note tl">÷6</span>
+          <span class="swp-num">{{mod}}</span>
+          {{#if modBonus}}<span class="swp-bonus" data-tooltip="{{bonusTooltip}}">{{sw25Signed modBonus}}</span>{{/if}}
+        </div>
+        {{/each}}
+        {{/each}}
+      </div>
+      <div class="swp-abl-tools">
+        <a class="swp-btn-text" data-action="chooseBackground"><i class="fa-solid fa-scroll"></i> {{localize "SW25.Generation.Background"}}</a>
+        <a class="swp-btn-text" data-action="rollAbilities"><i class="fa-solid fa-dice"></i> {{localize "SW25.Generation.RollAbilities"}}</a>
+        <a class="swp-btn-text" data-action="rollGrowth"><i class="fa-solid fa-arrow-trend-up"></i> {{localize "SW25.Growth.Roll"}}</a>
+      </div>
+    </div>
+
+    {{!-- Classes and experience --}}
+    <div class="swp-stack">
+      <div class="swp-block swp-classes">
+        <div class="swp-bar">
+          <span class="swp-bar-title">{{localize "SW25.Sheet.Class"}}</span>
+          <span class="swp-bar-col">{{localize "SW25.Level"}}</span>
+          <span class="swp-tools">
+            <a class="swp-tool" data-action="openCompendium" data-pack="classes" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </span>
+        </div>
+        <table class="swp-table swp-class-table">
+          <tbody>
+            {{#each classes}}
+            <tr class="swp-row" data-item-id="{{id}}">
+              <td class="name">
+                <a class="swp-name-link" data-action="itemEdit">{{name}}</a>
+                <small class="swp-sub">{{track}}</small>
+              </td>
+              <td class="lvl"><span class="swp-num">{{level}}</span></td>
+              <td class="ctl">
+                <a class="swp-mini" data-action="classDown" data-tooltip="SW25.Class.LevelDown"><i class="fa-solid fa-minus"></i></a>
+                {{#if nextCost}}
+                <a class="swp-mini swp-up {{#unless canLevel}}off{{/unless}}" data-action="classUp" data-tooltip="SW25.Class.LevelUpHint"><i class="fa-solid fa-plus"></i><span>{{nextCost}}</span></a>
+                {{else}}<span class="swp-max">{{localize "SW25.Class.Max"}}</span>{{/if}}
+              </td>
+            </tr>
+            {{else}}
+            <tr class="swp-empty-row"><td colspan="3">{{localize "SW25.Class.DropHint"}}</td></tr>
+            {{/each}}
+            {{#if classOptions.length}}
+            <tr class="swp-add-row">
+              <td colspan="3">
+                <select data-class-add>
+                  <option value="">{{localize "SW25.Sheet.LearnClass"}}</option>
+                  {{#each classOptions}}<option value="{{uuid}}" {{#unless affordable}}disabled{{/unless}}>{{name}} — {{cost}}</option>{{/each}}
+                </select>
+              </td>
+            </tr>
+            {{/if}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="swp-exp">
+        <label class="swp-box swp-exp-box">
+          <span class="swp-legend">{{localize "SW25.Sheet.ExperiencePoints"}}</span>
+          <input type="number" name="system.exp.value" value="{{system.exp.value}}" step="1">
+          {{#if isGM}}<a class="swp-corner-btn" data-action="awardExp" data-tooltip="SW25.Exp.Award"><i class="fa-solid fa-plus"></i></a>{{/if}}
+        </label>
+        <div class="swp-exp-meta">
+          <label>{{localize "SW25.Exp.total"}} <input type="number" name="system.exp.total" value="{{system.exp.total}}" step="1"></label>
+          <span>{{localize "SW25.Sheet.ExpSpent"}} <b>{{system.expSpent}}</b></span>
+          {{#if expNext}}<span>{{localize "SW25.Sheet.ExpNext"}} <b>{{expNext}}</b></span>{{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Check packages --}}
+  <div class="swp-block swp-packages">
+    <div class="swp-bar">
+      <span class="swp-bar-title">{{localize "SW25.Packages"}}</span>
+      <span class="swp-bar-note">{{localize "SW25.Sheet.PackageNote"}}</span>
+    </div>
+    <div class="swp-pkg-grid">
+      {{#each packageRows}}
+      <div class="swp-pkg {{#if expanded}}expanded{{/if}}" data-expand="pkg:{{key}}">
+        <div class="swp-pkg-classes">
+          {{#each classes}}
+          <span class="swp-cb-label {{#if owned}}on{{/if}} {{#if best}}best{{/if}}"><span class="swp-cb"></span>{{label}}{{#if owned}} <b>{{level}}</b>{{/if}}</span>
+          {{/each}}
+        </div>
+        <div class="swp-pkg-formula">
+          <span class="swp-op-text">+ {{localize abilityAbbr}} <b>{{mod}}</b>{{#if bonus}} <span class="swp-bonus-inline">{{sw25Signed bonus}}</span>{{/if}} =</span>
+          <a class="swp-graybox" data-action="toggleExpand" data-tooltip="SW25.Sheet.PackageExpand">
+            <span class="swp-box swp-pkg-value">
+              <span class="swp-legend center">{{localize label}}</span>
+              <span class="swp-num">{{#if level}}{{value}}{{else}}—{{/if}}</span>
+              <i class="fa-solid fa-caret-{{#if expanded}}up{{else}}down{{/if}} swp-caret-corner"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      {{/each}}
+      {{#each packageRows}}
+      {{#if expanded}}
+      <div class="swp-pkg-checks" data-expand="pkg:{{key}}">
+        <span class="swp-pkg-checks-title">{{localize label}}</span>
+        {{#each checks}}
+        <a class="swp-check-chip {{#if straight}}straight{{/if}}" data-action="rollCheck" data-check="{{key}}">{{label}} <b>{{#if straight}}—{{else}}{{value}}{{/if}}</b></a>
+        {{/each}}
+        <a class="swp-mini swp-pkg-close" data-action="toggleExpand" data-tooltip="Close"><i class="fa-solid fa-xmark"></i></a>
+      </div>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="swp-grid swp-grid-2">
+    {{!-- Combat feats by slot --}}
+    <div class="swp-block swp-feats">
+      <div class="swp-bar">
+        <span class="swp-bar-title">{{localize "SW25.Feats"}}</span>
+        <span class="swp-count {{#if feats.over}}over{{/if}}" data-tooltip="SW25.Sheet.FeatSlots">{{feats.used}} / {{feats.slots}}</span>
+        <span class="swp-tools">
+          <a class="swp-tool" data-action="openCompendium" data-pack="feats" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a>
+          <a class="swp-tool" data-action="itemCreate" data-type="feat" data-tooltip="SW25.Item.Create"><i class="fa-solid fa-plus"></i></a>
+        </span>
+      </div>
+      <table class="swp-table swp-feat-table">
+        <tbody>
+          {{#each feats.rows}}
+          {{#if feat}}
+          <tr class="swp-row draggable {{#if over}}over{{/if}} {{#if feat.expanded}}open{{/if}}" data-item-id="{{feat.id}}" data-expand="item:{{feat.id}}">
+            <th class="slot" data-tooltip="SW25.Sheet.FeatSlotHint">{{slotLevel}}</th>
+            {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" feat}}
+            <td class="tag"><i class="{{feat.typeIcon}}" data-tooltip="{{localize feat.typeLabel}}"></i>{{#unless feat.prereqOk}} <i class="fa-solid fa-triangle-exclamation warn" data-tooltip="{{feat.missing}}"></i>{{/unless}}</td>
+            {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=feat.usable}}
+          </tr>
+          {{#if feat.expanded}}<tr class="swp-details-row"><td colspan="4" data-item-id="{{feat.id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" feat}}</td></tr>{{/if}}
+          {{else}}
+          <tr class="swp-slot-row {{#if locked}}locked{{/if}}">
+            <th class="slot">{{slotLevel}}</th>
+            <td class="name" colspan="3">
+              {{#if locked}}<span class="swp-placeholder"><i class="fa-solid fa-lock"></i> {{localize "SW25.Sheet.FeatLocked" level=slotLevel}}</span>
+              {{else}}<span class="swp-placeholder">{{localize "SW25.Sheet.FeatEmpty"}}</span>{{/if}}
+            </td>
+          </tr>
+          {{/if}}
+          {{/each}}
+          <tr class="swp-subhead"><th colspan="4">{{localize "SW25.Sheet.AutoFeats"}}</th></tr>
+          {{#each feats.automatic}}
+          <tr class="swp-row draggable {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+            <th class="slot auto"><i class="fa-solid fa-star"></i></th>
+            {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this}}
+            <td class="tag"><i class="{{typeIcon}}" data-tooltip="{{localize typeLabel}}"></i></td>
+            {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=usable}}
+          </tr>
+          {{#if expanded}}<tr class="swp-details-row"><td colspan="4" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+          {{else}}
+          <tr class="swp-empty-row"><td colspan="4">—</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    {{!-- Techniques, Spellsongs, Stunts, etc. --}}
+    <div class="swp-block swp-learned">
+      <div class="swp-bar">
+        <span class="swp-bar-title">{{localize "SW25.Sheet.LearnedAbilities"}}</span>
+        <span class="swp-tools">
+          <a class="swp-tool" data-action="openCompendium" data-pack="class-abilities" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a>
+          <a class="swp-tool" data-action="openSpellbook" data-tooltip="SW25.Spellbook.Learn"><i class="fa-solid fa-book-sparkles"></i></a>
+        </span>
+      </div>
+      <table class="swp-table swp-learned-table">
+        <tbody>
+          {{#each learned}}
+          <tr class="swp-subhead">
+            <th colspan="3">{{localize label}}</th>
+            <th class="count {{#if over}}over{{/if}}">{{count}} / {{max}}
+              <a class="swp-mini light" data-action="openSpellbook" data-tab="{{type}}" data-tooltip="SW25.Spellbook.Learn"><i class="fa-solid fa-plus"></i></a>
+            </th>
+          </tr>
+          {{#each items}}
+          <tr class="swp-row draggable {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+            <th class="slot">{{level}}</th>
+            {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=true}}
+            <td></td>
+            {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=true}}
+          </tr>
+          {{#if expanded}}<tr class="swp-details-row"><td colspan="4" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+          {{else}}
+          <tr class="swp-empty-row"><td colspan="4">{{localize "SW25.Sheet.NoneLearned"}}</td></tr>
+          {{/each}}
+          {{else}}
+          <tr class="swp-empty-row"><td colspan="4">{{localize "SW25.Sheet.NoLearnedClasses"}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="swp-grid swp-grid-2">
+    {{!-- Languages --}}
+    <div class="swp-block swp-languages">
+      <table class="swp-table swp-lang-table">
+        <thead>
+          <tr><th class="name">{{localize "SW25.Languages"}}</th><th class="io">{{localize "SW25.Sheet.Talk"}}</th><th class="io">{{localize "SW25.Sheet.Read"}}</th><th class="del"></th></tr>
+        </thead>
+        <tbody>
+          {{#each languageRows}}
+          <tr class="{{#if learned}}learned{{/if}}" data-lang-key="{{key}}" data-index="{{index}}">
+            <td class="name">
+              {{#if custom}}<input type="text" value="{{name}}" data-language-name placeholder="{{localize 'SW25.Language'}}">
+              {{else if dialect}}{{label}} (<input class="dialect" type="text" value="{{name}}" data-language-name placeholder="…">)
+              {{else}}{{label}}{{/if}}
+            </td>
+            <td class="io">{{#if canSpeak}}<a class="swp-circle {{#if speak}}on{{/if}}" data-action="languageToggle" data-field="speak"></a>{{else}}<span class="swp-dash">—</span>{{/if}}</td>
+            <td class="io">{{#if canWrite}}<a class="swp-circle {{#if write}}on{{/if}}" data-action="languageToggle" data-field="write"></a>{{else}}<span class="swp-dash">—</span>{{/if}}</td>
+            <td class="del">{{#if removable}}<a class="swp-mini" data-action="languageDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-xmark"></i></a>{{/if}}</td>
+          </tr>
+          {{/each}}
+          <tr class="swp-add-row">
+            <td colspan="4">
+              <select data-language-add>
+                <option value="">{{localize "SW25.Sheet.AddLanguage"}}</option>
+                {{#each languageOptions}}<option value="{{key}}">{{label}}</option>{{/each}}
+                <option value="custom">{{localize "SW25.Sheet.OtherLanguage"}}</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {{!-- Reputation, rank and session tallies --}}
+    <div class="swp-block swp-honors">
+      <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Reputation.label"}}</span></div>
+      <div class="swp-honor-body">
+        <div class="swp-honor-lines">
+          <label class="swp-line">
+            <span class="swp-line-label">{{localize "SW25.Reputation.current"}}</span>
+            <input type="number" name="system.reputation.value" value="{{system.reputation.value}}" step="1">
+            <span class="swp-unit">{{localize "SW25.Sheet.Points"}}</span>
+          </label>
+          <label class="swp-line">
+            <span class="swp-line-label">{{localize "SW25.Reputation.total"}}</span>
+            <input type="number" name="system.reputation.total" value="{{system.reputation.total}}" step="1">
+          </label>
+          <div class="swp-line swp-rank-line">
+            <span class="swp-line-label">{{localize "SW25.AdvRank.label"}}</span>
+            <span class="swp-line-value">
+              <b class="swp-rank-name" data-tooltip="{{localize 'SW25.AdvRank.FreeHint' free=rank.free}}">{{rank.label}}</b>
+              {{#if rank.index}}<a class="swp-mini" data-action="rankDown" data-tooltip="SW25.AdvRank.DownHint"><i class="fa-solid fa-minus"></i></a>{{/if}}
+              <a class="swp-mini swp-up {{#unless rank.canUp}}off{{/unless}}" data-action="rankUp" data-tooltip="{{localize 'SW25.AdvRank.UpHint' rank=rank.next.label cost=rank.next.cost}}"><i class="fa-solid fa-plus"></i><span>{{rank.next.cost}}</span></a>
+            </span>
+          </div>
+        </div>
+        <div class="swp-honor-grid">
+          <label class="swp-box">
+            <span class="swp-legend">{{localize "SW25.SwordShards"}}</span>
+            <input type="number" name="system.swordShards" value="{{system.swordShards}}" step="1">
+          </label>
+          <label class="swp-box">
+            <span class="swp-legend">{{localize "SW25.AbyssShards"}}</span>
+            <input type="number" name="system.abyssShards" value="{{system.abyssShards}}" step="1">
+          </label>
+          <label class="swp-box">
+            <span class="swp-legend">{{localize "SW25.Disgrace"}}</span>
+            <input type="number" name="system.disgrace" value="{{system.disgrace}}" step="1">
+          </label>
+        </div>
+        <div class="swp-tallies">
+          <div class="swp-tally-group" data-tooltip="{{#if autoFailureExp}}SW25.Sheet.FumbleHintAuto{{else}}SW25.Sheet.FumbleHint{{/if}}">
+            <span class="swp-tally-label">{{localize "SW25.Sheet.AutoFailures"}}</span>
+            <span class="swp-tally">{{#each fumbleBoxes}}<a class="swp-tick {{#if on}}on{{/if}}" data-action="setTally" data-field="fumbles" data-value="{{value}}"></a>{{/each}}</span>
+          </div>
+          <div class="swp-tally-group" data-tooltip="SW25.Sheet.SoulscarHint">
+            <span class="swp-tally-label">{{localize "SW25.Soulscars"}}</span>
+            <span class="swp-tally">{{#each soulscarBoxes}}<a class="swp-tick {{#if on}}on{{/if}}" data-action="setTally" data-field="soulscars" data-value="{{value}}"></a>{{/each}}</span>
+            {{#if (gt system.soulscars 5)}}<b>{{system.soulscars}}</b>{{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

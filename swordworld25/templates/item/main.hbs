@@ -1,0 +1,31 @@
+<section class="tab swp-tab swp-item-main {{tab.cssClass}}" data-group="primary" data-tab="description">
+  {{#if edit}}
+  <div class="swp-sb-info edit swp-item-form">
+    <label class="swp-field wide swp-summary-field">{{localize "SW25.Entry.SummaryLong"}}
+      <input type="text" name="system.summary" value="{{system.summary}}" placeholder="{{localize 'SW25.Item.SummaryPlaceholder'}}">
+    </label>
+    {{> (lookup this "detailsTemplate")}}
+  </div>
+
+  <div class="swp-sb-block swp-item-desc">
+    <div class="swp-sb-bar"><span class="swp-bar-title">{{localize "SW25.Entry.EffectLong"}}</span></div>
+    <div class="swp-sb-desc">
+      <prose-mirror name="system.description" value="{{system.description}}" toggled>{{{enrichedDescription}}}</prose-mirror>
+    </div>
+  </div>
+
+  <div class="swp-field-grid swp-source-fields">
+    <label class="swp-field">{{localize "SW25.Source"}}
+      <select name="system.source.book">{{selectOptions choices.books selected=system.source.book blank="—"}}</select>
+    </label>
+    <label class="swp-field">{{localize "SW25.Page"}}<input type="number" name="system.source.page" value="{{system.source.page}}" min="0"></label>
+  </div>
+  {{else}}
+  {{> "systems/swordworld25/templates/item/entry.hbs" entry noTitle=true hideSource=true}}
+  {{#if (eq item.type "effect")}}<p class="swp-hint">{{localize "SW25.EffectItem.Hint"}}</p>{{/if}}
+  {{#unless entry.hasEffect}}{{#unless entry.hasSummary}}{{#if editable}}
+  <div class="swp-banner muted"><i class="fa-solid fa-pen-ruler"></i><span>{{localize "SW25.Entry.EmptyHint"}}</span>
+    <button type="button" class="swp-btn-wide" data-action="toggleEdit">{{localize "SW25.Entry.EditMode"}}</button></div>
+  {{/if}}{{/unless}}{{/unless}}
+  {{/if}}
+</section>

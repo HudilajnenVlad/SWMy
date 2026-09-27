@@ -1,0 +1,9 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="notes">
+  <div class="swp-sb-block">
+    <div class="swp-sb-bar"><span class="swp-bar-title">{{localize "SW25.Party.Notes"}}</span></div>
+    <div class="swp-sb-desc swp-party-notes">
+      <prose-mirror name="system.notes" value="{{system.notes}}" toggled {{#unless editable}}disabled{{/unless}}>{{{enrichedNotes}}}</prose-mirror>
+    </div>
+  </div>
+  <p class="swp-hint">{{localize "SW25.Party.NotesHint"}}</p>
+</section>

@@ -1,0 +1,66 @@
+{{!-- Book-style entry card of an item (see module/helpers/item-entry.mjs).
+      Hash: noTitle (the title bar and its head cells are shown elsewhere), hideSource, cls, compact. --}}
+<div class="swp-entry {{cls}} {{#if compact}}compact{{/if}}">
+  {{#unless noTitle}}
+  <div class="swp-entry-title">
+    {{#if icon}}<span class="swp-entry-icon"><i class="{{icon}}"></i>{{#if badge}}<b>{{badge}}</b>{{/if}}</span>{{/if}}
+    <span class="swp-entry-name">{{#if marks}}<span class="swp-marks" data-tooltip="{{marksTooltip}}">{{marks}}</span>{{/if}}{{name}}</span>
+    {{#each head}}<span class="swp-entry-k">{{label}}</span><span class="swp-entry-v">{{value}}</span>{{/each}}
+  </div>
+  {{/unless}}
+
+  {{#each rows}}
+  <div class="swp-entry-row">
+    {{#each this}}<span class="swp-entry-pair {{cls}}" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}><span class="k">{{label}}</span><span class="v">{{value}}</span></span>{{/each}}
+  </div>
+  {{/each}}
+
+  {{#each tables}}
+  <div class="swp-entry-table-wrap">
+    <table class="swp-table swp-entry-table {{cls}}">
+      <thead><tr>{{#each head}}<th class="{{cls}}">{{#if html}}{{{html}}}{{else}}{{label}}{{/if}}</th>{{/each}}</tr></thead>
+      <tbody>
+        {{#each rows}}
+        <tr class="{{cls}} {{#if action}}swp-entry-pick{{/if}}" {{#if action}}data-action="{{action}}" data-index="{{index}}"{{/if}}>
+          {{#each cells}}<td class="{{cls}}">{{#if html}}{{{html}}}{{else}}{{value}}{{/if}}</td>{{/each}}
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{/each}}
+
+  {{#if hasSummary}}
+  <div class="swp-entry-row">
+    <span class="swp-entry-pair first grow"><span class="k">{{localize "SW25.Entry.Summary"}}</span><span class="v">{{sw25Default summary "—"}}</span></span>
+    {{#each summaryPairs}}<span class="swp-entry-pair"><span class="k">{{label}}</span><span class="v">{{value}}</span></span>{{/each}}
+  </div>
+  {{/if}}
+
+  {{#if hasEffect}}
+  <div class="swp-entry-row eff">
+    <span class="swp-entry-pair first grow">
+      <span class="k">{{localize "SW25.Entry.Effect"}}</span>
+      <div class="v text">
+        {{{text}}}
+        {{#each blocks}}<p class="swp-entry-block"><b>{{title}}</b> {{text}}</p>{{/each}}
+        {{#if power}}
+        <table class="swp-power-mini">
+          <thead><tr>
+            <th class="k">{{localize "SW25.Power"}}</th>
+            {{#each power.cells}}<th><span class="swp-circ">{{roll}}</span></th>{{/each}}
+            <th class="k">{{localize "SW25.Entry.CritShort"}}</th>
+          </tr></thead>
+          <tbody><tr>
+            <td class="k">{{power.power}}{{#if power.note}} <small>{{power.note}}</small>{{/if}}</td>
+            {{#each power.cells}}<td class="{{#if crit}}crit{{/if}}">{{value}}</td>{{/each}}
+            <td><span class="swp-circ">{{power.critical}}</span></td>
+          </tr></tbody>
+        </table>
+        {{/if}}
+      </div>
+    </span>
+  </div>
+  {{/if}}
+</div>
+{{#if source}}{{#unless hideSource}}<p class="swp-entry-source">{{source}}</p>{{/unless}}{{/if}}

@@ -1,0 +1,21 @@
+{{!-- Effect automation (kind, power table) of spells and finales. --}}
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.EffectKind.label"}}</legend>
+  <div class="swp-field-grid">
+    <label class="swp-field">{{localize "SW25.EffectKind.label"}}<select name="system.effect.kind">{{selectOptions choices.effectKinds selected=system.effect.kind localize=true}}</select></label>
+    <label class="swp-field">{{localize "SW25.Power"}}<input type="number" name="system.effect.power" value="{{system.effect.power}}" min="0" max="100"></label>
+    <label class="swp-field">{{localize "SW25.CritValue"}}<input type="number" name="system.effect.critical" value="{{system.effect.critical}}"></label>
+    <label class="swp-field">{{localize "SW25.DamageKind.label"}}<select name="system.effect.damageKind">{{selectOptions choices.damageKinds selected=system.effect.damageKind localize=true blank="—"}}</select></label>
+    <label class="swp-field">{{localize "SW25.Spell.Fixed"}}<input type="number" name="system.effect.fixed" value="{{system.effect.fixed}}"></label>
+    {{#if statusChoices}}<label class="swp-field" data-tooltip="SW25.Spell.FormulaHint">{{localize "SW25.Spell.Formula"}}<input type="text" name="system.effect.formula" value="{{system.effect.formula}}"></label>{{/if}}
+  </div>
+  <div class="swp-checks">
+    <label class="swp-check"><input type="checkbox" name="system.effect.addMagicPower" {{checked system.effect.addMagicPower}}> {{localize "SW25.Spell.AddMagicPower"}}</label>
+  </div>
+</fieldset>
+{{#if statusChoices}}
+<fieldset class="swp-fieldset">
+  <legend>{{localize "SW25.Spell.Statuses"}} <i class="fa-solid fa-circle-info" data-tooltip="SW25.Spell.StatusesHint"></i></legend>
+  <div class="swp-chip-grid">{{#each statusChoices}}<a class="swp-cb-label {{#if active}}on{{/if}}" data-action="toggleType" data-path="system.effect.statuses" data-key="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}</div>
+</fieldset>
+{{/if}}

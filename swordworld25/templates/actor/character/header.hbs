@@ -1,0 +1,87 @@
+<header class="swp-header">
+  <div class="swp-portrait-wrap">
+    <div class="swp-portrait">
+      <img src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}">
+    </div>
+    <div class="swp-medallion" data-tooltip="SW25.AdventurerLevel">
+      <span class="label">{{localize "SW25.Sheet.AdventurerLevel"}}</span>
+      <span class="value">{{system.level}}</span>
+    </div>
+  </div>
+
+  <div class="swp-ident">
+    <div class="swp-lines">
+      <label class="swp-line grow-2">
+        <span class="swp-line-label">{{localize "SW25.Sheet.CharacterName"}}</span>
+        <input class="swp-name" type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'Name'}}">
+      </label>
+      <label class="swp-line">
+        <span class="swp-line-label">{{localize "SW25.Bio.Player"}}</span>
+        <input type="text" name="system.details.player" value="{{system.details.player}}">
+      </label>
+    </div>
+
+    <div class="swp-lines">
+      <div class="swp-line grow">
+        <span class="swp-line-label">{{localize "TYPES.Item.race"}}</span>
+        <span class="swp-line-value">
+          {{#if race}}<a class="swp-link" data-action="itemEdit" data-item-id="{{race.id}}">{{race.name}}</a>
+          {{else}}<span class="swp-placeholder">{{localize "SW25.Sheet.DropRace"}}</span>{{/if}}
+          <a class="swp-mini" data-action="openCompendium" data-pack="races" data-tooltip="SW25.Compendium.Open"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </span>
+      </div>
+      <label class="swp-line narrow">
+        <span class="swp-line-label">{{localize "SW25.Bio.Age"}}</span>
+        <input type="text" name="system.details.age" value="{{system.details.age}}">
+      </label>
+      <label class="swp-line narrow">
+        <span class="swp-line-label">{{localize "SW25.Bio.Gender"}}</span>
+        <input type="text" name="system.details.gender" value="{{system.details.gender}}">
+      </label>
+      <div class="swp-line grow">
+        <span class="swp-line-label">{{localize "SW25.Background"}}</span>
+        <span class="swp-line-value">
+          <input type="text" name="system.details.background" value="{{system.details.background}}">
+          <a class="swp-mini" data-action="chooseBackground" data-tooltip="SW25.Generation.Background"><i class="fa-solid fa-scroll"></i></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="swp-line swp-traits">
+      <span class="swp-line-label">{{localize "SW25.Sheet.RacialAbilities"}}</span>
+      <span class="swp-line-value">
+        {{#each traits}}
+        <a class="swp-trait {{#if locked}}locked{{/if}}" data-action="traitChat" data-index="{{index}}" data-tooltip="{{description}}">{{name}}{{#if locked}} <small>{{localize "SW25.AdventurerLevelShort"}}{{level}}</small>{{/if}}</a>
+        {{else}}<span class="swp-placeholder">—</span>
+        {{/each}}
+        {{#if isHuman}}
+        <a class="swp-trait swp-fate {{#if system.daily.changeFate}}used{{/if}}" data-action="useChangeFate" data-tooltip="SW25.Race.ChangeFateUsed">
+          <i class="{{#if system.daily.changeFate}}fa-solid fa-square-check{{else}}fa-regular fa-square{{/if}}"></i> {{localize "SW25.Sheet.ChangeFate"}}
+        </a>
+        {{/if}}
+      </span>
+    </div>
+
+    <div class="swp-vitals">
+      <div class="swp-res hp" style="--pct: {{system.hp.pct}}%">
+        <span class="swp-res-label">{{localize "SW25.HP"}}</span>
+        <span class="swp-res-box"><input type="number" name="system.hp.value" value="{{system.hp.value}}" step="1"><span class="max">/{{system.hp.max}}</span></span>
+        <span class="swp-res-track"><span></span></span>
+      </div>
+      <div class="swp-res mp" style="--pct: {{system.mp.pct}}%">
+        <span class="swp-res-label">{{localize "SW25.MP"}}</span>
+        <span class="swp-res-box"><input type="number" name="system.mp.value" value="{{system.mp.value}}" step="1"><span class="max">/{{system.mp.max}}</span></span>
+        <span class="swp-res-track"><span></span></span>
+      </div>
+      {{#if activeStatuses.length}}
+      <div class="swp-statuses">
+        {{#each activeStatuses}}<a data-action="statusToggle" data-status="{{id}}" data-tooltip="{{name}}"><img src="{{img}}" alt="{{name}}"></a>{{/each}}
+      </div>
+      {{/if}}
+      <div class="swp-head-tools">
+        <button type="button" class="swp-btn" data-action="openSpellbook" data-tooltip="SW25.Spellbook.Title"><i class="fa-solid fa-book-sparkles"></i></button>
+        <button type="button" class="swp-btn" data-action="rest" data-tooltip="SW25.Rest.Title"><i class="fa-solid fa-bed"></i></button>
+      </div>
+    </div>
+  </div>
+</header>

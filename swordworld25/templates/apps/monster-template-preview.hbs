@@ -1,0 +1,46 @@
+<div class="swp-tpl-preview">
+  <div class="swp-titlebar small">
+    <span class="swp-level-box">{{preview.level}}</span>
+    <span class="swp-namebar"><span class="swp-namebar-text">{{#if choices.name}}{{choices.name}}{{else}}{{localize "SW25.Template.Preview"}}{{/if}}</span>
+      <span class="swp-namebar-note">{{localize preview.classificationLabel}} · {{localize preview.roleLabel}}</span>
+    </span>
+  </div>
+  <div class="swp-sb-info">
+    <p>
+      <span class="swp-kvp"><b>{{localize "SW25.Monster.Intelligence"}}:</b> {{sw25Default preview.intelligence "—"}}</span>
+      <span class="swp-kvp"><b>{{localize "SW25.Monster.Perception"}}:</b> {{sw25Default preview.perception "—"}}</span>
+      <span class="swp-kvp"><b>{{localize "SW25.Monster.Disposition"}}:</b> {{sw25Default preview.disposition "—"}}</span>
+      {{#if preview.soulscars}}<span class="swp-kvp"><b>{{localize "SW25.Soulscars"}}:</b> {{preview.soulscars}}</span>{{/if}}
+    </p>
+    <p>
+      <span class="swp-kvp"><b>{{localize "SW25.Language"}}:</b> {{sw25Default preview.languages "—"}}</span>
+      <span class="swp-kvp"><b>{{localize "SW25.Monster.RepWeak"}}:</b> {{preview.reputation}}/{{preview.weakness}}</span>
+      <span class="swp-kvp"><b>{{localize "SW25.WeakPoint.label"}}:</b> {{sw25Default preview.weakPoint.text "—"}}</span>
+    </p>
+    <p>
+      <span class="swp-kvp"><b>{{localize "SW25.Check.initiative"}}:</b> {{preview.initiative}}</span>
+      <span class="swp-kvp"><b>{{localize "SW25.Monster.MovementSpeed"}}:</b> {{preview.movementLabel}}</span>
+      <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> {{preview.fortitudeLabel}}</span>
+      <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> {{preview.willpowerLabel}}</span>
+    </p>
+  </div>
+  <table class="swp-table swp-sb-table">
+    <thead><tr>
+      <th class="style">{{localize "SW25.Monster.StyleSection"}}</th><th>{{localize "SW25.Accuracy"}}</th><th>{{localize "SW25.Damage.label"}}</th>
+      <th>{{localize "SW25.Evasion"}}</th><th>{{localize "SW25.Defense"}}</th><th>{{localize "SW25.HP"}}</th><th>{{localize "SW25.MP"}}</th>
+    </tr></thead>
+    <tbody>
+      {{#each preview.sections}}
+      <tr>
+        <td class="style">{{#if main}}<i class="fa-solid fa-crown swp-crown"></i> {{/if}}{{style}}{{#if name}} <small class="swp-sub inline">({{name}})</small>{{/if}}</td>
+        <td>{{accuracyLabel}}</td><td>{{damage}}</td><td>{{evasionLabel}}</td><td>{{defense}}</td><td>{{hpLabel}}</td><td>{{mpLabel}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <p class="swp-sb-note">
+    {{localize "SW25.Exp.label"}} <b>{{preview.exp}}</b>
+    {{#if preview.shards}} · {{localize "SW25.Template.ShardSummary" shards=preview.shards hp=(sw25Mul preview.shards 5) resist=preview.shardResist}}{{/if}}
+  </p>
+  <p class="swp-hint">{{localize "SW25.Template.PreviewHint"}}</p>
+</div>

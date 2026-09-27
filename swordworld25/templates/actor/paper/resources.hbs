@@ -1,0 +1,24 @@
+<div class="swp-block swp-resources">
+  <div class="swp-bar">
+    <span class="swp-bar-title">{{localize "SW25.Resources.label"}}</span>
+    <span class="swp-bar-note">{{localize "SW25.Resources.Hint"}}</span>
+    <span class="swp-tools"><a class="swp-tool" data-action="resourceAdd" data-tooltip="SW25.Resources.Add"><i class="fa-solid fa-plus"></i></a></span>
+  </div>
+  <div class="swp-resource-list">
+    {{#each resources}}
+    <div class="swp-resource" data-resource-id="{{id}}" style="--res-color: {{color}}; --pct: {{pct}}%">
+      <input class="label" type="text" value="{{label}}" data-resource-field="label">
+      <a class="swp-mini" data-action="resourceAdjust" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+      <input class="value" type="number" value="{{value}}" data-resource-field="value">
+      <span class="sep">/</span>
+      <input class="max" type="number" value="{{max}}" data-resource-field="max" data-tooltip="SW25.Resources.MaxHint">
+      <a class="swp-mini" data-action="resourceAdjust" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+      <input class="color" type="color" value="{{color}}" data-resource-field="color">
+      <a class="swp-mini" data-action="resourceDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>
+      <span class="swp-resource-bar"><span></span></span>
+    </div>
+    {{else}}
+    <p class="swp-placeholder">—</p>
+    {{/each}}
+  </div>
+</div>

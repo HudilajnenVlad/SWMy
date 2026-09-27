@@ -1,0 +1,7505 @@
+[
+  {
+    "name": "Sanity",
+    "source": {
+      "book": "CR1",
+      "page": 231
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Dispels every Psychic-type spell or ability effect on the target.",
+    "description": "Removes all Psychic-type effects (from spells or abilities) currently on the target. Each effect is cancelled separately, comparing success values against that effect.",
+    "modifiers": []
+  },
+  {
+    "name": "Banish",
+    "source": {
+      "book": "CR1",
+      "page": 231
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/Various",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "variants": [
+        {
+          "label": "2d 2-4: frenzy",
+          "summary": "Frenzy for 3 rounds: Accuracy +2, Evasion -2; an intelligent target takes no reasoned actions and casts no spells.",
+          "modifiers": [
+            {
+              "key": "accuracy",
+              "value": 2,
+              "target": "target"
+            },
+            {
+              "key": "evasion",
+              "value": -2,
+              "target": "target"
+            }
+          ],
+          "statuses": [
+            "confused"
+          ],
+          "duration": {
+            "text": "30 seconds (3 r)",
+            "unit": "rounds",
+            "value": 3
+          }
+        },
+        {
+          "label": "2d 5-9: fear",
+          "summary": "Fear for 18 rounds: Accuracy, Evasion and Spellcasting checks -1.",
+          "modifiers": [
+            {
+              "key": "accuracy",
+              "value": -1,
+              "target": "target"
+            },
+            {
+              "key": "evasion",
+              "value": -1,
+              "target": "target"
+            },
+            {
+              "key": "spellcasting",
+              "value": -1,
+              "target": "target"
+            }
+          ],
+          "statuses": [
+            "frightened"
+          ],
+          "duration": {
+            "text": "3 minutes (18 r)",
+            "unit": "rounds",
+            "value": 18
+          }
+        },
+        {
+          "label": "2d 10-12: flight",
+          "summary": "Flees (retreats from a skirmish); if it cannot, it takes no actions for 1 round and automatically fails action checks.",
+          "modifiers": [],
+          "statuses": [
+            "frightened"
+          ],
+          "duration": {
+            "text": "10 seconds (1 r)",
+            "unit": "rounds",
+            "value": 1
+          }
+        }
+      ]
+    },
+    "summary": "Undead and Barbarous in the area that fail to resist suffer a random fear effect (2d table).",
+    "description": "Only affects Undead and Barbarous, and counts as Psychic type against Barbarous. Roll 2d for each target that fails to resist: 2-4 = frenzy for 30 seconds (3 rounds) with Accuracy +2 and Evasion -2, and a target with intelligence cannot take reasoned actions or cast spells; 5-9 = -1 to Accuracy, Evasion and Spellcasting checks for 3 minutes (18 rounds); 10-12 = it flees (retreats from a skirmish), or if it cannot, it takes no actions for 10 seconds (1 round) and automatically fails action checks. Priests of Second Sword gods other than Laris cannot use it and get [Fear] instead (CR II p.322).",
+    "modifiers": []
+  },
+  {
+    "name": "Field Protection",
+    "source": {
+      "book": "CR1",
+      "page": 231
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Characters in the area take 1 less physical and magic damage.",
+    "description": "A circle of protection gives the targets -1 to physical and magic damage received for 3 minutes (18 rounds). Poison-, Disease- and Curse-type damage is not reduced.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -1,
+        "condition": "not vs Poison-, Disease- or Curse-type damage",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Awaken",
+    "source": {
+      "book": "CR1",
+      "page": 232
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "sleep",
+        "unconscious"
+      ]
+    },
+    "summary": "Wakes a sleeping, stunned or unconscious character; HP of 0 or less becomes 1.",
+    "description": "The target wakes from sleep, stun or unconsciousness and can act right away; if its HP was 0 or lower it becomes 1. Sleep caused by a spell or unique skill requires a contested check against that effect's success value. A prone character stays prone.",
+    "modifiers": []
+  },
+  {
+    "name": "Cure Wounds",
+    "source": {
+      "book": "CR1",
+      "page": 232
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": 10,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "undeadDamage": true
+    },
+    "summary": "Heals Power 10 + Magic Power HP; Undead take that much damage instead.",
+    "description": "Restores Power 10 + Magic Power HP. Has no effect on Constructs or Magitech. Against Undead it deals Power 10 + Magic Power damage instead. The power table lists no critical value (N/A).",
+    "modifiers": []
+  },
+  {
+    "name": "Detect Faith",
+    "source": {
+      "book": "CR1",
+      "page": 232
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Reveals the target's Priest level and god, or that it is not a Priest.",
+    "description": "Reveals which god the target worships and how many Priest levels it has (or that it has none). If the caster does not know that god, it also learns the god's domain, holy symbol and Specialized Divine spell names. The target always notices the spell, even on a failed resistance, and recognizes the caster if the caster was visible.",
+    "modifiers": []
+  },
+  {
+    "name": "Cure Blindness",
+    "source": {
+      "book": "CR1",
+      "page": 233
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "blind"
+      ]
+    },
+    "summary": "Ends blindness caused by a spell or unique skill (contested check).",
+    "description": "Restores sight lost to a spell or unique skill; a contested check against the blinding effect is required. It cannot fix blindness from physical injury or congenital blindness.",
+    "modifiers": []
+  },
+  {
+    "name": "Cure Poison",
+    "source": {
+      "book": "CR1",
+      "page": 233
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "poisoned"
+      ],
+      "removeTypes": [
+        "poison"
+      ]
+    },
+    "summary": "Removes a Poison-type effect from the target (contested check).",
+    "description": "Cancels one Poison-type spell or effect afflicting the target after a contested check. HP already lost is not restored.",
+    "modifiers": []
+  },
+  {
+    "name": "Field Resistance",
+    "source": {
+      "book": "CR1",
+      "page": 233
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Characters in the area take 3 less damage of one chosen type.",
+    "description": "On casting, choose Wind, Fire, Water/Ice, Lightning or Energy. For 3 minutes (18 rounds) the targets take -3 physical and magic damage of that type.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -3,
+        "condition": "vs the chosen type (Wind, Fire, Water/Ice, Lightning or Energy)",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Force",
+    "source": {
+      "book": "CR1",
+      "page": 233
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "bludgeoning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Deals Power 10 bludgeoning magic damage to one target.",
+    "description": "A bolt of spiritual force deals Power 10 + Magic Power magic damage (Bludgeoning type). Half damage on a successful resistance. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Sacred Weapon",
+    "source": {
+      "book": "CR1",
+      "page": 234
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Vs Barbarous and Undead: Accuracy +1 and +2 physical damage; attacks count as magical.",
+    "description": "Melee and ranged attacks made by the target against Undead or Barbarous gain Accuracy +1 and +2 physical damage, and count as magic-weapon attacks (the damage stays physical). Priests of Second Sword gods other than Laris cannot use it and get [Vice Weapon] instead (CR II p.322).",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1,
+        "condition": "vs Barbarous or Undead",
+        "target": "target"
+      },
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "vs Barbarous or Undead",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Sacred Shield",
+    "source": {
+      "book": "CR1",
+      "page": 234
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Barbarous and Undead attacks deal 3 less physical damage to the target.",
+    "description": "Physical damage the target receives from attacks by Barbarous or Undead characters is reduced by 3. Priests of Second Sword gods other than Laris cannot use it and get [Vice Shield] instead (CR II p.322).",
+    "modifiers": [
+      {
+        "key": "damageTakenPhysical",
+        "value": -3,
+        "condition": "from attacks by Barbarous or Undead",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Affirmation Of Faith",
+    "source": {
+      "book": "CR1",
+      "page": 234
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets cannot cast Specialized Divine spells of gods other than the caster's.",
+    "description": "Consecrates the area to the caster's god. For the duration, targets that fail to resist cannot cast Specialized Divine Magic granted by any other deity.",
+    "modifiers": []
+  },
+  {
+    "name": "Cure Disease",
+    "source": {
+      "book": "CR1",
+      "page": 235
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "poisoned",
+        "diseased"
+      ],
+      "removeTypes": [
+        "poison",
+        "disease"
+      ]
+    },
+    "summary": "Removes all Poison- and Disease-type effects from the target (contested checks).",
+    "description": "Dispels every Poison-type and Disease-type spell or effect on the target; each one requires a contested check.",
+    "modifiers": []
+  },
+  {
+    "name": "Cure Heart",
+    "source": {
+      "book": "CR1",
+      "page": 235
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": 30,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "undeadDamage": true
+    },
+    "summary": "Heals Power 30 + Magic Power HP; Undead take that much damage instead.",
+    "description": "Restores Power 30 + Magic Power HP. Has no effect on Constructs or Magitech; Undead take Power 30 + Magic Power damage instead. No critical value (N/A).",
+    "modifiers": []
+  },
+  {
+    "name": "Transfer Mana",
+    "source": {
+      "book": "CR1",
+      "page": 235
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 1,
+      "text": "MP1+Extra"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "mpHeal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "formula": "@extraMp"
+    },
+    "summary": "The target gains MP equal to the extra MP the caster spends on top of the base 1 MP.",
+    "description": "Pay 1 MP plus any extra amount; the target gains MP equal to the extra (e.g. 10 MP spent grants 9 MP). With [Metamagic/Targets] every target gains that amount. At most 20 MP can be transferred (21 MP total cost). [MP Save/Priest] and similar feats cannot reduce the cost.",
+    "modifiers": []
+  },
+  {
+    "name": "Holy Light",
+    "source": {
+      "book": "CR1",
+      "page": 235
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Deals Power 20 magic damage to Undead in the area.",
+    "description": "A burst of holy radiance deals Power 20 + Magic Power magic damage; only Undead in the area are affected. Half damage on a successful resistance. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Bless",
+    "source": {
+      "book": "CR1",
+      "page": 236
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "variants": [
+        {
+          "label": "Dexterity",
+          "summary": "Dexterity +6 (modifier +1). Fixed values: Accuracy +1.",
+          "modifiers": [
+            {
+              "key": "ability.dex",
+              "value": 6,
+              "target": "target",
+              "actorType": "character"
+            },
+            {
+              "key": "accuracy",
+              "value": 1,
+              "target": "target",
+              "actorType": "monster"
+            }
+          ]
+        },
+        {
+          "label": "Agility",
+          "summary": "Agility +6 (modifier +1). Fixed values: Evasion +1 and movement +6.",
+          "modifiers": [
+            {
+              "key": "ability.agi",
+              "value": 6,
+              "target": "target",
+              "actorType": "character"
+            },
+            {
+              "key": "evasion",
+              "value": 1,
+              "target": "target",
+              "actorType": "monster"
+            },
+            {
+              "key": "movement",
+              "value": 6,
+              "target": "target",
+              "actorType": "monster"
+            }
+          ]
+        },
+        {
+          "label": "Strength",
+          "summary": "Strength +6 (modifier +1). Fixed values: as the GM rules.",
+          "modifiers": [
+            {
+              "key": "ability.str",
+              "value": 6,
+              "target": "target",
+              "actorType": "character"
+            }
+          ]
+        },
+        {
+          "label": "Vitality",
+          "summary": "Vitality +6 (modifier +1, maximum HP +6). Fixed values: Fortitude +1 and maximum HP +6.",
+          "modifiers": [
+            {
+              "key": "ability.vit",
+              "value": 6,
+              "target": "target",
+              "actorType": "character"
+            },
+            {
+              "key": "fortitude",
+              "value": 1,
+              "target": "target",
+              "actorType": "monster"
+            },
+            {
+              "key": "hpMax",
+              "value": 6,
+              "target": "target",
+              "actorType": "monster"
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "One chosen score (Dex, Agi, Str or Vit) gets +6, raising its modifier by 1.",
+    "description": "Pick one of the target's Dexterity, Agility, Strength or Vitality scores: it rises by 6 (its modifier rises by 1 and derived values such as maximum HP change). Fixed-value characters and mounts instead improve Accuracy (+1) for Dexterity, Evasion and Movement for Agility, or Fortitude and HP for Vitality; the GM rules on unique skills. It can be recast on the same target only for a different score; with [Metamagic/Targets] all targets get the same score.",
+    "modifiers": []
+  },
+  {
+    "name": "Holy Cradle",
+    "source": {
+      "book": "CR1",
+      "page": 236
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 Hours",
+      "unit": "hours",
+      "value": 3
+    },
+    "resistance": "optional",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "sleep"
+      ]
+    },
+    "summary": "Targets fall into a magical sleep that counts as 6 hours of normal rest.",
+    "description": "The targets fall into a healing sleep equal to 6 hours of ordinary sleep (see CR I p.184). A target woken during the duration gets no recovery from it. A character can benefit from this spell at most twice per day.",
+    "modifiers": []
+  },
+  {
+    "name": "Remove Curse",
+    "source": {
+      "book": "CR1",
+      "page": 236
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "cursed"
+      ],
+      "removeTypes": [
+        "curse"
+      ]
+    },
+    "summary": "Dispels harmful Curse-type effects on the target.",
+    "description": "Removes Curse-type negative effects from the target. A curse caused by an item is only suspended for 1 minute (6 rounds); it comes back if the item is not removed in that time, or if it is removed and equipped again.",
+    "modifiers": []
+  },
+  {
+    "name": "Search Barbarous",
+    "source": {
+      "book": "CR1",
+      "page": 237
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Lyphos",
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All areas (30m Radius)/All",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 30,
+      "count": "all"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Detects whether any Barbarous are within 30 m, but not where or how many.",
+    "description": "The caster learns whether Barbarous are present in the area, but not their number or location. Barbarous in the area know the spell touched them but not where the caster is.",
+    "modifiers": []
+  },
+  {
+    "name": "Mind Sending",
+    "source": {
+      "book": "CR1",
+      "page": 237
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Lyphos",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "One-way telepathic message from the caster to the target.",
+    "description": "During the duration the caster can use a Minor Action to send its thoughts to the target: as much as could be said in 10 seconds, or a general impression of its intent. Words must be in a language the target understands. Communication is one-way and the caster cannot tell whether it got through.",
+    "modifiers": []
+  },
+  {
+    "name": "Sunlight",
+    "source": {
+      "book": "CR1",
+      "page": 237
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Tidan",
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "12 Hours",
+      "unit": "hours",
+      "value": 12
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Lights all areas within 20 m of a point, removing darkness penalties.",
+    "description": "Removes darkness penalties in all areas within a 20 m radius of the chosen point. It can be cast on a portable object so the light moves with it.",
+    "modifiers": []
+  },
+  {
+    "name": "Ray",
+    "source": {
+      "book": "CR1",
+      "page": 238
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Tidan",
+    "level": 4,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Line",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "line"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "energy"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Line attack dealing Power 10 energy magic damage; Undead take +3.",
+    "description": "A beam of light deals Power 10 + Magic Power magic damage (Energy type) along the line. Undead that fail to resist take +3 extra damage. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Penetrate",
+    "source": {
+      "book": "CR1",
+      "page": 238
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Kilhia",
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "+2 to the caster's next Monster Knowledge check.",
+    "description": "Can be cast during Combat Preparation. The caster gains +2 on the Monster Knowledge check made right after casting; if several such checks are needed, choose one before rolling to receive the bonus.",
+    "modifiers": [
+      {
+        "key": "monsterKnowledge",
+        "value": 2,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Weak Point",
+    "source": {
+      "book": "CR1",
+      "page": 238
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Kilhia",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Attacks that hit the target have their Critical Value lowered by 1 (minimum 8).",
+    "description": "On a failed resistance, every attack landing on the target has its Critical Value lowered by 1, so criticals come more easily. This cannot push a Critical Value under 8.",
+    "modifiers": [
+      {
+        "key": "criticalTaken",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Nightwalker",
+    "source": {
+      "book": "CR1",
+      "page": 239
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Sien",
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target gains Darkvision.",
+    "description": "The target gains the Darkvision ability and sees in darkness as if it were daylight.",
+    "modifiers": []
+  },
+  {
+    "name": "Blindness",
+    "source": {
+      "book": "CR1",
+      "page": 239
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Sien",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "blind"
+      ]
+    },
+    "summary": "Blinds the target.",
+    "description": "A target that fails to resist is blinded for the duration. Creatures with magical or mechanical senses are unaffected.",
+    "modifiers": []
+  },
+  {
+    "name": "Retry",
+    "source": {
+      "book": "CR1",
+      "page": 239
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Mirtabar",
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Reroll the 2d of one Technique check that takes 1 minute or more.",
+    "description": "Once during the duration, the caster may reroll the 2d of a Technique package check (see CR I p.114) that takes at least 1 minute (6 rounds); using the reroll ends the spell. It can be cast only once per day.",
+    "modifiers": []
+  },
+  {
+    "name": "Appraisal",
+    "source": {
+      "book": "CR1",
+      "page": 239
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Mirtabar",
+    "level": 4,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 minutes (60 r)",
+      "unit": "rounds",
+      "value": 60
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Appraise checks +4.",
+    "description": "The caster adds +4 to the success value of Appraise checks for the duration.",
+    "modifiers": [
+      {
+        "key": "check.appraise",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "name": "Counter Daemon",
+    "source": {
+      "book": "CR1",
+      "page": 240
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eve",
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Fortitude and Willpower +2 against Daemon unique skills.",
+    "description": "The target gets +2 to Fortitude and Willpower checks made against unique skills used by Daemons.",
+    "modifiers": [
+      {
+        "key": "fortitude",
+        "value": 2,
+        "condition": "vs Daemon unique skills",
+        "target": "target"
+      },
+      {
+        "key": "willpower",
+        "value": 2,
+        "condition": "vs Daemon unique skills",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Sacred Aura",
+    "source": {
+      "book": "CR1",
+      "page": 240
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eve",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster's [Sacred Weapon] and [Sacred Shield] also work against Daemons.",
+    "description": "Can be cast as a Minor Action. [Sacred Shield] and [Sacred Weapon] spells the caster casts during the duration also apply against Daemons.",
+    "modifiers": []
+  },
+  {
+    "name": "Star Guide",
+    "source": {
+      "book": "CR1",
+      "page": 240
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Harula",
+    "level": 2,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Points the caster toward the closest temple of Harula and tells how far it is (night only).",
+    "description": "A shooting star indicates exactly which way and how far away the closest temple of Harula lies from the caster. Works only at night while the starry sky is visible.",
+    "modifiers": []
+  },
+  {
+    "name": "Disclose Daemons",
+    "source": {
+      "book": "CR1",
+      "page": 240
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Harula",
+    "level": 4,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "+2 to Monster Knowledge checks against Daemons.",
+    "description": "Can be cast during Combat Preparation. The caster gains +2 on the Monster Knowledge checks for Daemons made right after casting; if several Daemon checks are required, all of them receive the bonus.",
+    "modifiers": [
+      {
+        "key": "monsterKnowledge",
+        "value": 2,
+        "condition": "vs Daemons",
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Wind Circulation",
+    "source": {
+      "book": "CR1",
+      "page": 241
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Furusil",
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 Hours",
+      "unit": "hours",
+      "value": 3
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A mild breeze reduces heat, cold and wind penalties in the area by 1.",
+    "description": "A breeze of comfortable temperature fills the area for the duration. Penalties caused by temperature or wind (including heat and cold) inside the area are reduced by 1. Plants in the area grow twice as fast.",
+    "modifiers": []
+  },
+  {
+    "name": "Cold Rain",
+    "source": {
+      "book": "CR1",
+      "page": 241
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Furusil",
+    "level": 4,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 10 water/ice magic damage; targets failing to resist also get Evasion -1 for 1 round.",
+    "description": "Icy rain deals Power 10 + Magic Power magic damage (Water/Ice type). Any target that fails to resist also has Evasion -1 during the next 10 seconds (1 round). Critical 10.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Cure Stone",
+    "source": {
+      "book": "CR2",
+      "page": 140
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "petrified",
+        "petrifying"
+      ]
+    },
+    "summary": "Cures petrification and petrifaction.",
+    "description": "Returns a petrified target to its normal state, or completely removes petrifaction (see CR II p.330). It does not work on natural stone or fossils.",
+    "modifiers": []
+  },
+  {
+    "name": "Quest",
+    "source": {
+      "book": "CR2",
+      "page": 140
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Imposes a mission; stalling or sabotaging it deals 1 fixed damage per round.",
+    "description": "The caster sets a mission for the target, and its success and failure conditions and restrictions must be clearly defined. While the target deliberately delays or tries to fail it, it takes 1 point of fixed damage each round. The effect ends when the quest is fulfilled.",
+    "modifiers": []
+  },
+  {
+    "name": "Battle Hymn",
+    "source": {
+      "book": "CR2",
+      "page": 140
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Special",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "While the caster sings, characters in the area get Accuracy +2 and +2 damage on melee and ranged attacks.",
+    "description": "Lasts while the caster keeps singing, during which it cannot take Major Actions. A character in the area making a melee or ranged attack gets +2 to the Accuracy check and +2 to physical and magic damage dealt; the caster decides at the start of each affected character's turn whether it benefits. It neither blocks nor is blocked by Spellsongs, and targets need not hear the caster.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "damage",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Exorcism",
+    "source": {
+      "book": "CR2",
+      "page": 141
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Destroys an Undead of level 8 or lower.",
+    "description": "Only works on Undead monsters of level 8 or lower. A target that fails to resist has its HP and MP set to 0 and crumbles to dust.",
+    "modifiers": []
+  },
+  {
+    "name": "Fist of God",
+    "source": {
+      "book": "CR2",
+      "page": 141
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": null,
+      "text": "MP8-12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "bludgeoning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": null,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "variants": [
+        {
+          "label": "Ancient Deity",
+          "deityCategory": "ancient",
+          "mp": 12,
+          "power": 40,
+          "critical": 11
+        },
+        {
+          "label": "Major Deity",
+          "deityCategory": "major",
+          "mp": 10,
+          "power": 30,
+          "critical": 10
+        },
+        {
+          "label": "Minor Deity",
+          "deityCategory": "minor",
+          "mp": 8,
+          "power": 20,
+          "critical": 9
+        }
+      ]
+    },
+    "summary": "Divine fist dealing Power 20-40 bludgeoning magic damage; cost and power depend on the god's rank.",
+    "description": "Deals Power X + Magic Power magic damage (Bludgeoning type). Cost, Power and Critical Value depend on the rank of the caster's god: Ancient 12 MP, Power 40, Critical 11; Major 10 MP, Power 30, Critical 10; Minor 8 MP, Power 20, Critical 9.",
+    "modifiers": []
+  },
+  {
+    "name": "Field Protection II",
+    "source": {
+      "book": "CR2",
+      "page": 141
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Characters in the area take 2 less physical and magic damage.",
+    "description": "A circle of protection gives the targets -2 to physical and magic damage received for 3 minutes (18 rounds). Poison-, Disease- and Curse-type damage is not reduced.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -2,
+        "condition": "not vs Poison-, Disease- or Curse-type damage",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Force Explosion",
+    "source": {
+      "book": "CR2",
+      "page": 142
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "bludgeoning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Shockwave around the caster dealing Power 30 bludgeoning magic damage.",
+    "description": "Deals Power 30 + Magic Power magic damage (Bludgeoning type) to the targets around the caster. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Preservation",
+    "source": {
+      "book": "CR2",
+      "page": 142
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Stops an object from rotting or decaying.",
+    "description": "The object no longer rots or decays in any way. On a corpse, the count of days since death stops for the purpose of determining Soulscars.",
+    "modifiers": []
+  },
+  {
+    "name": "Holy Blessing",
+    "source": {
+      "book": "CR2",
+      "page": 142
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Wraps the target in a 30 HP barrier that absorbs damage first.",
+    "description": "A barrier with 30 HP takes the physical, magic and fixed damage aimed at the target's HP first; Defense and damage reduction do not apply against it, and it never recovers. Damage beyond its remaining HP goes to the target, with Defense and reductions applied to that remainder. A character can receive this spell once per day.",
+    "modifiers": []
+  },
+  {
+    "name": "Cure Injury",
+    "source": {
+      "book": "CR2",
+      "page": 143
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": 50,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "undeadDamage": true
+    },
+    "summary": "Heals Power 50 + Magic Power HP; Undead take that much damage instead.",
+    "description": "Restores Power 50 + Magic Power HP. Has no effect on Constructs or Magitech; Undead take Power 50 + Magic Power damage instead. No critical value (N/A). Resistance is printed as Half.",
+    "modifiers": []
+  },
+  {
+    "name": "Refresh",
+    "source": {
+      "book": "CR2",
+      "page": 143
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "poisoned",
+        "diseased"
+      ],
+      "removeTypes": [
+        "poison",
+        "disease"
+      ]
+    },
+    "summary": "Removes all poison and disease effects without a contested check.",
+    "description": "Every poison and disease effect on the target is removed automatically, with no success value comparison. Damage already suffered is not healed.",
+    "modifiers": []
+  },
+  {
+    "name": "Revelation",
+    "source": {
+      "book": "CR2",
+      "page": 143
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Ordains a willing follower, who may gain Priest level 1 for 1,000 experience points.",
+    "description": "A one-hour ceremony marks a willing target with the holy symbol of the caster's god. The target may then gain Priest level 1, serving the same god, by paying 1,000 experience points. It cannot raise Priest beyond level 1 and does not work on Tabbits or Runefolk.",
+    "modifiers": []
+  },
+  {
+    "name": "Peace",
+    "source": {
+      "book": "CR2",
+      "page": 144
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Lyphos",
+    "level": 7,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets that fail to resist lose hostility and stop taking part in combat.",
+    "description": "Affected targets become non-hostile and do not actively fight; where possible they try to stop others from fighting and avoid starting new hostilities. The effect ends if another character acts very hostile toward them or attacks them.",
+    "modifiers": []
+  },
+  {
+    "name": "Grace Of Lumiere",
+    "source": {
+      "book": "CR2",
+      "page": 144
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Lyphos",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Grants the target one [Sword's Grace] ability at 1st-level strength.",
+    "description": "Choose [Sword's Grace/Change Fate], [Sword's Grace/Gentle Water], [Sword's Grace/Body Of Flame] or [Sword's Grace/Wings Of The Wind], one the target does not already have. The target gains it for the duration, working as at 1st level regardless of the target's level.",
+    "modifiers": []
+  },
+  {
+    "name": "Fine Weather",
+    "source": {
+      "book": "CR2",
+      "page": 144
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Tidan",
+    "level": 7,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All areas (1km Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 1000,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 Hours",
+      "unit": "hours",
+      "value": 3
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Clears the weather within 1 km: no rain, snow or strong wind for the duration.",
+    "description": "Bad weather in the area clears at once, however severe. For the duration there is no rain, snow or strong wind and the clouds above the area disappear.",
+    "modifiers": []
+  },
+  {
+    "name": "Daybreak",
+    "source": {
+      "book": "CR2",
+      "page": 145
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Tidan",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 Hours",
+      "unit": "hours",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [
+      "energy"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "variants": [
+        {
+          "label": "Thrown light ball vs Undead",
+          "power": 40,
+          "critical": 10
+        }
+      ]
+    },
+    "summary": "Creates a sun-bright ball lighting 30 m; it can be thrown for Power 20 energy damage (40 vs Undead).",
+    "description": "Creates a fist-sized ball of light that stays within 1 m of the caster and makes all areas within 30 m count as sunlit. With a Major Action the caster can throw it, making a new Spellcasting check against Willpower (1 area (5m Radius)/15, 1(10m)/Shot, Instant, Resistance Half, Energy type). The ball deals Power 20 + Magic Power magic damage, or Power 40 + Magic Power to Undead, then vanishes; only one ball can be thrown per Major Action.",
+    "modifiers": []
+  },
+  {
+    "name": "Inspiration",
+    "source": {
+      "book": "CR2",
+      "page": 145
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Kilhia",
+    "level": 7,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "One Observation or Knowledge package check becomes an automatic success.",
+    "description": "The caster may treat one check from the Observation or Knowledge packages as an automatic success (as if double 6 were rolled) without rolling. The effect is spent after one use, and the spell can be cast once per day.",
+    "modifiers": []
+  },
+  {
+    "name": "Precognition",
+    "source": {
+      "book": "CR2",
+      "page": 146
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Kilhia",
+    "level": 10,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster may use a fixed 8 (4 and 4) instead of rolling 2d on skill checks.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. For the duration, whenever the caster makes a skill check it may take a result of 4 and 4 (total 8) instead of rolling 2d.",
+    "modifiers": []
+  },
+  {
+    "name": "Shatter Symbol",
+    "source": {
+      "book": "CR2",
+      "page": 146
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Sien",
+    "level": 7,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "formula": "30"
+    },
+    "summary": "Breaks the caster's holy symbol to restore 30 HP to targets in the area.",
+    "description": "The caster destroys its holy symbol and each target recovers 30 HP. No effect on Undead, Magitech or Constructs. The broken symbol is beyond repair, and for 1d days the caster is unable to cast Divine Magic, even with a replacement symbol.",
+    "modifiers": []
+  },
+  {
+    "name": "Crescent Shine",
+    "source": {
+      "book": "CR2",
+      "page": 146
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Sien",
+    "level": 10,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All Areas (100m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 100,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "In the area, every 2d roll for damage is treated as a 3.",
+    "description": "Within the area, the 2d rolled for damage on a power table, or by fixed-value characters, is always fixed at 3. [Sword's Grace/Change Fate] cannot alter it, and rerolling gains nothing since the new roll is fixed at 3 as well. Modifiers applied to the roll, such as [Lethal Strike], still count.",
+    "modifiers": []
+  },
+  {
+    "name": "Quick Giving",
+    "source": {
+      "book": "CR2",
+      "page": 147
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Mirtabar",
+    "level": 7,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Instantly hands one item the caster holds or carries to the target.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. One item the caster holds or carries passes to the target at once. Weapons, shields and 1H/2H items can be held and equipped immediately if the target has free hands; accessories can be equipped at once only if the spell was cast as a Major Action; otherwise the item goes into the target's baggage. Clothing or armor the caster is wearing cannot be passed.",
+    "modifiers": []
+  },
+  {
+    "name": "Divine Hand",
+    "source": {
+      "book": "CR2",
+      "page": 147
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Mirtabar",
+    "level": 10,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Dexterity-based skill checks automatically succeed on a 2d roll of 11 or 12.",
+    "description": "For the duration, checks based on the Dexterity modifier automatically succeed whenever the 2d shows 11 or 12.",
+    "modifiers": []
+  },
+  {
+    "name": "Flash Shield",
+    "source": {
+      "book": "CR2",
+      "page": 147
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eve",
+    "level": 7,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target takes 5 less physical and magic damage.",
+    "description": "A shield of light reduces the physical and magic damage the target receives by 5 for 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -5,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Sacred Jail",
+    "source": {
+      "book": "CR2",
+      "page": 148
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eve",
+    "level": 10,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "entangled"
+      ]
+    },
+    "summary": "Chains a Daemon so it cannot move by any means.",
+    "description": "Only affects Daemons: mana chains stop the target from moving, even through special means, spells, abilities or effects. [Metamagic/Time] cannot extend it (not even via [Universal Metamagic]). A target that resists is immune to this caster's Sacred Jail for the next day. Once per day per target it can be cast with Resistance: Can't by spending 6 MP.",
+    "modifiers": []
+  },
+  {
+    "name": "Trail Guide",
+    "source": {
+      "book": "CR2",
+      "page": 148
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Harula",
+    "level": 7,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Makes the passable route to a previously visited place glow for the caster.",
+    "description": "Choose a destination the caster has actually visited (it need not be visible). For the duration, the unblocked route along paths or corridors leading there glows for the caster, helping it choose at forks. The glow ends at any obstacle the caster could not physically get through (such as a closed door). No effect unless the caster stands on a path or passage.",
+    "modifiers": []
+  },
+  {
+    "name": "Reboot",
+    "source": {
+      "book": "CR2",
+      "page": 149
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Harula",
+    "level": 10,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target gets one extra Major Action on its next turn.",
+    "description": "On the target's first turn within the duration it gains one additional Major Action; the effect then ends.",
+    "modifiers": []
+  },
+  {
+    "name": "Three Storms",
+    "source": {
+      "book": "CR2",
+      "page": 149
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Furusil",
+    "level": 7,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "wind"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 10 wind magic damage, +2 per section beyond the first.",
+    "description": "Deals Power 10 + Magic Power magic damage (Wind type). A multi-section target takes +2 damage on every section for each section past the first (e.g. +6 with 4 sections), even when it resists. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Storm Friend",
+    "source": {
+      "book": "CR2",
+      "page": 149
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Furusil",
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets deal +2 and take -2 Water/Ice- and Wind-type damage.",
+    "description": "For 3 minutes (18 rounds), Water/Ice- and Wind-type physical and magic damage dealt by the targets is increased by 2, and such damage they receive is reduced by 2.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "Water/Ice- or Wind-type damage",
+        "target": "target"
+      },
+      {
+        "key": "damageMagic",
+        "value": 2,
+        "condition": "Water/Ice- or Wind-type damage",
+        "target": "target"
+      },
+      {
+        "key": "damageTaken",
+        "value": -2,
+        "condition": "from Water/Ice- or Wind-type damage",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Confusion",
+    "source": {
+      "book": "CR2",
+      "page": 150
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Asteria",
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "confused"
+      ]
+    },
+    "summary": "Distorts the target's vision: cancels long checks and [Targeting]-type abilities.",
+    "description": "A check in progress that needs more than 1 minute (6 rounds) is cancelled. The caster may also switch off the target's [Targeting] or an equivalent ability, together with the feat or ability it depends on.",
+    "modifiers": []
+  },
+  {
+    "name": "Charm",
+    "source": {
+      "book": "CR2",
+      "page": 150
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Asteria",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "6 Hours",
+      "unit": "hours",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "charmed"
+      ]
+    },
+    "summary": "The target treats the caster as a trusted close friend.",
+    "description": "Even if hostile, the target lowers its guard, treats the caster as a close friend, avoids hindering it and believes what it says, but will not accept actions clearly harmful to itself. Any open hostility from the caster ends it immediately. Afterwards the target has +4 to Willpower against this spell for 6 hours.",
+    "modifiers": []
+  },
+  {
+    "name": "Savage Discord",
+    "source": {
+      "book": "CR2",
+      "page": 150
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Asteria",
+    "level": 7,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "confused"
+      ]
+    },
+    "summary": "The target attacks one character chosen by the caster, believing it is an enemy.",
+    "description": "The caster names one character; the target sees it as an enemy and uses its turn to attack it with its currently equipped weapon (claws, bite, etc. for monsters), normally its most effective attack as chosen by the GM. Ranged attackers spend ammunition and guns use [Solid Bullet]. No effect if the target cannot attack.",
+    "modifiers": []
+  },
+  {
+    "name": "Jealousy",
+    "source": {
+      "book": "CR2",
+      "page": 151
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Asteria",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "curse",
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target becomes openly jealous of everyone and cannot assist or support others.",
+    "description": "The target shows jealousy toward all characters around it, especially family, partners and close friends. For the duration it cannot take any action that helps or supports another character, whatever the consequences.",
+    "modifiers": []
+  },
+  {
+    "name": "Signature Torch",
+    "source": {
+      "book": "CR2",
+      "page": 151
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Grendal",
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A flame lights the target and a 5 m radius around it; the target gets Evasion -2.",
+    "description": "A bright flame appears next to the target, lighting it and a 5 m radius (only its own area in Simplified Combat) and removing poor-visibility penalties there. The target suffers -2 to Evasion.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Heat Weapon",
+    "source": {
+      "book": "CR2",
+      "page": 151
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Grendal",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster's melee weapon counts as a fire-type magic weapon and deals +2 physical damage.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. Whatever weapon the caster uses in melee counts as a Fire-type magic weapon (the damage stays physical) and deals 2 more physical damage.",
+    "modifiers": [
+      {
+        "key": "damageMelee",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Burning Soul",
+    "source": {
+      "book": "CR2",
+      "page": 151
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Grendal",
+    "level": 7,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Melee attackers that damage the caster take 5 fire magic damage.",
+    "description": "The caster is covered in flames that do not harm it. Whenever a melee attack deals 1 or more physical or magic damage to the caster, that attacker suffers 5 points of fire magic damage at once.",
+    "modifiers": []
+  },
+  {
+    "name": "Flame Burst",
+    "source": {
+      "book": "CR2",
+      "page": 152
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Grendal",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (5m Radius)/15",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 5,
+      "count": 15
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Deals Power 30 fire magic damage in an area.",
+    "description": "A great blaze deals Power 30 + Magic Power magic damage (Fire type) to the targets. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Forest Path",
+    "source": {
+      "book": "CR2",
+      "page": 152
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalion",
+    "level": 2,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 Hours",
+      "unit": "hours",
+      "value": 3
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Maximum HP +3 (and 3 HP restored) while in a natural environment.",
+    "description": "As long as the caster remains in a natural environment (CR I p.101), it has +3 maximum HP, and its current HP goes up by 3 as well. Leaving the natural environment ends the spell, and current HP above the maximum is reduced to it.",
+    "modifiers": [
+      {
+        "key": "hpMax",
+        "value": 3,
+        "condition": "in a natural environment"
+      }
+    ]
+  },
+  {
+    "name": "Binding Thorn",
+    "source": {
+      "book": "CR2",
+      "page": 152
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalion",
+    "level": 4,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "temporary",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "entangled"
+      ]
+    },
+    "summary": "Accuracy and Evasion -1.",
+    "description": "Mana thorns entangle the target, giving -1 to Accuracy and Evasion checks. If the caster's success value exceeds the target's by 5 or more, it lasts 3 minutes (18 rounds) instead; an automatic success by the target limits it to 10 seconds (1 round) per the Temporary resistance rule.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -1,
+        "target": "target"
+      },
+      {
+        "key": "evasion",
+        "value": -1,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Hide in Nature",
+    "source": {
+      "book": "CR2",
+      "page": 154
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalion",
+    "level": 7,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "In nature, checks aimed at the caster get -1 and its Hide checks get +4.",
+    "description": "While the caster is in a natural environment, Accuracy and Spellcasting checks that target or include it suffer -1 to the success value (Area: Line included, unless the caster was excluded with [Magic Control]). The caster also gets +4 to Hide checks in a natural environment.",
+    "modifiers": [
+      {
+        "key": "check.hide",
+        "value": 4,
+        "condition": "in a natural environment"
+      }
+    ]
+  },
+  {
+    "name": "Harvest Field",
+    "source": {
+      "book": "CR2",
+      "page": 154
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalion",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "HP recovery received by the targets is doubled.",
+    "description": "Can be cast as a Minor Action. For 10 seconds (1 round), any effect that restores HP to a target restores double the amount.",
+    "modifiers": []
+  },
+  {
+    "name": "Redirect Wounds",
+    "source": {
+      "book": "CR2",
+      "page": 154
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Miritsa",
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster takes up to 5 points of the target's next damage as fixed damage.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. When the target next loses HP to damage, the caster absorbs 5 points of it (or all of it, if 5 or less) as fixed damage, ending the spell. A caster can keep it on only one target at a time (a new cast cancels the old one) and [Metamagic/Targets] cannot be used.",
+    "modifiers": []
+  },
+  {
+    "name": "Revenge Force",
+    "source": {
+      "book": "CR2",
+      "page": 155
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Miritsa",
+    "level": 4,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "+2 to one Accuracy or Spellcasting check against someone who damaged the caster.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. The caster gets +2 on Accuracy or Spellcasting checks against a character that dealt 1 or more applied damage to its HP or MP during the duration; with several targets, all must qualify. The spell ends after one such check.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 2,
+        "condition": "vs a character that damaged the caster"
+      },
+      {
+        "key": "spellcasting",
+        "value": 2,
+        "condition": "vs a character that damaged the caster"
+      }
+    ]
+  },
+  {
+    "name": "Distress Reading",
+    "source": {
+      "book": "CR2",
+      "page": 155
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Miritsa",
+    "level": 7,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Learn the troubles the target currently faces and their causes.",
+    "description": "Reveals what troubles or hardships currently weigh on the target and how they came about. Troubles the target is not aware of are not revealed.",
+    "modifiers": []
+  },
+  {
+    "name": "Treat Pain",
+    "source": {
+      "book": "CR2",
+      "page": 155
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Miritsa",
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 minutes (60 r)",
+      "unit": "rounds",
+      "value": 60
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Poison-, Disease- and Curse-type damage to the target is reduced by 5.",
+    "description": "For the duration, damage of Poison, Disease or Curse type dealt to the target is reduced by 5.",
+    "modifiers": [
+      {
+        "key": "damageTaken",
+        "value": -5,
+        "condition": "vs Poison-, Disease- or Curse-type damage",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Grease",
+    "source": {
+      "book": "CR2",
+      "page": 155
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Strasford",
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A wheeled target's Limited Move distance +2 m.",
+    "description": "If the target moves on Wheels, its Limited Move distance is increased by 2 m for the duration, but never beyond its Movement speed.",
+    "modifiers": []
+  },
+  {
+    "name": "Drive Away",
+    "source": {
+      "book": "CR2",
+      "page": 156
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Strasford",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "temporary",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Stacking -1 to Evasion and Willpower checks against hostile actions within a round.",
+    "description": "Each Evasion or Willpower check the target makes against a hostile Major Action gives it a further -1 to later such checks, stacking up to -4 for each check type separately. The penalty is cleared when the target's turn comes, and builds up again while the spell lasts.",
+    "modifiers": []
+  },
+  {
+    "name": "Blast the Wall",
+    "source": {
+      "book": "CR2",
+      "page": 156
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Strasford",
+    "level": 7,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Destroys a section of wall up to 50 cm thick.",
+    "description": "Destroys a wall of any material up to 50 cm thick over a section 3 m high and 10 m wide. Magically created walls (see CR II p.182) are removed without comparing success values. It cannot destroy or damage characters.",
+    "modifiers": []
+  },
+  {
+    "name": "Go the Way",
+    "source": {
+      "book": "CR2",
+      "page": 156
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Strasford",
+    "level": 10,
+    "cost": {
+      "mp": 30,
+      "text": "MP30"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster walks on air, leaving a 1 m wide glowing track others can use.",
+    "description": "For the duration the caster can move through the air, leaving a 1 m wide track of light that others can walk on; tracks remain and branch when it heads another way. On the track the caster is limited to Normal Move and cannot take Major Actions; it does not avoid movement blocking or let it leave a skirmish, but it passes magic walls (see CR II p.182) freely. The tracks vanish when the duration ends.",
+    "modifiers": []
+  },
+  {
+    "name": "Fear",
+    "source": {
+      "book": "CR2",
+      "page": 323
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/Various",
+      "unit": "special",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "variants": [
+        {
+          "label": "2d 2-4: frenzy",
+          "summary": "Frenzy for 3 rounds: Accuracy +2, Evasion -2; an intelligent target takes no reasoned actions and casts no spells.",
+          "modifiers": [
+            {
+              "key": "accuracy",
+              "value": 2,
+              "target": "target"
+            },
+            {
+              "key": "evasion",
+              "value": -2,
+              "target": "target"
+            }
+          ],
+          "statuses": [
+            "confused"
+          ],
+          "duration": {
+            "text": "30 seconds (3 r)",
+            "unit": "rounds",
+            "value": 3
+          }
+        },
+        {
+          "label": "2d 5-9: fear",
+          "summary": "Fear for 18 rounds: Accuracy, Evasion and Spellcasting checks -1.",
+          "modifiers": [
+            {
+              "key": "accuracy",
+              "value": -1,
+              "target": "target"
+            },
+            {
+              "key": "evasion",
+              "value": -1,
+              "target": "target"
+            },
+            {
+              "key": "spellcasting",
+              "value": -1,
+              "target": "target"
+            }
+          ],
+          "statuses": [
+            "frightened"
+          ],
+          "duration": {
+            "text": "3 minutes (18 r)",
+            "unit": "rounds",
+            "value": 18
+          }
+        },
+        {
+          "label": "2d 10-12: flight",
+          "summary": "Flees (retreats from a skirmish); if it cannot, it takes no actions for 1 round and automatically fails action checks.",
+          "modifiers": [],
+          "statuses": [
+            "frightened"
+          ],
+          "duration": {
+            "text": "10 seconds (1 r)",
+            "unit": "rounds",
+            "value": 1
+          }
+        }
+      ]
+    },
+    "summary": "Undead and Humanoids in the area that fail to resist suffer a random fear effect (2d table).",
+    "description": "Second Sword counterpart of [Banish]: only affects Undead and Humanoids, and counts as Psychic type against Humanoids. Roll 2d for each target that fails to resist: 2-4 = frenzy for 3 rounds (Accuracy +2, Evasion -2; intelligent targets cannot take reasoned actions or cast spells); 5-9 = -1 to Accuracy, Evasion and Spellcasting checks for 18 rounds; 10-12 = it flees, or if it cannot, takes no actions for 1 round and automatically fails action checks. Available to Barbarous priests instead of [Banish]; priests of Laris can use both.",
+    "modifiers": [],
+    "barbarous": true
+  },
+  {
+    "name": "Vice Weapon",
+    "source": {
+      "book": "CR2",
+      "page": 323
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Vs Undead and Humanoids: Accuracy +1 and +2 physical damage; attacks count as magical.",
+    "description": "Second Sword counterpart of [Sacred Weapon]: melee and ranged attacks made by the target count as magical and gain Accuracy +1 and +2 physical damage when aimed at Undead or Humanoids. Resistance is printed as Neg. Priests of Laris can use both versions.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1,
+        "condition": "vs Undead or Humanoids",
+        "target": "target"
+      },
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "vs Undead or Humanoids",
+        "target": "target"
+      }
+    ],
+    "barbarous": true
+  },
+  {
+    "name": "Vice Shield",
+    "source": {
+      "book": "CR2",
+      "page": 323
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(10m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Humanoid and Undead attacks deal 3 less physical damage to the target.",
+    "description": "Second Sword counterpart of [Sacred Shield]: physical damage the target takes from attacks by Humanoid or Undead characters is reduced by 3. Priests of Laris can use both versions.",
+    "modifiers": [
+      {
+        "key": "damageTakenPhysical",
+        "value": -3,
+        "condition": "from attacks by Humanoids or Undead",
+        "target": "target"
+      }
+    ],
+    "barbarous": true
+  },
+  {
+    "name": "War Cry",
+    "source": {
+      "book": "CR2",
+      "page": 326
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalkhrem",
+    "level": 2,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Melee and ranged attacks by Barbarous in the area deal +2 physical damage.",
+    "description": "A savage war cry: for 10 seconds (1 round), melee and ranged attacks by each Barbarous in the area deal +2 physical damage. Targets that cannot hear the shout are unaffected.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Frenzy",
+    "source": {
+      "book": "CR2",
+      "page": 326
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalkhrem",
+    "level": 4,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "curse",
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets fight to the death, are immune to Psychic effects and deal +2 damage.",
+    "description": "Affected characters lose all fear and fight to the death as long as they perceive any hostile character. For the duration they cannot be affected by Psychic-type effects, and all physical and magic damage they deal is +2.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "target": "target"
+      },
+      {
+        "key": "damageMagic",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Berserk",
+    "source": {
+      "book": "CR2",
+      "page": 326
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalkhrem",
+    "level": 7,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Accuracy, Fortitude and Willpower +3, physical damage +6; Evasion -3 and no other spells.",
+    "description": "Can be cast as a Minor Action. The caster gets +3 to Accuracy, Fortitude and Willpower and deals +6 physical damage, but suffers -3 to Evasion and cannot cast other spells while it lasts.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 3
+      },
+      {
+        "key": "fortitude",
+        "value": 3
+      },
+      {
+        "key": "willpower",
+        "value": 3
+      },
+      {
+        "key": "damage",
+        "value": 6
+      },
+      {
+        "key": "evasion",
+        "value": -3
+      }
+    ]
+  },
+  {
+    "name": "Troops of Ignis",
+    "source": {
+      "book": "CR2",
+      "page": 326
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalkhrem",
+    "level": 10,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Barbarous in the area may cast Dalkhrem's Specialized Divine Magic of level 7 or lower.",
+    "description": "While it lasts, each Barbarous target gains access to Dalkhrem's Specialized Divine Magic of level 7 or lower.",
+    "modifiers": []
+  },
+  {
+    "name": "Wave Riding",
+    "source": {
+      "book": "CR2",
+      "page": 327
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eiryak",
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Evasion +1 while underwater.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. The target gets +1 to Evasion checks while underwater.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1,
+        "condition": "while underwater",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Deep Block",
+    "source": {
+      "book": "CR2",
+      "page": 327
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eiryak",
+    "level": 4,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target counts as having the combat feat [Block] while underwater.",
+    "description": "While underwater, the target is treated as having learned the combat feat [Block] (see CR II p.222).",
+    "modifiers": []
+  },
+  {
+    "name": "Water Hammer",
+    "source": {
+      "book": "CR2",
+      "page": 327
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eiryak",
+    "level": 7,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Deals Power 30 water/ice magic damage; +2 to cast it while underwater.",
+    "description": "A mass of water deals Power 30 + Magic Power magic damage (Water/Ice type). If the caster is underwater, its Spellcasting check for this spell gets +2. Critical 10.",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": 2,
+        "condition": "caster is underwater",
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Water Binding",
+    "source": {
+      "book": "CR2",
+      "page": 327
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eiryak",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Stops an object from moving on or under water.",
+    "description": "The water around the target stalls, so an object of any size on or under the water cannot move at all. Characters cannot be affected.",
+    "modifiers": []
+  },
+  {
+    "name": "Hide in a Shadow",
+    "source": {
+      "book": "CR2",
+      "page": 328
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Zeides",
+    "level": 2,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Hide checks +2; Evasion +2 while a third character is present.",
+    "description": "The caster gets +2 to Hide checks. In combat it also gets +2 to Evasion checks when a third character, other than the caster and the attacker, is present at the same position.",
+    "modifiers": [
+      {
+        "key": "check.hide",
+        "value": 2
+      },
+      {
+        "key": "evasion",
+        "value": 2,
+        "condition": "a third character is present"
+      }
+    ]
+  },
+  {
+    "name": "Vampiric Weapon",
+    "source": {
+      "book": "CR2",
+      "page": 328
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Zeides",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Melee weapon counts as a curse-type magic weapon; damage dealt with it is regained as HP.",
+    "description": "The weapon the target uses for melee attacks is treated as a Curse-type magic weapon (damage stays physical). If a hit with it inflicts physical damage on another character during the duration, the wielder may heal HP equal to that damage (the summary describes this as happening once).",
+    "modifiers": []
+  },
+  {
+    "name": "Sunshade",
+    "source": {
+      "book": "CR2",
+      "page": 328
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Zeides",
+    "level": 7,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target suffers no adverse effects from sunlight.",
+    "description": "A shade over the target's head blocks the sun, so it suffers none of sunlight's harmful effects for the duration.",
+    "modifiers": []
+  },
+  {
+    "name": "Spirit Domination",
+    "source": {
+      "book": "CR2",
+      "page": 328
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Zeides",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10 + HP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "curse",
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "+2 to action checks the target makes as the caster directs, -2 to those against the caster.",
+    "description": "Action checks the target makes as directed by the caster get +2, while action checks meant to harm or hinder the caster suffer -2. Casting also costs 1 HP in addition to the MP; the HP cost doubles when targeting a multi-section character or when using [Metamagic/**].",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": 2,
+        "condition": "acting as the caster directs",
+        "target": "target"
+      },
+      {
+        "key": "actionChecks",
+        "value": -2,
+        "condition": "acting against the caster",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Mana Sink",
+    "source": {
+      "book": "CR2",
+      "page": 329
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Laris",
+    "level": 2,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 0,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "mpDamage": true
+    },
+    "summary": "Drains MP: Power 0 + Magic Power damage applied to the target's MP.",
+    "description": "The target loses MP (not HP) equal to a Power 0 + Magic Power damage roll. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Deafness",
+    "source": {
+      "book": "CR2",
+      "page": 329
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Laris",
+    "level": 4,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "deaf"
+      ]
+    },
+    "summary": "The target becomes deaf.",
+    "description": "The target cannot hear any sound for the duration; apply the deafness rules (see CR II p.71).",
+    "modifiers": []
+  },
+  {
+    "name": "Summon Aetherbeast",
+    "source": {
+      "book": "CR2",
+      "page": 329
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Laris",
+    "level": 7,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Summons an Aetherbeast that follows the caster's commands.",
+    "description": "Summons an Aetherbeast (see CR I p.429). Right after appearing it acts under 'Obey Command' (see CR II p.90), but uses its own judgment when given no instructions.",
+    "modifiers": []
+  },
+  {
+    "name": "Summon Insects",
+    "source": {
+      "book": "CR2",
+      "page": 329
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Laris",
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "temporary",
+    "types": [
+      "poison"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "perTurn": "caster"
+    },
+    "summary": "Stinging insects deal Power 10 poison magic damage at the end of each of the caster's turns.",
+    "description": "Poisonous insects swarm the target; at the close of every turn of the caster it takes Power 10 + Magic Power damage, which never crits. A Water/Ice, Wind, Earth, Bludgeoning or Energy type spell striking the target scatters the insects and ends the spell.",
+    "modifiers": []
+  },
+  {
+    "name": "Surrender",
+    "source": {
+      "book": "CR3",
+      "page": 144
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 13,
+      "text": "MP13"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "charmed"
+      ]
+    },
+    "summary": "A badly wounded Barbarous stops fighting and follows the caster as a friend.",
+    "description": "Only works if the Barbarous target has no more than 1/10 of its maximum HP (rounded down) left; for multi-section characters all main sections must meet this. On a failed resistance it stops fighting and follows the caster as a friend. Priests of Second Sword gods get [Resignation] instead (CR III p.323).",
+    "modifiers": []
+  },
+  {
+    "name": "Bless II",
+    "source": {
+      "book": "CR3",
+      "page": 144
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 12,
+      "text": "MP12"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "All ability scores +6 (every modifier +1).",
+    "description": "Every ability score of the target rises by 6, raising each modifier by 1 and derived values such as maximum HP and MP. Fixed-value characters instead get +1 to Accuracy, Evasion, Fortitude and Willpower and +6 to maximum HP, Movement and MP; the GM rules on unique skills.",
+    "modifiers": [
+      {
+        "key": "ability.dex",
+        "value": 6,
+        "target": "target"
+      },
+      {
+        "key": "ability.agi",
+        "value": 6,
+        "target": "target"
+      },
+      {
+        "key": "ability.str",
+        "value": 6,
+        "target": "target"
+      },
+      {
+        "key": "ability.vit",
+        "value": 6,
+        "target": "target"
+      },
+      {
+        "key": "ability.int",
+        "value": 6,
+        "target": "target"
+      },
+      {
+        "key": "ability.spi",
+        "value": 6,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Holy Light II",
+    "source": {
+      "book": "CR3",
+      "page": 144
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "half",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 50,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 50 magic damage to Undead in the area; those failing to resist get Willpower -2.",
+    "description": "Only Undead in the area are hit, taking Power 50 + Magic Power magic damage; any that fail to resist also have Willpower -2 for 3 minutes (18 rounds). Critical 10.",
+    "modifiers": [
+      {
+        "key": "willpower",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Escape",
+    "source": {
+      "book": "CR3",
+      "page": 145
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Teleports the target to the nearest temple of the caster's god.",
+    "description": "The target is instantly teleported to the closest temple of the caster's god, ignoring walls, barriers and similar obstacles.",
+    "modifiers": []
+  },
+  {
+    "name": "Sacred Field",
+    "source": {
+      "book": "CR3",
+      "page": 145
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All Areas (100m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 100,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A barrier that Barbarous, Undead and their spells and abilities cannot cross.",
+    "description": "A barrier surrounds the area that Barbarous and Undead, and their spells and abilities, cannot pass. The barrier fails to appear if a Barbarous or Undead is inside when it is cast, and overlapping a [Vice Field] ends both spells at once. Priests of Second Sword gods get [Vice Field] instead.",
+    "modifiers": []
+  },
+  {
+    "name": "Rescue",
+    "source": {
+      "book": "CR3",
+      "page": 145
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 17,
+      "text": "MP17"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Track the target's HP at any distance and call it to your side once.",
+    "description": "While it lasts, the caster always senses how much HP the target has (nothing else), however far away. If the target agrees, the caster can summon it to its side with a Minor Action, bypassing walls and barriers, but this fails if there is not enough room for the target. Using this summons, or casting Rescue on someone else, ends the spell.",
+    "modifiers": []
+  },
+  {
+    "name": "Erase Soulscar",
+    "source": {
+      "book": "CR3",
+      "page": 146
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 50,
+      "text": "MP50"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Removes one soulscar from the target.",
+    "description": "Removes 1 soulscar, but not the innate soulscars of Nightmares or Barbarous. A character that has received it once automatically resists all later casts. Cannot be used on Undead. Casting takes one day. Priests of Second Sword gods get [Instant Soulscar] instead.",
+    "modifiers": []
+  },
+  {
+    "name": "Oracle",
+    "source": {
+      "book": "CR3",
+      "page": 146
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 14,
+      "text": "MP14"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All Areas (10km Radius)/All",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 10000,
+      "count": "all"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Speak to every fellow believer with Priest levels within 10 km.",
+    "description": "The caster's voice reaches every character in the area who follows the same god and has at least 1 Priest level. The caster cannot hear any replies.",
+    "modifiers": []
+  },
+  {
+    "name": "Cure Mortality",
+    "source": {
+      "book": "CR3",
+      "page": 146
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(50m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": 70,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": true,
+      "undeadDamage": true
+    },
+    "summary": "Heals Power 70 + Magic Power HP; Undead take that much damage instead.",
+    "description": "Restores Power 70 + Magic Power HP. Has no effect on Constructs or Magitech; Undead take Power 70 + Magic Power damage instead, which cannot be critical.",
+    "modifiers": []
+  },
+  {
+    "name": "Holy War",
+    "source": {
+      "book": "CR3",
+      "page": 146
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 40,
+      "text": "MP40"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All Areas (500m Radius)/All",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 500,
+      "count": "all"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "6 Hours",
+      "unit": "hours",
+      "value": 6
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Fellow believers raise one Warrior-type class by 3 levels.",
+    "description": "Only characters that have the caster's deity's holy symbol equipped, in hand or in their pack qualify; the caster and characters of None, Animal or Servant intelligence cannot be targets. Each target raises one Warrior-type class by 3 levels (a class without levels counts as level 3), without changing adventurer level or gaining combat feats. Monsters with monster data instead get +3 to Accuracy and Evasion checks and +3 physical damage with melee and ranged attacks.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 3,
+        "target": "target"
+      },
+      {
+        "key": "evasion",
+        "value": 3,
+        "target": "target"
+      },
+      {
+        "key": "damage",
+        "value": 3,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Purify Soul",
+    "source": {
+      "book": "CR3",
+      "page": 147
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Sends an Undead of level 13 or lower to the caster's god, destroying it.",
+    "description": "Only effective on Undead monsters of level 13 or lower: on a failed resistance its soul is redeemed and the Undead is destroyed. Against Undead of level 14 or higher the resistance becomes Optional.",
+    "modifiers": []
+  },
+  {
+    "name": "Reincarnation",
+    "source": {
+      "book": "CR3",
+      "page": 147
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 30,
+      "text": "MP30"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Corpse",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The soul of a corpse under 24 hours old is reborn as a child that later regains its memories.",
+    "description": "Works only on a corpse dead for less than 24 hours; casting takes 1 hour. Within 7 days the soul is reborn as a child with the same (grown) ability scores, who regains its memories, class levels and combat feats at an age set by the success value: 25 or less = never naturally, 26-27 = 30 years, 28-29 = 20, 30-31 = 10, 32+ = 5. Resurrecting the target before the rebirth cancels this spell, and it cannot reincarnate the same target again.",
+    "modifiers": []
+  },
+  {
+    "name": "Call God",
+    "source": {
+      "book": "CR3",
+      "page": 147
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": null,
+      "text": "MP50-200"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "variants": [
+        {
+          "label": "Ancient God",
+          "deityCategory": "ancient",
+          "mp": 200,
+          "maxLevel": 35
+        },
+        {
+          "label": "Major God",
+          "deityCategory": "major",
+          "mp": 100,
+          "maxLevel": 25
+        },
+        {
+          "label": "Minor God",
+          "deityCategory": "minor",
+          "mp": 50,
+          "maxLevel": 15
+        }
+      ]
+    },
+    "summary": "Summons the caster's god to work a miracle; cost, ritual and price depend on the god's rank.",
+    "description": "Needs a preparation ritual followed immediately by the casting. The god can wipe out, without resistance, enemies in the caster's sight at or below a level limit, and works miracles scaled to its rank. Ancient: 1 year preparation, 7 days casting, 200 MP, level 35 or lower, and the caster's soul leaves with the god (no resurrection). Major: 1 month, 1 day, 100 MP, level 25 or lower, and the caster dies. Minor: 6 rounds, 1 round, 50 MP, level 15 or lower, and the caster drops to 0 HP with maximum MP -50 for 7 days.",
+    "modifiers": []
+  },
+  {
+    "name": "Restoration",
+    "source": {
+      "book": "CR3",
+      "page": 148
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 18,
+      "text": "MP18"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(50m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "heal",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "formula": "Magic Power x5"
+    },
+    "summary": "Ends any chosen non-permanent effects and restores HP equal to Magic Power x5.",
+    "description": "The target may end any or all effects on it except those with Duration: Permanent, without comparing success values, and recovers HP equal to the caster's Magic Power x5. No effect on Undead, Constructs or Magitech.",
+    "modifiers": []
+  },
+  {
+    "name": "Promise Circle",
+    "source": {
+      "book": "CR3",
+      "page": 149
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Lyphos",
+    "level": 13,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Targets can pay MP costs out of each other's MP.",
+    "description": "When a target pays an MP cost on its turn, it can draw on the MP of any other character under this spell, splitting the cost in any ratio. Only characters' own MP can be used (no mako stones), and [MP Save/**] and similar feats only benefit their owner. The caster may exclude characters in the area without [Magic Control].",
+    "modifiers": []
+  },
+  {
+    "name": "Evangel",
+    "source": {
+      "book": "CR3",
+      "page": 149
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Tidan",
+    "level": 13,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "removeStatuses": [
+        "poisoned",
+        "diseased",
+        "cursed",
+        "charmed",
+        "confused",
+        "frightened"
+      ],
+      "removeTypes": [
+        "poison",
+        "disease",
+        "curse",
+        "psychic"
+      ]
+    },
+    "summary": "Tries to dispel all Poison-, Disease-, Curse- and Psychic-type effects on the targets.",
+    "description": "Attempts to remove every Poison-, Disease-, Curse- and Psychic-type effect on the targets, with a contested check for each. Casting requires direct sunlight or being inside a [Daybreak] (see CR II p.145), which is then used up.",
+    "modifiers": []
+  },
+  {
+    "name": "Completion",
+    "source": {
+      "book": "CR3",
+      "page": 150
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Kilhia",
+    "level": 13,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Temporarily cast one Truespeech, Spiritualism or Fairy spell of up to 10th level.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. Choose Truespeech, Spiritualism or Fairy Magic: the caster can cast spells of up to 10th level from it with Magic Power = Priest level + Intelligence modifier, needing no gestures, voice, implement or Fairy Tamer's gems (special costs such as mako stones still apply). Its combat feats apply, and [MP Save/**] works if it matches that system. Spells taking over 10 seconds to cast are excluded, and the effect ends once a spell is cast.",
+    "modifiers": []
+  },
+  {
+    "name": "Panic",
+    "source": {
+      "book": "CR3",
+      "page": 150
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Asteria",
+    "level": 13,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/3 minutes (18 r)",
+      "unit": "instantRounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "confused"
+      ]
+    },
+    "summary": "Affected characters must pick targets in a skirmish at random.",
+    "description": "For 3 minutes (18 rounds), affected characters cannot choose specific targets within a skirmish for any action (weapon attacks, spells, finales, evocations, etc.); targets are picked at random from the skirmish. [Targeting] and [Magic Control] stop working for them, and even effects that allow free choice become random. No effect outside a skirmish. The target count after the radius is not printed.",
+    "modifiers": []
+  },
+  {
+    "name": "Offensive Fire",
+    "source": {
+      "book": "CR3",
+      "page": 151
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Grendal",
+    "level": 13,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1 (Movement m)/Breakthrough",
+      "range": "ranged",
+      "areas": 1,
+      "meters": null,
+      "area": "breakthrough"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 90,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Charge through enemies dealing Power 90 fire magic damage.",
+    "description": "The caster charges through the enemies in its path, dealing Power 90 + Magic Power magic damage (Fire type). In Standard Combat the range equals the caster's movement. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Wishing Star",
+    "source": {
+      "book": "CR3",
+      "page": 151
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Sien",
+    "level": 13,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(50m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target automatically succeeds on Fortitude and Willpower checks.",
+    "description": "Every Fortitude and Willpower check the target makes during the duration is an automatic success.",
+    "modifiers": []
+  },
+  {
+    "name": "Hyper Acceleration",
+    "source": {
+      "book": "CR3",
+      "page": 151
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Mirtabar",
+    "level": 13,
+    "cost": {
+      "mp": 22,
+      "text": "MP22"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Dexterity and Agility +12 for everyone in the area.",
+    "description": "Can be cast as a Minor Action or during Combat Preparation. All characters in the area gain +12 Dexterity and +12 Agility for the duration; Movement and other derived values change accordingly.",
+    "modifiers": [
+      {
+        "key": "ability.dex",
+        "value": 12,
+        "target": "target"
+      },
+      {
+        "key": "ability.agi",
+        "value": 12,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Daemon Buster",
+    "source": {
+      "book": "CR3",
+      "page": 152
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eve",
+    "level": 13,
+    "cost": {
+      "mp": 14,
+      "text": "MP14"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant/10 seconds (1 r)",
+      "unit": "instantRounds",
+      "value": 1
+    },
+    "resistance": "half",
+    "types": [
+      "energy"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 70,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 70 energy magic damage to a Daemon, whose damage is then reduced by 5 for 1 round.",
+    "description": "Only affects Daemons: deals Power 70 + Magic Power magic damage (Energy type), and during the following round (10 seconds) the physical and magic damage it inflicts is 5 lower. Critical 10.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": -5,
+        "target": "target"
+      },
+      {
+        "key": "damageMagic",
+        "value": -5,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Rescue from Shallow Abyss",
+    "source": {
+      "book": "CR3",
+      "page": 152
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Harula",
+    "level": 13,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(Infinite)/-",
+      "range": "ranged",
+      "areas": 2,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Teleports a known target out of a Shallow Abyss to the caster.",
+    "description": "Must be cast near the Shallow Abyss holding the target, and the caster must know the target personally (it need not be visible). A target inside is teleported next to the caster whether alive, dead or otherwise (e.g. petrified); a dead target can still be resurrected later. An unwilling target may resist with Willpower in any state. Casting takes one hour.",
+    "modifiers": []
+  },
+  {
+    "name": "Holy Tree",
+    "source": {
+      "book": "CR3",
+      "page": 153
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalion",
+    "level": 13,
+    "cost": {
+      "mp": 16,
+      "text": "MP16"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster becomes a sacred giant tree: rooted in place, Evasion -4, longer reach.",
+    "description": "The caster turns into a huge sacred tree but keeps its abilities, can use weapons and items with its branches and can speak. Its perception becomes magical, its movement is 0, it cannot Kick and its Evasion checks suffer -4. It cannot change position by any effect, fly, mount or be mounted, be knocked prone or be Thrown. Its melee attacks and Touch-range effects reach 1(10m)/Target ([Metamagic/Targets] and [Metamagic/Distance] do not apply), and [Cover] can protect targets within that range.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -4
+      }
+    ]
+  },
+  {
+    "name": "Scapegoat",
+    "source": {
+      "book": "CR3",
+      "page": 153
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Miritsa",
+    "level": 13,
+    "cost": {
+      "mp": 30,
+      "text": "MP30"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All Areas (30m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 30,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster may take any damage dealt to characters in the area as fixed damage.",
+    "description": "For the duration the caster can redirect applied damage suffered by any character in the area to itself as fixed damage. It is also treated as having the combat feat [Indomitable], and a Death Check roll of 10 or more automatically succeeds (HP becomes 1). Castable once per day.",
+    "modifiers": []
+  },
+  {
+    "name": "Cyclone",
+    "source": {
+      "book": "CR3",
+      "page": 154
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Furusil",
+    "level": 13,
+    "cost": {
+      "mp": 18,
+      "text": "MP18"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "wind",
+      "lightning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A thunderstorm dealing Power 40 wind and lightning magic damage.",
+    "description": "A violent storm deals Power 40 + Magic Power magic damage (Wind and Lightning type) to the targets. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Control Train",
+    "source": {
+      "book": "CR3",
+      "page": 154
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Strasford",
+    "level": 13,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Drive a train or other wheeled vehicle with your mind by touching it.",
+    "description": "While touching it, the caster can move a wheeled structure such as a train by will alone, at up to twice its normal speed. Characters and mounts cannot be targeted.",
+    "modifiers": []
+  },
+  {
+    "name": "Resignation",
+    "source": {
+      "book": "CR3",
+      "page": 324
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 13,
+      "text": "MP13"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A badly wounded Humanoid gets -4 on checks for actions against Barbarous.",
+    "description": "Second Sword counterpart of [Surrender]: only affects Humanoids with no more than 1/10 of maximum HP (rounded down) left, all main sections for multi-section characters. If the target attacks, casts a spell or takes any other action against Barbarous, it suffers -4 to Accuracy, Spellcasting and other skill checks. Priests of Laris can use either version.",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": -4,
+        "condition": "acting against Barbarous",
+        "target": "target"
+      }
+    ],
+    "barbarous": true
+  },
+  {
+    "name": "Vice Field",
+    "source": {
+      "book": "CR3",
+      "page": 324
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All Areas (100m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 100,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant/1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A barrier that Humanoids, Undead and their spells and abilities cannot cross.",
+    "description": "Second Sword counterpart of [Sacred Field]: Humanoids and Undead, and their spells and abilities, cannot pass the barrier. It does not form if any Humanoid or Undead is already inside, and if it overlaps a [Sacred Field] both end at once. Priests of Laris can use either version.",
+    "modifiers": [],
+    "barbarous": true
+  },
+  {
+    "name": "Instant Soulscar",
+    "source": {
+      "book": "CR3",
+      "page": 324
+    },
+    "system": "divine",
+    "subsystem": "basic",
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "A fleeting soulscar may cost a Humanoid its turn or grant a Barbarous extra Major Actions.",
+    "description": "Second Sword counterpart of [Erase Soulscar]: the target briefly bears one soulscar. A Humanoid rolls a die at the start of its next turn and on 3 or less cannot move or take Major Actions that turn. A Barbarous rolls a die as each of its turns ends; a 4+ lets it take one extra Major Action that turn (at most once per turn). Priests of Laris can use either version.",
+    "modifiers": [],
+    "barbarous": true
+  },
+  {
+    "name": "Fatal Explosion",
+    "source": {
+      "book": "CR3",
+      "page": 325
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Dalkhrem",
+    "level": 13,
+    "cost": {
+      "mp": 22,
+      "text": "MP22"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "bludgeoning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 80,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A massive blast around the caster dealing Power 80 bludgeoning magic damage.",
+    "description": "Deals Power 80 + Magic Power magic damage (Bludgeoning type) to the targets around the caster. Critical 10.",
+    "modifiers": []
+  },
+  {
+    "name": "Water Bridge",
+    "source": {
+      "book": "CR3",
+      "page": 325
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Eiryak",
+    "level": 13,
+    "cost": {
+      "mp": 25,
+      "text": "MP25"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Create flowing bridges of water that can be sailed on or swum through.",
+    "description": "For the duration the caster can create straight, slightly arched bridges of water (1-10 m wide and deep, 10-100 m long) with Major Actions, as many as it likes. Each lasts until the spell ends and cannot be dismissed, and cannot be placed through existing structures or characters (it may arch over them). Each bridge flows toward one end at a speed the caster sets; boats can travel on it and characters can swim in it.",
+    "modifiers": []
+  },
+  {
+    "name": "Ultimate Being",
+    "source": {
+      "book": "CR3",
+      "page": 326
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Zeides",
+    "level": 13,
+    "cost": {
+      "mp": 13,
+      "text": "MP13"
+    },
+    "minorAction": true,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Ignore any chosen harmful effects; action checks +2 while ignoring at least one.",
+    "description": "Can be cast as a Minor Action. For the duration the caster may pick any effects it does not want and ignore them; they are suspended, not removed, and apply again when the spell ends. While at least one effect is being ignored, the caster gets +2 to all action checks.",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": 2,
+        "condition": "while ignoring at least one effect"
+      }
+    ]
+  },
+  {
+    "name": "Call Daemon",
+    "source": {
+      "book": "CR3",
+      "page": 326
+    },
+    "system": "divine",
+    "subsystem": "special",
+    "deity": "Laris",
+    "level": 13,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Summons a Daemon of level 12 or lower.",
+    "description": "Calls a Daemon of level 12 or lower, which acts on its own from the next round.",
+    "modifiers": []
+  }
+]

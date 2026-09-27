@@ -1,0 +1,12 @@
+{{!-- Expanded details of an item row: the item's rulebook entry. Context: a row from _itemRow. --}}
+<div class="swp-details">
+  {{#if entry}}{{> "systems/swordworld25/templates/item/entry.hbs" entry noTitle=true hideSource=true compact=true}}{{/if}}
+  <div class="swp-details-foot">
+    {{#if source}}<span class="swp-source">{{source}}</span>{{/if}}
+    <span class="swp-details-tools">
+      <a data-action="itemChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i> {{localize "SW25.ToChat"}}</a>
+      <a data-action="itemEdit" data-tooltip="SW25.Edit"><i class="fa-solid fa-pen"></i> {{localize "SW25.Edit"}}</a>
+      <a data-action="itemDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>
+    </span>
+  </div>
+</div>

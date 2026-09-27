@@ -1,0 +1,129 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="magic">
+  {{#if magicPowers.length}}
+  <div class="swp-magic-head">
+    {{#each magicPowers}}
+    <a class="swp-power-circle large" data-action="openSpellbook" data-tab="{{tab}}" data-tooltip="{{localize 'SW25.Sheet.OpenSpellbookFor' name=label}}">
+      <span class="swp-circle-big"><span class="swp-num">{{value}}</span></span>
+      <span class="swp-circle-label"><i class="{{icon}}"></i> {{label}} {{level}}</span>
+      {{#if check}}<span class="swp-circle-sub">{{localize "SW25.Sheet.CastingCheck"}} <b>{{check}}</b>{{#if armorPenalty}} <span class="warn">({{armorPenalty}})</span>{{/if}}</span>{{/if}}
+    </a>
+    {{/each}}
+  </div>
+  {{else}}
+  <p class="swp-hint">{{localize "SW25.Magic.NoCaster"}}</p>
+  {{/if}}
+
+  <div class="swp-magic-tools">
+    <button type="button" class="swp-btn-wide" data-action="openSpellbook"><i class="fa-solid fa-book-sparkles"></i> {{localize "SW25.Spellbook.Open"}}</button>
+    <a class="swp-btn-text" data-action="openCompendium" data-pack="spells"><i class="fa-solid fa-magnifying-glass"></i> {{localize "SW25.Sheet.SpellCompendium"}}</a>
+    {{#if hasPriest}}
+    <label class="swp-line swp-deity">
+      <span class="swp-line-label">{{localize "SW25.Deity"}}</span>
+      <input type="text" name="system.deity" value="{{system.deity}}" list="sw25-deities-{{actor.id}}">
+      <datalist id="sw25-deities-{{actor.id}}">{{#each deities}}<option value="{{this}}"></option>{{/each}}</datalist>
+    </label>
+    {{/if}}
+  </div>
+
+  {{#if hasFairy}}
+  <div class="swp-block">
+    <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Fairy.Elements"}}</span><span class="swp-count">{{system.fairyElements.length}} / 4</span></div>
+    <div class="swp-element-grid">
+      {{#each fairyElements}}
+      <a class="swp-element element-{{key}} {{#if active}}on{{/if}}" data-action="fairyElement" data-element="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#each magic}}
+  <div class="swp-block swp-spells">
+    <table class="swp-table swp-spell-table">
+      <thead><tr>
+        <th class="lvl" data-tooltip="SW25.Level">{{localize "SW25.Entry.LevelShort"}}</th>
+        <th class="name"><i class="{{icon}}"></i> {{localize label}}</th>
+        <th>{{localize "SW25.Sheet.Cost"}}</th>
+        <th>{{localize "SW25.Sheet.Target"}}</th>
+        <th>{{localize "SW25.Sheet.RangeArea"}}</th>
+        <th>{{localize "SW25.Sheet.Duration"}}</th>
+        <th class="tools"><a class="swp-tool" data-action="openSpellbook" data-tab="{{system}}" data-tooltip="SW25.Spellbook.Open"><i class="fa-solid fa-book-sparkles"></i></a></th>
+      </tr></thead>
+      <tbody>
+        {{#each spells}}
+        <tr class="swp-row draggable {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+          <th class="lvl">{{level}}</th>
+          {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=true}}
+          <td class="c">{{cost}}</td>
+          <td class="c">{{target}}</td>
+          <td class="c">{{range}}</td>
+          <td class="c">{{duration}}</td>
+          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=true useIcon="fa-solid fa-wand-magic-sparkles"}}
+        </tr>
+        {{#if expanded}}<tr class="swp-details-row"><td colspan="7" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+        {{else}}
+        <tr class="swp-empty-row"><td colspan="7">{{localize "SW25.Sheet.NoFavoriteSpells"}}</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{/each}}
+
+  {{#if otherSpells.length}}
+  <div class="swp-block swp-spells">
+    <table class="swp-table swp-spell-table">
+      <thead><tr><th class="lvl" data-tooltip="SW25.Level">{{localize "SW25.Entry.LevelShort"}}</th><th class="name">{{localize "SW25.Spellbook.Other"}}</th><th>{{localize "SW25.Sheet.Cost"}}</th><th>{{localize "SW25.Sheet.Target"}}</th><th>{{localize "SW25.Sheet.RangeArea"}}</th><th>{{localize "SW25.Sheet.Duration"}}</th><th class="tools"></th></tr></thead>
+      <tbody>
+        {{#each otherSpells}}
+        <tr class="swp-row draggable {{#if expanded}}open{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+          <th class="lvl">{{level}}</th>
+          {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=true}}
+          <td class="c">{{cost}}</td><td class="c">{{target}}</td><td class="c">{{range}}</td><td class="c">{{duration}}</td>
+          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=true useIcon="fa-solid fa-wand-magic-sparkles"}}
+        </tr>
+        {{#if expanded}}<tr class="swp-details-row"><td colspan="7" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{/if}}
+
+  {{#if hasBard}}
+  <div class="swp-block">
+    <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Rhythm.label"}}</span><span class="swp-count">{{localize "SW25.BardicPower"}} {{system.bardicPower}}</span></div>
+    <div class="swp-rhythm">
+      {{#each rhythms}}
+      <div class="swp-box swp-rhythm-box" data-tooltip="{{localize label}}">
+        <span class="swp-legend center">{{icon}}</span>
+        <a class="swp-mini" data-action="rhythmAdjust" data-rhythm="{{key}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+        <span class="swp-num">{{value}}</span>
+        <a class="swp-mini" data-action="rhythmAdjust" data-rhythm="{{key}}" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if hasAlchemist}}
+  <div class="swp-block">
+    <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Card.MaterialCards"}}</span><span class="swp-count">{{localize "SW25.AlchemyPower"}} {{system.alchemyPower}}</span></div>
+    <table class="swp-table swp-card-table">
+      <thead><tr><th></th>{{#each config.cardRanks}}<th>{{this}}</th>{{/each}}</tr></thead>
+      <tbody>
+        {{#each cardRows}}
+        <tr class="card-{{color}}">
+          <th class="name"><span class="swp-card-swatch"></span>{{localize label}}</th>
+          {{#each ranks}}
+          <td class="swp-card-cell">
+            <a class="swp-mini" data-action="cardAdjust" data-color="{{../color}}" data-rank="{{rank}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+            <span class="swp-num">{{value}}</span>
+            <a class="swp-mini" data-action="cardAdjust" data-color="{{../color}}" data-rank="{{rank}}" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+          </td>
+          {{/each}}
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p class="swp-hint">{{localize "SW25.Card.Hint"}}</p>
+  </div>
+  {{/if}}
+</section>

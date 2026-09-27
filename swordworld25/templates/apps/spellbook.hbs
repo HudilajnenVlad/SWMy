@@ -1,0 +1,186 @@
+<div class="swp-book">
+  <nav class="swp-book-tabs sheet-tabs">
+    {{#each tabs}}
+    <a class="{{#if active}}active{{/if}}" data-action="bookTab" data-tab="{{id}}" data-tooltip="{{localize label}}"><i class="{{icon}}"></i><span>{{localize label}}</span></a>
+    {{/each}}
+  </nav>
+
+  {{#if active}}
+  <div class="swp-book-head">
+    {{#if magic}}
+    <div class="swp-power-circle" data-tooltip="SW25.MagicPower">
+      <span class="swp-circle-big"><span class="swp-num">{{magic.power}}</span></span>
+      <span class="swp-circle-label"><i class="{{active.icon}}"></i> {{localize "SW25.MagicPower"}}</span>
+    </div>
+    <div class="swp-book-stats">
+      <div class="swp-book-kvs">
+        <span class="swp-tag">{{localize "SW25.Level"}} <b>{{magic.level}}</b></span>
+        <span class="swp-tag" data-tooltip="SW25.Spellbook.CheckHint">{{localize "SW25.Sheet.CastingCheck"}} <b>{{magic.check}}</b></span>
+      </div>
+      <div class="swp-res mp" style="--pct: {{magic.mpPct}}%">
+        <span class="swp-res-label">{{localize "SW25.MP"}}</span>
+        <span class="swp-res-box"><span class="swp-res-value">{{magic.mpValue}}</span><span class="max">/{{magic.mpMax}}</span></span>
+        <span class="swp-res-track"><span></span></span>
+      </div>
+    </div>
+    {{/if}}
+    {{#if learned}}
+    <div class="swp-book-learned">
+      <span class="swp-tag">{{localize classLabel}} <b>{{classLevel}}</b></span>
+      <span class="swp-tag {{#unless canLearn}}full{{/unless}}" data-tooltip="SW25.Spellbook.LearnHint">{{localize "SW25.Spellbook.Learned"}} <b>{{count}} / {{max}}</b></span>
+    </div>
+    {{/if}}
+    <div class="swp-book-search">
+      <label class="swp-book-filter"><i class="fa-solid fa-magnifying-glass"></i><input type="search" name="filter" value="{{filter}}" placeholder="{{localize 'SW25.Spellbook.Search'}}"></label>
+      <label class="swp-check"><input type="checkbox" data-action="toggleAll" {{checked showAll}}> {{localize "SW25.Spellbook.ShowAll"}}</label>
+      <a class="swp-btn-text" data-action="openPack" data-kind="{{#if learned}}learned{{else}}magic{{/if}}"><i class="fa-solid fa-magnifying-glass"></i> {{localize "SW25.Compendium.Open"}}</a>
+    </div>
+  </div>
+
+  {{#if isFairy}}
+  <div class="swp-block swp-book-extra">
+    <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Fairy.Elements"}}</span><span class="swp-count {{#if (gt elementCount 4)}}over{{/if}}">{{elementCount}} / 4</span></div>
+    <div class="swp-element-grid">
+      {{#each elements}}<a class="swp-element element-{{key}} {{#if active}}on{{/if}}" data-action="element" data-element="{{key}}"><span class="swp-cb"></span>{{localize label}}</a>{{/each}}
+    </div>
+  </div>
+  {{/if}}
+  {{#if isDivine}}
+  <div class="swp-book-extra swp-book-deity">
+    <label class="swp-line"><span class="swp-line-label">{{localize "SW25.Deity"}}</span>
+      <input type="text" name="deity" value="{{deity}}" list="sw25-book-deities-{{actor.id}}">
+      <datalist id="sw25-book-deities-{{actor.id}}">{{#each deities}}<option value="{{this}}"></option>{{/each}}</datalist>
+    </label>
+  </div>
+  {{/if}}
+  {{#if rhythm}}
+  <div class="swp-block swp-book-extra">
+    <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Rhythm.label"}}</span></div>
+    <div class="swp-rhythm">
+      {{#each rhythm}}
+      <div class="swp-box swp-rhythm-box" data-tooltip="{{localize label}}">
+        <span class="swp-legend center">{{icon}}</span>
+        <a class="swp-mini" data-action="rhythm" data-key="{{key}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+        <span class="swp-num">{{value}}</span>
+        <a class="swp-mini" data-action="rhythm" data-key="{{key}}" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+  {{#if cards}}
+  <div class="swp-block swp-book-extra">
+    <table class="swp-table swp-card-table">
+      <thead><tr><th class="name">{{localize "SW25.Card.MaterialCards"}}</th>{{#each @root.cards.[0].ranks}}<th>{{rank}}</th>{{/each}}</tr></thead>
+      <tbody>
+        {{#each cards}}
+        <tr class="card-{{color}}"><th class="name"><span class="swp-card-swatch"></span>{{localize label}}</th>{{#each ranks}}<td>{{value}}</td>{{/each}}</tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{/if}}
+
+  <div class="swp-book-content">
+    {{#unless learned}}
+    <div class="swp-block">
+      <table class="swp-table swp-book-table spells">
+        <thead><tr>
+          <th class="lvl" data-tooltip="SW25.Level">{{localize "SW25.Entry.LevelShort"}}</th>
+          <th class="name"><i class="{{active.icon}}"></i> {{localize active.label}}</th>
+          <th>{{localize "SW25.Entry.Cost"}}</th>
+          <th>{{localize "SW25.Sheet.Target"}}</th>
+          <th>{{localize "SW25.Sheet.RangeArea"}}</th>
+          <th>{{localize "SW25.Sheet.Duration"}}</th>
+          <th>{{localize "SW25.Entry.Resistance"}}</th>
+          <th class="tools"></th>
+        </tr></thead>
+        {{#each groups}}
+        <tbody>
+          <tr class="swp-subhead"><th colspan="7">{{label}}</th><th class="count">{{rows.length}}</th></tr>
+          {{#each rows}}
+          <tr class="swp-row {{#unless available}}unavailable{{/unless}} {{#if owned}}owned{{/if}} {{#if expanded}}open{{/if}}" data-uuid="{{uuid}}">
+            <th class="lvl">{{level}}</th>
+            <td class="name">
+              <div class="swp-name-cell">
+                <a class="swp-caret" data-action="expand"><i class="fa-solid fa-caret-{{#if expanded}}down{{else}}right{{/if}}"></i></a>
+                <img class="swp-row-img" src="{{img}}" alt="" {{#if available}}data-action="cast" data-tooltip="SW25.Spellbook.Cast"{{/if}}>
+                <span class="swp-name-text">
+                  <a class="swp-name-link" data-action="expand">{{#if marks}}<span class="swp-marks">{{marks}}</span> {{/if}}{{name}}</a>
+                  {{#if (or tag magisphere reason)}}<small class="swp-sub">{{tag}}{{magisphere}}{{#if reason}}<span class="warn">{{#if (or tag magisphere)}} · {{/if}}{{reason}}</span>{{/if}}</small>{{/if}}
+                </span>
+              </div>
+            </td>
+            <td class="c cost">{{cost}}</td>
+            <td class="c">{{target}}</td>
+            <td class="c">{{range}}</td>
+            <td class="c">{{duration}}</td>
+            <td class="c">{{resistance}}</td>
+            <td class="swp-tools-cell">
+              <span class="swp-row-tools always">
+                <a class="swp-cast {{#unless available}}off{{/unless}}" {{#if available}}data-action="cast"{{/if}} data-tooltip="SW25.Spellbook.Cast"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                <a class="swp-fav {{#if owned}}on{{/if}}" data-action="favorite" data-tooltip="{{#if owned}}SW25.Spellbook.Unfavorite{{else}}SW25.Spellbook.Favorite{{/if}}"><i class="fa-{{#if owned}}solid{{else}}regular{{/if}} fa-star"></i></a>
+                <a data-action="view" data-tooltip="SW25.Entry.View"><i class="fa-solid fa-up-right-from-square"></i></a>
+              </span>
+            </td>
+          </tr>
+          {{#if expanded}}<tr class="swp-details-row"><td colspan="8">{{#if entry}}{{> "systems/swordworld25/templates/item/entry.hbs" entry noTitle=true compact=true}}{{/if}}</td></tr>{{/if}}
+          {{/each}}
+        </tbody>
+        {{else}}
+        <tbody><tr class="swp-empty-row"><td colspan="8">{{localize "SW25.Spellbook.NothingFound"}}</td></tr></tbody>
+        {{/each}}
+      </table>
+    </div>
+    {{else}}
+    {{#each learnedLists as |list|}}
+    <div class="swp-block">
+      <table class="swp-table swp-book-table">
+        <thead><tr>
+          <th class="lvl" data-tooltip="SW25.Level">{{localize "SW25.Entry.LevelShort"}}</th>
+          <th class="name">{{localize list.label}}</th>
+          <th>{{#if @root.detailLabel}}{{localize @root.detailLabel}}{{/if}}</th>
+          <th class="tools"></th>
+        </tr></thead>
+        <tbody>
+          {{#each list.rows}}
+          <tr class="swp-row {{#unless owned}}{{#unless available}}unavailable{{/unless}}{{/unless}} {{#if expanded}}open{{/if}}" data-uuid="{{uuid}}">
+            <th class="lvl">{{level}}</th>
+            <td class="name">
+              <div class="swp-name-cell">
+                <a class="swp-caret" data-action="expand"><i class="fa-solid fa-caret-{{#if expanded}}down{{else}}right{{/if}}"></i></a>
+                <img class="swp-row-img" src="{{img}}" alt="" {{#if owned}}data-action="use" data-tooltip="SW25.Use"{{/if}}>
+                <span class="swp-name-text">
+                  <a class="swp-name-link" data-action="expand">{{#if marks}}<span class="swp-marks">{{marks}}</span> {{/if}}{{name}}</a>
+                  {{#if reason}}<small class="swp-sub warn">{{reason}}</small>{{else if summary}}<small class="swp-sub">{{summary}}</small>{{/if}}
+                </span>
+              </div>
+            </td>
+            <td class="c detail">{{detail}}</td>
+            <td class="swp-tools-cell">
+              <span class="swp-row-tools always">
+                {{#if owned}}
+                <a data-action="use" data-tooltip="SW25.Use"><i class="fa-solid fa-dice-d6"></i></a>
+                <a data-action="view" data-tooltip="SW25.Entry.View"><i class="fa-solid fa-up-right-from-square"></i></a>
+                <a data-action="forget" data-tooltip="SW25.Spellbook.Forget"><i class="fa-solid fa-trash"></i></a>
+                {{else}}
+                <a class="swp-learn {{#unless available}}off{{/unless}}" {{#if available}}data-action="learn"{{/if}} data-tooltip="SW25.Spellbook.LearnHint"><i class="fa-solid fa-graduation-cap"></i></a>
+                <a data-action="view" data-tooltip="SW25.Entry.View"><i class="fa-solid fa-up-right-from-square"></i></a>
+                {{/if}}
+              </span>
+            </td>
+          </tr>
+          {{#if expanded}}<tr class="swp-details-row"><td colspan="4">{{#if entry}}{{> "systems/swordworld25/templates/item/entry.hbs" entry noTitle=true compact=true}}{{/if}}</td></tr>{{/if}}
+          {{else}}
+          <tr class="swp-empty-row"><td colspan="4">{{localize list.empty}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{/each}}
+    {{/unless}}
+  </div>
+  {{else}}
+  <p class="swp-none">{{localize "SW25.Spellbook.Empty"}}</p>
+  {{/if}}
+</div>

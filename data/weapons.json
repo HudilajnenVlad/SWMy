@@ -1,0 +1,8544 @@
+[
+  {
+    "name": "Knife",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword",
+      "throw"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 30,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 1,
+        "accuracy": 0,
+        "power": 1,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword / thrown weapon: 1H* Power 1, Crit 10. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Stiletto",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 40,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 2,
+        "accuracy": 0,
+        "power": 2,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 2, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Dagger",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword",
+      "throw"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 50,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 3,
+        "accuracy": 0,
+        "power": 3,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword / thrown weapon: 1H* Power 3, Crit 10. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Kukri",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 60,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 4,
+        "accuracy": 0,
+        "power": 4,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 4, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Short Sword",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 80,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": 5,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 5, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Épée",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 90,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 6,
+        "accuracy": 0,
+        "power": 6,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 6, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Katzbalger",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 100,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 7,
+        "accuracy": 0,
+        "power": 7,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 7, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Rapier",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 110,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 8,
+        "accuracy": 0,
+        "power": 8,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 8, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Saber",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 190,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": 10,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 10, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Estoc",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 370,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 11,
+        "accuracy": 0,
+        "power": 21,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 2H Power 21, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Long Sword",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 440,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 13,
+        "accuracy": 0,
+        "power": 13,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 13,
+        "accuracy": 0,
+        "power": 23,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H† Power 13, Crit 10 / 2H Power 23, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Broad Sword",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 340,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 15,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H Power 15, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Bastard Sword",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 560,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 17,
+        "accuracy": 0,
+        "power": 17,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 17,
+        "accuracy": 0,
+        "power": 27,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 1H† Power 17, Crit 10 / 2H Power 27, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Falchion",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 790,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 18,
+        "accuracy": 0,
+        "power": 28,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 2H Power 28, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Zweihander",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 860,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 2H Power 30, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Shamshir",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 950,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 22,
+        "accuracy": 0,
+        "power": 32,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 2H Power 32, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Great Sword",
+    "source": {
+      "book": "CR1",
+      "page": 271
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1020,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 24,
+        "accuracy": 0,
+        "power": 34,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank sword: 2H Power 34, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Fast Spike",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword",
+      "throw"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 820,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": 6,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword / thrown weapon: 1H* Power 6, Crit 10. Throwable (20m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 2 (20m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Flissa",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 880,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 8,
+        "accuracy": 0,
+        "power": 13,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword: 1H Power 13, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Schiavona",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 990,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 11,
+        "accuracy": 0,
+        "power": 16,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword: 1H Power 16, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Defender",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1770,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 1,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 12,
+        "accuracy": 0,
+        "power": 17,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword: 1H Power 17, Crit 10. +1 Defense.",
+    "description": "+1 Defense to the wielder while equipped (weapon Defense bonuses do not stack).",
+    "modifiers": []
+  },
+  {
+    "name": "Talwar",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1210,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 20,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword: 1H Power 20, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Steel Blade",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1450,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 19,
+        "accuracy": 0,
+        "power": 24,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword: 1H Power 24, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Flamberge",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1580,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 23,
+        "accuracy": 0,
+        "power": 28,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 23,
+        "accuracy": 0,
+        "power": 38,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword: 1H† Power 28, Crit 10 / 2H Power 38, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Dragonslayer",
+    "source": {
+      "book": "CR1",
+      "page": 272
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 2760,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 28,
+        "accuracy": 0,
+        "power": 43,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank sword: 2H Power 43, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Sickle",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 40,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 4,
+        "accuracy": 0,
+        "power": 9,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe: 1H Power 9, Crit 11.",
+    "description": "Standard axe with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Hand Axe",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe",
+      "throw"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 90,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 7,
+        "accuracy": 0,
+        "power": 12,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe / thrown weapon: 1H* Power 12, Crit 11. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Bhuj",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 240,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 11,
+        "accuracy": 0,
+        "power": 16,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe: 1H Power 16, Crit 11.",
+    "description": "Standard axe with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Battle Axe",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 360,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 16,
+        "accuracy": 0,
+        "power": 21,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 16,
+        "accuracy": 0,
+        "power": 31,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe: 1H† Power 21, Crit 11 / 2H Power 31, Crit 11.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Great Axe",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 410,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 18,
+        "accuracy": 0,
+        "power": 33,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe: 2H Power 33, Crit 11.",
+    "description": "Standard axe with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Axe",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 440,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 25,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 35,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe: 1H† Power 25, Crit 11 / 2H Power 35, Crit 11.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Bulova",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 490,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 22,
+        "accuracy": 0,
+        "power": 37,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe: 2H Power 37, Crit 11.",
+    "description": "Standard axe with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Minotaur's Axe",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 950,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 0,
+        "power": 45,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank axe: 2H Power 45, Crit 11.",
+    "description": "Standard axe with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Tomahawk",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe",
+      "throw"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 630,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 7,
+        "accuracy": 0,
+        "power": 17,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank axe / thrown weapon: 1H* Power 17, Crit 11. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Tabarzin",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 840,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 13,
+        "accuracy": 0,
+        "power": 23,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank axe: 1H Power 23, Crit 11.",
+    "description": "Standard axe with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Long Axe",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 990,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H Slash",
+        "stance": "2Hᵴ",
+        "minStr": 16,
+        "accuracy": 0,
+        "power": 36,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H Pierce",
+        "stance": "2Hᵱ",
+        "minStr": 16,
+        "accuracy": 0,
+        "power": 31,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank axe: 2Hᵴ Power 36, Crit 11 / 2Hᵱ Power 31, Crit 10.",
+    "description": "Choose slashing (2Hᵴ) or piercing (2Hᵱ) data before each Accuracy check.",
+    "modifiers": []
+  },
+  {
+    "name": "Halberd",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1080,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H Slash",
+        "stance": "2Hᵴ",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 40,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H Pierce",
+        "stance": "2Hᵱ",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 35,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank axe: 2Hᵴ Power 40, Crit 11 / 2Hᵱ Power 35, Crit 10.",
+    "description": "Choose slashing (2Hᵴ) or piercing (2Hᵱ) data before each Accuracy check.",
+    "modifiers": []
+  },
+  {
+    "name": "Glaive",
+    "source": {
+      "book": "CR1",
+      "page": 273
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1350,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H Slash",
+        "stance": "2Hᵴ",
+        "minStr": 28,
+        "accuracy": 0,
+        "power": 48,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H Pierce",
+        "stance": "2Hᵱ",
+        "minStr": 28,
+        "accuracy": 0,
+        "power": 43,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank axe: 2Hᵴ Power 48, Crit 11 / 2Hᵱ Power 43, Crit 10.",
+    "description": "Choose slashing (2Hᵴ) or piercing (2Hᵱ) data before each Accuracy check.",
+    "modifiers": []
+  },
+  {
+    "name": "Javelin",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear",
+      "throw"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 65,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 5,
+        "accuracy": -1,
+        "power": 10,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank spear / thrown weapon: 1H* Power 10, Crit 10. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Short Spear",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear",
+      "throw"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 110,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 10,
+        "accuracy": -1,
+        "power": 15,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank spear / thrown weapon: 1H* Power 15, Crit 10. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Spear",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 170,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 15,
+        "accuracy": -1,
+        "power": 20,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 25,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank spear: 1H† Power 20, Crit 10 / 2H Power 25, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Long Spear",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 220,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 25,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank spear: 1H† Power 25, Crit 10 / 2H Power 30, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Pilum",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 880,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 8,
+        "accuracy": -1,
+        "power": 13,
+        "critical": 9,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank spear: 1H Power 13, Crit 9.",
+    "description": "Standard spear with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Trident",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear",
+      "throw"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 460,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 12,
+        "accuracy": -1,
+        "power": 22,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank spear / thrown weapon: 1H* Power 22, Crit 10. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Ahlspiess",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 480,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 15,
+        "accuracy": -1,
+        "power": 25,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank spear: 1H† Power 25, Crit 10 / 2H Power 30, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Pike",
+    "source": {
+      "book": "CR1",
+      "page": 274
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1750,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 25,
+        "accuracy": -1,
+        "power": 35,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 25,
+        "accuracy": -1,
+        "power": 45,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank spear: 1H† Power 35, Crit 10 / 2H Power 45, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Mallet",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace",
+      "throw"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 20,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": 6,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank mace / thrown weapon: 1H* Power 6, Crit 12. Throwable (10m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 1 (10m) (CR I p.281).",
+    "modifiers": []
+  },
+  {
+    "name": "Light Mace",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 120,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 1,
+        "power": 10,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank mace: 1H Power 10, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Mallet",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 220,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 15,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank mace: 1H Power 15, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Mace",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 330,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 15,
+        "accuracy": 1,
+        "power": 20,
+        "critical": 12,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 1,
+        "power": 30,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank mace: 1H† Power 20, Crit 12 / 2H Power 30, Crit 12.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Maul",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 440,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 1,
+        "power": 35,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank mace: 2H Power 35, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Ogre Maul",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 640,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 1,
+        "power": 45,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank mace: 2H Power 45, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Biliong",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 460,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 7,
+        "accuracy": 1,
+        "power": 17,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank mace: 1H Power 17, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Steel Blow",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 710,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 13,
+        "accuracy": 1,
+        "power": 23,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank mace: 1H Power 23, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Shellbreaker",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1080,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 18,
+        "accuracy": 1,
+        "power": 28,
+        "critical": 12,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 18,
+        "accuracy": 1,
+        "power": 38,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank mace: 1H† Power 28, Crit 12 / 2H Power 38, Crit 12.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Ball Mace",
+    "source": {
+      "book": "CR1",
+      "page": 275
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1220,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 23,
+        "accuracy": 1,
+        "power": 43,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank mace: 2H Power 43, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Mage Staff",
+    "source": {
+      "book": "CR1",
+      "page": 276
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 110,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 1,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": 11,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank staff: 2H Power 11, Crit 12. +1 Defense.",
+    "description": "+1 Defense to the wielder while equipped (weapon Defense bonuses do not stack).",
+    "modifiers": []
+  },
+  {
+    "name": "Quarterstaff",
+    "source": {
+      "book": "CR1",
+      "page": 276
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 140,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 1,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 4,
+        "accuracy": 1,
+        "power": 14,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank staff: 2H Power 14, Crit 12. +1 Defense.",
+    "description": "+1 Defense to the wielder while equipped (weapon Defense bonuses do not stack).",
+    "modifiers": []
+  },
+  {
+    "name": "Efreet's Whisker",
+    "source": {
+      "book": "CR1",
+      "page": 276
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": "500 × remaining uses",
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 4,
+        "accuracy": 1,
+        "power": 14,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Magic staff holding 2d charges of [Fireball] cast at Magic Power 6.",
+    "description": "Found with 2d charges. As a Major Action, speaking its command word casts [Fireball] (CR I p.219) with Magic Power 6 and uses one charge; active combat feats cannot be combined with this. Base price is 500G per remaining charge (Details CR I p.302, Pop. 17).",
+    "modifiers": []
+  },
+  {
+    "name": "Mana Staff",
+    "source": {
+      "book": "CR1",
+      "page": 276
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 6800,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 3,
+        "accuracy": 1,
+        "power": 13,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Magic Power +1 while equipped.",
+    "description": "While equipped, all of the wielder's Magic Power values are increased by +1 (Details CR I p.302).",
+    "modifiers": [
+      {
+        "key": "magicPower",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Leech Staff",
+    "source": {
+      "book": "CR1",
+      "page": 276
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 7000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 5,
+        "accuracy": 1,
+        "power": 15,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Spells that directly deal damage deal +2 damage.",
+    "description": "While equipped, the wielder's spells that directly deal damage deal +2 damage. Spells that do not deal damage themselves (e.g. [Enchant Weapon]) and bullet spells are not affected (Details CR I p.302).",
+    "modifiers": [
+      {
+        "key": "damageMagic",
+        "value": 2,
+        "condition": "damage-dealing spells only (not bullet spells)"
+      }
+    ]
+  },
+  {
+    "name": "Light Flail",
+    "source": {
+      "book": "CR1",
+      "page": 277
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 90,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 7,
+        "accuracy": -1,
+        "power": 12,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank flail: 1H Power 12, Crit 10.",
+    "description": "Standard flail with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Flail",
+    "source": {
+      "book": "CR1",
+      "page": 277
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 240,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 10,
+        "accuracy": -1,
+        "power": 15,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": -1,
+        "power": 25,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank flail: 1H† Power 15, Crit 10 / 2H Power 25, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Morningstar",
+    "source": {
+      "book": "CR1",
+      "page": 277
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 280,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 12,
+        "accuracy": -1,
+        "power": 17,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank flail: 1H Power 17, Crit 10.",
+    "description": "Standard flail with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Flail",
+    "source": {
+      "book": "CR1",
+      "page": 277
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 340,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 15,
+        "accuracy": -1,
+        "power": 20,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": -1,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank flail: 1H† Power 20, Crit 10 / 2H Power 30, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Rising Sun",
+    "source": {
+      "book": "CR1",
+      "page": 277
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1200,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 14,
+        "accuracy": -1,
+        "power": 24,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 14,
+        "accuracy": -1,
+        "power": 34,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank flail: 1H† Power 24, Crit 10 / 2H Power 34, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Goedendag",
+    "source": {
+      "book": "CR1",
+      "page": 277
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1540,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 18,
+        "accuracy": -1,
+        "power": 28,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 18,
+        "accuracy": -1,
+        "power": 38,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank flail: 1H† Power 28, Crit 10 / 2H Power 38, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Scorpion Tail",
+    "source": {
+      "book": "CR1",
+      "page": 277
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 2600,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 27,
+        "accuracy": -1,
+        "power": 47,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank flail: 2H Power 47, Crit 10.",
+    "description": "Standard flail with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Pick",
+    "source": {
+      "book": "CR1",
+      "page": 278
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 60,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 2,
+        "accuracy": -1,
+        "power": 7,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank warhammer: 1H Power 7, Crit 10.",
+    "description": "Standard warhammer with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Warhammer",
+    "source": {
+      "book": "CR1",
+      "page": 278
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 250,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 11,
+        "accuracy": -1,
+        "power": 16,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank warhammer: 1H Power 16, Crit 10.",
+    "description": "Standard warhammer with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Mattock",
+    "source": {
+      "book": "CR1",
+      "page": 278
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 440,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": -2,
+        "power": 40,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank warhammer: 2H Power 40, Crit 10.",
+    "description": "Standard warhammer with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "War Pick",
+    "source": {
+      "book": "CR1",
+      "page": 278
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 600,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": -1,
+        "power": 15,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank warhammer: 1H Power 15, Crit 10.",
+    "description": "Standard warhammer with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Bec-De-Corbin",
+    "source": {
+      "book": "CR1",
+      "page": 278
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1800,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H Slash",
+        "stance": "2Hᵴ",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 40,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H Pierce",
+        "stance": "2Hᵱ",
+        "minStr": 20,
+        "accuracy": -2,
+        "power": 45,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank warhammer: 2Hᵴ Power 40, Crit 10 / 2Hᵱ Power 45, Crit 10.",
+    "description": "Choose slashing (2Hᵴ) or piercing (2Hᵱ) data before each Accuracy check.",
+    "modifiers": []
+  },
+  {
+    "name": "Guisarme",
+    "source": {
+      "book": "CR1",
+      "page": 278
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1680,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 25,
+        "accuracy": -2,
+        "power": 50,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank warhammer: 2H Power 50, Crit 10.",
+    "description": "Standard warhammer with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Punch",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1HW",
+        "minStr": 0,
+        "accuracy": 0,
+        "power": 0,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1HW Power 0, Crit 12. Natural weapon.",
+    "description": "1HW: worn on the hands; items with Stance 1H/2H can still be used and Throw is possible, but no other hand-held weapon or shield can be equipped. Natural weapon: needs no equipment and cannot be bought.",
+    "modifiers": []
+  },
+  {
+    "name": "Kick",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 0,
+        "accuracy": -1,
+        "power": 5,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1H# Power 5, Crit 12. Natural weapon.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Natural weapon: needs no equipment and cannot be bought.",
+    "modifiers": []
+  },
+  {
+    "name": "Throw",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": null,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 0,
+        "accuracy": 0,
+        "power": 10,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 2H Power 10, Crit 12. Grappler only. Natural weapon.",
+    "description": "Grappler only. Natural weapon: needs no equipment and cannot be bought. Not possible while holding a weapon other than a 1HW one or carrying another item (see CR I p.143).",
+    "modifiers": []
+  },
+  {
+    "name": "Cestus",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 40,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1HW",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": 1,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1HW Power 1, Crit 11. Grappler only. Improves punches.",
+    "description": "1HW: worn on the hands; items with Stance 1H/2H can still be used and Throw is possible, but no other hand-held weapon or shield can be equipped. Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Spiked Boots",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 160,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 1,
+        "accuracy": -1,
+        "power": 11,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1H# Power 11, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Iron Knuckles",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 100,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1HW",
+        "minStr": 5,
+        "accuracy": 1,
+        "power": 5,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1HW Power 5, Crit 11. Grappler only. Improves punches.",
+    "description": "1HW: worn on the hands; items with Stance 1H/2H can still be used and Throw is possible, but no other hand-held weapon or shield can be equipped. Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Solid Heels",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 240,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 5,
+        "accuracy": -1,
+        "power": 15,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1H# Power 15, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Iron Boxers",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 230,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 10,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1H Power 10, Crit 11. Grappler only. Improves punches.",
+    "description": "Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Shin Guard",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 390,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 10,
+        "accuracy": -1,
+        "power": 20,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1H# Power 20, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Shin Plate",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 580,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 15,
+        "accuracy": -1,
+        "power": 25,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 1H# Power 25, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Hard Knuckle",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 440,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1HW",
+        "minStr": 5,
+        "accuracy": 1,
+        "power": 10,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank wrestling weapon: 1HW Power 10, Crit 11. Grappler only. Improves punches.",
+    "description": "1HW: worn on the hands; items with Stance 1H/2H can still be used and Throw is possible, but no other hand-held weapon or shield can be equipped. Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Power Wrist",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 460,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1HW",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": 10,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank wrestling weapon: 1HW Power 10, Crit 10. Grappler only. Improves punches.",
+    "description": "1HW: worn on the hands; items with Stance 1H/2H can still be used and Throw is possible, but no other hand-held weapon or shield can be equipped. Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Stomper",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 620,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 5,
+        "accuracy": -1,
+        "power": 20,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank wrestling weapon: 1H# Power 20, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Chain Stick",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 630,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 15,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank wrestling weapon: 1H Power 15, Crit 11. Grappler only. Improves punches.",
+    "description": "Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Power Anklet",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 900,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 10,
+        "accuracy": -1,
+        "power": 20,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank wrestling weapon: 1H# Power 20, Crit 10. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Hard Kicker",
+    "source": {
+      "book": "CR1",
+      "page": 280
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 1290,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 15,
+        "accuracy": -1,
+        "power": 30,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank wrestling weapon: 1H# Power 30, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Stone",
+    "source": {
+      "book": "CR1",
+      "page": 281
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 0,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 1,
+        "accuracy": 0,
+        "power": 1,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank thrown weapon: 1H* Power 1, Crit 12. Sling-compatible.",
+    "description": "Can be thrown with a Sling.",
+    "modifiers": []
+  },
+  {
+    "name": "Silver Stone",
+    "source": {
+      "book": "CR1",
+      "page": 281
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 1,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 1,
+        "accuracy": 0,
+        "power": 1,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank thrown weapon: 1H* Power 1, Crit 12. Silvered. Sling-compatible.",
+    "description": "Can be thrown with a Sling. Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Chakram",
+    "source": {
+      "book": "CR1",
+      "page": 281
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 100,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 1,
+        "accuracy": 0,
+        "power": 6,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank thrown weapon: 1H* Power 6, Crit 10.",
+    "description": "Standard thrown weapon with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Sling",
+    "source": {
+      "book": "CR1",
+      "page": 281
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 220,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 2,
+        "accuracy": 0,
+        "power": 12,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Launches sling-compatible stones using the Sling's own Power and range; stays in hand.",
+    "description": "Thrown weapons marked 'Sling allows to throw' (Stone, Silver Stone) can be shot with it, using the Sling's Power and range instead of their own. Loading one is a Minor Action; the Sling stays in the hand after the attack (Details CR I p.302).",
+    "modifiers": []
+  },
+  {
+    "name": "Dirk",
+    "source": {
+      "book": "CR1",
+      "page": 281
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 100,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 4,
+        "accuracy": 0,
+        "power": 9,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank thrown weapon: 1H* Power 9, Crit 10.",
+    "description": "Standard thrown weapon with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Soliferrum",
+    "source": {
+      "book": "CR1",
+      "page": 281
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1070,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 17,
+        "accuracy": -1,
+        "power": 27,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank thrown weapon: 1H* Power 27, Crit 10.",
+    "description": "Standard thrown weapon with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Short Bow",
+    "source": {
+      "book": "CR1",
+      "page": 282
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 60,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 2,
+        "accuracy": 0,
+        "power": 12,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank bow: 2H Power 12, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Normal Bow",
+    "source": {
+      "book": "CR1",
+      "page": 282
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 120,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 7,
+        "accuracy": 0,
+        "power": 17,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank bow: 2H Power 17, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Long Bow",
+    "source": {
+      "book": "CR1",
+      "page": 282
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 170,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 12,
+        "accuracy": 0,
+        "power": 22,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank bow: 2H Power 22, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Bow",
+    "source": {
+      "book": "CR1",
+      "page": 282
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 220,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 17,
+        "accuracy": 0,
+        "power": 27,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank bow: 2H Power 27, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Light Bow",
+    "source": {
+      "book": "CR1",
+      "page": 282
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 610,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": 20,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank bow: 2H Power 20, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Wrapped Bow",
+    "source": {
+      "book": "CR1",
+      "page": 282
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 780,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 13,
+        "accuracy": 0,
+        "power": 28,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank bow: 2H Power 28, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Fast Bow",
+    "source": {
+      "book": "CR1",
+      "page": 282
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1200,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 35,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank bow: 2H Power 35, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Light Crossbow",
+    "source": {
+      "book": "CR1",
+      "page": 283
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 160,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 1,
+        "accuracy": 0,
+        "power": 16,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank crossbow: 2H Power 16, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Normal Crossbow",
+    "source": {
+      "book": "CR1",
+      "page": 283
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 260,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": 20,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank crossbow: 2H Power 20, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Crossbow",
+    "source": {
+      "book": "CR1",
+      "page": 283
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 530,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": 25,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "B-rank crossbow: 2H Power 25, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Bowgun",
+    "source": {
+      "book": "CR1",
+      "page": 283
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 800,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": 15,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank crossbow: 1H Power 15, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Arbalest",
+    "source": {
+      "book": "CR1",
+      "page": 283
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "A-rank crossbow: 2H Power 30, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Thami",
+    "source": {
+      "book": "CR1",
+      "page": 283
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1280,
+    "priceText": null,
+    "reputation": null,
+    "range": "50m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 35,
+        "critical": 10,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "A-rank crossbow: 2H Power 35, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Cranequin",
+    "source": {
+      "book": "CR1",
+      "page": 283
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1500,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 50,
+        "critical": 11,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "A-rank crossbow: 2H Power 50, Crit 11.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Matchlock",
+    "source": {
+      "book": "CR1",
+      "page": 284
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 360,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "magazine": 3,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 1,
+        "accuracy": 0,
+        "power": null,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank gun: 1H, magazine 3, Crit 11.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage. 1H guns come with a holster (store with a Minor Action).",
+    "modifiers": []
+  },
+  {
+    "name": "Toradar",
+    "source": {
+      "book": "CR1",
+      "page": 284
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 800,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "magazine": 3,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank gun: 2H, magazine 3, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Jezail",
+    "source": {
+      "book": "CR1",
+      "page": 284
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1200,
+    "priceText": null,
+    "reputation": null,
+    "range": "50m",
+    "defenseBonus": 0,
+    "magazine": 3,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "B-rank gun: 2H, magazine 3, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Derringer",
+    "source": {
+      "book": "CR1",
+      "page": 284
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 600,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "magazine": 2,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank gun: 1H, magazine 2, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage. 1H guns come with a holster (store with a Minor Action).",
+    "modifiers": []
+  },
+  {
+    "name": "Tempest",
+    "source": {
+      "book": "CR1",
+      "page": 284
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 2000,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "magazine": 6,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": null,
+        "critical": 11,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "A-rank gun: 2H, magazine 6, Crit 11.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Longbarrel",
+    "source": {
+      "book": "CR1",
+      "page": 284
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 3500,
+    "priceText": null,
+    "reputation": null,
+    "range": "50m",
+    "defenseBonus": 0,
+    "magazine": 1,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 1,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 4
+      }
+    ],
+    "summary": "A-rank gun: 2H, magazine 1, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Spiked Shield",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "categories": [],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": "Included in the shield (1,800G)",
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 13,
+        "accuracy": -2,
+        "power": 13,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Weapon use of the Spiked Shield (A-rank shield, armor.json): 1H Power 13, Crit 10, Accuracy -2.",
+    "description": "Attack data for the Spiked Shield (shield entry in armor.json). It can attack alongside the weapon in the other hand even without [Dual Wielding], with no Accuracy penalty for the other weapon; with [Dual Technique] its own -2 Accuracy is removed. After attacking with it, the shield's Defense is 0 until the start of the wielder's next turn (bonus from [Armor Proficiency/Shield] remains) (Details CR I p.303).",
+    "modifiers": []
+  },
+  {
+    "name": "Great Barrier",
+    "source": {
+      "book": "CR1",
+      "page": 289
+    },
+    "categories": [],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": "Included in the shield (3,300G)",
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 0,
+        "power": 40,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Weapon use of the Great Barrier (A-rank shield, armor.json): 2H Power 40, Crit 12.",
+    "description": "Attack data for the Great Barrier shield (armor.json). Its Defense stays 3 after attacking with it (Defense 3/3).",
+    "modifiers": []
+  },
+  {
+    "name": "Piercer",
+    "source": {
+      "book": "CR2",
+      "page": 213
+    },
+    "categories": [
+      "sword",
+      "throw"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 2150,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 4,
+        "accuracy": 0,
+        "power": 14,
+        "critical": 9,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank sword / thrown weapon: 1H* Power 14, Crit 9. Throwable (20m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 2 (20m) (CR II p.217).",
+    "modifiers": []
+  },
+  {
+    "name": "Excellent Rapier",
+    "source": {
+      "book": "CR2",
+      "page": 213
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 4580,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": 20,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank sword: 1H Power 20, Crit 10. Silvered.",
+    "description": "Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Sword",
+    "source": {
+      "book": "CR2",
+      "page": 213
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 7500,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 25,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank sword: 1H Power 25, Crit 10. Silvered.",
+    "description": "Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Slasher",
+    "source": {
+      "book": "CR2",
+      "page": 213
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 5750,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 21,
+        "accuracy": 0,
+        "power": 31,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank sword: 1H Power 31, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Claymore",
+    "source": {
+      "book": "CR2",
+      "page": 213
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 8000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 26,
+        "accuracy": 0,
+        "power": 36,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 26,
+        "accuracy": 0,
+        "power": 46,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank sword: 1H† Power 36, Crit 10 / 2H Power 46, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Sentinel",
+    "source": {
+      "book": "CR2",
+      "page": 213
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 14000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 35,
+        "accuracy": 0,
+        "power": 55,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank sword: 2H Power 55, Crit 10.",
+    "description": "Standard sword with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Hatchet",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "axe",
+      "throw"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 2300,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 9,
+        "accuracy": 0,
+        "power": 24,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank axe / thrown weapon: 1H* Power 24, Crit 11. Throwable (20m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 2 (20m) (CR II p.217).",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Axe",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 8000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 18,
+        "accuracy": 0,
+        "power": 33,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 18,
+        "accuracy": 0,
+        "power": 43,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank axe: 1H† Power 33, Crit 11 / 2H Power 43, Crit 11. Silvered.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row). Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Couse",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 10500,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H Slash",
+        "stance": "2Hᵴ",
+        "minStr": 26,
+        "accuracy": 0,
+        "power": 51,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H Pierce",
+        "stance": "2Hᵱ",
+        "minStr": 26,
+        "accuracy": 0,
+        "power": 46,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank axe: 2Hᵴ Power 51, Crit 11 / 2Hᵱ Power 46, Crit 10.",
+    "description": "Choose slashing (2Hᵴ) or piercing (2Hᵱ) data before each Accuracy check.",
+    "modifiers": []
+  },
+  {
+    "name": "Voulge",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 13400,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 34,
+        "accuracy": 0,
+        "power": 59,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank axe: 2H Power 59, Crit 11.",
+    "description": "Standard axe with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Partisan",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1990,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 7,
+        "accuracy": -1,
+        "power": 22,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank spear: 1H Power 22, Crit 10.",
+    "description": "Standard spear with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Spear",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 7930,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 18,
+        "accuracy": -1,
+        "power": 33,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 18,
+        "accuracy": -1,
+        "power": 43,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank spear: 1H† Power 33, Crit 10 / 2H Power 43, Crit 10. Silvered.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row). Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Corsesca",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 12800,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 30,
+        "accuracy": -1,
+        "power": 45,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": -1,
+        "power": 55,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank spear: 1H† Power 45, Crit 10 / 2H Power 55, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Pallas's Maraca",
+    "source": {
+      "book": "CR2",
+      "page": 214
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1360,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 9,
+        "accuracy": 1,
+        "power": 19,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Mace/percussion instrument: a hit yields 1 ⮭ Rhythm, a miss 1 ⮯ Rhythm.",
+    "description": "Special instrument: it can be played for spellsongs but is unsuited to melodies (Performance -4 when played). When attacking with it, each successful Accuracy check generates 1 ⮭ (Uplifting) Rhythm and each failed one 1 ⮯ (Calming) Rhythm (Details CR II p.230).",
+    "modifiers": [
+      {
+        "key": "performance",
+        "value": -4,
+        "condition": "when played as an instrument"
+      }
+    ]
+  },
+  {
+    "name": "Bludgeon",
+    "source": {
+      "book": "CR2",
+      "page": 215
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1360,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 2,
+        "power": 15,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank mace: 1H Power 15, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Mace",
+    "source": {
+      "book": "CR2",
+      "page": 215
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 7200,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 15,
+        "accuracy": 2,
+        "power": 25,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank mace: 1H Power 25, Crit 12. Silvered.",
+    "description": "Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Troll Buster",
+    "source": {
+      "book": "CR2",
+      "page": 215
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 10800,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 2,
+        "power": 50,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank mace: 2H Power 50, Crit 12.",
+    "description": "Standard mace with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Fistulosum",
+    "source": {
+      "book": "CR2",
+      "page": 215
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 16100,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 2,
+        "power": 10,
+        "critical": 12,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Staff and one-handed wind instrument; its spellsongs can also affect magitech characters.",
+    "description": "Can be used as a staff and as a musical instrument (Stance 1H). Spellsongs performed with it can affect magitech characters despite being psychic/psychic (weak) type. It is not a magic implement, but can be converted into one for 100G like other non-staff weapons (Details CR II p.232, Pop. 14).",
+    "modifiers": []
+  },
+  {
+    "name": "Sorcerer's Staff",
+    "source": {
+      "book": "CR2",
+      "page": 215
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 22500,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 20,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Spellcasting checks +2.",
+    "description": "The wielder gains +2 to Spellcasting checks (Details CR II p.228).",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Black Rod",
+    "source": {
+      "book": "CR2",
+      "page": 215
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 22500,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 20,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "MP cost of the wielder's spells -1 (minimum 1).",
+    "description": "Spells cast by the wielder cost 1 less MP, never below 1. When [Metamagic/**] doubles the cost, apply the reduction first, then double (Details CR II p.228).",
+    "modifiers": [
+      {
+        "key": "mp.cost",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "name": "Percussion Flail",
+    "source": {
+      "book": "CR2",
+      "page": 215
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1380,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 9,
+        "accuracy": -1,
+        "power": 19,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Flail/percussion instrument: a hit yields 1 ⮭ Rhythm, a miss 1 ⮯ Rhythm.",
+    "description": "Special instrument: it can be played for spellsongs but is unsuited to melodies (Performance -4 when played). When attacking with it, each successful Accuracy check generates 1 ⮭ (Uplifting) Rhythm and each failed one 1 ⮯ (Calming) Rhythm (Details CR II p.231).",
+    "modifiers": [
+      {
+        "key": "performance",
+        "value": -4,
+        "condition": "when played as an instrument"
+      }
+    ]
+  },
+  {
+    "name": "Double Eel",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 3300,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 12,
+        "accuracy": -1,
+        "power": 22,
+        "critical": 9,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank flail: 1H Power 22, Crit 9.",
+    "description": "Standard flail with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Jail Impact",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 5100,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 19,
+        "accuracy": -1,
+        "power": 29,
+        "critical": 9,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank flail: 1H Power 29, Crit 9.",
+    "description": "Standard flail with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Titan Flail",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 12500,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 32,
+        "accuracy": -1,
+        "power": 52,
+        "critical": 9,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank flail: 2H Power 52, Crit 9.",
+    "description": "Standard flail with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Chekan",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 2600,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 9,
+        "accuracy": -1,
+        "power": 24,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank warhammer: 1H Power 24, Crit 10.",
+    "description": "Standard warhammer with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Bec-De-Faucon",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 10300,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 22,
+        "accuracy": -1,
+        "power": 37,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 22,
+        "accuracy": -2,
+        "power": 52,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank warhammer: 1H† Power 37, Crit 10 / 2H Power 52, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Anchor",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 12000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 31,
+        "accuracy": -2,
+        "power": 61,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank warhammer: 2H Power 61, Crit 10.",
+    "description": "Standard warhammer with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Tail",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H#",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": 11,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 2H# Power 11, Crit 12. Natural weapon.",
+    "description": "2H#: not held in the hands (counts as a two-handed weapon for rules). Natural weapon: requires a tail; cannot be bought.",
+    "modifiers": []
+  },
+  {
+    "name": "Easy Grips",
+    "source": {
+      "book": "CR2",
+      "page": 216
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 360,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": 10,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank wrestling weapon: 2H Power 10, Crit 12. Grappler only. Improves Throw.",
+    "description": "Grappler only. Improves Throw.",
+    "modifiers": []
+  },
+  {
+    "name": "Tonfa",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 2600,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 1,
+        "power": 20,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank wrestling weapon: 1H Power 20, Crit 12. Grappler only. Improves punches.",
+    "description": "Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Fingers",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": true,
+    "price": 3120,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1HW",
+        "minStr": 5,
+        "accuracy": 1,
+        "power": 15,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank wrestling weapon: 1HW Power 15, Crit 11. Grappler only. Improves punches. Silvered.",
+    "description": "1HW: worn on the hands; items with Stance 1H/2H can still be used and Throw is possible, but no other hand-held weapon or shield can be equipped. Grappler only. Improves punches (bought and equipped as a pair). Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Accel Brogue",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 3980,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": 20,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank wrestling weapon: 1H# Power 20, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Sharp Arms",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 4440,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 20,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank wrestling weapon: 1H Power 20, Crit 11. Grappler only. Improves punches.",
+    "description": "Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Shoes",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": true,
+    "price": 7000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 10,
+        "accuracy": -1,
+        "power": 30,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank wrestling weapon: 1H# Power 30, Crit 11. Grappler only. Improves kicks. Silvered.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time). Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Gilded Sabaton",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 10600,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 15,
+        "accuracy": -1,
+        "power": 35,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank wrestling weapon: 1H# Power 35, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Mithril Dirk",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 5000,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 4,
+        "accuracy": 0,
+        "power": 14,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank thrown weapon: 1H* Power 14, Crit 10. Silvered.",
+    "description": "Silvered.",
+    "modifiers": []
+  },
+  {
+    "name": "Assegai",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 3800,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 13,
+        "accuracy": -1,
+        "power": 28,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank thrown weapon: 1H* Power 28, Crit 10.",
+    "description": "Standard thrown weapon with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Francisca",
+    "source": {
+      "book": "CR2",
+      "page": 217
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 5500,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 20,
+        "accuracy": 0,
+        "power": 35,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank thrown weapon: 1H* Power 35, Crit 11.",
+    "description": "Standard thrown weapon with no special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Sniper",
+    "source": {
+      "book": "CR2",
+      "page": 218
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 5100,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": 25,
+        "critical": 9,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank bow: 2H Power 25, Crit 9.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Composite Bow",
+    "source": {
+      "book": "CR2",
+      "page": 218
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 9800,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 23,
+        "accuracy": 0,
+        "power": 43,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank bow: 2H Power 43, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "String Bow",
+    "source": {
+      "book": "CR2",
+      "page": 218
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1880,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 13,
+        "accuracy": 0,
+        "power": 33,
+        "critical": 10,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "Crossbow/string instrument: every Accuracy check with it yields 1 ♡ Rhythm.",
+    "description": "Special instrument: a crossbow that is also a string instrument (its playing bow attaches to the body when not in use). Each Accuracy check made with it generates 1 ♡ (Enchanting) Rhythm, hit or miss (Details CR II p.231). Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Goat's Foot",
+    "source": {
+      "book": "CR2",
+      "page": 218
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 3950,
+    "priceText": null,
+    "reputation": null,
+    "range": "50m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 7,
+        "accuracy": 0,
+        "power": 32,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "S-rank crossbow: 2H Power 32, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Scorpion",
+    "source": {
+      "book": "CR2",
+      "page": 218
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 4970,
+    "priceText": null,
+    "reputation": null,
+    "range": "50m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 13,
+        "accuracy": 0,
+        "power": 38,
+        "critical": 10,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "S-rank crossbow: 2H Power 38, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Despair",
+    "source": {
+      "book": "CR2",
+      "page": 218
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 6260,
+    "priceText": null,
+    "reputation": null,
+    "range": "50m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 19,
+        "accuracy": 0,
+        "power": 44,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "S-rank crossbow: 2H Power 44, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Ballista",
+    "source": {
+      "book": "CR2",
+      "page": 218
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 9200,
+    "priceText": null,
+    "reputation": null,
+    "range": "50m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 25,
+        "accuracy": -1,
+        "power": 50,
+        "critical": 10,
+        "extraDamage": 5
+      }
+    ],
+    "summary": "S-rank crossbow: 2H Power 50, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Bullet Shower",
+    "source": {
+      "book": "CR2",
+      "page": 219
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 8000,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "magazine": 4,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 1,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank gun: 1H, magazine 4, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage. 1H guns come with a holster (store with a Minor Action).",
+    "modifiers": []
+  },
+  {
+    "name": "Lancaster",
+    "source": {
+      "book": "CR2",
+      "page": 219
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 14500,
+    "priceText": null,
+    "reputation": null,
+    "range": "60m",
+    "defenseBonus": 0,
+    "magazine": 2,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "S-rank gun: 2H, magazine 2, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Carnage",
+    "source": {
+      "book": "CR2",
+      "page": 219
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 17000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "magazine": 4,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": null,
+        "critical": 11,
+        "extraDamage": 4
+      }
+    ],
+    "summary": "S-rank gun: 2H, magazine 4, Crit 11.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Blade Killer",
+    "source": {
+      "book": "CR2",
+      "page": 221
+    },
+    "categories": [],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": "Included in the shield (7,300G)",
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 22,
+        "accuracy": 1,
+        "power": 42,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Weapon use of the Blade Killer (S-rank shield, armor.json): 2H Power 42, Crit 12.",
+    "description": "Attack data for the Blade Killer shield (armor.json). After attacking with it the shield's Defense is 2 instead of 4 (Defense 4/2). The weapon row is printed with Stance 2H although the shield itself is 1H.",
+    "modifiers": []
+  },
+  {
+    "name": "Weakness Revealer",
+    "source": {
+      "book": "CR3",
+      "page": 207
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 7660,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 0,
+        "power": 5,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Hitting a monster exposes its weak point to the wielder for the rest of the session.",
+    "description": "Once it hits a monster, the wielder's later hits treat that monster's weak point as known for the rest of the session (covering every section of a multi-section monster); other characters do not benefit. [Weakness Exploit] applies if the wielder has it (Details CR III p.226, Pop. 12).",
+    "modifiers": []
+  },
+  {
+    "name": "Main Gauche",
+    "source": {
+      "book": "CR3",
+      "page": 207
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 620,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 6,
+        "accuracy": 0,
+        "power": 6,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Evasion +1 while equipped (does not stack with another Main Gauche or a shield's Evasion bonus).",
+    "description": "Evasion checks +1 while equipped in either hand, even when attacking with it. Several Main Gauches do not stack, nor does it stack with a shield's Evasion bonus (Details CR III p.226).",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "Executioner's Blade",
+    "source": {
+      "book": "CR3",
+      "page": 207
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 30000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 20,
+        "accuracy": 1,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 1
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 1,
+        "power": 40,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Each critical hit raises its Power by +5 for the rest of that damage roll (max 100).",
+    "description": "On a critical hit, the Power for the following roll of that attack is increased by +5; each further critical adds another +5 (up to Power 100). The bonus ends once the damage is totaled (Details CR III p.226, Pop. 14). 1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": [
+      {
+        "key": "powerPerCrit",
+        "value": 5,
+        "scope": "use"
+      }
+    ]
+  },
+  {
+    "name": "Angel Feather",
+    "source": {
+      "book": "CR3",
+      "page": 207
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 40000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 2,
+        "accuracy": 2,
+        "power": 17,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank sword: 1H Power 17, Crit 10.",
+    "description": "Magic sword (counts as a magic weapon); no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Moon Pillar",
+    "source": {
+      "book": "CR3",
+      "page": 207
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 48000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank sword: 1H Power 30, Crit 10.",
+    "description": "Magic sword (counts as a magic weapon); no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Hyperion",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 57000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 20,
+        "accuracy": 1,
+        "power": 40,
+        "critical": 10,
+        "extraDamage": 1
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 1,
+        "power": 50,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank sword: 1H† Power 40, Crit 10 / 2H Power 50, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Geister",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "sword"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 83000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 1,
+        "power": 70,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "The wielder takes 5 fixed HP damage at the end of each round it is used.",
+    "description": "Every round in which it is used ends with its user losing 5 HP as fixed damage (Details CR III p.227, Pop. 10).",
+    "modifiers": []
+  },
+  {
+    "name": "Arm Catcher",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 2480,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 17,
+        "accuracy": 0,
+        "power": 37,
+        "critical": 11,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "At Accuracy -2 it can target a weapon: on a hit the weapon is dropped.",
+    "description": "The wielder may attack the target's weapon with Accuracy -2. On a hit, that weapon is knocked to the ground in addition to normal damage. Against monster data this only works on weapon attacks (not natural ones), and the monster's damage with them is reduced by 4 (Details CR III p.227).",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -2,
+        "scope": "use",
+        "condition": "attacking the target's weapon"
+      }
+    ]
+  },
+  {
+    "name": "Death Scythe",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 26000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "Normal",
+        "stance": "2H",
+        "minStr": 17,
+        "accuracy": 1,
+        "power": 42,
+        "critical": 11,
+        "extraDamage": 1
+      },
+      {
+        "label": "Activated (5 HP)",
+        "stance": "2H",
+        "minStr": 17,
+        "accuracy": 1,
+        "power": 52,
+        "critical": 11,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Power 42; pay 5 HP (password in Arcana) to use Power 52 for 1 round.",
+    "description": "Normally Power 42. Speaking its password in Arcana and paying 5 HP lets it be used at Power 52 for 10 seconds (1 round) (Details CR III p.227, Pop. 14).",
+    "modifiers": []
+  },
+  {
+    "name": "Rimahawk",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "axe",
+      "throw"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 50000,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 8,
+        "accuracy": 1,
+        "power": 28,
+        "critical": 11,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank axe / thrown weapon: 1H* Power 28, Crit 11. Throwable (20m). Auto-Return.",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 2 (20m) (CR III p.215). Auto-Return: after being thrown it immediately returns to the thrower's hand.",
+    "modifiers": []
+  },
+  {
+    "name": "Urgosh",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": true,
+    "grapplerOnly": false,
+    "price": 64000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H Slash",
+        "stance": "2Hᵴ",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 55,
+        "critical": 11,
+        "extraDamage": 0
+      },
+      {
+        "label": "2H Pierce",
+        "stance": "2Hᵱ",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 50,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Silvered. With [Dual Wielding] attack twice (slash + pierce); otherwise 2H use gains Extra Damage +5.",
+    "description": "Silvered. Always held in two hands. A wielder with [Dual Wielding] may attack twice, once with the slashing data and once with the piercing data, as if wielding two 1H weapons. Otherwise it is used as a 2H weapon with either data line and Extra Damage +5 (Details CR III p.227-228, Pop. 10). Choose slashing (2Hᵴ) or piercing (2Hᵱ) data before each Accuracy check.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 5,
+        "condition": "used as a normal 2H weapon (not split with [Dual Wielding])"
+      }
+    ]
+  },
+  {
+    "name": "Agahast",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 65000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H Slash",
+        "stance": "2Hᵴ",
+        "minStr": 27,
+        "accuracy": 1,
+        "power": 62,
+        "critical": 11,
+        "extraDamage": 3
+      },
+      {
+        "label": "2H Pierce",
+        "stance": "2Hᵱ",
+        "minStr": 27,
+        "accuracy": 1,
+        "power": 57,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank axe: 2Hᵴ Power 62, Crit 11 / 2Hᵱ Power 57, Crit 10.",
+    "description": "Choose slashing (2Hᵴ) or piercing (2Hᵱ) data before each Accuracy check.",
+    "modifiers": []
+  },
+  {
+    "name": "Dynast",
+    "source": {
+      "book": "CR3",
+      "page": 208
+    },
+    "categories": [
+      "axe"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 83000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 40,
+        "accuracy": -1,
+        "power": 90,
+        "critical": 11,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank axe: 2H Power 90, Crit 11.",
+    "description": "Magic axe (counts as a magic weapon); no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Normal Lance",
+    "source": {
+      "book": "CR3",
+      "page": 209
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1200,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 25,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "Riding (1HR)",
+        "stance": "1HR",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 35,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank spear: 1H Power 25, Crit 10 / 1HR Power 35, Crit 10.",
+    "description": "Use the 1HR data while riding a mount.",
+    "modifiers": []
+  },
+  {
+    "name": "Heavy Lance",
+    "source": {
+      "book": "CR3",
+      "page": 209
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 8280,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 25,
+        "accuracy": -1,
+        "power": 35,
+        "critical": 10,
+        "extraDamage": 0
+      },
+      {
+        "label": "Riding (1HR)",
+        "stance": "1HR",
+        "minStr": 25,
+        "accuracy": -1,
+        "power": 45,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank spear: 1H Power 35, Crit 10 / 1HR Power 45, Crit 10.",
+    "description": "Use the 1HR data while riding a mount.",
+    "modifiers": []
+  },
+  {
+    "name": "Eclair",
+    "source": {
+      "book": "CR3",
+      "page": 209
+    },
+    "categories": [
+      "spear",
+      "throw"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 61000,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 7,
+        "accuracy": 1,
+        "power": 27,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Once a day, its first thrown hit deals lightning magic damage instead.",
+    "description": "When thrown, once per day the damage of its first hit automatically becomes lightning-type magic damage. With [Mirage Arrow] it cannot be thrown together with a weapon of a different damage type; on the day's first throw both weapons get the effect. It cannot receive the Fairy Weapon enhancement. As a thrown weapon: range 2 (20m) (Details CR III p.228, Pop. 10). 1H*: usable in melee or thrown; it counts as the matching category for each attack.",
+    "modifiers": []
+  },
+  {
+    "name": "Tri-Lux",
+    "source": {
+      "book": "CR3",
+      "page": 209
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 54000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 17,
+        "accuracy": 0,
+        "power": 42,
+        "critical": 10,
+        "extraDamage": 1
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 17,
+        "accuracy": 1,
+        "power": 47,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank spear: 1H† Power 42, Crit 10 / 2H Power 47, Crit 10.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Fatal Lance",
+    "source": {
+      "book": "CR3",
+      "page": 209
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 67000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 25,
+        "accuracy": 0,
+        "power": 45,
+        "critical": 10,
+        "extraDamage": 1
+      },
+      {
+        "label": "Riding (1HR)",
+        "stance": "1HR",
+        "minStr": 25,
+        "accuracy": 0,
+        "power": 55,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank spear: 1H Power 45, Crit 10 / 1HR Power 55, Crit 10.",
+    "description": "Use the 1HR data while riding a mount.",
+    "modifiers": []
+  },
+  {
+    "name": "Ductus Lancair",
+    "source": {
+      "book": "CR3",
+      "page": 209
+    },
+    "categories": [
+      "spear"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 68000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 0,
+        "power": 65,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank spear: 2H Power 65, Crit 10.",
+    "description": "Magic spear (counts as a magic weapon); no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Molder",
+    "source": {
+      "book": "CR3",
+      "page": 210
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 16500,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 2,
+        "power": 50,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank mace: 2H Power 50, Crit 12. Slayer +2 vs Undead, Constructs or Magitech.",
+    "description": "Slayer +2: +2 Extra Damage against Undead, Constructs or Magitech.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "vs Undead, Constructs or Magitech"
+      }
+    ]
+  },
+  {
+    "name": "Power Capper",
+    "source": {
+      "book": "CR3",
+      "page": 210
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 38000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 23,
+        "accuracy": 3,
+        "power": 33,
+        "critical": 12,
+        "extraDamage": 1
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 23,
+        "accuracy": 3,
+        "power": 43,
+        "critical": 12,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "On a hit, the target's Magic Power is reduced by 2 for 1 round.",
+    "description": "A character hit by it has all Magic Power reduced by 2 (minimum 0) for 10 seconds (1 round). This is a curse-type effect, Resistance: Can't, success value 25, and does not stack (Details CR III p.228, Pop. 12). 1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Bloody Lily",
+    "source": {
+      "book": "CR3",
+      "page": 210
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 50000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 14,
+        "accuracy": 3,
+        "power": 34,
+        "critical": 12,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank mace: 1H Power 34, Crit 12.",
+    "description": "Magic mace (counts as a magic weapon); no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Skullsludger",
+    "source": {
+      "book": "CR3",
+      "page": 210
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 63000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 20,
+        "accuracy": 2,
+        "power": 40,
+        "critical": 12,
+        "extraDamage": 1
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 2,
+        "power": 50,
+        "critical": 12,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank mace: 1H† Power 40, Crit 12 / 2H Power 50, Crit 12.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row). Slayer +3: +3 Extra Damage against Humanoids, Barbarous, Animals or Mythical Beasts.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 3,
+        "condition": "vs Humanoids, Barbarous, Animals or Mythical Beasts"
+      }
+    ]
+  },
+  {
+    "name": "Zeno",
+    "source": {
+      "book": "CR3",
+      "page": 210
+    },
+    "categories": [
+      "mace"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 65000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 33,
+        "accuracy": 3,
+        "power": 68,
+        "critical": 12,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank mace: 2H Power 68, Crit 12.",
+    "description": "Magic mace (counts as a magic weapon); no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Staff of Control",
+    "source": {
+      "book": "CR3",
+      "page": 211
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 14840,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 1,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 1,
+        "accuracy": 2,
+        "power": 11,
+        "critical": 12,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "+1 Defense; commands of constructs created with it can be changed any number of times.",
+    "description": "+1 Defense to the wielder while equipped. Constructs created by magic such as [Create Golem] while wielding it can have their command changed as often as desired: a Major Action, touching the construct while holding the same staff (Details CR III p.229, Pop. 14).",
+    "modifiers": []
+  },
+  {
+    "name": "Aeon",
+    "source": {
+      "book": "CR3",
+      "page": 211
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 78000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 8,
+        "accuracy": 1,
+        "power": 38,
+        "critical": 12,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "Magic Power +2, but the wielder takes 2 fixed MP damage at the end of each turn.",
+    "description": "Can only be equipped while the current MP is 2 or more. While equipped, all Magic Power +2; at the end of each of the wielder's turns they suffer 2 points of fixed damage to MP (Details CR III p.229, Pop. 14).",
+    "modifiers": [
+      {
+        "key": "magicPower",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Uroboros",
+    "source": {
+      "book": "CR3",
+      "page": 211
+    },
+    "categories": [
+      "staff"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 136000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 14,
+        "accuracy": 2,
+        "power": 49,
+        "critical": 12,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "Once a day, reroll a Spellcasting check of 9 or less for 10 MP each until the roll is 10+.",
+    "description": "Once per day, when a Spellcasting check's 2d roll is 9 or less, the wielder may pay 10 MP to reroll, and must keep paying 10 MP and rerolling until the roll is 10 or more, which becomes the result. Stopping early makes the check an automatic failure; spent MP is not refunded (Details CR III p.229, Pop. 14).",
+    "modifiers": []
+  },
+  {
+    "name": "Balanced Pendulum",
+    "source": {
+      "book": "CR3",
+      "page": 211
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "B",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 7780,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 22,
+        "accuracy": 0,
+        "power": 42,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Accuracy +1 when attacking with [Cleave].",
+    "description": "Accuracy checks +1 when [Cleave] is declared for an attack with it (Details CR III p.230, Pop. 10).",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1,
+        "condition": "when declaring [Cleave]"
+      }
+    ]
+  },
+  {
+    "name": "Daemonthresher",
+    "source": {
+      "book": "CR3",
+      "page": 212
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "S",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 12000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 24,
+        "accuracy": -1,
+        "power": 34,
+        "critical": 9,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A daemon hit by it must resist (Fortitude vs the Accuracy result) or fall prone and lose Evasion.",
+    "description": "When it hits a daemon, the daemon makes a Fortitude check against the attack's Accuracy success value. On a failure it falls prone regardless of its number of sections, and it also suffers Evasion -1 for 18 rounds (cumulative) (Details CR III p.230, Pop. 8).",
+    "modifiers": []
+  },
+  {
+    "name": "Silver Comet",
+    "source": {
+      "book": "CR3",
+      "page": 212
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 59000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 35,
+        "critical": 9,
+        "extraDamage": 1
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 0,
+        "power": 45,
+        "critical": 9,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank flail: 1H† Power 35, Crit 9 / 2H Power 45, Crit 9.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Quadblaze",
+    "source": {
+      "book": "CR3",
+      "page": 212
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 69000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 26,
+        "accuracy": 0,
+        "power": 26,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank flail: 1H Power 26, Crit 10. Type Weapon (fire) +3/3 MP.",
+    "description": "Type Weapon (Fire): pay 3 MP to make its damage fire-type for 10 seconds (1 round) with Extra Damage +3.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 3,
+        "condition": "Type Weapon (fire) active (3 MP, 1 round)"
+      }
+    ]
+  },
+  {
+    "name": "Tyrant",
+    "source": {
+      "book": "CR3",
+      "page": 212
+    },
+    "categories": [
+      "flail"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 78000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 38,
+        "accuracy": 0,
+        "power": 38,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank flail: 2H Power 38, Crit 10.",
+    "description": "Unlike other flails it is marked as an edged weapon (not blunt).",
+    "modifiers": []
+  },
+  {
+    "name": "Golden Mattocks",
+    "source": {
+      "book": "CR3",
+      "page": 212
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 11880,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": -1,
+        "power": 40,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Ignores half the Defense of structures.",
+    "description": "When it hits a structure, half of the structure's Defense is ignored (Details CR III p.230, Pop. 10).",
+    "modifiers": []
+  },
+  {
+    "name": "Shock Hammer",
+    "source": {
+      "book": "CR3",
+      "page": 213
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "A",
+    "edged": true,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 15700,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 12,
+        "accuracy": 0,
+        "power": 22,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Deals lightning-type and bludgeoning physical damage.",
+    "description": "Its physical damage is lightning and bludgeoning type. With the Fairy Weapon enhancement the lightning type is combined with the added type (e.g. lightning and fire) (Details CR III p.230, Pop. 8).",
+    "modifiers": []
+  },
+  {
+    "name": "Heart Tracker",
+    "source": {
+      "book": "CR3",
+      "page": 213
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 52600,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 16,
+        "accuracy": 0,
+        "power": 31,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank magic warhammer; its special effect (Details p.230) is missing from this translation.",
+    "description": "The table refers to Details p.230, but no Heart Tracker entry exists there in the source translation, so its special effect is unknown.",
+    "modifiers": []
+  },
+  {
+    "name": "Eversio",
+    "source": {
+      "book": "CR3",
+      "page": 213
+    },
+    "categories": [
+      "warhammer",
+      "throw"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 57000,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 8,
+        "accuracy": -1,
+        "power": 33,
+        "critical": 9,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank warhammer / thrown weapon: 1H* Power 33, Crit 9. Throwable (20m).",
+    "description": "1H*: usable in melee or thrown; it counts as the matching category for each attack. As a thrown weapon: range 2 (20m) (CR III p.215).",
+    "modifiers": []
+  },
+  {
+    "name": "Rosenhagen",
+    "source": {
+      "book": "CR3",
+      "page": 213
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 70000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H†",
+        "minStr": 19,
+        "accuracy": 0,
+        "power": 29,
+        "critical": 8,
+        "extraDamage": 1
+      },
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 19,
+        "accuracy": -1,
+        "power": 39,
+        "critical": 8,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank warhammer: 1H† Power 29, Crit 8 / 2H Power 39, Crit 8.",
+    "description": "1H†: wield one-handed (1H† row) or two-handed (2H row).",
+    "modifiers": []
+  },
+  {
+    "name": "Gaiacleaver",
+    "source": {
+      "book": "CR3",
+      "page": 213
+    },
+    "categories": [
+      "warhammer"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 88000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 35,
+        "accuracy": -2,
+        "power": 85,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank warhammer: 2H Power 85, Crit 10.",
+    "description": "Magic warhammer (counts as a magic weapon); no further special rules.",
+    "modifiers": []
+  },
+  {
+    "name": "Bite",
+    "source": {
+      "book": "CR3",
+      "page": 214
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": null,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H#",
+        "minStr": 1,
+        "accuracy": 0,
+        "power": 11,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "B-rank wrestling weapon: 2H# Power 11, Crit 10. Natural weapon.",
+    "description": "2H#: not held in the hands (counts as a two-handed weapon for rules). Natural weapon: requires the ability to bite; cannot be bought.",
+    "modifiers": []
+  },
+  {
+    "name": "Whirl Catcher",
+    "source": {
+      "book": "CR3",
+      "page": 214
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 40000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 5,
+        "accuracy": 2,
+        "power": 20,
+        "critical": 11,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank wrestling weapon: 2H Power 20, Crit 11. Grappler only. Improves Throw.",
+    "description": "Grappler only. Improves Throw.",
+    "modifiers": []
+  },
+  {
+    "name": "Hands Of Glory",
+    "source": {
+      "book": "CR3",
+      "page": 214
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 45000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 1,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1HW",
+        "minStr": 10,
+        "accuracy": 1,
+        "power": 30,
+        "critical": 11,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank wrestling weapon: 1HW Power 30, Crit 11. Grappler only. Improves punches. +1 Defense.",
+    "description": "1HW: worn on the hands; items with Stance 1H/2H can still be used and Throw is possible, but no other hand-held weapon or shield can be equipped. Grappler only. Improves punches (bought and equipped as a pair). +1 Defense to the wearer while equipped.",
+    "modifiers": []
+  },
+  {
+    "name": "Legs Of Honor",
+    "source": {
+      "book": "CR3",
+      "page": 214
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 55000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 1,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 10,
+        "accuracy": 0,
+        "power": 40,
+        "critical": 12,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank wrestling weapon: 1H# Power 40, Crit 12. Grappler only. Improves kicks. +1 Defense.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time). +1 Defense to the wearer; exceptionally, this stacks with other Defense-raising weapons.",
+    "modifiers": []
+  },
+  {
+    "name": "Groul",
+    "source": {
+      "book": "CR3",
+      "page": 214
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 50000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 15,
+        "accuracy": 2,
+        "power": 25,
+        "critical": 11,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Grappler only; improves punches. Evasion +1 while Grand Ariol is also equipped.",
+    "description": "Evasion checks +1 while Grand Ariol is equipped at the same time (Details CR III p.231, Pop. 8). Grappler only. Improves punches (bought and equipped as a pair).",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": 1,
+        "condition": "while Grand Ariol is also equipped"
+      }
+    ]
+  },
+  {
+    "name": "Grand Ariol",
+    "source": {
+      "book": "CR3",
+      "page": 214
+    },
+    "categories": [
+      "wrestling"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": true,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": true,
+    "price": 60000,
+    "priceText": null,
+    "reputation": null,
+    "range": null,
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H#",
+        "minStr": 15,
+        "accuracy": 1,
+        "power": 35,
+        "critical": 11,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank wrestling weapon: 1H# Power 35, Crit 11. Grappler only. Improves kicks.",
+    "description": "1H#: worn, not held (counts as a one-handed weapon for rules). Grappler only. Improves kicks (worn on the legs; only one kick weapon at a time).",
+    "modifiers": []
+  },
+  {
+    "name": "Throwing Star",
+    "source": {
+      "book": "CR3",
+      "page": 214
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 200,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 1,
+        "accuracy": 1,
+        "power": 1,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "Magic throwing star that glows faintly like a star in the dark.",
+    "description": "In darkness it gives off a faint, star-sized light (Details CR III p.231, Pop. 8).",
+    "modifiers": []
+  },
+  {
+    "name": "Boomerang",
+    "source": {
+      "book": "CR3",
+      "page": 215
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": true,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 500,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 8,
+        "accuracy": 1,
+        "power": 18,
+        "critical": 12,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "A-rank thrown weapon: 1H* Power 18, Crit 12. Auto-Return on a miss.",
+    "description": "Auto-Return (only on a miss): returns to the thrower's hand if the attack misses; on a hit it drops at the target's position.",
+    "modifiers": []
+  },
+  {
+    "name": "Tri-Edge",
+    "source": {
+      "book": "CR3",
+      "page": 215
+    },
+    "categories": [
+      "throw"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 62000,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H*",
+        "minStr": 15,
+        "accuracy": 2,
+        "power": 35,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "SS-rank thrown weapon: 1H* Power 35, Crit 10. Auto-Return.",
+    "description": "Auto-Return: after being thrown it immediately returns to the thrower's hand.",
+    "modifiers": []
+  },
+  {
+    "name": "Bold Assertor",
+    "source": {
+      "book": "CR3",
+      "page": 215
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 7770,
+    "priceText": null,
+    "reputation": null,
+    "range": "20m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 22,
+        "accuracy": 1,
+        "power": 32,
+        "critical": 10,
+        "extraDamage": 1
+      }
+    ],
+    "summary": "Accuracy +1 when shooting Kaburaya.",
+    "description": "Accuracy checks +1 when Kaburaya (CR III p.232) are used as ammunition (Details CR III p.232, Pop. 10). Bow: Marksman only; uses Arrows.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": 1,
+        "condition": "when shooting Kaburaya"
+      }
+    ]
+  },
+  {
+    "name": "Avenger Bow",
+    "source": {
+      "book": "CR3",
+      "page": 216
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "S",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 32000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 17,
+        "accuracy": 1,
+        "power": 37,
+        "critical": 10,
+        "extraDamage": 0
+      }
+    ],
+    "summary": "S-rank bow: 2H Power 37, Crit 10. Slayer +2 vs Humanoids or Barbarous.",
+    "description": "Slayer +2: +2 Extra Damage against Humanoids or Barbarous. Bow: Marksman only; uses Arrows.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "vs Humanoids or Barbarous"
+      }
+    ]
+  },
+  {
+    "name": "Hitmaker",
+    "source": {
+      "book": "CR3",
+      "page": 216
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 50000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 12,
+        "accuracy": 3,
+        "power": 37,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank bow: 2H Power 37, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Le Indalia",
+    "source": {
+      "book": "CR3",
+      "page": 216
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 62000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 18,
+        "accuracy": 1,
+        "power": 43,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank bow: 2H Power 43, Crit 10. Type Weapon (wind) +2/1 MP.",
+    "description": "Type Weapon (Wind): pay 1 MP to make its damage wind-type for 10 seconds (1 round) with Extra Damage +2. Bow: Marksman only; uses Arrows.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "Type Weapon (wind) active (1 MP, 1 round)"
+      }
+    ]
+  },
+  {
+    "name": "Hand Sticker",
+    "source": {
+      "book": "CR3",
+      "page": 216
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 67000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 24,
+        "accuracy": 1,
+        "power": 49,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank bow: 2H Power 49, Crit 10. Slayer +3 vs Humanoids or Barbarous.",
+    "description": "Slayer +3: +3 Extra Damage against Humanoids or Barbarous. Bow: Marksman only; uses Arrows.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 3,
+        "condition": "vs Humanoids or Barbarous"
+      }
+    ]
+  },
+  {
+    "name": "Eight Mambo",
+    "source": {
+      "book": "CR3",
+      "page": 216
+    },
+    "categories": [
+      "bow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 68000,
+    "priceText": null,
+    "reputation": null,
+    "range": "60m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 30,
+        "accuracy": 1,
+        "power": 60,
+        "critical": 10,
+        "extraDamage": 3
+      }
+    ],
+    "summary": "SS-rank bow: 2H Power 60, Crit 10.",
+    "description": "Bow: Marksman only; uses Arrows.",
+    "modifiers": []
+  },
+  {
+    "name": "Beast Buster",
+    "source": {
+      "book": "CR3",
+      "page": 216
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "B",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 7280,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 1,
+        "power": 30,
+        "critical": 10,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "B-rank crossbow: 2H Power 30, Crit 10. Slayer +2 vs Animals or Mythical Beasts.",
+    "description": "Slayer +2: +2 Extra Damage against Animals or Mythical Beasts. Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 2,
+        "condition": "vs Animals or Mythical Beasts"
+      }
+    ]
+  },
+  {
+    "name": "Zagran",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 56000,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 8,
+        "accuracy": 1,
+        "power": 43,
+        "critical": 10,
+        "extraDamage": 5
+      }
+    ],
+    "summary": "SS-rank crossbow: 2H Power 43, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Calvaria",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 67000,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 14,
+        "accuracy": 1,
+        "power": 49,
+        "critical": 10,
+        "extraDamage": 6
+      }
+    ],
+    "summary": "Switches between SS-rank crossbow and B-rank shield forms (Minor Action).",
+    "description": "A Minor Action (only before the Major Action) switches it between crossbow form (this data) and shield form (B-rank shield in armor.json); each form has no effect as the other. Using it only as a shield does not require [Weapon Master]. Shield enhancements (e.g. manatite) cannot be applied; Abyss Enhancement only to the weapon part; Min STR changes apply to both forms (Details CR III p.231, Pop. 10). Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Sortrel",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 72000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 1,
+        "power": 50,
+        "critical": 10,
+        "extraDamage": 7
+      }
+    ],
+    "summary": "SS-rank crossbow: 2H Power 50, Crit 10. Type Weapon (fire) +3/3 MP.",
+    "description": "Type Weapon (Fire): pay 3 MP to make its damage fire-type for 10 seconds (1 round) with Extra Damage +3. Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": 3,
+        "condition": "Type Weapon (fire) active (3 MP, 1 round)"
+      }
+    ]
+  },
+  {
+    "name": "Garde",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "crossbow"
+    ],
+    "rank": "SS",
+    "edged": true,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 76000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 26,
+        "accuracy": 1,
+        "power": 56,
+        "critical": 10,
+        "extraDamage": 9
+      }
+    ],
+    "summary": "SS-rank crossbow: 2H Power 56, Crit 10.",
+    "description": "Crossbow: Add'l Dmg replaces the Strength modifier (Extra Damage = Marksman level + Add'l Dmg). Uses Quarrels.",
+    "modifiers": []
+  },
+  {
+    "name": "Smart Carbine",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "A",
+    "edged": false,
+    "blunt": false,
+    "magic": false,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 1200,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "magazine": 4,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 5,
+        "accuracy": -1,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "A-rank gun, magazine 4, Crit 10; usable one-handed while riding.",
+    "description": "While mounted it may be fired one-handed with unchanged data; however, a rider cannot wield two of them at once for [Dual Wielding] (Details CR III p.232, Pop. 8). Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Masquerade",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 50000,
+    "priceText": null,
+    "reputation": null,
+    "range": "10m",
+    "defenseBonus": 0,
+    "magazine": 4,
+    "modes": [
+      {
+        "label": "1H",
+        "stance": "1H",
+        "minStr": 5,
+        "accuracy": 2,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 2
+      }
+    ],
+    "summary": "SS-rank gun: 1H, magazine 4, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage. 1H guns come with a holster (store with a Minor Action).",
+    "modifiers": []
+  },
+  {
+    "name": "Choreadora",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 55000,
+    "priceText": null,
+    "reputation": null,
+    "range": "40m",
+    "defenseBonus": 0,
+    "magazine": 3,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 10,
+        "accuracy": 2,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 4
+      }
+    ],
+    "summary": "SS-rank gun: 2H, magazine 3, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Full Fire",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 60000,
+    "priceText": null,
+    "reputation": null,
+    "range": "30m",
+    "defenseBonus": 0,
+    "magazine": 8,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 15,
+        "accuracy": 1,
+        "power": null,
+        "critical": 10,
+        "extraDamage": 4
+      }
+    ],
+    "summary": "SS-rank gun: 2H, magazine 8, Crit 10.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Desperado",
+    "source": {
+      "book": "CR3",
+      "page": 217
+    },
+    "categories": [
+      "gun"
+    ],
+    "rank": "SS",
+    "edged": false,
+    "blunt": false,
+    "magic": true,
+    "silver": false,
+    "grapplerOnly": false,
+    "price": 80000,
+    "priceText": null,
+    "reputation": null,
+    "range": "60m",
+    "defenseBonus": 0,
+    "magazine": 2,
+    "modes": [
+      {
+        "label": "2H",
+        "stance": "2H",
+        "minStr": 20,
+        "accuracy": 3,
+        "power": null,
+        "critical": 11,
+        "extraDamage": 6
+      }
+    ],
+    "summary": "SS-rank gun: 2H, magazine 2, Crit 11.",
+    "description": "Gun: Marksman only; bullets need Artificer magitech spells, which set the Power; deals magic damage.",
+    "modifiers": []
+  }
+]

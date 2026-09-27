@@ -1,0 +1,27 @@
+<section class="tab swp-tab {{tab.cssClass}}" data-group="primary" data-tab="skills">
+  <p class="swp-hint">{{localize "SW25.Checks.Hint"}}</p>
+  <div class="swp-check-columns">
+    {{#each checkGroups}}
+    <div class="swp-block swp-check-group">
+      <table class="swp-table swp-check-table">
+        <thead>
+          <tr>
+            <th class="name">{{#if letter}}<span class="swp-letter">{{letter}}</span>{{/if}}{{localize label}}</th>
+            <th class="src">{{localize "SW25.Sheet.StandardFrom"}}</th>
+            <th class="val">{{#if letter}}{{localize "SW25.Ability.mod"}} {{mod}}{{/if}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each checks}}
+          <tr class="swp-check-row {{#if straight}}straight{{/if}}" data-action="rollCheck" data-check="{{key}}">
+            <td class="name">{{label}}{{#if packageLabel}} <small class="swp-sub">{{localize packageLabel}}</small>{{/if}}</td>
+            <td class="src">{{#if straight}}{{localize "SW25.StraightRoll"}}{{else}}{{sourceLabel}}{{/if}}{{#if bonus}} <span class="swp-bonus-inline">{{sw25Signed bonus}}</span>{{/if}}</td>
+            <td class="val"><span class="swp-pill small">{{valueLabel}}</span></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{/each}}
+  </div>
+</section>

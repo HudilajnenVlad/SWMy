@@ -1,0 +1,25 @@
+<div class="swp-tpl-fields">
+  <p class="swp-hint">{{localize "SW25.Template.Hint"}}</p>
+  <div class="swp-field-grid">
+    {{#if isNew}}
+    <label class="swp-field wide"><span>{{localize "SW25.Name"}}</span><input type="text" name="tplName" value="{{choices.name}}" autofocus></label>
+    {{/if}}
+    <label class="swp-field narrow"><span>{{localize "SW25.Level"}}</span><input type="number" name="level" value="{{choices.level}}" min="1" max="{{maxLevel}}" step="1"></label>
+    <label class="swp-field"><span>{{localize "SW25.Monster.Classification"}}</span>
+      <select name="classification">{{selectOptions classifications selected=choices.classification localize=true}}</select>
+    </label>
+    <label class="swp-field"><span>{{localize "SW25.Template.RoleLabel"}}</span>
+      <select name="tplRole">{{selectOptions roles selected=choices.role localize=true}}</select>
+    </label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Template.SectionCount"}}</span><input type="number" name="sections" value="{{choices.sections}}" min="1" max="8" step="1"></label>
+    <label class="swp-field wide"><span>{{localize "SW25.Template.SectionNames"}}</span><input type="text" name="sectionNames" value="{{choices.sectionNames}}" placeholder="{{localize 'SW25.Template.SectionNamesHint'}}"></label>
+    <label class="swp-field"><span>{{localize "SW25.Monster.Style"}}</span><input type="text" name="attackStyle" value="{{choices.style}}" placeholder="{{styleHint}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.SwordShards"}}</span><input type="number" name="swordShards" value="{{choices.swordShards}}" min="0" step="1" data-tooltip="SW25.Template.ShardHint"></label>
+    <label class="swp-field"><span>{{localize "SW25.Monster.FixedValues"}}</span>
+      <select name="useFixed">{{selectOptions useFixedOptions selected=choices.useFixed localize=true}}</select>
+    </label>
+    {{#unless isNew}}
+    <label class="swp-field wide swp-check"><input type="checkbox" name="identity" {{checked choices.identity}}> {{localize "SW25.Template.Identity"}}</label>
+    {{/unless}}
+  </div>
+</div>

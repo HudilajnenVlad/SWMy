@@ -1,0 +1,2749 @@
+[
+  {
+    "name": "Energy Bolt",
+    "source": {
+      "book": "CR1",
+      "page": 219
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "energy"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Shoots a bolt of mana at one target for Power 10 energy magic damage.",
+    "description": "Deals Power 10 + Magic Power energy-type magic damage to a single target. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Dull Weapon",
+    "source": {
+      "book": "CR1",
+      "page": 219
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target deals 4 less physical damage with its melee and ranged attacks.",
+    "description": "For the duration, physical damage the target inflicts with melee and ranged attacks is reduced by 4. A successful Willpower check negates the spell.",
+    "modifiers": [
+      {
+        "key": "damage",
+        "value": -4,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Light",
+    "source": {
+      "book": "CR1",
+      "page": 219
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 Hours",
+      "unit": "hours",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Lights up a 10 m radius around the chosen point for 3 hours.",
+    "description": "Illuminates a 10 m radius around the chosen point (2-3 areas in Simplified Combat); characters inside suffer no darkness penalty. It can be placed on an object so the light can be carried around, but never directly on a character.",
+    "modifiers": []
+  },
+  {
+    "name": "Lock",
+    "source": {
+      "book": "CR1",
+      "page": 219
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 1,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Magically closes the lock of an object.",
+    "description": "Locks any lockable object; the result is the same as locking it by ordinary means.",
+    "modifiers": []
+  },
+  {
+    "name": "Sense Magic",
+    "source": {
+      "book": "CR1",
+      "page": 220
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 1,
+      "text": "MP1"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Detects whether an object is under the effect of any magic.",
+    "description": "Tells the caster only whether magic is present on the target object. It reveals nothing about the name, type, system, effect, permanence or number of spells involved.",
+    "modifiers": []
+  },
+  {
+    "name": "Dispel Magic",
+    "source": {
+      "book": "CR1",
+      "page": 220
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Spell",
+      "kind": "spell",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Ends one non-curse magical effect whose success value this spell beats.",
+    "description": "Targets a single magical effect that is not curse-type and removes it if this spell's Spellcasting check beats the effect's success value (see the forced removal rules, CR I p.166).",
+    "modifiers": []
+  },
+  {
+    "name": "Nap",
+    "source": {
+      "book": "CR1",
+      "page": 220
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [
+      "psychicWeak"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "sleep"
+      ]
+    },
+    "summary": "Target dozes off: no movement or active actions, and -4 on action checks.",
+    "description": "The target slumbers lightly, unable to move or take active actions, and suffers -4 on any action check it is asked to make. A standing target sleeps on its feet rather than falling prone. Any touch from another character wakes it; an ally can do this as a Minor Action.",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": -4,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Vitality",
+    "source": {
+      "book": "CR1",
+      "page": 220
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 2,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Gives the target +2 to Fortitude checks.",
+    "description": "Strengthens the target's life force: +2 to Fortitude checks for the duration.",
+    "modifiers": [
+      {
+        "key": "fortitude",
+        "value": 2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Unlock",
+    "source": {
+      "book": "CR1",
+      "page": 221
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Opens a mundane lock; a magical seal requires a contested roll.",
+    "description": "Opens an ordinary lock, leaving the mechanism intact and working. If the lock is magically sealed, the caster makes a contested roll against whoever sealed it and opens it only on a win.",
+    "modifiers": []
+  },
+  {
+    "name": "Sense Enemy",
+    "source": {
+      "book": "CR1",
+      "page": 221
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Reveals whether the target bears ill will toward the caster.",
+    "description": "The caster learns whether the target feels hostility toward them, but not its specific thoughts or motives. The target feels a brief dizziness, so if it could see the caster during the casting, it can work out who did it.",
+    "modifiers": []
+  },
+  {
+    "name": "Paralyze",
+    "source": {
+      "book": "CR1",
+      "page": 221
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target takes -2 to either Accuracy or Evasion checks (caster's choice).",
+    "description": "The caster picks Accuracy or Evasion when casting; the target suffers -2 to checks of that kind for the duration. If several targets are affected through [Metamagic/Targets], the same check must be chosen for all of them.",
+    "modifiers": [
+      {
+        "key": "accuracy",
+        "value": -2,
+        "condition": "if Accuracy was chosen",
+        "target": "target"
+      },
+      {
+        "key": "evasion",
+        "value": -2,
+        "condition": "if Evasion was chosen",
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Reaping Slash",
+    "source": {
+      "book": "CR1",
+      "page": 221
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 3,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "slashing"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A blade of magic cuts one target for Power 20 slashing magic damage.",
+    "description": "Deals Power 20 + Magic Power slashing-type magic damage to one target. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Familiar",
+    "source": {
+      "book": "CR1",
+      "page": 222
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Creates a construct familiar that serves the caster.",
+    "description": "Creates a construct that acts as the caster's familiar; its rules are given in the Familiar Data section (CR I p.432). Casting takes one hour.",
+    "modifiers": []
+  },
+  {
+    "name": "Marking",
+    "source": {
+      "book": "CR1",
+      "page": 222
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 Days",
+      "unit": "days",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Marks an object so the caster always knows its direction and distance.",
+    "description": "While the spell lasts, the caster always knows which way and how far away the marked object is. Destroying the object, or shifting it from the spot where it was marked, ends the spell early. Only one Marking can be active per caster, so a single object can be tracked at a time.",
+    "modifiers": []
+  },
+  {
+    "name": "Lightning",
+    "source": {
+      "book": "CR1",
+      "page": 222
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 4,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Line",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "line"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "lightning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Lightning along a line deals Power 20 lightning magic damage.",
+    "description": "Deals Power 20 + Magic Power lightning-type magic damage to the characters hit along the line (see Area: Line, CR I p.163). A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Weapon Mastery",
+    "source": {
+      "book": "CR1",
+      "page": 223
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target can temporarily use one chosen weapon-related combat feat.",
+    "description": "For the duration the target can use one of these combat feats: [Dodge], [Targeting], [Weapon Proficiency A/**], [Dual Wielding], [Repeated Strike I], [Aimed Attack I], [Power Strike I], [Taunting Strike I], [Lethal Strike I] or [Armor Piercer I]. As an exception to the same-name rule, repeated castings stack, so one target can gain several feats.",
+    "modifiers": []
+  },
+  {
+    "name": "Wall Walking",
+    "source": {
+      "book": "CR1",
+      "page": 223
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 3,
+      "text": "MP3"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Entire Character",
+      "kind": "entireCharacter",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Lets the target move along walls and ceilings.",
+    "description": "The target's feet stick to any surface at any angle, letting it stroll up walls and across ceilings. It ends when the target uses a Full Move or has both feet leave the surface at once.",
+    "modifiers": []
+  },
+  {
+    "name": "Translate",
+    "source": {
+      "book": "CR1",
+      "page": 223
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster can read writing in any one language.",
+    "description": "The caster understands text in one language chosen at casting (a written sample suffices even if the language's name is unknown). It gives no ability to speak or understand speech, and it cannot decode ciphers or garbled text, although the caster recognizes them as such.",
+    "modifiers": []
+  },
+  {
+    "name": "Blast",
+    "source": {
+      "book": "CR1",
+      "page": 223
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 5,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "bludgeoning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Strikes a touched target for Power 30 bludgeoning magic damage.",
+    "description": "Deals Power 30 + Magic Power bludgeoning-type magic damage to one target within touch range. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Conceal Self",
+    "source": {
+      "book": "CR1",
+      "page": 224
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "invisible"
+      ]
+    },
+    "summary": "The caster becomes imperceptible to the five senses and to mechanical and magical perception.",
+    "description": "The caster cannot be perceived by the five senses or by mechanical or magical means, and makes no sound or smell. Physical contact still reveals them, and [Mana Search] or similar spells can detect their magic. Any movement beyond a Limited Move, or any action requiring a check, ends the effect.",
+    "modifiers": []
+  },
+  {
+    "name": "Hard Lock",
+    "source": {
+      "book": "CR1",
+      "page": 224
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Seals a working lock so keys, lockpicking and brute force cannot open it.",
+    "description": "Locks an object that has a functioning lock without needing a key. Neither its original key nor Disable Device can open it, and no mundane force can break the door, lid or box. Opening it with a Key of Unlocking or [Unlock] needs a contested roll. A password chosen by the caster can lock and unlock it.",
+    "modifiers": []
+  },
+  {
+    "name": "Fireball",
+    "source": {
+      "book": "CR1",
+      "page": 224
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "fire"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "An exploding fireball deals Power 20 fire magic damage to up to 5 targets.",
+    "description": "Deals Power 20 + Magic Power fire-type magic damage to up to 5 characters in a 3 m radius area. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Levitation",
+    "source": {
+      "book": "CR1",
+      "page": 224
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 6,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "fly"
+      ]
+    },
+    "summary": "Lets the caster hover as high as 10 m above the ground.",
+    "description": "The caster can hover up to 10 m above the ground and move while floating as if walking, but only with a Limited Move.",
+    "modifiers": []
+  },
+  {
+    "name": "Analyze Enchantment",
+    "source": {
+      "book": "CR2",
+      "page": 129
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object or 1 Character",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Reveals the spells affecting a target, or the powers of a magic item.",
+    "description": "Reveals each spell currently on the target: its name, its Magic Power and how long it has left. On a magic item, it reveals what magic the item holds and how to use it.",
+    "modifiers": []
+  },
+  {
+    "name": "Apport",
+    "source": {
+      "book": "CR2",
+      "page": 129
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(Infinite)/-",
+      "range": "ranged",
+      "areas": 2,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Teleports an object the caster marked beforehand into their hand.",
+    "description": "Brings a previously marked object into the caster's hand from any distance. Drawing a mark takes one hour per object; the object may be at most 3 m in any dimension (things the caster created by magic, golems included, qualify), cannot be targeted while less than one week old, and can bear only one mark. The caster can keep as many marks as their Sorcerer level; drawing more erases a random older mark. Marks last until erased or overwritten, and the spell needs no Magical Implement.",
+    "modifiers": []
+  },
+  {
+    "name": "Steal Mind",
+    "source": {
+      "book": "CR2",
+      "page": 130
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 2,
+      "text": "MP2"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [
+      "curse"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 10,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Power 10 MP damage to the target; the caster gains the drained MP.",
+    "description": "Inflicts Power 10 + Magic Power damage on the target's MP (not HP). The caster recovers as much MP as the damage inflicted, but no more than 1/10 of the target's total MP (rounded up).",
+    "modifiers": []
+  },
+  {
+    "name": "Tongues",
+    "source": {
+      "book": "CR2",
+      "page": 130
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 7,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Grants the caster fluency in one chosen language.",
+    "description": "For the duration the caster speaks and comprehends one language, picked at casting, like a native. If they don't know the language's name, hearing it spoken lets them select it and learn its name.",
+    "modifiers": []
+  },
+  {
+    "name": "Blink",
+    "source": {
+      "book": "CR2",
+      "page": 131
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": true,
+    "combatPrep": true,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster's next Evasion check succeeds automatically.",
+    "description": "An afterimage takes the next attack: the first Evasion check the caster is asked to make during the duration automatically succeeds, and the spell then ends.",
+    "modifiers": []
+  },
+  {
+    "name": "Energy Javelin",
+    "source": {
+      "book": "CR2",
+      "page": 131
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "energy"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A spear of compressed mana deals Power 40 energy magic damage to one target.",
+    "description": "Deals Power 40 + Magic Power energy-type magic damage to one target. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Create Device",
+    "source": {
+      "book": "CR2",
+      "page": 131
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 4,
+      "text": "MP4"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Creates a Magical Implement in the caster's hand.",
+    "description": "Produces a Magical Implement (CR I p.176) in any shape no bigger than a two-handed weapon; it is useless as a melee weapon in combat. Casting it does not require a Magical Implement.",
+    "modifiers": []
+  },
+  {
+    "name": "Magician",
+    "source": {
+      "book": "CR2",
+      "page": 131
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 8,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target can temporarily use one chosen magic-related combat feat.",
+    "description": "The caster chooses one feat the target can use for the duration: [Targeting], [Magic Convergence], [Magic Control], [Hawk Eye], [Violentcast I] or [MP Save/**]; the target must meet its prerequisites. Multiple castings stack, so one target can gain several feats.",
+    "modifiers": []
+  },
+  {
+    "name": "Erase Magic",
+    "source": {
+      "book": "CR2",
+      "page": 132
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target cannot cast level/rank 6 or lower spells of one chosen magic system.",
+    "description": "The caster names a magic system when casting; for the duration the target cannot cast spells of that system of level/rank 6 or lower.",
+    "modifiers": []
+  },
+  {
+    "name": "Telekinesis",
+    "source": {
+      "book": "CR2",
+      "page": 132
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Moves one object up to 3 m per round as a Major Action.",
+    "description": "With a Major Action the caster moves the object up to 3 m per round (10 seconds), even through the air, but not through obstacles. Weight is irrelevant, but the object must be no taller than 2 m and no wider than a 1 m radius, and cannot be held or equipped by another character. Even with [Metamagic/Targets], one Major Action moves only one object.",
+    "modifiers": []
+  },
+  {
+    "name": "Blade Barrier",
+    "source": {
+      "book": "CR2",
+      "page": 132
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "temporary",
+    "types": [
+      "slashing"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 0,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "perTurn": "target"
+    },
+    "summary": "Blades around the target deal Power 0 slashing damage at the end of each turn it acts.",
+    "description": "At the end of each of its turns, the target takes Power 0 + Magic Power slashing-type magic damage, unless it took no Major or Minor Action that turn. This damage cannot be critical. Willpower is rolled only once, at casting; success limits the effect to 10 seconds (1 round).",
+    "modifiers": []
+  },
+  {
+    "name": "Absorb Magic",
+    "source": {
+      "book": "CR2",
+      "page": 132
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 9,
+    "cost": {
+      "mp": 5,
+      "text": "MP5"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The next magic damage the caster takes is regained as MP.",
+    "description": "The next time the caster suffers magic damage, they also regain that much MP, and the effect ends. It can be cast only once per day.",
+    "modifiers": []
+  },
+  {
+    "name": "See-Through",
+    "source": {
+      "book": "CR2",
+      "page": 133
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 6,
+      "text": "MP6"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (2m Radius)/Space",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 2,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "1(10m)/Shot",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "10 seconds (1 r)",
+      "unit": "rounds",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Makes a 2 m radius area transparent to the caster.",
+    "description": "The caster can see through everything in the target area to what lies beyond. Creatures, characters and their gear vanish from the caster's view alone and still physically exist. Things seen this way can be targeted by spells, but spells with 'Area: Shot' are still blocked by the obstruction.",
+    "modifiers": []
+  },
+  {
+    "name": "Seal Enchantment",
+    "source": {
+      "book": "CR2",
+      "page": 133
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 7,
+      "text": "MP7"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object",
+      "kind": "object",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Hides an object's magic from detection.",
+    "description": "The object's magic can no longer be found by [Sense Magic], [Mana Search] or any other magic-detecting spell or ability, and its magical effects are concealed. Appraise checks are unaffected, but such items are often disguised as mundane, which raises the target number for knowledge-based appraisal.",
+    "modifiers": []
+  },
+  {
+    "name": "Flight",
+    "source": {
+      "book": "CR2",
+      "page": 133
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false,
+      "statuses": [
+        "fly"
+      ]
+    },
+    "summary": "The target can fly at speed 50, moving only with Full Move.",
+    "description": "The target can fly at will, but only with simple movement via Full Move, at a flying speed of 50 (150 m per round). It can pass through skirmishes and other movement obstructions, taking -4 to Evasion checks when it does.",
+    "modifiers": [
+      {
+        "key": "evasion",
+        "value": -4,
+        "target": "target",
+        "condition": "after passing through a skirmish or obstruction"
+      }
+    ]
+  },
+  {
+    "name": "Blizzard",
+    "source": {
+      "book": "CR2",
+      "page": 133
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 10,
+    "cost": {
+      "mp": 10,
+      "text": "MP10"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "water"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A snowstorm deals Power 30 water/ice magic damage to up to 20 targets.",
+    "description": "Deals Power 30 + Magic Power water/ice-type magic damage to up to 20 characters in a 6 m radius area. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Thunder Bolt",
+    "source": {
+      "book": "CR3",
+      "page": 134
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 13,
+      "text": "MP13"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "lightning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 50,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A lightning bolt deals Power 50 lightning magic damage to one target.",
+    "description": "Deals Power 50 + Magic Power lightning-type magic damage to one target. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Slow",
+    "source": {
+      "book": "CR3",
+      "page": 134
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 8,
+      "text": "MP8"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character X",
+      "kind": "characterX",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Halves the target's movement; a 1-2 on 1d each turn costs it its Major Action.",
+    "description": "The target's movement (a monster's movement speed) is cut in half, rounding up. In Simplified Combat, reaching an adjacent area takes a Full Move and moving 2 areas is impossible. At the start of each of its turns it rolls 1d, and on a 1 or 2 it gets no Major Action that turn.",
+    "modifiers": []
+  },
+  {
+    "name": "Familiar II",
+    "source": {
+      "book": "CR3",
+      "page": 134
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 11,
+    "cost": {
+      "mp": 30,
+      "text": "MP30"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Touch",
+      "kind": "touch",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Touch/-",
+      "range": "touch",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "Permanent",
+      "unit": "permanent",
+      "value": null
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "summon",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Creates an advanced, intelligent familiar.",
+    "description": "Creates a construct familiar of the advanced kind (rules: High-level Familiars, CR III p.430). Casting takes one hour.",
+    "modifiers": []
+  },
+  {
+    "name": "Shining Spot",
+    "source": {
+      "book": "CR3",
+      "page": 135
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 16,
+      "text": "MP16"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (3m Radius)/5",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 3,
+      "count": 5
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "energy"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 40,
+      "critical": 9,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "Blinding light deals Power 40 energy magic damage to up to 5 targets; crits on 9.",
+    "description": "Deals Power 40 + Magic Power energy-type magic damage to up to 5 characters in a 3 m radius area. A successful Willpower check halves the damage. The spell's Critical Value is 9.",
+    "modifiers": []
+  },
+  {
+    "name": "Shock",
+    "source": {
+      "book": "CR3",
+      "page": 135
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(50m)/Shot",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "shot"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "cant",
+    "types": [
+      "bludgeoning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 30,
+      "critical": 10,
+      "damageKind": "physical",
+      "addMagicPower": true
+    },
+    "summary": "Unresistable Power 30 physical damage that hits HP and MP alike.",
+    "description": "Hurls a chunk of mana that deals Power 30 + Magic Power bludgeoning-type physical damage; the same amount is subtracted from the target's HP and from its MP. The spell cannot be resisted.",
+    "modifiers": []
+  },
+  {
+    "name": "Become Dragon",
+    "source": {
+      "book": "CR3",
+      "page": 135
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 12,
+    "cost": {
+      "mp": 20,
+      "text": "MP20"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Day",
+      "unit": "days",
+      "value": 1
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "other",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The caster turns into a Draconet.",
+    "description": "The caster becomes a Draconet (CR III p.396) and uses its data; HP already lost carries over to its Body section, and damage to that section returns to the caster when the spell ends. The caster loses access to their classes, combat feats and racial abilities for the duration, equipped weapons, armor and accessories are unusable, and carried items work only for effects without a Stance. The caster may serve as another PC's mount using the Draconet mount data (CR III p.259), acting only as a mount. A level 15 Sorcerer may become a Lesser Dragon instead (monster data CR II p.396, mount data CR III p.260; HP loss goes to the Head section), but cannot use the monster's spells or technique unique skills.",
+    "modifiers": []
+  },
+  {
+    "name": "Desultory",
+    "source": {
+      "book": "CR3",
+      "page": 136
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 9,
+      "text": "MP9"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "temporary",
+    "types": [
+      "psychic"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "debuff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "The target takes -4 to Spellcasting checks.",
+    "description": "Breaks the target's concentration, imposing -4 on its Spellcasting checks for the duration. A successful resistance limits the effect to 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "spellcasting",
+        "value": -4,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Teleport",
+    "source": {
+      "book": "CR3",
+      "page": 136
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Object or 1 Character X",
+      "kind": "other",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Teleports the target to a place the caster has visited or can see within 1 km.",
+    "description": "Sends the target to a location the caster has visited before or can see within 1 km, passing through walls, barriers and other obstacles. The target can be at most 1 m in radius and 2 m tall and cannot be something held or equipped by another character. The spell fails if there is no safe space at the destination; a character target is handled as 'Target: 1 Character X'.",
+    "modifiers": []
+  },
+  {
+    "name": "Lightning Bind",
+    "source": {
+      "book": "CR3",
+      "page": 136
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 13,
+    "cost": {
+      "mp": 15,
+      "text": "MP15"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 Character",
+      "kind": "character",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "1 minute (6 r)",
+      "unit": "rounds",
+      "value": 6
+    },
+    "resistance": "temporary",
+    "types": [
+      "lightning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 20,
+      "critical": null,
+      "damageKind": "magic",
+      "addMagicPower": true,
+      "perTurn": "target",
+      "statuses": [
+        "entangled"
+      ]
+    },
+    "summary": "Binds the target in lightning: action checks -2 and Power 20 damage every turn.",
+    "description": "The target takes -2 to all action checks and, at the end of each of its turns, Power 20 + Magic Power lightning-type magic damage that cannot be critical. A single-section target, or a multi-section one with every section bound, cannot move. Willpower is rolled only at casting, not for each instance of damage; success limits the effect to 10 seconds (1 round).",
+    "modifiers": [
+      {
+        "key": "actionChecks",
+        "value": -2,
+        "target": "target"
+      }
+    ]
+  },
+  {
+    "name": "Dimension Gate",
+    "source": {
+      "book": "CR3",
+      "page": 137
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 23,
+      "text": "MP23"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "1(10m)/Target",
+      "range": "ranged",
+      "areas": 1,
+      "meters": 10,
+      "area": "target"
+    },
+    "duration": {
+      "text": "30 seconds (3 r)",
+      "unit": "rounds",
+      "value": 3
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Opens a 3 m radius gate to any place the caster knows.",
+    "description": "Creates a gate of 3 m radius at the caster's feet whose exit is any place the caster knows and names at casting, regardless of distance. It cannot be opened inside a building, and the exit must have room for a safe arrival.",
+    "modifiers": []
+  },
+  {
+    "name": "Dimension Sword",
+    "source": {
+      "book": "CR3",
+      "page": 137
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 18,
+      "text": "MP18"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Any Point",
+      "kind": "point",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "2(50m)/Line",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "line"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "slashing"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 60,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A space-cleaving blade deals Power 60 slashing magic damage along a line.",
+    "description": "Deals Power 60 + Magic Power slashing-type magic damage to the characters hit along the line. A successful Willpower check halves the damage.",
+    "modifiers": []
+  },
+  {
+    "name": "Magic Reflection",
+    "source": {
+      "book": "CR3",
+      "page": 137
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 14,
+    "cost": {
+      "mp": 17,
+      "text": "MP17"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "Caster",
+      "kind": "caster",
+      "areaCount": null,
+      "radius": null,
+      "count": null
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "3 minutes (18 r)",
+      "unit": "rounds",
+      "value": 18
+    },
+    "resistance": "optional",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "buff",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Bounces one single-target spell back at its caster.",
+    "description": "A spell with 'Target: 1 Character' (including 1 Entire Character and 1 Character X) aimed at the caster may be reflected to its own caster, who must then resist it; the caster may check the Spellcasting result before deciding. If not reflected, the spell is resisted normally, and a caster who was also among the original targets is affected only once. The spell ends after one reflection.",
+    "modifiers": []
+  },
+  {
+    "name": "Save The World",
+    "source": {
+      "book": "CR3",
+      "page": 137
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 50,
+      "text": "MP50"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "All Areas (500 m Radius)/Space",
+      "kind": "area",
+      "areaCount": "all",
+      "radius": 500,
+      "count": "space"
+    },
+    "rangeArea": {
+      "text": "Caster/-",
+      "range": "caster",
+      "areas": null,
+      "meters": null,
+      "area": "none"
+    },
+    "duration": {
+      "text": "1 Hour",
+      "unit": "hours",
+      "value": 1
+    },
+    "resistance": "none",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Raises an unbreakable dome barrier around a 500 m radius area.",
+    "description": "A dome-shaped barrier appears along the boundary of the area and shuts out all outside influence; neither spells nor unique skills can get through. A character standing on the edge when it forms picks which side to be on. Nothing can break or remove it, [Perfect Cancellation] included, but the caster must concentrate: moving or taking a Major or Minor Action makes it vanish.",
+    "modifiers": []
+  },
+  {
+    "name": "Perfect Cancellation",
+    "source": {
+      "book": "CR3",
+      "page": 138
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 33,
+      "text": "MP33"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(30m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 30,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "neg",
+    "types": [],
+    "magisphere": null,
+    "effect": {
+      "kind": "utility",
+      "power": null,
+      "critical": null,
+      "damageKind": null,
+      "addMagicPower": false
+    },
+    "summary": "Cancels every magical effect in the area that its Spellcasting check beats.",
+    "description": "Each magical effect in the area (spells, spellsongs, evocations, unique skills, etc.) is cancelled if this spell's Spellcasting check exceeds that effect's success value (Magic Power). With one hour of casting it can also affect magic items, treated as Magic Power 25 (current era), 30 (Magitech Civilization) or 40 (Ancient Magic Civilization); items from the Divine Civilization Period or earlier are immune.",
+    "modifiers": []
+  },
+  {
+    "name": "Meteor Strike",
+    "source": {
+      "book": "CR3",
+      "page": 138
+    },
+    "system": "truespeech",
+    "subsystem": null,
+    "deity": null,
+    "level": 15,
+    "cost": {
+      "mp": 30,
+      "text": "MP30"
+    },
+    "minorAction": false,
+    "combatPrep": false,
+    "target": {
+      "text": "1 area (6m Radius)/20",
+      "kind": "area",
+      "areaCount": "1",
+      "radius": 6,
+      "count": 20
+    },
+    "rangeArea": {
+      "text": "2(50m)/Target",
+      "range": "ranged",
+      "areas": 2,
+      "meters": 50,
+      "area": "target"
+    },
+    "duration": {
+      "text": "Instant",
+      "unit": "instant",
+      "value": null
+    },
+    "resistance": "half",
+    "types": [
+      "bludgeoning"
+    ],
+    "magisphere": null,
+    "effect": {
+      "kind": "damage",
+      "power": 100,
+      "critical": 10,
+      "damageKind": "magic",
+      "addMagicPower": true
+    },
+    "summary": "A falling meteor deals Power 100 bludgeoning magic damage to up to 20 targets.",
+    "description": "Deals Power 100 + Magic Power bludgeoning-type magic damage to up to 20 characters in a 6 m radius area; Willpower halves it. The caster needs a view of the sky, and the target area must lie under open sky. With one hour of casting it becomes 'Range: 2(1km)' and 'Target: All Areas (500m Radius)/All' and also damages structures, ignoring their Defense and critting on 8+ against buildings.",
+    "modifiers": []
+  }
+]

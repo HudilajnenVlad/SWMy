@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Sword World 2.5 — party sheet and the party folders of the Actors directory.
+   After the PF2e party: the party's best checks and languages on top, a card
+   per member, the shared stash with the party fund, notes. Builds on
+   paper-base.css (the header reuses the monster header of sheet-monster.css).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Header tools
+   -------------------------------------------------------------------------- */
+
+.swp .swp-party-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.swp .swp-party-tools .swp-btn-wide { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; font-size: 12.5px; }
+.swp .swp-btn-wide:disabled { opacity: 0.35; cursor: default; }
+.swp .swp-btn-wide.light:disabled:hover { background: var(--swp-paper); color: var(--swp-ink); }
+
+/* --------------------------------------------------------------------------
+   Party checks and languages
+   -------------------------------------------------------------------------- */
+
+.swp .swp-party-switch { display: flex; flex: none; gap: 3px; margin-left: auto; }
+.swp .swp-party-switch a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 1px 8px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.swp .swp-party-switch a:hover { border-color: var(--swp-paper); opacity: 1; }
+.swp .swp-party-switch a.on { background: var(--swp-paper); color: var(--swp-ink); opacity: 1; }
+
+.swp .swp-party-keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px 12px; padding: 18px 12px 10px; }
+.swp .swp-party-key { flex-direction: column; gap: 1px; min-height: 60px; padding: 8px 6px 5px; text-decoration: none; }
+.swp .swp-party-key .swp-num { font-size: 23px; }
+.swp .swp-party-who { overflow: hidden; max-width: 100%; color: var(--swp-ink-2); font-size: 11px; white-space: nowrap; text-overflow: ellipsis; }
+.swp .swp-party-key.swp-roll:hover .swp-party-who { color: var(--swp-paper); }
+
+.swp .swp-party-checks { border-top: var(--swp-thin); }
+.swp .swp-party-checks tbody:first-of-type > tr:first-child > * { border-top: none; }
+.swp .swp-party-checks th.grp { width: 118px; padding-left: 10px; background: var(--swp-paper-2); font-size: 12px; text-align: left; }
+.swp .swp-party-checks td.list { padding: 4px 8px; line-height: 1.95; text-align: left; }
+.swp .swp-party-check {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  margin: 1px 8px 1px 0;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.swp .swp-party-check b { font-size: 13.5px; }
+.swp .swp-party-check small { color: var(--swp-ink-2); font-size: 10.5px; }
+.swp .swp-party-check.roll { cursor: pointer; }
+.swp .swp-party-check.roll:hover { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-party-check.roll:hover small { color: var(--swp-paper); }
+
+.swp .swp-party-langs { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px 4px; }
+.swp .swp-lang {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 2px 8px;
+  border: 1.5px solid var(--swp-ink);
+  border-radius: 3px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: help;
+}
+.swp .swp-lang small { color: var(--swp-ink-2); font-size: 11px; font-weight: 400; }
+.swp .swp-lang small i { font-size: 9px; }
+.swp .swp-lang.common { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-lang.common small { color: var(--swp-paper); opacity: 0.8; }
+
+/* --------------------------------------------------------------------------
+   Member cards
+   -------------------------------------------------------------------------- */
+
+.swp .swp-party-members { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 14px; align-items: start; }
+.swp .swp-member { display: flex; flex-direction: column; min-width: 0; border: var(--swp-rule); background: var(--swp-paper); }
+.swp .swp-member > .swp-titlebar { height: 34px; }
+.swp .swp-member > .swp-titlebar .swp-level-box { min-width: 38px; border: none; border-right: var(--swp-rule); font-size: 19px; }
+.swp .swp-member > .swp-titlebar .swp-namebar { padding-right: 4px; }
+.swp .swp-member .swp-namebar-text { cursor: pointer; }
+.swp .swp-member .swp-namebar-text:hover { text-decoration: underline; }
+.swp .swp-member-tools { display: flex; flex: none; gap: 2px; margin-left: auto; }
+.swp .swp-member-tools .swp-tool.on { color: var(--swp-gold); }
+.swp .swp-member-body { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 12px; padding: 10px 10px 12px; }
+.swp .swp-member-portrait { position: relative; display: block; width: 84px; height: 100px; border: var(--swp-rule); }
+.swp .swp-member-portrait > img { display: block; width: 100%; height: 100%; border: none; border-radius: 0; object-fit: cover; object-position: top; }
+.swp .swp-member-portrait > img.swp-member-token {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--swp-ink);
+  border-radius: 50%;
+  background-color: var(--swp-ink-2);
+  object-position: center;
+}
+.swp .swp-member-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.swp .swp-member-sub { margin: 0; color: var(--swp-ink-2); font-size: 12px; }
+.swp .swp-member-classes { display: flex; flex-wrap: wrap; gap: 2px 12px; margin: 0; font-size: 12.5px; }
+.swp .swp-member-classes b { margin-left: 2px; }
+.swp .swp-member .swp-res { flex: none; min-width: 0; height: 24px; }
+.swp .swp-member .swp-res-label { min-width: 30px; font-size: 12px; }
+.swp .swp-member .swp-res-value { min-width: 32px; height: 18px; font-size: 13px; line-height: 18px; }
+.swp .swp-member-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(48px, 1fr)); border-top: var(--swp-rule); border-bottom: var(--swp-thin); }
+.swp .swp-member-stat { display: flex; flex-direction: column; align-items: center; padding: 2px 2px 3px; line-height: 1.1; cursor: help; }
+.swp .swp-member-stat + .swp-member-stat { border-left: var(--swp-thin); }
+.swp .swp-member-stat small { color: var(--swp-ink-2); font-size: 10.5px; }
+.swp .swp-member-stat b { font-size: 15px; white-space: nowrap; }
+.swp .swp-member-checks { display: flex; flex-wrap: wrap; gap: 2px 12px; margin: 0; padding: 6px 10px 0; font-size: 12px; }
+.swp .swp-member-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 8px 10px 10px; }
+.swp .swp-member-status { width: 22px; height: 22px; padding: 1px; border: none; border-radius: 3px; background: var(--swp-ink); }
+.swp .swp-member.limited .swp-member-body { padding-bottom: 10px; }
+.swp .swp-member-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 150px;
+  padding: 16px;
+  border: 2px dashed var(--swp-muted);
+  color: var(--swp-ink-2);
+  font-size: 12.5px;
+  text-align: center;
+}
+.swp .swp-member-add > i { font-size: 22px; }
+
+/* --------------------------------------------------------------------------
+   Stash
+   -------------------------------------------------------------------------- */
+
+.swp .swp-stash-grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 14px; align-items: start; }
+.swp .swp-stash-purse { display: flex; flex-direction: column; gap: 14px; padding: 18px 10px 10px; }
+.swp .swp-stash-fund { height: 46px; }
+.swp .swp-stash-fund > input[type=number] { font-size: 21px; }
+.swp .swp-stash-purses tbody td,
+.swp .swp-stash-purses tbody th { height: 26px; font-size: 12.5px; }
+.swp .swp-stash-purses td.name { overflow: hidden; max-width: 150px; text-align: left; white-space: nowrap; text-overflow: ellipsis; }
+.swp .swp-stash-purses td.name img { width: 20px; height: 20px; margin-right: 5px; border: none; vertical-align: middle; object-fit: cover; }
+.swp .swp-stash-purses td.num { text-align: right; white-space: nowrap; }
+.swp .swp-stash-purses tr.total > * { border-top: var(--swp-rule); }
+.swp .swp-stash-purses tr.total > th { text-align: left; padding-left: 8px; }
+.swp .swp-stash-items td.qty { width: 64px; }
+.swp .swp-stash-items td.qty input[type=number] {
+  width: 48px;
+  height: 22px;
+  border: 1px dashed var(--swp-muted);
+  border-radius: 3px;
+  background: transparent;
+  text-align: center;
+}
+.swp .swp-stash-items td.price { width: 90px; color: var(--swp-ink-2); font-size: 12px; white-space: nowrap; }
+
+/* Notes */
+.swp .swp-party-notes { border: none; }
+.swp .swp-party-notes prose-mirror { min-height: 120px; }
+.swp .swp-party-notes prose-mirror:has([contenteditable="true"]) { min-height: 380px; }
+
+@container swp (max-width: 720px) {
+  .swp .swp-stash-grid { grid-template-columns: minmax(0, 1fr); }
+  .swp .swp-party-members { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* --------------------------------------------------------------------------
+   Party folders on top of the Actors directory (core sidebar)
+   -------------------------------------------------------------------------- */
+
+.swp-parties { margin: 0 0 6px; padding: 0; list-style: none; }
+.swp-parties > ol { margin: 0; padding: 0; list-style: none; }
+.swp-parties:has(> ol:empty) { display: none; }
+.swp-party-folder { margin: 0 0 4px; }
+.swp-party-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 3px 4px 3px 3px;
+  border: 1px solid var(--swp-ink);
+  border-left: 4px solid var(--swp-gold);
+  background: var(--swp-ink);
+  color: var(--swp-paper);
+  cursor: pointer;
+}
+.swp-party-img { flex: none; width: 28px; height: 28px; border: 1px solid var(--swp-paper); background: var(--swp-ink-2); object-fit: cover; }
+.swp-party-name { flex: 1 1 auto; min-width: 0; font-family: var(--swp-font-neg); font-size: 14px; font-weight: 700; }
+.swp-party-count { flex: none; min-width: 20px; padding: 0 5px; border: 1px solid currentColor; border-radius: 9px; font-size: 11px; line-height: 16px; text-align: center; }
+.swp-party-header > button {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 3px;
+  background: none;
+  color: inherit;
+}
+.swp-party-header > button:hover { background: var(--swp-paper); color: var(--swp-ink); }
+.swp-party-folder > .subdirectory { margin: 0; padding: 2px 0 2px 4px; border-left: 4px solid var(--swp-gold); }
+.swp-party-folder:not(.expanded) > .subdirectory { display: none; }
+.swp-party-blank { padding: 6px 10px; font-size: 12px; font-style: italic; opacity: 0.7; }
+.swp-party-create { padding: 2px 0; }
+.swp-party-create > button { width: 100%; }

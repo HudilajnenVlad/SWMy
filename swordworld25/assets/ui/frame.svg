@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" width="60" height="60">
+  <!-- Portrait frame for border-image (slice 20): thin outer rule, heavy inner rule, scroll curls at the corners. -->
+  <defs>
+    <g id="curl">
+      <circle cx="6.2" cy="6.2" r="4.9" fill="#fbfaf7" stroke="#161412" stroke-width="1.3"/>
+      <path d="M6.2 2.9 a3.3 3.3 0 1 1 -3.3 3.3 a2.1 2.1 0 1 1 2.1 2.1 a1 1 0 0 1 -1 -1" fill="none" stroke="#161412" stroke-width="1.05" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <g fill="none" stroke="#161412">
+    <rect x="5" y="5" width="50" height="50" stroke-width="1.1"/>
+    <rect x="9.6" y="9.6" width="40.8" height="40.8" stroke-width="2.4"/>
+  </g>
+  <use xlink:href="#curl" href="#curl"/>
+  <use xlink:href="#curl" href="#curl" transform="translate(60 0) scale(-1 1)"/>
+  <use xlink:href="#curl" href="#curl" transform="translate(0 60) scale(1 -1)"/>
+  <use xlink:href="#curl" href="#curl" transform="translate(60 60) scale(-1 -1)"/>
+</svg>

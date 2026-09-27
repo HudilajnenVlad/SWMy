@@ -1,0 +1,7 @@
+<nav class="swp-browser-tabs" aria-label="{{localize 'SW25.Browser.Title'}}">
+  {{#each tabs}}
+  <a class="swp-browser-tab {{#if active}}active{{/if}}" data-action="browserTab" data-tab="{{id}}" {{#if active}}aria-current="page"{{/if}}>
+    <i class="{{icon}}"></i> <span>{{label}}</span>
+  </a>
+  {{/each}}
+</nav>
