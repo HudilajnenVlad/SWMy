@@ -1,0 +1,13 @@
+# Rulebooks are copyrighted - never commit them
+*.pdf
+
+# Tooling
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+Thumbs.db
+
+# Compiled compendium packs (built from data/ by `npm run build:packs`)
+swordworld25/packs/

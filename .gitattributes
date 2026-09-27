@@ -1,0 +1,19 @@
+# Normalize text files to LF in the repository and working tree.
+* text=auto eol=lf
+
+# Binary assets
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.svg text eol=lf
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.ogg binary
+*.mp3 binary
+
+# Compiled LevelDB compendium packs must never be touched by EOL conversion
+# (a CRLF in the CURRENT file makes the whole pack unreadable).
+swordworld25/packs/** binary
