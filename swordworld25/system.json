@@ -7,6 +7,8 @@
     { "name": "SWMy" }
   ],
   "url": "https://github.com/HudilajnenVlad/SWMy",
+  "manifest": "https://github.com/HudilajnenVlad/SWMy/releases/latest/download/system.json",
+  "download": "https://github.com/HudilajnenVlad/SWMy/releases/download/v0.1.0/swordworld25.zip",
   "compatibility": {
     "minimum": "13.345",
     "verified": "13.348"
