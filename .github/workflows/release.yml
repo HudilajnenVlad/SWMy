@@ -4,11 +4,14 @@ name: Release
 # Foundry installs from the manifest URL:
 #   https://github.com/HudilajnenVlad/SWMy/releases/latest/download/system.json
 #
-# Runs when a version tag (v0.1.0, …) is pushed, or manually from the Actions tab.
-# The release tag is always v<version from swordworld25/system.json>.
+# Runs on every push to main that touches the system, when a version tag (v0.1.0, …) is pushed,
+# or manually from the Actions tab. The release tag is always v<version from swordworld25/system.json>;
+# pushing again without bumping the version refreshes that release's files.
 
 on:
   push:
+    branches: [main]
+    paths: ["swordworld25/**", "data/**", "tools/**", "package*.json", ".github/workflows/release.yml"]
     tags: ["v*"]
   workflow_dispatch:
 

@@ -108,7 +108,7 @@ npm run release
 ```
 Команда собирает компендиумы и создаёт `dist/swordworld25.zip` и `dist/system.json` (с URL манифеста и архива для GitHub Releases). Опции: `--no-build`, `--repo owner/name`. Оба файла прикрепляются к релизу с тегом `v<версия>`.
 
-Публикация автоматизирована (`.github/workflows/release.yml`): поднимите `version` в `swordworld25/system.json` (и `download` там же), закоммитьте и запушьте тег `v<версия>` — GitHub Actions соберёт компендиумы и выложит `swordworld25.zip` и `system.json` в релиз. Workflow можно запустить и вручную на вкладке *Actions*.
+Публикация автоматизирована (`.github/workflows/release.yml`): при каждом пуше в `main` (или пуше тега `v<версия>`) GitHub Actions собирает компендиумы и выкладывает `swordworld25.zip` и `system.json` в релиз `v<версия>`. Для новой версии поднимите `version` и `download` в `swordworld25/system.json`. Workflow можно запустить и вручную на вкладке *Actions*.
 
 ## Как играть
 
