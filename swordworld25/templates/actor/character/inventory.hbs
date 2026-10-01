@@ -14,6 +14,17 @@
         <span class="swp-legend">{{localize "SW25.Debt"}}</span>
         <input type="number" name="system.debt" value="{{system.debt}}" step="1"><span class="swp-unit-corner">G</span>
       </label>
+      {{!-- Computed: value of everything carried, and the total with money and deposit, less the debt --}}
+      <div class="swp-totals-box swp-wealth" data-tooltip="{{wealth.tooltip}}">
+        <div class="swp-total">
+          <span class="swp-total-label">{{localize "SW25.Wealth.Items"}}</span>
+          <span class="swp-pill static">{{wealth.items}}</span>
+        </div>
+        <div class="swp-total">
+          <span class="swp-total-label">{{localize "SW25.Wealth.Total"}}</span>
+          <span class="swp-pill static {{#if wealth.negative}}warn{{/if}}">{{wealth.total}}</span>
+        </div>
+      </div>
     </fieldset>
 
     <div class="swp-stack">
@@ -57,7 +68,7 @@
       <tbody>
         <tr class="swp-subhead"><th colspan="5">{{localize label}}</th></tr>
         {{#each items}}
-        <tr class="swp-row draggable {{#if expanded}}open{{/if}} {{#if (and canEquip (not equipped))}}unequipped{{/if}}" data-item-id="{{id}}" data-expand="item:{{id}}">
+        <tr class="swp-row draggable {{#if expanded}}open{{/if}} {{#if (and canEquip (not equipped))}}unequipped{{/if}}" data-item-id="{{id}}" data-expand="{{expandKey}}">
           <td class="qty">
             <span class="swp-qty">
               <a class="swp-mini" data-action="itemQuantity" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
@@ -65,10 +76,10 @@
               <a class="swp-mini" data-action="itemQuantity" data-delta="1"><i class="fa-solid fa-plus"></i></a>
             </span>
           </td>
-          {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=usable}}
+          {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=usable subtitle=grip}}
           <td class="uses">{{uses}}</td>
-          <td class="price">{{price}}</td>
-          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=usable equip=canEquip equipped=equipped}}
+          <td class="price" {{#if priceTooltip}}data-tooltip="{{priceTooltip}}"{{/if}}>{{price}}</td>
+          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=usable equip=canEquip equipped=equipped equipIcon=equipIcon equipTooltip=equipTooltip}}
         </tr>
         {{#if expanded}}<tr class="swp-details-row"><td colspan="5" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
         {{/each}}

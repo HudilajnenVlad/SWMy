@@ -341,12 +341,13 @@ SW25.checks = {
   tumble: { ability: "agi", options: ["scout", "ranger", "rider"], package: "movement", time: "instant" },
   hide: { ability: "agi", options: ["scout", "ranger"], package: "movement", time: "1m", metalArmor: -4 },
   acrobatics: { ability: "agi", options: ["scout", "ranger"], package: "movement", time: "1m", metalArmor: -4 },
-  climb: { ability: "agi", options: ["scout", "ranger", { source: "adventurer", ability: "str" }], package: "movement", time: "1m", metalArmor: -4 },
+  climb: { ability: "agi", options: ["scout", "ranger"], package: "movement", time: "1m", metalArmor: -4 },
   follow: { ability: "agi", options: ["scout", "ranger"], package: "movement", time: "10m", metalArmor: -4 },
   jump: { ability: "agi", options: ["adventurer"], time: "1r", metalArmor: -4 },
   swim: { ability: "agi", options: ["adventurer"], time: "1m" },
   riding: { ability: "agi", options: ["rider"], package: "movement", time: "1m" },
-  // Strength
+  // Strength (the adventurer's Climb, CR I p.111-112, differs from the Scout/Ranger one only by its standard value)
+  climbStr: { ability: "str", options: ["adventurer"], time: "1m", metalArmor: -4 },
   strength: { ability: "str", options: ["adventurer"], time: "1r" },
   // Intelligence
   track: { ability: "int", options: ["scout", "ranger"], package: "observation", time: "1m" },
@@ -382,7 +383,7 @@ SW25.checks = {
 SW25.skillCheckGroups = {
   dex: ["conceal", "firstAid", "disableDevice", "pickpocket", "disguise", "setTrap"],
   agi: ["tumble", "hide", "acrobatics", "climb", "follow", "jump", "swim", "riding"],
-  str: ["strength"],
+  str: ["climbStr", "strength"],
   int: ["track", "notice", "listen", "dangerSense", "search", "spotTrap", "meteorology", "insight", "literature",
     "engineering", "cartography", "pathology", "herbology", "appraise", "weakness", "detect", "investigation"],
   spi: ["performance"]

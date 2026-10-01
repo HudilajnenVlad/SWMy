@@ -35,13 +35,24 @@ export default class CompendiumBrowser extends HandlebarsApplicationMixin(Applic
     this.refActorOverride = options.actor ?? null;
   }
 
+  /** Width of the collapsed title bar. */
+  static #COLLAPSED_WIDTH = 320;
+
+  /** Is the window collapsed to its title bar? */
+  #collapsed = false;
+
+  /** Size of the window before it collapsed. */
+  #expandedSize = null;
+
   /** @override */
   static DEFAULT_OPTIONS = {
     id: "sw25-compendium-browser",
-    classes: ["sw25", "swp", "swp-browser", "themed", "theme-light"],
+    classes: ["sw25", "swp", "swp-browser", "swp-collapsible", "themed", "theme-light"],
     position: { width: 1120, height: 860 },
-    window: { title: "SW25.Browser.Title", icon: "fa-solid fa-book-open-reader", resizable: true },
+    // Instead of the core minimization, the window collapses to a translucent title bar (like the resource tracker)
+    window: { title: "SW25.Browser.Title", icon: "fa-solid fa-book-open-reader", resizable: true, minimizable: false },
     actions: {
+      collapse: CompendiumBrowser.#onCollapse,
       browserTab: CompendiumBrowser.#onTab,
       toggleFacet: CompendiumBrowser.#onToggleFacet,
       resetFilters: CompendiumBrowser.#onResetFilters,
@@ -83,6 +94,7 @@ export default class CompendiumBrowser extends HandlebarsApplicationMixin(Applic
     }
     if ( filters ) app.#preset(filters);
     await app.render({ force: true });
+    app.#setCollapsed(false);
     app.bringToFront();
     return app;
   }
@@ -388,6 +400,61 @@ export default class CompendiumBrowser extends HandlebarsApplicationMixin(Applic
   }
 
   /** @override */
+  async _renderFrame(options) {
+    const frame = await super._renderFrame(options);
+    // A collapse arrow before the close button; double-clicking the title bar collapses or expands the window
+    const header = frame.querySelector(".window-header");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.action = "collapse";
+    header?.querySelector("[data-action=close]")?.before(button);
+    header?.addEventListener("dblclick", event => {
+      if ( event.target.closest("button, a, input") ) return;
+      event.preventDefault();
+      this.#setCollapsed(!this.#collapsed);
+    });
+    return frame;
+  }
+
+  /** @override */
+  _updateFrame(options) {
+    super._updateFrame(options);
+    this.#syncCollapsed();
+  }
+
+  /**
+   * Collapse the window to a translucent title bar, or give it back its size.
+   * @param {boolean} collapsed
+   */
+  #setCollapsed(collapsed) {
+    if ( !this.rendered || (collapsed === this.#collapsed) ) return;
+    if ( collapsed ) {
+      const { width, height } = this.position;
+      this.#expandedSize = { width, height };
+    }
+    this.#collapsed = collapsed;
+    this.#syncCollapsed();
+    if ( collapsed ) this.setPosition({ width: CompendiumBrowser.#COLLAPSED_WIDTH, height: "auto" });
+    else this.setPosition({ ...this.#expandedSize });
+  }
+
+  /** Show the collapsed state on the frame: class, arrow button and title (with the tab while collapsed). */
+  #syncCollapsed() {
+    const el = this.element;
+    if ( !el ) return;
+    const collapsed = this.#collapsed;
+    el.classList.toggle("collapsed", collapsed);
+    const button = el.querySelector(".window-header [data-action=collapse]");
+    if ( button ) {
+      const label = t(collapsed ? "SW25.Window.Expand" : "SW25.Window.Collapse");
+      button.className = `header-control icon fa-solid ${collapsed ? "fa-chevron-down" : "fa-chevron-up"}`;
+      button.dataset.tooltip = label;
+      button.setAttribute("aria-label", label);
+    }
+    if ( this.window.title ) this.window.title.innerText = collapsed ? `${this.title} · ${t(this.tab.label)}` : this.title;
+  }
+
+  /** @override */
   async _onRender(context, options) {
     await super._onRender(context, options);
     keyboardActions(this.element);
@@ -451,6 +518,10 @@ export default class CompendiumBrowser extends HandlebarsApplicationMixin(Applic
   /* -------------------------------------------- */
   /*  Actions                                     */
   /* -------------------------------------------- */
+
+  static #onCollapse() {
+    this.#setCollapsed(!this.#collapsed);
+  }
 
   static #onTab(event, target) {
     const id = target.dataset.tab;

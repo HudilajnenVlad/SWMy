@@ -1,10 +1,11 @@
 import SW25ActorSheet from "./actor-base.mjs";
-import { rollDeathCheck, rollMonsterKnowledge } from "../../workflows/checks.mjs";
+import { checkSource, rollDeathCheck, rollMonsterKnowledge } from "../../workflows/checks.mjs";
 import { rollWeaponDamage } from "../../workflows/attacks.mjs";
 import { applyDamageTo } from "../../combat/damage.mjs";
 import { lookupPower, POWER_TABLE } from "../../dice/power-table.mjs";
-import { PAPER_DIALOG, signed, speakerFor, t } from "../../helpers/utils.mjs";
+import { gamels, PAPER_DIALOG, signed, speakerFor, t } from "../../helpers/utils.mjs";
 import { createCard } from "../../chat/card.mjs";
+import { stackValue } from "../../data/item/equipment.mjs";
 
 const ABILITY_KEYS = ["dex", "agi", "str", "vit", "int", "spi"];
 
@@ -55,6 +56,7 @@ export default class CharacterSheet extends SW25ActorSheet {
       rankUp: CharacterSheet.#onRankUp,
       rankDown: CharacterSheet.#onRankDown,
       slotClear: CharacterSheet.#onSlotClear,
+      itemToggleEquip: CharacterSheet.#onItemToggleEquip,
       resourceHit: CharacterSheet.#onResourceHit,
       powerTable: CharacterSheet.#onPowerTable,
       traitChat: CharacterSheet.#onTraitChat,
@@ -149,6 +151,7 @@ export default class CharacterSheet extends SW25ActorSheet {
     context.attackLines = this.#bonusLines(ENHANCEMENT_KEYS.attack);
     context.declarable = items.filter(i => (i.type === "feat") && (i.system.featType !== "passive"))
       .map(i => ({ id: i.id, name: i.name, major: i.system.featType === "major" }));
+    context.hands = this.#handRows(items, sys);
     context.accessorySlots = this.#accessorySlots(items);
     context.evasion = this.#evasionContext(sys);
     context.armors = await this.#armorRows(items, sys);
@@ -181,17 +184,27 @@ export default class CharacterSheet extends SW25ActorSheet {
     context.rhythms = Object.entries(SW25.rhythms).map(([k, r]) => ({ key: k, icon: r.icon, label: r.label, value: sys.rhythm[k] }));
     context.deities = await this.#deityOptions();
 
-    // Inventory
+    // Inventory: everything carried, the weapons and armor of the Combat tab included
     const gear = items.filter(i => i.type === "gear");
     const groups = {};
     for ( const g of gear ) {
       const type = g.system.itemType || "gear";
       (groups[type] ??= []).push(g);
     }
-    context.inventory = await Promise.all(Object.entries(groups).map(async ([type, list]) => ({
-      type, label: SW25.gearTypes[type] ?? type,
-      items: await Promise.all(list.map(g => this.#gearContext(g)))
-    })));
+    const carried = [
+      { type: "weapon", label: "SW25.Weapons", list: items.filter(i => i.type === "weapon") },
+      { type: "armor", label: "SW25.ArmorAndShields", list: items.filter(i => i.type === "armor") }
+    ].filter(g => g.list.length);
+    context.inventory = [
+      ...await Promise.all(carried.map(async g => ({
+        type: g.type, label: g.label, items: await Promise.all(g.list.map(i => this.#possessionContext(i)))
+      }))),
+      ...await Promise.all(Object.entries(groups).map(async ([type, list]) => ({
+        type, label: SW25.gearTypes[type] ?? type,
+        items: await Promise.all(list.map(g => this.#gearContext(g)))
+      })))
+    ];
+    context.wealth = this.#wealthContext(sys);
     context.consumables = gear.filter(g => g.system.consumable).map(g => ({
       id: g.id, name: g.name, img: g.img, quantity: g.system.quantity,
       pips: this.#tally(g.system.quantity, Math.min(Math.max(g.system.quantity, 6), 12)).map(p => ({ ...p, used: !p.on })),
@@ -546,6 +559,29 @@ export default class CharacterSheet extends SW25ActorSheet {
   }
 
   /**
+   * The two hands with what they hold (weapons, shields, hand-held tools; CR I p.147), and the owned items that can
+   * be taken in hand.
+   * @param {Item[]} items
+   * @param {object} sys
+   * @returns {object[]}
+   */
+  #handRows(items, sys) {
+    const hands = sys.hands ?? { right: [], left: [] };
+    const held = new Set([...hands.right, ...hands.left].map(i => i.id));
+    const order = { weapon: 0, armor: 1, gear: 2 };
+    const candidates = items.filter(i => (i.type in order) && (i.system.heldHands > 0) && !held.has(i.id))
+      .sort((a, b) => (order[a.type] - order[b.type]) || a.name.localeCompare(b.name))
+      .map(i => ({ id: i.id, name: `${i.name}${i.system.heldHands >= 2 ? " (2H)" : ""}` }));
+    return ["right", "left"].map(hand => ({
+      hand,
+      label: `SW25.Slot.${hand}Hand`,
+      over: hands[hand].length > 1,
+      items: hands[hand].map(i => ({ id: i.id, name: i.name, img: i.img, both: i.system.heldHands >= 2, summary: i.system.summary ?? "" })),
+      candidates
+    }));
+  }
+
+  /**
    * Accessory rows by equipment section (CR I p.294), with the owned accessories that fit each empty section.
    * @param {Item[]} items
    * @returns {object[]}
@@ -555,14 +591,14 @@ export default class CharacterSheet extends SW25ActorSheet {
     const accessories = items.filter(i => (i.type === "gear") && i.system.slot.length);
     const rows = Object.entries(SW25.accessorySlots).map(([slot, label]) => ({ slot, label, items: [] }));
     for ( const item of accessories ) {
-      if ( !item.system.equipped ) continue;
+      if ( !item.system.isWorn ) continue;
       const slot = this.#slotOf(item);
       const row = rows.find(r => r.slot === slot) ?? rows.at(-1);
       row.items.push({ id: item.id, name: item.name, img: item.img, summary: item.system.summary });
     }
     for ( const row of rows ) {
       row.over = row.items.length > 1;
-      row.candidates = accessories.filter(i => !i.system.equipped && this.#fitsSlot(i, row.slot))
+      row.candidates = accessories.filter(i => !i.system.isWorn && this.#fitsSlot(i, row.slot))
         .map(i => ({ id: i.id, name: i.name }));
     }
     return rows;
@@ -661,7 +697,7 @@ export default class CharacterSheet extends SW25ActorSheet {
     const SW25 = CONFIG.SW25;
     const row = c => ({
       ...c, label: game.i18n.localize(c.label), valueLabel: c.straight ? "—" : c.value,
-      sourceLabel: game.i18n.localize(c.sourceLabel),
+      sourceLabel: checkSource(c),
       packageLabel: c.package ? SW25.packages[c.package]?.label : ""
     });
     const groups = Object.entries(SW25.skillCheckGroups).map(([ability, keys]) => ({
@@ -703,12 +739,67 @@ export default class CharacterSheet extends SW25ActorSheet {
     return {
       ...(await this._itemRow(item)),
       quantity: s.quantity,
-      price: s.priceText || (Number.isInteger(s.price) ? `${s.price}G` : ""),
+      ...this.#priceCell(s),
       equipped: s.equipped,
-      canEquip: (s.slot.length > 0) || (s.itemType === "improvement"),
+      canEquip: (s.slot.length > 0) || (s.itemType === "improvement") || (s.heldHands > 0),
+      equipIcon: (s.heldHands > 0) && !s.slot.length ? "fa-solid fa-hand" : "",
+      equipTooltip: (s.heldHands > 0) ? (s.slot.length ? "SW25.Sheet.HoldOrWear" : "SW25.Sheet.HoldToggle") : "",
+      grip: this.#gripLabel(item),
       usable: s.isUsable,
       uses: Number.isInteger(s.uses?.max) && s.uses.max > 0 ? `${s.uses.value ?? s.uses.max}/${s.uses.max}` : ""
     };
+  }
+
+  /**
+   * Context of a weapon or armor row of the inventory (they are listed on the Combat tab as well).
+   * @param {Item} item
+   * @returns {Promise<object>}
+   */
+  async #possessionContext(item) {
+    const SW25 = CONFIG.SW25;
+    const s = item.system;
+    const weapon = item.type === "weapon";
+    const kind = game.i18n.localize(weapon ? (SW25.weaponCategories[s.category] ?? s.category) : (SW25.armorTypes[s.armorType] ?? ""));
+    const where = (!weapon && !s.isShield && s.equipped) ? t("SW25.Sheet.Worn") : this.#gripLabel(item);
+    return {
+      ...(await this._itemRow(item, `inv:${item.id}`)),
+      quantity: s.quantity,
+      ...this.#priceCell(s),
+      equipped: s.equipped,
+      canEquip: true,
+      equipIcon: weapon ? "fa-solid fa-hand-fist" : (s.isShield ? "fa-solid fa-shield-halved" : "fa-solid fa-shirt"),
+      equipTooltip: "SW25.Equip",
+      grip: [kind, where].filter(Boolean).join(" · "),
+      usable: false,
+      uses: ""
+    };
+  }
+
+  /**
+   * Price column of an inventory row: the unit price, and the value of the whole stack in its tooltip.
+   * @param {object} s  Item system data
+   * @returns {{price: string, priceTooltip: string}}
+   */
+  #priceCell(s) {
+    const value = stackValue(s);
+    return {
+      price: s.priceText || (Number.isInteger(s.price) ? `${s.price}G` : ""),
+      priceTooltip: ((value !== null) && (s.quantity !== 1)) ? t("SW25.Wealth.Stack", { quantity: s.quantity, value: gamels(value) }) : ""
+    };
+  }
+
+  /**
+   * Total wealth: the value of the items and the sum with money and deposit, less the debt.
+   * @param {object} sys
+   * @returns {object}
+   */
+  #wealthContext(sys) {
+    const w = sys.wealth ?? { items: 0, unpriced: 0, total: 0 };
+    const lines = [t("SW25.Wealth.Formula", {
+      money: gamels(sys.money), deposit: gamels(sys.deposit), items: gamels(w.items), debt: gamels(sys.debt), total: gamels(w.total)
+    })];
+    if ( w.unpriced ) lines.push(t("SW25.Wealth.Unpriced", { count: w.unpriced }));
+    return { items: gamels(w.items), total: gamels(w.total), negative: w.total < 0, tooltip: lines.join("<br>") };
   }
 
   /**
@@ -783,6 +874,10 @@ export default class CharacterSheet extends SW25ActorSheet {
     for ( const select of this.element.querySelectorAll("select[data-slot-assign]") ) {
       select.addEventListener("change", this.#onSlotAssign.bind(this));
     }
+    // Take an item in hand from the hand's list
+    for ( const select of this.element.querySelectorAll("select[data-hand-assign]") ) {
+      select.addEventListener("change", this.#onHandAssign.bind(this));
+    }
     // Learn a class from the compendium list
     for ( const select of this.element.querySelectorAll("select[data-class-add]") ) {
       select.addEventListener("change", this.#onClassAdd.bind(this));
@@ -824,6 +919,18 @@ export default class CharacterSheet extends SW25ActorSheet {
 
   /** @override */
   async _onDropItem(event, item) {
+    // Weapons, shields and hand-held tools dropped on a hand are held in it
+    const hand = event.target?.closest?.("[data-hand]")?.dataset.hand;
+    if ( hand && this.actor.isOwner && ["weapon", "armor", "gear"].includes(item.type) ) {
+      if ( !(item.system.heldHands > 0) ) {
+        ui.notifications.warn(t("SW25.Warn.NotHoldable", { name: item.name }));
+        return null;
+      }
+      let owned = item.parent === this.actor ? item : null;
+      if ( !owned ) [owned] = await this.actor.createEmbeddedDocuments("Item", [item.toObject()]);
+      if ( owned ) await this.#holdIn(owned, hand);
+      return owned;
+    }
     // Accessories dropped on an equipment section are worn there
     const slot = event.target?.closest?.("[data-slot]")?.dataset.slot;
     if ( slot && this.actor.isOwner && (item.type === "gear") && item.system.slot?.length ) {
@@ -1194,6 +1301,75 @@ export default class CharacterSheet extends SW25ActorSheet {
     const item = this.actor.items.get(select.value);
     if ( !item ) return;
     await item.update({ "system.equipped": true, "system.equippedSlot": select.dataset.slotAssign });
+  }
+
+  /** Take an owned item in a hand (from the hand's list). */
+  async #onHandAssign(event) {
+    event.stopPropagation();
+    const select = event.currentTarget;
+    const item = this.actor.items.get(select.value);
+    if ( item ) await this.#holdIn(item, select.dataset.handAssign);
+  }
+
+  /**
+   * Hold an item in a hand. A single-handed item already there moves to the other hand when that one is free (so
+   * dropping an item on the other hand swaps them); a two-handed item fills both hands.
+   * @param {Item} item
+   * @param {string} hand  right | left
+   * @returns {Promise<void>}
+   */
+  async #holdIn(item, hand) {
+    const hands = this.actor.system.hands;
+    const both = item.system.heldHands >= 2;
+    const update = { _id: item.id, "system.equipped": true, "system.hand": both ? "" : hand };
+    // An item that can also be worn (magical implement) is now held: a wand rather than a ring
+    if ( item.system.slot?.length ) update["system.equippedSlot"] = "held";
+    const updates = [update];
+    if ( !both ) {
+      const other = hand === "right" ? "left" : "right";
+      const occupants = hands[hand].filter(i => i !== item);
+      const otherBusy = hands[other].some(i => i !== item);
+      if ( (occupants.length === 1) && (occupants[0].system.heldHands < 2) && !otherBusy ) {
+        updates.push({ _id: occupants[0].id, "system.hand": other });
+      }
+    }
+    await this.actor.updateEmbeddedDocuments("Item", updates);
+    if ( this.actor.system.hands?.over ) ui.notifications.warn(t("SW25.Warn.HandsFull", { name: item.name }));
+  }
+
+  /**
+   * Equip or put away an item. Held items (weapons, shields, hand-held tools) take a free hand, shields the left one
+   * first; an item that can be held or worn (magical implement) is held unless it was last worn in a section.
+   */
+  static async #onItemToggleEquip(event, target) {
+    const item = this._getItem(target);
+    if ( !item ) return;
+    const s = item.system;
+    if ( s.equipped ) return item.update({ "system.equipped": false });
+    const wornBefore = s.slot?.length && s.equippedSlot && (s.equippedSlot !== "held");
+    if ( (s.heldHands > 0) && !wornBefore ) {
+      const free = this.actor.system.freeHandFor(item);
+      return this.#holdIn(item, free === "left" ? "left" : "right");
+    }
+    return item.update({ "system.equipped": true });
+  }
+
+  /**
+   * Where an equipped gear item is: "Held: Right hand", "Worn: Neck".
+   * @param {Item} item
+   * @returns {string}
+   */
+  #gripLabel(item) {
+    const s = item.system;
+    if ( s.isHeld ) {
+      const hands = this.actor.system.hands ?? { right: [], left: [] };
+      const inRight = hands.right.includes(item);
+      const inLeft = hands.left.includes(item);
+      const where = (inRight && inLeft) ? t("SW25.Sheet.BothHands") : t(inLeft ? "SW25.Slot.leftHand" : "SW25.Slot.rightHand");
+      return `${t("SW25.Sheet.Held")}: ${where}`;
+    }
+    if ( s.isWorn ) return `${t("SW25.Sheet.Worn")}: ${t(CONFIG.SW25.accessorySlots[this.#slotOf(item)] ?? "")}`;
+    return "";
   }
 
   static async #onSlotClear(event, target) {

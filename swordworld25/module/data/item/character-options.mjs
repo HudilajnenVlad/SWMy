@@ -19,7 +19,8 @@ export class RaceModel extends ItemBaseModel {
         check: stringField(""),
         source: stringField("adventurer"),
         ability: stringField(""),
-        minLevel: intField(1)
+        minLevel: intField(1),
+        trait: stringField("")
       })),
       abilityDice: new SchemaField({
         dex: dice("2d"), agi: dice("2d"), str: dice("2d"), vit: dice("2d"), int: dice("2d"), spi: dice("2d")

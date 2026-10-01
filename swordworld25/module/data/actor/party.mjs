@@ -1,4 +1,5 @@
 import { intField } from "../fields.mjs";
+import { executeAsGM } from "../../helpers/socket.mjs";
 
 const { ArrayField, HTMLField, StringField } = foundry.data.fields;
 
@@ -50,6 +51,22 @@ export default class PartyModel extends foundry.abstract.TypeDataModel {
       if ( left.length !== other.system.members.length ) await other.update({ "system.members": left });
     }
     await party.update({ "system.members": [...this.members, ...ids] });
+  }
+
+  /**
+   * Add an actor to the party on behalf of its owner: directly when the user may update the party, else through
+   * the GM (players only observe the party).
+   * @param {Actor} actor
+   * @returns {Promise<boolean>}  Whether the actor joined (or the request went to the GM)
+   */
+  async join(actor) {
+    if ( !actor || this.hasMember(actor) ) return false;
+    if ( this.parent.isOwner ) {
+      await this.addMembers(actor);
+      return true;
+    }
+    if ( !actor.isOwner ) return false;
+    return executeAsGM("joinParty", { partyId: this.parent.id, actorId: actor.id });
   }
 
   /**

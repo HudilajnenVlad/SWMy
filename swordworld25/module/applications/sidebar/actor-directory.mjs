@@ -20,6 +20,7 @@ export default class SW25ActorDirectory extends ActorDirectory {
       togglePartyFolder: SW25ActorDirectory.#onTogglePartyFolder,
       openPartySheet: SW25ActorDirectory.#onOpenPartySheet,
       createParty: SW25ActorDirectory.#onCreateParty,
+      createPartyMember: SW25ActorDirectory.#onCreatePartyMember,
       openMonsterTemplate: SW25ActorDirectory.#onOpenMonsterTemplate,
       openBestiary: SW25ActorDirectory.#onOpenBestiary
     }
@@ -83,6 +84,7 @@ export default class SW25ActorDirectory extends ActorDirectory {
       Object.assign(context, {
         documentCls: "actor",
         canCreateParty: game.user.isGM && !parties.length,
+        canCreateMember: Actor.implementation.canUserCreate(game.user),
         parties: parties.map(party => ({
           id: party.id,
           name: party.name,
@@ -155,9 +157,7 @@ export default class SW25ActorDirectory extends ActorDirectory {
         if ( data.fromParty === partyId ) return;
         const party = game.actors.get(partyId);
         const actor = await fromUuid(data.uuid);
-        if ( party?.isOwner && (actor instanceof Actor) && !actor.pack && (actor.type !== "party") ) {
-          await party.system.addMembers(actor);
-        }
+        if ( party && (actor instanceof Actor) && !actor.pack && (actor.type !== "party") ) await party.system.join(actor);
         return;
       }
       // Out of a party folder: the actor leaves it and goes where it was dropped
@@ -184,6 +184,18 @@ export default class SW25ActorDirectory extends ActorDirectory {
 
   static #onOpenPartySheet(event, target) {
     game.actors.get(target.closest("[data-party-id]")?.dataset.partyId)?.sheet.render(true);
+  }
+
+  /** Create a character that joins the party at once. */
+  static async #onCreatePartyMember(event, target) {
+    event.stopPropagation();
+    const party = game.actors.get(target.closest("[data-party-id]")?.dataset.partyId);
+    if ( !party ) return;
+    const top = Math.max(0, target.getBoundingClientRect().top);
+    const actor = await Actor.implementation.createDialog({ type: "character" }, {}, {
+      types: ["character"], position: { width: 320, left: window.innerWidth - 630, top }
+    }).catch(() => null);
+    if ( actor instanceof Actor ) await party.system.join(actor);
   }
 
   static #onCreateParty() {

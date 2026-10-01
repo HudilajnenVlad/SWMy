@@ -8,6 +8,7 @@ import SW25Actors from "./documents/actors.mjs";
 import SW25Item from "./documents/item.mjs";
 import SW25ActiveEffect from "./documents/active-effect.mjs";
 import SW25TokenDocument from "./documents/token.mjs";
+import SW25Token from "./canvas/token.mjs";
 import { SW25Combat, SW25Combatant } from "./combat/combat.mjs";
 import { CheckRoll } from "./dice/check.mjs";
 import { lookupPower, POWER_TABLE } from "./dice/power-table.mjs";
@@ -25,6 +26,8 @@ import SW25ActorDirectory from "./applications/sidebar/actor-directory.mjs";
 import SW25ItemSheet from "./applications/sheets/item-sheet.mjs";
 import SpellbookApp from "./applications/apps/spellbook.mjs";
 import ResourceTracker from "./applications/apps/resource-tracker.mjs";
+import CombatPanel from "./applications/apps/combat-panel.mjs";
+import EffectsPanel from "./applications/apps/effects-panel.mjs";
 import MonsterTemplateApp, { buildMonsterData } from "./applications/apps/monster-template.mjs";
 import CompendiumBrowser from "./applications/apps/compendium-browser.mjs";
 import { registerTokenHud } from "./canvas/token-hud.mjs";
@@ -50,6 +53,7 @@ Hooks.once("init", () => {
   CONFIG.ActiveEffect.documentClass = SW25ActiveEffect;
   CONFIG.ActiveEffect.legacyTransferral = false;
   CONFIG.Token.documentClass = SW25TokenDocument;
+  CONFIG.Token.objectClass = SW25Token;
   CONFIG.Combat.documentClass = SW25Combat;
   CONFIG.Combatant.documentClass = SW25Combatant;
   Object.assign(CONFIG.Actor.dataModels, actorModels);
@@ -93,6 +97,8 @@ Hooks.once("init", () => {
     POWER_TABLE,
     SpellbookApp,
     ResourceTracker,
+    CombatPanel,
+    EffectsPanel,
     MonsterTemplateApp,
     buildMonsterData,
     PartySheet,
@@ -120,7 +126,10 @@ Hooks.once("ready", async () => {
   registerDefaultSocketHandlers();
   if ( game.user.isGM ) await migrateWorld();
   if ( game.user.isGM ) await ensureParty();
-  if ( game.settings.get(SYSTEM_ID, "showResourceTracker") ) ResourceTracker.initialize();
+  // Floating panels of the selected token: resource tracker (or the combat panel in its place), effects
+  ResourceTracker.sync();
+  CombatPanel.sync();
+  EffectsPanel.sync();
 });
 
 /* -------------------------------------------- */
@@ -195,9 +204,11 @@ for ( const hook of ["renderItemDirectory", "renderCompendiumDirectory"] ) {
   });
 }
 
-// Token Controls: show or hide the resource tracker
+// Token Controls: show or hide the resource tracker and the combat panel
 Hooks.on("getSceneControlButtons", controls => {
-  if ( controls.tokens?.tools ) controls.tokens.tools.sw25Tracker = ResourceTracker.controlTool;
+  if ( !controls.tokens?.tools ) return;
+  controls.tokens.tools.sw25Tracker = ResourceTracker.controlTool;
+  controls.tokens.tools.sw25Combat = CombatPanel.controlTool;
 });
 
 // Drop an effect preset (or a condition) onto a token

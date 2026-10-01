@@ -1,0 +1,8 @@
+{{!-- Temporary effects and conditions (click removes). --}}
+{{#if statuses.length}}
+<div class="swp-tracker-statuses">
+  {{#each statuses}}
+  <a class="swp-tracker-status" {{#if @root.owner}}data-action="removeStatus"{{/if}} data-id="{{id}}" data-tooltip="{{name}}{{#if duration}} · {{duration}}{{/if}}{{#if @root.owner}} — {{localize 'SW25.Tracker.RemoveHint'}}{{/if}}"><img src="{{img}}" alt=""></a>
+  {{/each}}
+</div>
+{{/if}}

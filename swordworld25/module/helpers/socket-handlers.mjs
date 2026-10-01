@@ -20,6 +20,16 @@ export function registerDefaultSocketHandlers() {
     if ( actor ) await actor.deleteEmbeddedDocuments("ActiveEffect", ids);
   });
 
+  // A player adds a character they own to a party they can see (players only observe the party)
+  registerSocketHandler("joinParty", async ({ partyId, actorId }, userId) => {
+    const user = game.users.get(userId);
+    const party = game.actors.get(partyId);
+    const actor = game.actors.get(actorId);
+    if ( !user || (party?.type !== "party") || !actor ) return;
+    if ( !party.testUserPermission(user, "LIMITED") || !actor.testUserPermission(user, "OWNER") ) return;
+    await party.system.addMembers(actor);
+  });
+
   registerSocketHandler("toggleStatus", async ({ uuid, status, active, overlay }) => {
     const actor = actorFromUuid(uuid);
     if ( actor ) await actor.toggleStatusEffect(status, { active, overlay });

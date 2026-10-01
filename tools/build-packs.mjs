@@ -96,7 +96,7 @@ const MODIFIER_KEYS = new Set([
 ]);
 const CHECK_KEYS = new Set([
   "conceal", "firstAid", "disableDevice", "pickpocket", "disguise", "setTrap", "tumble", "hide", "acrobatics", "climb",
-  "follow", "jump", "swim", "riding", "strength", "track", "notice", "listen", "dangerSense", "search", "spotTrap",
+  "follow", "jump", "swim", "riding", "climbStr", "strength", "track", "notice", "listen", "dangerSense", "search", "spotTrap",
   "meteorology", "insight", "literature", "engineering", "cartography", "pathology", "herbology", "appraise",
   "monsterKnowledge", "weakness", "detect", "investigation", "evocation", "initiative", "performance", "willpower",
   "fortitude", "death"
@@ -299,7 +299,7 @@ function raceDocs() {
     description: toHtml([e.summary, `Languages: ${e.languages}`].join("\n\n"),
       `<ul>${(e.traits ?? []).map(t => `<li><strong>${escapeHtml(t.name)}</strong>${t.level > 1 ? ` (Adv. Lv ${t.level}+)` : ""}: ${escapeHtml(t.description)}</li>`).join("")}</ul>${sourceLine(e.source)}`),
     key: e.key,
-    extraCheckOptions: (e.extraCheckOptions ?? []).map(o => ({ check: o.check, source: o.source ?? "adventurer", ability: o.ability ?? "", minLevel: o.minLevel ?? 1 })),
+    extraCheckOptions: (e.extraCheckOptions ?? []).map(o => ({ check: o.check, source: o.source ?? "adventurer", ability: o.ability ?? "", minLevel: o.minLevel ?? 1, trait: o.trait ?? "" })),
     abilityDice: e.abilityDice,
     backgrounds: (e.backgrounds ?? []).map(b => ({ roll: str(b.roll), name: str(b.name), classes: str(b.classes), skill: b.skill ?? 0, body: b.body ?? 0, mind: b.mind ?? 0, exp: b.exp ?? 0, gmOnly: !!b.gmOnly })),
     languages: str(e.languages),

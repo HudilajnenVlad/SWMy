@@ -148,6 +148,40 @@
   </div>
 
   <div class="swp-grid swp-grid-gear">
+    <div class="swp-stack">
+    {{!-- Hands: weapons, shields and hand-held items --}}
+    <div class="swp-block swp-hands">
+      <table class="swp-table swp-slot-table">
+        <thead><tr>
+          <th class="slot" data-tooltip="SW25.Sheet.HandsHint">{{localize "SW25.Sheet.Hands"}} <i class="fa-regular fa-circle-question"></i></th>
+          <th class="name">{{localize "SW25.Sheet.HeldItems"}}</th>
+          <th class="tools"></th>
+        </tr></thead>
+        <tbody>
+          {{#each hands}}
+          <tr class="swp-slot {{#if over}}over{{/if}}" data-hand="{{hand}}">
+            <th class="slot">{{localize label}}</th>
+            <td class="name">
+              {{#each items}}
+              <span class="swp-worn draggable" data-item-id="{{id}}">
+                <img src="{{img}}" alt=""><a data-action="itemEdit" {{#if summary}}data-tooltip="{{summary}}"{{/if}}>{{name}}</a>{{#if both}} <small class="swp-sub">2H</small>{{/if}}
+                <a class="swp-mini" data-action="slotClear" data-tooltip="SW25.Sheet.PutAway"><i class="fa-solid fa-xmark"></i></a>
+              </span>
+              {{/each}}
+              {{#if candidates.length}}
+              <select class="swp-slot-select" data-hand-assign="{{hand}}">
+                <option value="">{{#if items.length}}+{{else}}{{localize "SW25.Sheet.Hold"}}{{/if}}</option>
+                {{#each candidates}}<option value="{{id}}">{{name}}</option>{{/each}}
+              </select>
+              {{/if}}
+            </td>
+            <td class="tools">{{#if over}}<i class="fa-solid fa-triangle-exclamation warn" data-tooltip="SW25.Sheet.HandOver"></i>{{/if}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
     {{!-- Accessories by equipment section --}}
     <div class="swp-block swp-accessories">
       <table class="swp-table swp-slot-table">
@@ -162,7 +196,7 @@
             <th class="slot">{{localize label}}</th>
             <td class="name">
               {{#each items}}
-              <span class="swp-worn" data-item-id="{{id}}">
+              <span class="swp-worn draggable" data-item-id="{{id}}">
                 <img src="{{img}}" alt=""><a data-action="itemEdit" {{#if summary}}data-tooltip="{{summary}}"{{/if}}>{{name}}</a>
                 <a class="swp-mini" data-action="slotClear" data-tooltip="SW25.Sheet.TakeOff"><i class="fa-solid fa-xmark"></i></a>
               </span>
@@ -179,6 +213,7 @@
           {{/each}}
         </tbody>
       </table>
+    </div>
     </div>
 
     {{!-- Evasion, armor and defense --}}

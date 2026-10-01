@@ -116,13 +116,15 @@ On a **weapon**, modifiers with `scope: use` apply only to the attacks made with
 they are a toggle of its attack dialog: Arm Catcher). On **ammunition** they apply to the shot (the attack dialog
 lets the player pick the ammunition and uses one up); `silver`, `magic` and `types` of the ammunition change the
 damage. **Improvements** (Magic Weapon +1...) count only once marked as applied (equipped). **Race traits**
-(`races.json`) may carry `modifiers` that count from the trait's adventurer `level` (Tabbit Sixth Sense +4).
+(`races.json`) may carry `modifiers` that count from the trait's adventurer `level` (Tabbit Sixth Sense +4). A race's
+`extraCheckOptions` (`check`, `source` — default `adventurer`, `ability`, `minLevel`, `trait`) add a way to reach a
+check's standard value; `trait` names the racial ability shown next to the source ("Adventurer level (Sixth Sense)").
 
 `python tools/audit-mechanics.py` lists entries whose rules text has numbers or conditions without automation,
 unknown keys and statuses; rules checked by hand and left to the GM are listed in its `REVIEWED` table.
 
 Check keys: `conceal, firstAid, disableDevice, pickpocket, disguise, setTrap, tumble, hide,
-acrobatics, climb, follow, track, notice, listen, dangerSense, insight, search, cartography,
+acrobatics, climb, climbStr, follow, track, notice, listen, dangerSense, insight, search, cartography,
 meteorology, pathology, literature, engineering, appraise, herbology, spotTrap, detect, jump,
 strength, swim, investigation, performance, riding, weakness, evocation, initiative,
 monsterKnowledge, death`.

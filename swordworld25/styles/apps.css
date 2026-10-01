@@ -118,7 +118,7 @@
 .swp .swp-tracker-head > img { flex: none; width: 38px; height: 38px; border: var(--swp-rule); object-fit: cover; object-position: top; cursor: pointer; }
 .swp .swp-tracker-name { display: flex; flex: 1 1 auto; flex-direction: column; min-width: 0; line-height: 1.15; }
 .swp .swp-tracker-name > a { overflow: hidden; font-family: var(--swp-font-neg); font-size: 15px; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; }
-.swp .swp-tracker-name > small { color: var(--swp-ink-2); font-size: 11px; }
+.swp .swp-tracker-name > small { overflow: hidden; color: var(--swp-ink-2); font-size: 11px; white-space: nowrap; text-overflow: ellipsis; }
 .swp .swp-tracker-sections { display: flex; flex-wrap: wrap; gap: 3px; }
 .swp .swp-tracker-section {
   display: flex;
@@ -257,7 +257,7 @@
 }
 
 /* Roll dialog */
-.swp .swp-roll { display: flex; flex-direction: column; gap: 12px; }
+.swp .swp-roll-form { display: flex; flex-direction: column; gap: 12px; }
 .swp .swp-roll-summary {
   display: flex;
   align-items: center;
@@ -270,7 +270,7 @@
   font-size: 13.5px;
   font-weight: 600;
 }
-.swp .swp-roll .swp-fieldset { display: flex; flex-direction: column; gap: 5px; padding: 8px 10px 10px; }
+.swp .swp-roll-form .swp-fieldset { display: flex; flex-direction: column; gap: 5px; padding: 8px 10px 10px; }
 .swp .swp-roll-option { display: flex; align-items: center; gap: 8px; font-size: 12.5px; cursor: pointer; }
 .swp .swp-roll-option .label { flex: 1 1 auto; min-width: 0; }
 .swp .swp-roll-option .value { flex: none; min-width: 34px; padding: 0 5px; border: var(--swp-thin); border-radius: 3px; font-weight: 700; text-align: center; }
@@ -430,10 +430,181 @@
   .swp .swp-best-table .traits { display: none; }
 }
 
-/* Collapsed tracker: a translucent title bar showing the name, HP and MP */
-.application.sw25-tracker.collapsed { min-height: 0; background: transparent; box-shadow: none; opacity: 0.55; transition: opacity 0.15s; }
-.application.sw25-tracker.collapsed:hover,
-.application.sw25-tracker.collapsed:focus-within { opacity: 1; }
-.application.sw25-tracker.collapsed .window-content { display: none; }
-.application.sw25-tracker.collapsed .window-header { border-radius: 4px; background: rgb(20 18 16 / 72%); }
-.application.sw25-tracker.collapsed .window-title { font-size: 12.5px; }
+/* Collapsed tracker and compendium browser: a translucent title bar (the tracker shows the name, HP and MP) */
+.application.swp-collapsible.collapsed { min-width: 0; min-height: 0; background: transparent; box-shadow: none; opacity: 0.55; transition: opacity 0.15s; }
+.application.swp-collapsible.collapsed:hover,
+.application.swp-collapsible.collapsed:focus-within { opacity: 1; }
+.application.swp-collapsible.collapsed .window-content,
+.application.swp-collapsible.collapsed .window-resize-handle { display: none; }
+.application.swp-collapsible.collapsed .window-header { border-radius: 4px; background: rgb(20 18 16 / 72%); }
+.application.swp-collapsible.collapsed .window-title { font-size: 12.5px; }
+
+/* --------------------------------------------------------------------------
+   Combat panel: the resource tracker plus defenses, combat checks, attacks,
+   magic, class abilities and items, in folding blocks
+   -------------------------------------------------------------------------- */
+
+.swp .swp-combat { max-height: calc(100vh - 140px); margin-right: -6px; padding-right: 6px; overflow-y: auto; }
+.swp .swp-combat-defenses .swp-tracker-stat.swp-roll { position: relative; cursor: pointer; }
+.swp .swp-combat-defenses .swp-tracker-stat.swp-roll:hover small { color: var(--swp-paper); }
+.swp .swp-combat-checks { display: flex; flex-wrap: wrap; gap: 4px; }
+.swp .swp-combat-check {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 5px;
+  min-height: 24px;
+  padding: 1px 7px;
+  border: var(--swp-thin);
+  border-radius: 3px;
+  background: var(--swp-paper);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.swp .swp-combat-check > i { color: var(--swp-ink-2); font-size: 10.5px; }
+.swp .swp-combat-check > b { margin-left: auto; font-size: 14px; }
+.swp a.swp-combat-check:hover,
+.swp a.swp-combat-check:hover > i { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-combat-check.static { border-style: dashed; cursor: default; }
+.swp .swp-combat-check.pending { border-color: var(--swp-gold); box-shadow: inset 0 0 0 1px var(--swp-gold); }
+.swp .swp-combat-check.danger,
+.swp .swp-combat-check.danger > i { border-color: var(--swp-bad); color: var(--swp-bad); }
+.swp a.swp-combat-check.danger:hover,
+.swp a.swp-combat-check.danger:hover > i { background: var(--swp-bad); color: var(--swp-paper); }
+
+/* Folding blocks */
+.swp .swp-fold { display: flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; }
+.swp .swp-fold > i { width: 9px; font-size: 11px; }
+.swp .swp-fold > small { margin-left: auto; color: var(--swp-ink-2); font-weight: 400; }
+.swp .swp-fold:hover > span { text-decoration: underline; }
+
+/* Attack rows with the stance of the weapon */
+.swp .swp-combat .swp-tracker-attack { grid-template-columns: minmax(0, 1fr) auto auto auto; }
+.swp .swp-tracker-attack .val.stance { min-width: 30px; color: var(--swp-ink-2); font-size: 11px; }
+.swp .swp-tracker-attack a.val.stance { border-color: var(--swp-muted); color: var(--swp-ink); }
+.swp .swp-tracker-attack a.val.stance i { font-size: 9px; }
+.swp .swp-combat-feats { display: flex; flex-wrap: wrap; gap: 3px; padding-top: 2px; }
+.swp .swp-combat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  border: var(--swp-thin);
+  border-radius: 2px;
+  font-size: 11.5px;
+  line-height: 20px;
+}
+.swp .swp-combat-chip i { font-size: 9px; }
+.swp .swp-combat-chip:hover { background: var(--swp-ink); color: var(--swp-paper); }
+
+/* Magic schools, class abilities and items */
+.swp .swp-combat-school { display: flex; flex-direction: column; gap: 1px; }
+.swp .swp-combat-school + .swp-combat-school { margin-top: 5px; }
+.swp .swp-combat-school-head { display: flex; align-items: center; gap: 5px; margin-bottom: 2px; font-size: 12px; }
+.swp .swp-combat-school-head > b { flex: 1 1 auto; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.swp .swp-combat-school-head .swp-tag { padding: 0 5px; font-size: 11px; line-height: 18px; }
+.swp .swp-combat-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 24px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+.swp .swp-combat-row .lvl { flex: none; width: 16px; color: var(--swp-ink-2); font-size: 11px; font-weight: 700; text-align: center; }
+.swp .swp-combat-row img { flex: none; width: 20px; height: 20px; border: none; border-radius: 2px; background: var(--swp-ink); object-fit: cover; }
+.swp .swp-combat-row .name { flex: 1 1 auto; min-width: 0; overflow: hidden; font-weight: 600; white-space: nowrap; text-overflow: ellipsis; }
+.swp .swp-combat-row .detail { flex: none; color: var(--swp-ink-2); font-size: 11.5px; white-space: nowrap; }
+.swp .swp-combat-row .go { flex: none; width: 14px; font-size: 11px; opacity: 0; }
+.swp .swp-combat-row:hover { background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-combat-row:hover .detail,
+.swp .swp-combat-row:hover .lvl { color: var(--swp-paper); }
+.swp .swp-combat-row:hover .go { opacity: 1; }
+.swp .swp-combat-subtitle { margin-top: 3px; color: var(--swp-ink-2); font-size: 11px; font-weight: 700; }
+.swp .swp-combat-empty { margin: 0; color: var(--swp-muted); font-size: 11.5px; font-style: italic; }
+.swp .swp-combat-none { margin: 0; padding: 10px 4px; color: var(--swp-ink-2); font-size: 12.5px; text-align: center; }
+
+/* --------------------------------------------------------------------------
+   Effects panel: icons of the selected token's effects in the top right
+   corner of the canvas (after PF2e), with a paper card on hover
+   -------------------------------------------------------------------------- */
+
+#sw25-effects-panel { flex: none; align-self: flex-end; pointer-events: none; }
+#sw25-effects-panel.empty { display: none; }
+.swp .swp-fx-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  align-content: flex-start;
+  gap: 6px;
+  max-height: calc(100vh - 360px);
+}
+.swp .swp-fx {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+  border: 2px solid var(--swp-ink);
+  border-radius: 4px;
+  background: var(--swp-paper);
+  box-shadow: 0 1px 5px rgb(0 0 0 / 55%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.swp .swp-fx img { display: block; width: 100%; height: 100%; border: none; border-radius: 2px; background-color: var(--swp-ink); object-fit: cover; }
+.swp .swp-fx:hover { border-color: var(--swp-gold); box-shadow: 0 0 0 2px var(--swp-gold), 0 1px 5px rgb(0 0 0 / 55%); }
+.swp .swp-fx.off { border-style: dashed; background: var(--swp-paper-3); }
+.swp .swp-fx.off img { opacity: 0.45; filter: grayscale(1); }
+.swp .swp-fx.expired { border-color: var(--swp-bad); }
+.swp .swp-fx-badge {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  min-width: 18px;
+  padding: 0 3px;
+  border: 1px solid var(--swp-paper);
+  border-radius: 3px;
+  background: var(--swp-ink);
+  color: var(--swp-paper);
+  font-family: var(--swp-font-neg);
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 14px;
+  text-align: center;
+}
+.swp .swp-fx.expired .swp-fx-badge { background: var(--swp-bad); }
+
+#tooltip.swp-fx-card {
+  max-width: 300px;
+  padding: 0 0 6px;
+  border: 2px solid var(--swp-ink);
+  border-radius: 3px;
+  background: var(--swp-paper);
+  color: var(--swp-ink);
+  font-family: var(--swp-font);
+  font-size: 12.5px;
+  line-height: 1.35;
+  text-align: left;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 55%);
+}
+#tooltip.swp-fx-card header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: var(--swp-ink);
+  color: var(--swp-paper);
+  font-family: var(--swp-font-neg);
+  font-size: 13.5px;
+}
+#tooltip.swp-fx-card header img { flex: none; width: 20px; height: 20px; border: none; border-radius: 2px; }
+#tooltip.swp-fx-card p,
+#tooltip.swp-fx-card .desc { margin: 0; padding: 4px 8px 0; }
+#tooltip.swp-fx-card .meta { color: var(--swp-ink-2); font-size: 11.5px; }
+#tooltip.swp-fx-card .mods { font-weight: 600; }
+#tooltip.swp-fx-card .desc { max-height: 240px; overflow: hidden; }
+#tooltip.swp-fx-card .desc p { margin: 0 0 4px; padding: 0; }
+#tooltip.swp-fx-card .hint { margin-top: 5px; padding-top: 4px; border-top: 1px dashed var(--swp-ink); color: var(--swp-muted); font-size: 11px; }

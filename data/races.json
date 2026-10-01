@@ -495,13 +495,15 @@
         "check": "dangerSense",
         "source": "adventurer",
         "ability": "int",
-        "minLevel": 1
+        "minLevel": 1,
+        "trait": "Sixth Sense"
       },
       {
         "check": "spotTrap",
         "source": "adventurer",
         "ability": "int",
-        "minLevel": 6
+        "minLevel": 6,
+        "trait": "Sixth Sense (enhanced)"
       }
     ],
     "traits": [

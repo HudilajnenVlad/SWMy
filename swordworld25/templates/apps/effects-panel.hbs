@@ -1,0 +1,8 @@
+<div class="swp-fx-list" data-tooltip-class="swp swp-fx-card" data-tooltip-direction="LEFT">
+  {{#each effects}}
+  <a class="swp-fx {{#if disabled}}off{{/if}} {{#if expired}}expired{{/if}}" data-effect-uuid="{{uuid}}" {{#if @root.owner}}data-action="toggleEffect"{{/if}} data-tooltip-html="{{card}}" aria-label="{{name}}">
+    <img src="{{img}}" alt="">
+    {{#if badge}}<span class="swp-fx-badge">{{badge}}</span>{{/if}}
+  </a>
+  {{/each}}
+</div>

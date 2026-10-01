@@ -4,7 +4,7 @@ import { SYSTEM_ID } from "./utils.mjs";
  * Version of the automation data of the compendiums. Raise it when the automation of existing entries changes, so
  * that the copies owned in the world are refreshed once (see {@link refreshAutomation}).
  */
-export const AUTOMATION_VERSION = 2;
+export const AUTOMATION_VERSION = 3;
 
 /**
  * Automation fields copied from the compendium entry, by item type. Everything else (quantity, equipped state,
@@ -21,7 +21,7 @@ const AUTOMATION_FIELDS = {
   weapon: ["modifiers"],
   armor: ["modifiers"],
   gear: ["modifiers", "use", "types", "duration", "magic"],
-  race: ["modifiers", "traits"],
+  race: ["modifiers", "traits", "extraCheckOptions"],
   effect: ["modifiers", "statuses", "duration"]
 };
 

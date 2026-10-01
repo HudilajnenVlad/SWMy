@@ -167,22 +167,24 @@ export default class SW25ActorSheet extends HandlebarsApplicationMixin(ActorShee
   /**
    * Fields shared by every item row of the paper sheets, with the details of expanded rows.
    * @param {Item} item
+   * @param {string} [expandKey]  Key of the row in the expanded set (an item listed twice gets another key)
    * @returns {Promise<object>}
    * @protected
    */
-  async _itemRow(item) {
-    const expanded = this._expanded.has(`item:${item.id}`);
+  async _itemRow(item, expandKey = `item:${item.id}`) {
+    const expanded = this._expanded.has(expandKey);
     let entry = null;
     if ( expanded ) {
       entry = await itemEntry(item);
-      // Weapon rows already show the usage table with the power row
-      if ( item.type === "weapon" ) entry.tables = [];
+      // Weapon rows of the Combat tab already show the usage table with the power row
+      if ( (item.type === "weapon") && expandKey.startsWith("item:") ) entry.tables = [];
     }
     return {
       item, id: item.id, name: item.name, img: item.img, system: item.system,
       summary: item.system.summary ?? "",
       source: item.system.sourceLabel ?? "",
       expanded,
+      expandKey,
       entry
     };
   }

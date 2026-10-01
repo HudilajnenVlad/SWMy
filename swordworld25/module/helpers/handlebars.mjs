@@ -59,7 +59,10 @@ export function preloadTemplates() {
   const base = "systems/swordworld25/templates";
   const itemTypes = ["race", "class", "weapon", "armor", "gear", "spell", "feat", "technique", "spellsong", "finale",
     "stunt", "evocation", "ability", "effect"];
+  // Partial blocks need a plain name: {{#> sw25PanelFold}}…{{/sw25PanelFold}}
+  foundry.applications.handlebars.loadTemplates({ sw25PanelFold: `${base}/apps/panel/fold.hbs` });
   return foundry.applications.handlebars.loadTemplates([
+    ...["head", "steps", "vitals", "attack-rows", "extras", "statuses"].map(p => `${base}/apps/panel/${p}.hbs`),
     `${base}/chat/card.hbs`,
     `${base}/chat/damage-log.hbs`,
     `${base}/chat/loot.hbs`,

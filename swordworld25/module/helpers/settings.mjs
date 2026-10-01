@@ -27,6 +27,18 @@ export function registerSettings() {
     scope: "client", config: true, type: Boolean, default: true,
     onChange: value => game.sw25?.ResourceTracker?.toggle(value)
   });
+  register("showCombatPanel", {
+    scope: "client", config: true, type: Boolean, default: false,
+    onChange: value => {
+      game.sw25?.CombatPanel?.toggle(value);
+      // The combat panel takes the place of the resource tracker while it is open
+      game.sw25?.ResourceTracker?.sync();
+    }
+  });
+  register("showEffectsPanel", {
+    scope: "client", config: true, type: Boolean, default: true,
+    onChange: () => game.sw25?.EffectsPanel?.sync()
+  });
   game.settings.register(SYSTEM_ID, "partyCreated", {
     scope: "world", config: false, type: Boolean, default: false
   });
@@ -40,6 +52,16 @@ export function registerSettings() {
     scope: "client", config: false, type: Boolean, default: false
   });
   game.settings.register(SYSTEM_ID, "trackerPosition", {
+    scope: "client", config: false, type: Object, default: {}
+  });
+  game.settings.register(SYSTEM_ID, "combatPanelCollapsed", {
+    scope: "client", config: false, type: Boolean, default: false
+  });
+  game.settings.register(SYSTEM_ID, "combatPanelPosition", {
+    scope: "client", config: false, type: Object, default: {}
+  });
+  // Folded blocks of the combat panel: {attacks, magic, abilities, items}
+  game.settings.register(SYSTEM_ID, "combatPanelFolds", {
     scope: "client", config: false, type: Object, default: {}
   });
 }

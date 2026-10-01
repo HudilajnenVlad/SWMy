@@ -6,6 +6,10 @@
         <img class="swp-party-img" src="{{party.img}}" alt="">
         <span class="swp-party-name ellipsis">{{party.name}}</span>
         <span class="swp-party-count" data-tooltip="SW25.Party.MemberCount">{{party.count}}</span>
+        {{#if ../canCreateMember}}
+        <button type="button" class="inline-control icon fa-solid fa-user-plus" data-action="createPartyMember"
+          data-tooltip="SW25.Party.CreateMember" aria-label="{{localize 'SW25.Party.CreateMember'}}"></button>
+        {{/if}}
         <button type="button" class="inline-control icon fa-solid fa-scroll" data-action="openPartySheet"
           data-tooltip="SW25.Party.OpenSheet" aria-label="{{localize 'SW25.Party.OpenSheet'}}"></button>
       </header>

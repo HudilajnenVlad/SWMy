@@ -16,6 +16,23 @@ const ABILITY_FIELDS = ["system.level", "system.summary", "system.mpCost", "syst
 const PACKS = { magic: "swordworld25.spells", learned: "swordworld25.class-abilities" };
 
 /**
+ * Short detail of a class ability: MP cost of a technique, rhythm of a song or finale, cards of an evocation,
+ * action of a stunt.
+ * @param {string} type
+ * @param {object} s     System data of the ability
+ * @returns {string}
+ */
+export function abilityDetail(type, s) {
+  const rhythm = r => Object.entries(CONFIG.SW25.rhythms).filter(([k]) => r?.[k]).map(([k, c]) => `${c.icon}${r[k]}`).join(" ");
+  if ( type === "technique" ) return `MP${s.mpCost ?? 3}${s.duration?.text ? ` · ${s.duration.text}` : ""}`;
+  if ( type === "finale" ) return rhythm(s.cost) || "—";
+  if ( type === "spellsong" ) return rhythm(s.baseRhythm) || "—";
+  if ( type === "evocation" ) return s.cards?.text ?? "";
+  if ( type === "stunt" ) return game.i18n.localize(CONFIG.SW25.stuntActions[s.action] ?? "");
+  return "";
+}
+
+/**
  * Spellbook window: every spell an actor can cast (from its classes and the compendium) plus the learnable
  * class abilities (techniques, spellsongs, finales, stunts, evocations). Paper style: an index tab per school,
  * the caster's Magic Power and MP, and one table per school grouped by level whose rows open the rulebook entry.
@@ -311,13 +328,7 @@ export default class SpellbookApp extends HandlebarsApplicationMixin(Application
 
   /** Short detail text of a class ability. */
   #abilityDetail(type, s) {
-    const rhythm = r => Object.entries(CONFIG.SW25.rhythms).filter(([k]) => r?.[k]).map(([k, c]) => `${c.icon}${r[k]}`).join(" ");
-    if ( type === "technique" ) return `MP${s.mpCost ?? 3}${s.duration?.text ? ` · ${s.duration.text}` : ""}`;
-    if ( type === "finale" ) return rhythm(s.cost) || "—";
-    if ( type === "spellsong" ) return rhythm(s.baseRhythm) || "—";
-    if ( type === "evocation" ) return s.cards?.text ?? "";
-    if ( type === "stunt" ) return game.i18n.localize(CONFIG.SW25.stuntActions[s.action] ?? "");
-    return "";
+    return abilityDetail(type, s);
   }
 
   /** @override */

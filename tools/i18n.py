@@ -92,7 +92,8 @@ checks = [
     ("disguise", "Disguise", "Маскировка"), ("setTrap", "Set Trap", "Установка ловушек"),
     ("tumble", "Tumble", "Группировка"), ("hide", "Hide", "Скрытность"), ("acrobatics", "Acrobatics", "Акробатика"),
     ("climb", "Climb", "Лазание"), ("follow", "Follow", "Слежка"), ("jump", "Jump", "Прыжок"), ("swim", "Swim", "Плавание"),
-    ("riding", "Riding", "Верховая езда"), ("strength", "Strength", "Проверка силы"),
+    ("riding", "Riding", "Верховая езда"), ("climbStr", "Climb (Adventurer)", "Лазание (авантюрист)"),
+    ("strength", "Strength", "Проверка силы"),
     ("track", "Track", "Выслеживание"), ("notice", "Notice", "Замечание"), ("listen", "Listen", "Слух"),
     ("dangerSense", "Danger Sense", "Чувство опасности"), ("search", "Search", "Поиск"),
     ("spotTrap", "Spot Trap", "Обнаружение ловушек"), ("meteorology", "Meteorology", "Метеорология"),
@@ -116,6 +117,7 @@ group("SW25.Package", [
 ])
 add("SW25.Packages", "Check Packages", "Пакеты проверок")
 add("SW25.StraightRoll", "Straight roll", "Прямой бросок")
+group("SW25.Window", [("Collapse", "Collapse to the title bar", "Свернуть в полоску"), ("Expand", "Expand", "Развернуть")])
 
 # --- Magic --------------------------------------------------------------------
 group("SW25.Magic", [
@@ -627,9 +629,10 @@ group("SW25.Tracker", [
     ("EvasionShort", "Eva", "Укл"), ("DefenseShort", "Def", "Защ"), ("FortitudeShort", "Fort", "Стойк"), ("WillpowerShort", "Will", "Воля"),
     ("RemoveHint", "click to remove", "клик — снять"),
     ("Toggle", "Resource tracker", "Трекер ресурсов"),
-    ("Collapse", "Collapse to the title bar", "Свернуть в полоску"), ("Expand", "Expand", "Развернуть"),
-    ("CollapseHint", "Collapse to a translucent title bar (expand it with its arrow or a double click; the heart button of the Token Controls turns the tracker off)",
-     "Свернуть в полупрозрачную полоску (развернуть — стрелкой или двойным кликом; кнопка с сердцем на панели токенов выключает трекер)"),
+    ("CollapseHint", "Collapse to a translucent title bar (expand it with its arrow or a double click)",
+     "Свернуть в полупрозрачную полоску (развернуть — стрелкой или двойным кликом)"),
+    ("CloseHint", "Close the tracker (the heart of the Token Controls opens it again)",
+     "Закрыть трекер (кнопка с сердцем на панели токенов откроет его снова)"),
     ("HPDown", "Lower HP by", "Уменьшить HP на"), ("HPUp", "Raise HP by", "Увеличить HP на"),
     ("MPDown", "Lower MP by", "Уменьшить MP на"), ("MPUp", "Raise MP by", "Увеличить MP на"),
     ("Decrease", "Decrease by", "Уменьшить на"), ("Increase", "Increase by", "Увеличить на"),
@@ -638,6 +641,30 @@ group("SW25.Tracker", [
     ("Attacks", "Attacks", "Атаки"), ("AttackHint", "Attack (Accuracy check against the targets)", "Атака (проверка точности по целям)"),
     ("DamageHint", "Roll the damage without an Accuracy check", "Бросить урон без проверки точности"),
     ("SkillHint", "Use the unique skill", "Применить особое умение"), ("PowerShort", "P", "С"),
+])
+group("SW25.Combat", [
+    ("Title", "Combat panel", "Боевая панель"),
+    ("Toggle", "Combat panel: attacks, spells, checks, resources", "Боевая панель: атаки, заклинания, проверки, ресурсы"),
+    ("CloseHint", "Close the combat panel (the swords of the Token Controls open it again)",
+     "Закрыть боевую панель (кнопка с мечами на панели токенов откроет её снова)"),
+    ("NoActor", "Select a token (or assign yourself a character) to see what it can do in combat.",
+     "Выберите токен (или назначьте себе персонажа), чтобы увидеть его боевые возможности."),
+    ("Magic", "Magic", "Магия"), ("ClassAbilities", "Class abilities", "Способности классов"), ("Items", "Items", "Предметы"),
+    ("PowerShort", "Power", "Сила"), ("CheckShort", "Check", "Проверка"),
+    ("NoSpells", "No favorite spells: mark them with ★ in the spellbook.", "Нет избранных заклинаний: отметьте их ★ в книге заклинаний."),
+    ("InitiativeToTracker", "Roll the initiative into the combat tracker", "Бросить инициативу в трекер боя"),
+])
+group("SW25.EffectsPanel", [
+    ("Hint", "Click: turn off / on · Right-click: remove · Shift-click: open", "Клик — выключить / включить · ПКМ — снять · Shift+клик — открыть"),
+    ("Off", "Turned off", "Выключен"), ("Expired", "Expired", "Истёк"), ("Unlimited", "No time limit", "Без срока"),
+    ("Rounds", "{n}r", "{n}р"), ("Minutes", "{n}m", "{n}м"), ("Hours", "{n}h", "{n}ч"), ("Days", "{n}d", "{n}д"),
+])
+group("SW25.Wealth", [
+    ("Items", "Items value", "Стоимость вещей"), ("Total", "Total wealth", "Общее богатство"),
+    ("Formula", "Money {money} + deposit {deposit} + items {items} − debt {debt} = {total}",
+     "Деньги {money} + вклад {deposit} + вещи {items} − долг {debt} = {total}"),
+    ("Unpriced", "Not counted: {count} item(s) without a fixed price.", "Не учтены предметы без фиксированной цены: {count}."),
+    ("Stack", "{quantity} pcs: {value}", "{quantity} шт.: {value}"),
 ])
 group("SW25.Sheet", [("Character", "SW2.5 Character", "SW2.5 Персонаж"), ("Monster", "SW2.5 Monster", "SW2.5 Монстр"), ("Item", "SW2.5 Item", "SW2.5 Предмет"), ("Party", "SW2.5 Party", "SW2.5 Отряд")])
 group("SW25.Tab", [
@@ -732,6 +759,7 @@ group("SW25.Party", [
     ("DefaultName", "The Party", "Отряд"), ("OpenSheet", "Open the party sheet", "Открыть лист отряда"),
     ("MemberCount", "Party members", "Участники отряда"), ("DropHint", "Drag characters here", "Перетащите сюда персонажей"),
     ("Create", "Create party", "Создать отряд"), ("Bestiary", "Bestiary", "Бестиарий"),
+    ("CreateMember", "Create a character in this party", "Создать персонажа в этом отряде"),
     ("AvgLevelHint", "Average adventurer level of the characters", "Средний уровень авантюриста у персонажей"),
     ("MaxLevel", "Max", "Макс."), ("MaxLevelHint", "Highest adventurer level", "Наивысший уровень авантюриста"),
     ("TotalMoneyHint", "Gamels of the characters and the party fund", "Гамели персонажей и общая казна"),
@@ -833,6 +861,14 @@ group("SW25.Sheet", [
     ("Wear", "Wear…", "Надеть…"),
     ("TakeOff", "Take off", "Снять"),
     ("SlotOver", "More than one accessory in this section", "Больше одного аксессуара в этом месте"),
+    ("Hands", "Hands", "Руки"), ("HeldItems", "Held weapon, shield or item", "Оружие, щит или предмет в руке"),
+    ("HandsHint", "What the character holds (CR I p.147): weapons, shields (usually in the left hand) and hand-held items such as a torch or a wand. A two-handed item fills both hands. The sections below are for accessories only: their «Right/Left hand» are rings, bracelets and gloves. A magical implement is either held (wand, staff) or worn as a ring (CR I p.176): drop it on a hand or on a section.",
+     "Что персонаж держит в руках (CR I p.147): оружие, щиты (обычно в левой руке) и ручные предметы — факел, жезл. Двуручный предмет занимает обе руки. Места ниже — только для аксессуаров: их «Правая/Левая рука» — это кольца, браслеты и перчатки. Магический инструмент либо держат в руке (жезл, посох), либо носят как кольцо (CR I p.176): перетащите его на руку или на место."),
+    ("Hold", "Hold…", "Взять…"), ("PutAway", "Put away", "Убрать из рук"),
+    ("HandOver", "This hand holds more than one item", "В этой руке больше одного предмета"),
+    ("BothHands", "Both hands", "Обе руки"), ("Held", "Held", "В руках"), ("Worn", "Worn", "Надето"),
+    ("HoldToggle", "Hold in a hand / put away", "Взять в руку / убрать"),
+    ("HoldOrWear", "Hold it in a hand (wand) or, dropped on a section, wear it (ring)", "Взять в руку (жезл) или, перетащив на место, надеть (кольцо)"),
     ("BaseEvasion", "Base Evasion", "Базовое уклонение"),
     ("ArmorName", "Armor Name / Notes", "Броня / заметки"),
     ("DropArmor", "Drop armor and shields here", "Перетащите броню и щиты сюда"),
@@ -975,6 +1011,8 @@ group("SW25.Warn", [
     ("NotEnoughReputation", "Not enough Reputation: {cost} needed, {have} available.", "Не хватает репутации: нужно {cost}, есть {have}."),
     ("NotEnoughMoney", "Not enough money: {cost} G needed, {have} G available.", "Не хватает денег: нужно {cost} G, есть {have} G."),
     ("WrongSlot", "{name} cannot be worn there.", "{name} нельзя надеть сюда."),
+    ("NotHoldable", "{name} is not held in the hands.", "{name} не держат в руках."),
+    ("HandsFull", "{name}: the hands hold more than they can (see Hands on the Combat tab).", "{name}: в руках больше, чем они могут удержать (см. «Руки» на вкладке боя)."),
     ("AbilityLevel", "{name} requires a higher class level.", "{name} требует более высокий уровень класса."),
     ("CannotCast", "This actor cannot cast {system}.", "Этот персонаж не владеет: {system}."),
     ("FairyElements", "Only four fairy types can be chosen.", "Можно выбрать только четыре стихии фей."),
@@ -1022,7 +1060,14 @@ settings = [
      "Players can't see stats of monsters that were not identified.", "Игроки не видят показатели неопознанных монстров."),
     ("damageLog", "Damage log in chat", "Журнал урона в чате", "", ""),
     ("showResourceTracker", "Show resource tracker", "Показывать трекер ресурсов",
-     "Floating panel with the selected token's HP/MP and trackers.", "Плавающая панель с HP/MP и ресурсами выбранного токена."),
+     "Floating panel with the selected token's HP/MP and trackers. Also turned on and off by the heart of the Token Controls and the X of its window.",
+     "Плавающая панель с HP/MP и ресурсами выбранного токена. Включается и выключается и кнопкой с сердцем на панели токенов, и крестиком окна."),
+    ("showCombatPanel", "Show combat panel", "Показывать боевую панель",
+     "Floating panel of the selected token for combat: defenses and combat checks, attacks, spells, class abilities, usable items and resources. While open it replaces the resource tracker. Also opened by the swords of the Token Controls.",
+     "Плавающая панель выбранного токена для боя: защита и боевые проверки, атаки, заклинания, способности классов, расходники и ресурсы. Пока она открыта, она заменяет трекер ресурсов. Открывается и кнопкой с мечами на панели токенов."),
+    ("showEffectsPanel", "Show effects panel", "Показывать панель эффектов",
+     "Icons of the effects and conditions of the selected token (or your character) in the top right corner of the canvas: click turns an effect off or on, right-click removes it.",
+     "Значки эффектов и состояний выбранного токена (или вашего персонажа) в правом верхнем углу поля: клик выключает или включает эффект, правый клик снимает его."),
 ]
 for k, en, ru, hen, hru in settings:
     add(f"SW25.Setting.{k}.Name", en, ru)
@@ -1073,7 +1118,7 @@ def main():
     LANG.mkdir(parents=True, exist_ok=True)
     for idx, name in ((0, "en"), (1, "ru")):
         data = flatten_conflicts(nest(idx))
-        (LANG / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (LANG / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     # Report conflicts (leaf+branch)
     conflicts = []
 

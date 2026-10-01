@@ -20,6 +20,11 @@ export function signed(n) {
   return "±0";
 }
 
+/** Format an amount of gamels ("1,240 G"). */
+export function gamels(n) {
+  return `${(Number(n) || 0).toLocaleString(game.i18n.lang)} G`;
+}
+
 /**
  * The tokens currently targeted by the user (falls back to controlled tokens when requested).
  * @param {object} [options]

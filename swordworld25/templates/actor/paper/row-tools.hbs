@@ -1,8 +1,8 @@
-{{!-- Row action icons. Hash: use (bool), useIcon, equip (bool), equipped (bool). --}}
+{{!-- Row action icons. Hash: use (bool), useIcon, equip (bool), equipped (bool), equipIcon, equipTooltip. --}}
 <td class="swp-tools-cell">
   <span class="swp-row-tools">
     {{#if use}}<a class="swp-use" data-action="itemUse" data-tooltip="SW25.Use"><i class="{{#if useIcon}}{{useIcon}}{{else}}fa-solid fa-dice-d6{{/if}}"></i></a>{{/if}}
-    {{#if equip}}<a class="swp-equip {{#if equipped}}on{{/if}}" data-action="itemToggleEquip" data-tooltip="SW25.Equip"><i class="fa-solid fa-shirt"></i></a>{{/if}}
+    {{#if equip}}<a class="swp-equip {{#if equipped}}on{{/if}}" data-action="itemToggleEquip" data-tooltip="{{#if equipTooltip}}{{equipTooltip}}{{else}}SW25.Equip{{/if}}"><i class="{{#if equipIcon}}{{equipIcon}}{{else}}fa-solid fa-shirt{{/if}}"></i></a>{{/if}}
     <a data-action="itemChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i></a>
     <a data-action="itemEdit" data-tooltip="SW25.Edit"><i class="fa-solid fa-pen"></i></a>
     <a data-action="itemDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>

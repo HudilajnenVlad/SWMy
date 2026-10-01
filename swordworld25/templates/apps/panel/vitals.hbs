@@ -1,0 +1,21 @@
+{{!-- Sections of a multi-section creature, then the HP and MP bars with their buttons. --}}
+{{#if sections.length}}
+<div class="swp-tracker-sections">
+  {{#each sections}}
+  <a class="swp-tracker-section {{#if active}}on{{/if}}" data-action="section" data-index="{{index}}" style="--pct: {{pct}}%" data-tooltip="SW25.Tracker.SectionHint">
+    <span>{{label}}</span><b>{{hp.value}}/{{hp.max}}</b>
+  </a>
+  {{/each}}
+</div>
+{{/if}}
+
+{{#each vitals}}
+<div class="swp-tracker-vital" data-row="{{key}}">
+  <div class="swp-res {{key}}" style="--pct: {{pct}}%">
+    <span class="swp-res-label">{{label}}</span>
+    <span class="swp-res-box"><span class="swp-res-value">{{value}}</span><span class="max">/{{max}}</span></span>
+    <span class="swp-res-track"><span></span></span>
+  </div>
+  {{#if @root.owner}}{{> "systems/swordworld25/templates/apps/panel/steps.hbs" down=down up=up}}{{/if}}
+</div>
+{{/each}}

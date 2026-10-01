@@ -1,5 +1,6 @@
 import ActorBaseModel from "./base.mjs";
 import { boolField, intField, stringField } from "../fields.mjs";
+import { stackValue } from "../item/equipment.mjs";
 
 const { ArrayField, HTMLField, SchemaField, StringField } = foundry.data.fields;
 
@@ -169,6 +170,9 @@ export default class CharacterModel extends ActorBaseModel {
     // Adventurer Rank
     this.rankInfo = SW25.adventurerRank(this.rank);
 
+    // Wealth
+    this._prepareWealth();
+
     // Learned class abilities
     this.learned = {};
     for ( const [type, cls] of Object.entries(SW25.learnedTypes) ) {
@@ -187,6 +191,25 @@ export default class CharacterModel extends ActorBaseModel {
   /* -------------------------------------------- */
 
   /**
+   * Total wealth: money and deposit, plus the market value of everything carried (weapons, armor, items), less the
+   * debt. Items without a fixed price are counted apart.
+   * @protected
+   */
+  _prepareWealth() {
+    let items = 0;
+    let unpriced = 0;
+    for ( const item of this.parent.items ) {
+      if ( !["weapon", "armor", "gear"].includes(item.type) || !(item.system.quantity > 0) ) continue;
+      const value = stackValue(item.system);
+      if ( value === null ) unpriced += 1;
+      else items += value;
+    }
+    this.wealth = { items, unpriced, total: this.money + this.deposit + items - this.debt };
+  }
+
+  /* -------------------------------------------- */
+
+  /**
    * Equipped armor, shields and accessories.
    * @protected
    */
@@ -199,6 +222,48 @@ export default class CharacterModel extends ActorBaseModel {
     this.weapons = actor.items.filter(i => i.type === "weapon");
     this.equippedWeapons = this.weapons.filter(i => i.system.equipped);
     this.wearingMetal = !!this.armor?.system.isMetal;
+    this.hands = CharacterModel.#assignHands(actor.items.filter(i => i.system.isHeld && (i.system.heldHands > 0)));
+  }
+
+  /**
+   * Put the held items in the hands: a two-handed item fills both, the others go to their chosen hand, else to a
+   * free one (shields to the left hand first, anything else to the right one).
+   * @param {Item[]} items
+   * @returns {{right: Item[], left: Item[], over: boolean}}
+   */
+  static #assignHands(items) {
+    const hands = { right: [], left: [] };
+    const single = [];
+    for ( const item of items ) {
+      if ( item.system.heldHands < 2 ) single.push(item);
+      else {
+        hands.right.push(item);
+        hands.left.push(item);
+      }
+    }
+    const chosen = single.filter(i => i.system.hand in hands);
+    for ( const item of chosen ) hands[item.system.hand].push(item);
+    for ( const item of single ) {
+      if ( chosen.includes(item) ) continue;
+      const prefer = item.system.isShield ? "left" : "right";
+      const other = prefer === "right" ? "left" : "right";
+      hands[(!hands[prefer].length || hands[other].length) ? prefer : other].push(item);
+    }
+    return { ...hands, over: (hands.right.length > 1) || (hands.left.length > 1) };
+  }
+
+  /**
+   * A hand free for an item.
+   * @param {Item} item
+   * @returns {string|null}  right | left | both (a two-handed item and both hands free) | null (no free hand)
+   */
+  freeHandFor(item) {
+    const busy = hand => this.hands[hand].some(i => i !== item);
+    if ( item.system.heldHands >= 2 ) return (!busy("right") && !busy("left")) ? "both" : null;
+    const prefer = item.system.isShield ? "left" : "right";
+    const other = prefer === "right" ? "left" : "right";
+    if ( !busy(prefer) ) return prefer;
+    return busy(other) ? null : other;
   }
 
   /* -------------------------------------------- */
@@ -216,7 +281,7 @@ export default class CharacterModel extends ActorBaseModel {
       const options = [...cfg.options];
       for ( const opt of raceOptions ) {
         if ( (opt.check !== key) || (this.level < (opt.minLevel ?? 1)) ) continue;
-        options.push({ source: opt.source || "adventurer", ability: opt.ability || cfg.ability });
+        options.push({ source: opt.source || "adventurer", ability: opt.ability || cfg.ability, note: opt.trait || this.race.name });
       }
       for ( const cls of Object.values(this.classes) ) {
         if ( cls.extraChecks?.includes(key) ) options.push(cls.key);
@@ -242,10 +307,13 @@ export default class CharacterModel extends ActorBaseModel {
         }
         if ( !level ) continue;
         const value = level + (this.abilities[ability]?.mod ?? 0);
-        if ( !best || (value > best.value) ) best = { value, level, ability, source, label };
+        const note = (typeof option === "object" && option.note) ? option.note : "";
+        if ( !best || (value > best.value) ) best = { value, level, ability, source, label, note };
       }
       const straight = !best;
       let bonus = (b.check[key] ?? 0) + b.allChecks;
+      // The adventurer's Climb is the same check with another standard value: Climb modifiers count for it too
+      if ( key === "climbStr" ) bonus += b.check.climb ?? 0;
       if ( !cfg.notAction ) bonus += b.actionChecks;
       if ( cfg.package ) bonus += b[SW25.packageModifier[cfg.package]] ?? 0;
       if ( key === "initiative" ) bonus += b.initiative;
@@ -264,6 +332,7 @@ export default class CharacterModel extends ActorBaseModel {
         ability: best?.ability ?? cfg.ability,
         source: best?.source ?? null,
         sourceLabel: best?.label ?? "",
+        sourceNote: best?.note ?? "",
         package: cfg.package ?? null
       };
     }

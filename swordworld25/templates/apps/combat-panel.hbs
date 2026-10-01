@@ -1,0 +1,106 @@
+<div class="swp-tracker swp-combat">
+  {{#if actor}}
+  {{> "systems/swordworld25/templates/apps/panel/head.hbs"}}
+  {{> "systems/swordworld25/templates/apps/panel/vitals.hbs"}}
+
+  {{!-- Defenses: Evasion, Fortitude and Willpower roll on click --}}
+  <div class="swp-tracker-stats swp-combat-defenses">
+    {{#each defenses}}
+    {{#if (and roll @root.owner)}}
+    <a class="swp-tracker-stat swp-roll" data-action="check" data-check="{{key}}" data-tooltip="{{tooltip}}"><small>{{label}}</small><b>{{value}}</b><i class="fa-solid fa-dice-d6 swp-roll-icon"></i></a>
+    {{else}}
+    <span class="swp-tracker-stat" data-tooltip="{{tooltip}}"><small>{{label}}</small><b>{{value}}</b></span>
+    {{/if}}
+    {{/each}}
+  </div>
+
+  {{!-- Other combat checks: Initiative, Monster Knowledge, death check --}}
+  {{#if checks.length}}
+  <div class="swp-combat-checks">
+    {{#each checks}}
+    {{#if (or static (not @root.owner))}}
+    <span class="swp-combat-check static {{cssClass}}" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}><i class="{{icon}}"></i><span>{{label}}</span><b>{{value}}</b></span>
+    {{else}}
+    <a class="swp-combat-check {{cssClass}}" data-action="check" data-check="{{key}}" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}><i class="{{icon}}"></i><span>{{label}}</span><b>{{value}}</b></a>
+    {{/if}}
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if hasAttacks}}
+  {{#> sw25PanelFold key="attacks" label="SW25.Tracker.Attacks" folded=folds.attacks}}
+  {{> "systems/swordworld25/templates/apps/panel/attack-rows.hbs"}}
+  {{#if feats.length}}
+  <div class="swp-combat-feats">
+    {{#each feats}}<a class="swp-combat-chip" data-item-id="{{id}}" data-action="use" data-tooltip="{{summary}}"><i class="fa-solid {{#if major}}fa-play{{else}}fa-bullhorn{{/if}}"></i>{{name}}</a>{{/each}}
+  </div>
+  {{/if}}
+  {{/sw25PanelFold}}
+  {{/if}}
+
+  {{#if magic.length}}
+  {{#> sw25PanelFold key="magic" label="SW25.Combat.Magic" folded=folds.magic}}
+  {{#each magic}}
+  <div class="swp-combat-school">
+    <div class="swp-combat-school-head" {{#if skillId}}data-item-id="{{skillId}}"{{/if}}>
+      <i class="{{icon}}"></i><b>{{localize label}} {{level}}</b>
+      <span class="swp-tag" data-tooltip="SW25.MagicPower">{{localize "SW25.Combat.PowerShort"}} <b>{{power}}</b></span>
+      <span class="swp-tag" data-tooltip="SW25.Spellbook.CheckHint">{{localize "SW25.Combat.CheckShort"}} <b>{{check}}</b>{{#if armorPenalty}} <span class="warn">({{armorPenalty}})</span>{{/if}}</span>
+      <a class="swp-mini" {{#if skillId}}data-action="ability"{{else}}data-action="spellbook" data-tab="{{system}}"{{/if}} data-tooltip="SW25.Spellbook.Open"><i class="fa-solid fa-book-sparkles"></i></a>
+    </div>
+    {{#each spells}}
+    <a class="swp-combat-row" data-item-id="{{id}}" data-action="use" data-tooltip="{{tooltip}}">
+      <span class="lvl">{{level}}</span>
+      <img src="{{img}}" alt="">
+      <span class="name">{{#if marks}}<b class="swp-marks">{{marks}}</b> {{/if}}{{name}}</span>
+      <span class="detail">{{cost}}</span>
+      <i class="fa-solid fa-wand-magic-sparkles go"></i>
+    </a>
+    {{else}}
+    {{#unless skillId}}<p class="swp-combat-empty">{{localize "SW25.Combat.NoSpells"}}</p>{{/unless}}
+    {{/each}}
+  </div>
+  {{/each}}
+  {{/sw25PanelFold}}
+  {{/if}}
+
+  {{#if classAbilities.length}}
+  {{#> sw25PanelFold key="abilities" label="SW25.Combat.ClassAbilities" folded=folds.abilities}}
+  {{#each classAbilities}}
+  <span class="swp-combat-subtitle">{{localize label}}</span>
+  {{#each items}}
+  <a class="swp-combat-row" data-item-id="{{id}}" data-action="use" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}>
+    <img src="{{img}}" alt="">
+    <span class="name">{{#if marks}}<b class="swp-marks">{{marks}}</b> {{/if}}{{name}}</span>
+    <span class="detail">{{detail}}</span>
+    <i class="fa-solid fa-hand-sparkles go"></i>
+  </a>
+  {{/each}}
+  {{/each}}
+  {{/sw25PanelFold}}
+  {{/if}}
+
+  {{#if items.length}}
+  {{#> sw25PanelFold key="items" label="SW25.Combat.Items" folded=folds.items}}
+  {{#each items}}
+  <a class="swp-combat-row" data-item-id="{{id}}" data-action="use" {{#if tooltip}}data-tooltip="{{tooltip}}"{{/if}}>
+    <img src="{{img}}" alt="">
+    <span class="name">{{name}}</span>
+    <span class="detail">{{#if uses}}{{uses}} · {{/if}}×{{quantity}}</span>
+    <i class="fa-solid fa-hand-holding go"></i>
+  </a>
+  {{/each}}
+  {{/sw25PanelFold}}
+  {{/if}}
+
+  {{> "systems/swordworld25/templates/apps/panel/extras.hbs"}}
+
+  {{#if statuses.length}}
+  {{#> sw25PanelFold key="statuses" label="SW25.Effects" folded=folds.statuses}}
+  {{> "systems/swordworld25/templates/apps/panel/statuses.hbs"}}
+  {{/sw25PanelFold}}
+  {{/if}}
+  {{else}}
+  <p class="swp-combat-none"><i class="fa-solid fa-hand-pointer"></i> {{localize "SW25.Combat.NoActor"}}</p>
+  {{/if}}
+</div>

@@ -1,0 +1,25 @@
+{{!-- Attack rows: weapons of a character (stance switch when it has several), sections and unique skills of a creature. --}}
+{{#each attacks.weapons}}
+<div class="swp-tracker-attack" data-item-id="{{id}}">
+  <a class="name" data-action="attack" data-tooltip="SW25.Tracker.AttackHint"><img src="{{img}}" alt=""><span>{{name}}</span></a>
+  {{#if @root.stances}}{{#if multiMode}}<a class="val stance" data-action="weaponMode" data-tooltip="SW25.Sheet.SwitchStance">{{stance}} <i class="fa-solid fa-rotate"></i></a>{{else}}<span class="val stance">{{stance}}</span>{{/if}}{{/if}}
+  <a class="val acc" data-action="attack" data-tooltip="SW25.Accuracy">{{accuracy}}</a>
+  <a class="val dmg" {{#unless gun}}data-action="weaponDamage" data-tooltip="SW25.Tracker.DamageHint"{{/unless}}>{{power}} <span class="swp-circ">{{critical}}</span> {{#unless gun}}{{extra}}{{/unless}}</a>
+</div>
+{{/each}}
+{{#each attacks.sections}}
+<div class="swp-tracker-attack" data-index="{{index}}">
+  <a class="name" data-action="sectionAttack" data-tooltip="SW25.Tracker.AttackHint"><span>{{style}}{{#if label}} <small>({{label}})</small>{{/if}}</span></a>
+  {{#if @root.stances}}<span class="val stance"></span>{{/if}}
+  <a class="val acc" data-action="sectionAttack" data-tooltip="SW25.Accuracy">{{accuracy}}</a>
+  <span class="val dmg">{{damage}}</span>
+</div>
+{{/each}}
+{{#each attacks.abilities}}
+<div class="swp-tracker-attack skill" data-item-id="{{id}}">
+  <a class="name" data-action="ability" data-tooltip="SW25.Tracker.SkillHint"><span>{{#if icons}}<b class="swp-marks">{{icons}}</b> {{/if}}{{name}}</span></a>
+  {{#if @root.stances}}<span class="val stance"></span>{{/if}}
+  {{#if check}}<a class="val acc" data-action="ability" data-tooltip="SW25.Tracker.SkillHint">{{check}}</a>{{else}}<span class="val acc"></span>{{/if}}
+  <span class="val dmg">{{damage}}</span>
+</div>
+{{/each}}

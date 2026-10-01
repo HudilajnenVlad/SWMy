@@ -1,0 +1,7 @@
+{{!-- A block of the combat panel that folds. Hash: key, label, note (optional), folded. --}}
+<section class="swp-tracker-block swp-combat-block {{#if folded}}folded{{/if}}">
+  <a class="swp-tracker-title swp-fold" data-action="fold" data-fold="{{key}}" aria-expanded="{{#if folded}}false{{else}}true{{/if}}">
+    <i class="fa-solid fa-caret-{{#if folded}}right{{else}}down{{/if}}"></i><span>{{localize label}}</span>{{#if note}}<small>{{note}}</small>{{/if}}
+  </a>
+  {{#unless folded}}{{> @partial-block}}{{/unless}}
+</section>

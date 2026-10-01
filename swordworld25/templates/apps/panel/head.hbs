@@ -1,0 +1,10 @@
+{{!-- Panel header: portrait and name (open the sheet), level or classes, spellbook and collapse buttons. --}}
+<header class="swp-tracker-head">
+  <img src="{{actor.img}}" alt="" data-action="openSheet" data-tooltip="SW25.Tracker.OpenSheet">
+  <div class="swp-tracker-name">
+    <a data-action="openSheet">{{actor.name}}</a>
+    {{#if subtitle}}<small>{{subtitle}}</small>{{else if level}}<small>{{localize "SW25.Level"}} {{level}}</small>{{/if}}
+  </div>
+  <a class="swp-btn" data-action="spellbook" data-tooltip="SW25.Spellbook.Title"><i class="fa-solid fa-book-sparkles"></i></a>
+  <a class="swp-btn light" data-action="collapse" data-tooltip="SW25.Tracker.CollapseHint"><i class="fa-solid fa-chevron-up"></i></a>
+</header>

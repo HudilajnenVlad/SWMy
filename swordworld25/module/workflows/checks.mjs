@@ -11,11 +11,23 @@ import { parseRange, renderSystemTemplate, signed, speakerFor, t } from "../help
 export function modifierKeysForCheck(key) {
   const cfg = CONFIG.SW25.checks[key];
   const keys = ["allChecks", `check.${key}`];
+  if ( key === "climbStr" ) keys.push("check.climb");
   if ( cfg && !cfg.notAction ) keys.push("actionChecks");
   if ( cfg?.package ) keys.push(CONFIG.SW25.packageModifier[cfg.package]);
   if ( ["fortitude", "willpower", "initiative", "monsterKnowledge", "performance", "evocation", "riding"].includes(key) ) keys.push(key);
   if ( key === "evasion" ) keys.push("evasion", "actionChecks");
   return keys;
+}
+
+/**
+ * Where the standard value of a character's check comes from: "Scout", "Adventurer level (Sixth Sense)"...
+ * @param {object} check   Entry of `system.checks`
+ * @returns {string}
+ */
+export function checkSource(check) {
+  if ( !check?.sourceLabel ) return "";
+  const label = t(check.sourceLabel);
+  return check.sourceNote ? `${label} (${check.sourceNote})` : label;
 }
 
 /**
@@ -88,7 +100,7 @@ export function checkValue(actor, key, { section = null } = {}) {
     if ( key === "evasion" ) return { base: sys.evasion, bonus: 0, label: t("SW25.Check.evasion"), straight: sys.evasionStraight };
     const c = sys.checks?.[key];
     if ( !c ) return { base: 0, bonus: 0, label: key, straight: true };
-    return { base: c.base, bonus: c.bonus, label: t(c.label), straight: c.straight, source: c.sourceLabel };
+    return { base: c.base, bonus: c.bonus, label: t(c.label), straight: c.straight, source: checkSource(c) };
   }
   // Monsters and mounts
   if ( key === "fortitude" ) return { base: sys.fortitudeTotal, bonus: 0, label: t("SW25.Check.fortitude"), fixedBase: sys.fortitudeTotal };

@@ -318,6 +318,7 @@
       "appraise": "Appraise",
       "cartography": "Cartography",
       "climb": "Climb",
+      "climbStr": "Climb (Adventurer)",
       "conceal": "Conceal",
       "dangerSense": "Danger Sense",
       "death": "Death Check",
@@ -410,6 +411,19 @@
       "minor": "Minor"
     },
     "Classes": "Classes",
+    "Combat": {
+      "CheckShort": "Check",
+      "ClassAbilities": "Class abilities",
+      "CloseHint": "Close the combat panel (the swords of the Token Controls open it again)",
+      "InitiativeToTracker": "Roll the initiative into the combat tracker",
+      "Items": "Items",
+      "Magic": "Magic",
+      "NoActor": "Select a token (or assign yourself a character) to see what it can do in combat.",
+      "NoSpells": "No favorite spells: mark them with ★ in the spellbook.",
+      "PowerShort": "Power",
+      "Title": "Combat panel",
+      "Toggle": "Combat panel: attacks, spells, checks, resources"
+    },
     "Compendium": {
       "Open": "Open compendium"
     },
@@ -507,6 +521,16 @@
       "utility": "Utility"
     },
     "Effects": "Effects",
+    "EffectsPanel": {
+      "Days": "{n}d",
+      "Expired": "Expired",
+      "Hint": "Click: turn off / on · Right-click: remove · Shift-click: open",
+      "Hours": "{n}h",
+      "Minutes": "{n}m",
+      "Off": "Turned off",
+      "Rounds": "{n}r",
+      "Unlimited": "No time limit"
+    },
     "Entry": {
       "AddModifier": "Add modifier",
       "AddRow": "Add row",
@@ -938,6 +962,7 @@
       "Checks": "Party checks",
       "ChecksHint": "The best value in the party and whose it is (the tooltip lists everyone). Click to roll it for that character. Checks nobody is trained in are rolled straight (2d).",
       "Create": "Create party",
+      "CreateMember": "Create a character in this party",
       "DefaultName": "The Party",
       "DropHint": "Drag characters here",
       "Fund": "Party fund",
@@ -1117,8 +1142,16 @@
         "Hint": "Roll damage once for all unresisted targets (the rules roll separately).",
         "Name": "Share damage roll between targets"
       },
+      "showCombatPanel": {
+        "Hint": "Floating panel of the selected token for combat: defenses and combat checks, attacks, spells, class abilities, usable items and resources. While open it replaces the resource tracker. Also opened by the swords of the Token Controls.",
+        "Name": "Show combat panel"
+      },
+      "showEffectsPanel": {
+        "Hint": "Icons of the effects and conditions of the selected token (or your character) in the top right corner of the canvas: click turns an effect off or on, right-click removes it.",
+        "Name": "Show effects panel"
+      },
       "showResourceTracker": {
-        "Hint": "Floating panel with the selected token's HP/MP and trackers.",
+        "Hint": "Floating panel with the selected token's HP/MP and trackers. Also turned on and off by the heart of the Token Controls and the X of its window.",
         "Name": "Show resource tracker"
       },
       "skipRollDialog": {
@@ -1142,6 +1175,7 @@
       "BaseAbility": "Base Ability",
       "BaseAccuracy": "Base Accuracy",
       "BaseEvasion": "Base Evasion",
+      "BothHands": "Both hands",
       "CastingCheck": "Casting",
       "ChangeFate": "Change Fate",
       "Character": "SW2.5 Character",
@@ -1172,8 +1206,16 @@
       "FumbleHint": "Automatic failures this session: +50 EXP each at the end of the session. Shift-click clears.",
       "FumbleHintAuto": "Automatic failures this session (their +50 EXP is already granted). Shift-click clears.",
       "GrowthFace": "Growth die face (2d growth roll)",
+      "HandOver": "This hand holds more than one item",
+      "Hands": "Hands",
+      "HandsHint": "What the character holds (CR I p.147): weapons, shields (usually in the left hand) and hand-held items such as a torch or a wand. A two-handed item fills both hands. The sections below are for accessories only: their «Right/Left hand» are rings, bracelets and gloves. A magical implement is either held (wand, staff) or worn as a ring (CR I p.176): drop it on a hand or on a section.",
       "Heal": "Heal",
+      "Held": "Held",
+      "HeldItems": "Held weapon, shield or item",
       "HistoryProfile": "History, Profile",
+      "Hold": "Hold…",
+      "HoldOrWear": "Hold it in a hand (wand) or, dropped on a section, wear it (ring)",
+      "HoldToggle": "Hold in a hand / put away",
       "Item": "SW2.5 Item",
       "ItemsInPossession": "Items in Possession, etc.",
       "LearnClass": "+ Learn a class (EXP cost)…",
@@ -1198,6 +1240,7 @@
       "Party": "SW2.5 Party",
       "Points": "points",
       "Price": "Price",
+      "PutAway": "Put away",
       "Qty": "Qty",
       "RacialAbilities": "Racial Abilities",
       "RangeArea": "Range / Area",
@@ -1223,7 +1266,8 @@
       "Uses": "Uses",
       "WeaponAccuracy": "Weapon Accuracy",
       "WeaponName": "Weapon Name / Notes",
-      "Wear": "Wear…"
+      "Wear": "Wear…",
+      "Worn": "Worn"
     },
     "Slot": {
       "any": "Any",
@@ -1459,14 +1503,13 @@
       "Apply": "Apply",
       "AttackHint": "Attack (Accuracy check against the targets)",
       "Attacks": "Attacks",
-      "Collapse": "Collapse to the title bar",
-      "CollapseHint": "Collapse to a translucent title bar (expand it with its arrow or a double click; the heart button of the Token Controls turns the tracker off)",
+      "CloseHint": "Close the tracker (the heart of the Token Controls opens it again)",
+      "CollapseHint": "Collapse to a translucent title bar (expand it with its arrow or a double click)",
       "Damage": "Damage (fixed)",
       "DamageHint": "Roll the damage without an Accuracy check",
       "Decrease": "Decrease by",
       "DefenseShort": "Def",
       "EvasionShort": "Eva",
-      "Expand": "Expand",
       "FortitudeShort": "Fort",
       "HPDown": "Lower HP by",
       "HPUp": "Raise HP by",
@@ -1507,6 +1550,7 @@
       "CannotCast": "This actor cannot cast {system}.",
       "FairyElements": "Only four fairy types can be chosen.",
       "GMApplies": "Only the GM applies this.",
+      "HandsFull": "{name}: the hands hold more than they can (see Hands on the Combat tab).",
       "MaxLevel": "This class is already at the maximum level.",
       "NoBackgrounds": "The race has no background table.",
       "NoBullets": "No bullet spells available (Artificer level too low?).",
@@ -1522,6 +1566,7 @@
       "NotEnoughReputation": "Not enough Reputation: {cost} needed, {have} available.",
       "NotEnoughRhythm": "Not enough rhythm for {name}.",
       "NotEquipped": "{name} is not equipped.",
+      "NotHoldable": "{name} is not held in the hands.",
       "NotOwner": "You don't own this actor.",
       "NotSourceOwner": "Only the owner of {name} (or the GM) applies its effects.",
       "Prerequisites": "{name}: prerequisites not met ({missing}).",
@@ -1539,6 +1584,13 @@
       "accuracy": "Accuracy +1",
       "damage": "Extra damage",
       "label": "Weak point"
+    },
+    "Wealth": {
+      "Formula": "Money {money} + deposit {deposit} + items {items} − debt {debt} = {total}",
+      "Items": "Items value",
+      "Stack": "{quantity} pcs: {value}",
+      "Total": "Total wealth",
+      "Unpriced": "Not counted: {count} item(s) without a fixed price."
     },
     "Weapon": {
       "AttackClass": "Attack with class",
@@ -1569,6 +1621,10 @@
     },
     "Weapons": "Weapons",
     "WeaponsAndArmor": "Weapons & armor",
+    "Window": {
+      "Collapse": "Collapse to the title bar",
+      "Expand": "Expand"
+    },
     "Write": "Write"
   },
   "TYPES": {

@@ -13,8 +13,33 @@ function physicalFields() {
     reputation: nullableInt(),
     quantity: intField(1, { min: 0 }),
     magic: boolField(false),
-    equipped: boolField(false)
+    equipped: boolField(false),
+    // Hand holding the item when it is held (weapons, shields, hand-held tools): right | left | "" (free choice)
+    hand: stringField("")
   };
+}
+
+/**
+ * Market value of a stack of carried equipment: price × quantity, a bundle price ("10G per 12") counting per piece.
+ * Equipment without a fixed price (priced by size, rank or points) has none.
+ * @param {object} system  Item system data with price, priceText and quantity
+ * @returns {number|null}
+ */
+export function stackValue(system) {
+  if ( !Number.isInteger(system?.price) ) return null;
+  const bundle = Number(String(system.priceText ?? "").match(/\bper\s+(\d+)/i)?.[1]) || 1;
+  return Math.round((system.price * Math.max(0, system.quantity ?? 1)) / bundle);
+}
+
+/**
+ * Hands needed to hold an item of a stance ("1H", "2H", "1H, 2H" held in one hand; "1H#"/"W" need no hand).
+ * @param {string} stance
+ * @returns {number}
+ */
+export function handsForStance(stance) {
+  const s = String(stance ?? "").trim();
+  if ( !s || s.includes("#") || s.includes("W") ) return 0;
+  return s.startsWith("2") ? 2 : 1;
 }
 
 /* -------------------------------------------- */
@@ -88,9 +113,17 @@ export class WeaponModel extends ItemBaseModel {
 
   /** Number of hands the weapon uses in its current mode. */
   get hands() {
-    const stance = this.currentMode.stance ?? "";
-    if ( stance.includes("#") || stance.includes("W") ) return 0;
-    return stance.startsWith("2") ? 2 : 1;
+    return handsForStance(this.currentMode.stance);
+  }
+
+  /** Hands needed to hold the weapon. */
+  get heldHands() {
+    return this.hands;
+  }
+
+  /** Is the weapon held in the hands? */
+  get isHeld() {
+    return this.equipped && (this.hands > 0);
   }
 }
 
@@ -129,6 +162,16 @@ export class ArmorModel extends ItemBaseModel {
   /** Is this metal armor (penalties to some checks and to spellcasting)? */
   get isMetal() {
     return this.armorType === "metal";
+  }
+
+  /** Hands needed to hold the item: a shield is held like a weapon (CR I p.147, 153), armor is worn. */
+  get heldHands() {
+    return this.isShield ? Math.max(1, handsForStance(this.stance)) : 0;
+  }
+
+  /** Is the shield held in the hands? */
+  get isHeld() {
+    return this.equipped && this.isShield;
   }
 }
 
@@ -185,6 +228,24 @@ export class GearModel extends ItemBaseModel {
   }
 
   /* -------------------------------------------- */
+
+  /** Hands needed to hold the item (0: not a hand-held item). */
+  get heldHands() {
+    return handsForStance(this.stance);
+  }
+
+  /**
+   * Is the item held in the hands? An item that can also be worn as an accessory (magical implement: a wand in the
+   * hand or a ring) is held only when it was put in a hand (`equippedSlot` "held").
+   */
+  get isHeld() {
+    return this.equipped && (this.heldHands > 0) && (!this.slot.length || (this.equippedSlot === "held"));
+  }
+
+  /** Is the item worn as an accessory in one of the equipment sections? */
+  get isWorn() {
+    return this.equipped && (this.slot.length > 0) && !this.isHeld;
+  }
 
   /** @override */
   get isActive() {
