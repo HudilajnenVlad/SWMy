@@ -1,6 +1,6 @@
 import { evaluateCheck, fixedResult, meetsTarget, resultFromRoll } from "../dice/check.mjs";
 import RollDialog from "../dice/roll-dialog.mjs";
-import { createCard, getCard, resistValue, updateCard } from "../chat/card.mjs";
+import { createCard, getCard, resistBreakdown, resistValue, updateCard } from "../chat/card.mjs";
 import { parseRange, renderSystemTemplate, signed, speakerFor, t } from "../helpers/utils.mjs";
 
 /**
@@ -94,23 +94,24 @@ export async function handleAutoFailureExp(actor, result) {
  */
 export function checkValue(actor, key, { section = null } = {}) {
   const sys = actor.system;
+  // `breakdown` lists where the standard value (base + bonus) comes from
   if ( actor.type === "character" ) {
-    if ( key === "fortitude" ) return { base: sys.fortitude, bonus: 0, label: t("SW25.Check.fortitude"), straight: false };
-    if ( key === "willpower" ) return { base: sys.willpower, bonus: 0, label: t("SW25.Check.willpower"), straight: false };
-    if ( key === "evasion" ) return { base: sys.evasion, bonus: 0, label: t("SW25.Check.evasion"), straight: sys.evasionStraight };
+    if ( key === "fortitude" ) return { base: sys.fortitude, bonus: 0, label: t("SW25.Check.fortitude"), straight: false, breakdown: sys.fortitudeBreakdown };
+    if ( key === "willpower" ) return { base: sys.willpower, bonus: 0, label: t("SW25.Check.willpower"), straight: false, breakdown: sys.willpowerBreakdown };
+    if ( key === "evasion" ) return { base: sys.evasion, bonus: 0, label: t("SW25.Check.evasion"), straight: sys.evasionStraight, breakdown: sys.evasionBreakdown };
     const c = sys.checks?.[key];
     if ( !c ) return { base: 0, bonus: 0, label: key, straight: true };
-    return { base: c.base, bonus: c.bonus, label: t(c.label), straight: c.straight, source: checkSource(c) };
+    return { base: c.base, bonus: c.bonus, label: t(c.label), straight: c.straight, source: checkSource(c), breakdown: c.breakdown };
   }
   // Monsters and mounts
-  if ( key === "fortitude" ) return { base: sys.fortitudeTotal, bonus: 0, label: t("SW25.Check.fortitude"), fixedBase: sys.fortitudeTotal };
-  if ( key === "willpower" ) return { base: sys.willpowerTotal, bonus: 0, label: t("SW25.Check.willpower"), fixedBase: sys.willpowerTotal };
-  if ( key === "initiative" ) return { base: sys.initiativeTotal ?? 0, bonus: 0, label: t("SW25.Check.initiative"), fixedBase: sys.initiativeTotal };
+  if ( key === "fortitude" ) return { base: sys.fortitudeTotal, bonus: 0, label: t("SW25.Check.fortitude"), fixedBase: sys.fortitudeTotal, breakdown: sys.fortitudeBreakdown };
+  if ( key === "willpower" ) return { base: sys.willpowerTotal, bonus: 0, label: t("SW25.Check.willpower"), fixedBase: sys.willpowerTotal, breakdown: sys.willpowerBreakdown };
+  if ( key === "initiative" ) return { base: sys.initiativeTotal ?? 0, bonus: 0, label: t("SW25.Check.initiative"), fixedBase: sys.initiativeTotal, breakdown: sys.initiativeBreakdown };
   if ( key === "evasion" ) {
     const v = resistValue(actor, "evasion", section);
-    return { base: v ?? 0, bonus: 0, label: t("SW25.Check.evasion"), fixedBase: v };
+    return { base: v ?? 0, bonus: 0, label: t("SW25.Check.evasion"), fixedBase: v, breakdown: resistBreakdown(actor, "evasion", section) };
   }
-  if ( key === "death" ) return { base: sys.fortitudeTotal, bonus: 0, label: t("SW25.Check.death"), fixedBase: sys.fortitudeTotal };
+  if ( key === "death" ) return { base: sys.fortitudeTotal, bonus: 0, label: t("SW25.Check.death"), fixedBase: sys.fortitudeTotal, breakdown: sys.fortitudeBreakdown };
   return { base: 0, bonus: 0, label: t(`SW25.Check.${key}`), straight: true };
 }
 
@@ -149,7 +150,8 @@ export async function rollCheck(actor, key, {
   let roll = null;
   let result;
   const parts = [];
-  if ( value.bonus ) parts.push({ label: t("SW25.Roll.Bonuses"), value: value.bonus });
+  // The bonuses are detailed in the breakdown of the card when there is one
+  if ( value.bonus ) parts.push({ label: t("SW25.Roll.Bonuses"), value: value.bonus, inBreakdown: !!value.breakdown });
   parts.push(...dialog.parts);
   if ( isCreature && dialog.useFixed ) {
     result = fixedResult(value.base + value.bonus + dialog.bonus + CONFIG.SW25.FIXED_OFFSET);
@@ -170,7 +172,7 @@ export async function rollCheck(actor, key, {
       subtitle: flavor || (value.source ? value.source : ""),
       img: actor.img,
       checkKey: key,
-      check: { ...result, base: value.base, parts, label: value.label, targetNumber: tn, success, expGained },
+      check: { ...result, base: value.base, parts, breakdown: value.breakdown ?? null, label: value.label, targetNumber: tn, success, expGained },
       targets: []
     }, { rolls: roll ? [roll] : [], speaker: speakerFor(actor), rollMode: dialog.rollMode });
   }
@@ -204,12 +206,18 @@ export async function rollCardResistance(message, index, event) {
     title: `${t(`SW25.Check.${contest}`)} — ${resistActor.name}`
   });
   if ( !outcome ) return;
+  // What made up the resistance roll, for its breakdown on this card
+  const rolled = getCard(outcome.message)?.check ?? {};
   const resist = {
     total: outcome.result.total,
+    raw: outcome.result.raw,
     autoSuccess: outcome.result.autoSuccess,
     autoFailure: outcome.result.autoFailure,
     fixed: outcome.result.fixed,
-    dice: outcome.result.dice
+    dice: outcome.result.dice,
+    base: rolled.base ?? null,
+    parts: rolled.parts ?? [],
+    breakdown: rolled.breakdown ?? null
   };
   await updateCard(message, { targets: { [index]: { resist } } });
 }

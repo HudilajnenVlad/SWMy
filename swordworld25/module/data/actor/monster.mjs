@@ -54,6 +54,7 @@ export default class MonsterModel extends ActorBaseModel {
     this._applyItemModifiers();
     const b = this.bonuses;
     const shardBonus = CONFIG.SW25.swordShardResistBonus(this.swordShards);
+    const statLine = value => ({ label: "SW25.Breakdown.StatBlock", value: value ?? 0 });
 
     // Sections (sword shard HP/MP is assigned to the main or first section). Parts sharing a name are numbered:
     // "Horse 1", "Horse 2".
@@ -74,6 +75,9 @@ export default class MonsterModel extends ActorBaseModel {
       s.mp.max = (s.mp.max ?? 0) + ((i === mainIndex) ? this.swordShards : 0) + ((i === mainIndex) ? b.mpMax : 0);
       s.accuracyTotal = Number.isInteger(s.accuracy) ? s.accuracy + b.accuracy + b.accuracyMelee + b.actionChecks + b.allChecks : null;
       s.evasionTotal = Number.isInteger(s.evasion) ? s.evasion + b.evasion + b.actionChecks + b.allChecks : null;
+      // Where the values come from, for the breakdown of the rolls
+      s.accuracyBreakdown = [statLine(s.accuracy), ...this.bonusBreakdown(["accuracy", "accuracyMelee", "actionChecks", "allChecks"])];
+      s.evasionBreakdown = [statLine(s.evasion), ...this.bonusBreakdown(["evasion", "actionChecks", "allChecks"])];
       s.defenseTotal = s.defense + b.defense;
       s.damageBonus = b.damage + b.damageMelee;
       s.down = s.hp.value <= 0;
@@ -91,6 +95,10 @@ export default class MonsterModel extends ActorBaseModel {
     this.fortitudeTotal = this.fortitude + b.fortitude + b.allChecks + shardBonus;
     this.willpowerTotal = this.willpower + b.willpower + b.allChecks + shardBonus;
     this.initiativeTotal = Number.isInteger(this.initiative) ? this.initiative + b.initiative : null;
+    const shardLine = shardBonus ? [{ label: "SW25.Breakdown.SwordShards", value: shardBonus }] : [];
+    this.fortitudeBreakdown = [statLine(this.fortitude), ...this.bonusBreakdown(["fortitude", "allChecks"]), ...shardLine];
+    this.willpowerBreakdown = [statLine(this.willpower), ...this.bonusBreakdown(["willpower", "allChecks"]), ...shardLine];
+    this.initiativeBreakdown = [statLine(this.initiative), ...this.bonusBreakdown(["initiative"])];
     this.shardBonus = shardBonus;
     this.multiSection = this.sections.length > 1;
     this.movementLabel = this._movementLabel();

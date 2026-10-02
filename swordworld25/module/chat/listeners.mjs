@@ -1,8 +1,9 @@
 import { getCard, updateCard } from "./card.mjs";
+import { attachBreakdown } from "./breakdown.mjs";
 import { undoDamage } from "../combat/damage.mjs";
 import { rollCardResistance, rollDeathCheck } from "../workflows/checks.mjs";
 import { addTargetsToCard, applyDamageFromCard, applyEffectFromCard, rollDamageFromCard } from "../workflows/damage-roll.mjs";
-import { actorFromUuid, keyboardActions } from "../helpers/utils.mjs";
+import { actorFromUuid, keyboardActions, t } from "../helpers/utils.mjs";
 
 /**
  * Hook handler for rendered chat messages: permissions and button listeners.
@@ -31,6 +32,17 @@ export function onRenderChatMessage(message, html) {
   if ( html.querySelector(".swp-chat") ) {
     html.classList.add("swp-message");
     keyboardActions(html);
+  }
+
+  // Hovering a result shows where it comes from
+  const state = getCard(message);
+  if ( state?.check ) attachBreakdown(html.querySelector(".swp-chat-roll:not(.swp-chat-damage) .swp-chat-total"), state.check, state.check.label);
+  if ( state?.contest ) {
+    const contest = t(`SW25.Check.${state.contest}`);
+    html.querySelectorAll(".swp-chat-target").forEach((el, i) => {
+      const target = state.targets?.[i];
+      if ( target?.resist ) attachBreakdown(el.querySelector(".swp-chat-resist:not(.gm)"), target.resist, `${contest} — ${target.name}`);
+    });
   }
 
   // Collapsible description (the effect row of the card)

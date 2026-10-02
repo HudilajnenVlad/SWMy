@@ -202,6 +202,22 @@ export default class SW25ActorSheet extends HandlebarsApplicationMixin(ActorShee
 
   /* -------------------------------------------- */
 
+  /**
+   * The effects panel follows the actor sheet worked in last: opening the sheet or clicking in it tells it so.
+   * @override
+   */
+  _onFirstRender(context, options) {
+    super._onFirstRender(context, options);
+    this.element.addEventListener("pointerdown", () => Hooks.callAll("sw25.sheetFocus", this, true), { capture: true });
+    Hooks.callAll("sw25.sheetFocus", this, true);
+  }
+
+  /** @override */
+  _onClose(options) {
+    super._onClose(options);
+    Hooks.callAll("sw25.sheetFocus", this, false);
+  }
+
   /** @override */
   async _onRender(context, options) {
     await super._onRender(context, options);

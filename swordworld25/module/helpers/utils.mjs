@@ -129,6 +129,31 @@ export function renderSystemTemplate(path, data) {
 }
 
 /**
+ * While an entry is dragged out of a window, the window turns see-through and lets the pointer pass, so the entry
+ * can be dropped on the sheet or the scene behind it (like the compendium browser of PF2e). It comes back when the
+ * drag ends, wherever it ends.
+ * @param {HTMLElement} element  The window
+ * @param {Function} [when]      Fade only when this returns true (a compendium that can be sorted takes drops itself)
+ */
+export function fadeWhileDragging(element, when = () => true) {
+  if ( !element || element.dataset.swpDragFade ) return;
+  element.dataset.swpDragFade = "true";
+  element.addEventListener("dragstart", () => {
+    if ( !when() ) return;
+    const restore = () => {
+      element.classList.remove("swp-drag-fade");
+      for ( const type of ["dragend", "drop", "pointermove"] ) document.removeEventListener(type, restore, true);
+    };
+    // Wait for the browser to take the drag image of the entry
+    setTimeout(() => {
+      element.classList.add("swp-drag-fade");
+      // A drag whose source left the page ends without a dragend: the next pointer move restores the window
+      for ( const type of ["dragend", "drop", "pointermove"] ) document.addEventListener(type, restore, true);
+    }, 0);
+  });
+}
+
+/**
  * Make the [data-action] elements of a window that are not buttons or links reachable with the keyboard:
  * Tab focuses them, Enter or Space activates them.
  * @param {HTMLElement} root

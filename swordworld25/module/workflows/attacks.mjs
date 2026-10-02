@@ -212,7 +212,7 @@ export async function rollWeaponAttack(actor, weapon, { event } = {}) {
     subtitle: t("SW25.Card.WeaponAttack"),
     img: weapon.img,
     details,
-    check: { ...result, base: atk.accuracy, parts: dialog.parts, label: t("SW25.Check.accuracy"), expGained },
+    check: { ...result, base: atk.accuracy, parts: dialog.parts, breakdown: atk.accuracyBreakdown ?? null, label: t("SW25.Check.accuracy"), expGained },
     contest: heal ? null : "evasion",
     resistance: null,
     targets,
@@ -400,7 +400,7 @@ export async function rollSectionAttack(actor, index, { event } = {}) {
     subtitle: actor.system.multiSection ? section.label : t("SW25.Card.MonsterAttack"),
     img: actor.img,
     details: declared.names.length ? [{ label: t("SW25.Roll.Declare"), value: declared.names.join(", ") }] : [],
-    check: { ...result, base: section.accuracyTotal, parts: dialog.parts, label: t("SW25.Check.accuracy") },
+    check: { ...result, base: section.accuracyTotal, parts: dialog.parts, breakdown: section.accuracyBreakdown ?? null, label: t("SW25.Check.accuracy") },
     contest: "evasion",
     targets,
     damage: {
@@ -451,6 +451,7 @@ export async function useAbility(actor, ability, { event } = {}) {
   let roll = null;
   let result = null;
   let rollMode = game.settings.get("core", "rollMode");
+  let parts = [];
   if ( hasCheck ) {
     const dialog = await RollDialog.prompt({
       title: `${ability.name} — ${actor.name}`,
@@ -463,6 +464,7 @@ export async function useAbility(actor, ability, { event } = {}) {
     if ( !dialog ) return;
     await consumeChosenItems(actor, dialog);
     rollMode = dialog.rollMode;
+    parts = dialog.parts;
     if ( dialog.useFixed ) result = fixedResult(checkBase + dialog.bonus + CONFIG.SW25.FIXED_OFFSET);
     else {
       roll = await evaluateCheck({ base: checkBase, parts: dialog.parts });
@@ -494,7 +496,10 @@ export async function useAbility(actor, ability, { event } = {}) {
     img: ability.img,
     summary: sys.summary,
     description: sys.description,
-    check: result ? { ...result, base: checkBase, parts: [], label: ability.name } : null,
+    check: result ? {
+      ...result, base: checkBase, parts, label: ability.name,
+      breakdown: [{ label: sys.check.base ? "SW25.Breakdown.Jockey" : "SW25.Breakdown.StatBlock", value: checkBase }]
+    } : null,
     contest,
     resistance: sys.check.result || null,
     targets,

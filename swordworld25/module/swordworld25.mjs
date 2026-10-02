@@ -34,7 +34,7 @@ import { registerTokenHud } from "./canvas/token-hud.mjs";
 import * as workflows from "./workflows/_module.mjs";
 import { migrateWorld, refreshAutomation } from "./helpers/migration.mjs";
 import { clampResources } from "./helpers/effects.mjs";
-import { isResponsibleGM } from "./helpers/utils.mjs";
+import { fadeWhileDragging, isResponsibleGM } from "./helpers/utils.mjs";
 
 /* -------------------------------------------- */
 /*  Init                                        */
@@ -203,6 +203,10 @@ for ( const hook of ["renderItemDirectory", "renderCompendiumDirectory"] ) {
     footer.append(button);
   });
 }
+
+// Dragging an entry out of a compendium window fades it, so the entry can be dropped on the sheet behind it (an
+// unlocked compendium keeps taking drops: its entries can be sorted)
+Hooks.on("renderCompendium", app => fadeWhileDragging(app.element, () => !!app.collection?.locked));
 
 // Token Controls: show or hide the resource tracker and the combat panel
 Hooks.on("getSceneControlButtons", controls => {

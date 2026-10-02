@@ -3,10 +3,12 @@ import { enrich, SYSTEM_ID, t } from "../../helpers/utils.mjs";
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
 /**
- * Effects panel (after the PF2e one): the effects and conditions of the selected token (else the user's character)
- * as a column of icons in the top right corner of the canvas, next to the sidebar. Hovering an icon shows its card
- * (duration, source, modifiers, description). Click turns an effect off or on again, right-click removes it,
- * Shift-click opens it. Effects carried by items (equipment) are not listed: they come and go with the items.
+ * Effects panel (after the PF2e one): the effects and conditions of an actor as a column of icons in the top right
+ * corner of the canvas, next to the sidebar. It shows whichever was used last: the selected token (a click on it) or
+ * an open actor sheet (opened or clicked in), so conditions ticked on a sheet show up even without a token; else the
+ * user's character. Hovering an icon shows its card (duration, source, modifiers, description). Click turns an
+ * effect off or on again, right-click removes it, Shift-click opens it. Effects carried by items (equipment) are not
+ * listed: they come and go with the items.
  */
 export default class EffectsPanel extends HandlebarsApplicationMixin(ApplicationV2) {
 
@@ -29,6 +31,11 @@ export default class EffectsPanel extends HandlebarsApplicationMixin(Application
   /** Singleton instance. */
   static instance = null;
 
+  /** The actor sheet worked in last, when it was focused, and when a token was selected or clicked last. */
+  #sheet = null;
+  #sheetTime = 0;
+  #tokenTime = 0;
+
   /**
    * Create the panel and the hooks that keep it up to date (once).
    * @returns {EffectsPanel}
@@ -37,7 +44,21 @@ export default class EffectsPanel extends HandlebarsApplicationMixin(Application
     if ( this.instance ) return this.instance;
     const panel = this.instance = new this();
     const refresh = foundry.utils.debounce(() => panel.refresh(), 100);
-    Hooks.on("controlToken", refresh);
+    Hooks.on("controlToken", (token, controlled) => {
+      if ( controlled ) panel.#tokenTime = Date.now();
+      refresh();
+    });
+    Hooks.on("sw25.tokenFocus", () => panel.#focus(() => { panel.#tokenTime = Date.now(); }, refresh));
+    Hooks.on("sw25.sheetFocus", (sheet, focused) => {
+      if ( sheet.actor?.type === "party" ) return;
+      panel.#focus(() => {
+        if ( focused ) {
+          panel.#sheet = sheet;
+          panel.#sheetTime = Date.now();
+        }
+        else if ( panel.#sheet === sheet ) panel.#sheet = null;
+      }, refresh);
+    });
     Hooks.on("canvasReady", refresh);
     for ( const hook of ["createActiveEffect", "deleteActiveEffect", "updateActiveEffect"] ) {
       Hooks.on(hook, effect => { if ( effect.parent === panel.actor ) refresh(); });
@@ -58,10 +79,26 @@ export default class EffectsPanel extends HandlebarsApplicationMixin(Application
     else if ( this.instance?.rendered ) this.instance.close();
   }
 
-  /** The actor shown: the first controlled token's, else the user's character. */
+  /**
+   * The actor shown: the selected token's or the focused sheet's, whichever was used last; else the user's character.
+   * @type {Actor|null}
+   */
   get actor() {
-    const token = canvas.tokens?.controlled?.[0];
-    return token?.actor ?? game.user.character ?? null;
+    const token = canvas.tokens?.controlled?.[0] ?? null;
+    const sheetActor = this.#sheet?.rendered ? (this.#sheet.actor ?? null) : null;
+    if ( sheetActor && (!token || (this.#sheetTime > this.#tokenTime)) ) return sheetActor;
+    return token?.actor ?? sheetActor ?? game.user.character ?? null;
+  }
+
+  /**
+   * Note a focus change and refresh when the actor shown changes.
+   * @param {Function} change
+   * @param {Function} refresh
+   */
+  #focus(change, refresh) {
+    const before = this.actor;
+    change();
+    if ( this.actor !== before ) refresh();
   }
 
   /** Re-render, or close when the panel is off. */

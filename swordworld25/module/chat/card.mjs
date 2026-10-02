@@ -223,7 +223,10 @@ export async function snapshotTargets(tokens, { contest = null, askSection = fal
       const value = resistValue(actor, contest, section);
       if ( Number.isFinite(value) ) {
         entry.fixed = value + CONFIG.SW25.FIXED_OFFSET;
-        entry.resist = { total: entry.fixed, fixed: true, autoSuccess: false, autoFailure: false, dice: [] };
+        entry.resist = {
+          total: entry.fixed, fixed: true, autoSuccess: false, autoFailure: false, dice: [],
+          base: value, parts: [], breakdown: resistBreakdown(actor, contest, section)
+        };
       }
     }
     out.push(entry);
@@ -253,6 +256,29 @@ export function resistValue(actor, contest, section = null) {
   }
   if ( contest === "willpower" ) return sys.willpowerTotal;
   if ( contest === "fortitude" ) return sys.fortitudeTotal;
+  return null;
+}
+
+/**
+ * Where an actor's resistance to a contest comes from (lines of the roll breakdown).
+ * @param {Actor} actor
+ * @param {string} contest
+ * @param {number|null} section
+ * @returns {object[]|null}
+ */
+export function resistBreakdown(actor, contest, section = null) {
+  const sys = actor.system;
+  if ( contest === "willpower" ) return sys.willpowerBreakdown ?? null;
+  if ( contest === "fortitude" ) return sys.fortitudeBreakdown ?? null;
+  if ( actor.type === "character" ) {
+    if ( contest === "evasion" ) return sys.evasionBreakdown ?? null;
+    if ( contest === "dangerSense" ) return sys.checks?.dangerSense?.breakdown ?? null;
+    return null;
+  }
+  if ( contest === "evasion" ) {
+    const s = sys.sections?.[section ?? Math.max(0, sys.sections.findIndex(x => x.main))] ?? sys.sections?.[0];
+    return s?.evasionBreakdown ?? null;
+  }
   return null;
 }
 

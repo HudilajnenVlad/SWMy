@@ -20,7 +20,10 @@ export function getCasting(actor, system) {
     if ( (item.type === "ability") && (sc?.system === system) ) {
       const b = actor.system.bonuses;
       const power = (sc.power ?? 0) + (b.magicPower ?? 0);
-      return { power, check: power + (b.spellcasting ?? 0), level: sc.level ?? 0, label: CONFIG.SW25.magicSystems[system]?.label ?? system, deity: sc.deity };
+      return {
+        power, check: power + (b.spellcasting ?? 0), level: sc.level ?? 0, label: CONFIG.SW25.magicSystems[system]?.label ?? system, deity: sc.deity,
+        checkBreakdown: [{ label: item.name, value: sc.power ?? 0 }, ...actor.system.bonusBreakdown(["magicPower", "spellcasting"])]
+      };
     }
   }
   return null;
@@ -246,7 +249,10 @@ export async function castSpell(actor, spell, { event } = {}) {
     summary: variant?.summary ?? s.summary,
     description: s.description,
     details,
-    check: { ...result, base: rollIt ? casting.check : 0, parts: dialog.parts, label: t("SW25.Check.spellcasting"), expGained, noRoll: !rollIt },
+    check: {
+      ...result, base: rollIt ? casting.check : 0, parts: dialog.parts, breakdown: rollIt ? (casting.checkBreakdown ?? null) : null,
+      label: t("SW25.Check.spellcasting"), expGained, noRoll: !rollIt
+    },
     contest,
     resistance: s.resistance,
     targets,
@@ -409,7 +415,7 @@ export async function performSong(actor, song, { event } = {}) {
       { label: t("SW25.Song.RhythmGained"), value: rhythmText || "—" },
       { label: t("SW25.Song.Condition"), value: cond.text && (cond.text !== "None") ? `${cond.text} (${conditionMet ? "✔" : "✘"})` : "" }
     ].filter(d => d.value),
-    check: { ...result, base, parts: dialog.parts, label: t("SW25.Check.performance"), expGained },
+    check: { ...result, base, parts: dialog.parts, breakdown: actor.system.checks?.performance?.breakdown ?? null, label: t("SW25.Check.performance"), expGained },
     contest,
     resistance: s.resistance,
     targets,
@@ -463,7 +469,7 @@ export async function performFinale(actor, finale, { event } = {}) {
     summary: s.summary,
     description: s.description,
     details: [{ label: t("SW25.Resistance.label"), value: t(CONFIG.SW25.resistance[s.resistance] ?? s.resistance) }],
-    check: { ...result, base, parts: dialog.parts, label: t("SW25.Check.performance"), expGained },
+    check: { ...result, base, parts: dialog.parts, breakdown: actor.system.checks?.performance?.breakdown ?? null, label: t("SW25.Check.performance"), expGained },
     contest,
     resistance: s.resistance,
     targets,
@@ -528,8 +534,9 @@ export async function useEvocation(actor, evocation, { event } = {}) {
 
   let roll = null;
   let result = fixedResult(0);
+  const evocationCheck = actor.system.checks?.evocation;
   if ( major ) {
-    const base = actor.system.checks?.evocation?.value ?? 0;
+    const base = evocationCheck?.value ?? 0;
     roll = await evaluateCheck({ base, parts: dialog.parts });
     result = resultFromRoll(roll);
     await handleAutoFailureExp(actor, result);
@@ -576,7 +583,13 @@ export async function useEvocation(actor, evocation, { event } = {}) {
       { label: t("SW25.Duration.label"), value: duration?.text }
     ].filter(d => d.value),
     check: (major || (s.rankEffect === "check"))
-      ? { ...result, parts: dialog.parts, label: t("SW25.Check.evocation"), noRoll: !roll }
+      ? {
+        ...result, parts: dialog.parts, label: t("SW25.Check.evocation"), noRoll: !roll,
+        // The rank of Unlock Needle gives the success value; otherwise the Alchemy check
+        ...(((s.rankEffect === "check") && Number.isFinite(rankValue))
+          ? { base: rankValue, parts: [], breakdown: [{ label: "SW25.Breakdown.CardRank", value: rankValue, note: rank }] }
+          : { base: evocationCheck?.value ?? 0, breakdown: evocationCheck?.breakdown ?? null })
+      }
       : { ...result, noRoll: true, label: t("SW25.Check.evocation") },
     contest,
     resistance: s.resistance,

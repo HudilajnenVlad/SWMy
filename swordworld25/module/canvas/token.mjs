@@ -47,6 +47,15 @@ export default class SW25Token extends foundry.canvas.placeables.Token {
     return !!this.document.getBarAttribute(name);
   }
 
+  /**
+   * Clicking a token, even one already selected, makes its actor the one the effects panel shows.
+   * @override
+   */
+  _onClickLeft(event) {
+    super._onClickLeft(event);
+    if ( this.controlled ) Hooks.callAll("sw25.tokenFocus", this);
+  }
+
   /** @override */
   _onUpdate(changed, options, userId) {
     super._onUpdate(changed, options, userId);

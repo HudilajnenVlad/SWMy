@@ -1,6 +1,6 @@
 import { castSpell, getCasting } from "../../workflows/magic.mjs";
 import { itemEntry } from "../../helpers/item-entry.mjs";
-import { keyboardActions, t } from "../../helpers/utils.mjs";
+import { fadeWhileDragging, keyboardActions, t } from "../../helpers/utils.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -344,7 +344,8 @@ export default class SpellbookApp extends HandlebarsApplicationMixin(Application
       input.focus();
       input.setSelectionRange(this.filter.length, this.filter.length);
     }
-    // Rows can be dragged onto a sheet (learn / add to the sheet) or the hotbar
+    // Rows can be dragged onto a sheet (learn / add to the sheet) or the hotbar; the spellbook fades meanwhile
+    fadeWhileDragging(this.element);
     for ( const row of this.element.querySelectorAll("tr.swp-row[data-uuid]") ) {
       row.draggable = true;
       row.addEventListener("dragstart", ev => {

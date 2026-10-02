@@ -659,6 +659,13 @@ group("SW25.EffectsPanel", [
     ("Off", "Turned off", "Выключен"), ("Expired", "Expired", "Истёк"), ("Unlimited", "No time limit", "Без срока"),
     ("Rounds", "{n}r", "{n}р"), ("Minutes", "{n}m", "{n}м"), ("Hours", "{n}h", "{n}ч"), ("Days", "{n}d", "{n}д"),
 ])
+group("SW25.Breakdown", [
+    ("Total", "Total", "Итого"), ("Other", "Other modifiers", "Прочие модификаторы"),
+    ("Fixed", "Fixed value (+7)", "Фиксированное значение (+7)"), ("NotBelowZero", "Not below 0", "Не ниже 0"),
+    ("MetalArmor", "Metal armor", "Металлическая броня"), ("StatBlock", "Stat block", "Статблок"),
+    ("SwordShards", "Sword shards", "Осколки меча"), ("Jockey", "Jockey (Rider + ability)", "Жокей (Наездник + характеристика)"),
+    ("CardRank", "Card rank", "Ранг карты"),
+])
 group("SW25.Wealth", [
     ("Items", "Items value", "Стоимость вещей"), ("Total", "Total wealth", "Общее богатство"),
     ("Formula", "Money {money} + deposit {deposit} + items {items} − debt {debt} = {total}",

@@ -148,6 +148,13 @@ export default class CharacterModel extends ActorBaseModel {
     // Resistances
     this.fortitude = this.level + this.abilities.vit.mod + b.fortitude + b.allChecks;
     this.willpower = this.level + this.abilities.spi.mod + b.willpower + b.allChecks;
+    const resistBreakdown = (ability, key) => [
+      { label: "SW25.AdventurerLevel", value: this.level },
+      { label: `SW25.AbilityAbbr.${ability}`, value: this.abilities[ability].mod, ability: true },
+      ...this.bonusBreakdown([key, "allChecks"])
+    ];
+    this.fortitudeBreakdown = resistBreakdown("vit", "fortitude");
+    this.willpowerBreakdown = resistBreakdown("spi", "willpower");
 
     // Magic
     this._prepareMagic();
@@ -311,17 +318,24 @@ export default class CharacterModel extends ActorBaseModel {
         if ( !best || (value > best.value) ) best = { value, level, ability, source, label, note };
       }
       const straight = !best;
-      let bonus = (b.check[key] ?? 0) + b.allChecks;
+      // Modifier keys adding to the check
+      const keys = [`check.${key}`, "allChecks"];
       // The adventurer's Climb is the same check with another standard value: Climb modifiers count for it too
-      if ( key === "climbStr" ) bonus += b.check.climb ?? 0;
-      if ( !cfg.notAction ) bonus += b.actionChecks;
-      if ( cfg.package ) bonus += b[SW25.packageModifier[cfg.package]] ?? 0;
-      if ( key === "initiative" ) bonus += b.initiative;
-      if ( key === "monsterKnowledge" ) bonus += b.monsterKnowledge;
-      if ( key === "performance" ) bonus += b.performance;
-      if ( key === "evocation" ) bonus += b.evocation;
-      if ( key === "riding" ) bonus += b.riding;
-      if ( cfg.metalArmor && this.wearingMetal ) bonus += cfg.metalArmor;
+      if ( key === "climbStr" ) keys.push("check.climb");
+      if ( !cfg.notAction ) keys.push("actionChecks");
+      if ( cfg.package ) keys.push(SW25.packageModifier[cfg.package]);
+      if ( ["initiative", "monsterKnowledge", "performance", "evocation", "riding"].includes(key) ) keys.push(key);
+      let bonus = keys.reduce((t, k) => t + (foundry.utils.getProperty(b, k) ?? 0), 0);
+      // Where the standard value comes from, for the breakdown of the roll
+      const breakdown = straight ? [] : [
+        { label: best.label, value: best.level, note: best.note },
+        { label: `SW25.AbilityAbbr.${best.ability}`, value: this.abilities[best.ability]?.mod ?? 0, ability: true }
+      ];
+      breakdown.push(...this.bonusBreakdown(keys));
+      if ( cfg.metalArmor && this.wearingMetal ) {
+        bonus += cfg.metalArmor;
+        breakdown.push({ label: "SW25.Breakdown.MetalArmor", value: cfg.metalArmor });
+      }
       this.checks[key] = {
         key,
         label: `SW25.Check.${key}`,
@@ -333,7 +347,8 @@ export default class CharacterModel extends ActorBaseModel {
         source: best?.source ?? null,
         sourceLabel: best?.label ?? "",
         sourceNote: best?.note ?? "",
-        package: cfg.package ?? null
+        package: cfg.package ?? null,
+        breakdown
       };
     }
     this.initiative = this.checks.initiative.value;
@@ -377,6 +392,12 @@ export default class CharacterModel extends ActorBaseModel {
         level: cls.level,
         power: cls.level + int + b.magicPower,
         check: cls.level + int + b.magicPower + b.spellcasting + b.actionChecks + b.allChecks + penalty,
+        checkBreakdown: [
+          { label: cls.label, value: cls.level },
+          { label: "SW25.AbilityAbbr.int", value: int, ability: true },
+          ...this.bonusBreakdown(["magicPower", "spellcasting", "actionChecks", "allChecks"]),
+          ...(penalty ? [{ label: "SW25.ArmorPenalty", value: penalty }] : [])
+        ],
         armorPenalty: penalty,
         label: SW25.magicSystems[cls.magic]?.label ?? cls.magic
       };
@@ -426,7 +447,8 @@ export default class CharacterModel extends ActorBaseModel {
     this.defense = defense + b.defense;
 
     // Evasion
-    const armorEvasion = this._equipmentEvasion(str);
+    const equipmentLines = [];
+    const armorEvasion = this._equipmentEvasion(str, equipmentLines);
     const candidates = [];
     for ( const cls of Object.values(this.classes) ) {
       if ( !cls.evasion ) continue;
@@ -441,6 +463,14 @@ export default class CharacterModel extends ActorBaseModel {
     this.evasionBase = evasionClass?.value ?? 0;
     this.evasion = this.evasionBase + armorEvasion + b.evasion + b.actionChecks + b.allChecks;
     this.evasionStraight = !evasionClass;
+    this.evasionBreakdown = [
+      ...(evasionClass ? [
+        { label: evasionClass.label, value: evasionClass.level },
+        { label: "SW25.AbilityAbbr.agi", value: abl.agi.mod, ability: true }
+      ] : []),
+      ...equipmentLines,
+      ...this.bonusBreakdown(["evasion", "actionChecks", "allChecks"])
+    ];
 
     // Warrior class summaries
     this.warrior = {};
@@ -458,24 +488,24 @@ export default class CharacterModel extends ActorBaseModel {
   }
 
   /**
-   * Evasion bonus/penalty from equipped armor and shield.
+   * Evasion bonus/penalty from equipped armor and shield: an item too heavy for the Strength costs the difference
+   * instead of its bonus, a penalty always counts.
    * @param {number} str
+   * @param {object[]} [lines]  Receives one breakdown line per item that changes Evasion
    * @returns {number}
    * @protected
    */
-  _equipmentEvasion(str) {
+  _equipmentEvasion(str, lines = []) {
     let total = 0;
-    const armor = this.armor?.system;
-    if ( armor ) {
-      if ( armor.minStr > str ) total -= (armor.minStr - str);
-      else total += armor.evasion > 0 ? armor.evasion : 0;
-      if ( armor.evasion < 0 ) total += armor.evasion;
-    }
-    const shield = this.shield?.system;
-    if ( shield ) {
-      if ( shield.minStr > str ) total -= (shield.minStr - str);
-      else if ( shield.evasion > 0 ) total += shield.evasion;
-      if ( shield.evasion < 0 ) total += shield.evasion;
+    for ( const item of [this.armor, this.shield] ) {
+      const s = item?.system;
+      if ( !s ) continue;
+      let value = 0;
+      if ( s.minStr > str ) value -= (s.minStr - str);
+      else if ( s.evasion > 0 ) value += s.evasion;
+      if ( s.evasion < 0 ) value += s.evasion;
+      if ( value ) lines.push({ label: item.name, value });
+      total += value;
     }
     return total;
   }
@@ -537,10 +567,18 @@ export default class CharacterModel extends ActorBaseModel {
     // The weapon's own single-use modifiers apply to the attacks made with it
     const own = w.modifiers.filter(m => (m.scope === "use") && !m.condition && !m.actorType);
     const ownSum = (...keys) => own.filter(m => keys.includes(m.key)).reduce((a, m) => a + (Number(m.value) || 0), 0);
-    const accuracyBonus = b.accuracy + (isMelee ? b.accuracyMelee : b.accuracyRanged) + b.actionChecks + b.allChecks
-      + ownSum("accuracy", isMelee ? "accuracyMelee" : "accuracyRanged");
+    const accuracyKeys = ["accuracy", isMelee ? "accuracyMelee" : "accuracyRanged", "actionChecks", "allChecks"];
+    const ownAccuracyKeys = ["accuracy", isMelee ? "accuracyMelee" : "accuracyRanged"];
+    const accuracyBonus = accuracyKeys.reduce((t, k) => t + (b[k] ?? 0), 0) + ownSum(...ownAccuracyKeys);
     const accuracyBase = cls ? cls.level + abl.dex.mod : 0;
     const accuracy = accuracyBase + (mode.accuracy ?? 0) + accuracyBonus + strPenalty;
+    const accuracyBreakdown = [
+      ...(cls ? [{ label: cls.label, value: cls.level }, { label: "SW25.AbilityAbbr.dex", value: abl.dex.mod, ability: true }] : []),
+      ...(mode.accuracy ? [{ label: weapon.name, value: mode.accuracy }] : []),
+      ...this.bonusBreakdown(accuracyKeys),
+      ...own.filter(m => ownAccuracyKeys.includes(m.key) && Number(m.value)).map(m => ({ label: weapon.name, value: Number(m.value), key: m.key })),
+      ...(strPenalty ? [{ label: "SW25.StrPenalty", value: strPenalty }] : [])
+    ];
 
     let extra;
     let damageKind = "physical";
@@ -565,6 +603,7 @@ export default class CharacterModel extends ActorBaseModel {
       kind,
       accuracy,
       accuracyBase,
+      accuracyBreakdown,
       strPenalty,
       power: (Number.isInteger(mode.power) && !w.isGun)
         ? Math.clamp(mode.power + b.weaponPower + ownSum("weaponPower"), 0, 100) : mode.power,

@@ -81,6 +81,30 @@ export default class ActorBaseModel extends foundry.abstract.TypeDataModel {
   }
 
   /**
+   * Where the flat bonuses on some modifier keys come from (passive modifiers of owned items, changes of active
+   * effects): one line per source and key, for the breakdown of rolls.
+   * @param {string[]} keys   Modifier keys ("evasion", "actionChecks", "check.climb"…)
+   * @returns {{label: string, value: number, key: string}[]}
+   */
+  bonusBreakdown(keys) {
+    const lines = [];
+    for ( const key of keys ) {
+      for ( const src of this.bonusSources[key] ?? [] ) {
+        if ( src.value ) lines.push({ label: src.source, value: src.value, key });
+      }
+    }
+    for ( const effect of this.parent.appliedEffects ) {
+      for ( const change of effect.changes ) {
+        const key = change.key.replace(/^system\.bonuses\./, "");
+        if ( (key === change.key) || !keys.includes(key) || (change.mode !== CONST.ACTIVE_EFFECT_MODES.ADD) ) continue;
+        const value = Number(change.value);
+        if ( value ) lines.push({ label: effect.name, value, key });
+      }
+    }
+    return lines;
+  }
+
+  /**
    * Conditional modifiers relevant to a given set of modifier keys.
    * @param {string[]} keys
    * @returns {object[]}

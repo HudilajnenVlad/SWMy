@@ -1,4 +1,4 @@
-import { keyboardActions, t } from "../../helpers/utils.mjs";
+import { fadeWhileDragging, keyboardActions, t } from "../../helpers/utils.mjs";
 import bestiary from "./browser/bestiary.mjs";
 import spells from "./browser/spells.mjs";
 import feats from "./browser/feats.mjs";
@@ -468,7 +468,8 @@ export default class CompendiumBrowser extends HandlebarsApplicationMixin(Applic
         input.addEventListener("change", ev => this.#onFilterChange(ev.currentTarget));
       }
     }
-    // Rows can be dragged onto sheets, the directories or the scene
+    // Rows can be dragged onto sheets, the directories or the scene; the browser fades meanwhile
+    fadeWhileDragging(this.element);
     for ( const row of this.element.querySelectorAll("tr.swp-row[data-uuid]") ) {
       row.draggable = true;
       row.addEventListener("dragstart", ev => {

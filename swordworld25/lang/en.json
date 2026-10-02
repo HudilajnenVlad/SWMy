@@ -194,6 +194,17 @@
       "Skin": "Skin",
       "Weight": "Weight"
     },
+    "Breakdown": {
+      "CardRank": "Card rank",
+      "Fixed": "Fixed value (+7)",
+      "Jockey": "Jockey (Rider + ability)",
+      "MetalArmor": "Metal armor",
+      "NotBelowZero": "Not below 0",
+      "Other": "Other modifiers",
+      "StatBlock": "Stat block",
+      "SwordShards": "Sword shards",
+      "Total": "Total"
+    },
     "Browser": {
       "Abilities": "Class abilities",
       "Acquisition": "Acquisition",

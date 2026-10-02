@@ -608,3 +608,8 @@
 #tooltip.swp-fx-card .desc { max-height: 240px; overflow: hidden; }
 #tooltip.swp-fx-card .desc p { margin: 0 0 4px; padding: 0; }
 #tooltip.swp-fx-card .hint { margin-top: 5px; padding-top: 4px; border-top: 1px dashed var(--swp-ink); color: var(--swp-muted); font-size: 11px; }
+
+/* A window an entry is dragged out of fades and lets the drop through (helpers/utils.mjs fadeWhileDragging) */
+.application.swp-drag-fade { opacity: 0.18 !important; transition: opacity 0.15s ease-out; }
+.application.swp-drag-fade,
+.application.swp-drag-fade * { pointer-events: none !important; }
