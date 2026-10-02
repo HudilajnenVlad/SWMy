@@ -2,13 +2,13 @@
   "id": "swordworld25",
   "title": "Sword World 2.5",
   "description": "An automated Sword World 2.5 game system: character and monster sheets, power-table damage rolls with criticals, spellcasting and resistance workflow, conditions, spellbook window, token resource trackers and compendiums built from Core Rulebooks I–III.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "authors": [
     { "name": "SWMy" }
   ],
   "url": "https://github.com/HudilajnenVlad/SWMy",
   "manifest": "https://github.com/HudilajnenVlad/SWMy/releases/latest/download/system.json",
-  "download": "https://github.com/HudilajnenVlad/SWMy/releases/download/v0.2.0/swordworld25.zip",
+  "download": "https://github.com/HudilajnenVlad/SWMy/releases/download/v0.2.1/swordworld25.zip",
   "compatibility": {
     "minimum": "13.345",
     "verified": "13.348"
