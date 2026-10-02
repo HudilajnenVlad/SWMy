@@ -30,6 +30,7 @@ import CombatPanel from "./applications/apps/combat-panel.mjs";
 import EffectsPanel from "./applications/apps/effects-panel.mjs";
 import MonsterTemplateApp, { buildMonsterData } from "./applications/apps/monster-template.mjs";
 import CompendiumBrowser from "./applications/apps/compendium-browser.mjs";
+import PregenPicker, { applyPregen, loadPregens } from "./applications/apps/pregen-picker.mjs";
 import { registerTokenHud } from "./canvas/token-hud.mjs";
 import * as workflows from "./workflows/_module.mjs";
 import { migrateWorld, refreshAutomation } from "./helpers/migration.mjs";
@@ -104,6 +105,8 @@ Hooks.once("init", () => {
     PartySheet,
     CompendiumBrowser,
     BestiaryBrowser: { open: () => CompendiumBrowser.open("bestiary") },
+    PregenPicker,
+    pregens: { load: loadPregens, apply: applyPregen, open: actor => PregenPicker.open(actor) },
     createParty: options => SW25ActorDirectory.createParty(options),
     refreshAutomation,
     workflows

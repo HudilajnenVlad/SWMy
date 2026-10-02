@@ -3,6 +3,7 @@
  *
  *   node tools/build-packs.mjs            build every pack
  *   node tools/build-packs.mjs spells     build selected packs
+ *   node tools/build-packs.mjs pregens    sample characters only (plain JSON, fine while a world is open)
  *
  * Foundry must not have a world using this system open while packs are rebuilt (LevelDB lock).
  */
@@ -873,6 +874,225 @@ function macroDocs() {
 }
 
 /* -------------------------------------------- */
+/*  Sample characters (Easy Creation)           */
+/* -------------------------------------------- */
+
+/** Experience table (module/config.mjs SW25.expTable). */
+const EXP_TABLE = {
+  major: [0, 1000, 1000, 1500, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 7500, 9000, 10500, 12000, 13500],
+  minor: [0, 500, 1000, 1000, 1500, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 7500, 9000, 10500, 12000]
+};
+const ABILITIES = ["dex", "agi", "str", "vit", "int", "spi"];
+const RANK_KEYS = ["none", "dagger", "rapier", "broadsword", "greatsword", "flamberge", "sentinel", "hyperion", "genesis"];
+const CARD_COLORS = ["red", "green", "black", "white", "gold"];
+const CARD_RANKS = ["B", "A", "S", "SS"];
+const SLOTS = new Set(["head", "face", "ear", "neck", "back", "rightHand", "leftHand", "waist", "feet", "other"]);
+const ROLE_LINES = new Set(["front", "frontSupport", "rear"]);
+
+/** Loose name key: case, brackets, quotes and spacing do not matter. */
+const nameKey = s => String(s ?? "").toLowerCase().replace(/[’‘`]/g, "'").replace(/[[\]]/g, "")
+  .replace(/\s+/g, " ").trim();
+
+/**
+ * Compendium entries by document type and name, for resolving the names of the sample characters.
+ * @returns {Record<string, Map<string, {pack: string, doc: object}>>}
+ */
+function compendiumLookup() {
+  const sources = {
+    races: raceDocs, classes: classDocs, feats: featDocs, "class-abilities": classAbilityDocs,
+    weapons: weaponDocs, armor: armorDocs, gear: gearDocs, mounts: mountDocs
+  };
+  const byType = {};
+  for ( const [pack, builder] of Object.entries(sources) ) {
+    for ( const doc of builder() ) {
+      if ( doc._key.startsWith("!folders") ) continue;
+      const map = (byType[doc.type] ??= new Map());
+      if ( !map.has(nameKey(doc.name)) ) map.set(nameKey(doc.name), { pack, doc });
+    }
+  }
+  return byType;
+}
+
+/**
+ * Turn the transcribed sample characters (data/pregens.json) into swordworld25/packs/pregens.json: actor system
+ * data plus the items to copy from the compendiums (by UUID, with per-character changes). Read by the
+ * "Choose a sample character" window of the character sheet.
+ * @returns {object[]}
+ */
+function pregenDocs() {
+  const lookup = compendiumLookup();
+  const uuidOf = ({ pack, doc }) => `Compendium.swordworld25.${pack}.${doc._key.startsWith("!actors") ? "Actor" : "Item"}.${doc._id}`;
+  const find = (types, name) => {
+    for ( const type of types ) {
+      const hit = lookup[type]?.get(nameKey(name));
+      if ( hit ) return hit;
+    }
+    return null;
+  };
+  const deities = readJson("deities.json");
+  const out = [];
+  const ids = new Set();
+  for ( const p of readJson("pregens.json") ) {
+    const ctx = `pregen ${p.id}`;
+    if ( ids.has(p.id) ) throw new Error(`Duplicate pregen id ${p.id}`);
+    ids.add(p.id);
+    const items = [];
+    const missing = [];
+    /** Add a compendium item (or a plain stand-in when the name is unknown). */
+    const add = (types, name, system = {}, rename) => {
+      const hit = find(types, name);
+      if ( !hit ) {
+        warn(`${ctx}: no ${types.join("/")} named "${name}"`);
+        missing.push(name);
+        const type = ["weapon", "armor"].includes(types[0]) ? types[0] : "gear";
+        items.push({ uuid: null, type, name: rename ?? name, system });
+        return null;
+      }
+      items.push({ uuid: uuidOf(hit), type: hit.doc.type, name: rename ?? hit.doc.name, system });
+      return hit;
+    };
+
+    // Race, classes, feats, class abilities
+    const race = find(["race"], p.race);
+    if ( !race ) throw new Error(`${ctx}: unknown race "${p.race}"`);
+    items.push({ uuid: uuidOf(race), type: "race", name: race.doc.name, system: {} });
+    let spent = 0;
+    const classes = [];
+    for ( const c of p.classes ?? [] ) {
+      const hit = add(["class"], c.name, { level: c.level });
+      if ( !hit ) continue;
+      classes.push({ name: hit.doc.name, key: hit.doc.system.key, level: c.level, img: hit.doc.img });
+      const table = EXP_TABLE[hit.doc.system.track] ?? EXP_TABLE.minor;
+      for ( let l = 1; l <= c.level; l++ ) spent += table[l];
+    }
+    classes.sort((a, b) => b.level - a.level);
+    const level = Math.max(0, ...classes.map(c => c.level));
+    if ( p.printed?.level && (p.printed.level !== level) ) warn(`${ctx}: adventurer level ${level} ≠ printed ${p.printed.level}`);
+    // Feats: a name, or { name, choice } for feats with a chosen category (Weapon Proficiency A/Sword…)
+    const feats = new Set();
+    for ( const feat of [...(p.feats ?? []), ...(p.autoFeats ?? [])] ) {
+      const name = feat?.name ?? feat;
+      if ( feats.has(nameKey(name)) ) continue;
+      feats.add(nameKey(name));
+      add(["feat"], name, feat?.choice ? { choiceValue: str(feat.choice) } : {});
+    }
+    for ( const a of p.classAbilities ?? [] ) add([a.type], a.name);
+
+    // Equipment
+    for ( const w of p.weapons ?? [] ) {
+      const hit = find(["weapon"], w.name);
+      if ( !hit ) {
+        add(["weapon"], w.name, { equipped: !!w.equipped, quantity: int(w.quantity, 1) });
+        continue;
+      }
+      const modes = hit.doc.system.modes;
+      const modeIndex = modes.findIndex(m => nameKey(m.label) === nameKey(w.mode));
+      if ( w.mode && (modeIndex < 0) ) warn(`${ctx}: ${w.name} has no mode "${w.mode}"`);
+      const system = { equipped: !!w.equipped, mode: Math.max(0, modeIndex), quantity: int(w.quantity, 1) };
+      const enhance = int(w.enhance, 0);
+      if ( enhance ) {
+        system.magic = true;
+        system.modes = modes.map(m => ({ ...m, accuracy: m.accuracy + enhance, extraDamage: m.extraDamage + enhance }));
+      }
+      if ( w.note ) system.summary = [hit.doc.system.summary, w.note].filter(Boolean).join(" — ");
+      add(["weapon"], hit.doc.name, system, enhance ? `${hit.doc.name} +${enhance}` : undefined);
+    }
+    for ( const a of p.armor ?? [] ) {
+      const hit = find(["armor"], a.name);
+      // Some "Other" rows of the armor table are accessories or tools
+      if ( !hit && find(["gear"], a.name) ) {
+        add(["gear"], a.name, { equipped: true });
+        continue;
+      }
+      const enhance = int(a.enhance, 0);
+      const system = { equipped: a.equipped !== false };
+      // Defense depending on the wearer (Mana Coat) is given as printed
+      const defense = int(a.defense) ?? hit?.doc.system.defense;
+      if ( hit && (enhance || (defense !== hit.doc.system.defense)) ) system.defense = defense + enhance;
+      if ( hit && enhance ) system.magic = true;
+      if ( hit && a.note ) system.summary = [hit.doc.system.summary, a.note].filter(Boolean).join(" — ");
+      add(["armor"], a.name, system, (enhance && hit) ? `${hit.doc.name} +${enhance}` : undefined);
+    }
+    for ( const acc of p.accessories ?? [] ) {
+      if ( !SLOTS.has(acc.slot) ) warn(`${ctx}: unknown slot "${acc.slot}" for ${acc.name}`);
+      const hit = find(["gear", "weapon", "armor"], acc.name);
+      const system = { equipped: true };
+      if ( (hit?.doc.type ?? "gear") === "gear" ) system.equippedSlot = SLOTS.has(acc.slot) ? acc.slot : "";
+      if ( acc.note ) system.summary = [hit?.doc.system.summary, acc.note].filter(Boolean).join(" — ");
+      add(hit ? [hit.doc.type] : ["gear"], acc.name, system);
+    }
+    let abyssShards = 0;
+    for ( const it of p.items ?? [] ) {
+      // Abyss Shards are counted on the sheet, not carried as an item
+      if ( /^abyss shards?$/i.test(String(it.name).trim()) ) {
+        abyssShards += int(it.quantity, 1);
+        continue;
+      }
+      const hit = find(["gear", "weapon", "armor"], it.name);
+      add(hit ? [hit.doc.type] : ["gear"], it.name, { quantity: int(it.quantity, 1) });
+    }
+
+    // Actor data
+    const cards = Object.fromEntries(CARD_COLORS.map(c => [c, Object.fromEntries(CARD_RANKS.map(r => [r, int(p.cards?.[c]?.[r], 0)]))]));
+    const abilities = Object.fromEntries(ABILITIES.map(k => [k, { rolled: int(p.rolled?.[k], 0), growth: int(p.growth?.[k], 0), other: 0 }]));
+    const rankIndex = RANK_KEYS.indexOf(nameKey(p.rank).replace(/[^a-z]/g, ""));
+    const deity = p.deity ? (deities.find(d => nameKey(d.name) === nameKey(p.deity))?.name ?? p.deity) : "";
+    const mountHit = p.mount?.name ? find(["mount"], p.mount.name) : null;
+    if ( p.mount?.name && !mountHit ) warn(`${ctx}: unknown mount "${p.mount.name}"`);
+    const roles = p.roles ?? {};
+    if ( !ROLE_LINES.has(roles.line) ) warn(`${ctx}: missing role line`);
+
+    out.push({
+      id: p.id,
+      name: p.name,
+      tier: p.tier === "advanced" ? "advanced" : "starting",
+      level,
+      source: { book: str(p.source?.book), page: int(p.source?.page) },
+      img: classes[0]?.img ?? race.doc.img,
+      race: race.doc.name,
+      background: str(p.background),
+      classes: classes.map(({ name, key, level }) => ({ name, key, level })),
+      roles: {
+        line: ROLE_LINES.has(roles.line) ? roles.line : "front",
+        healer: int(roles.healer, 0), explorer: int(roles.explorer, 0), knowledge: int(roles.knowledge, 0)
+      },
+      summary: str(p.summary),
+      description: str(p.description),
+      tips: p.tips ?? [],
+      mount: mountHit ? { uuid: uuidOf(mountHit), name: mountHit.doc.name, level: int(p.mount.level) } : null,
+      printed: p.printed ?? {},
+      system: {
+        details: { background: str(p.background) },
+        base: { skill: int(p.base?.skill, 0), body: int(p.base?.body, 0), mind: int(p.base?.mind, 0) },
+        abilities,
+        exp: { value: int(p.exp, 0), total: spent + int(p.exp, 0) },
+        money: int(p.money, 0), deposit: int(p.deposit, 0), debt: int(p.debt, 0),
+        reputation: { value: int(p.reputation, 0), total: int(p.reputation, 0) },
+        rank: Math.max(0, rankIndex),
+        abyssShards,
+        deity,
+        fairyElements: p.fairyElements ?? [],
+        cards,
+        languages: (p.languages ?? []).map(l => ({ key: str(l.key), name: str(l.name), speak: l.speak !== false, write: l.write !== false }))
+      },
+      items,
+      missing
+    });
+  }
+  return out;
+}
+
+/** Write the sample characters file (plain JSON, no LevelDB: safe while a world is open). */
+function buildPregens() {
+  const pregens = pregenDocs();
+  if ( !DRY ) {
+    fs.mkdirSync(OUT, { recursive: true });
+    fs.writeFileSync(path.join(OUT, "pregens.json"), JSON.stringify({ version: systemJson.version, pregens }));
+  }
+  console.log(`  ${"pregens".padEnd(16)} ${String(pregens.length).padStart(4)} characters${DRY ? " (dry run)" : ""}`);
+}
+
+/* -------------------------------------------- */
 /*  Main                                        */
 /* -------------------------------------------- */
 
@@ -918,10 +1138,16 @@ async function build(name) {
   console.log(`  ${name.padEnd(16)} ${String(count).padStart(4)} documents`);
 }
 
-const selected = process.argv.slice(2).filter(a => PACKS[a]);
-const targets = selected.length ? selected : Object.keys(PACKS);
+/** Generated data files beside the packs (plain JSON, not LevelDB). */
+const FILES = { pregens: buildPregens };
+
+const selected = process.argv.slice(2).filter(a => PACKS[a] || FILES[a]);
+const targets = selected.length ? selected : [...Object.keys(PACKS), ...Object.keys(FILES)];
 console.log(`Building ${targets.length} packs → ${path.relative(ROOT, OUT)}`);
-for ( const name of targets ) await build(name);
+for ( const name of targets ) {
+  if ( FILES[name] ) FILES[name]();
+  else await build(name);
+}
 if ( warnings.length ) {
   console.log(`\n${warnings.length} warnings:`);
   const uniq = [...new Set(warnings)];

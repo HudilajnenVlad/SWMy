@@ -1,0 +1,5517 @@
+[
+  {
+    "id": "cr1-human-warrior",
+    "name": "Human Warrior",
+    "tier": "starting",
+    "source": {
+      "book": "CR1",
+      "page": 23
+    },
+    "sheetPages": [
+      25,
+      26
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 2,
+      "knowledge": 0
+    },
+    "summary": "A sturdy human swordsman who holds the front line and doubles as the party's scout and field medic.",
+    "description": "A human mercenary with a bastard sword and hard leather armor, built to be the party's main melee damage dealer. Fighter 2 provides solid accuracy, Evasion and extra damage, while single levels of Scout and Ranger make the character just as useful between fights: searching for traps, picking locks, sneaking, winning initiative and treating wounds with herbs. In combat, step in front of the enemy to protect weaker companions and choose carefully when to unleash [Power Strike I]. Once a day the human's racial luck can flip a bad roll into a good one, rescuing a vital check or forcing a big hit.",
+    "tips": [
+      "With no shield to carry, grip the bastard sword two-handed (Power 27 instead of 17) unless you need a free hand.",
+      "[Power Strike I] adds 4 damage but costs 2 Evasion for the round; save it for foes that are nearly down or rarely hit you.",
+      "Keep [Sword's Grace/Change Fate] for a check you cannot afford to fail, or to turn a weak damage roll into a strong one.",
+      "You are the party's scout: roll Initiative, search for traps and pick locks, then patch allies up with Lifegrass after the fight."
+    ],
+    "race": "Human",
+    "background": "Mercenary",
+    "base": {
+      "skill": 7,
+      "body": 10,
+      "mind": 4
+    },
+    "rolled": {
+      "dex": 11,
+      "agi": 6,
+      "str": 7,
+      "vit": 4,
+      "int": 9,
+      "spi": 6
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Fighter",
+        "level": 2
+      },
+      {
+        "name": "Scout",
+        "level": 1
+      },
+      {
+        "name": "Ranger",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Power Strike I"
+    ],
+    "autoFeats": [],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Bastard Sword",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Hard Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [],
+    "items": [
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Lifegrass",
+        "quantity": 2
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 40,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "regional",
+        "name": "Burlight",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 18,
+        "agi": 13,
+        "str": 17,
+        "vit": 14,
+        "int": 13,
+        "spi": 10
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 2,
+        "str": 2,
+        "vit": 2,
+        "int": 2,
+        "spi": 1
+      },
+      "hp": 20,
+      "mp": 10,
+      "fortitude": 4,
+      "willpower": 3,
+      "evasion": 4,
+      "defense": 4,
+      "movement": 13,
+      "initiative": 3,
+      "monsterKnowledge": null,
+      "magicPower": {}
+    },
+    "notes": "Racial ability printed: [Sword's Grace/Change Fate]. Check packages: Scout 1 (Technique 4, Movement 3, Observation 3, Initiative 3), Ranger 1. Bastard Sword printed with stance 1H† (Power 17) plus a 2H row (Power 27), both Total Accuracy 5, Crit 10, Total Extra Damage 4. Base Accuracy 5, Extra Damage 4, Base Evasion 4. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr1-elf-priest-swordmaster",
+    "name": "Elf Priest Swordmaster",
+    "tier": "starting",
+    "source": {
+      "book": "CR1",
+      "page": 27
+    },
+    "sheetPages": [
+      29,
+      30
+    ],
+    "roles": {
+      "line": "frontSupport",
+      "healer": 3,
+      "explorer": 0,
+      "knowledge": 3
+    },
+    "summary": "An elven priest of Lyphos who heals the party with Divine Magic and fights lightly armed as a fencer.",
+    "description": "An elven priest of Lyphos who mixes healing with nimble swordplay. Priest 2 supplies Divine Magic for closing wounds and protecting the group, and a Spirit of 15 backs it with a healthy MP pool. Armed with a short sword, buckler and cloth armor, the elf relies on speed rather than armor; Fencer lowers the critical value, so plain attacks often roll extra damage, making them a handy secondary attacker when nobody needs healing. A level of Sage adds Monster Knowledge and lore checks. [Metamagic/Targets] lets one heal or blessing reach several allies at once for multiplied MP. Elves also see in the dark and cope well with water, poison and disease.",
+    "tips": [
+      "Healing comes first: keep enough MP for Cure Wounds and only swing the short sword when the party is in good shape.",
+      "When two or more allies are hurt, use [Metamagic/Targets] to heal them with one cast; remember the MP cost multiplies per target.",
+      "Roll Monster Knowledge (Sage + Int, 4) at the start of each fight so the group learns the enemy's weak points.",
+      "The 5-point Mako Stone can cover part of a spell's cost once your own MP starts running low."
+    ],
+    "race": "Elf",
+    "background": "Warrior",
+    "base": {
+      "skill": 12,
+      "body": 5,
+      "mind": 9
+    },
+    "rolled": {
+      "dex": 6,
+      "agi": 7,
+      "str": 4,
+      "vit": 6,
+      "int": 11,
+      "spi": 6
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Priest",
+        "level": 2
+      },
+      {
+        "name": "Fencer",
+        "level": 1
+      },
+      {
+        "name": "Sage",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Metamagic/Targets"
+    ],
+    "autoFeats": [],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Short Sword",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Cloth Armor",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      },
+      {
+        "name": "Buckler",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "neck",
+        "name": "Holy Symbol",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 1
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 345,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "elven",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "Lyphos",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 18,
+        "agi": 19,
+        "str": 9,
+        "vit": 11,
+        "int": 20,
+        "spi": 15
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 3,
+        "str": 1,
+        "vit": 1,
+        "int": 3,
+        "spi": 2
+      },
+      "hp": 17,
+      "mp": 21,
+      "fortitude": 3,
+      "willpower": 4,
+      "evasion": 5,
+      "defense": 2,
+      "movement": 19,
+      "initiative": null,
+      "monsterKnowledge": 4,
+      "magicPower": {
+        "Priest": 5
+      }
+    },
+    "notes": "Racial abilities printed: [Darkvision], [Sword's Grace/Gentle Water]. Class printed as 'Priest (Lyphos)'. Short Sword printed Crit 9 (Fencer -1), Total Accuracy 4, Total Extra Damage 2. Buckler printed Evasion +1 (Base Evasion 4, Total Evasion 5). Item printed 'Mako Stone (5 pts.)', mapped to 'Mako Stone (1-5 pts.)' holding 5 points. Initiative box blank (no Scout levels). Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr1-dwarf-paladin",
+    "name": "Dwarf Paladin",
+    "tier": "starting",
+    "source": {
+      "book": "CR1",
+      "page": 31
+    },
+    "sheetPages": [
+      33,
+      34
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 2,
+      "explorer": 0,
+      "knowledge": 0
+    },
+    "summary": "A heavily armored dwarf priest of Eve who anchors the front line, shields allies and heals with Divine Magic.",
+    "description": "A dwarf priest of Eve who fights in heavy metal armor as a paladin. Splint armor and a round shield push Defense to 6, so although the dwarf rarely dodges, most blows are simply absorbed. The heavy mace is swung one-handed beside the shield and hits reliably. This character's job is to guard the line: [Cover I] lets them step in and take an attack aimed at a willing ally standing next to them, and Divine Magic heals the damage afterwards. Strong Vitality and Spirit give deep HP and MP pools. As a dwarf they see in the dark and shrug off fire damage entirely.",
+    "tips": [
+      "Declare [Cover I] on a wounded or fragile ally; it redirects weapon attacks that are dodged with Evasion, but not spells.",
+      "Keep the round shield and use the mace one-handed; a two-handed grip adds power but drops your Defense from 6 to 5.",
+      "With 24 MP, heal early and often instead of waiting until someone is about to fall.",
+      "Fire cannot hurt you, so step in front of anything that breathes or casts flames."
+    ],
+    "race": "Dwarf",
+    "background": "Warrior",
+    "base": {
+      "skill": 4,
+      "body": 11,
+      "mind": 5
+    },
+    "rolled": {
+      "dex": 15,
+      "agi": 4,
+      "str": 4,
+      "vit": 6,
+      "int": 5,
+      "spi": 13
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Priest",
+        "level": 2
+      },
+      {
+        "name": "Fighter",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Cover I"
+    ],
+    "autoFeats": [],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Heavy Mace",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Splint Armor",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      },
+      {
+        "name": "Round Shield",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "neck",
+        "name": "Holy Symbol",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 50,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "dwarven",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "Eve",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 19,
+        "agi": 8,
+        "str": 15,
+        "vit": 17,
+        "int": 10,
+        "spi": 18
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 1,
+        "str": 2,
+        "vit": 2,
+        "int": 1,
+        "spi": 3
+      },
+      "hp": 23,
+      "mp": 24,
+      "fortitude": 4,
+      "willpower": 5,
+      "evasion": 2,
+      "defense": 6,
+      "movement": 8,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Priest": 3
+      }
+    },
+    "notes": "Racial abilities printed: [Darkvision], [Sword's Grace/Body Of Flame]. Class printed as 'Priest (Eve)'. Heavy Mace printed with stance 1H† (Power 20) plus a 2H row (Power 30), Weapon Accuracy +1, Total Accuracy 5, Crit 12, Total Extra Damage 3. Base Accuracy 4, Extra Damage 3, Base Evasion 2. Splint Armor Defense 5 + Round Shield Defense 1 = 6. Initiative and Monster Knowledge boxes blank. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr1-tabbit-magician",
+    "name": "Tabbit Magician",
+    "tier": "starting",
+    "source": {
+      "book": "CR1",
+      "page": 35
+    },
+    "sheetPages": [
+      37,
+      38
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 0
+    },
+    "summary": "A brilliant but physically frail tabbit who casts both Truespeech and Spiritualism magic from the back row.",
+    "description": "A rabbit-like tabbit scholar who serves as the party's dedicated spellcaster. Sorcerer 2 opens Truespeech Magic for damaging bolts and utility tricks, while Conjurer 1 adds Spiritualism support such as weapon enchantment and damage reduction. Intelligence 24 yields Magic Power 6 and 5, and 28 MP allows frequent casting, but the tabbit is weak at almost everything physical and has no Evasion, so keep them well behind the fighters. [Targeting] lets single-target shot spells fly into a melee without striking friends, and the quarterstaff adds a point of Defense. The racial Sixth Sense uses their sharp mind to notice danger early. Budget MP carefully across an adventure.",
+    "tips": [
+      "Open fights with Energy Bolt; thanks to [Targeting] you can aim it into a melee without risking a stray hit on allies.",
+      "When raw damage is not needed, cast Conjurer support such as Enchant Weapon or Protection on the front-liners.",
+      "Stay out of reach: with Evasion 0 and 19 HP, every enemy hit hurts badly.",
+      "The 5-point Mako Stone pays part of one spell, and the Awake Potion can bring a knocked-out ally back to 1 HP."
+    ],
+    "race": "Tabbit",
+    "background": "Sorcerer",
+    "base": {
+      "skill": 5,
+      "body": 7,
+      "mind": 10
+    },
+    "rolled": {
+      "dex": 1,
+      "agi": 2,
+      "str": 4,
+      "vit": 6,
+      "int": 14,
+      "spi": 9
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Sorcerer",
+        "level": 2
+      },
+      {
+        "name": "Conjurer",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Targeting"
+    ],
+    "autoFeats": [],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Quarterstaff",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Soft Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [],
+    "items": [
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 1
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 210,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "ancientCelestial",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 6,
+        "agi": 7,
+        "str": 11,
+        "vit": 13,
+        "int": 24,
+        "spi": 19
+      },
+      "mods": {
+        "dex": 1,
+        "agi": 1,
+        "str": 1,
+        "vit": 2,
+        "int": 4,
+        "spi": 3
+      },
+      "hp": 19,
+      "mp": 28,
+      "fortitude": 4,
+      "willpower": 5,
+      "evasion": 0,
+      "defense": 4,
+      "movement": 7,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Sorcerer": 6,
+        "Conjurer": 5
+      }
+    },
+    "notes": "Racial ability printed: [Sixth Sense]. Quarterstaff printed stance 2H, Weapon Accuracy +1, Total Accuracy 1, Power 14, Crit 12, Total Extra Damage 0. The armor table's 'Other' row lists 'Quarterstaff' with Defense +1: this is the equipped weapon's own Defense bonus (weapons.json defenseBonus 1), not a separate item, so it is not repeated in 'armor' (Soft Leather 3 + 1 = Total Defense 4). Base Accuracy 0, Extra Damage 0, Base Evasion 0. Item printed 'Mako Stone (5 pts.)', mapped to 'Mako Stone (1-5 pts.)' holding 5 points. Initiative and Monster Knowledge boxes blank. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr1-runefolk-gunner",
+    "name": "Runefolk Gunner",
+    "tier": "starting",
+    "source": {
+      "book": "CR1",
+      "page": 39
+    },
+    "sheetPages": [
+      41,
+      42
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 1,
+      "explorer": 0,
+      "knowledge": 2
+    },
+    "summary": "A Runefolk rear-line shooter who fires a two-handed Toradar loaded with magitech bullet spells and backs it up with Sage lore.",
+    "description": "This artificial-human gunner belongs in the back row. It carries a two-handed Toradar and powers every shot with Artificer magitech cast through the small magisphere on its neck, so gun damage scales with magic power (4) instead of Strength. Some bullet spells heal instead of harm, letting it shore up an injured ally from a distance. [Targeting] means its shots never stray into friends locked in melee, so it can fire freely into a crowded fight. A level of Sage adds monster-knowledge checks for naming foes and spotting their weak points. With cloth armor and no evasion training it is fragile, so keep frontliners between it and the enemy and spend its turns shooting.",
+    "tips": [
+      "Open each fight with a monster-knowledge check (Sage + Int) so the party learns the enemy's weak point.",
+      "The Toradar holds only 3 shots; the Gun Belt carries the spare bullets, so plan reloads between bursts.",
+      "Swap a damage bullet for a healing one when a frontliner is in trouble - you can heal at range.",
+      "If MP runs dry, [HP Conversion] (once per day) trades HP for the same amount of MP."
+    ],
+    "race": "Runefolk",
+    "background": "Archer",
+    "base": {
+      "skill": 12,
+      "body": 8,
+      "mind": 6
+    },
+    "rolled": {
+      "dex": 7,
+      "agi": 3,
+      "str": 5,
+      "vit": 8,
+      "int": 9,
+      "spi": 2
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Artificer",
+        "level": 2
+      },
+      {
+        "name": "Marksman",
+        "level": 1
+      },
+      {
+        "name": "Sage",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Targeting"
+    ],
+    "autoFeats": [],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Toradar",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": "3 Max Mag.; Range 2 (30m)"
+      }
+    ],
+    "armor": [
+      {
+        "name": "Cloth Armor",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "neck",
+        "name": "Magisphere (Small)",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Gun Belt",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Bullet (12)",
+        "quantity": 12
+      }
+    ],
+    "cards": {},
+    "money": 15,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 19,
+        "agi": 15,
+        "str": 13,
+        "vit": 16,
+        "int": 15,
+        "spi": 8
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 2,
+        "str": 2,
+        "vit": 2,
+        "int": 2,
+        "spi": 1
+      },
+      "hp": 22,
+      "mp": 14,
+      "fortitude": 4,
+      "willpower": 3,
+      "evasion": 0,
+      "defense": 2,
+      "movement": 15,
+      "initiative": null,
+      "monsterKnowledge": 3,
+      "magicPower": {
+        "Artificer": 4
+      }
+    },
+    "notes": "Printed \"Base Accuracy\" box reads 3, but Marksman 1 + Dex mod 3 = 4; the printed Total Accuracy for the Toradar is 4, matching the formula (likely a sheet slip). Extra Damage printed as 3(4): 3 = Marksman 1 + Str mod 2 for non-gun use, (4) = Artificer magic power used for gun damage; Total Extra Damage 4. Toradar row: Min STR 5, Power \"-\", Crit 10. Racial abilities printed: [Darkvision] [HP Conversion]. Soulscars 0. Initiative box blank (no Scout).",
+    "unmatched": []
+  },
+  {
+    "id": "cr1-nightmare-magic-warrior",
+    "name": "Nightmare Magic Warrior",
+    "tier": "starting",
+    "source": {
+      "book": "CR1",
+      "page": 43
+    },
+    "sheetPages": [
+      45,
+      46
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 0
+    },
+    "summary": "An elf-born Nightmare frontliner who swings a great axe and mixes in Spiritualism magic, hitting hardest with [Mana Strike].",
+    "description": "A sturdy melee fighter born a Nightmare to elven parents. It wields a Great Axe that has been fitted as a magical implement, so the same weapon lets it cast Conjurer (Spiritualism) spells, and wears heavy splint armor. Its signature move is [Mana Strike], which adds its magic power to a melee hit and can drop a weak enemy in one swing, at the cost of lower Fortitude and Willpower that round. Metal armor normally hampers spellcasting, so shift into [Alternate Form] before casting. Strong, tough and with plenty of HP, it is poor at exploration and knowledge work and should leave scouting and lore to others while it holds the line.",
+    "tips": [
+      "Take [Alternate Form] during combat preparation (or as a minor action) so splint armor does not penalize your spells.",
+      "Use [Mana Strike] on enemies you can finish quickly; your Fortitude and Willpower drop by 2 that round.",
+      "Fall back on Spiritualism support spells when a direct attack is not the best play.",
+      "Beware water/ice attacks and silvered weapons: your [Weakness] adds +2 damage from them."
+    ],
+    "race": "Nightmare",
+    "background": "Mercenary",
+    "base": {
+      "skill": 7,
+      "body": 15,
+      "mind": 8
+    },
+    "rolled": {
+      "dex": 6,
+      "agi": 8,
+      "str": 3,
+      "vit": 6,
+      "int": 9,
+      "spi": 4
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Fighter",
+        "level": 2
+      },
+      {
+        "name": "Conjurer",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Mana Strike"
+    ],
+    "autoFeats": [],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Great Axe",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": "Magical Implement"
+      }
+    ],
+    "armor": [
+      {
+        "name": "Splint Armor",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 70,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "elven",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 13,
+        "agi": 15,
+        "str": 18,
+        "vit": 21,
+        "int": 17,
+        "spi": 12
+      },
+      "mods": {
+        "dex": 2,
+        "agi": 2,
+        "str": 3,
+        "vit": 3,
+        "int": 2,
+        "spi": 2
+      },
+      "hp": 27,
+      "mp": 15,
+      "fortitude": 5,
+      "willpower": 4,
+      "evasion": 4,
+      "defense": 5,
+      "movement": 15,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Conjurer": 3
+      }
+    },
+    "notes": "Race printed as \"Nightmare (Elf born)\"; racial abilities printed: [Alternate Form], [Weakness (Water/Ice Type)]. Soulscars 1. Weapon row: \"Great Axe\" with the edged-weapon mark and \"(Magical Implement)\" on the second line; Min STR 18, Weapon Accuracy \"-\", Total Accuracy 4, Power 33, Crit 11, Total Extra Damage 5. Base Accuracy 4, Extra Damage 5, Base Evasion 4. Monster Knowledge and Initiative boxes blank.",
+    "unmatched": []
+  },
+  {
+    "id": "cr1-lykant-boxer",
+    "name": "Lykant Boxer",
+    "tier": "starting",
+    "source": {
+      "book": "CR1",
+      "page": 47
+    },
+    "sheetPages": [
+      49,
+      50
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 3,
+      "knowledge": 2
+    },
+    "summary": "A fast Lykant grappler who fights with punches, kicks and a throw while doubling as the party's scout and scholar.",
+    "description": "A nimble unarmed fighter with a beast-headed alternate shape. It punches through a Cestus, kicks with Spiked Boots, and can throw an enemy to knock it down; [Chain Attack] lets it follow a one-handed wrestling strike with another. Switching to [Beast Form] adds +2 to its Strength modifier (the bracketed damage values on the sheet) and grants darkvision, but limits speech to Lycant. Scout and Sage levels make it a one-character utility kit: initiative, traps and locks, searching, and monster knowledge. Grapplers cannot use shields and its non-metal Aramid Coat is light, so with modest HP it relies on high evasion and on allies drawing attacks away from it.",
+    "tips": [
+      "Switch to [Beast Form] (a major action) before or early in a fight for +2 Strength modifier on every punch, kick and throw.",
+      "Save the Throw (usable once) for a key target: if it hits, the enemy falls and the party gains the advantage.",
+      "Lead with a Cestus or Spiked Boots attack and use [Chain Attack] for a second wrestling strike.",
+      "Outside combat you are the explorer: handle traps, locks and searches with Scout's Tools, and roll monster knowledge as Sage."
+    ],
+    "race": "Lykant",
+    "background": "Scout",
+    "base": {
+      "skill": 13,
+      "body": 5,
+      "mind": 7
+    },
+    "rolled": {
+      "dex": 3,
+      "agi": 8,
+      "str": 9,
+      "vit": 6,
+      "int": 10,
+      "spi": 3
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Grappler",
+        "level": 2
+      },
+      {
+        "name": "Scout",
+        "level": 1
+      },
+      {
+        "name": "Sage",
+        "level": 1
+      }
+    ],
+    "feats": [
+      {
+        "name": "Armor Proficiency A",
+        "choice": "nonmetal"
+      }
+    ],
+    "autoFeats": [
+      "Chain Attack"
+    ],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Cestus",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      },
+      {
+        "name": "Spiked Boots",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      },
+      {
+        "name": "Throw",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Aramid Coat",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [],
+    "items": [
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 50,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "lycant",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 16,
+        "agi": 21,
+        "str": 14,
+        "vit": 11,
+        "int": 17,
+        "spi": 10
+      },
+      "mods": {
+        "dex": 2,
+        "agi": 3,
+        "str": 2,
+        "vit": 1,
+        "int": 2,
+        "spi": 1
+      },
+      "hp": 17,
+      "mp": 10,
+      "fortitude": 3,
+      "willpower": 3,
+      "evasion": 6,
+      "defense": 3,
+      "movement": 21,
+      "initiative": 4,
+      "monsterKnowledge": 3,
+      "magicPower": {}
+    },
+    "notes": "Combat feat printed as \"[Armor Prof. A/Nonm. armor]\" = Armor Proficiency A with chosen category Non-metal Armor (needed for the A-rank Aramid Coat); the armor table \"Other\" row lists \"[Armor Proficiency A Nonmetallic armor]\" Defense +1 (feat bonus, not an item). Extra Damage printed 4(6): bracketed value applies in Beast Form (+2 Str mod). Weapon rows: Cestus 1HW, Min STR 1, Acc +1, Total Acc 5, Power 1, Crit 11; Spiked Boots printed 1HW, Min STR 5, Acc -1, Total Acc 3, Power 11, Crit 11 (data file lists stance 1H# and Min STR 1); Throw 2H, Min STR 0, Total Acc 4, Power 10, Crit 12. Base Evasion 5, Total Evasion 6 (Aramid Coat +1). Racial abilities printed: [Darkvision (Beast Form)], [Beast Form]. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr2-lildraken-bodybuilder",
+    "name": "Lildraken Bodybuilder",
+    "tier": "starting",
+    "source": {
+      "book": "CR2",
+      "page": 13
+    },
+    "sheetPages": [
+      15,
+      16
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 1,
+      "knowledge": 0
+    },
+    "summary": "A heavily armored Lildraken bruiser who smashes enemies with a two-handed maul and boosts its strength with an Enhancer technique.",
+    "description": "A dragon-like frontline tank with a huge pool of HP. It swings a two-handed Maul in splint armor, and its [Scaly Hide] adds a point of Defense on top. Its burst trick is the Enhancer technique [Bear Muscle], which raises its Strength modifier by 2 for three rounds; pairing that with [Power Strike I] produces very large hits. Once per day it can take to the air with [Sword's Grace/Wings Of The Wind] for up to six rounds, gaining +1 to melee accuracy and evasion. Its tail is a natural weapon to fall back on if the Maul is lost. A level of Ranger adds basic outdoor and first-aid checks.",
+    "tips": [
+      "Activate [Bear Muscle] (3 MP, 3 rounds) on the turns you plan to use [Power Strike I] for the biggest damage.",
+      "Take flight with [Sword's Grace/Wings Of The Wind] during the hardest rounds: +1 melee accuracy and evasion, but only 6 rounds per day.",
+      "Stand in front and soak hits - 34 HP and 6 Defense make you the party's wall.",
+      "If you lose your Maul, fall back on your Tail attack."
+    ],
+    "race": "Lildraken",
+    "background": "Warrior",
+    "base": {
+      "skill": 5,
+      "body": 14,
+      "mind": 6
+    },
+    "rolled": {
+      "dex": 6,
+      "agi": 7,
+      "str": 6,
+      "vit": 14,
+      "int": 2,
+      "spi": 9
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Fighter",
+        "level": 2
+      },
+      {
+        "name": "Ranger",
+        "level": 1
+      },
+      {
+        "name": "Enhancer",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Power Strike I"
+    ],
+    "autoFeats": [],
+    "classAbilities": [
+      {
+        "type": "technique",
+        "name": "Bear Muscle"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Maul",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      },
+      {
+        "name": "Tail",
+        "mode": "2H",
+        "equipped": false,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Splint Armor",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [],
+    "items": [
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 40,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "dragonic",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 11,
+        "agi": 12,
+        "str": 20,
+        "vit": 28,
+        "int": 8,
+        "spi": 15
+      },
+      "mods": {
+        "dex": 1,
+        "agi": 2,
+        "str": 3,
+        "vit": 4,
+        "int": 1,
+        "spi": 2
+      },
+      "hp": 34,
+      "mp": 15,
+      "fortitude": 6,
+      "willpower": 4,
+      "evasion": 4,
+      "defense": 6,
+      "movement": 12,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {}
+    },
+    "notes": "Tail is a natural weapon from the racial ability [Tail As Weapon] (sheet row: 2H#, Min STR 1, Acc +1, Total Acc 4, Power 11, Crit 12); marked equipped:false because the description presents it as an emergency alternative to the Maul (both count as two-handed). Maul row: 2H, Min STR 20, Acc +1, Total Acc 4, Power 35, Crit 12, Total Extra Damage 5. Armor table \"Other\" row: Scaly Hide, Defense +1 (racial ability, not an item); Total Defense 6. Racial abilities printed: [Scaly Hide], [Tail As Weapon], [Sword's Grace/Wings Of The Wind]. Ranger check package: Technique 2, Movement 3, Observation 2. Dragonic: speak only (Read marked \"-\"). Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr2-grassrunner-minstrel",
+    "name": "Grassrunner Minstrel",
+    "tier": "starting",
+    "source": {
+      "book": "CR2",
+      "page": 17
+    },
+    "sheetPages": [
+      19,
+      20
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 0,
+      "explorer": 3,
+      "knowledge": 1
+    },
+    "summary": "A Grassrunner scout and bard who supports the party with songs and leads the way when exploring.",
+    "description": "This small Grassrunner works from the back line as the party's singer and lookout. Two levels of Scout cover traps, locks, sneaking, searching and rolling initiative for the group, and the agility ring keeps them quick on their feet. Two levels of Bard let them sing spellsongs that affect everyone in earshot while building up rhythm, which can then be cashed in for a finale. Grassrunners have no MP and this one carries no weapon, so the plan is simple: buff allies, scout ahead, and close out with a gust of wind damage from [Finale: Spring Breeze]. Their racial [Mana Interference] also makes hostile spells easy to shrug off.",
+    "tips": [
+      "Open a fight with [Morale] (+1 Accuracy for listeners) or switch to [Resistance] (+1 Fortitude and Willpower) against poison, curses or spellcasters.",
+      "Songs reach every character in range, foes included, so pick a spot where mostly your allies will hear you.",
+      "When enough rhythm has built up, spend it on [Finale: Spring Breeze] to hit one enemy with wind magic damage.",
+      "Use your Scout package (Initiative 5, Technique 5, Observation 4) to win initiative and search for traps before the party walks in."
+    ],
+    "race": "Grassrunner",
+    "background": "Thief",
+    "base": {
+      "skill": 13,
+      "body": 0,
+      "mind": 12
+    },
+    "rolled": {
+      "dex": 8,
+      "agi": 6,
+      "str": 5,
+      "vit": 13,
+      "int": 4,
+      "spi": 15
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Scout",
+        "level": 2
+      },
+      {
+        "name": "Bard",
+        "level": 2
+      }
+    ],
+    "feats": [
+      "Additional Songs I"
+    ],
+    "autoFeats": [],
+    "classAbilities": [
+      {
+        "type": "spellsong",
+        "name": "Morale"
+      },
+      {
+        "type": "spellsong",
+        "name": "Resistance"
+      },
+      {
+        "type": "finale",
+        "name": "Finale: Spring Breeze"
+      }
+    ],
+    "weapons": [],
+    "armor": [
+      {
+        "name": "Cloth Armor",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Ring (Ring of the Fleet-footed)",
+        "note": "Agility +1"
+      }
+    ],
+    "items": [
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Musical Instrument",
+        "quantity": 1
+      },
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 285,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "regional",
+        "name": "Dorden",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "grassrunner",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 21,
+        "agi": 19,
+        "str": 5,
+        "vit": 13,
+        "int": 16,
+        "spi": 27
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 3,
+        "str": 0,
+        "vit": 2,
+        "int": 2,
+        "spi": 4
+      },
+      "hp": 19,
+      "mp": 0,
+      "fortitude": 4,
+      "willpower": 6,
+      "evasion": 0,
+      "defense": 2,
+      "movement": 20,
+      "initiative": 5,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Bard": 6
+      }
+    },
+    "notes": "Agility printed as '19+1' (19 from base+roll, +1 from the Ring of the Fleet-footed); printed.abilities.agi holds the printed 19; the ring brings the effective Agility to 20, which is why Normal Move is 20 and the modifier is 3. Accessory printed as 'Ring Of The Fleet-Footed, Agility +1'. MP printed as 'None' (Grassrunner [Mana Interference]). Magic power circle labeled 'Bardic Power' for Bard. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr2-meria-feytouched",
+    "name": "Meria Feytouched",
+    "tier": "starting",
+    "source": {
+      "book": "CR2",
+      "page": 21
+    },
+    "sheetPages": [
+      23,
+      24
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 2,
+      "explorer": 1,
+      "knowledge": 3
+    },
+    "summary": "A plant-like Meria fairy tamer who casts Fairy Magic from the back line and doubles as the party's healer and sage.",
+    "description": "This Meria is a rear-line caster built around Fairy Magic. Four fairy gems let the character work with four of the six elements, and that selection can be swapped from day to day to suit the group and the job at hand. There is no weapon, but leather armor, a round shield and a large HP pool make the character sturdy for a caster, and [Thriving Life] restores MP every morning without sleep. A level of Ranger adds herb-based first aid and outdoor skills, while a level of Sage covers monster lore and lore checks. A 5-point Mako stone can cover a spell in an emergency or briefly call a fairy to fight alongside the party.",
+    "tips": [
+      "Choose your four elements each morning; keep one with healing magic if nobody else in the party can heal.",
+      "[Targeting] means your shot-type spells never go astray into allies who are locked in melee.",
+      "Roll Monster Knowledge (4) at the start of a fight so the frontline learns the enemy's weak point.",
+      "Save the Mako stone for a tight spot, such as paying for a spell when your MP runs dry or summoning a fairy for a short time."
+    ],
+    "race": "Meria",
+    "background": "Feytouched",
+    "base": {
+      "skill": 8,
+      "body": 7,
+      "mind": 14
+    },
+    "rolled": {
+      "dex": 3,
+      "agi": 4,
+      "str": 1,
+      "vit": 15,
+      "int": 5,
+      "spi": 3
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Fairy Tamer",
+        "level": 2
+      },
+      {
+        "name": "Ranger",
+        "level": 1
+      },
+      {
+        "name": "Sage",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Targeting"
+    ],
+    "autoFeats": [],
+    "classAbilities": [],
+    "weapons": [],
+    "armor": [
+      {
+        "name": "Soft Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      },
+      {
+        "name": "Round Shield",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "face",
+        "name": "Fairy Tamer's Gem (Level 1-2)",
+        "note": ""
+      },
+      {
+        "slot": "ear",
+        "name": "Fairy Tamer's Gem (Level 1-2)",
+        "note": ""
+      },
+      {
+        "slot": "neck",
+        "name": "Fairy Tamer's Gem (Level 1-2)",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Fairy Tamer's Gem (Level 1-2)",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 1
+      },
+      {
+        "name": "Magic Herb",
+        "quantity": 1
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 50,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "sylvan",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 11,
+        "agi": 12,
+        "str": 8,
+        "vit": 22,
+        "int": 19,
+        "spi": 17
+      },
+      "mods": {
+        "dex": 1,
+        "agi": 2,
+        "str": 1,
+        "vit": 3,
+        "int": 3,
+        "spi": 2
+      },
+      "hp": 28,
+      "mp": 23,
+      "fortitude": 5,
+      "willpower": 4,
+      "evasion": 0,
+      "defense": 4,
+      "movement": 12,
+      "initiative": null,
+      "monsterKnowledge": 4,
+      "magicPower": {
+        "Fairy Tamer": 5
+      }
+    },
+    "notes": "Magic power class name printed as 'Fairy Tamer A'. The sheet does not name the contracted fairy elements (the description says four of the six are chosen and can be changed daily), so fairyElements is left empty; four Fairy Tamer's Gems are worn on face, ears, neck and back. Mako stone printed as 'Mako Stone (5 pts.)'. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr3-tiens-cavalier",
+    "name": "Tiens Cavalier",
+    "tier": "starting",
+    "source": {
+      "book": "CR3",
+      "page": 13
+    },
+    "sheetPages": [
+      15,
+      16
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 1
+    },
+    "summary": "A Tiens swordsman who fights from horseback with a rapier, backed by a contracted riding horse.",
+    "description": "This Tiens is a mounted frontline fighter. Two levels of Fencer give a light, accurate rapier that crits on a 9 and a good evasion score, while two levels of Rider bring a contracted horse that fights with its own hooves alongside the rider. Riding stunts make the mount worth keeping under you: [Attack Obstruction] makes you harder to hit and [Elevated Attack] adds damage while you stay in the saddle. The racial [Intercommunication] lets the Tiens talk with anyone close by without a shared language and can rally the horse for a short boost. Rider levels also cover observation, knowledge and monster-lore checks.",
+    "tips": [
+      "Stay mounted: with both stunts active you get +1 Evasion and +1 damage, the bracketed numbers on the sheet.",
+      "Declare [Lethal Strike I] against a tough single enemy, but remember it costs -2 Evasion for the round.",
+      "Once every 6 hours, use [Intercommunication] to inspire the horse for +1 Accuracy and Evasion during an important fight.",
+      "Use your Rider Monster Knowledge (4) to identify enemies before charging in."
+    ],
+    "race": "Tiens",
+    "background": "Cavalier",
+    "base": {
+      "skill": 10,
+      "body": 11,
+      "mind": 7
+    },
+    "rolled": {
+      "dex": 8,
+      "agi": 7,
+      "str": 4,
+      "vit": 5,
+      "int": 6,
+      "spi": 12
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Fencer",
+        "level": 2
+      },
+      {
+        "name": "Rider",
+        "level": 2
+      }
+    ],
+    "feats": [
+      "Lethal Strike I"
+    ],
+    "autoFeats": [],
+    "classAbilities": [
+      {
+        "type": "stunt",
+        "name": "Attack Obstruction"
+      },
+      {
+        "type": "stunt",
+        "name": "Elevated Attack"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Rapier",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Soft Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Ring (Ring of the Fleet-footed)",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {},
+    "money": 90,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "daemonic",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": {
+      "name": "Horse",
+      "level": 2,
+      "note": "Printed in items as 'Mount Contract (Horse)'; mount level not printed, set to the rider's adventurer level 2."
+    },
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 18,
+        "agi": 17,
+        "str": 15,
+        "vit": 16,
+        "int": 13,
+        "spi": 19
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 3,
+        "str": 2,
+        "vit": 2,
+        "int": 2,
+        "spi": 3
+      },
+      "hp": 22,
+      "mp": 19,
+      "fortitude": 4,
+      "willpower": 5,
+      "evasion": 5,
+      "defense": 3,
+      "movement": 18,
+      "initiative": null,
+      "monsterKnowledge": 4,
+      "magicPower": {}
+    },
+    "notes": "Sheet lists 'Mount Contract (Horse)' under Items in Possession; it is represented by the mount field rather than as an item. Agility printed as '17+1' (17 from base+roll, +1 from the Ring of the Fleet-footed); printed.abilities.agi holds the printed 17; the ring brings the effective Agility to 18, which is why Normal Move is 18. Rapier row: accuracy 5, power 8, crit 9, total extra damage '4(5)'. Armor 'Other' row lists [Attack Obstruction] with (+1) evasion; total evasion printed '5(6)'. The bracketed values apply while riding. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr3-leprechaun-alchemist",
+    "name": "Leprechaun Alchemist",
+    "tier": "starting",
+    "source": {
+      "book": "CR3",
+      "page": 19
+    },
+    "sheetPages": [
+      21,
+      22
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 1
+    },
+    "summary": "A small Leprechaun crossbow sniper who burns material cards on evocations to boost allies and hinder foes.",
+    "description": "This Leprechaun hangs back and shoots a crossbow as a Marksman while supporting the party as an Alchemist. Evocations run on material cards: red cards power [Vorpal Weapon], which adds to an ally's physical damage, and green cards power [Paralyze Mist], which lowers an enemy's evasion. Better cards give stronger results but cost real gamels, so spending them freely eats into the party's rewards. The character starts with five red B-rank cards and one green A-rank card. As a Leprechaun it also sees in the dark, can wear extra accessories in the Other slot, and can turn invisible for 5 MP with [Unseen Artisan].",
+    "tips": [
+      "Put [Vorpal Weapon] (red B card, +1 damage for 3 minutes) on your hardest-hitting melee ally early in a fight.",
+      "Save the single green A card for [Paralyze Mist] on the most dangerous enemy; a B-rank green card would have no effect.",
+      "[Targeting] keeps your quarrels and the shot-type mist from straying into allies who are in melee.",
+      "Use [Unseen Artisan] to slip away or sneak a look ahead; it costs 5 MP out of a small pool, so save it for when it matters."
+    ],
+    "race": "Leprechaun",
+    "background": "Alchemist",
+    "base": {
+      "skill": 11,
+      "body": 5,
+      "mind": 7
+    },
+    "rolled": {
+      "dex": 8,
+      "agi": 2,
+      "str": 4,
+      "vit": 9,
+      "int": 7,
+      "spi": 8
+    },
+    "growth": {
+      "dex": 0,
+      "agi": 0,
+      "str": 0,
+      "vit": 0,
+      "int": 0,
+      "spi": 0
+    },
+    "classes": [
+      {
+        "name": "Marksman",
+        "level": 2
+      },
+      {
+        "name": "Alchemist",
+        "level": 2
+      }
+    ],
+    "feats": [
+      "Targeting"
+    ],
+    "autoFeats": [],
+    "classAbilities": [
+      {
+        "type": "evocation",
+        "name": "Vorpal Weapon"
+      },
+      {
+        "type": "evocation",
+        "name": "Paralyze Mist"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Normal Crossbow",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Soft Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "back",
+        "name": "Arrow Case",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Alchemy Kit",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Quarrel (12)",
+        "quantity": 12
+      },
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      }
+    ],
+    "cards": {
+      "red": {
+        "B": 5
+      },
+      "green": {
+        "A": 1
+      }
+    },
+    "money": 150,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 0,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 2,
+      "abilities": {
+        "dex": 19,
+        "agi": 13,
+        "str": 9,
+        "vit": 14,
+        "int": 14,
+        "spi": 15
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 2,
+        "str": 1,
+        "vit": 2,
+        "int": 2,
+        "spi": 2
+      },
+      "hp": 20,
+      "mp": 14,
+      "fortitude": 4,
+      "willpower": 4,
+      "evasion": 0,
+      "defense": 3,
+      "movement": 13,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Alchemist": 4
+      }
+    },
+    "notes": "MP printed 14, but the formula gives 15 (no wizard-type classes, Spirit 15). Re-read twice and the sheet clearly says 14, so printed.mp keeps 14 while the inputs follow the sheet. Background printed as 'Alchemist' (base 11/5/7 equals the Leprechaun 'Agile Warrior' 10-12 row). Items list 'Material Card/Red B x 5' and 'Material Card/Green A x 1' (in cards) and 'Quarrel x 12' (carried in the Arrow Case). Crossbow row: accuracy 5, power 20, crit 10, total extra damage 2. Soulscars 0.",
+    "unmatched": []
+  },
+  {
+    "id": "cr3-human-warrior-11",
+    "name": "Human Warrior",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 25
+    },
+    "sheetPages": [
+      27,
+      28
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 2,
+      "knowledge": 0
+    },
+    "summary": "A level-11 Human fighter with a Claymore +1, built to soak punishment and deliver huge melee damage.",
+    "description": "The party's heavy hitter. The Human swings a Claymore +1 for raw power and picks each turn between [Power Strike II] for one crushing blow and [Cleave II] to sweep several foes at once. [Toughness] and [Tenacity] push HP to 83, and Dontrecia's Great Armor of Perseverance gets tougher each time physical damage lands, so the missing shield is not a problem. Ten Scout levels give strong initiative and let the warrior handle traps and searching, one Ranger level adds field medicine, and Enhancer techniques supply strength, accuracy, defense or speed on demand. At level 11 [Sword's Grace/Change Fate] adds +2 when a vital roll is flipped.",
+    "tips": [
+      "Use [Power Strike II] on a single tough target (it costs Evasion for the round) and [Cleave II] when several enemies are within reach.",
+      "Open combat with [Bear Muscle] (boosted by Bear Claws) and [Cat's Eyes]; add [Centaur Legs] when speed or initiative matters.",
+      "Save [Change Fate] for the one roll that decides the fight.",
+      "Guardian Stones absorb magic damage, so keep them for spell-slinging bosses."
+    ],
+    "race": "Human",
+    "background": "Mercenary",
+    "base": {
+      "skill": 7,
+      "body": 10,
+      "mind": 4
+    },
+    "rolled": {
+      "dex": 11,
+      "agi": 6,
+      "str": 7,
+      "vit": 4,
+      "int": 9,
+      "spi": 6
+    },
+    "growth": {
+      "dex": 6,
+      "agi": 6,
+      "str": 7,
+      "vit": 6,
+      "int": 5,
+      "spi": 4
+    },
+    "classes": [
+      {
+        "name": "Fighter",
+        "level": 11
+      },
+      {
+        "name": "Scout",
+        "level": 10
+      },
+      {
+        "name": "Enhancer",
+        "level": 6
+      },
+      {
+        "name": "Ranger",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Power Strike II",
+      {
+        "name": "Weapon Proficiency A",
+        "choice": "sword"
+      },
+      "Tenacity",
+      "Cleave II",
+      {
+        "name": "Weapon Proficiency S",
+        "choice": "sword"
+      },
+      {
+        "name": "Armor Proficiency A",
+        "choice": "metal"
+      }
+    ],
+    "autoFeats": [
+      "Toughness",
+      "Treasure Hunt",
+      "Fast Action",
+      "Shadow Sneak"
+    ],
+    "classAbilities": [
+      {
+        "type": "technique",
+        "name": "Bear Muscle"
+      },
+      {
+        "type": "technique",
+        "name": "Beetleskin"
+      },
+      {
+        "type": "technique",
+        "name": "Cat's Eyes"
+      },
+      {
+        "type": "technique",
+        "name": "Gazelle Feet"
+      },
+      {
+        "type": "technique",
+        "name": "Centaur Legs"
+      },
+      {
+        "type": "technique",
+        "name": "Recovery"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Claymore",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Dontrecia's Great Armor of Perseverance",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "face",
+        "name": "Keen-Flash Glasses",
+        "note": ""
+      },
+      {
+        "slot": "neck",
+        "name": "Bear Claws",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Hero's Mantle",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Bracelet (Super Strong Bracelet)",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Black Belt",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Lucky Feathers",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 20
+      },
+      {
+        "name": "Guardian Stone",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Key of Unlocking",
+        "quantity": 1
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 120,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "regional",
+        "name": "Burlight",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 24,
+        "agi": 19,
+        "str": 24,
+        "vit": 20,
+        "int": 18,
+        "spi": 14
+      },
+      "mods": {
+        "dex": 4,
+        "agi": 3,
+        "str": 4,
+        "vit": 3,
+        "int": 3,
+        "spi": 2
+      },
+      "hp": 83,
+      "mp": 14,
+      "fortitude": 14,
+      "willpower": 13,
+      "evasion": 14,
+      "defense": 10,
+      "movement": 19,
+      "initiative": 13,
+      "monsterKnowledge": null,
+      "magicPower": {}
+    },
+    "notes": "Feats printed as [Weapon Prof. A/Sword], [Weapon Prof. S/Sword] (Sword category) and [Armor Prof A/Metal Armor] (Metal Armor category). [Cleave II] is printed without [Cleave I] (its listed prerequisite). Claymore +1 has two printed rows: 1H (printed '1H†', Power 36) and 2H (Power 46), both Crit 10, Weapon Accuracy +1, Total Accuracy 16, Extra Damage +4, Total Extra Damage 19; the description has it used two-handed. Sheet inconsistency: base Extra Damage printed 14, but Fighter 11 + Str mod 4 = 15, and the printed Total Extra Damage 19 (= 15 + 4) supports 15. Strength printed 24 without the Super Strong Bracelet (+2 = 26, matching the Claymore's Min STR 26). HP 83 = 11x3 + 20 + 15 [Toughness] + 15 [Tenacity]. Armor 'Other' row reads '[Armor Proficiency], Black Belt' for Defense +2, a bonus line rather than an item. Mako Stone printed as 'Mako Stone (3 pts.) x 20' (3 points each); Guardian Stone printed as 'Guardian Stone (5 pts) x 2' (5 HP each). A second Lucky Feathers is carried as a spare. Check packages: Scout 10 (Technique 14, Movement 13, Observation 13), Ranger 1 (5/4/4). Movement: Limited 3, Normal 19, Full 57. Soulscars 0.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-elf-priest-swordmaster-11",
+    "name": "Elf Priest Swordmaster",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 29
+    },
+    "sheetPages": [
+      31,
+      32
+    ],
+    "roles": {
+      "line": "frontSupport",
+      "healer": 3,
+      "explorer": 0,
+      "knowledge": 3
+    },
+    "summary": "A level-11 Elf priest of Lyphos who heals and supports the party while fencing in the front rank.",
+    "description": "A hybrid of healer and duelist. As an 11th-level Priest of Lyphos with 54 MP and [MP Save] for Divine Magic, the Elf keeps everyone standing and buffed. [Rune Master] allows [Multi-Action] and [Metamagic/Targets] in the same turn, so one action can both strike an enemy and heal or protect several allies. Nine Fencer levels give solid Evasion and a crit value of 9. The Weakness Revealer exposes a monster's weak point once it connects, which works with the Sage feat [Weakness Exploit]; when damage matters more, switch to the Rapier +1. Eight Sage levels cover monster lore and many languages, and [Sword's Grace/Gentle Water] shortens rests during exploration.",
+    "tips": [
+      "Declare [Multi-Action] together with [Metamagic/Targets] to attack and heal or buff several allies in one turn.",
+      "Land a hit with the Weakness Revealer early in the session so its weak-point reveal pays off in later fights; swap to the Rapier +1 for damage.",
+      "During exploration, an hour of rest in water with [Gentle Water] restores you like a full night's sleep.",
+      "Pointed Hat adds +1 to Monster Knowledge, and a success with Hunter's Eyes also gives +1 accuracy."
+    ],
+    "race": "Elf",
+    "background": "Warrior",
+    "base": {
+      "skill": 12,
+      "body": 5,
+      "mind": 9
+    },
+    "rolled": {
+      "dex": 6,
+      "agi": 7,
+      "str": 4,
+      "vit": 6,
+      "int": 11,
+      "spi": 6
+    },
+    "growth": {
+      "dex": 6,
+      "agi": 5,
+      "str": 6,
+      "vit": 7,
+      "int": 4,
+      "spi": 6
+    },
+    "classes": [
+      {
+        "name": "Priest",
+        "level": 11
+      },
+      {
+        "name": "Fencer",
+        "level": 9
+      },
+      {
+        "name": "Sage",
+        "level": 8
+      }
+    ],
+    "feats": [
+      "Metamagic/Targets",
+      "Evasive Maneuvers II",
+      {
+        "name": "MP Save",
+        "choice": "Priest"
+      },
+      "Multi-Action",
+      {
+        "name": "Armor Proficiency A",
+        "choice": "nonmetal"
+      },
+      {
+        "name": "Armor Proficiency S",
+        "choice": "nonmetal"
+      }
+    ],
+    "autoFeats": [
+      "Rune Master",
+      "Keen Eyes",
+      "Weakness Exploit"
+    ],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Rapier",
+        "mode": "1H",
+        "equipped": false,
+        "enhance": 1,
+        "quantity": 1,
+        "note": ""
+      },
+      {
+        "name": "Weakness Revealer",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Fine Leather",
+        "equipped": true,
+        "enhance": 1,
+        "note": ""
+      },
+      {
+        "name": "Buckler",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "head",
+        "name": "Pointed Hat",
+        "note": ""
+      },
+      {
+        "slot": "face",
+        "name": "Hunter's Eyes",
+        "note": ""
+      },
+      {
+        "slot": "neck",
+        "name": "Holy Symbol",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Hero's Mantle",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Black Belt",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      },
+      {
+        "slot": "other",
+        "name": "Goddess's Veil",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 10
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 2850,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "ancientCelestial",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "daemonic",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "elven",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "dragonic",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "Lyphos",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 24,
+        "agi": 24,
+        "str": 15,
+        "vit": 18,
+        "int": 24,
+        "spi": 21
+      },
+      "mods": {
+        "dex": 4,
+        "agi": 4,
+        "str": 2,
+        "vit": 3,
+        "int": 4,
+        "spi": 3
+      },
+      "hp": 51,
+      "mp": 54,
+      "fortitude": 14,
+      "willpower": 15,
+      "evasion": 17,
+      "defense": 9,
+      "movement": 24,
+      "initiative": null,
+      "monsterKnowledge": 13,
+      "magicPower": {
+        "Priest": 15
+      }
+    },
+    "notes": "Class printed as 'Priest (Lyphos)'. Feats printed as [MP Save/Priest] (Priest chosen) and [Armor Prof. A/NM Armor], [Armor Prof. S/NM Armor] (Non-metal Armor category). Monster Knowledge printed '12+1' (Sage 8 + Int 4, +1 Pointed Hat). Fine Leather +1 Defense printed '5+3' (armor proficiency bonus). Armor 'Other' row reads '[Evasive Maneuvers II], Black Belt' for Evasion +2 and Defense +1, a bonus line rather than an item. Willpower 15 includes Ring of the Mind +1. Goddess's Veil is worn in the Other section (Pointed Hat occupies Head). Mako Stone printed as 'Mako Stone (5 pts.) x 10' (5 points each). Weakness Revealer is the main weapon; the Rapier +1 is the higher-damage alternative per the description (both printed: Rapier +1 Total Accuracy 14, Total Extra Damage 12; Weakness Revealer 13 / 11; both Crit 9). A stray word 'Dragonic' is printed under the Mind box (same as the Dragonic language row). Racial abilities: [Darkvision], [Sword's Grace/Gentle Water]. Check package: Sage 8 (Observation 12, Knowledge 12). Movement: Limited 3, Normal 24, Full 72. Soulscars 0.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-dwarf-paladin-10",
+    "name": "Dwarf Paladin",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 33
+    },
+    "sheetPages": [
+      35,
+      36
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 2,
+      "explorer": 0,
+      "knowledge": 0
+    },
+    "summary": "A heavily armored dwarf fighter-priest of Eve who guards allies and heals the party from the front line.",
+    "description": "This level-10 dwarf pairs Fighter and Priest at full strength with solid Ranger training, so it serves as both the party's wall and its medic. The S-rank metal armor grows harder with every physical hit taken, and together with a +1 tower shield and armor mastery it already starts at Defense 17. [Cover II] and [Guardian II] let it intercept blows meant for up to five friends without using up its feat declaration, while [Metamagic/Targets] spreads one healing spell across several allies. Fire cannot hurt it, and it can share that immunity with a companion by holding their hand. [Indomitable] keeps it standing even below 0 HP. Its real weakness is incoming magic.",
+    "tips": [
+      "Declare [Cover II] every round: it does not use your feat declaration, and [Guardian II] lets you name up to five allies to protect.",
+      "Stand where enemies will hit you; each damaging physical hit adds +2 to the armor's Defense until your next turn.",
+      "Use [Metamagic/Targets] on healing when several allies are hurt, and pay the multiplied MP with your mako stones.",
+      "Magic damage bypasses your armor, so break Sunlight/Moonlight Charms on key Fortitude and Willpower checks."
+    ],
+    "race": "Dwarf",
+    "background": "Warrior",
+    "base": {
+      "skill": 4,
+      "body": 11,
+      "mind": 5
+    },
+    "rolled": {
+      "dex": 15,
+      "agi": 4,
+      "str": 4,
+      "vit": 6,
+      "int": 5,
+      "spi": 13
+    },
+    "growth": {
+      "dex": 4,
+      "agi": 1,
+      "str": 9,
+      "vit": 7,
+      "int": 6,
+      "spi": 7
+    },
+    "classes": [
+      {
+        "name": "Priest",
+        "level": 10
+      },
+      {
+        "name": "Fighter",
+        "level": 10
+      },
+      {
+        "name": "Ranger",
+        "level": 7
+      }
+    ],
+    "feats": [
+      "Cover II",
+      "Metamagic/Targets",
+      "Guardian II",
+      {
+        "name": "Armor Proficiency A",
+        "choice": "metal"
+      },
+      {
+        "name": "Armor Proficiency S",
+        "choice": "metal"
+      }
+    ],
+    "autoFeats": [
+      "Toughness",
+      "Survivability",
+      "Indomitable"
+    ],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Heavy Axe",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Dontrecia's Stiff Armor of Perseverance",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      },
+      {
+        "name": "Tower Shield",
+        "equipped": true,
+        "enhance": 1,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "head",
+        "name": "Crown of the Saint",
+        "note": ""
+      },
+      {
+        "slot": "ear",
+        "name": "Holy Symbol",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Hero's Mantle",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Ring (Ring of Skill)",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Ability-Enhancing Bracelet (Wisdom Bracelet)",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Black Belt",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Skanda Boots",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 10
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 2460,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "dwarven",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "Eve",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 10,
+      "abilities": {
+        "dex": 24,
+        "agi": 9,
+        "str": 24,
+        "vit": 24,
+        "int": 18,
+        "spi": 25
+      },
+      "mods": {
+        "dex": 4,
+        "agi": 1,
+        "str": 4,
+        "vit": 4,
+        "int": 2,
+        "spi": 4
+      },
+      "hp": 69,
+      "mp": 55,
+      "fortitude": 15,
+      "willpower": 15,
+      "evasion": 11,
+      "defense": 17,
+      "movement": 14,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Priest": 13
+      }
+    },
+    "notes": "Priest of Eve (sheet: 'Priest (Eve)'). Feats printed as [Armor Prof. A/M Armor] and [Armor Prof. S/M Armor] = Armor Proficiency A/S for Metal Armor. Heavy Axe +1 is wielded one-handed with the shield (2H row: Power 35). Armor table 'Other' row reads '[Armor Proficiency], Black Belt +4' (feat +3 and Black Belt +1 Defense), a bonus line rather than an item. Movement printed as 9+5 (Skanda Boots +5): Normal Move 14, Full Move 42, Limited Move 3. Check package: Ranger 7 (Technique 11, Movement 8, Observation 10). Mako Stone printed as 'Mako Stone (5 pts.) x 10'. Abilities printed as Dex '23+1' (Ring of Skill) and Int '16+2' (Wisdom Bracelet). Soulscars 0. Sheet inconsistencies: Int modifier printed 2 although Int 18 gives 3 (Observation 10 and Priest Magic Power 13 on the same sheet use 3); Fortitude and Willpower printed 15 although level 10 + Vit/Spi mod 4 = 14 and no listed equipment or feat explains +1.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-tabbit-magician-10",
+    "name": "Tabbit Magician",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 37
+    },
+    "sheetPages": [
+      39,
+      40
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 0
+    },
+    "summary": "A tabbit spellcaster with high-level Truespeech and Spiritualism magic plus Sage lore, built to blast and identify foes from the back row.",
+    "description": "This level-10 tabbit has Sorcerer and Conjurer at 10, giving Magic Power 15 in both schools and a deep MP pool backed by twenty mako stones. It is the party's artillery and support caster: area spells shaped with [Magic Control] can hit only enemies even in a crowded melee, and [Magic Convergence] narrows an area spell down to one target. When no friends are close to the target, [Violentcast I] makes damage spells harder to resist. Sage 7 plus a Pointed Hat and talking backpack make it the go-to monster identifier, and its tabbit danger sense also lets it spot traps. Armor and Evasion are minimal, so it must stay behind the front line.",
+    "tips": [
+      "Open fights with a Monster Knowledge check; meeting the weakness value doubles the weak-point bonus for you through [Weakness Exploit].",
+      "Combine [Magic Control] with area damage spells to hit every enemy in a melee without catching your allies.",
+      "Declare [Violentcast I] on pure damage spells when nobody needs to be excluded, to beat the enemy's resistance more often.",
+      "Use [Metamagic/Targets] on support spells for several allies and refill MP from mako stones rather than resting."
+    ],
+    "race": "Tabbit",
+    "background": "Sorcerer",
+    "base": {
+      "skill": 5,
+      "body": 7,
+      "mind": 10
+    },
+    "rolled": {
+      "dex": 1,
+      "agi": 2,
+      "str": 4,
+      "vit": 6,
+      "int": 14,
+      "spi": 9
+    },
+    "growth": {
+      "dex": 1,
+      "agi": 4,
+      "str": 6,
+      "vit": 7,
+      "int": 9,
+      "spi": 7
+    },
+    "classes": [
+      {
+        "name": "Sorcerer",
+        "level": 10
+      },
+      {
+        "name": "Conjurer",
+        "level": 10
+      },
+      {
+        "name": "Sage",
+        "level": 7
+      }
+    ],
+    "feats": [
+      "Targeting",
+      "Metamagic/Targets",
+      "Violentcast I",
+      "Magic Convergence",
+      "Magic Control"
+    ],
+    "autoFeats": [
+      "Keen Eyes",
+      "Weakness Exploit"
+    ],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Quarterstaff",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Mana Coat",
+        "equipped": true,
+        "enhance": 0,
+        "note": "",
+        "defense": 5
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "head",
+        "name": "Pointed Hat",
+        "note": ""
+      },
+      {
+        "slot": "face",
+        "name": "Keen-Flash Glasses",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Smart Animal Sack",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Mana Ring",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      },
+      {
+        "slot": "other",
+        "name": "Hero's Mantle",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 20
+      },
+      {
+        "name": "Guardian Stone",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 680,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "ancientCelestial",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "sylvan",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "drakish",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 10,
+      "abilities": {
+        "dex": 7,
+        "agi": 11,
+        "str": 17,
+        "vit": 20,
+        "int": 33,
+        "spi": 26
+      },
+      "mods": {
+        "dex": 1,
+        "agi": 1,
+        "str": 2,
+        "vit": 3,
+        "int": 5,
+        "spi": 4
+      },
+      "hp": 50,
+      "mp": 86,
+      "fortitude": 13,
+      "willpower": 15,
+      "evasion": 0,
+      "defense": 6,
+      "movement": 11,
+      "initiative": null,
+      "monsterKnowledge": 13,
+      "magicPower": {
+        "Sorcerer": 15,
+        "Conjurer": 15
+      }
+    },
+    "notes": "Feat printed as [Violentcast] = Violentcast I. Mako Stone printed as 'Mako Stone (5 pts.) x 20'; Guardian Stone printed as 'Guardian Stone (5 pts.) x 4' (5 HP each). Hero's Mantle is worn in the Other section. Armor table 'Other' row reads 'Quarterstaff +1' (the staff's Defense bonus), not an extra item; Mana Coat Defense 5 equals the Int modifier. Monster Knowledge printed '12+1' (Sage 7 + Int 5, +1 item bonus); Pointed Hat and Smart Animal Sack each list +1, but the sheet counts only +1. Willpower 15 includes Ring of the Mind +1. Check package: Sage 7 (Observation 12, Knowledge 12). Soulscars 0. Movement: Limited 3, Normal 11, Full 33.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-runefolk-gunner-11",
+    "name": "Runefolk Gunner",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 41
+    },
+    "sheetPages": [
+      43,
+      44
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 1,
+      "explorer": 0,
+      "knowledge": 2
+    },
+    "summary": "A runefolk sharpshooter with a heavy +1 rifle, backed by Magitech bullets, Sage knowledge and a few Alchemist evocations.",
+    "description": "At adventurer level 11 this runefolk is the party's main damage dealer from range. Marksman 11 with a Master's Bracelet, [Pinpoint Attack I] and the +1 gun gives an Accuracy of 18, and every shot uses an Artificer bullet spell powered by Magic Power 13 with +8 extra damage from gun mastery. [Targeting] and [Hawk Eye] let it fire into melees and past enemy lines safely. Every shot costs MP, so [MP Save] trims the cost, mako stones top it up, and [HP Conversion] now turns HP into MP twice a day as a minor action. Between shots, green-card evocations weaken foes or shore up the front line, and Sage 8 handles monster lore. With no Evasion it needs bodyguards.",
+    "tips": [
+      "Spend your Major Action on gun attacks every round; use HP Conversion as a minor action when MP runs low.",
+      "Use [Paralyze Mist] (A or S card) on a dangerous enemy to lower its Evasion before the warriors swing.",
+      "Cast [Barkmail] on the front-liner during combat preparation, and keep [Heal Spray] for emergencies; it also heals magitech and constructs.",
+      "Roll Monster Knowledge first: success gives Hunter's Eyes' +1 Accuracy against that foe and doubled weak-point bonuses."
+    ],
+    "race": "Runefolk",
+    "background": "Archer",
+    "base": {
+      "skill": 12,
+      "body": 8,
+      "mind": 6
+    },
+    "rolled": {
+      "dex": 7,
+      "agi": 3,
+      "str": 5,
+      "vit": 8,
+      "int": 9,
+      "spi": 2
+    },
+    "growth": {
+      "dex": 9,
+      "agi": 1,
+      "str": 6,
+      "vit": 7,
+      "int": 7,
+      "spi": 4
+    },
+    "classes": [
+      {
+        "name": "Marksman",
+        "level": 11
+      },
+      {
+        "name": "Artificer",
+        "level": 9
+      },
+      {
+        "name": "Sage",
+        "level": 8
+      },
+      {
+        "name": "Alchemist",
+        "level": 3
+      }
+    ],
+    "feats": [
+      "Targeting",
+      {
+        "name": "Weapon Proficiency A",
+        "choice": "gun"
+      },
+      "Hawk Eye",
+      "Pinpoint Attack I",
+      {
+        "name": "MP Save",
+        "choice": "Artificer"
+      },
+      {
+        "name": "Weapon Proficiency S",
+        "choice": "gun"
+      }
+    ],
+    "autoFeats": [
+      "Keen Eyes",
+      "Weakness Exploit"
+    ],
+    "classAbilities": [
+      {
+        "type": "evocation",
+        "name": "Paralyze Mist"
+      },
+      {
+        "type": "evocation",
+        "name": "Barkmail"
+      },
+      {
+        "type": "evocation",
+        "name": "Heal Spray"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Carnage",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": "4 Max Mag, Range 40m"
+      }
+    ],
+    "armor": [
+      {
+        "name": "Hard Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "head",
+        "name": "Pointed Hat",
+        "note": ""
+      },
+      {
+        "slot": "face",
+        "name": "Hunter's Eyes",
+        "note": ""
+      },
+      {
+        "slot": "ear",
+        "name": "Magisphere (Small)",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Magisphere (Large)",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Bracelet (Master's Bracelet)",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Ability-Enhancing Bracelet (Wisdom Bracelet)",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Bullet Pouch",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      },
+      {
+        "slot": "other",
+        "name": "Alchemy Kit",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 10
+      },
+      {
+        "name": "Bullet (12)",
+        "quantity": 24
+      },
+      {
+        "name": "Guardian Stone",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {
+      "green": {
+        "B": 20,
+        "A": 18,
+        "S": 8
+      }
+    },
+    "money": 1180,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "ancientCelestial",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "daemonic",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "nosferatu",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 30,
+        "agi": 16,
+        "str": 17,
+        "vit": 23,
+        "int": 24,
+        "spi": 12
+      },
+      "mods": {
+        "dex": 5,
+        "agi": 2,
+        "str": 2,
+        "vit": 3,
+        "int": 4,
+        "spi": 2
+      },
+      "hp": 56,
+      "mp": 42,
+      "fortitude": 14,
+      "willpower": 13,
+      "evasion": 0,
+      "defense": 4,
+      "movement": 16,
+      "initiative": null,
+      "monsterKnowledge": 13,
+      "magicPower": {
+        "Artificer": 13,
+        "Alchemist": 7
+      }
+    },
+    "notes": "Feats printed as [Weapon Prof. A/Gun], [Weapon Prof. S/Gun] (Gun category) and [MP Save/Artificer]. Evocation printed as [Paralyzing Mist] = Paralyze Mist. Carnage +1 printed with Weapon Accuracy +2 (+1 magic, +1 Pinpoint Attack I), Total Accuracy 18, Crit 11, Extra Damage +8, Total Extra Damage 21 (Artificer Magic Power 13 + 8). Mako Stone printed as 'Mako Stone (5 pts.) x 10'; Guardian Stone printed as 'Guardian Stone (5 pts) x 4' (5 HP each); 'Bullet x 24' = two Bullet (12) bundles. Material Cards: Green B 20, A 18, S 8, SS 0. Monster Knowledge printed '12+1' (Sage 8 + Int 4, +1 Pointed Hat). Check packages: Sage 8 and Alchemist 3 (Observation 12, Knowledge 12/7). Abilities printed as Dex '28+2' (Master's Bracelet) and Int '22+2' (Wisdom Bracelet). Soulscars 0. Movement: Limited 3, Normal 16, Full 48. Sheet inconsistencies: Strength printed 17 (mod 2), but base 8 + C 5 + growth 6 = 19 (mod 3); the printed Extra Damage 14 (Marksman 11 + 3) and the growth total of 34 (same as the other CR III pregens) support 19. MP printed 42, but Artificer 9 x 3 + Spirit 12 = 39 and no listed item or feat adds MP.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-nightmare-magic-warrior-10",
+    "name": "Nightmare Magic Warrior",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 45
+    },
+    "sheetPages": [
+      47,
+      48
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 0
+    },
+    "summary": "An elf-born nightmare who swings a huge +1 couse and mixes Spiritualism magic and Enhancer techniques into heavy melee damage.",
+    "description": "This level-10 nightmare is a front-line magic warrior: Fighter 10 for weapon skill, Conjurer 10 for buffs and utility, and Enhancer 7 for self-boosting techniques. The +1 Couse doubles as a magical implement, so it can cast without putting the axe down. Its signature move is [Mana Strike], which adds its Magic Power of 14 to a melee hit, outdoing a plain power attack at the price of weaker saves that round. [Multi-Action] lets it attack and cast in the same action, and in alternate form its attacks and spells deal +1 damage. Bear Claws strengthen [Bear Muscle]. Outside combat it can scout with a Spiritualism doll, but it relies on teammates for searching and lore.",
+    "tips": [
+      "Transform into alternate form during combat preparation: +1 damage on attacks and spells, and casting ignores armor and speech.",
+      "Use [Mana Strike] for big hits, but avoid it when enemies are about to force Fortitude or Willpower checks, since it gives -2 to both that round.",
+      "Stack techniques before the big swing: [Bear Muscle] (+3 Str modifier with Bear Claws), [Giant Arms] and [Cat's Eyes].",
+      "Declare [Multi-Action] to pair an attack with a Conjurer buff or attack spell in one Major Action."
+    ],
+    "race": "Nightmare",
+    "background": "Mercenary",
+    "base": {
+      "skill": 7,
+      "body": 15,
+      "mind": 8
+    },
+    "rolled": {
+      "dex": 6,
+      "agi": 8,
+      "str": 3,
+      "vit": 6,
+      "int": 9,
+      "spi": 4
+    },
+    "growth": {
+      "dex": 5,
+      "agi": 4,
+      "str": 6,
+      "vit": 6,
+      "int": 7,
+      "spi": 6
+    },
+    "classes": [
+      {
+        "name": "Fighter",
+        "level": 10
+      },
+      {
+        "name": "Conjurer",
+        "level": 10
+      },
+      {
+        "name": "Enhancer",
+        "level": 7
+      }
+    ],
+    "feats": [
+      "Mana Strike",
+      {
+        "name": "Weapon Proficiency A",
+        "choice": "axe"
+      },
+      "Multi-Action",
+      {
+        "name": "Weapon Proficiency S",
+        "choice": "axe"
+      },
+      {
+        "name": "Armor Proficiency A",
+        "choice": "nonmetal"
+      }
+    ],
+    "autoFeats": [
+      "Toughness"
+    ],
+    "classAbilities": [
+      {
+        "type": "technique",
+        "name": "Beetleskin"
+      },
+      {
+        "type": "technique",
+        "name": "Bear Muscle"
+      },
+      {
+        "type": "technique",
+        "name": "Cat's Eyes"
+      },
+      {
+        "type": "technique",
+        "name": "Gazelle Feet"
+      },
+      {
+        "type": "technique",
+        "name": "Recovery"
+      },
+      {
+        "type": "technique",
+        "name": "Giant Arms"
+      },
+      {
+        "type": "technique",
+        "name": "Daemonfinger"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Couse",
+        "mode": "2H Slash",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": "Magical Implement"
+      }
+    ],
+    "armor": [
+      {
+        "name": "Bone Vest",
+        "equipped": true,
+        "enhance": 1,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "neck",
+        "name": "Bear Claws",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Hero's Mantle",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Bracelet (Super Strong Bracelet)",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Black Belt",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      },
+      {
+        "slot": "other",
+        "name": "Light Boots",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 20
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 4420,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "elven",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 10,
+      "abilities": {
+        "dex": 18,
+        "agi": 19,
+        "str": 26,
+        "vit": 27,
+        "int": 24,
+        "spi": 18
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 3,
+        "str": 4,
+        "vit": 4,
+        "int": 4,
+        "spi": 3
+      },
+      "hp": 72,
+      "mp": 48,
+      "fortitude": 14,
+      "willpower": 14,
+      "evasion": 13,
+      "defense": 9,
+      "movement": 19,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Conjurer": 14
+      }
+    },
+    "notes": "Race printed as 'Nightmare (Elf born)': weakness to water/ice damage. Feats printed as [Weapon Prof. A/Axe], [Weapon Prof. S/Axe] (Axe category) and [Armor Prof. A/NM Armor] (Nonmetal Armor). Couse +1 has two printed rows: 2H slash (Power 51, Crit 11) and 2H pierce (Power 46, Crit 10), both Weapon Accuracy +1, Total Accuracy 14, Extra Damage +4, Total Extra Damage 17 (18 in alternate form); note '(magical implement)' printed under the name. Armor table 'Other' row reads '[Armor Proficiency], Black Belt +2', a Defense bonus line rather than an item. Light Boots (feet item) is worn in the Other section while Lucky Feathers occupy Feet. Strength printed as '24+2' (Super Strong Bracelet). Willpower 14 includes Ring of the Mind +1. Soulscars 1. Movement: Limited 3, Normal 19, Full 57. Sheet inconsistency (not a verified field): base Extra Damage printed 13, but Fighter 10 + Str mod 4 = 14.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-lykant-boxer-11",
+    "name": "Lykant Boxer",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 49
+    },
+    "sheetPages": [
+      51,
+      52
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 3,
+      "knowledge": 2
+    },
+    "summary": "A high-level Lykant martial artist who punches, kicks and throws while also covering scouting and monster lore.",
+    "description": "This character holds the front line without a conventional weapon, striking with bladed gauntlets and armored boots and grappling foes to the ground. Grappler levels grant a free follow-up blow and a counterattack, so it pressures a single enemy constantly. Each hit is fairly light, which is why [Armor Piercer II] matters: it halves the target's Defense, and a critical ignores it completely. A light vest keeps Evasion very high while armor feats and a belt keep a solid Defense floor. Scout and Sage levels mean it can also roll initiative, search for traps and identify monsters on its own. Taking Beast Form adds damage and, at this level, extra Evasion.",
+    "tips": [
+      "Shift into Beast Form before or early in a fight: +2 damage from the Strength modifier bonus and +1 Evasion, but you can only speak Lycant while transformed.",
+      "Declare [Armor Piercer II] against well-armored enemies; against soft targets rely on the extra wrestling attack from [Chain Attack].",
+      "You roll initiative and Monster Knowledge for the party; a successful identification also gives +1 Accuracy thanks to Hunter's Eyes.",
+      "Break a Sunlight or Moonlight Charm after a failed Fortitude or Willpower check that missed by only a little."
+    ],
+    "race": "Lykant",
+    "background": "Scout",
+    "base": {
+      "skill": 13,
+      "body": 5,
+      "mind": 7
+    },
+    "rolled": {
+      "dex": 3,
+      "agi": 8,
+      "str": 9,
+      "vit": 6,
+      "int": 10,
+      "spi": 3
+    },
+    "growth": {
+      "dex": 7,
+      "agi": 9,
+      "str": 6,
+      "vit": 1,
+      "int": 7,
+      "spi": 4
+    },
+    "classes": [
+      {
+        "name": "Grappler",
+        "level": 11
+      },
+      {
+        "name": "Scout",
+        "level": 9
+      },
+      {
+        "name": "Sage",
+        "level": 8
+      }
+    ],
+    "feats": [
+      {
+        "name": "Armor Proficiency A",
+        "choice": "nonmetal"
+      },
+      {
+        "name": "Weapon Proficiency A",
+        "choice": "wrestling"
+      },
+      "Armor Piercer II",
+      "Tenacity",
+      {
+        "name": "Armor Proficiency S",
+        "choice": "nonmetal"
+      },
+      {
+        "name": "Weapon Proficiency S",
+        "choice": "wrestling"
+      }
+    ],
+    "autoFeats": [
+      "Chain Attack",
+      "Counter",
+      "Treasure Hunt",
+      "Fast Action",
+      "Shadow Sneak",
+      "Keen Eyes",
+      "Weakness Exploit"
+    ],
+    "classAbilities": [],
+    "weapons": [
+      {
+        "name": "Sharp Arms",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": ""
+      },
+      {
+        "name": "Gilded Sabaton",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      },
+      {
+        "name": "Throw",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Lynx Vest",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "ear",
+        "name": "Hunter's Eyes",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Ring (Ring of Skill)",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "True Black Belt",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Light Boots",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Key of Unlocking",
+        "quantity": 3
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 5010,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 820,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "sylvan",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "daemonic",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "lycant",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 24,
+        "agi": 30,
+        "str": 20,
+        "vit": 12,
+        "int": 24,
+        "spi": 14
+      },
+      "mods": {
+        "dex": 4,
+        "agi": 5,
+        "str": 3,
+        "vit": 2,
+        "int": 4,
+        "spi": 2
+      },
+      "hp": 60,
+      "mp": 14,
+      "fortitude": 13,
+      "willpower": 14,
+      "evasion": 18,
+      "defense": 8,
+      "movement": 30,
+      "initiative": 14,
+      "monsterKnowledge": 12,
+      "magicPower": {}
+    },
+    "notes": "Reputation printed as \"820/900\" (820 used for reputation, 900 appears to be the total earned). Feat categories: Weapon Proficiency A and S are Wrestling; Armor Proficiency A and S are Nonmetal Armor. Dexterity printed \"23+1\" (base+rolled+growth = 23, +1 from the Ring of Skill); printed.abilities.dex records 24 to match the modifier 4. HP 60 includes [Tenacity] +15; Willpower 14 includes Ring of the Mind +1. Hunter's Eyes is written in the Ears row, but the item data lists it as a Face accessory. The armor table's Other row reads \"[Armor Proficiency], True Black Belt\" with Defense +5 (Armor Proficiency A+S +3, True Black Belt +2); these are not separate armor items. Values in parentheses are for Beast Form: Total Evasion 18(19), Total Extra Damage 18(20)/17(19). Gilded Sabaton as printed: 1H#, Min STR 15, Weapon Accuracy -, Total Accuracy 15, Power 30, Crit 11, Extra Damage +4, Total 18(20); the data file has Accuracy -1 and Power 35, and the printed damage row (1,2,2,3,3,4,5,6,6,7) matches neither Power 30 nor 35 of the power table. Sharp Arms +1 as printed: Weapon Accuracy +2, Total Accuracy 17, Power 20, Crit 11, Extra Damage +4. Throw: Total Accuracy 15, Power 10, Crit 12, Extra Damage +3. Check packages printed: Technique 13, Movement 14, Observation \"13/12\", Knowledge 12. Racial abilities printed: [Darkvision (Beast Form)], [Beast Form]. Soulscars 0. Known languages are shown on these sheets as circles in the Talk/Read cells.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-lildraken-bodybuilder-11",
+    "name": "Lildraken Bodybuilder",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 53
+    },
+    "sheetPages": [
+      55,
+      56
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 1,
+      "knowledge": 0
+    },
+    "summary": "A heavily armored Lildraken warrior who swings a giant two-handed hammer and boosts itself with Enhancer techniques.",
+    "description": "This is the party's wall: full plate, nearly a hundred HP and a Defense of 13 let it stand in front and soak blows even though its Evasion is poor. Fighter levels supply the damage, with [Power Strike II] for one big hit on a single foe and [Cleave II] to sweep up to five enemies in reach with the same swing. Enhancer techniques add Defense, Strength, Accuracy or Evasion as needed, but each costs MP or a mako stone, so activate only what the fight calls for. Ranger levels make it good with herbs and potions, including drinking one as a Minor Action, and its wings now last for twelve rounds a day.",
+    "tips": [
+      "Use [Power Strike II] on a lone tough target and [Cleave II] whenever several enemies are within reach.",
+      "Bear Muscle (+2 Strength modifier) and Cat's Eyes (+1 Accuracy) are the usual opening pair; add Beetleskin when you are the main target.",
+      "Pay for techniques with the 3-point mako stones to keep your own MP for emergencies.",
+      "Fly with your wings during key fights for +1 melee Accuracy and Evasion; at this level they last 12 rounds per day."
+    ],
+    "race": "Lildraken",
+    "background": "Warrior",
+    "base": {
+      "skill": 5,
+      "body": 14,
+      "mind": 6
+    },
+    "rolled": {
+      "dex": 6,
+      "agi": 7,
+      "str": 6,
+      "vit": 14,
+      "int": 2,
+      "spi": 9
+    },
+    "growth": {
+      "dex": 7,
+      "agi": 6,
+      "str": 9,
+      "vit": 7,
+      "int": 1,
+      "spi": 4
+    },
+    "classes": [
+      {
+        "name": "Fighter",
+        "level": 11
+      },
+      {
+        "name": "Ranger",
+        "level": 9
+      },
+      {
+        "name": "Enhancer",
+        "level": 8
+      }
+    ],
+    "feats": [
+      "Power Strike II",
+      {
+        "name": "Weapon Proficiency A",
+        "choice": "mace"
+      },
+      "Tenacity",
+      "Cleave II",
+      {
+        "name": "Weapon Proficiency S",
+        "choice": "mace"
+      },
+      {
+        "name": "Armor Proficiency A",
+        "choice": "metal"
+      }
+    ],
+    "autoFeats": [
+      "Toughness",
+      "Survivability",
+      "Indomitable",
+      "Potion Master"
+    ],
+    "classAbilities": [
+      {
+        "type": "technique",
+        "name": "Beetleskin"
+      },
+      {
+        "type": "technique",
+        "name": "Bear Muscle"
+      },
+      {
+        "type": "technique",
+        "name": "Cat's Eyes"
+      },
+      {
+        "type": "technique",
+        "name": "Gazelle Feet"
+      },
+      {
+        "type": "technique",
+        "name": "Meditation"
+      },
+      {
+        "type": "technique",
+        "name": "Recovery"
+      },
+      {
+        "type": "technique",
+        "name": "Giant Arms"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Troll Buster",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": ""
+      },
+      {
+        "name": "Tail",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 0,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Fortress",
+        "equipped": true,
+        "enhance": 1,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "back",
+        "name": "Hero's Mantle",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Ring (Herculean Ring)",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Black Belt",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      },
+      {
+        "slot": "other",
+        "name": "Light Boots",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Lifegrass",
+        "quantity": 10
+      },
+      {
+        "name": "Magic Herb",
+        "quantity": 5
+      },
+      {
+        "name": "Healing Potion",
+        "quantity": 5
+      },
+      {
+        "name": "Dexterity Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Anti-Magic Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 20
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 1600,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "dragonic",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 18,
+        "agi": 18,
+        "str": 30,
+        "vit": 35,
+        "int": 9,
+        "spi": 19
+      },
+      "mods": {
+        "dex": 3,
+        "agi": 3,
+        "str": 5,
+        "vit": 5,
+        "int": 1,
+        "spi": 3
+      },
+      "hp": 98,
+      "mp": 19,
+      "fortitude": 16,
+      "willpower": 15,
+      "evasion": 11,
+      "defense": 13,
+      "movement": 18,
+      "initiative": null,
+      "monsterKnowledge": null,
+      "magicPower": {}
+    },
+    "notes": "Combat feats as printed: 1 [Power Strike I], 3 [Weapon Prof. A/Mace], 5 [Tenacity], 7 [Cleave], 9 [Weapon Prof. S/Mace], 11 [Armor Prof. A/Metal Armor]. Slots 1 and 7 are output as [Power Strike II] and [Cleave II]: these are replacement-type feats that upgrade automatically at Fighter 9 (CR II p.199), and the book's character description says this character uses [Power Strike II] and [Cleave II]; revert to \"Power Strike I\" / \"Cleave I\" if a verbatim transcription is preferred. Feat categories: Weapon Proficiency A and S are Mace; Armor Proficiency A is Metal Armor. Strength printed \"29+1\" (base+rolled+growth = 29, +1 from the Herculean Ring); printed.abilities.str records 30. HP 98 = 33 + Vitality 35 + [Tenacity] 15 + [Toughness] 15; Willpower 15 includes Ring of the Mind +1. Fortress +1 printed with Defense \"10+1\" (data Defense 9, +1 Armor Proficiency A, +1 enhancement), Min STR 27, Evasion -3. The armor table's Other row reads \"Scaly Hide, Black Belt\" with Defense +2 (racial +1, Black Belt +1); not separate armor items. Values in parentheses: Total Accuracy 17(18)/15(16) and Total Evasion 11(12), most likely with [Cat's Eyes] and [Gazelle Feet]. Troll Buster +1 as printed: 2H, Min STR 30, Weapon Accuracy +3, Power 50, Crit 12, Extra Damage +4, Total 20. Tail as printed: 2H#, Min STR 1, Weapon Accuracy +1, Power 11, Crit 12, Extra Damage -, Total Extra Damage 5. Mako stones printed as \"Mako Stone (3 pts.) x 20\" (3 points each). Light Boots are worn in the Other section. Initiative and Monster Knowledge boxes are blank (no Scout/Sage). Check packages printed: Technique 12, Movement 12, Observation 10. Racial abilities printed: [Scaly Hide], [Tail As Weapon], [Sword's Grace/Wings Of The Wind]. Soulscars 0.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-grassrunner-minstrel-11",
+    "name": "Grassrunner Minstrel",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 57
+    },
+    "sheetPages": [
+      59,
+      60
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 0,
+      "explorer": 3,
+      "knowledge": 1
+    },
+    "summary": "A Grassrunner bard who supports the party with spellsongs and finales, backed by a crossbow, scouting skills and a little alchemy.",
+    "description": "A rear-line support character whose main job is music. Ongoing spellsongs strengthen allies (Accuracy, resistances, spellcasting, elemental damage) or hinder enemies, and the Rhythm they build up powers finales that blast groups of foes or heal several allies at once. The Horn of the Muse and its performance feats make building Rhythm easier and finales stronger. When no song is needed it picks up a magic crossbow and adds steady ranged damage at a good Marksman level. Scout levels cover initiative and trap work, and one Alchemist level with a stack of green cards provides Paralyze Mist to lower an enemy's Evasion. It has no MP, but enemy spells struggle to affect it.",
+    "tips": [
+      "Open fights with Morale when your allies attack with weapons, or Trance when the party relies on spells; [Skillful Play] lets you roll the Performance check twice and keep either result.",
+      "Spend saved Rhythm on Finale: Breath of the Meadows to heal up to three allies, or Finale: Roar of the Water Dragon to hit up to five enemies.",
+      "Cast Paralyze Mist with A-rank green cards on ordinary foes and keep the S-rank cards for bosses; B-rank cards have no effect with it.",
+      "Use the crossbow on turns when no song or finale is needed; [Targeting] means your shots never stray into allies."
+    ],
+    "race": "Grassrunner",
+    "background": "Thief",
+    "base": {
+      "skill": 13,
+      "body": 0,
+      "mind": 12
+    },
+    "rolled": {
+      "dex": 8,
+      "agi": 6,
+      "str": 5,
+      "vit": 13,
+      "int": 4,
+      "spi": 15
+    },
+    "growth": {
+      "dex": 7,
+      "agi": 6,
+      "str": 1,
+      "vit": 4,
+      "int": 7,
+      "spi": 9
+    },
+    "classes": [
+      {
+        "name": "Bard",
+        "level": 11
+      },
+      {
+        "name": "Marksman",
+        "level": 10
+      },
+      {
+        "name": "Scout",
+        "level": 8
+      },
+      {
+        "name": "Ranger",
+        "level": 2
+      },
+      {
+        "name": "Alchemist",
+        "level": 1
+      }
+    ],
+    "feats": [
+      "Additional Songs II",
+      "Targeting",
+      "Harmony",
+      "Intense Finale",
+      "Rhythm Conversion",
+      "Skillful Play"
+    ],
+    "autoFeats": [
+      "Treasure Hunt",
+      "Fast Action"
+    ],
+    "classAbilities": [
+      {
+        "type": "spellsong",
+        "name": "Morale"
+      },
+      {
+        "type": "spellsong",
+        "name": "Resistance"
+      },
+      {
+        "type": "finale",
+        "name": "Finale: Spring Breeze"
+      },
+      {
+        "type": "spellsong",
+        "name": "Requiem"
+      },
+      {
+        "type": "finale",
+        "name": "Finale: Winter's Chill"
+      },
+      {
+        "type": "spellsong",
+        "name": "Elements"
+      },
+      {
+        "type": "spellsong",
+        "name": "Trance"
+      },
+      {
+        "type": "spellsong",
+        "name": "Break"
+      },
+      {
+        "type": "finale",
+        "name": "Finale: Beast's Roar"
+      },
+      {
+        "type": "finale",
+        "name": "Finale: Breath of the Meadows"
+      },
+      {
+        "type": "finale",
+        "name": "Finale: Screaming Snake-pit Symphony"
+      },
+      {
+        "type": "spellsong",
+        "name": "Dare"
+      },
+      {
+        "type": "finale",
+        "name": "Finale: Roar of the Water Dragon"
+      },
+      {
+        "type": "evocation",
+        "name": "Paralyze Mist"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Normal Crossbow",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Mana Coat",
+        "equipped": true,
+        "enhance": 0,
+        "note": "",
+        "defense": 3
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "neck",
+        "name": "Lucky Charm",
+        "note": ""
+      },
+      {
+        "slot": "back",
+        "name": "Weapon Holder",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ability-Enhancing Bracelet (Master's Bracelet)",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Alchemy Kit",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Unbending Buckle",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      },
+      {
+        "slot": "other",
+        "name": "Arrow Case",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Horn of the Muse",
+        "quantity": 1
+      },
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Key of Unlocking",
+        "quantity": 3
+      },
+      {
+        "name": "Quarrel (12)",
+        "quantity": 24
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {
+      "green": {
+        "B": 20,
+        "A": 18,
+        "S": 8
+      }
+    },
+    "money": 2600,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "regional",
+        "name": "Dorden",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "sylvan",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "daemonic",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "grassrunner",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "elven",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "dwarven",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "lycant",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "dragonic",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "drakish",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 30,
+        "agi": 25,
+        "str": 6,
+        "vit": 17,
+        "int": 23,
+        "spi": 36
+      },
+      "mods": {
+        "dex": 5,
+        "agi": 4,
+        "str": 1,
+        "vit": 2,
+        "int": 3,
+        "spi": 6
+      },
+      "hp": 50,
+      "mp": 0,
+      "fortitude": 13,
+      "willpower": 17,
+      "evasion": 0,
+      "defense": 3,
+      "movement": 25,
+      "initiative": 12,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Bard": 17,
+        "Alchemist": 4
+      }
+    },
+    "notes": "Dexterity printed \"28+2\" (base+rolled+growth = 28, +2 from the Master's Bracelet); printed.abilities.dex records 30. MP printed as \"None\" (Grassrunner [Mana Interference]); recorded as 0. Magic power circles: \"Bardic Power\" 17 (Bard 11 + Spirit modifier 6) and Alchemist 4 (Alchemist 1 + Intelligence modifier 3). Evocation printed as [Paralyzing Mist] = data \"Paralyze Mist\". Ammunition printed \"Quarrel x 24\" (24 shots). Material cards printed: Green B 20, A 18, S 8, SS 0. Normal Crossbow +1 as printed: 2H, Min STR 5, Weapon Accuracy +1, Total Accuracy 16, Power 20, Crit 10, Extra Damage +1, Total 11. Mana Coat as printed: Min STR 1, Evasion -, Defense 3 (equals Intelligence modifier). Base Evasion box is blank (no Fighter/Grappler/Fencer); Total Evasion 0. Check packages printed: Technique 13, Movement 12, Observation 11, Knowledge 4 (Alchemist package). Drakish is written on an extra line below the language table. Racial abilities printed: [Mana Interference], [Natural Communication]. Soulscars 0.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-meria-feytouched-11",
+    "name": "Meria Feytouched",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 61
+    },
+    "sheetPages": [
+      63,
+      64
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 2,
+      "explorer": 1,
+      "knowledge": 3
+    },
+    "summary": "A Meria fairy tamer and scholar who casts a wide range of Fairy Magic from the back line, supported by a rented mount.",
+    "description": "This is the party's main spellcaster and support. Fairy Magic covers healing, protection and attacks, and with a full set of gems the character can pick whichever four fairy types suit the day's adventure. Spell feats shape each cast: [Metamagic/Targets] spreads a single-target spell over several allies, [Magic Convergence] focuses an area spell on one target, and [Magic Control] leaves friends out of an area. [Rune Master] allows two feat declarations per round. High Sage levels give monster lore and [Mana Save] for cheaper spells, and the large MP pool lasts. Rider levels let it ride or command a mount, casting while moving and ordering the mount to cast its own spells.",
+    "tips": [
+      "Each morning choose the four fairy types the adventure needs; the six gems in the Ornate Jewelry let you pick any combination.",
+      "Combine [Metamagic/Targets] with a protective or healing spell to cover several allies at once (MP cost multiplies by the number of targets).",
+      "You make the Monster Knowledge checks (with +1 from the Smart Animal Sack); when your Sage check meets the weak-point value, [Weakness Exploit] doubles that weakness bonus for your own attacks and spells.",
+      "Use [Magic Command] to have the Emerald Raccoon cast its own Fairy Magic, saving your MP; it works four times a day."
+    ],
+    "race": "Meria",
+    "background": "Feytouched",
+    "base": {
+      "skill": 8,
+      "body": 7,
+      "mind": 14
+    },
+    "rolled": {
+      "dex": 3,
+      "agi": 4,
+      "str": 1,
+      "vit": 15,
+      "int": 5,
+      "spi": 3
+    },
+    "growth": {
+      "dex": 1,
+      "agi": 6,
+      "str": 4,
+      "vit": 7,
+      "int": 7,
+      "spi": 9
+    },
+    "classes": [
+      {
+        "name": "Fairy Tamer",
+        "level": 11
+      },
+      {
+        "name": "Sage",
+        "level": 9
+      },
+      {
+        "name": "Rider",
+        "level": 8
+      }
+    ],
+    "feats": [
+      "Targeting",
+      "Metamagic/Targets",
+      {
+        "name": "MP Save",
+        "choice": "Fairy Tamer"
+      },
+      "Magic Convergence",
+      "Magic Control",
+      "Capacity"
+    ],
+    "autoFeats": [
+      "Rune Master",
+      "Keen Eyes",
+      "Weakness Exploit",
+      "Mana Save"
+    ],
+    "classAbilities": [
+      {
+        "type": "stunt",
+        "name": "Enhance Mount"
+      },
+      {
+        "type": "stunt",
+        "name": "Search Command"
+      },
+      {
+        "type": "stunt",
+        "name": "Mount's Devotion"
+      },
+      {
+        "type": "stunt",
+        "name": "HP Enhancement"
+      },
+      {
+        "type": "stunt",
+        "name": "Magic Command"
+      },
+      {
+        "type": "stunt",
+        "name": "Steady Command"
+      },
+      {
+        "type": "stunt",
+        "name": "Unique Skill Release"
+      },
+      {
+        "type": "stunt",
+        "name": "Improved Magic Command"
+      }
+    ],
+    "weapons": [],
+    "armor": [
+      {
+        "name": "Soft Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      },
+      {
+        "name": "Round Shield",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "head",
+        "name": "Cattleya Garland",
+        "note": ""
+      },
+      {
+        "slot": "neck",
+        "name": "Ornate Jewelry",
+        "note": "holds the six Fairy Tamer's Gems"
+      },
+      {
+        "slot": "back",
+        "name": "Smart Animal Sack",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Lucky Feathers",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Fairy Tamer's Gem (Level 11-12)",
+        "quantity": 6
+      },
+      {
+        "name": "Awake Potion",
+        "quantity": 1
+      },
+      {
+        "name": "Magic Herb",
+        "quantity": 5
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 5
+      },
+      {
+        "name": "Guardian Stone",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 4
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Mount Contract",
+        "quantity": 2
+      },
+      {
+        "name": "Gardner Shell",
+        "quantity": 1
+      },
+      {
+        "name": "Manatite Plating",
+        "quantity": 1
+      },
+      {
+        "name": "Mount Reduction Tag III",
+        "quantity": 2
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {},
+    "money": 4370,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "ancientCelestial",
+        "speak": false,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "sylvan",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "daemonic",
+        "speak": true,
+        "write": false
+      },
+      {
+        "key": "barbaric",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "drakish",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": {
+      "name": "Emerald Raccoon",
+      "level": 8,
+      "note": "Sheet lists Mount Contracts for both a War Horse and an Emerald Raccoon; no mount stats are printed. Emerald Raccoon chosen as the rear-support mount (casts Fairy Magic via [Magic Command]); level = adventurer level 11 capped at its maximum 8. Alternative: War Horse (max level 7)."
+    },
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 12,
+        "agi": 18,
+        "str": 12,
+        "vit": 29,
+        "int": 26,
+        "spi": 26
+      },
+      "mods": {
+        "dex": 2,
+        "agi": 3,
+        "str": 2,
+        "vit": 4,
+        "int": 4,
+        "spi": 4
+      },
+      "hp": 64,
+      "mp": 74,
+      "fortitude": 15,
+      "willpower": 16,
+      "evasion": 0,
+      "defense": 4,
+      "movement": 18,
+      "initiative": null,
+      "monsterKnowledge": 14,
+      "magicPower": {
+        "Fairy Tamer": 15
+      }
+    },
+    "notes": "HP printed 64, but the formula gives 62 (11 x 3 + Vitality 29) and no feat, item or racial ability on the sheet explains +2; Vitality 29, its modifier 4 and Fortitude 15 are consistent, so the HP box looks like a sheet error. MP 74 = 33 + Spirit 26 + [Capacity] 15. Fortitude printed \"15(19)\": +4 from [Thriving Life] in natural environments or sunlight. Willpower 16 includes Ring of the Mind +1. Monster Knowledge printed \"13+1\" (Sage 9 + Int 4) and \"12+1\" (Rider 8 + Int 4), the +1 from the Smart Animal Sack; printed.monsterKnowledge records 14. Check packages printed: Movement 11, Observation \"12/13\", Knowledge \"12/13\" (Rider/Sage). Feat 5 printed as [MP Save/Fairy Tamer] (chosen class: Fairy Tamer). Fairy elements are not printed on the sheet: the Fairy Tamer picks four types daily and carries all six Level 11-12 gems, so fairyElements is left empty. Items: \"Mount Contract (War Horse)\" and \"Mount Contract (Emerald Raccoon)\" are listed as Mount Contract x2; Gardner Shell (mount armor), Manatite Plating (mount weapon) and Mount Reduction Tag III x2 are mount gear (mount-gear.json). Mako stones printed \"Mako Stone (5 pts.) x 5\"; Guardian Stones printed \"Guardian Stone (5 pts.) x 4\". No weapons. Armor as printed: Soft Leather Min STR 7, Defense 3; Round Shield Min STR 8, Defense 1; Total Evasion 0, Total Defense 4. Racial ability printed: [Thriving Life]. Soulscars 0.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-tiens-cavalier-11",
+    "name": "Tiens Cavalier",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 13
+    },
+    "sheetPages": [
+      17,
+      18
+    ],
+    "roles": {
+      "line": "front",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 1
+    },
+    "summary": "A level-11 Tiens rapier fencer who fights from the saddle of a Divine Horse, backed by Enhancer techniques and a pinch of Alchemy.",
+    "description": "A mounted duelist for the front line. The Tiens fights with an Excellent Rapier +1 from the back of a Divine Horse fitted with a Blade Horn and a Wind Coat, and [Intercommunication] lets rider and horse coordinate without words. Eleven Rider levels bring a long list of stunts: the horse grows tougher and more accurate and unlocks its unique skills, while the rider gains bonus damage from height and extra Evasion. Fencer keeps the rider nimble with a crit value of 9, Enhancer techniques add boosts on demand, and two Alchemist levels supply gold and white card tricks. The character cannot heal and knows little lore, so keep a support caster nearby.",
+    "tips": [
+      "Start a hard fight with [Bear Muscle] (strengthened by Bear Claws), [Beetleskin] and [Cat's Eyes], and let the horse attack every round as well.",
+      "[Lethal Strike III] has no drawback, so declare it on most rapier attacks to make the low crit value of 9 count.",
+      "Spend a gold card on [Critical Ray] before a decisive blow, or a white card on [Mirage Daze] to cut a dangerous enemy's accuracy.",
+      "Roll the Rider Monster Knowledge check (14): with Hunter's Eyes a success also gives +1 accuracy against that monster."
+    ],
+    "race": "Tiens",
+    "background": "Cavalier",
+    "base": {
+      "skill": 10,
+      "body": 11,
+      "mind": 7
+    },
+    "rolled": {
+      "dex": 8,
+      "agi": 7,
+      "str": 4,
+      "vit": 5,
+      "int": 6,
+      "spi": 12
+    },
+    "growth": {
+      "dex": 6,
+      "agi": 7,
+      "str": 6,
+      "vit": 4,
+      "int": 6,
+      "spi": 5
+    },
+    "classes": [
+      {
+        "name": "Fencer",
+        "level": 11
+      },
+      {
+        "name": "Rider",
+        "level": 11
+      },
+      {
+        "name": "Enhancer",
+        "level": 6
+      },
+      {
+        "name": "Alchemist",
+        "level": 2
+      }
+    ],
+    "feats": [
+      "Lethal Strike III",
+      "Evasive Maneuvers II",
+      {
+        "name": "Weapon Proficiency A",
+        "choice": "sword"
+      },
+      {
+        "name": "Armor Proficiency A",
+        "choice": "nonmetal"
+      },
+      {
+        "name": "Armor Proficiency S",
+        "choice": "nonmetal"
+      },
+      {
+        "name": "Weapon Proficiency S",
+        "choice": "sword"
+      }
+    ],
+    "autoFeats": [],
+    "classAbilities": [
+      {
+        "type": "technique",
+        "name": "Bear Muscle"
+      },
+      {
+        "type": "technique",
+        "name": "Beetleskin"
+      },
+      {
+        "type": "technique",
+        "name": "Cat's Eyes"
+      },
+      {
+        "type": "technique",
+        "name": "Gazelle Feet"
+      },
+      {
+        "type": "technique",
+        "name": "Strong Blood"
+      },
+      {
+        "type": "technique",
+        "name": "Recovery"
+      },
+      {
+        "type": "stunt",
+        "name": "Attack Obstruction"
+      },
+      {
+        "type": "stunt",
+        "name": "Elevated Attack"
+      },
+      {
+        "type": "stunt",
+        "name": "Enhance Mount"
+      },
+      {
+        "type": "stunt",
+        "name": "Search Command"
+      },
+      {
+        "type": "stunt",
+        "name": "Riding As One"
+      },
+      {
+        "type": "stunt",
+        "name": "Unique Skill Release"
+      },
+      {
+        "type": "stunt",
+        "name": "HP Enhancement"
+      },
+      {
+        "type": "stunt",
+        "name": "Improved HP Enhancement"
+      },
+      {
+        "type": "stunt",
+        "name": "Improved Elevated Attack"
+      },
+      {
+        "type": "stunt",
+        "name": "Improved Attack Obstruction"
+      },
+      {
+        "type": "stunt",
+        "name": "Unique Skill Perfect Release"
+      },
+      {
+        "type": "evocation",
+        "name": "Critical Ray"
+      },
+      {
+        "type": "evocation",
+        "name": "Mirage Daze"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Excellent Rapier",
+        "mode": "1H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": ""
+      }
+    ],
+    "armor": [
+      {
+        "name": "Tiger Band",
+        "equipped": true,
+        "enhance": 1,
+        "note": ""
+      },
+      {
+        "name": "Buckler",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "face",
+        "name": "Hunter's Eyes",
+        "note": ""
+      },
+      {
+        "slot": "neck",
+        "name": "Bear Claws",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "leftHand",
+        "name": "Alchemy Kit",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Black Belt",
+        "note": ""
+      },
+      {
+        "slot": "feet",
+        "name": "Light Boots",
+        "note": ""
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Mako Stone (1-5 pts.)",
+        "quantity": 10
+      },
+      {
+        "name": "Mount Contract",
+        "quantity": 1
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Blade Horn",
+        "quantity": 1
+      },
+      {
+        "name": "Wind Coat",
+        "quantity": 1
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {
+      "white": {
+        "A": 10,
+        "S": 4
+      },
+      "gold": {
+        "B": 10,
+        "A": 9
+      }
+    },
+    "money": 1260,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "daemonic",
+        "speak": true,
+        "write": false
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": {
+      "name": "Divine Horse",
+      "level": 11,
+      "note": "Sheet item 'Mount Contract (Divine Horse)'; the horse carries the Blade Horn and Wind Coat listed in the items. Level not printed: by the rules the mount level equals the jockey's adventurer level 11 (Divine Horse range 10-13)."
+    },
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 24,
+        "agi": 24,
+        "str": 21,
+        "vit": 20,
+        "int": 19,
+        "spi": 24
+      },
+      "mods": {
+        "dex": 4,
+        "agi": 4,
+        "str": 3,
+        "vit": 3,
+        "int": 3,
+        "spi": 4
+      },
+      "hp": 53,
+      "mp": 24,
+      "fortitude": 14,
+      "willpower": 16,
+      "evasion": 19,
+      "defense": 10,
+      "movement": 24,
+      "initiative": null,
+      "monsterKnowledge": 14,
+      "magicPower": {
+        "Alchemist": 5
+      }
+    },
+    "notes": "Feats printed as [Weapon Prof. A/Sword], [Weapon Prof. S/Sword] (Sword category), [Armor Prof. A/NM Armor], [Armor Prof. S/NM Armor] (Non-metal Armor category). Armor table 'Other' row lists bonuses, not an item: [Evasive Maneuvers], [Black Belt], [Improved Attack Obstruction] for Evasion +2 (4) and Defense +1. Printed Total Evasion 19 (21) and Total Extra Damage 18 (20); the bracketed values include the improved Rider stunts. Tiger Band +1 Defense printed as '6+3' (armor proficiency bonus). Mako Stone printed as 'Mako Stone (3 pts.) x 10' (3 points each). Charms printed as 'Sunlight Charm (2)' / 'Moonlight Charm (2)'. Willpower 16 includes Ring of the Mind +1. Check packages: Rider 11 (Movement 15, Observation 14, Knowledge 14), Alchemist 2 (Knowledge 5). Material Cards: White A 10, S 4; Gold B 10, A 9 (all other cells 0). Movement: Limited 3, Normal 24, Full 72. Soulscars 0. Mount level derived from the rules, not printed.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  },
+  {
+    "id": "cr3-leprechaun-alchemist-11",
+    "name": "Leprechaun Alchemist",
+    "tier": "advanced",
+    "source": {
+      "book": "CR3",
+      "page": 19
+    },
+    "sheetPages": [
+      23,
+      24
+    ],
+    "roles": {
+      "line": "rear",
+      "healer": 0,
+      "explorer": 0,
+      "knowledge": 1
+    },
+    "summary": "A level-11 Leprechaun who controls the battlefield with Evocations and backs it up with a magic crossbow and a little Conjurer magic.",
+    "description": "A back-line controller with three toolkits. Eleven Alchemist levels and a thick stack of material cards power Evocations that strengthen allies ([Vorpal Weapon], [Barkmail], [Critical Ray]), weaken enemies ([Paralyze Mist], [Armorust], [Poison Needle]) and restore HP or MP. [Consecutive Evocation] fires two of them in one action, and [Distant Evocations] lets touch effects reach across the field. A Thami +1 crossbow, converted into a magical implement, handles direct damage and doubles as the focus for two Conjurer levels of small support spells. Thanks to [Invisible Hand] the Leprechaun wears several accessories in the Other slot and swaps them quickly.",
+    "tips": [
+      "Cards cost real money: use B-rank cards for routine buffs and keep the S-rank ones for turning points.",
+      "With [Consecutive Evocation], pair a buff on a frontliner with a debuff on the enemy in the same turn.",
+      "[Targeting] means your quarrels never stray into allies, so shooting into a melee is safe.",
+      "Break a spare Ring of the Fleet-footed for a one-off Agility surge when an evasion or initiative roll really matters."
+    ],
+    "race": "Leprechaun",
+    "background": "Alchemist",
+    "base": {
+      "skill": 11,
+      "body": 5,
+      "mind": 7
+    },
+    "rolled": {
+      "dex": 8,
+      "agi": 2,
+      "str": 4,
+      "vit": 9,
+      "int": 7,
+      "spi": 8
+    },
+    "growth": {
+      "dex": 5,
+      "agi": 6,
+      "str": 6,
+      "vit": 4,
+      "int": 7,
+      "spi": 6
+    },
+    "classes": [
+      {
+        "name": "Marksman",
+        "level": 10
+      },
+      {
+        "name": "Alchemist",
+        "level": 11
+      },
+      {
+        "name": "Scout",
+        "level": 8
+      },
+      {
+        "name": "Conjurer",
+        "level": 2
+      }
+    ],
+    "feats": [
+      "Targeting",
+      "Enhanced Evocations I",
+      {
+        "name": "Weapon Proficiency A",
+        "choice": "crossbow"
+      },
+      "Archer's Grace",
+      "Distant Evocations",
+      "Consecutive Evocation"
+    ],
+    "autoFeats": [
+      "Treasure Hunt",
+      "Fast Action"
+    ],
+    "classAbilities": [
+      {
+        "type": "evocation",
+        "name": "Vorpal Weapon"
+      },
+      {
+        "type": "evocation",
+        "name": "Paralyze Mist"
+      },
+      {
+        "type": "evocation",
+        "name": "Critical Ray"
+      },
+      {
+        "type": "evocation",
+        "name": "Barkmail"
+      },
+      {
+        "type": "evocation",
+        "name": "Poison Needle"
+      },
+      {
+        "type": "evocation",
+        "name": "Heal Spray"
+      },
+      {
+        "type": "evocation",
+        "name": "Armorust"
+      },
+      {
+        "type": "evocation",
+        "name": "Initiative Boost"
+      },
+      {
+        "type": "evocation",
+        "name": "Vivid Liquid"
+      },
+      {
+        "type": "evocation",
+        "name": "Deluxe Materials"
+      },
+      {
+        "type": "evocation",
+        "name": "Combine Materials"
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Thami",
+        "mode": "2H",
+        "equipped": true,
+        "enhance": 1,
+        "quantity": 1,
+        "note": "magical implement"
+      }
+    ],
+    "armor": [
+      {
+        "name": "Hard Leather",
+        "equipped": true,
+        "enhance": 0,
+        "note": ""
+      }
+    ],
+    "accessories": [
+      {
+        "slot": "back",
+        "name": "Quiver",
+        "note": ""
+      },
+      {
+        "slot": "rightHand",
+        "name": "Ring of the Mind",
+        "note": ""
+      },
+      {
+        "slot": "waist",
+        "name": "Alchemy Kit",
+        "note": ""
+      },
+      {
+        "slot": "other",
+        "name": "Inverness, a Beautiful Star",
+        "note": "worn in Other via [Invisible Hand]"
+      },
+      {
+        "slot": "other",
+        "name": "Ability-Enhancing Ring (Ring of the Fleet-footed)",
+        "note": "worn in Other via [Invisible Hand]"
+      }
+    ],
+    "items": [
+      {
+        "name": "Adventurer Set",
+        "quantity": 1
+      },
+      {
+        "name": "Scout's Tools",
+        "quantity": 1
+      },
+      {
+        "name": "Quarrel (12)",
+        "quantity": 24
+      },
+      {
+        "name": "Ability-Enhancing Ring (Ring of the Fleet-footed)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+1)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Sunlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Moonlight Charm (+1)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+2)",
+        "quantity": 2
+      },
+      {
+        "name": "Moonlight Charm (+3)",
+        "quantity": 1
+      },
+      {
+        "name": "Key of Unlocking",
+        "quantity": 3
+      },
+      {
+        "name": "Abyss Shard",
+        "quantity": 15
+      }
+    ],
+    "cards": {
+      "red": {
+        "B": 20,
+        "A": 15,
+        "S": 5
+      },
+      "green": {
+        "B": 50,
+        "A": 50,
+        "S": 10
+      },
+      "white": {
+        "B": 5,
+        "A": 5,
+        "S": 3
+      },
+      "black": {
+        "B": 20,
+        "A": 15,
+        "S": 5
+      },
+      "gold": {
+        "B": 5,
+        "A": 5,
+        "S": 3
+      }
+    },
+    "money": 740,
+    "deposit": 0,
+    "debt": 0,
+    "exp": 0,
+    "reputation": 900,
+    "rank": "",
+    "languages": [
+      {
+        "key": "tradeCommon",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "arcana",
+        "speak": true,
+        "write": true
+      },
+      {
+        "key": "magitech",
+        "speak": true,
+        "write": true
+      }
+    ],
+    "deity": "",
+    "fairyElements": [],
+    "mount": null,
+    "printed": {
+      "level": 11,
+      "abilities": {
+        "dex": 24,
+        "agi": 20,
+        "str": 15,
+        "vit": 18,
+        "int": 21,
+        "spi": 21
+      },
+      "mods": {
+        "dex": 4,
+        "agi": 3,
+        "str": 2,
+        "vit": 3,
+        "int": 3,
+        "spi": 3
+      },
+      "hp": 51,
+      "mp": 27,
+      "fortitude": 14,
+      "willpower": 15,
+      "evasion": 13,
+      "defense": 3,
+      "movement": 20,
+      "initiative": 11,
+      "monsterKnowledge": null,
+      "magicPower": {
+        "Alchemist": 14,
+        "Conjurer": 5
+      }
+    },
+    "notes": "Class levels: the Class table prints Marksman 11 / Alchemist 10, but every other place on the sheet uses Marksman 10 / Alchemist 11 (check boxes 'Marksman 10' and 'Alchemist 11', Base Accuracy 14, Base Evasion 13, Extra Damage 12, Alchemist Magic Power 14, Knowledge 14, eleven Evocations listed), so Marksman 10 / Alchemist 11 is used. Printed Total Defense 3 although Hard Leather has Defense 4 and nothing lowers it (likely misprint). Agility printed '19+1' (worn Ring of the Fleet-footed). Feats printed as [Weapon Prof. A/Crossbow] (Crossbow category) and [Enhanced Evocations] (no numeral, mapped to Enhanced Evocations I). Evasion uses Marksman via [Archer's Grace]. Thami +1 has '(magical implement)' printed under it. Quarrels printed 'Quarrel x 24'; spare rings printed 'Ring Of The Fleet-Footed x 2'. Racial abilities: [Darkvision], [Invisible Hand], [Unseen Artisan]. Check packages: Scout 8 (Technique 12, Movement 11, Observation 11/14), Alchemist 11 (Knowledge 14). Material Cards: Red B 20, A 15, S 5; Green B 50, A 50, S 10; White B 5, A 5, S 3; Black B 20, A 15, S 5; Gold B 5, A 5, S 3; SS 0. Movement: Limited 3, Normal 20, Full 60. Soulscars 0.",
+    "unmatched": [
+      "Abyss Shard"
+    ]
+  }
+]

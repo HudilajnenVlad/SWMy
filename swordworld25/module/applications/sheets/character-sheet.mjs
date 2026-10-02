@@ -6,6 +6,7 @@ import { lookupPower, POWER_TABLE } from "../../dice/power-table.mjs";
 import { gamels, PAPER_DIALOG, signed, speakerFor, t } from "../../helpers/utils.mjs";
 import { createCard } from "../../chat/card.mjs";
 import { stackValue } from "../../data/item/equipment.mjs";
+import PregenPicker, { isBlankCharacter } from "../apps/pregen-picker.mjs";
 
 const ABILITY_KEYS = ["dex", "agi", "str", "vit", "int", "spi"];
 
@@ -60,7 +61,8 @@ export default class CharacterSheet extends SW25ActorSheet {
       resourceHit: CharacterSheet.#onResourceHit,
       powerTable: CharacterSheet.#onPowerTable,
       traitChat: CharacterSheet.#onTraitChat,
-      addAdventurerSet: CharacterSheet.#onAddAdventurerSet
+      addAdventurerSet: CharacterSheet.#onAddAdventurerSet,
+      choosePregen: CharacterSheet.#onChoosePregen
     }
   };
 
@@ -860,9 +862,37 @@ export default class CharacterSheet extends SW25ActorSheet {
   /*  Rendering                                   */
   /* -------------------------------------------- */
 
+  /**
+   * A "Choose a pregen" button in the title bar, shown while the character is still empty.
+   * @override
+   */
+  async _renderFrame(options) {
+    const frame = await super._renderFrame(options);
+    if ( this.isEditable && this.window.controls ) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "swp-pregen-head-btn";
+      button.dataset.action = "choosePregen";
+      button.innerHTML = `<i class="fa-solid fa-users-viewfinder"></i><span>${t("SW25.Pregen.Choose")}</span>`;
+      button.dataset.tooltip = "SW25.Pregen.ChooseHint";
+      this.window.controls.before(button);
+    }
+    return frame;
+  }
+
+  /** @override */
+  _getHeaderControls() {
+    const controls = super._getHeaderControls();
+    if ( this.isEditable ) {
+      controls.unshift({ icon: "fa-solid fa-users-viewfinder", label: "SW25.Pregen.Choose", action: "choosePregen" });
+    }
+    return controls;
+  }
+
   /** @override */
   async _onRender(context, options) {
     await super._onRender(context, options);
+    this.window.header?.querySelector(".swp-pregen-head-btn")?.toggleAttribute("hidden", !isBlankCharacter(this.actor));
     // Language name inputs and the "add language" list
     for ( const input of this.element.querySelectorAll("[data-language-name]") ) {
       input.addEventListener("change", this.#onLanguageName.bind(this));
@@ -1130,6 +1160,11 @@ export default class CharacterSheet extends SW25ActorSheet {
       data.system.level = 1;
       await this.actor.createEmbeddedDocuments("Item", [data]);
     }
+  }
+
+  /** Open the sample characters (Easy Creation, CR I p.20). */
+  static #onChoosePregen() {
+    PregenPicker.open(this.actor);
   }
 
   /**

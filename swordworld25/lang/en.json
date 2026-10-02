@@ -1030,6 +1030,59 @@
     "PowerTable": {
       "Title": "Power Table"
     },
+    "Pregen": {
+      "Applied": "{actor} is now the {pregen}. Give them a name, age and a bit of history!",
+      "Aptitude": {
+        "0": "no aptitude",
+        "1": "limited aptitude",
+        "2": "high aptitude",
+        "3": "particularly high aptitude"
+      },
+      "Back": "Back to the list",
+      "Choose": "Choose a pregen",
+      "ChooseHint": "Easy Creation: take a ready-made sample character from the rulebooks",
+      "ClassAbilities": "Techniques, songs, stunts, evocations",
+      "Classes": "Classes",
+      "ConfirmText": "{actor} already has a race, classes or items. Taking {pregen} removes all of them and replaces abilities, experience, money and languages. Name, portrait and biography stay.",
+      "ConfirmTitle": "Replace the character?",
+      "Equipment": "Equipment",
+      "Fortitude": "Fortitude",
+      "Hint": "Easy Creation (CR I p.20): pick a ready-made character from the rulebooks, then give it a name, age, gender and a bit of history. A card opens the full character.",
+      "Line": {
+        "front": "Frontline",
+        "frontSupport": "Frontline (support)",
+        "rear": "Rearguard"
+      },
+      "Missing": "Not in the compendiums, added as plain items: {names}",
+      "MissingHint": "Not in the compendiums (added as plain items):",
+      "Money": "Money",
+      "MountCreated": "{name} created; {actor} is its rider.",
+      "MountNoPermission": "You may not create actors: ask the GM to add {name} from the Mounts compendium.",
+      "MountNoPermissionShort": "You may not create actors: the GM can add the mount from the Mounts compendium",
+      "Move": "Move",
+      "None": "No sample characters found — build them with: node tools/build-packs.mjs pregens",
+      "ReplaceWarn": "Replaces the race, classes and items of this character",
+      "Role": {
+        "explorer": "Explorer",
+        "healer": "Healer",
+        "knowledge": "Knowledge"
+      },
+      "Spare": "spare",
+      "Tier": {
+        "advanced": "Level 10–11",
+        "all": "All",
+        "starting": "Starting characters"
+      },
+      "TierHint": {
+        "advanced": "grown-up versions for high-level play, CR III p.25–64",
+        "starting": "Easy Creation, CR I–III"
+      },
+      "Tips": "How to play",
+      "Title": "Sample characters",
+      "Use": "Take this character",
+      "Willpower": "Willpower",
+      "WithMount": "Also create the mount ({name})"
+    },
     "Prereq": {
       "advLevel": "Adventurer level {level}+"
     },

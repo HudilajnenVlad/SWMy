@@ -515,3 +515,50 @@ Combat feats that make the player pick something ("Weapon Proficiency A") carry
   `check: { "value": null, "base": "riderInt", … }` and `damage: { "power": 10, "critical": 10, "bonus": "riderInt", … }`.
   `base`/`bonus` keys: `riderDex`, `riderAgi`, `riderStr`, `riderVit`, `riderInt`, `riderSpi`.
 * `mp: null` in a level row (mount without MP) is stored as 0.
+
+## Sample characters — `data/pregens.json`
+The ready-made characters of Easy Creation (CR I p.20–50, CR II p.13–24, CR III p.13–64), transcribed from the
+printed character sheets. `node tools/build-packs.mjs pregens` resolves every name against the compendium sources
+and writes `swordworld25/packs/pregens.json` (plain JSON, no LevelDB — it can be rebuilt while a world is open).
+The character sheet's "Choose a pregen" window reads that file and copies the compendium entries.
+```json
+{
+  "id": "cr1-human-warrior", "name": "Human Warrior", "tier": "starting",
+  "source": { "book": "CR1", "page": 23 }, "sheetPages": [25, 26],
+  "roles": { "line": "front", "healer": 0, "explorer": 2, "knowledge": 0 },
+  "summary": "…", "description": "…", "tips": ["…"],
+  "race": "Human", "background": "Mercenary",
+  "base": { "skill": 7, "body": 10, "mind": 4 },
+  "rolled": { "dex": 11, "agi": 6, "str": 7, "vit": 4, "int": 9, "spi": 6 },
+  "growth": { "dex": 0, "agi": 0, "str": 0, "vit": 0, "int": 0, "spi": 0 },
+  "classes": [ { "name": "Fighter", "level": 2 } ],
+  "feats": [ "Power Strike I", { "name": "Weapon Proficiency A", "choice": "sword" } ],
+  "autoFeats": [],
+  "classAbilities": [ { "type": "technique", "name": "Bear Muscle" } ],
+  "weapons": [ { "name": "Bastard Sword", "mode": "1H", "equipped": true, "enhance": 0, "quantity": 1, "note": "" } ],
+  "armor": [ { "name": "Hard Leather", "equipped": true, "enhance": 0, "note": "" } ],
+  "accessories": [ { "slot": "neck", "name": "…", "note": "" } ],
+  "items": [ { "name": "Lifegrass", "quantity": 2 } ],
+  "cards": { "red": { "B": 5 } },
+  "money": 40, "deposit": 0, "debt": 0, "exp": 0, "reputation": 0, "rank": "",
+  "languages": [ { "key": "regional", "name": "Burlight", "speak": true, "write": true } ],
+  "deity": "", "fairyElements": [], "mount": { "name": "Horse", "level": 2 },
+  "printed": { "level": 2, "abilities": {}, "mods": {}, "hp": 20, "mp": 10, "fortitude": 4, "willpower": 3 },
+  "notes": "", "unmatched": []
+}
+```
+* `tier`: `starting` (Easy Creation) or `advanced` (the level 10–11 versions of CR III p.25–64).
+* `roles` follow the "Sample Character Features" table (CR III p.12): `line` = `front` | `frontSupport` | `rear`;
+  `healer` / `explorer` / `knowledge` = 0 none, 1 limited (△), 2 high (○), 3 particularly high (◎).
+* `summary`, `description` and `tips` are own-words summaries, never book text.
+* Names must match the data files exactly (case and brackets are ignored). An unknown name becomes a plain item and
+  a build warning. `"Abyss Shard"` items are counted in the sheet's Abyss Shards instead.
+* `feats`: a name, or `{ name, choice }` for a feat with a chosen category (`choiceValue`: weapon category key for
+  Weapon Proficiency, `nonmetal` / `metal` for Armor Proficiency, the class for MP Save).
+* `weapons[].mode` is a mode `label` of the weapon (the first row printed on the sheet); `enhance` makes a "+1"
+  weapon (Accuracy and Extra Damage +1, magic). `armor[].enhance` adds Defense; `armor[].defense` overrides it for
+  armor whose Defense depends on the wearer (Mana Coat).
+* `mount`: the Rider's mount from `mounts.json`; the window offers to create it (with the character's mount
+  equipment) when the user may create actors.
+* `printed` holds the sheet's own values (item bonuses included) and is only used to check the transcription;
+  `notes` explains misprints and choices.

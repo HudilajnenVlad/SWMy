@@ -1,0 +1,138 @@
+<div class="swp-pregens">
+  <header class="swp-pregens-head">
+    <p class="swp-pregens-hint"><i class="fa-solid fa-feather"></i> {{localize "SW25.Pregen.Hint"}}</p>
+    <nav class="swp-pregens-filter">
+      {{#each filters}}
+      <button type="button" class="swp-pregens-tab {{#if active}}on{{/if}}" data-action="filter" data-filter="{{id}}">{{label}} <small>{{count}}</small></button>
+      {{/each}}
+    </nav>
+  </header>
+
+  <div class="swp-pregens-grid">
+    {{#if empty}}<p class="swp-banner muted"><i class="fa-solid fa-circle-info"></i><span>{{localize "SW25.Pregen.None"}}</span></p>{{/if}}
+    {{#each groups}}
+    <section class="swp-pregens-group">
+      <div class="swp-bar"><span class="swp-bar-title">{{label}}</span><span class="swp-bar-note">{{hint}}</span></div>
+      <div class="swp-pregens-cards">
+        {{#each pregens}}
+        <article class="swp-pregen-card" data-action="details" data-pregen="{{id}}" tabindex="0">
+          <div class="swp-pregen-top">
+            <img class="swp-pregen-img" src="{{img}}" alt="">
+            <div class="swp-pregen-title">
+              <h3>{{name}}</h3>
+              <span class="swp-pregen-sub">{{race}} · {{classLine}}</span>
+            </div>
+            <span class="swp-pregen-level" data-tooltip="SW25.AdventurerLevel">{{level}}</span>
+          </div>
+          <p class="swp-pregen-summary">{{summary}}</p>
+          <footer class="swp-pregen-foot">
+            <span class="swp-pregen-line {{line.key}}">{{line.label}}</span>
+            {{#each aptitudes}}<span class="swp-pregen-apt apt-{{value}}" data-tooltip="{{tooltip}}"><b>{{mark}}</b> {{label}}</span>{{/each}}
+            <span class="swp-pregen-source">{{source}}</span>
+          </footer>
+        </article>
+        {{/each}}
+      </div>
+    </section>
+    {{/each}}
+  </div>
+
+  {{#with detail}}
+  <div class="swp-pregen-backdrop" data-action="closeDetails">
+    <section class="swp-pregen-modal" role="dialog" aria-modal="true" aria-label="{{name}}">
+      <header class="swp-pregen-modal-head">
+        <img class="swp-pregen-img" src="{{img}}" alt="">
+        <div class="swp-pregen-title">
+          <h2>{{name}}</h2>
+          <span class="swp-pregen-sub">{{race}} · {{background}} · {{tier}} · {{source}}</span>
+        </div>
+        <span class="swp-pregen-level big" data-tooltip="SW25.AdventurerLevel">{{level}}</span>
+        <button type="button" class="swp-pregen-x" data-action="closeDetails" data-tooltip="SW25.Pregen.Back"><i class="fa-solid fa-xmark"></i></button>
+      </header>
+
+      <div class="swp-pregen-modal-body">
+        <div class="swp-pregen-col text">
+          <p class="swp-pregen-lead">{{summary}}</p>
+          <p>{{description}}</p>
+          <div class="swp-pregen-roles">
+            <span class="swp-pregen-line {{line.key}}">{{line.label}}</span>
+            {{#each aptitudes}}<span class="swp-pregen-apt apt-{{value}}" data-tooltip="{{tooltip}}"><b>{{mark}}</b> {{label}}</span>{{/each}}
+          </div>
+          {{#if tips.length}}
+          <h4 class="swp-pregen-h">{{localize "SW25.Pregen.Tips"}}</h4>
+          <ul class="swp-pregen-tips">{{#each tips}}<li>{{this}}</li>{{/each}}</ul>
+          {{/if}}
+          {{#if missing.length}}
+          <p class="swp-pregen-missing"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "SW25.Pregen.MissingHint"}} {{#each missing}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
+          {{/if}}
+        </div>
+
+        <div class="swp-pregen-col stats">
+          <div class="swp-pregen-abilities">
+            {{#each abilities}}
+            <div class="swp-pregen-ability" data-tooltip="{{label}}">
+              <span class="abbr">{{abbr}}</span><span class="value">{{value}}</span><span class="mod">+{{mod}}</span>
+            </div>
+            {{/each}}
+          </div>
+          <div class="swp-pregen-vitals">
+            {{#each vitals}}<div class="swp-pregen-vital {{cls}}"><span>{{label}}</span><b>{{value}}</b></div>{{/each}}
+            {{#each magic}}<div class="swp-pregen-vital magic"><span>{{label}}</span><b>{{value}}</b></div>{{/each}}
+          </div>
+
+          <h4 class="swp-pregen-h">{{localize "SW25.Pregen.Classes"}}</h4>
+          <div class="swp-pregen-chips">{{#each classes}}<span class="swp-pregen-chip" data-tooltip="{{tip}}">{{name}} <b>{{level}}</b></span>{{/each}}</div>
+
+          {{#if feats.length}}
+          <h4 class="swp-pregen-h">{{localize "SW25.Feats"}}</h4>
+          <div class="swp-pregen-chips">{{#each feats}}<span class="swp-pregen-chip {{#if auto}}auto{{/if}}" data-tooltip="{{tip}}">[{{name}}]</span>{{/each}}</div>
+          {{/if}}
+
+          {{#if classAbilities.length}}
+          <h4 class="swp-pregen-h">{{localize "SW25.Pregen.ClassAbilities"}}</h4>
+          <div class="swp-pregen-chips">{{#each classAbilities}}<span class="swp-pregen-chip" data-tooltip="{{type}}: {{tip}}">[{{name}}]</span>{{/each}}</div>
+          {{/if}}
+
+          <h4 class="swp-pregen-h">{{localize "SW25.Pregen.Equipment"}}</h4>
+          <table class="swp-pregen-table">
+            <tbody>
+              {{#each weapons}}
+              <tr data-tooltip="{{tip}}"><th><i class="fa-solid fa-khanda"></i></th><td>{{name}} <small>{{mode}}</small>{{#unless equipped}} <small class="muted">({{localize "SW25.Pregen.Spare"}})</small>{{/unless}}</td>
+                <td class="num">{{#if accuracy includeZero=true}}{{localize "SW25.AccuracyShort"}} {{accuracy}} · {{/if}}{{localize "SW25.Power"}} {{power}} · {{localize "SW25.CritShort"}} {{critical}}{{#if extra includeZero=true}} · {{localize "SW25.ExtraDamageShort"}} {{extra}}{{/if}}</td></tr>
+              {{/each}}
+              {{#each armor}}
+              <tr data-tooltip="{{tip}}"><th><i class="fa-solid fa-shield-halved"></i></th><td>{{name}}</td>
+                <td class="num">{{#if evasion}}{{localize "SW25.Evasion"}} {{evasion}} · {{/if}}{{localize "SW25.DefenseShort"}} {{defense}}</td></tr>
+              {{/each}}
+              {{#each accessories}}
+              <tr data-tooltip="{{tip}}"><th><i class="fa-solid fa-gem"></i></th><td>{{name}}</td><td class="num">{{slot}}</td></tr>
+              {{/each}}
+            </tbody>
+          </table>
+          {{#if carried.length}}
+          <p class="swp-pregen-carried">{{#each carried}}<span data-tooltip="{{tip}}">{{name}}{{#if quantity}} ×{{quantity}}{{/if}}</span>{{#unless @last}}, {{/unless}}{{/each}}</p>
+          {{/if}}
+
+          <dl class="swp-pregen-kv">
+            <dt>{{localize "SW25.Pregen.Money"}}</dt><dd>{{money}}</dd>
+            {{#if deity}}<dt>{{localize "SW25.Deity"}}</dt><dd>{{deity}}</dd>{{/if}}
+            {{#if languages.length}}<dt>{{localize "SW25.Languages"}}</dt><dd>{{#each languages}}{{this}}{{#unless @last}}; {{/unless}}{{/each}}</dd>{{/if}}
+          </dl>
+        </div>
+      </div>
+
+      <footer class="swp-pregen-modal-foot">
+        {{#if mount}}
+        <label class="swp-pregen-mount {{#unless mount.allowed}}off{{/unless}}" {{#unless mount.allowed}}data-tooltip="SW25.Pregen.MountNoPermissionShort"{{/unless}}>
+          <input type="checkbox" name="withMount" {{#if mount.allowed}}checked{{else}}disabled{{/if}}> {{localize "SW25.Pregen.WithMount" name=mount.name}}
+        </label>
+        {{/if}}
+        {{#if replace}}<span class="swp-pregen-warn"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "SW25.Pregen.ReplaceWarn"}}</span>{{/if}}
+        <span class="spacer"></span>
+        <button type="button" class="swp-pregen-btn ghost" data-action="closeDetails"><i class="fa-solid fa-arrow-left"></i> {{localize "SW25.Pregen.Back"}}</button>
+        <button type="button" class="swp-pregen-btn" data-action="choose" {{#unless canApply}}disabled{{/unless}}><i class="fa-solid fa-check"></i> {{localize "SW25.Pregen.Use"}}</button>
+      </footer>
+    </section>
+  </div>
+  {{/with}}
+</div>
