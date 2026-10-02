@@ -4921,7 +4921,11 @@
       {
         "key": "damageTaken",
         "value": -1,
-        "condition": "fire or water/ice damage"
+        "condition": "fire or water/ice damage",
+        "types": [
+          "fire",
+          "water"
+        ]
       }
     ]
   },
@@ -6656,7 +6660,10 @@
       {
         "key": "damageTaken",
         "value": -1,
-        "condition": "water/ice damage"
+        "condition": "water/ice damage",
+        "types": [
+          "water"
+        ]
       },
       {
         "key": "ability.agi",

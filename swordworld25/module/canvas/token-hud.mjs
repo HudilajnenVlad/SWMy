@@ -1,4 +1,5 @@
 import { t } from "../helpers/utils.mjs";
+import { showMonsterToPlayers } from "../workflows/knowledge.mjs";
 
 /**
  * Extra Token HUD buttons: spellbook, loot, tracker.
@@ -32,6 +33,9 @@ export function registerTokenHud() {
     }
     if ( game.user.isGM && (actor.type === "monster") && actor.system.loot?.length ) {
       add("fa-solid fa-sack-dollar", t("SW25.Loot.Roll"), () => actor.rollLoot());
+    }
+    if ( game.user.isGM && ["monster", "trap"].includes(actor.type) ) {
+      add("fa-solid fa-users-viewfinder", t("SW25.Monster.ShowPlayers"), () => showMonsterToPlayers(actor));
     }
   });
 }

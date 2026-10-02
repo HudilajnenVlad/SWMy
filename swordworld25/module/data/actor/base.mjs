@@ -66,7 +66,8 @@ export default class ActorBaseModel extends foundry.abstract.TypeDataModel {
    */
   _addModifier(mod, source) {
     if ( !mod?.key ) return;
-    if ( mod.condition ) {
+    // Typed modifiers (Defense vs blunt weapons, damage taken from fire) apply when such damage is taken
+    if ( mod.condition || mod.types?.length || mod.exceptTypes?.length ) {
       this.conditionalModifiers.push({ ...mod, source });
       return;
     }

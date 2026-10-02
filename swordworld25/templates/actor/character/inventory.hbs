@@ -79,7 +79,7 @@
           {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this useAction=usable subtitle=grip}}
           <td class="uses">{{uses}}</td>
           <td class="price" {{#if priceTooltip}}data-tooltip="{{priceTooltip}}"{{/if}}>{{price}}</td>
-          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=usable equip=canEquip equipped=equipped equipIcon=equipIcon equipTooltip=equipTooltip}}
+          {{> "systems/swordworld25/templates/actor/paper/row-tools.hbs" use=usable equip=canEquip equipped=equipped equipIcon=equipIcon equipTooltip=equipTooltip sell=sellable crude=crude}}
         </tr>
         {{#if expanded}}<tr class="swp-details-row"><td colspan="5" data-item-id="{{id}}">{{> "systems/swordworld25/templates/actor/paper/details.hbs" this}}</td></tr>{{/if}}
         {{/each}}

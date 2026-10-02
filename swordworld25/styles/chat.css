@@ -118,6 +118,7 @@
 .swp .swp-chat-damage.mp .swp-chat-total { background: var(--swp-mp); }
 .swp .swp-chat-damage.fumble .swp-chat-total { background: var(--swp-muted); }
 .swp .swp-chat-parts { margin-top: 3px; color: var(--swp-ink-2); font-size: 11px; }
+.swp .swp-chat-parts.swp-chat-extra { margin-top: 1px; font-style: italic; }
 
 /* Stamps: automatic success/failure, TN results, experience, criticals */
 .swp .swp-chat-stamps { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
@@ -181,6 +182,12 @@
 .swp .swp-chat-apply { display: inline-flex; align-items: center; gap: 2px; }
 .swp .swp-chat-applied { margin-left: 3px; color: var(--swp-good); }
 .swp .swp-chat-resist-btn { padding: 0 6px; }
+.swp .swp-chat-weak { font-size: 11px; font-weight: 700; color: var(--swp-ink-2); cursor: help; }
+.swp .swp-chat-knowledge .swp-chat-note { margin: 0; padding: 5px 6px; font-size: 11.5px; color: var(--swp-ink-2); }
+.swp .swp-chat-knowledge .swp-chat-footrow { padding: 4px 6px 6px; border-top: var(--swp-thin); }
+.swp .swp-chat-knowledge .swp-chat-footrow .swp-btn-wide { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; height: 26px; font-size: 11.5px; }
+.swp .swp-chat-show { font-size: 12px; color: var(--swp-ink-2); }
+.swp .swp-chat-show:hover { color: var(--swp-ink); }
 
 /* Buttons */
 .swp .swp-chat-foot { display: flex; flex-direction: column; gap: 5px; margin: 8px 7px 0; }
@@ -224,6 +231,10 @@
 .swp .swp-chat-loot-table th { width: 58px; }
 .swp .swp-chat-loot-table td.price { width: 1%; color: var(--swp-ink-2); font-size: 11.5px; white-space: nowrap; }
 .swp .swp-chat-loot-table td.none { color: var(--swp-muted); font-style: italic; }
+.swp .swp-chat-loot-table td.take { width: 1%; padding: 2px 4px; white-space: nowrap; }
+.swp .swp-chat-loot-table td.take a { margin: 0 2px; font-size: 13px; }
+.swp .swp-chat-loot-table tr.taken td.item b { color: var(--swp-muted); text-decoration: line-through; }
+.swp .swp-loot-taken { display: block; color: var(--swp-good); font-size: 10.5px; }
 
 /* Plain notes (rest…) */
 .swp .swp-chat-text { margin: 7px 9px 0; font-size: 12.5px; }
@@ -273,5 +284,9 @@
 .swp-roll-tip tr.note th { color: var(--swp-ink-2); }
 .swp-roll-tip tr.good td { color: var(--swp-good); }
 .swp-roll-tip tr.bad td { color: var(--swp-bad); }
+.swp-roll-tip tr.crit th { font-weight: 700; }
 .swp-roll-tip tfoot th,
 .swp-roll-tip tfoot td { padding-top: 3px; border-top: 1.5px solid var(--swp-ink); font-size: 13.5px; font-weight: 700; }
+
+/* Check request of a trap (Search, Spot Trap, Disable Device) */
+.swp .swp-chat-trap > .swp-chat-note { margin: 8px 7px 0; padding: 4px 6px; border: none; font-size: 11.5px; }

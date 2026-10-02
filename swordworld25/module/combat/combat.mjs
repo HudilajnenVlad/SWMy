@@ -4,6 +4,16 @@ import { applyDamageTo, regenerate } from "./damage.mjs";
 import { rollPower } from "../dice/power.mjs";
 import { createCard } from "../chat/card.mjs";
 import { isResponsibleGM, renderSystemTemplate, t } from "../helpers/utils.mjs";
+import { executeAsGM, registerSocketHandler } from "../helpers/socket.mjs";
+
+/**
+ * Is the free turn order within each side used (popcorn initiative)? The side that won initiative acts first: any of
+ * its characters takes the turn when ready, and the other side follows once all of them have acted (CR I p.121-123).
+ * @returns {boolean}
+ */
+export function popcornEnabled() {
+  return !!game.settings.get("swordworld25", "popcornInitiative");
+}
 
 /**
  * Faction of a combatant: "pc" (the players' side) or "enemy".
@@ -45,6 +55,201 @@ export class SW25Combat extends Combat {
   setupTurns() {
     this._sw25First = this.firstFaction;
     return super.setupTurns();
+  }
+
+  /* -------------------------------------------- */
+  /*  Popcorn turns                               */
+  /* -------------------------------------------- */
+
+  /** Is this combat run with free turns within each side? */
+  get popcorn() {
+    return popcornEnabled();
+  }
+
+  /**
+   * Has a combatant acted in the current round?
+   * @param {Combatant} combatant
+   * @returns {boolean}
+   */
+  hasActed(combatant) {
+    return !!combatant && (combatant.getFlag("swordworld25", "acted") === this.round);
+  }
+
+  /**
+   * Side whose characters act now: the first side until each of its standing members has acted, then the other.
+   * Null before the combat starts and once everybody has acted.
+   * @type {"pc"|"enemy"|null}
+   */
+  get actingFaction() {
+    if ( !this.started ) return null;
+    const first = this.firstFaction;
+    const second = (first === "pc") ? "enemy" : "pc";
+    const pending = faction => this.combatants.some(c => (factionOf(c) === faction) && !c.isDefeated && !this.hasActed(c));
+    if ( pending(first) ) return first;
+    if ( pending(second) ) return second;
+    return null;
+  }
+
+  /**
+   * May a user take the turn of a combatant now? The GM may take anyone's turn at any time; a player only the turn of
+   * a character they own, on the side that acts, while nobody else is acting.
+   * @param {Combatant} combatant
+   * @param {User} [user]
+   * @returns {boolean}
+   */
+  canTakeTurn(combatant, user = game.user) {
+    if ( !this.started || !combatant || combatant.isDefeated || this.hasActed(combatant) ) return false;
+    if ( this.combatant?.id === combatant.id ) return false;
+    if ( user.isGM ) return true;
+    if ( this.combatant ) return false;
+    return combatant.testUserPermission(user, "OWNER") && (factionOf(combatant) === this.actingFaction);
+  }
+
+  /**
+   * May a user end the current turn?
+   * @param {User} [user]
+   * @returns {boolean}
+   */
+  canEndTurn(user = game.user) {
+    const current = this.combatant;
+    return !!current && (user.isGM || current.testUserPermission(user, "OWNER"));
+  }
+
+  /**
+   * Take the turn of a combatant (through the GM).
+   * @param {string} combatantId
+   */
+  async takeTurn(combatantId) {
+    return executeAsGM("popcorn", { combatId: this.id, op: "take", combatantId });
+  }
+
+  /** End the current turn: the combatant is marked as having acted (through the GM). */
+  async endTurn() {
+    if ( !this.combatant ) return;
+    return executeAsGM("popcorn", { combatId: this.id, op: "end", combatantId: this.combatant.id });
+  }
+
+  /**
+   * Mark a combatant as having acted this round, or not (the check box of the tracker).
+   * @param {string} combatantId
+   */
+  async toggleActed(combatantId) {
+    const acted = !this.hasActed(this.combatants.get(combatantId));
+    return executeAsGM("popcorn", { combatId: this.id, op: "toggle", combatantId, acted, round: this.round });
+  }
+
+  /** Start the next round (through the GM). */
+  async #requestNextRound() {
+    return executeAsGM("popcorn", { combatId: this.id, op: "round", round: this.round });
+  }
+
+  /**
+   * GM: a combatant starts its turn. A turn in progress ends first.
+   * @param {Combatant} combatant
+   * @internal
+   */
+  async _popcornTake(combatant) {
+    if ( this.combatant && (this.combatant.id !== combatant.id) ) await this._popcornEnd({ advance: false });
+    const index = this.turns.findIndex(c => c.id === combatant.id);
+    if ( index < 0 ) return;
+    await this.update({ turn: index }, { turnEvents: false });
+    await this._onStartTurn(combatant, { round: this.round, turn: index, skipped: false });
+  }
+
+  /**
+   * GM: the current turn ends. Once everybody has acted, the next round begins.
+   * @param {object} [options]
+   * @param {boolean} [options.advance=true]
+   * @internal
+   */
+  async _popcornEnd({ advance = true } = {}) {
+    const current = this.combatant;
+    if ( current ) {
+      await current.setFlag("swordworld25", "acted", this.round);
+      await this._onEndTurn(current, { round: this.round, turn: this.turn, skipped: false });
+      await this.update({ turn: null }, { turnEvents: false });
+    }
+    if ( advance && !this.actingFaction ) await this._popcornNextRound();
+  }
+
+  /**
+   * GM: toggle the "has acted" mark of a combatant.
+   * @param {Combatant} combatant
+   * @internal
+   */
+  async _popcornToggle(combatant, acted) {
+    if ( this.hasActed(combatant) === acted ) return;
+    if ( acted && (this.combatant?.id === combatant.id) ) return this._popcornEnd();
+    await combatant.setFlag("swordworld25", "acted", acted ? this.round : 0);
+    if ( acted && !this.combatant && !this.actingFaction ) await this._popcornNextRound();
+  }
+
+  /**
+   * GM: the round ends and the next one begins (nobody is acting yet).
+   * @internal
+   */
+  async _popcornNextRound() {
+    if ( this.combatant ) await this._popcornEnd({ advance: false });
+    const round = this.round;
+    if ( round >= 1 ) await this._onEndRound({ round, skipped: false });
+    const next = round + 1;
+    Hooks.callAll("combatRound", this, { round: next, turn: null }, { direction: 1 });
+    await this.update({ round: next, turn: null }, {
+      turnEvents: false, direction: 1, worldTime: { delta: this.getTimeDelta(round, null, next, null) }
+    });
+    await this._onStartRound({ round: next, skipped: false });
+  }
+
+  /** @override */
+  async startCombat() {
+    if ( !this.popcorn ) return super.startCombat();
+    this._playCombatSound("startEncounter");
+    const updateData = { round: 1, turn: null };
+    Hooks.callAll("combatStart", this, updateData);
+    await this.update(updateData, { turnEvents: false });
+    if ( isResponsibleGM() ) await this._onStartRound({ round: 1, skipped: false });
+    return this;
+  }
+
+  /**
+   * Popcorn: "next turn" ends the current turn (or, when everybody has acted, starts the next round).
+   * @override
+   */
+  async nextTurn() {
+    if ( !this.popcorn ) return super.nextTurn();
+    if ( this.combatant ) await this.endTurn();
+    else if ( !this.actingFaction ) await this.#requestNextRound();
+    else ui.notifications.info(t("SW25.Combat.TakeTurnHint"));
+    return this;
+  }
+
+  /**
+   * Popcorn: "previous turn" gives the current turn back (nobody acts, nothing is marked).
+   * @override
+   */
+  async previousTurn() {
+    if ( !this.popcorn ) return super.previousTurn();
+    if ( this.combatant && game.user.isGM ) await this.update({ turn: null }, { turnEvents: false });
+    return this;
+  }
+
+  /** @override */
+  async nextRound() {
+    if ( !this.popcorn || !this.started ) return super.nextRound();
+    await this.#requestNextRound();
+    return this;
+  }
+
+  /**
+   * Popcorn: the acting combatant was removed from the tracker. Core gave its turn to the next one in the list (see
+   * {@link SW25Combatant._preDeleteOperation}); nobody acts instead.
+   * @override
+   */
+  _onDeleteDescendantDocuments(parent, collection, documents, ids, options, userId) {
+    super._onDeleteDescendantDocuments(parent, collection, documents, ids, options, userId);
+    if ( options.sw25ActingDeleted && (userId === game.user.id) && this.started ) {
+      this.update({ turn: null }, { turnEvents: false });
+    }
   }
 
   /** @override */
@@ -183,6 +388,10 @@ export class SW25Combat extends Combat {
     await super._onEndRound?.(context);
     // Starting the combat "ends" round 0: nothing happens then
     if ( context.skipped || !(context.round >= 1) ) return;
+    // Popcorn: effects whose last round ends now go, even when the one whose turn they waited for did not act
+    if ( this.popcorn ) {
+      for ( const c of this.combatants ) if ( c.actor ) await removeExpiredEffects(c.actor, { combat: this, roundEnded: context.round });
+    }
     const done = new Set();
     for ( const combatant of this.combatants ) {
       const actor = combatant.actor;
@@ -199,9 +408,11 @@ export class SW25Combat extends Combat {
    */
   async _onStartTurn(combatant, context) {
     await super._onStartTurn?.(combatant, context);
-    if ( !isResponsibleGM() ) return;
+    // Core runs turn events on the active GM only; popcorn turns run them on the GM who changed the turn
+    if ( !game.user.isGM ) return;
+    const options = this.popcorn ? { combat: this, turnOf: combatant.actor?.uuid ?? null } : {};
     for ( const c of this.combatants ) {
-      if ( c.actor ) await removeExpiredEffects(c.actor);
+      if ( c.actor ) await removeExpiredEffects(c.actor, options);
     }
   }
 }
@@ -210,6 +421,18 @@ export class SW25Combat extends Combat {
  * Combatant: default initiative formula per actor type.
  */
 export class SW25Combatant extends Combatant {
+
+  /**
+   * Popcorn: removing the acting combatant does not hand the turn (and its turn events) to the next one in the list.
+   * @override
+   */
+  static async _preDeleteOperation(documents, operation, user) {
+    await super._preDeleteOperation(documents, operation, user);
+    const combat = operation.parent;
+    if ( !combat?.popcorn || !combat.combatant || !operation.ids.includes(combat.combatant.id) ) return;
+    operation.turnEvents = false;
+    operation.sw25ActingDeleted = true;
+  }
 
   /** @override */
   _getInitiativeFormula() {
@@ -258,3 +481,33 @@ async function postTurnDamage(actor, tp) {
     targets: [{ tokenUuid, actorUuid: actor.uuid, name: actor.name, img: actor.img, amount: result.calculated }]
   }, { rolls, speaker: ChatMessage.implementation.getSpeaker({ alias: tp.name }) });
 }
+
+/* -------------------------------------------- */
+
+/**
+ * Popcorn turns are changed by the GM: players ask through the socket.
+ * Ops: take (a combatant's turn), end (the current turn), toggle (the "has acted" mark), round (next round).
+ */
+registerSocketHandler("popcorn", async ({ combatId, op, combatantId, acted, round }, userId) => {
+  const combat = game.combats.get(combatId);
+  const user = game.users.get(userId);
+  if ( !combat || !user ) return;
+  const combatant = combatantId ? combat.combatants.get(combatantId) : null;
+  // Requests are serialized and checked against the state they were made for: a double click acts once
+  switch ( op ) {
+    case "take":
+      if ( combatant && combat.canTakeTurn(combatant, user) ) await combat._popcornTake(combatant);
+      break;
+    case "end":
+      if ( (combat.combatant?.id === combatantId) && combat.canEndTurn(user) ) await combat._popcornEnd();
+      break;
+    case "toggle":
+      if ( combat.round !== round ) break;
+      if ( combatant && (user.isGM || combatant.testUserPermission(user, "OWNER")) ) await combat._popcornToggle(combatant, !!acted);
+      break;
+    case "round":
+      if ( combat.round !== round ) break;
+      if ( user.isGM || !combat.actingFaction ) await combat._popcornNextRound();
+      break;
+  }
+}, { serial: true });

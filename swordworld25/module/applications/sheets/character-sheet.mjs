@@ -1,6 +1,7 @@
 import SW25ActorSheet from "./actor-base.mjs";
 import { checkSource, rollDeathCheck, rollMonsterKnowledge } from "../../workflows/checks.mjs";
-import { rollWeaponDamage } from "../../workflows/attacks.mjs";
+import { reloadGun, rollWeaponDamage } from "../../workflows/attacks.mjs";
+import { makeCrudeCard, sellLoot } from "../../workflows/loot.mjs";
 import { applyDamageTo } from "../../combat/damage.mjs";
 import { lookupPower, POWER_TABLE } from "../../dice/power-table.mjs";
 import { gamels, PAPER_DIALOG, signed, speakerFor, t } from "../../helpers/utils.mjs";
@@ -48,6 +49,9 @@ export default class CharacterSheet extends SW25ActorSheet {
       cardAdjust: CharacterSheet.#onCardAdjust,
       weaponMode: CharacterSheet.#onWeaponMode,
       weaponDamage: CharacterSheet.#onWeaponDamage,
+      gunReload: CharacterSheet.#onGunReload,
+      lootSell: CharacterSheet.#onLootSell,
+      lootCard: CharacterSheet.#onLootCard,
       monsterKnowledge: CharacterSheet.#onMonsterKnowledge,
       deathCheck: CharacterSheet.#onDeathCheck,
       rest: CharacterSheet.#onRest,
@@ -553,6 +557,9 @@ export default class CharacterSheet extends SW25ActorSheet {
       weaponExtra: signed(mode.extraDamage ?? 0),
       extraDamage: atk.extraDamage ?? 0,
       isGun,
+      tracksBullets: isGun && Number.isInteger(s.magazine) && (s.magazine > 0),
+      loaded: s.loaded,
+      magazineLabel: (isGun && Number.isInteger(s.magazine)) ? `${s.loaded} / ${s.magazine}` : "",
       classLabel: atk.classLabel,
       straight: atk.straight,
       attackClass: s.attackClass,
@@ -748,7 +755,11 @@ export default class CharacterSheet extends SW25ActorSheet {
       equipTooltip: (s.heldHands > 0) ? (s.slot.length ? "SW25.Sheet.HoldOrWear" : "SW25.Sheet.HoldToggle") : "",
       grip: this.#gripLabel(item),
       usable: s.isUsable,
-      uses: Number.isInteger(s.uses?.max) && s.uses.max > 0 ? `${s.uses.value ?? s.uses.max}/${s.uses.max}` : ""
+      uses: Number.isInteger(s.uses?.max) && s.uses.max > 0 ? `${s.uses.value ?? s.uses.max}/${s.uses.max}` : "",
+      // Loot: sold for its price, or turned into a crude material card by an Alchemist
+      sellable: (s.itemType === "loot") && Number.isInteger(s.price),
+      crude: (s.itemType === "loot") && !!this.actor.system.classes?.alchemist
+        && (CONFIG.SW25.cardRanks.includes(s.card?.rank) || (s.price >= 10))
     };
   }
 
@@ -1327,6 +1338,21 @@ export default class CharacterSheet extends SW25ActorSheet {
   static #onWeaponDamage(event, target) {
     const item = this._getItem(target);
     if ( item ) return rollWeaponDamage(this.actor, item, { event });
+  }
+
+  static #onLootSell(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return sellLoot(this.actor, item);
+  }
+
+  static #onLootCard(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return makeCrudeCard(this.actor, item);
+  }
+
+  static #onGunReload(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return reloadGun(this.actor, item);
   }
 
   /** Wear an owned accessory in a section (from the section's list). */

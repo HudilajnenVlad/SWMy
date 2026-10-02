@@ -109,6 +109,19 @@ export function typesLabel(types = []) {
 }
 
 /**
+ * Readable condition of a modifier that applies against some damage types only: "vs fire, water/ice",
+ * "not vs poison, disease".
+ * @param {object} mod
+ * @returns {string}
+ */
+export function typedConditionLabel(mod) {
+  const parts = [];
+  if ( mod?.types?.length ) parts.push(t("SW25.Mod.VsTypes", { types: typesLabel(mod.types) }));
+  if ( mod?.exceptTypes?.length ) parts.push(t("SW25.Mod.NotVsTypes", { types: typesLabel(mod.exceptTypes) }));
+  return parts.join(", ");
+}
+
+/**
  * Enrich HTML with the v13 TextEditor.
  * @param {string} html
  * @param {object} [options]

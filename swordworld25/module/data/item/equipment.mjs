@@ -65,6 +65,8 @@ export class WeaponModel extends ItemBaseModel {
       implement: boolField(false),
       magazine: nullableInt({ min: 0 }),
       loaded: intField(0, { min: 0 }),
+      // The bullets in a gun (the last kind loaded): silver bullets make its shots silver
+      loadedAmmo: new SchemaField({ name: stringField(""), silver: boolField(false) }),
       modes: new ArrayField(new SchemaField({
         label: stringField(""),
         stance: stringField("1H"),

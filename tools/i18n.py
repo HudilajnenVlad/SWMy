@@ -27,6 +27,7 @@ group("TYPES.Actor", [
     ("monster", "Monster", "Монстр"),
     ("mount", "Mount", "Скакун"),
     ("party", "Party", "Отряд"),
+    ("trap", "Trap", "Ловушка"),
 ])
 group("TYPES.Item", [
     ("race", "Race", "Раса"), ("class", "Class", "Класс"), ("weapon", "Weapon", "Оружие"),
@@ -1124,6 +1125,9 @@ settings = [
 for k, en, ru, hen, hru in settings:
     add(f"SW25.Setting.{k}.Name", en, ru)
     add(f"SW25.Setting.{k}.Hint", hen, hru)
+add("SW25.Setting.popcornInitiative.Name", "Popcorn turns within a side", "Свободный порядок ходов внутри стороны")
+add("SW25.Setting.popcornInitiative.Hint", "The side that won initiative acts first; within a side any character takes the turn when ready (play button in the combat tracker), a check box marks who has acted. Off: fixed order by initiative.",
+    "Сторона, выигравшая инициативу, ходит первой; внутри стороны ход берёт любой готовый персонаж (кнопка ▶ в трекере боя), галочка отмечает, кто уже сходил. Выкл.: фиксированный порядок по инициативе.")
 group("SW25.Setting.damageLog", [("All", "Everyone", "Всем"), ("GM", "GM only", "Только ГМу"), ("None", "Off", "Выключено")])
 
 # --- Log ----------------------------------------------------------------------
@@ -1135,6 +1139,113 @@ group("SW25.Log", [
 ])
 
 # --- Misc -----------------------------------------------------------------------
+
+# --- Playtest additions (0.3.0) ---------------------------------------------------
+group("SW25.Trap", [
+    ("label", "Trap", "Ловушка"), ("Level", "Trap level", "Уровень ловушки"), ("Type", "Type", "Тип"),
+    ("Trigger", "Trigger", "Срабатывает"), ("Check", "Trap value", "Значение ловушки"), ("Value", "Trap value (fixed)", "Значение ловушки (фикс.)"),
+    ("Vs", "Resisted with", "Сопротивление чем"), ("Reset", "Reset", "Перезарядка"),
+    ("Detected", "Found", "Найдена"), ("Disarmed", "Disarmed", "Обезврежена"), ("Triggered", "Sprung", "Сработала"),
+    ("DetectedHint", "Found by the party (its hidden tokens are shown)", "Найдена отрядом (её скрытые токены становятся видимыми)"),
+    ("DisarmedHint", "Disarmed: it no longer springs", "Обезврежена: больше не срабатывает"),
+    ("TriggeredHint", "Has sprung at least once", "Уже срабатывала"),
+    ("TriggerButton", "Spring the trap on the targeted tokens", "Сработать на выбранные цели"),
+    ("TriggerHint", "Its value against the victims' Evasion (or resistance), then damage and conditions", "Её значение против уклонения (или сопротивления) жертв, затем урон и состояния"),
+    ("Springs", "Trap springs!", "Ловушка срабатывает!"), ("EffectOf", "Caught in {name}", "Попал(а) в ловушку: {name}"),
+    ("AskPlayers", "Ask the players:", "Попросить игроков:"),
+    ("NoCharacter", "Select your character's token (or have a character assigned)", "Выделите токен своего персонажа (или назначьте персонажа)"),
+    ("Notes", "GM notes", "Заметки ГМа"), ("Statuses", "Conditions on the victims", "Состояния у жертв"),
+    ("Modifiers", "Modifiers on the victims", "Модификаторы у жертв"),
+    ("ModifiersHint", "Numeric penalties put on those the trap affects, for the duration.", "Числовые штрафы тем, на кого подействовала ловушка, на время действия."),
+    ("DamageFormula", "Damage (dice)", "Урон (кубы)"), ("DamageKind", "Damage kind", "Вид урона"),
+    ("DamageTypes", "Damage types", "Типы урона"),
+    ("PowerHint", "Power table damage instead of dice", "Урон по таблице силы вместо кубов"),
+    ("SearchHint", "Search check (10 minutes) needed to find it", "Проверка поиска (10 минут), нужная, чтобы найти"),
+    ("SpotHint", "Spot Trap at the last moment: empty = Search + 4 (CR I p.109)", "Обнаружение ловушки в последний момент: пусто = поиск + 4 (CR I с.109)"),
+    ("CheckHint", "The trap's success value (fixed) opposed by the victims", "Значение успеха ловушки (фиксированное), против которого бросают жертвы"),
+    ("TriggerPlaceholder", "stepping on the plate", "наступить на плиту"), ("TargetPlaceholder", "1 character / all in 3 m", "1 персонаж / все в 3 м"),
+    ("ResetPlaceholder", "once / resets after 1 hour", "однократно / через час снова"),
+    ("Rounds", "rounds", "раундов"), ("Minutes", "minutes", "минут"), ("Hours", "hours", "часов"),
+])
+group("SW25.Trap.Kind", [("mechanical", "Mechanical", "Механическая"), ("natural", "Natural", "Природная"), ("magical", "Magical", "Магическая")])
+group("SW25.Trap.Ask", [("search", "Search for traps", "Поиск ловушек"), ("spotTrap", "Spot Trap!", "Обнаружение ловушки!"), ("disarm", "Disarm the trap", "Обезвредить ловушку")])
+group("SW25.Trap.AskHint", [
+    ("search", "Each searcher rolls Search with the selected character (10 minutes).", "Каждый ищущий бросает поиск выбранным персонажем (10 минут)."),
+    ("spotTrap", "Last chance to notice it: roll Spot Trap now. Failure: the trap springs.", "Последний шанс заметить: бросьте обнаружение ловушки. Провал — ловушка срабатывает."),
+    ("disarm", "Roll Disable Device (Scout's Tools; without them −4).", "Бросьте взлом (инструменты разведчика; без них −4)."),
+])
+add("SW25.Sheet.Trap", "Trap", "Ловушка")
+group("SW25.Combat", [
+    ("Acting", "acting", "ходит"), ("ProgressHint", "Acted / total this round", "Сходили / всего в этом раунде"),
+    ("ActedMark", "Mark as having acted this round", "Отметить: уже сходил в этом раунде"),
+    ("ActedUndo", "Has acted this round (click to undo)", "Уже сходил в этом раунде (клик — снять отметку)"),
+    ("TakeTurn", "Take the turn", "Взять ход"), ("TheirTurn", "Acting now", "Ходит сейчас"),
+    ("TurnOf", "Turn: {name}", "Ход: {name}"), ("AllActed", "Everybody has acted: next round", "Все сходили: следующий раунд"),
+    ("Waiting", "{side}: whoever is ready takes the turn", "{side}: ход берёт тот, кто готов"),
+    ("TakeTurnHint", "Nobody is acting: a character of the acting side takes the turn (play button in the tracker)", "Сейчас никто не ходит: персонаж ходящей стороны берёт ход (кнопка ▶ в трекере)"),
+])
+group("SW25.Combat.Side", [("pc", "Adventurers", "Авантюристы"), ("enemy", "Enemies", "Противники")])
+group("SW25.Transfer", [
+    ("Title", "Hand over: {name}", "Передать: {name}"), ("Give", "Hand over", "Передать"),
+    ("HowMany", "How many {name} go to {target}?", "Сколько {name} передать: {target}?"),
+    ("Confirm", "Hand {name} over to {target}?", "Передать {name}: {target}?"),
+    ("Done", "hands {name} ×{quantity} over to {target}", "передаёт {name} ×{quantity}: {target}"),
+    ("NotOwner", "You do not own {name}", "{name} вам не принадлежит"),
+    ("BadTarget", "{name} cannot receive items", "{name} не может получать предметы"),
+])
+group("SW25.Loot", [
+    ("TakeHint", "Take it: to the selected character (or your own)", "Взять: выбранному персонажу (или своему)"),
+    ("PartyHint", "Put it into the party's shared equipment", "Положить в общее снаряжение отряда"),
+    ("AlreadyTaken", "Already taken by {name}", "Уже взял(а): {name}"),
+    ("NoRecipient", "Select your character's token (or have a character assigned) to take loot", "Выделите токен своего персонажа (или назначьте персонажа), чтобы взять добычу"),
+    ("NoParty", "There is no party in this world", "В мире нет отряда"),
+    ("ItemSummary", "Loot of {monster}. Crude material card: {cards}.", "Добыча с {monster}. Грубая карта материала: {cards}."),
+    ("Sell", "Sell loot", "Продать добычу"), ("SellHint", "Sell for its price (gamels go to the money)", "Продать по цене (гамели — в деньги)"),
+    ("SellConfirm", "Sell {name} ×{quantity} for {total}?", "Продать {name} ×{quantity} за {total}?"),
+    ("Sold", "sells {name} ×{quantity} for {total}", "продаёт {name} ×{quantity} за {total}"),
+    ("NoPrice", "{name} has no sale price", "У {name} нет цены продажи"),
+    ("CrudeCard", "Crude material card", "Грубая карта материала"),
+    ("CrudeHint", "Alchemist: make a crude material card from one piece (10 min, Alchemy Kit; the loot is used up)", "Алхимик: сделать грубую карту материала из одной штуки (10 мин, набор алхимика; добыча пропадает)"),
+    ("NotAlchemist", "{name} is not an Alchemist", "{name} — не алхимик"),
+    ("TooCheap", "{name} is worth less than 10G: no card can be made from it", "{name} дешевле 10G: карту из неё не сделать"),
+    ("ChooseColor", "Color of the rank {rank} card made from {name}:", "Цвет карты ранга {rank} из {name}:"),
+    ("CardMade", "makes a crude {color} {rank} card from {name}", "делает грубую карту: {color} {rank} из {name}"),
+])
+group("SW25.Gun", [
+    ("EmptyReload", "{name} has no bullets loaded. Reload it now (Major Action)?", "В {name} нет заряженных пуль. Перезарядить сейчас (основное действие)?"),
+    ("NotEnoughLoaded", "{name} needs {count} loaded bullets for this spell", "Для этого заклинания в {name} должно быть заряжено пуль: {count}"),
+    ("Full", "{name} is fully loaded", "{name} заряжен полностью"),
+    ("NoAmmo", "{name} has no bullets in the inventory", "У {name} нет пуль в инвентаре"),
+    ("Reload", "Reload", "Перезарядка"), ("ChooseAmmo", "Which bullets go into {name}?", "Какие пули зарядить в {name}?"),
+    ("Reloaded", "reloads {name}: +{count} ({ammo}), {loaded}/{magazine}", "перезаряжает {name}: +{count} ({ammo}), {loaded}/{magazine}"),
+    ("ReloadHint", "Loaded bullets / magazine. Click: reload from the inventory (Major Action)", "Заряжено пуль / магазин. Клик: перезарядить из инвентаря (основное действие)"),
+])
+group("SW25.Damage", [
+    ("Parts", "Added damage", "Добавочный урон"), ("HealParts", "Added healing", "Добавка к лечению"),
+    ("RollBonus", "2d bonus (power table)", "Бонус к 2d (таблица силы)"),
+])
+group("SW25.Breakdown", [
+    ("Proficiency", "Weapon Proficiency", "Мастерство оружия"), ("Halved", "Halved (resisted)", "Пополам (сопротивление)"),
+])
+group("SW25.Knowledge", [
+    ("Identified", "Identified", "Опознан"), ("Unknown", "Not identified", "Не опознан"),
+    ("WeakPointHint", "The weak point is revealed: it applies to the whole party's attacks", "Слабое место раскрыто: действует для атак всего отряда"),
+    ("NoTargets", "No monster was targeted. The GM can apply this check to the monsters targeted now.", "Монстры не были выбраны целью. ГМ может применить проверку к тем, кто выбран сейчас."),
+    ("ApplyTargets", "Apply to targeted monsters", "Применить к выбранным монстрам"),
+    ("AccuracyWeakHint", "Revealed weak point: accuracy bonus against this monster", "Раскрытое слабое место: бонус точности против этого монстра"),
+])
+group("SW25.Monster", [
+    ("ShowPlayers", "Show to players (what the party knows)", "Показать игрокам (то, что знает отряд)"),
+    ("ShownToPlayers", "{name} is shown to the players", "{name}: лист показан игрокам"),
+    ("CastingLine", "spells up to level {level} · Magic Power {power} ({fixed})", "заклинания до {level} ур. · сила магии {power} ({fixed})"),
+    ("CastSpells", "Cast (spellbook)", "Колдовать (книга заклинаний)"),
+])
+group("SW25.Mod", [
+    ("Types", "only vs types", "только от типов"), ("ExceptTypes", "not vs types", "кроме типов"),
+    ("TypesHint", "Damage types, comma separated (fire, water, wind, earth, lightning, energy, slashing, bludgeoning, poison, disease, curse, psychic, silver, hpRecovery). Damage taken and Defense with types apply automatically to matching damage.",
+     "Типы урона через запятую (fire, water, wind, earth, lightning, energy, slashing, bludgeoning, poison, disease, curse, psychic, silver, hpRecovery). Получаемый урон и защита с типами применяются автоматически к подходящему урону."),
+    ("VsTypes", "vs {types}", "от: {types}"), ("NotVsTypes", "not vs {types}", "кроме: {types}"),
+])
 
 # ------------------------------------------------------------------------------
 

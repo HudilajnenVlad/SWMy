@@ -18,7 +18,11 @@ export function registerSettings() {
   register("autoFeats", { scope: "world", config: true, type: Boolean, default: true });
   register("sharedDamageRoll", { scope: "world", config: true, type: Boolean, default: false });
   register("hideMonsterDamage", { scope: "world", config: true, type: Boolean, default: false });
-  register("hideUnidentified", { scope: "world", config: true, type: Boolean, default: false });
+  register("hideUnidentified", { scope: "world", config: true, type: Boolean, default: true });
+  register("popcornInitiative", {
+    scope: "world", config: true, type: Boolean, default: true,
+    onChange: () => ui.combat?.render()
+  });
   register("damageLog", {
     scope: "world", config: true, type: String, default: "all",
     choices: { all: "SW25.Setting.damageLog.All", gm: "SW25.Setting.damageLog.GM", none: "SW25.Setting.damageLog.None" }

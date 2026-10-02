@@ -1,6 +1,6 @@
 import { keyboardActions, signed, SYSTEM_ID, t } from "../../helpers/utils.mjs";
 import { applyDamageTo } from "../../combat/damage.mjs";
-import { rollSectionAttack, rollWeaponAttack, rollWeaponDamage, useAbility } from "../../workflows/attacks.mjs";
+import { reloadGun, rollSectionAttack, rollWeaponAttack, rollWeaponDamage, useAbility } from "../../workflows/attacks.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -30,6 +30,7 @@ export default class ActorPanel extends HandlebarsApplicationMixin(ApplicationV2
       section: ActorPanel.#onSection,
       attack: ActorPanel.#onAttack,
       weaponDamage: ActorPanel.#onWeaponDamage,
+      reload: ActorPanel.#onReload,
       sectionAttack: ActorPanel.#onSectionAttack,
       ability: ActorPanel.#onAbility
     }
@@ -267,6 +268,8 @@ export default class ActorPanel extends HandlebarsApplicationMixin(ApplicationV2
           accuracy: signed(atk.accuracy),
           power: w.system.isGun ? t("SW25.Gun.Bullet") : `${t("SW25.Tracker.PowerShort")}${atk.power ?? "—"}`,
           critical: atk.critical, extra: signed(atk.extraDamage),
+          magazine: (w.system.isGun && (w.system.magazine > 0)) ? `${w.system.loaded}/${w.system.magazine}` : "",
+          empty: w.system.isGun && (w.system.magazine > 0) && (w.system.loaded < 1),
           stance: w.system.currentMode?.stance ?? "", multiMode: w.system.modes.length > 1
         };
       });
@@ -515,6 +518,11 @@ export default class ActorPanel extends HandlebarsApplicationMixin(ApplicationV2
   static #onWeaponDamage(event, target) {
     const weapon = this._getItem(target);
     if ( weapon ) return rollWeaponDamage(this.actor, weapon, { event });
+  }
+
+  static #onReload(event, target) {
+    const weapon = this._getItem(target);
+    if ( weapon ) return reloadGun(this.actor, weapon);
   }
 
   static #onSectionAttack(event, target) {

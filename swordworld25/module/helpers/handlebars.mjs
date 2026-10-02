@@ -48,6 +48,7 @@ export function registerHandlebarsHelpers() {
       return out;
     },
     sw25Lookup: (obj, key) => obj?.[key],
+    sw25Join: (list, sep) => (Array.isArray(list) ? list.join(typeof sep === "string" ? sep : ", ") : ""),
     sw25Localize: (map, key) => game.i18n.localize(map?.[key]?.label ?? map?.[key] ?? key ?? "")
   });
 }

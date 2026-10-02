@@ -59,6 +59,28 @@ export function modifiersFor(actor, modifiers = []) {
 }
 
 /**
+ * Does a modifier apply only against some damage types (or all but some)? Such modifiers are not flat bonuses:
+ * they are kept with the conditional ones and applied when damage of a matching type is taken.
+ * @param {object} mod
+ * @returns {boolean}
+ */
+export function isTyped(mod) {
+  return !!(mod?.types?.length || mod?.exceptTypes?.length);
+}
+
+/**
+ * Does a typed modifier apply to damage of these types?
+ * @param {object} mod
+ * @param {string[]} types   Types of the damage (fire, poison, bludgeoning...)
+ * @returns {boolean}
+ */
+export function typedApplies(mod, types = []) {
+  if ( mod.types?.length && !mod.types.some(tp => types.includes(tp)) ) return false;
+  if ( mod.exceptTypes?.length && mod.exceptTypes.some(tp => types.includes(tp)) ) return false;
+  return true;
+}
+
+/**
  * Build ActiveEffect creation data from a list of modifiers.
  * @param {object} config
  * @param {string} config.name
@@ -79,7 +101,13 @@ export function buildEffectData({
   const conditional = [];
   for ( const mod of modifiers ) {
     if ( !mod?.key || (mod.scope === "use") ) continue;
-    if ( mod.condition ) conditional.push({ key: mod.key, value: mod.value, condition: mod.condition });
+    if ( mod.condition || isTyped(mod) ) {
+      conditional.push({
+        key: mod.key, value: mod.value, condition: mod.condition ?? "",
+        ...(mod.types?.length ? { types: [...mod.types] } : {}),
+        ...(mod.exceptTypes?.length ? { exceptTypes: [...mod.exceptTypes] } : {})
+      });
+    }
     else changes.push({
       key: `system.bonuses.${mod.key}`,
       mode: CONST.ACTIVE_EFFECT_MODES.ADD,
@@ -102,7 +130,12 @@ export function buildEffectData({
     changes,
     statuses,
     duration: effectDuration(duration),
-    flags: foundry.utils.mergeObject({ swordworld25: { conditional, ...(types.length ? { types } : {}) } }, flags)
+    flags: foundry.utils.mergeObject({ swordworld25: {
+      conditional,
+      ...(types.length ? { types } : {}),
+      // Whose turn it is when the effect begins: with popcorn turns, round durations end at that one's turn
+      ...(game.combat?.started && game.combat.combatant?.actor ? { turnActor: game.combat.combatant.actor.uuid } : {})
+    } }, flags)
   };
 }
 
@@ -210,11 +243,23 @@ export async function applyRisk(actor, feat) {
 /**
  * Remove expired temporary effects of an actor (GM side).
  * @param {Actor} actor
+ * @param {object} [options]                Popcorn turns (see SW25Combat#popcorn)
+ * @param {Combat} [options.combat]
+ * @param {string} [options.turnOf]         Uuid of the actor whose turn starts
+ * @param {number} [options.roundEnded]     Round that just ended
  */
-export async function removeExpiredEffects(actor) {
+export async function removeExpiredEffects(actor, { combat = null, turnOf = null, roundEnded = null } = {}) {
   const expired = actor.effects.filter(e => {
     const d = e.duration;
     if ( !e.isTemporary ) return false;
+    // Popcorn turns: an effect lasting N rounds ends at the start of the next turn of the one whose turn it was
+    // when it began, N rounds later, or at the end of that round when they did not act
+    if ( combat && d.rounds && ((e._source.duration?.combat ?? d.combat) === combat.id) && Number.isInteger(d.startRound) ) {
+      const lastRound = d.startRound + d.rounds;
+      if ( roundEnded !== null ) return roundEnded >= lastRound;
+      const owner = e.getFlag("swordworld25", "turnActor");
+      return !!turnOf && (owner === turnOf) && (combat.round >= lastRound);
+    }
     if ( (d.type === "none") || (d.remaining === null) || (d.remaining === undefined) ) return false;
     return d.remaining <= 0;
   });

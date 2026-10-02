@@ -123,10 +123,22 @@ function modifiers(list, context) {
       condition: m.condition ?? "",
       scope: m.scope === "use" ? "use" : "effect",
       target: m.target === "target" ? "target" : "self",
-      actorType: ["character", "monster"].includes(m.actorType) ? m.actorType : ""
+      actorType: ["character", "monster"].includes(m.actorType) ? m.actorType : "",
+      types: damageTypeList(m.types, context),
+      exceptTypes: damageTypeList(m.exceptTypes, context)
     });
   }
   return out;
+}
+
+/** Damage types a typed modifier applies to (module/config.mjs SW25.damageTypes, plus silver and hpRecovery). */
+const DAMAGE_TYPES = new Set(["earth", "water", "fire", "wind", "lightning", "energy", "slashing", "bludgeoning", "poison",
+  "disease", "psychic", "psychicWeak", "curse", "silver", "hpRecovery"]);
+
+function damageTypeList(list, context) {
+  if ( !Array.isArray(list) ) return [];
+  for ( const type of list ) if ( !DAMAGE_TYPES.has(type) ) warn(`${context}: unknown damage type "${type}"`);
+  return list.filter(type => DAMAGE_TYPES.has(type));
 }
 
 /** Status ids of the system (module/helpers/conditions.mjs). */
@@ -577,7 +589,9 @@ function gearItem(pack, e, folder) {
   return itemDoc(pack, "gear", { ...e, description: desc }, {
     ...baseSystem({ ...e, description: desc }, `gear ${e.name}`),
     price: int(e.price), priceText: str(e.priceText), reputation: int(e.reputation),
-    quantity: type === "ammo" ? 12 : 1, magic: !!e.magic, equipped: false,
+    // Ammunition sold by the dozen ("Arrow (12)", "10G per 12") comes as 12 pieces, single bullets and arrows as one
+    quantity: (type === "ammo") ? (Number(String(e.priceText ?? "").match(/per\s+(\d+)/i)?.[1]) || 1) : 1,
+    magic: !!e.magic, equipped: false,
     itemType: type, slot, equippedSlot: "", stance: str(e.stance), consumable,
     uses: { value: null, max: null },
     use: {

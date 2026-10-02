@@ -1,6 +1,9 @@
-{{!-- Row action icons. Hash: use (bool), useIcon, equip (bool), equipped (bool), equipIcon, equipTooltip. --}}
+{{!-- Row action icons. Hash: use (bool), useIcon, equip (bool), equipped (bool), equipIcon, equipTooltip, sell (bool),
+     crude (bool: loot an Alchemist can turn into a crude material card). --}}
 <td class="swp-tools-cell">
   <span class="swp-row-tools">
+    {{#if crude}}<a data-action="lootCard" data-tooltip="SW25.Loot.CrudeHint"><i class="fa-solid fa-layer-group"></i></a>{{/if}}
+    {{#if sell}}<a data-action="lootSell" data-tooltip="SW25.Loot.SellHint"><i class="fa-solid fa-coins"></i></a>{{/if}}
     {{#if use}}<a class="swp-use" data-action="itemUse" data-tooltip="SW25.Use"><i class="{{#if useIcon}}{{useIcon}}{{else}}fa-solid fa-dice-d6{{/if}}"></i></a>{{/if}}
     {{#if equip}}<a class="swp-equip {{#if equipped}}on{{/if}}" data-action="itemToggleEquip" data-tooltip="{{#if equipTooltip}}{{equipTooltip}}{{else}}SW25.Equip{{/if}}"><i class="{{#if equipIcon}}{{equipIcon}}{{else}}fa-solid fa-shirt{{/if}}"></i></a>{{/if}}
     <a data-action="itemChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i></a>

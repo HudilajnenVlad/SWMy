@@ -4843,7 +4843,10 @@
           {
             "key": "defense",
             "value": 3,
-            "condition": "vs blunt weapons"
+            "condition": "vs blunt weapons",
+            "types": [
+              "bludgeoning"
+            ]
           }
         ]
       },
@@ -4865,7 +4868,10 @@
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs fire-type damage"
+            "condition": "vs fire-type damage",
+            "types": [
+              "fire"
+            ]
           }
         ]
       },
@@ -5196,7 +5202,10 @@
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs wind-type damage"
+            "condition": "vs wind-type damage",
+            "types": [
+              "wind"
+            ]
           }
         ]
       },
@@ -6677,12 +6686,18 @@
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs fire-type damage"
+            "condition": "vs fire-type damage",
+            "types": [
+              "fire"
+            ]
           },
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs earth-type damage"
+            "condition": "vs earth-type damage",
+            "types": [
+              "earth"
+            ]
           }
         ]
       },
@@ -6919,7 +6934,10 @@
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs water/ice-type damage"
+            "condition": "vs water/ice-type damage",
+            "types": [
+              "water"
+            ]
           }
         ]
       },
@@ -7272,7 +7290,10 @@
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs wind-type damage"
+            "condition": "vs wind-type damage",
+            "types": [
+              "wind"
+            ]
           }
         ]
       },

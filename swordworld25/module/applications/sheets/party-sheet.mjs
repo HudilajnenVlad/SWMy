@@ -1,4 +1,5 @@
 import SW25ActorSheet from "./actor-base.mjs";
+import { sellLoot } from "../../workflows/loot.mjs";
 import { playerCharacters } from "../sidebar/actor-directory.mjs";
 import { rollCheck } from "../../workflows/checks.mjs";
 import { PAPER_DIALOG, speakerFor, t } from "../../helpers/utils.mjs";
@@ -41,7 +42,8 @@ export default class PartySheet extends SW25ActorSheet {
       selectTokens: PartySheet.#onSelectTokens,
       summaryView: PartySheet.#onSummaryView,
       rollBest: PartySheet.#onRollBest,
-      stashGive: PartySheet.#onStashGive
+      stashGive: PartySheet.#onStashGive,
+      lootSell: PartySheet.#onLootSell
     }
   };
 
@@ -261,7 +263,8 @@ export default class PartySheet extends SW25ActorSheet {
       ...(await this._itemRow(item)),
       quantity: item.system.quantity ?? 1,
       price: Number.isFinite(item.system.price) ? item.system.price.toLocaleString(game.i18n.lang) : (item.system.priceText || "—"),
-      typeLabel: game.i18n.localize(`TYPES.Item.${item.type}`)
+      typeLabel: game.i18n.localize(`TYPES.Item.${item.type}`),
+      sellable: (item.system.itemType === "loot") && Number.isInteger(item.system.price)
     })));
   }
 
@@ -432,6 +435,11 @@ export default class PartySheet extends SW25ActorSheet {
   }
 
   /** Give a stash item to a member (the item moves). */
+  static #onLootSell(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return sellLoot(this.actor, item);
+  }
+
   static async #onStashGive(event, target) {
     const item = this._getItem(target);
     const members = this.#characters.filter(a => a.isOwner);

@@ -69,6 +69,11 @@ while the effect lasts. Everything else stays in `description`.
   Feats use the character's highest Magic Power (Mana Strike: `damageMelee` + `@magicPower`, `scope: use`).
 * `actorType`: optional `character` or `monster` — the modifier only applies to characters (ability scores) or
   only to monsters and mounts (fixed values). Bless, Shock Bomb, Insanity and Critical Ray give both versions.
+* `types` / `exceptTypes`: optional damage type lists (`fire`, `water`, `wind`, `earth`, `lightning`, `energy`,
+  `slashing`, `bludgeoning`, `poison`, `disease`, `curse`, `psychic`, `psychicWeak`, `silver`, `hpRecovery`) for
+  `damageTaken*` and `defense`: the modifier applies automatically to damage of one of `types`, or to any damage but
+  `exceptTypes` (Field Protection: `exceptTypes: ["poison", "disease", "curse"]`; "Defense +5 vs blunt weapons":
+  `types: ["bludgeoning"]`). A `condition` text is then only shown as the explanation.
 * `condition`: optional text → the bonus becomes an optional toggle in roll dialogs. On a consumable item
   (charms) choosing the toggle uses the item up. Situational *damage* bonuses are offered in weapon attack dialogs.
 * `scope`: `effect` (default: while the effect/feature is active) or `use` (only the single

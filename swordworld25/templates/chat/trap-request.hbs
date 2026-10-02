@@ -1,0 +1,24 @@
+<div class="sw25 swp swp-chat swp-chat-trap">
+  <header class="swp-chat-head">
+    <span class="swp-chat-icon"><i class="{{icon}}"></i></span>
+    <div class="swp-chat-titles">
+      <span class="swp-chat-title">{{title}}</span>
+      <span class="swp-chat-subtitle" data-gm-only>{{name}}</span>
+    </div>
+  </header>
+  <p class="swp-chat-note">{{hint}}</p>
+  {{#if results.length}}
+  <div class="swp-chat-targets">
+    {{#each results}}
+    <div class="swp-chat-target outcome-{{#if success}}hit{{else}}miss{{/if}}">
+      <span class="swp-chat-tname">{{name}}</span>
+      <span class="swp-chat-resist">{{total}}</span>
+      <span class="swp-outcome {{#if success}}hit{{else}}miss{{/if}}">{{#if success}}{{localize "SW25.Success"}}{{else}}{{localize "SW25.Failure"}}{{/if}}</span>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+  <footer class="swp-chat-foot">
+    <button type="button" class="swp-btn-wide" data-action="trapRoll"><i class="fa-solid fa-dice-d6"></i> {{checkLabel}}</button>
+  </footer>
+</div>

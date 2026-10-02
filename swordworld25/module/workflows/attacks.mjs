@@ -2,7 +2,7 @@ import { evaluateCheck, fixedResult, resultFromRoll } from "../dice/check.mjs";
 import RollDialog from "../dice/roll-dialog.mjs";
 import { createCard, snapshotTargets } from "../chat/card.mjs";
 import { applyEffects, applyRisk, buildEffectData, resolveModifiers } from "../helpers/effects.mjs";
-import { getTargetTokens, signed, speakerFor, t } from "../helpers/utils.mjs";
+import { getTargetTokens, PAPER_DIALOG, signed, speakerFor, t } from "../helpers/utils.mjs";
 import { conditionalOptions, consumeChosenItems, handleAutoFailureExp } from "./checks.mjs";
 
 /**
@@ -53,8 +53,8 @@ function keyApplies(key, kind) {
  * @param {Actor} actor
  * @param {string[]} selected   Dialog option ids
  * @param {string} kind
- * @returns {{feats: Item[], damage: number, critical: number, criticalSpell: number, powerRoll: number,
- *   powerPerCrit: number, names: string[]}}
+ * @returns {{feats: Item[], damage: number, damageLines: object[], critical: number, criticalSpell: number,
+ *   powerRoll: number, powerPerCrit: number, names: string[]}}
  */
 export function declaredEffects(actor, selected, kind) {
   const feats = selected.filter(id => id.startsWith("feat:")).map(id => actor.items.get(id.slice(5))).filter(Boolean);
@@ -63,19 +63,23 @@ export function declaredEffects(actor, selected, kind) {
   let criticalSpell = 0;
   let powerRoll = 0;
   let powerPerCrit = 0;
+  const damageLines = [];
   // Formulas of feat modifiers use the actor's highest Magic Power (Mana Strike: + Magic Power)
   const magicPower = Math.max(0, ...Object.values(actor.system.magic ?? {}).map(m => m?.power ?? 0));
   for ( const feat of feats ) {
     for ( const m of resolveModifiers(feat.system.modifiers, { magicPower })) {
       if ( m.scope !== "use" ) continue;
-      if ( DAMAGE_KEYS.includes(m.key) && keyApplies(m.key, kind) ) damage += m.value;
+      if ( DAMAGE_KEYS.includes(m.key) && keyApplies(m.key, kind) ) {
+        damage += m.value;
+        if ( m.value ) damageLines.push({ label: feat.name, value: m.value });
+      }
       if ( (m.key === "critical") && (kind !== "spell") ) critical += m.value;
       if ( m.key === "criticalSpell" ) criticalSpell += m.value;
       if ( m.key === "powerRoll" ) powerRoll += m.value;
       if ( m.key === "powerPerCrit" ) powerPerCrit += m.value;
     }
   }
-  return { feats, damage, critical, criticalSpell, powerRoll, powerPerCrit, names: feats.map(f => f.name) };
+  return { feats, damage, damageLines, critical, criticalSpell, powerRoll, powerPerCrit, names: feats.map(f => f.name) };
 }
 
 /* -------------------------------------------- */
@@ -95,11 +99,22 @@ export async function rollWeaponAttack(actor, weapon, { event } = {}) {
   if ( !weapon.system.equipped ) ui.notifications.warn(t("SW25.Warn.NotEquipped", { name: weapon.name }));
   const kind = atk.kind === "melee" ? "melee" : "ranged";
 
-  // Gun: choose a bullet spell
+  // Gun: choose a bullet spell; the gun must hold loaded bullets (CR I p.149, 178)
   let bullet = null;
   const extraFields = [];
   let bulletChoices = [];
+  const tracksBullets = weapon.system.isGun && Number.isInteger(weapon.system.magazine) && (weapon.system.magazine > 0);
   if ( weapon.system.isGun ) {
+    if ( tracksBullets && (weapon.system.loaded < 1) ) {
+      const reload = await foundry.applications.api.DialogV2.confirm({
+        window: { title: weapon.name, icon: "fa-solid fa-gun" },
+        classes: PAPER_DIALOG,
+        content: `<p>${t("SW25.Gun.EmptyReload", { name: weapon.name })}</p>`,
+        rejectClose: false
+      });
+      if ( reload ) await reloadGun(actor, weapon);
+      return;
+    }
     bulletChoices = await availableBulletSpells(actor);
     if ( !bulletChoices.length ) return ui.notifications.warn(t("SW25.Warn.NoBullets"));
     extraFields.push({
@@ -150,17 +165,28 @@ export async function rollWeaponAttack(actor, weapon, { event } = {}) {
   let damageKind = atk.damageKind;
   let heal = false;
   let critical = atk.critical;
+  let gunTypes = [];
   if ( weapon.system.isGun ) {
     bullet = bulletChoices.find(b => b.uuid === dialog.extra.bullet) ?? bulletChoices[0];
+    // A spell on 3 bullets needs them in the gun
+    if ( tracksBullets && (weapon.system.loaded < bullet.bullets) ) {
+      return ui.notifications.warn(t("SW25.Gun.NotEnoughLoaded", { name: weapon.name, count: bullet.bullets }));
+    }
     const ok = await payMP(actor, bullet.cost, bullet.name);
     if ( !ok ) return;
     power = bullet.power ?? 0;
     heal = bullet.heal;
     critical += bullet.critical ?? 0;
+    if ( tracksBullets ) {
+      if ( weapon.system.loadedAmmo?.silver ) gunTypes.push("silver");
+      await weapon.update({ "system.loaded": weapon.system.loaded - bullet.bullets });
+    }
   }
 
   const declared = declaredEffects(actor, dialog.selected, weapon.system.isGun ? "gun" : kind);
   let chosenDamage = (dialog.chosen ?? []).reduce((a, o) => a + (Number(o.damage) || 0), 0);
+  const extraParts = [...(atk.extraBreakdown ?? []), ...declared.damageLines,
+    ...(dialog.chosen ?? []).filter(o => Number(o.damage)).map(o => ({ label: o.label, value: Number(o.damage) }))];
 
   // Ammunition
   const ammo = dialog.extra.ammo ? actor.items.get(dialog.extra.ammo) : null;
@@ -172,7 +198,9 @@ export async function rollWeaponAttack(actor, weapon, { event } = {}) {
     if ( accuracy ) dialog.parts.push({ label: ammo.name, value: accuracy });
     critical += sum("critical");
     power = Math.clamp((power ?? 0) + sum("weaponPower"), 0, 100);
-    chosenDamage += sum("damage", "damageRanged");
+    const ammoDamage = sum("damage", "damageRanged");
+    chosenDamage += ammoDamage;
+    if ( ammoDamage ) extraParts.push({ label: ammo.name, value: ammoDamage });
     if ( ammo.system.silver ) ammoTypes.push("silver");
     ammoTypes.push(...(ammo.system.types ?? []));
     if ( ammo.system.magic ) damageKind = "magic";
@@ -201,6 +229,7 @@ export async function rollWeaponAttack(actor, weapon, { event } = {}) {
     { label: t("SW25.Category"), value: t(CONFIG.SW25.weaponCategories[weapon.system.category] ?? weapon.system.category) }
   ];
   if ( bullet ) details.push({ label: t("SW25.Gun.Bullet"), value: bullet.name });
+  if ( tracksBullets ) details.push({ label: t("SW25.Gun.Magazine"), value: `${weapon.system.loaded} / ${weapon.system.magazine}` });
   if ( ammo ) details.push({ label: t("SW25.Ammo.label"), value: ammo.name });
   if ( declared.names.length ) details.push({ label: t("SW25.Roll.Declare"), value: declared.names.join(", ") });
 
@@ -221,11 +250,13 @@ export async function rollWeaponAttack(actor, weapon, { event } = {}) {
       power: power ?? 0,
       critical: critical + declared.critical,
       extra: atk.extraDamage + declared.damage + chosenDamage,
+      extraParts,
       rollBonus: declared.powerRoll + (atk.powerRoll ?? 0),
       powerPerCrit: declared.powerPerCrit + (atk.powerPerCrit ?? 0),
       kind: heal ? null : damageKind,
-      types: (heal || weapon.system.isGun) ? [] : [...new Set([...weaponDamageTypes(weapon), ...ammoTypes])],
+      types: heal ? [] : (weapon.system.isGun ? gunTypes : [...new Set([...weaponDamageTypes(weapon), ...ammoTypes])]),
       heal,
+      source: weapon.system.isGun ? "gun" : kind,
       declaredDamage: declared.damage + chosenDamage
     },
     effect: hitEffect
@@ -244,17 +275,23 @@ export async function rollWeaponDamage(actor, weapon, { event } = {}) {
   const atk = weapon.system.attack;
   if ( !atk ) return;
   if ( weapon.system.isGun ) return rollWeaponAttack(actor, weapon, { event });
-  const damage = {
+  const base = {
     mode: "power",
     power: atk.power ?? 0,
     critical: atk.critical,
     extra: atk.extraDamage,
+    extraParts: atk.extraBreakdown ?? [],
     rollBonus: atk.powerRoll ?? 0,
     powerPerCrit: atk.powerPerCrit ?? 0,
     kind: atk.damageKind,
     types: weaponDamageTypes(weapon),
-    heal: false
+    heal: false,
+    source: atk.kind === "melee" ? "melee" : "ranged"
   };
+  const { configureDamage } = await import("./damage-roll.mjs");
+  const configured = await configureDamage(actor, base, { title: weapon.name, event, declare: base.source });
+  if ( !configured ) return;
+  const { damage, rollMode } = configured;
   const { rollPower } = await import("../dice/power.mjs");
   const { result, rolls } = await rollPower({
     power: damage.power, critical: damage.critical, extra: damage.extra, rollBonus: damage.rollBonus, powerPerCrit: damage.powerPerCrit
@@ -271,7 +308,7 @@ export async function rollWeaponDamage(actor, weapon, { event } = {}) {
     damage,
     result,
     targets
-  }, { rolls, speaker: speakerFor(actor) });
+  }, { rolls, speaker: speakerFor(actor), rollMode });
 }
 
 /**
@@ -286,6 +323,51 @@ function weaponDamageTypes(weapon) {
   if ( s.blunt ) types.push("bludgeoning");
   if ( s.silver ) types.push("silver");
   return types;
+}
+
+/**
+ * Load bullets from the inventory into a gun, up to its magazine (a Major Action, CR I p.149). With several kinds of
+ * bullets the user picks one.
+ * @param {Actor} actor
+ * @param {Item} weapon
+ * @returns {Promise<boolean>}   Whether bullets were loaded
+ */
+export async function reloadGun(actor, weapon) {
+  const s = weapon.system;
+  if ( !s.isGun || !Number.isInteger(s.magazine) ) return false;
+  const space = s.magazine - s.loaded;
+  if ( space <= 0 ) {
+    ui.notifications.info(t("SW25.Gun.Full", { name: weapon.name }));
+    return false;
+  }
+  const stocks = actor.items.filter(i => (i.type === "gear") && (i.system.itemType === "ammo") && (i.system.quantity > 0)
+    && String(i.system.ammoFor ?? "").split(/\s*,\s*/).includes("gun"));
+  if ( !stocks.length ) {
+    ui.notifications.warn(t("SW25.Gun.NoAmmo", { name: actor.name }));
+    return false;
+  }
+  let stock = stocks[0];
+  if ( stocks.length > 1 ) {
+    const id = await foundry.applications.api.DialogV2.wait({
+      window: { title: t("SW25.Gun.Reload"), icon: "fa-solid fa-gun" },
+      classes: PAPER_DIALOG,
+      content: `<p>${t("SW25.Gun.ChooseAmmo", { name: weapon.name })}</p>`,
+      buttons: stocks.map((a, i) => ({ action: a.id, label: `${a.name} (${a.system.quantity})`, default: i === 0, callback: () => a.id })),
+      rejectClose: false
+    });
+    stock = stocks.find(a => a.id === id);
+    if ( !stock ) return false;
+  }
+  const count = Math.min(space, stock.system.quantity);
+  if ( stock.system.quantity > count ) await stock.update({ "system.quantity": stock.system.quantity - count });
+  else await stock.delete();
+  await weapon.update({ "system.loaded": s.loaded + count, "system.loadedAmmo": { name: stock.name, silver: !!stock.system.silver } });
+  await ChatMessage.implementation.create({
+    speaker: speakerFor(actor),
+    content: `<div class="sw25 swp swp-chat swp-chat-note-card"><p><i class="fa-solid fa-gun"></i> ${t("SW25.Gun.Reloaded", {
+      name: weapon.name, count, ammo: stock.name, loaded: s.loaded + count, magazine: s.magazine })}</p></div>`
+  });
+  return true;
 }
 
 /**
@@ -306,7 +388,8 @@ export async function availableBulletSpells(actor) {
     const critMod = (s.modifiers ?? []).filter(m => m.key === "critical").reduce((a, m) => a + m.value, 0);
     out.push({
       uuid: doc.uuid, name: doc.name, cost: s.cost?.mp ?? 0, power: s.effect?.power,
-      heal: s.effect?.kind === "heal", critical: critMod, level: s.level
+      heal: s.effect?.kind === "heal", critical: critMod, level: s.level,
+      bullets: s.target?.kind === "bullets3" ? 3 : 1
     });
   };
   for ( const item of actor.items ) if ( item.type === "spell" ) push(item);
@@ -407,9 +490,11 @@ export async function rollSectionAttack(actor, index, { event } = {}) {
       mode: "formula",
       formula: section.damage,
       extra: (section.damageBonus ?? 0) + declared.damage,
+      extraParts: [...actor.system.bonusBreakdown(["damage", "damageMelee"]), ...declared.damageLines],
       kind: "physical",
       types: [],
-      heal: false
+      heal: false,
+      source: "melee"
     }
   }, { rolls: roll ? [roll] : [], speaker: speakerFor(actor), rollMode: dialog.rollMode });
 }
@@ -473,15 +558,18 @@ export async function useAbility(actor, ability, { event } = {}) {
   }
   let damage = null;
   if ( damagePower !== null ) {
+    const jockey = sys.damage.bonus ? jockeyValue(actor, sys.damage.bonus) : 0;
     damage = {
       mode: "power", power: damagePower, critical: sys.damage.critical ?? 10,
-      extra: sys.damage.bonus ? jockeyValue(actor, sys.damage.bonus) : 0,
+      extra: jockey,
+      extraParts: jockey ? [{ label: "SW25.Breakdown.Jockey", value: jockey }] : [],
+      source: "ability",
       kind: sys.damage.kind === "heal" ? null : (sys.damage.kind || "magic"), types: sys.damage.types ?? [],
       heal: sys.damage.kind === "heal"
     };
   } else if ( damageFormula ) {
     damage = {
-      mode: "formula", formula: damageFormula, extra: 0,
+      mode: "formula", formula: damageFormula, extra: 0, source: "ability",
       kind: sys.damage.kind === "heal" ? null : (sys.damage.kind || "magic"), types: sys.damage.types ?? [],
       heal: sys.damage.kind === "heal"
     };

@@ -582,16 +582,29 @@ export default class CharacterModel extends ActorBaseModel {
 
     let extra;
     let damageKind = "physical";
+    // Where the extra damage comes from, for the damage roll dialog and the breakdown of the damage card
+    const extraBreakdown = [];
+    const ownLines = keys => own.filter(m => keys.includes(m.key) && Number(m.value))
+      .map(m => ({ label: weapon.name, value: Number(m.value), key: m.key }));
     if ( w.isGun ) {
       const magitech = this.magic?.magitech;
       extra = (magitech?.power ?? 0) + (mode.extraDamage ?? 0) + b.damageMagic + ownSum("damageMagic");
       damageKind = "magic";
+      if ( magitech?.power ) extraBreakdown.push({ label: "SW25.MagicPower", value: magitech.power });
+      if ( mode.extraDamage ) extraBreakdown.push({ label: weapon.name, value: mode.extraDamage });
+      extraBreakdown.push(...this.bonusBreakdown(["damageMagic"]), ...ownLines(["damageMagic"]));
     } else {
       const extraBase = cls ? cls.level + abl.str.mod : 0;
+      const damageKeys = ["damage", isMelee ? "damageMelee" : "damageRanged"];
       extra = extraBase + (mode.extraDamage ?? 0) + b.damage + (isMelee ? b.damageMelee : b.damageRanged)
-        + ownSum("damage", isMelee ? "damageMelee" : "damageRanged");
+        + ownSum(...damageKeys);
+      if ( cls ) extraBreakdown.push({ label: cls.label, value: cls.level }, { label: "SW25.AbilityAbbr.str", value: abl.str.mod, ability: true });
+      if ( mode.extraDamage ) extraBreakdown.push({ label: weapon.name, value: mode.extraDamage });
+      extraBreakdown.push(...this.bonusBreakdown(damageKeys), ...ownLines(damageKeys));
     }
-    extra += this._proficiencyDamage(weapon);
+    const proficiency = this._proficiencyDamage(weapon);
+    extra += proficiency;
+    if ( proficiency ) extraBreakdown.push({ label: "SW25.Breakdown.Proficiency", value: proficiency });
 
     let critical = (mode.critical ?? 10) + (cls?.critical ?? 0) + b.critical + ownSum("critical");
 
@@ -611,6 +624,7 @@ export default class CharacterModel extends ActorBaseModel {
       powerRoll: b.powerRoll + ownSum("powerRoll"),
       powerPerCrit: b.powerPerCrit + ownSum("powerPerCrit"),
       extraDamage: extra,
+      extraBreakdown,
       damageKind,
       hands: w.hands
     };

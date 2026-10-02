@@ -1347,7 +1347,10 @@
         "key": "damageTaken",
         "value": 5,
         "condition": "wind-type damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "wind"
+        ]
       }
     ],
     "rankEffect": "duration"
@@ -1486,7 +1489,10 @@
         "key": "damageTaken",
         "value": 5,
         "condition": "bludgeoning-type damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "bludgeoning"
+        ]
       }
     ],
     "rankEffect": "duration"
@@ -1690,7 +1696,10 @@
         "key": "damageTaken",
         "value": 5,
         "condition": "water/ice-type damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "water"
+        ]
       }
     ],
     "rankEffect": "duration"

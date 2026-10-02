@@ -1,3 +1,4 @@
+import { isTyped, typedApplies } from "../helpers/effects.mjs";
 import { executeAsGM, registerSocketHandler } from "../helpers/socket.mjs";
 import { actorFromUuid, PAPER_DIALOG, renderSystemTemplate, speakerFor, t, typesLabel } from "../helpers/utils.mjs";
 
@@ -41,6 +42,17 @@ export function getImmunities(actor) {
 }
 
 /**
+ * Modifiers of an actor that apply against some damage types only (or against all but some) and match a damage.
+ * @param {Actor} actor
+ * @param {string[]} keys    Modifier keys (damageTaken..., defense)
+ * @param {string[]} types   Types of the damage
+ * @returns {object[]}       Conditional modifier entries ({key, value, source...})
+ */
+function typedModifiers(actor, keys, types) {
+  return (actor.system.conditionalModifiers ?? []).filter(m => keys.includes(m.key) && isTyped(m) && typedApplies(m, types));
+}
+
+/**
  * Compute the applied damage against an actor without applying it.
  * @param {Actor} actor
  * @param {DamageData} data
@@ -74,15 +86,23 @@ export function computeDamage(actor, data) {
         breakdown.push({ label: t("SW25.WeakPoint.label"), value: wp.value });
       }
     }
-    // Damage taken modifiers
+    // Damage taken modifiers, one line per source: flat ones, and those against some damage types only
+    // (Field Protection: not vs poison, disease or curse; an Undine takes +3 from fire)
     const b = sys.bonuses ?? {};
-    const taken = (b.damageTaken ?? 0) + ((kind === "physical") ? (b.damageTakenPhysical ?? 0) : 0)
-      + ((kind === "magic") ? (b.damageTakenMagic ?? 0) : 0);
-    if ( taken ) {
-      total += taken;
-      breakdown.push({ label: t("SW25.Mod.damageTaken"), value: taken });
+    const takenKeys = ["damageTaken"];
+    if ( kind === "physical" ) takenKeys.push("damageTakenPhysical");
+    if ( kind === "magic" ) takenKeys.push("damageTakenMagic");
+    const flat = takenKeys.reduce((sum, key) => sum + (b[key] ?? 0), 0);
+    const lines = (sys.bonusBreakdown?.(takenKeys) ?? []).map(l => ({ label: l.label, value: l.value }));
+    const listed = lines.reduce((sum, l) => sum + l.value, 0);
+    if ( flat !== listed ) lines.push({ label: t("SW25.Mod.damageTaken"), value: flat - listed });
+    for ( const mod of typedModifiers(actor, takenKeys, types) ) lines.push({ label: mod.source, value: Number(mod.value) || 0 });
+    for ( const line of lines ) {
+      if ( !line.value ) continue;
+      total += line.value;
+      breakdown.push(line);
     }
-    // Defense
+    // Defense (and Defense against some damage types: "+5 vs blunt weapons")
     if ( (kind === "physical") && !data.ignoreDefense ) {
       let defense = 0;
       if ( actor.type === "character" ) defense = sys.defense ?? 0;
@@ -93,6 +113,12 @@ export function computeDamage(actor, data) {
       if ( defense ) {
         total -= defense;
         breakdown.push({ label: t("SW25.Defense"), value: -defense });
+      }
+      for ( const mod of typedModifiers(actor, ["defense"], types) ) {
+        const value = Number(mod.value) || 0;
+        if ( !value ) continue;
+        total -= value;
+        breakdown.push({ label: `${t("SW25.Defense")} (${mod.source})`, value: -value });
       }
     }
   }

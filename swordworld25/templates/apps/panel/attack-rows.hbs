@@ -4,7 +4,8 @@
   <a class="name" data-action="attack" data-tooltip="SW25.Tracker.AttackHint"><img src="{{img}}" alt=""><span>{{name}}</span></a>
   {{#if @root.stances}}{{#if multiMode}}<a class="val stance" data-action="weaponMode" data-tooltip="SW25.Sheet.SwitchStance">{{stance}} <i class="fa-solid fa-rotate"></i></a>{{else}}<span class="val stance">{{stance}}</span>{{/if}}{{/if}}
   <a class="val acc" data-action="attack" data-tooltip="SW25.Accuracy">{{accuracy}}</a>
-  <a class="val dmg" {{#unless gun}}data-action="weaponDamage" data-tooltip="SW25.Tracker.DamageHint"{{/unless}}>{{power}} <span class="swp-circ">{{critical}}</span> {{#unless gun}}{{extra}}{{/unless}}</a>
+  {{#if magazine}}<a class="val dmg swp-gun-ammo {{#if empty}}empty{{/if}}" data-action="reload" data-tooltip="SW25.Gun.ReloadHint"><i class="fa-solid fa-rotate-right"></i> {{magazine}}</a>
+  {{else}}<a class="val dmg" {{#unless gun}}data-action="weaponDamage" data-tooltip="SW25.Tracker.DamageHint"{{/unless}}>{{power}} <span class="swp-circ">{{critical}}</span> {{#unless gun}}{{extra}}{{/unless}}</a>{{/if}}
 </div>
 {{/each}}
 {{#each attacks.sections}}

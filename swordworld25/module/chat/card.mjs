@@ -124,7 +124,9 @@ export function resolveOutcomes(state) {
       target.outcome = null;
       continue;
     }
-    const wins = activeWins(check, target.resist);
+    // A revealed "Accuracy +1" weak point adds to the accuracy of attacks against that monster
+    const bonus = (state.contest === "evasion") ? (Number(target.accuracyBonus) || 0) : 0;
+    const wins = activeWins(bonus && check ? { ...check, total: check.total + bonus } : check, target.resist);
     if ( state.contest === "evasion" ) target.outcome = wins ? "hit" : "miss";
     else target.outcome = wins ? "affected" : "resisted";
   }
@@ -163,7 +165,10 @@ export async function renderCard(state) {
     kindLabel: state.damage.kind ? t(SW25.damageKinds[state.damage.kind] ?? state.damage.kind) : "",
     label: state.damage.heal ? t(state.damage.mp ? "SW25.Card.RollMPHeal" : "SW25.Card.RollHeal") : t("SW25.Card.RollDamage"),
     formulaLabel: state.damage.formula
-      ? `${state.damage.formula}${state.damage.extra ? signed(state.damage.extra) : ""}` : ""
+      ? `${state.damage.formula}${state.damage.extra ? signed(state.damage.extra) : ""}` : "",
+    // "Fighter +3, STR +2, Power Strike +4" under the damage result
+    partsLabel: (state.kind === "damage") ? (state.damage.extraParts ?? []).filter(p => Number(p.value))
+      .map(p => `${game.i18n.localize(p.label ?? "")}${p.ability ? ` ${t("SW25.Ability.mod")}` : ""} ${signed(p.value)}`).join(", ") : ""
   } : null;
   const result = state.result ? {
     ...state.result,
@@ -218,6 +223,10 @@ export async function snapshotTargets(tokens, { contest = null, askSection = fal
       outcome: null,
       fixed: null
     };
+    // Revealed weak point "Accuracy +1": attacks against the monster are more accurate
+    const wp = actor.system.weakPoint;
+    if ( (contest === "evasion") && (actor.type !== "character") && actor.system.weakPointRevealed
+      && (wp?.kind === "accuracy") && wp.value ) entry.accuracyBonus = wp.value;
     // Monsters using fixed values resolve immediately
     if ( contest && (actor.type !== "character") && actor.system.usesFixedValues ) {
       const value = resistValue(actor, contest, section);

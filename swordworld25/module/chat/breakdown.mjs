@@ -81,6 +81,45 @@ export function checkBreakdownHTML(check, title = "") {
   ].join("");
 }
 
+/**
+ * HTML of the breakdown of a damage (or healing) result: each roll on the power table (or the dice of a formula),
+ * every part of the added damage (class level, Strength, weapon, effects, declared feats, the damage dialog), halving
+ * and the total.
+ * @param {object} damage   Damage configuration of the card (extra, extraParts)
+ * @param {object} result   Rolled result (steps, tableTotal, extra, calculated, halved, fumble)
+ * @param {string} [title]
+ * @returns {string}
+ */
+export function damageBreakdownHTML(damage, result, title = "") {
+  if ( !result || !Number.isFinite(Number(result.calculated)) ) return "";
+  const esc = value => foundry.utils.escapeHTML(String(value ?? ""));
+  const num = value => Number(value) || 0;
+  const rows = [];
+  const row = (label, value, { note = "", cls = "" } = {}) => rows.push(
+    `<tr class="${cls}"><th>${label}${note ? ` <small>${esc(note)}</small>` : ""}</th><td>${esc(value)}</td></tr>`);
+  for ( const step of result.steps ?? [] ) {
+    const faces = (step.dice ?? []).map(d => (FACES[d] ? `<i class="fa-solid fa-dice-${FACES[d]}"></i>` : esc(d))).join("");
+    const label = `${step.power !== undefined ? `${esc(t("SW25.Power"))} ${esc(step.power)} ` : ""}<span class="faces">${faces}</span>`;
+    row(label, step.value, { cls: step.crit ? "dice crit" : "dice", note: step.crit ? t("SW25.Critical") : "" });
+  }
+  if ( result.fumble ) row(esc(t("SW25.Card.Fumble")), "0", { cls: "note bad" });
+  const extra = num(result.extra);
+  let listed = 0;
+  for ( const part of damage?.extraParts ?? [] ) {
+    if ( !num(part.value) ) continue;
+    listed += num(part.value);
+    const label = game.i18n.localize(part.label ?? "");
+    row(esc(part.ability ? `${label} ${t("SW25.Ability.mod")}` : label), signed(part.value), { note: part.note ?? "" });
+  }
+  if ( extra !== listed ) row(esc(t(listed ? "SW25.Breakdown.Other" : "SW25.ExtraDamage")), signed(extra - listed));
+  if ( result.halved ) row(esc(t("SW25.Breakdown.Halved")), "÷2", { cls: "note" });
+  return [
+    title ? `<header>${esc(title)}</header>` : "",
+    `<table><tbody>${rows.join("")}</tbody>`,
+    `<tfoot><tr><th>${esc(t("SW25.Breakdown.Total"))}</th><td>${esc(result.calculated)}</td></tr></tfoot></table>`
+  ].join("");
+}
+
 /* -------------------------------------------- */
 /*  Bubble following the pointer                */
 /* -------------------------------------------- */
@@ -156,7 +195,15 @@ function hideBubble() {
  * @param {string} [title]
  */
 export function attachBreakdown(element, check, title) {
-  const html = checkBreakdownHTML(check, title);
+  attachBubble(element, checkBreakdownHTML(check, title));
+}
+
+/**
+ * Show some HTML in the pointer-following bubble while an element is hovered.
+ * @param {HTMLElement} element
+ * @param {string} html
+ */
+export function attachBubble(element, html) {
   if ( !element || !html ) return;
   element.classList.add("swp-has-breakdown");
   element.removeAttribute("data-tooltip");

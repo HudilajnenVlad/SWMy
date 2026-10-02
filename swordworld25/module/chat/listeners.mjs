@@ -1,9 +1,12 @@
 import { getCard, updateCard } from "./card.mjs";
-import { attachBreakdown } from "./breakdown.mjs";
+import { attachBreakdown, attachBubble, damageBreakdownHTML } from "./breakdown.mjs";
 import { undoDamage } from "../combat/damage.mjs";
 import { rollCardResistance, rollDeathCheck } from "../workflows/checks.mjs";
 import { addTargetsToCard, applyDamageFromCard, applyEffectFromCard, rollDamageFromCard } from "../workflows/damage-roll.mjs";
 import { actorFromUuid, keyboardActions, t } from "../helpers/utils.mjs";
+import { applyKnowledgeFromCard, showMonsterToPlayers } from "../workflows/knowledge.mjs";
+import { takeLoot } from "../workflows/loot.mjs";
+import { rollTrapRequest } from "../workflows/trap.mjs";
 
 /**
  * Hook handler for rendered chat messages: permissions and button listeners.
@@ -37,6 +40,10 @@ export function onRenderChatMessage(message, html) {
   // Hovering a result shows where it comes from
   const state = getCard(message);
   if ( state?.check ) attachBreakdown(html.querySelector(".swp-chat-roll:not(.swp-chat-damage) .swp-chat-total"), state.check, state.check.label);
+  if ( state?.result ) {
+    attachBubble(html.querySelector(".swp-chat-damage .swp-chat-total"),
+      damageBreakdownHTML(state.damage, state.result, state.title));
+  }
   if ( state?.contest ) {
     const contest = t(`SW25.Check.${state.contest}`);
     html.querySelectorAll(".swp-chat-target").forEach((el, i) => {
@@ -71,7 +78,7 @@ export function onRenderChatMessage(message, html) {
 const index = button => (button.dataset.index !== undefined ? Number(button.dataset.index) : null);
 
 const ACTIONS = {
-  rollDamage: message => rollDamageFromCard(message),
+  rollDamage: (message, button, event) => rollDamageFromCard(message, event),
   resist: (message, button, event) => rollCardResistance(message, index(button), event),
   apply: (message, button) => applyDamageFromCard(message, {
     index: index(button), multiplier: Number(button.dataset.mult) || 1
@@ -83,6 +90,11 @@ const ACTIONS = {
   applyEffect: (message, button) => applyEffectFromCard(message, { index: index(button) }),
   addTargets: message => addTargetsToCard(message),
   undo: message => undoDamage(message),
+  knowledgeApply: message => applyKnowledgeFromCard(message),
+  trapRoll: (message, button, event) => rollTrapRequest(message, event),
+  lootTake: (message, button) => takeLoot(message, index(button)),
+  lootParty: (message, button) => takeLoot(message, index(button), { party: true }),
+  showMonster: (message, button) => showMonsterToPlayers(actorFromUuid(button.dataset.uuid)),
   deathCheck: (message, button, event) => {
     const actor = actorFromUuid(button.dataset.actor);
     if ( actor ) return rollDeathCheck(actor, event);

@@ -136,7 +136,11 @@
       {
         "key": "damageTaken",
         "value": -5,
-        "condition": "fire or water/ice damage"
+        "condition": "fire or water/ice damage",
+        "types": [
+          "fire",
+          "water"
+        ]
       }
     ]
   },

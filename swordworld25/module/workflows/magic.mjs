@@ -179,6 +179,11 @@ export async function castSpell(actor, spell, { event } = {}) {
   const usesPower = dealsAmount && Number.isInteger(power);
   const fixedAmount = (dealsAmount && !usesPower) ? fixedSpellAmount(eff, casting, { extraMp }) : null;
   const damageBonus = (kind === "damage") ? (actor.system.bonuses?.damageMagic ?? 0) + declared.damage : 0;
+  // Where the added amount comes from, for the damage dialog and the breakdown of the damage card
+  const extraParts = [
+    ...(eff.addMagicPower && casting.power ? [{ label: "SW25.MagicPower", value: casting.power }] : []),
+    ...((kind === "damage") ? [...actor.system.bonusBreakdown(["damageMagic"]), ...declared.damageLines] : [])
+  ];
 
   // Lasting effects: modifiers (formulas use the caster's values), conditions and the spell itself as a timed effect
   const rollData = { magicPower: casting.power, level: casting.level, extraMp };
@@ -261,6 +266,8 @@ export async function castSpell(actor, spell, { event } = {}) {
       power,
       critical,
       extra: (eff.addMagicPower ? casting.power : 0) + damageBonus,
+      extraParts,
+      source: "spell",
       rollBonus: declared.powerRoll,
       kind: kind === "damage" ? (eff.damageKind || "magic") : null,
       types: s.types ?? [],
@@ -273,6 +280,8 @@ export async function castSpell(actor, spell, { event } = {}) {
       mode: "formula",
       formula: String(fixedAmount),
       extra: (eff.addMagicPower ? casting.power : 0) + damageBonus,
+      extraParts,
+      source: "spell",
       kind: kind === "damage" ? (eff.damageKind || "magic") : null,
       types: s.types ?? [],
       heal: kind !== "damage",

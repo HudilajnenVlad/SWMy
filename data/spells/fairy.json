@@ -1165,7 +1165,10 @@
         "key": "damageTakenMagic",
         "value": -3,
         "condition": "fire-type magic damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "fire"
+        ]
       }
     ]
   },
@@ -1988,7 +1991,10 @@
         "key": "damageTaken",
         "value": -5,
         "condition": "water/ice-type damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "water"
+        ]
       }
     ]
   },
@@ -2197,7 +2203,10 @@
         "key": "damageTaken",
         "value": -3,
         "condition": "wind-type damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "wind"
+        ]
       }
     ]
   },

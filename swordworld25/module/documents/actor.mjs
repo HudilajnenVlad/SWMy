@@ -33,6 +33,10 @@ export default class SW25Actor extends Actor {
     } else if ( this.type === "party" ) {
       // The party token travels on overland maps: linked, friendly, no bars
       Object.assign(prototype, { actorLink: true, disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY });
+    } else if ( this.type === "trap" ) {
+      // A trap lies hidden on the map until found; it has no bars
+      Object.assign(prototype, { disposition: CONST.TOKEN_DISPOSITIONS.SECRET, displayName: CONST.TOKEN_DISPLAY_MODES.OWNER });
+      if ( !data.img || (data.img === CONST.DEFAULT_TOKEN) ) this.updateSource({ img: "icons/svg/trap.svg", "prototypeToken.texture.src": "icons/svg/trap.svg" });
     } else {
       Object.assign(prototype, {
         disposition: this.type === "mount" ? CONST.TOKEN_DISPOSITIONS.FRIENDLY : CONST.TOKEN_DISPOSITIONS.HOSTILE,

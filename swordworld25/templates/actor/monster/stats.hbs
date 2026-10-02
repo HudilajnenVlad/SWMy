@@ -54,12 +54,17 @@
         </td>
         {{else}}
         <td class="style">{{#if main}}<i class="fa-solid fa-crown swp-crown" data-tooltip="SW25.MainSection"></i> {{/if}}{{sw25Default style "—"}}{{#if name}} <small class="swp-sub inline">({{label}})</small>{{else if ordinal}} <small class="swp-sub inline">{{ordinal}}</small>{{/if}}</td>
-        <td class="roll">{{#if canAttack}}<a class="swp-cellroll" data-action="sectionAttack" data-index="{{index}}" data-tooltip="SW25.Attack">{{accuracyLabel}} <i class="fa-solid fa-dice-d6"></i></a>{{else}}{{accuracyLabel}}{{/if}}</td>
+        <td class="roll">{{#if (and canAttack @root.owner)}}<a class="swp-cellroll" data-action="sectionAttack" data-index="{{index}}" data-tooltip="SW25.Attack">{{accuracyLabel}} <i class="fa-solid fa-dice-d6"></i></a>{{else}}{{accuracyLabel}}{{/if}}</td>
         <td>{{sw25Default damage "—"}}</td>
-        <td class="roll">{{#if canEvade}}<a class="swp-cellroll" data-action="sectionEvasion" data-index="{{index}}" data-tooltip="SW25.Check.evasion">{{evasionLabel}} <i class="fa-solid fa-dice-d6"></i></a>{{else}}—{{/if}}</td>
+        <td class="roll">{{#if (and canEvade @root.owner)}}<a class="swp-cellroll" data-action="sectionEvasion" data-index="{{index}}" data-tooltip="SW25.Check.evasion">{{evasionLabel}} <i class="fa-solid fa-dice-d6"></i></a>{{else if canEvade}}{{evasionLabel}}{{else}}—{{/if}}</td>
         <td>{{defenseTotal}}</td>
+        {{#if @root.owner}}
         <td class="hp"><span class="swp-hpcell" style="--pct: {{hpPct}}%"><input type="number" name="system.sections.{{index}}.hp.value" value="{{hp.value}}" step="1"><small>/{{hp.max}}</small></span></td>
         <td class="mp"><span class="swp-hpcell mp" style="--pct: {{sw25Pct mp.value mp.max}}%"><input type="number" name="system.sections.{{index}}.mp.value" value="{{mp.value}}" step="1"><small>/{{mp.max}}</small></span></td>
+        {{else}}
+        <td>{{hp.max}}</td>
+        <td>{{mp.max}}</td>
+        {{/if}}
         {{/if}}
       </tr>
       {{else}}
@@ -82,15 +87,16 @@
       <div class="swp-skill swp-row draggable" data-item-id="{{id}}">
         <div class="swp-skill-head">
           <span class="swp-skill-icons" data-tooltip="{{tagLabels}}">{{icons}}</span>
-          <a class="swp-skill-name" data-action="itemUse" data-tooltip="SW25.Use">{{name}}</a>
-          <span class="swp-row-tools">
+          {{#if @root.owner}}<a class="swp-skill-name" data-action="itemUse" data-tooltip="SW25.Use">{{name}}</a>{{else}}<span class="swp-skill-name">{{name}}</span>{{/if}}
+          {{#if @root.owner}}<span class="swp-row-tools">
             <a data-action="itemChat" data-tooltip="SW25.ToChat"><i class="fa-solid fa-comment"></i></a>
             <a data-action="itemEdit" data-tooltip="SW25.Edit"><i class="fa-solid fa-pen"></i></a>
             <a data-action="itemDelete" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a>
-          </span>
+          </span>{{/if}}
         </div>
-        {{#if (or section checkLabel damage)}}
-        <div class="swp-skill-meta">{{#if section}}<span>{{section}}</span>{{/if}}{{#if checkLabel}}<span>{{checkLabel}}</span>{{/if}}{{#if damage}}<span>{{damage}}</span>{{/if}}</div>
+        {{#if (or section checkLabel damage casting)}}
+        <div class="swp-skill-meta">{{#if section}}<span>{{section}}</span>{{/if}}{{#if checkLabel}}<span>{{checkLabel}}</span>{{/if}}{{#if damage}}<span>{{damage}}</span>{{/if}}
+          {{#if casting}}<span>{{casting.label}}</span>{{#if @root.owner}}<a class="swp-btn-text swp-cast-btn" data-action="openSpellbook" data-system="{{casting.system}}"><i class="fa-solid fa-book-sparkles"></i> {{localize "SW25.Monster.CastSpells"}}</a>{{/if}}{{/if}}</div>
         {{/if}}
         <div class="swp-skill-text">{{{text}}}</div>
       </div>
@@ -106,7 +112,7 @@
     <div class="swp-sb-bar">
       <span class="swp-bar-title">{{localize "SW25.Loot.label"}}</span>
       <span class="swp-tools">
-        <a class="swp-tool" data-action="rollLoot" data-tooltip="SW25.Loot.Roll"><i class="fa-solid fa-dice"></i></a>
+        {{#if @root.owner}}<a class="swp-tool" data-action="rollLoot" data-tooltip="SW25.Loot.Roll"><i class="fa-solid fa-dice"></i></a>{{/if}}
         {{#if edit}}<a class="swp-tool" data-action="lootAdd" data-tooltip="SW25.Loot.Add"><i class="fa-solid fa-plus"></i></a>{{/if}}
       </span>
     </div>
@@ -190,8 +196,8 @@
   <p>
     <span class="swp-kvp swp-weak {{#if system.weakPointRevealed}}revealed{{/if}}"><b>{{localize "SW25.WeakPoint.label"}}:</b> {{weakPointLabel}}</span>
     <span class="swp-kvp"><b>{{localize "SW25.Monster.MovementSpeed"}}:</b> {{movementLabel}}</span>
-    <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="fortitude">{{fortitudeLabel}}</a></span>
-    <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="willpower">{{willpowerLabel}}</a></span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> {{#if @root.owner}}<a class="swp-rollv" data-action="monsterCheck" data-check="fortitude">{{fortitudeLabel}}</a>{{else}}{{fortitudeLabel}}{{/if}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> {{#if @root.owner}}<a class="swp-rollv" data-action="monsterCheck" data-check="willpower">{{willpowerLabel}}</a>{{else}}{{willpowerLabel}}{{/if}}</span>
   </p>
   {{> mountJockey}}
   {{else}}
@@ -210,10 +216,10 @@
     <span class="swp-kvp swp-weak {{#if system.weakPointRevealed}}revealed{{/if}}"><b>{{localize "SW25.WeakPoint.label"}}:</b> {{weakPointLabel}}{{#if system.weakPointRevealed}} <i class="fa-solid fa-crosshairs" data-tooltip="SW25.Monster.WeakPointRevealed"></i>{{/if}}</span>
   </p>
   <p>
-    <span class="swp-kvp"><b>{{localize "SW25.Check.initiative"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="initiative">{{initiativeLabel}}</a></span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.initiative"}}:</b> {{#if @root.owner}}<a class="swp-rollv" data-action="monsterCheck" data-check="initiative">{{initiativeLabel}}</a>{{else}}{{initiativeLabel}}{{/if}}</span>
     <span class="swp-kvp"><b>{{localize "SW25.Monster.MovementSpeed"}}:</b> {{movementLabel}}</span>
-    <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="fortitude">{{fortitudeLabel}}</a></span>
-    <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> <a class="swp-rollv" data-action="monsterCheck" data-check="willpower">{{willpowerLabel}}</a></span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.fortitude"}}:</b> {{#if @root.owner}}<a class="swp-rollv" data-action="monsterCheck" data-check="fortitude">{{fortitudeLabel}}</a>{{else}}{{fortitudeLabel}}{{/if}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.willpower"}}:</b> {{#if @root.owner}}<a class="swp-rollv" data-action="monsterCheck" data-check="willpower">{{willpowerLabel}}</a>{{else}}{{willpowerLabel}}{{/if}}</span>
   </p>
   {{/if}}
 </div>

@@ -46,6 +46,25 @@
   </div>
   {{/if}}
 
+  {{#if state.knowledge}}
+  <div class="swp-chat-targets swp-chat-knowledge">
+    {{#each state.knowledge.results}}
+    <div class="swp-chat-target outcome-{{#if identified}}hit{{else}}miss{{/if}}">
+      <img src="{{img}}" alt="">
+      <span class="swp-chat-tname">{{name}}</span>
+      <span class="swp-outcome {{#if identified}}hit{{else}}miss{{/if}}">{{#if identified}}{{localize "SW25.Knowledge.Identified"}}{{else}}{{localize "SW25.Knowledge.Unknown"}}{{/if}}</span>
+      {{#if weakPoint}}<span class="swp-outcome affected" data-tooltip="SW25.Knowledge.WeakPointHint"><i class="fa-solid fa-crosshairs"></i> {{localize "SW25.WeakPoint.label"}}</span>{{/if}}
+      <a class="swp-chat-show" data-action="showMonster" data-uuid="{{uuid}}" data-gm-only data-tooltip="SW25.Monster.ShowPlayers"><i class="fa-solid fa-eye"></i></a>
+    </div>
+    {{else}}
+    <p class="swp-chat-note">{{localize "SW25.Knowledge.NoTargets"}}</p>
+    {{/each}}
+    <div class="swp-chat-footrow" data-gm-only>
+      <button type="button" class="swp-btn-wide light" data-action="knowledgeApply"><i class="fa-solid fa-crosshairs"></i> {{localize "SW25.Knowledge.ApplyTargets"}}</button>
+    </div>
+  </div>
+  {{/if}}
+
   {{#if result}}
   <div class="swp-chat-roll swp-chat-damage {{#if damage.heal}}heal{{/if}} {{#if damage.mp}}mp{{/if}} {{#if result.fumble}}fumble{{/if}}">
     <span class="swp-legend">{{#if damage.heal}}{{#if damage.mp}}{{localize "SW25.Card.MPHealing"}}{{else}}{{localize "SW25.Card.Healing"}}{{/if}}{{else}}{{localize "SW25.Damage.label"}}{{/if}}</span>
@@ -70,6 +89,7 @@
     <div class="swp-chat-parts">
       {{#if result.fumble}}{{localize "SW25.Card.Fumble"}}{{else}}{{result.tableTotal}} {{sw25Signed result.extra}}{{#if result.halved}} ÷ 2{{/if}} = <b>{{result.calculated}}</b>{{/if}}
     </div>
+    {{#if damage.partsLabel}}<div class="swp-chat-parts swp-chat-extra">{{damage.partsLabel}}</div>{{/if}}
   </div>
   {{/if}}
 
@@ -79,6 +99,7 @@
     <div class="swp-chat-target outcome-{{outcomeClass}}">
       <img src="{{img}}" alt="">
       <span class="swp-chat-tname">{{name}}{{#if sectionLabel}} <small>({{sectionLabel}})</small>{{/if}}</span>
+      {{#if accuracyBonus}}<span class="swp-chat-weak" data-tooltip="SW25.Knowledge.AccuracyWeakHint"><i class="fa-solid fa-crosshairs"></i> {{sw25Signed accuracyBonus}}</span>{{/if}}
       {{#if ../state.contest}}
         {{#if resist}}
         {{#if resist.override}}<span class="swp-chat-resist gm" data-tooltip="SW25.Card.OverrideHint">{{localize "SW25.Card.Override"}}</span>

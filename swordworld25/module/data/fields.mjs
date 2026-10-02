@@ -53,7 +53,11 @@ export function modifierSchema() {
     scope: stringField("effect", { choices: { effect: "effect", use: "use" } }),
     target: stringField("self", { choices: { self: "self", target: "target" } }),
     // Only for characters (PCs/NPCs with ability scores) or only for monsters and mounts (fixed values)
-    actorType: stringField("", { choices: { "": "", character: "character", monster: "monster" } })
+    actorType: stringField("", { choices: { "": "", character: "character", monster: "monster" } }),
+    // Damage taken and Defense against some damage types only, or against all but some: applied automatically
+    // when damage is applied (Field Protection: not vs poison, disease or curse; "Defense +5 vs blunt weapons")
+    types: new ArrayField(new StringField()),
+    exceptTypes: new ArrayField(new StringField())
   });
 }
 

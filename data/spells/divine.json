@@ -217,7 +217,12 @@
         "key": "damageTaken",
         "value": -1,
         "condition": "not vs Poison-, Disease- or Curse-type damage",
-        "target": "target"
+        "target": "target",
+        "exceptTypes": [
+          "poison",
+          "disease",
+          "curse"
+        ]
       }
     ]
   },
@@ -2373,7 +2378,12 @@
         "key": "damageTaken",
         "value": -2,
         "condition": "not vs Poison-, Disease- or Curse-type damage",
-        "target": "target"
+        "target": "target",
+        "exceptTypes": [
+          "poison",
+          "disease",
+          "curse"
+        ]
       }
     ]
   },
@@ -3504,7 +3514,11 @@
         "key": "damageTaken",
         "value": -2,
         "condition": "from Water/Ice- or Wind-type damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "water",
+          "wind"
+        ]
       }
     ]
   },
@@ -4363,7 +4377,12 @@
         "key": "damageTaken",
         "value": -5,
         "condition": "vs Poison-, Disease- or Curse-type damage",
-        "target": "target"
+        "target": "target",
+        "types": [
+          "poison",
+          "disease",
+          "curse"
+        ]
       }
     ]
   },

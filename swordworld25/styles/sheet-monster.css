@@ -104,6 +104,8 @@
 .swp .swp-skill:hover .swp-row-tools { opacity: 1; }
 .swp .swp-skill-meta { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0 3px; }
 .swp .swp-skill-meta span { padding: 0 5px; border: var(--swp-thin); border-radius: 2px; font-size: 11px; line-height: 17px; }
+.swp .swp-skill-meta .swp-cast-btn { padding: 0 6px; border: 1.5px solid var(--swp-ink); border-radius: 2px; font-size: 11px; font-weight: 700; line-height: 16px; }
+.swp .swp-skill-meta .swp-cast-btn:hover { background: var(--swp-ink); color: var(--swp-paper); }
 .swp .swp-skill-text { font-size: 12.5px; line-height: 1.45; }
 .swp .swp-skill-text p { margin: 0 0 3px; }
 
@@ -166,3 +168,24 @@
 }
 
 /* The description grows with its text while it is not being edited */
+
+/* --------------------------------------------------------------------------
+   Trap sheet: the same entry layout as a stat block, with the GM's actions
+   -------------------------------------------------------------------------- */
+
+.swp.trap .window-content { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.swp .swp-trap { display: flex; flex-direction: column; min-height: 0; height: 100%; }
+.swp .swp-trap-body { display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto; min-height: 0; padding: 4px 14px 14px; overflow-y: auto; }
+.swp .swp-trap-states { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+.swp .swp-trap-states .swp-tag { cursor: pointer; color: var(--swp-muted); }
+.swp .swp-trap-states .swp-tag.on { border-color: var(--swp-ink); background: var(--swp-ink); color: var(--swp-paper); }
+.swp .swp-trap-actions { display: flex; flex-direction: column; gap: 6px; }
+.swp .swp-trap-actions .swp-btn-wide { display: flex; align-items: center; justify-content: center; gap: 6px; height: 32px; font-size: 13px; }
+.swp .swp-trap-actions .swp-btn-wide:disabled { opacity: 0.45; cursor: not-allowed; }
+.swp .swp-trap-ask { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 12px; }
+.swp .swp-trap-ask > span { color: var(--swp-ink-2); }
+.swp .swp-trap-statuses { display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 8px; }
+.swp .swp-trap-status { display: grid; place-items: center; width: 30px; height: 30px; border: var(--swp-thin); border-radius: 3px; opacity: 0.35; }
+.swp .swp-trap-status img { width: 24px; height: 24px; border: none; }
+.swp .swp-trap-status.on { border-color: var(--swp-ink); background: var(--swp-hl); opacity: 1; }
+.swp .swp-trap-notes prose-mirror { display: block; min-height: 60px; padding: 4px 8px; }

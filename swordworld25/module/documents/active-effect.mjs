@@ -1,3 +1,5 @@
+import { typedConditionLabel } from "../helpers/utils.mjs";
+
 /**
  * Sword World 2.5 ActiveEffect: effects transferred from inactive equipment are suppressed.
  */
@@ -28,7 +30,7 @@ export default class SW25ActiveEffect extends ActiveEffect {
     }
     for ( const mod of this.getFlag("swordworld25", "conditional") ?? [] ) {
       const label = game.i18n.localize(CONFIG.SW25.modifierKeys[mod.key] ?? mod.key);
-      parts.push(`${label} ${mod.value > 0 ? "+" : ""}${mod.value} (${mod.condition})`);
+      parts.push(`${label} ${mod.value > 0 ? "+" : ""}${mod.value} (${mod.condition || typedConditionLabel(mod)})`);
     }
     return parts.join(", ");
   }

@@ -24,7 +24,8 @@
       "character": { "htmlFields": ["details.biography", "details.notes"] },
       "monster": { "htmlFields": ["details.description", "details.notes"] },
       "mount": { "htmlFields": ["details.description", "details.notes"] },
-      "party": { "htmlFields": ["notes"] }
+      "party": { "htmlFields": ["notes"] },
+      "trap": { "htmlFields": ["details.description", "details.notes"] }
     },
     "Item": {
       "race": { "htmlFields": ["description"] },

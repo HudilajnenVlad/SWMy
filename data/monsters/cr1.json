@@ -1713,7 +1713,10 @@
           {
             "key": "damageTaken",
             "value": -3,
-            "condition": "vs bludgeoning-type damage"
+            "condition": "vs bludgeoning-type damage",
+            "types": [
+              "bludgeoning"
+            ]
           }
         ]
       },
@@ -1938,7 +1941,10 @@
           {
             "key": "damageTaken",
             "value": -3,
-            "condition": "vs bludgeoning-type damage"
+            "condition": "vs bludgeoning-type damage",
+            "types": [
+              "bludgeoning"
+            ]
           }
         ]
       },

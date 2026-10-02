@@ -4799,7 +4799,10 @@
           {
             "key": "damageTaken",
             "value": -3,
-            "condition": "vs bludgeoning-type damage"
+            "condition": "vs bludgeoning-type damage",
+            "types": [
+              "bludgeoning"
+            ]
           }
         ]
       },
@@ -5027,7 +5030,10 @@
           {
             "key": "damageTaken",
             "value": -3,
-            "condition": "vs bludgeoning-type damage"
+            "condition": "vs bludgeoning-type damage",
+            "types": [
+              "bludgeoning"
+            ]
           }
         ]
       },
@@ -7835,7 +7841,10 @@
           {
             "key": "defense",
             "value": 5,
-            "condition": "vs blunt weapons"
+            "condition": "vs blunt weapons",
+            "types": [
+              "bludgeoning"
+            ]
           }
         ]
       },
@@ -10335,7 +10344,10 @@
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs fire-type damage"
+            "condition": "vs fire-type damage",
+            "types": [
+              "fire"
+            ]
           }
         ]
       }
@@ -10717,7 +10729,10 @@
           {
             "key": "damageTaken",
             "value": 3,
-            "condition": "vs fire-type damage"
+            "condition": "vs fire-type damage",
+            "types": [
+              "fire"
+            ]
           }
         ]
       }

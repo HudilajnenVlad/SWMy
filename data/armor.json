@@ -812,7 +812,14 @@
       {
         "key": "damageTakenMagic",
         "value": -3,
-        "condition": "not vs poison, disease, curse or psychic damage"
+        "condition": "not vs poison, disease, curse or psychic damage",
+        "exceptTypes": [
+          "poison",
+          "disease",
+          "curse",
+          "psychic",
+          "psychicWeak"
+        ]
       }
     ]
   },
@@ -858,7 +865,14 @@
       {
         "key": "damageTakenMagic",
         "value": -3,
-        "condition": "not vs poison, disease, curse or psychic damage"
+        "condition": "not vs poison, disease, curse or psychic damage",
+        "exceptTypes": [
+          "poison",
+          "disease",
+          "curse",
+          "psychic",
+          "psychicWeak"
+        ]
       }
     ]
   },
@@ -1106,7 +1120,14 @@
       {
         "key": "damageTakenMagic",
         "value": -3,
-        "condition": "not vs poison, disease, curse or psychic damage"
+        "condition": "not vs poison, disease, curse or psychic damage",
+        "exceptTypes": [
+          "poison",
+          "disease",
+          "curse",
+          "psychic",
+          "psychicWeak"
+        ]
       }
     ]
   },
@@ -1132,7 +1153,13 @@
       {
         "key": "damageTaken",
         "value": -3,
-        "condition": "vs earth, water/ice, fire or wind type damage"
+        "condition": "vs earth, water/ice, fire or wind type damage",
+        "types": [
+          "earth",
+          "water",
+          "fire",
+          "wind"
+        ]
       }
     ]
   },

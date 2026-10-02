@@ -197,10 +197,12 @@
     "Breakdown": {
       "CardRank": "Card rank",
       "Fixed": "Fixed value (+7)",
+      "Halved": "Halved (resisted)",
       "Jockey": "Jockey (Rider + ability)",
       "MetalArmor": "Metal armor",
       "NotBelowZero": "Not below 0",
       "Other": "Other modifiers",
+      "Proficiency": "Weapon Proficiency",
       "StatBlock": "Stat block",
       "SwordShards": "Sword shards",
       "Total": "Total"
@@ -423,6 +425,10 @@
     },
     "Classes": "Classes",
     "Combat": {
+      "ActedMark": "Mark as having acted this round",
+      "ActedUndo": "Has acted this round (click to undo)",
+      "Acting": "acting",
+      "AllActed": "Everybody has acted: next round",
       "CheckShort": "Check",
       "ClassAbilities": "Class abilities",
       "CloseHint": "Close the combat panel (the swords of the Token Controls open it again)",
@@ -432,8 +438,18 @@
       "NoActor": "Select a token (or assign yourself a character) to see what it can do in combat.",
       "NoSpells": "No favorite spells: mark them with ★ in the spellbook.",
       "PowerShort": "Power",
+      "ProgressHint": "Acted / total this round",
+      "Side": {
+        "enemy": "Enemies",
+        "pc": "Adventurers"
+      },
+      "TakeTurn": "Take the turn",
+      "TakeTurnHint": "Nobody is acting: a character of the acting side takes the turn (play button in the tracker)",
+      "TheirTurn": "Acting now",
       "Title": "Combat panel",
-      "Toggle": "Combat panel: attacks, spells, checks, resources"
+      "Toggle": "Combat panel: attacks, spells, checks, resources",
+      "TurnOf": "Turn: {name}",
+      "Waiting": "{side}: whoever is ready takes the turn"
     },
     "Compendium": {
       "Open": "Open compendium"
@@ -444,7 +460,10 @@
     "Critical": "Critical!",
     "Damage": {
       "Calculated": "Calculated",
+      "HealParts": "Added healing",
       "Immune": "Immune",
+      "Parts": "Added damage",
+      "RollBonus": "2d bonus (power table)",
       "label": "Damage"
     },
     "DamageKind": {
@@ -699,7 +718,15 @@
     "Gun": {
       "Bullet": "Bullet spell",
       "ByBullet": "by bullet",
-      "Magazine": "Loaded / magazine"
+      "ChooseAmmo": "Which bullets go into {name}?",
+      "EmptyReload": "{name} has no bullets loaded. Reload it now (Major Action)?",
+      "Full": "{name} is fully loaded",
+      "Magazine": "Loaded / magazine",
+      "NoAmmo": "{name} has no bullets in the inventory",
+      "NotEnoughLoaded": "{name} needs {count} loaded bullets for this spell",
+      "Reload": "Reload",
+      "ReloadHint": "Loaded bullets / magazine. Click: reload from the inventory (Major Action)",
+      "Reloaded": "reloads {name}: +{count} ({ammo}), {loaded}/{magazine}"
     },
     "HP": "HP",
     "Initiative": {
@@ -719,6 +746,14 @@
     },
     "Items": "Items",
     "Key": "Key",
+    "Knowledge": {
+      "AccuracyWeakHint": "Revealed weak point: accuracy bonus against this monster",
+      "ApplyTargets": "Apply to targeted monsters",
+      "Identified": "Identified",
+      "NoTargets": "No monster was targeted. The GM can apply this check to the monsters targeted now.",
+      "Unknown": "Not identified",
+      "WeakPointHint": "The weak point is revealed: it applies to the whole party's attacks"
+    },
     "Lang": {
       "ancientCelestial": "Ancient Celestial",
       "arcana": "Arcana",
@@ -754,17 +789,34 @@
     },
     "Loot": {
       "Add": "Add loot row",
+      "AlreadyTaken": "Already taken by {name}",
       "Always": "Always",
+      "CardMade": "makes a crude {color} {rank} card from {name}",
       "Cards": "Alchemist cards",
+      "ChooseColor": "Color of the rank {rank} card made from {name}:",
+      "CrudeCard": "Crude material card",
+      "CrudeHint": "Alchemist: make a crude material card from one piece (10 min, Alchemy Kit; the loot is used up)",
       "Hint": "Roll ranges like 2-7, 8+ or Always. The roll uses the looter's bonuses (select their token).",
       "Item": "Item",
+      "ItemSummary": "Loot of {monster}. Crude material card: {cards}.",
+      "NoParty": "There is no party in this world",
+      "NoPrice": "{name} has no sale price",
+      "NoRecipient": "Select your character's token (or have a character assigned) to take loot",
       "None": "This creature has no loot table.",
+      "NotAlchemist": "{name} is not an Alchemist",
       "Nothing": "Nothing",
+      "PartyHint": "Put it into the party's shared equipment",
       "Price": "Price",
       "Quantity": "Qty",
       "Roll": "Roll loot",
       "RollColumn": "2d",
+      "Sell": "Sell loot",
+      "SellConfirm": "Sell {name} ×{quantity} for {total}?",
+      "SellHint": "Sell for its price (gamels go to the money)",
+      "Sold": "sells {name} ×{quantity} for {total}",
+      "TakeHint": "Take it: to the selected character (or your own)",
       "Title": "Loot: {name}",
+      "TooCheap": "{name} is worth less than 10G: no card can be made from it",
       "label": "Loot"
     },
     "MP": "MP",
@@ -798,10 +850,12 @@
       "ActorType": "Only for",
       "Always": "always",
       "Condition": "Condition",
+      "ExceptTypes": "not vs types",
       "Formula": "+ Formula",
       "FormulaHint": "Added to the value when the effect is created: @magicPower, @level, @bardicPower, @alchemyPower",
       "Hint": "Numeric bonuses applied automatically. A condition makes it an optional toggle in roll dialogs.",
       "Key": "Modifies",
+      "NotVsTypes": "not vs {types}",
       "Scope": "Scope",
       "ScopeEffect": "While active",
       "ScopeUse": "Single use",
@@ -811,7 +865,10 @@
       "Title": "Automation modifiers",
       "TurnDamage": "{name}: damage over time",
       "TurnRegen": "{name}: regeneration",
+      "Types": "only vs types",
+      "TypesHint": "Damage types, comma separated (fire, water, wind, earth, lightning, energy, slashing, bludgeoning, poison, disease, curse, psychic, silver, hpRecovery). Damage taken and Defense with types apply automatically to matching damage.",
       "Value": "Value",
+      "VsTypes": "vs {types}",
       "abilityAgi": "Agility score",
       "abilityDex": "Dexterity score",
       "abilityInt": "Intelligence score",
@@ -873,6 +930,8 @@
       "AddSection": "Add fighting style (section)",
       "AddSkill": "Add unique skill",
       "BaseMax": "Base maximum (without sword shards)",
+      "CastSpells": "Cast (spellbook)",
+      "CastingLine": "spells up to level {level} · Magic Power {power} ({fixed})",
       "Classification": "Classification",
       "Disposition": "Disposition",
       "DuplicateSection": "Duplicate: another identical part with its own HP and MP",
@@ -902,6 +961,8 @@
       "SectionNameHint": "Section name (Head, Body…). Parts with the same name are numbered: Wing 1, Wing 2",
       "SectionOrdinalHint": "Number of this part among the sections with the same name",
       "ShardHint": "Sword shards: +5 HP and +1 MP each, bonus to resistances",
+      "ShowPlayers": "Show to players (what the party knows)",
+      "ShownToPlayers": "{name} is shown to the players",
       "Style": "Fighting style",
       "StyleSection": "Fight. Style (section)",
       "TotalHint": "Sum of all sections",
@@ -1202,6 +1263,10 @@
         "Hint": "Monster checks use fixed values (standard + 7) by default instead of rolling.",
         "Name": "Monsters use fixed values"
       },
+      "popcornInitiative": {
+        "Hint": "The side that won initiative acts first; within a side any character takes the turn when ready (play button in the combat tracker), a check box marks who has acted. Off: fixed order by initiative.",
+        "Name": "Popcorn turns within a side"
+      },
       "sharedDamageRoll": {
         "Hint": "Roll damage once for all unresisted targets (the rules roll separately).",
         "Name": "Share damage roll between targets"
@@ -1327,6 +1392,7 @@
       "TotalDefense": "Total Defense",
       "TotalEvasion": "Total Evasion",
       "TotalExtraDamage": "Total Extra Damage",
+      "Trap": "Trap",
       "Uses": "Uses",
       "WeaponAccuracy": "Weapon Accuracy",
       "WeaponName": "Weapon Name / Notes",
@@ -1594,6 +1660,69 @@
       "Toggle": "Resource tracker",
       "WillpowerShort": "Will"
     },
+    "Transfer": {
+      "BadTarget": "{name} cannot receive items",
+      "Confirm": "Hand {name} over to {target}?",
+      "Done": "hands {name} ×{quantity} over to {target}",
+      "Give": "Hand over",
+      "HowMany": "How many {name} go to {target}?",
+      "NotOwner": "You do not own {name}",
+      "Title": "Hand over: {name}"
+    },
+    "Trap": {
+      "Ask": {
+        "disarm": "Disarm the trap",
+        "search": "Search for traps",
+        "spotTrap": "Spot Trap!"
+      },
+      "AskHint": {
+        "disarm": "Roll Disable Device (Scout's Tools; without them −4).",
+        "search": "Each searcher rolls Search with the selected character (10 minutes).",
+        "spotTrap": "Last chance to notice it: roll Spot Trap now. Failure: the trap springs."
+      },
+      "AskPlayers": "Ask the players:",
+      "Check": "Trap value",
+      "CheckHint": "The trap's success value (fixed) opposed by the victims",
+      "DamageFormula": "Damage (dice)",
+      "DamageKind": "Damage kind",
+      "DamageTypes": "Damage types",
+      "Detected": "Found",
+      "DetectedHint": "Found by the party (its hidden tokens are shown)",
+      "Disarmed": "Disarmed",
+      "DisarmedHint": "Disarmed: it no longer springs",
+      "EffectOf": "Caught in {name}",
+      "Hours": "hours",
+      "Kind": {
+        "magical": "Magical",
+        "mechanical": "Mechanical",
+        "natural": "Natural"
+      },
+      "Level": "Trap level",
+      "Minutes": "minutes",
+      "Modifiers": "Modifiers on the victims",
+      "ModifiersHint": "Numeric penalties put on those the trap affects, for the duration.",
+      "NoCharacter": "Select your character's token (or have a character assigned)",
+      "Notes": "GM notes",
+      "PowerHint": "Power table damage instead of dice",
+      "Reset": "Reset",
+      "ResetPlaceholder": "once / resets after 1 hour",
+      "Rounds": "rounds",
+      "SearchHint": "Search check (10 minutes) needed to find it",
+      "SpotHint": "Spot Trap at the last moment: empty = Search + 4 (CR I p.109)",
+      "Springs": "Trap springs!",
+      "Statuses": "Conditions on the victims",
+      "TargetPlaceholder": "1 character / all in 3 m",
+      "Trigger": "Trigger",
+      "TriggerButton": "Spring the trap on the targeted tokens",
+      "TriggerHint": "Its value against the victims' Evasion (or resistance), then damage and conditions",
+      "TriggerPlaceholder": "stepping on the plate",
+      "Triggered": "Sprung",
+      "TriggeredHint": "Has sprung at least once",
+      "Type": "Type",
+      "Value": "Trap value (fixed)",
+      "Vs": "Resisted with",
+      "label": "Trap"
+    },
     "Use": "Use",
     "UseBonus": {
       "label": "Class bonus",
@@ -1696,7 +1825,8 @@
       "character": "Character",
       "monster": "Monster",
       "mount": "Mount",
-      "party": "Party"
+      "party": "Party",
+      "trap": "Trap"
     },
     "Item": {
       "ability": "Unique Skill",

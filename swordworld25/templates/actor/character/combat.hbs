@@ -100,6 +100,7 @@
           <td class="eq"><a class="swp-equip {{#if equipped}}on{{/if}}" data-action="itemToggleEquip" data-tooltip="SW25.Equip"><i class="fa-solid fa-hand-fist"></i></a></td>
           {{> "systems/swordworld25/templates/actor/paper/name-cell.hbs" this subtitle=category}}
           <td class="stance">
+            {{#if tracksBullets}}<a class="swp-gun-ammo {{#unless loaded}}empty{{/unless}}" data-action="gunReload" data-tooltip="SW25.Gun.ReloadHint"><i class="fa-solid fa-rotate-right"></i> {{magazineLabel}}</a>{{/if}}
             {{#if multiMode}}<a class="swp-stance-toggle" data-action="weaponMode" data-tooltip="SW25.Sheet.SwitchStance">{{stance}} <i class="fa-solid fa-rotate"></i></a>{{else}}{{stance}}{{/if}}
           </td>
           <td class="minstr {{#if strWarning}}warn{{/if}}" {{#if strWarning}}data-tooltip="{{localize 'SW25.StrPenalty'}} {{strPenalty}}"{{/if}}>{{minStr}}</td>

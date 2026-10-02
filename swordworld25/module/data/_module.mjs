@@ -2,6 +2,7 @@ import CharacterModel from "./actor/character.mjs";
 import MonsterModel from "./actor/monster.mjs";
 import MountModel from "./actor/mount.mjs";
 import PartyModel from "./actor/party.mjs";
+import TrapModel from "./actor/trap.mjs";
 import { ClassModel, FeatModel, RaceModel } from "./item/character-options.mjs";
 import { ArmorModel, GearModel, WeaponModel } from "./item/equipment.mjs";
 import {
@@ -12,7 +13,8 @@ export const actorModels = {
   character: CharacterModel,
   monster: MonsterModel,
   mount: MountModel,
-  party: PartyModel
+  party: PartyModel,
+  trap: TrapModel
 };
 
 export const itemModels = {

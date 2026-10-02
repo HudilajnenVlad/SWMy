@@ -1,0 +1,41 @@
+{{!-- Popcorn footer: who acts now, the end of the current turn, rounds (GM). --}}
+<nav class="combat-controls sw25-popcorn-controls" data-tooltip-direction="UP">
+  {{~#if hasCombat~}}
+  {{#if combat.round}}
+  <div class="sw25-popcorn-status">
+    {{#if currentName}}<i class="fa-solid fa-person-running"></i> {{localize "SW25.Combat.TurnOf" name=currentName}}
+    {{else if allActed}}<i class="fa-solid fa-flag-checkered"></i> {{localize "SW25.Combat.AllActed"}}
+    {{else}}<i class="fa-solid fa-hand-pointer"></i> {{localize "SW25.Combat.Waiting" side=actingLabel}}{{/if}}
+  </div>
+  {{/if}}
+  <div class="sw25-popcorn-buttons">
+  {{#if user.isGM}}
+    {{#if combat.round}}
+    <button type="button" class="inline-control combat-control icon fa-solid fa-backward-step"
+            data-action="previousRound" data-tooltip aria-label="{{ localize "COMBAT.RoundPrev" }}"></button>
+    <button type="button" class="inline-control combat-control icon fa-solid fa-xmark" data-action="endCombat"
+            data-tooltip aria-label="{{ localize "COMBAT.End" }}"></button>
+    {{#if canEndTurn}}
+    <button type="button" class="combat-control combat-control-lg" data-action="nextTurn">
+      <i class="fa-solid fa-check" inert></i><span>{{ localize "COMBAT.TurnEnd" }}</span>
+    </button>
+    {{/if}}
+    <button type="button" class="inline-control combat-control icon fa-solid fa-forward-step" data-action="nextRound"
+            data-tooltip aria-label="{{ localize "COMBAT.RoundNext" }}"></button>
+    {{else}}
+    <button type="button" class="combat-control combat-control-lg" data-action="startCombat">
+      <i class="fa-solid fa-swords" inert></i><span>{{ localize "COMBAT.Begin" }}</span>
+    </button>
+    {{/if}}
+  {{else if canEndTurn}}
+    <button type="button" class="combat-control combat-control-lg" data-action="nextTurn">
+      <i class="fa-solid fa-check" inert></i><span>{{ localize "COMBAT.TurnEnd" }}</span>
+    </button>
+  {{else if allActed}}
+    <button type="button" class="combat-control combat-control-lg" data-action="nextRound">
+      <i class="fa-solid fa-forward-step" inert></i><span>{{ localize "COMBAT.RoundNext" }}</span>
+    </button>
+  {{/if}}
+  </div>
+  {{/if}}
+</nav>

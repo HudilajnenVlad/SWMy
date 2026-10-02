@@ -80,8 +80,18 @@ export default class SW25ItemSheet extends HandlebarsApplicationMixin(ItemSheetV
 
   /** @override */
   _processFormData(event, form, formData) {
-    const data = super._processFormData(event, form, formData);
-    return restoreArrays(data, this.document._source);
+    const data = restoreArrays(super._processFormData(event, form, formData), this.document._source);
+    // Damage type lists of the modifiers are typed as "fire, water"
+    const lists = [data.system?.modifiers, data.system?.risk?.modifiers];
+    for ( const list of lists ) {
+      if ( !Array.isArray(list) ) continue;
+      for ( const mod of list ) {
+        for ( const key of ["types", "exceptTypes"] ) {
+          if ( typeof mod?.[key] === "string" ) mod[key] = mod[key].split(/[\s,;]+/).map(v => v.trim()).filter(Boolean);
+        }
+      }
+    }
+    return data;
   }
 
   /** @override */

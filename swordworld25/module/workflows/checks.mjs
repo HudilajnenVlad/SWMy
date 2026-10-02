@@ -1,7 +1,8 @@
 import { evaluateCheck, fixedResult, meetsTarget, resultFromRoll } from "../dice/check.mjs";
 import RollDialog from "../dice/roll-dialog.mjs";
 import { createCard, getCard, resistBreakdown, resistValue, updateCard } from "../chat/card.mjs";
-import { parseRange, renderSystemTemplate, signed, speakerFor, t } from "../helpers/utils.mjs";
+import { signed, speakerFor, t } from "../helpers/utils.mjs";
+import { applyKnowledge, knowledgeTotals } from "./knowledge.mjs";
 
 /**
  * Modifier keys relevant for a check key.
@@ -224,53 +225,7 @@ export async function rollCardResistance(message, index, event) {
 
 /* -------------------------------------------- */
 
-/**
- * Roll loot for a monster (CR I p.123).
- * @param {Actor} monster
- * @param {object} [options]
- * @param {Actor} [options.looter]  Character performing the loot determination (adds loot bonuses)
- */
-export async function rollLoot(monster, { looter = null } = {}) {
-  const loot = monster.system.loot ?? [];
-  if ( !loot.length ) return ui.notifications.info(t("SW25.Loot.None"));
-  const bonus = (looter?.system?.bonuses?.loot ?? 0);
-  const roll = new Roll(`2d6 + ${bonus}`);
-  await roll.evaluate();
-  const total = roll.total;
-  const rows = [];
-  for ( const row of loot ) {
-    // The printed roll text is authoritative (it is what the sheet edits); min/max are a fallback
-    let range = parseRange(row.roll);
-    if ( !range.always && !Number.isInteger(range.min) ) range = { min: row.min, max: row.max, always: false };
-    const always = range.always;
-    const within = !always && Number.isInteger(range.min) && (total >= range.min)
-      && (!Number.isInteger(range.max) || (total <= range.max));
-    if ( always || within ) rows.push({ ...row, always });
-  }
-  // A roll above every range gets the highest row (e.g. "10+")
-  const content = await renderSystemTemplate("chat/loot.hbs", {
-    name: monster.name,
-    img: monster.img,
-    total,
-    dice: roll.dice[0].results.map(r => r.result).join("+"),
-    diceList: roll.dice[0].results.map(r => r.result),
-    bonus,
-    looter: looter?.name,
-    rows: rows.map(r => ({
-      ...r,
-      quantityLabel: r.quantity ? `×${r.quantity}` : "",
-      priceLabel: Number.isInteger(r.price) ? `${r.price}G` : ""
-    })),
-    shards: monster.system.swordShards
-  });
-  await ChatMessage.implementation.create({
-    content,
-    rolls: [roll],
-    speaker: speakerFor(monster),
-    sound: CONFIG.sounds.dice,
-    flags: { swordworld25: { kind: "loot" } }
-  });
-}
+export { rollLoot } from "./loot.mjs";
 
 /* -------------------------------------------- */
 
@@ -286,37 +241,17 @@ export async function rollDeathCheck(actor, event) {
 }
 
 /**
- * Monster knowledge check against targeted monsters (CR I p.382).
+ * Monster knowledge check against targeted monsters (CR I p.382). The card lists what the party learned about each
+ * of them; the GM can apply the check to the monsters targeted later.
  * @param {Actor} actor
  * @param {Event} [event]
  */
 export async function rollMonsterKnowledge(actor, event) {
   const outcome = await rollCheck(actor, "monsterKnowledge", { event });
   if ( !outcome ) return;
-  const targets = Array.from(game.user.targets ?? []).map(tk => tk.actor).filter(a => a && (a.type !== "character"));
-  if ( !targets.length ) return outcome;
-  const canWeakness = actor.system.monsterKnowledgeSource === "sage" || !!actor.system.classes?.sage;
-  const sageTotal = (() => {
-    if ( actor.system.monsterKnowledgeSource === "sage" ) return outcome.result.total;
-    const sage = actor.system.classes?.sage;
-    if ( !sage ) return null;
-    const diff = (sage.level) - (actor.system.classes?.[actor.system.monsterKnowledgeSource]?.level ?? 0);
-    return outcome.result.total + diff;
-  })();
-  if ( !game.settings.get("swordworld25", "autoIdentify") ) return outcome;
-  for ( const monster of targets ) {
-    const rep = monster.system.reputation;
-    const weak = monster.system.weakness;
-    const update = {};
-    if ( outcome.result.autoSuccess || (Number.isInteger(rep) && (outcome.result.total >= rep)) ) update["system.identified"] = true;
-    if ( canWeakness && !outcome.result.autoFailure
-      && (outcome.result.autoSuccess || (Number.isInteger(weak) && (sageTotal ?? -1) >= weak)) ) {
-      update["system.weakPointRevealed"] = true;
-    }
-    if ( !foundry.utils.isEmpty(update) ) {
-      const { executeAsGM } = await import("../helpers/socket.mjs");
-      await executeAsGM("updateActor", { uuid: monster.uuid, update });
-    }
-  }
+  const totals = knowledgeTotals(actor, outcome.result);
+  const monsters = Array.from(game.user.targets ?? []).map(tk => tk.actor).filter(a => a && (a.type !== "character"));
+  const results = await applyKnowledge(monsters, totals);
+  if ( outcome.message ) await updateCard(outcome.message, { set: { knowledge: { ...totals, results } } });
   return outcome;
 }

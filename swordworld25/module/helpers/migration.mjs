@@ -4,7 +4,7 @@ import { SYSTEM_ID } from "./utils.mjs";
  * Version of the automation data of the compendiums. Raise it when the automation of existing entries changes, so
  * that the copies owned in the world are refreshed once (see {@link refreshAutomation}).
  */
-export const AUTOMATION_VERSION = 3;
+export const AUTOMATION_VERSION = 4;
 
 /**
  * Automation fields copied from the compendium entry, by item type. Everything else (quantity, equipped state,

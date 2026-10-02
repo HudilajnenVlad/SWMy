@@ -1,20 +1,111 @@
 import { rollFormulaDamage, rollPower } from "../dice/power.mjs";
 import { cardActor, createCard, getCard, snapshotTargets, updateCard } from "../chat/card.mjs";
 import { applyDamageTo } from "../combat/damage.mjs";
-import { applyEffects, buildEffectData, modifiersFor, raiseCurrentHp, removeEffects } from "../helpers/effects.mjs";
-import { actorFromUuid, getTargetTokens, speakerFor, t } from "../helpers/utils.mjs";
+import { applyEffects, applyRisk, buildEffectData, modifiersFor, raiseCurrentHp, removeEffects } from "../helpers/effects.mjs";
+import { actorFromUuid, getTargetTokens, signed, speakerFor, t } from "../helpers/utils.mjs";
+import RollDialog from "../dice/roll-dialog.mjs";
+import { conditionalOptions, consumeChosenItems } from "./checks.mjs";
+import { declarableFeats, declaredEffects } from "./attacks.mjs";
+
+/**
+ * Modifier keys of the situational damage bonuses offered for a kind of damage source.
+ * @param {string} [source]   melee | ranged | gun | spell | ability
+ * @returns {string[]}
+ */
+function situationalDamageKeys(source) {
+  if ( source === "melee" ) return ["damage", "damageMelee"];
+  if ( source === "ranged" ) return ["damage", "damageRanged"];
+  if ( ["gun", "spell"].includes(source) ) return ["damageMagic"];
+  return [];
+}
+
+/**
+ * Let the user review and change a damage roll before it is made (like the damage dialog of PF2e): every part of the
+ * added damage can be switched off, situational bonuses switched on, a manual modifier added, and the Power, Critical
+ * Value and the bonus to the 2d of the power table changed. Shift (or the "skip dialogs" setting) rolls as is.
+ * @param {Actor|null} actor   Who deals the damage (situational bonuses come from it)
+ * @param {object} dmg         Damage configuration of a card
+ * @param {object} [options]
+ * @param {string} [options.title]
+ * @param {Event} [options.event]
+ * @param {string} [options.declare]   melee | ranged: offer the combat feats declared with such an attack (damage rolled
+ *                                     without an attack: Power Strike adds its damage and its risk applies)
+ * @returns {Promise<{damage: object, rollMode: string}|null>}   The configuration to roll, or null if cancelled
+ */
+export async function configureDamage(actor, dmg, { title = "", event, declare = null } = {}) {
+  const rollMode = game.settings.get("core", "rollMode");
+  if ( dmg.mode === "toZero" ) return { damage: dmg, rollMode };
+  const localize = label => game.i18n.localize(label ?? "");
+  // The added damage as separate lines (older cards: one line)
+  let parts = (dmg.extraParts ?? []).filter(p => Number(p.value));
+  const listed = parts.reduce((a, p) => a + Number(p.value), 0);
+  if ( (dmg.extra ?? 0) !== listed ) parts = [...parts, { label: "SW25.Breakdown.Other", value: (dmg.extra ?? 0) - listed }];
+  const options = parts.map((p, i) => ({
+    id: `part${i}`,
+    label: p.ability ? `${localize(p.label)} ${t("SW25.Ability.mod")}` : localize(p.label),
+    value: Number(p.value), checked: true, group: dmg.heal ? "SW25.Damage.HealParts" : "SW25.Damage.Parts", part: p
+  }));
+  if ( actor && declare ) {
+    for ( const opt of declarableFeats(actor, declare) ) {
+      const effect = declaredEffects(actor, [opt.id], declare);
+      if ( !effect.damage && !effect.critical && !effect.powerRoll && !effect.powerPerCrit ) continue;
+      options.push({ ...opt, value: effect.damage, checked: false, group: "SW25.Roll.Declare" });
+    }
+  }
+  if ( actor ) {
+    const known = new Set(options.map(o => o.label));
+    const situational = conditionalOptions(actor, situationalDamageKeys(dmg.source))
+      .filter(o => !known.has(o.label))
+      .map(o => ({ ...o, id: `sit-${o.id}` }));
+    options.push(...situational);
+  }
+  const extraFields = [];
+  if ( dmg.mode === "power" ) {
+    extraFields.push({ name: "power", label: t("SW25.Power"), type: "number", value: dmg.power ?? 0 });
+    extraFields.push({ name: "critical", label: t("SW25.CritValue"), type: "number", value: Number.isFinite(dmg.critical) ? dmg.critical : "" });
+    extraFields.push({ name: "rollBonus", label: t("SW25.Damage.RollBonus"), type: "number", value: dmg.rollBonus ?? 0 });
+  }
+  const what = dmg.mode === "power" ? `${t("SW25.Power")} ${dmg.power ?? 0}` : (dmg.formula || "");
+  const dialog = await RollDialog.prompt({
+    title: `${t(dmg.heal ? "SW25.Card.Healing" : "SW25.Damage.label")}${title ? ` — ${title}` : ""}`,
+    summary: `${what}${dmg.extra ? ` ${signed(dmg.extra)}` : ""}`,
+    options,
+    extraFields,
+    skip: RollDialog.shouldSkip(event)
+  });
+  if ( !dialog ) return null;
+  if ( actor?.isOwner ) await consumeChosenItems(actor, dialog);
+  const extraParts = dialog.parts.map(p => ({ label: p.label, value: p.value }));
+  const configured = { ...dmg, extra: extraParts.reduce((a, p) => a + p.value, 0), extraParts };
+  if ( dmg.mode === "power" ) {
+    const number = (value, fallback) => (((value === "") || (value === null) || !Number.isFinite(Number(value))) ? fallback : Number(value));
+    configured.power = Math.clamp(Math.floor(number(dialog.extra.power, dmg.power ?? 0)), 0, 100);
+    configured.critical = number(dialog.extra.critical, Number.isFinite(dmg.critical) ? dmg.critical : null);
+    configured.rollBonus = Math.floor(number(dialog.extra.rollBonus, dmg.rollBonus ?? 0));
+  }
+  // Combat feats declared now: their other effects on the roll, and their risk
+  const feats = dialog.selected.filter(id => id.startsWith("feat:"));
+  if ( actor && declare && feats.length ) {
+    const declared = declaredEffects(actor, feats, declare);
+    if ( Number.isFinite(configured.critical) ) configured.critical += declared.critical;
+    configured.rollBonus = (configured.rollBonus ?? 0) + declared.powerRoll;
+    configured.powerPerCrit = (configured.powerPerCrit ?? 0) + declared.powerPerCrit;
+    for ( const feat of declared.feats ) await applyRisk(actor, feat);
+  }
+  return { damage: configured, rollMode: dialog.rollMode };
+}
 
 /**
  * Roll the damage (or healing) configured on a workflow card.
  * Resisted "Half" targets roll without criticals and are halved (CR I p.169-170); missed/negated targets are skipped.
  * @param {ChatMessage} message
+ * @param {Event} [event]
  */
-export async function rollDamageFromCard(message) {
+export async function rollDamageFromCard(message, event) {
   const state = getCard(message);
   if ( !state?.damage ) return;
   const actor = cardActor(state);
   if ( actor && !actor.isOwner ) return ui.notifications.warn(t("SW25.Warn.NotOwner"));
-  const dmg = state.damage;
   const targets = state.targets ?? [];
 
   // Which targets receive the effect, and how. Targets whose damage was already rolled keep it: after targets were
@@ -33,6 +124,11 @@ export async function rollDamageFromCard(message) {
     plan.push({ target, halve, index });
   });
   if ( !plan.length ) return ui.notifications.info(t(alreadyRolled ? "SW25.Card.DamageAlreadyRolled" : "SW25.Card.NoValidTargets"));
+
+  // The damage dialog: only once there is something to roll
+  const configured = await configureDamage(actor, state.damage, { title: state.title, event });
+  if ( !configured ) return;
+  const dmg = configured.damage;
 
   const rolls = [];
   const results = [];
@@ -81,7 +177,7 @@ export async function rollDamageFromCard(message) {
     result: main,
     targets: outTargets.filter(tg => tg.actorUuid),
     sourceMessage: message.id
-  }, { rolls, speaker: actor ? speakerFor(actor) : message.speaker });
+  }, { rolls, speaker: actor ? speakerFor(actor) : message.speaker, rollMode: configured.rollMode });
 }
 
 /**

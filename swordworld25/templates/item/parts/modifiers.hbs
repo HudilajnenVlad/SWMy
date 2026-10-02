@@ -17,7 +17,13 @@
           <input type="number" name="{{../path}}.{{@index}}.value" value="{{value}}" step="1">
           <input type="text" name="{{../path}}.{{@index}}.formula" value="{{formula}}" placeholder="{{localize 'SW25.Mod.Formula'}}" data-tooltip="SW25.Mod.FormulaHint">
         </td>
-        <td><input type="text" name="{{../path}}.{{@index}}.condition" value="{{condition}}" placeholder="{{localize 'SW25.Mod.Always'}}"></td>
+        <td class="swp-mod-cond">
+          <input type="text" name="{{../path}}.{{@index}}.condition" value="{{condition}}" placeholder="{{localize 'SW25.Mod.Always'}}">
+          <span class="swp-mod-types">
+            <input type="text" name="{{../path}}.{{@index}}.types" value="{{sw25Join types}}" placeholder="{{localize 'SW25.Mod.Types'}}" data-tooltip="SW25.Mod.TypesHint">
+            <input type="text" name="{{../path}}.{{@index}}.exceptTypes" value="{{sw25Join exceptTypes}}" placeholder="{{localize 'SW25.Mod.ExceptTypes'}}" data-tooltip="SW25.Mod.TypesHint">
+          </span>
+        </td>
         <td><select name="{{../path}}.{{@index}}.scope">{{selectOptions @root.choices.scopes selected=scope localize=true}}</select></td>
         <td class="swp-mod-target">
           <select name="{{../path}}.{{@index}}.target">{{selectOptions @root.choices.targets selected=target localize=true}}</select>

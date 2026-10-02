@@ -10,6 +10,7 @@ import SW25ActiveEffect from "./documents/active-effect.mjs";
 import SW25TokenDocument from "./documents/token.mjs";
 import SW25Token from "./canvas/token.mjs";
 import { SW25Combat, SW25Combatant } from "./combat/combat.mjs";
+import SW25CombatTracker from "./combat/tracker.mjs";
 import { CheckRoll } from "./dice/check.mjs";
 import { lookupPower, POWER_TABLE } from "./dice/power-table.mjs";
 import { rollPower } from "./dice/power.mjs";
@@ -19,9 +20,11 @@ import { registerHandlebarsHelpers, preloadTemplates } from "./helpers/handlebar
 import { initSocket } from "./helpers/socket.mjs";
 import { registerDefaultSocketHandlers } from "./helpers/socket-handlers.mjs";
 import { onRenderChatMessage } from "./chat/listeners.mjs";
+import { onDropItemOnToken } from "./workflows/transfer.mjs";
 import CharacterSheet from "./applications/sheets/character-sheet.mjs";
 import MonsterSheet from "./applications/sheets/monster-sheet.mjs";
 import PartySheet from "./applications/sheets/party-sheet.mjs";
+import TrapSheet from "./applications/sheets/trap-sheet.mjs";
 import SW25ActorDirectory from "./applications/sidebar/actor-directory.mjs";
 import SW25ItemSheet from "./applications/sheets/item-sheet.mjs";
 import SpellbookApp from "./applications/apps/spellbook.mjs";
@@ -56,6 +59,7 @@ Hooks.once("init", () => {
   CONFIG.Token.documentClass = SW25TokenDocument;
   CONFIG.Token.objectClass = SW25Token;
   CONFIG.Combat.documentClass = SW25Combat;
+  CONFIG.ui.combat = SW25CombatTracker;
   CONFIG.Combatant.documentClass = SW25Combatant;
   Object.assign(CONFIG.Actor.dataModels, actorModels);
   Object.assign(CONFIG.Item.dataModels, itemModels);
@@ -82,6 +86,9 @@ Hooks.once("init", () => {
   });
   DSC.registerSheet(Actor, SYSTEM_ID, PartySheet, {
     types: ["party"], makeDefault: true, label: "SW25.Sheet.Party"
+  });
+  DSC.registerSheet(Actor, SYSTEM_ID, TrapSheet, {
+    types: ["trap"], makeDefault: true, label: "SW25.Sheet.Trap"
   });
   DSC.registerSheet(Item, SYSTEM_ID, SW25ItemSheet, { makeDefault: true, label: "SW25.Sheet.Item" });
 
@@ -219,10 +226,16 @@ Hooks.on("getSceneControlButtons", controls => {
 });
 
 // Drop an effect preset (or a condition) onto a token
+// A trap's token is placed hidden until the trap is found (the GM shows it with the token HUD)
+Hooks.on("preCreateToken", token => {
+  if ( (token.actor?.type === "trap") && !token.actor.system.state?.detected ) token.updateSource({ hidden: true });
+});
+
 Hooks.on("dropCanvasData", (canvas, data) => {
   if ( data.type !== "Item" ) return;
   const entry = fromUuidSync(data.uuid, { strict: false });
-  if ( entry?.type !== "effect" ) return;
+  // An item of a character's inventory dropped on another token is handed over to it
+  if ( entry?.type !== "effect" ) return onDropItemOnToken(data);
   const token = canvas.tokens.placeables.find(t => t.bounds.contains(data.x, data.y));
   if ( !token?.actor ) return;
   fromUuid(data.uuid).then(item => item?.applyTo([token.actor]));

@@ -2,6 +2,7 @@ import SW25ActorSheet from "./actor-base.mjs";
 import MonsterTemplateApp from "../apps/monster-template.mjs";
 import { rollCheck, rollLoot } from "../../workflows/checks.mjs";
 import { rollSectionAttack } from "../../workflows/attacks.mjs";
+import { showMonsterToPlayers } from "../../workflows/knowledge.mjs";
 import { t } from "../../helpers/utils.mjs";
 
 /**
@@ -27,6 +28,8 @@ export default class MonsterSheet extends SW25ActorSheet {
       monsterCheck: MonsterSheet.#onMonsterCheck,
       toggleIdentified: MonsterSheet.#onToggleIdentified,
       toggleWeakPoint: MonsterSheet.#onToggleWeakPoint,
+      showPlayers: MonsterSheet.#onShowPlayers,
+      openSpellbook: MonsterSheet.#onOpenSpellbook,
       fullHeal: MonsterSheet.#onFullHeal,
       levelRowAdd: MonsterSheet.#onLevelRowAdd,
       levelRowDelete: MonsterSheet.#onLevelRowDelete,
@@ -152,7 +155,8 @@ export default class MonsterSheet extends SW25ActorSheet {
       willpowerLabel: withFixed(sys.willpowerTotal),
       initiativeLabel: Number.isFinite(sys.initiativeTotal) ? sys.initiativeTotal : "—",
       movementLabel: sys.movementLabel,
-      weakPointLabel: sys.weakPoint?.text || "—",
+      // Players learn the weak point from a knowledge check reaching the Weakness value
+      weakPointLabel: (actor.isOwner || sys.weakPointRevealed) ? (sys.weakPoint?.text || "—") : "???",
       expValue: sys.expValue,
       soulscarsShown: Number.isInteger(sys.soulscars) && (sys.soulscars > 0)
     });
@@ -188,6 +192,15 @@ export default class MonsterSheet extends SW25ActorSheet {
           ? `${i.system.check.value} (${i.system.check.value + SW25.FIXED_OFFSET})${i.system.check.vs ? ` / ${game.i18n.localize(`SW25.Check.${i.system.check.vs}`)}` : ""}${i.system.check.result ? ` / ${game.i18n.localize(SW25.resistance[i.system.check.result] ?? i.system.check.result)}` : ""}`
           : "",
         damage: i.system.damage.formula,
+        // Spellcasting skills ("Truespeech Magic"): level, Magic Power and a button to the spellbook
+        casting: i.system.spellcasting?.system ? {
+          system: i.system.spellcasting.system,
+          label: game.i18n.format("SW25.Monster.CastingLine", {
+            level: i.system.spellcasting.level ?? 0,
+            power: (i.system.spellcasting.power ?? 0) + (sys.bonuses.magicPower ?? 0),
+            fixed: (i.system.spellcasting.power ?? 0) + (sys.bonuses.magicPower ?? 0) + (sys.bonuses.spellcasting ?? 0) + SW25.FIXED_OFFSET
+          })
+        } : null,
         text: await this._enrich(i.system.description || i.system.summary)
       })));
     context.otherItems = await Promise.all(actor.items.filter(i => !["ability"].includes(i.type)).map(i => this._itemRow(i)));
@@ -341,6 +354,15 @@ export default class MonsterSheet extends SW25ActorSheet {
 
   static async #onToggleWeakPoint() {
     await this.actor.update({ "system.weakPointRevealed": !this.actor.system.weakPointRevealed });
+  }
+
+  static async #onOpenSpellbook(event, target) {
+    const { default: SpellbookApp } = await import("../apps/spellbook.mjs");
+    return SpellbookApp.openFor(this.actor, { system: target.dataset.system });
+  }
+
+  static #onShowPlayers() {
+    return showMonsterToPlayers(this.actor);
   }
 
   static async #onFullHeal() {

@@ -1,0 +1,152 @@
+<div class="swp-trap">
+  <header class="swp-mheader">
+    <div class="swp-portrait-wrap small">
+      <div class="swp-portrait"><img src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}"></div>
+    </div>
+    <div class="swp-mhead-main">
+      <div class="swp-titlebar">
+        <span class="swp-level-box" data-tooltip="SW25.Trap.Level">
+          {{#if playerView}}?{{else if edit}}<input type="number" name="system.level" value="{{system.level}}" min="0" step="1">{{else}}{{system.level}}{{/if}}
+        </span>
+        <span class="swp-namebar">
+          <input class="swp-name" type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'Name'}}">
+          {{#unless (or edit playerView)}}<span class="swp-namebar-note">{{typeLabel}}</span>{{/unless}}
+        </span>
+      </div>
+      {{#if owner}}
+      <div class="swp-mhead-row">
+        <span class="swp-trap-states">
+          <a class="swp-tag {{#if system.state.detected}}on{{/if}}" data-action="toggleState" data-state="detected" data-tooltip="SW25.Trap.DetectedHint"><i class="fa-solid fa-eye"></i> {{localize "SW25.Trap.Detected"}}</a>
+          <a class="swp-tag {{#if system.state.disarmed}}on{{/if}}" data-action="toggleState" data-state="disarmed" data-tooltip="SW25.Trap.DisarmedHint"><i class="fa-solid fa-lock-open"></i> {{localize "SW25.Trap.Disarmed"}}</a>
+          <a class="swp-tag {{#if system.state.triggered}}on{{/if}}" data-action="toggleState" data-state="triggered" data-tooltip="SW25.Trap.TriggeredHint"><i class="fa-solid fa-burst"></i> {{localize "SW25.Trap.Triggered"}}</a>
+        </span>
+        <span class="swp-head-tools">
+          {{#if isGM}}<a class="swp-btn" data-action="showPlayers" data-tooltip="SW25.Monster.ShowPlayers"><i class="fa-solid fa-users-viewfinder"></i></a>{{/if}}
+          {{#if editable}}<a class="swp-btn {{#if edit}}on{{/if}}" data-action="toggleEdit" data-tooltip="SW25.Monster.EditMode"><i class="fa-solid fa-pen-ruler"></i></a>{{/if}}
+        </span>
+      </div>
+      {{/if}}
+    </div>
+  </header>
+
+  <div class="swp-trap-body">
+    {{#if playerView}}
+    {{#if system.state.disarmed}}<div class="swp-banner"><i class="fa-solid fa-lock-open"></i> <span>{{localize "SW25.Trap.Disarmed"}}</span></div>{{/if}}
+    <div class="swp-sb-desc">{{{enrichedDescription}}}</div>
+    {{else if edit}}
+    {{> trapEdit}}
+    {{else}}
+    {{> trapView}}
+    {{/if}}
+  </div>
+</div>
+
+{{!-- The entry as in a rulebook, with the GM's actions --}}
+{{#*inline "trapView"}}
+<div class="swp-trap-actions">
+  <button type="button" class="swp-btn-wide" data-action="trigger" {{#if system.state.disarmed}}disabled{{/if}} data-tooltip="SW25.Trap.TriggerHint"><i class="fa-solid fa-burst"></i> {{localize "SW25.Trap.TriggerButton"}}</button>
+  <span class="swp-trap-ask">
+    <span>{{localize "SW25.Trap.AskPlayers"}}</span>
+    <a class="swp-btn-text" data-action="askCheck" data-kind="spotTrap" data-tooltip="SW25.Trap.AskHint.spotTrap"><i class="fa-solid fa-eye"></i> {{localize "SW25.Check.spotTrap"}}</a>
+    <a class="swp-btn-text" data-action="askCheck" data-kind="search" data-tooltip="SW25.Trap.AskHint.search"><i class="fa-solid fa-magnifying-glass"></i> {{localize "SW25.Check.search"}}</a>
+    <a class="swp-btn-text" data-action="askCheck" data-kind="disarm" data-tooltip="SW25.Trap.AskHint.disarm"><i class="fa-solid fa-screwdriver-wrench"></i> {{localize "SW25.Check.disableDevice"}}</a>
+  </span>
+</div>
+
+<div class="swp-sb-info">
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Trap.Type"}}:</b> {{typeLabel}}</span>
+    {{#if system.trigger}}<span class="swp-kvp"><b>{{localize "SW25.Trap.Trigger"}}:</b> {{system.trigger}}</span>{{/if}}
+    {{#if system.target}}<span class="swp-kvp"><b>{{localize "SW25.Target.label"}}:</b> {{system.target}}</span>{{/if}}
+  </p>
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.search"}}:</b> {{searchLabel}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.spotTrap"}}:</b> {{spotLabel}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Check.disableDevice"}}:</b> {{disarmLabel}}</span>
+  </p>
+  <p>
+    <span class="swp-kvp"><b>{{localize "SW25.Trap.Check"}}:</b> {{checkLabel}}</span>
+    <span class="swp-kvp"><b>{{localize "SW25.Damage.label"}}:</b> {{damageLabel}}{{#if damageTypeLabel}} <small>({{damageTypeLabel}})</small>{{/if}}</span>
+  </p>
+  {{#if (or activeStatuses.length system.modifiers.length)}}
+  <p>
+    {{#if activeStatuses.length}}<span class="swp-kvp"><b>{{localize "SW25.Spell.Statuses"}}:</b> {{#each activeStatuses}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}</span>{{/if}}
+    {{#if system.modifiers.length}}<span class="swp-kvp"><b>{{localize "SW25.Mod.Title"}}:</b> {{#each system.modifiers}}{{sw25Lookup @root.modifierKeys key}} {{sw25Signed value}}{{#unless @last}}, {{/unless}}{{/each}}</span>{{/if}}
+    {{#if durationLabel}}<span class="swp-kvp"><b>{{localize "SW25.Duration.label"}}:</b> {{durationLabel}}</span>{{/if}}
+  </p>
+  {{/if}}
+  {{#if system.reset}}<p><span class="swp-kvp"><b>{{localize "SW25.Trap.Reset"}}:</b> {{system.reset}}</span></p>{{/if}}
+</div>
+
+<div class="swp-sb-desc">
+  <prose-mirror name="system.details.description" value="{{system.details.description}}" toggled {{#unless editable}}disabled{{/unless}}>
+    {{{enrichedDescription}}}
+  </prose-mirror>
+</div>
+{{#if isGM}}
+<div class="swp-block swp-trap-notes">
+  <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Trap.Notes"}}</span></div>
+  <prose-mirror name="system.details.notes" value="{{system.details.notes}}" toggled>{{{enrichedNotes}}}</prose-mirror>
+</div>
+{{/if}}
+{{/inline}}
+
+{{!-- The same entry as a form --}}
+{{#*inline "trapEdit"}}
+<div class="swp-sb-info edit">
+  <div class="swp-field-grid">
+    <label class="swp-field"><span>{{localize "SW25.Trap.Type"}}</span><select name="system.trapType">{{selectOptions trapTypes selected=system.trapType}}</select></label>
+    <label class="swp-field wide"><span>{{localize "SW25.Trap.Trigger"}}</span><input type="text" name="system.trigger" value="{{system.trigger}}" placeholder="{{localize 'SW25.Trap.TriggerPlaceholder'}}"></label>
+    <label class="swp-field wide"><span>{{localize "SW25.Target.label"}}</span><input type="text" name="system.target" value="{{system.target}}" placeholder="{{localize 'SW25.Trap.TargetPlaceholder'}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Check.search"}}</span><input type="number" name="system.search" value="{{system.search}}" data-tooltip="SW25.Trap.SearchHint"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Check.spotTrap"}}</span><input type="number" name="system.spotTrap" value="{{system.spotTrap}}" placeholder="{{spotLabel}}" data-tooltip="SW25.Trap.SpotHint"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Check.disableDevice"}}</span><input type="number" name="system.disarm" value="{{system.disarm}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Trap.Check"}}</span><input type="number" name="system.check.value" value="{{system.check.value}}" data-tooltip="SW25.Trap.CheckHint"></label>
+    <label class="swp-field"><span>{{localize "SW25.Trap.Vs"}}</span><select name="system.check.vs">{{selectOptions vsOptions selected=system.check.vs}}</select></label>
+    <label class="swp-field"><span>{{localize "SW25.Resistance.label"}}</span><select name="system.check.result">{{selectOptions resultOptions selected=system.check.result}}</select></label>
+    <label class="swp-field"><span>{{localize "SW25.Trap.DamageFormula"}}</span><input type="text" name="system.damage.formula" value="{{system.damage.formula}}" placeholder="2d+5"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Power"}}</span><input type="number" name="system.damage.power" value="{{system.damage.power}}" min="0" max="100" data-tooltip="SW25.Trap.PowerHint"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.CritValue"}}</span><input type="number" name="system.damage.critical" value="{{system.damage.critical}}"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.ExtraDamage"}}</span><input type="number" name="system.damage.extra" value="{{system.damage.extra}}"></label>
+    <label class="swp-field"><span>{{localize "SW25.Trap.DamageKind"}}</span><select name="system.damage.kind">{{selectOptions damageKinds selected=system.damage.kind}}</select></label>
+    <label class="swp-field"><span>{{localize "SW25.Trap.DamageTypes"}}</span><input type="text" name="system.damage.types" value="{{damageTypesText}}" placeholder="fire, poison" data-tooltip="SW25.Mod.TypesHint"></label>
+    <label class="swp-field narrow"><span>{{localize "SW25.Duration.label"}}</span><input type="number" name="system.duration.value" value="{{system.duration.value}}" min="0"></label>
+    <label class="swp-field narrow"><span>&nbsp;</span><select name="system.duration.unit">{{selectOptions durationUnits selected=system.duration.unit}}</select></label>
+    <label class="swp-field wide"><span>{{localize "SW25.Trap.Reset"}}</span><input type="text" name="system.reset" value="{{system.reset}}" placeholder="{{localize 'SW25.Trap.ResetPlaceholder'}}"></label>
+  </div>
+</div>
+
+<div class="swp-block">
+  <div class="swp-bar"><span class="swp-bar-title">{{localize "SW25.Trap.Statuses"}}</span></div>
+  <div class="swp-trap-statuses">
+    {{#each statuses}}
+    <a class="swp-trap-status {{#if active}}on{{/if}}" data-action="statusToggleTrap" data-status="{{id}}" data-tooltip="{{name}}"><img src="{{img}}" alt="{{name}}"></a>
+    {{/each}}
+  </div>
+</div>
+
+<div class="swp-block swp-modifiers">
+  <div class="swp-bar">
+    <span class="swp-bar-title">{{localize "SW25.Trap.Modifiers"}}</span>
+    <span class="swp-tools"><a class="swp-tool" data-action="modifierAdd" data-tooltip="SW25.Entry.AddModifier"><i class="fa-solid fa-plus"></i></a></span>
+  </div>
+  <table class="swp-table swp-form-table">
+    <tbody>
+      {{#each system.modifiers}}
+      <tr>
+        <td class="name"><select name="system.modifiers.{{@index}}.key">{{selectOptions @root.modifierKeys selected=key}}</select></td>
+        <td class="num"><input type="number" name="system.modifiers.{{@index}}.value" value="{{value}}" step="1"></td>
+        <td class="tools"><a class="swp-mini danger" data-action="modifierDelete" data-index="{{@index}}" data-tooltip="SW25.Delete"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+      {{else}}
+      <tr class="swp-empty-row"><td colspan="3">{{localize "SW25.Entry.NoModifiers"}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <p class="swp-hint pad">{{localize "SW25.Trap.ModifiersHint"}}</p>
+</div>
+
+<div class="swp-sb-desc">
+  <prose-mirror name="system.details.description" value="{{system.details.description}}" toggled>{{{enrichedDescription}}}</prose-mirror>
+</div>
+{{/inline}}

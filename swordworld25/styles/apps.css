@@ -920,3 +920,59 @@
 .swp .swp-pregen-btn.ghost { background: var(--swp-paper); color: var(--swp-ink); }
 .swp .swp-pregen-btn.ghost:hover { background: var(--swp-paper-3); }
 .swp .swp-pregen-btn:disabled { opacity: 0.5; pointer-events: none; }
+
+/* Loaded bullets of a gun in the attack rows of the panels (click: reload) */
+.swp .swp-tracker-attack .val.swp-gun-ammo { display: inline-flex; align-items: center; gap: 3px; margin: 0; }
+
+/* --------------------------------------------------------------------------
+   Combat tracker: popcorn turns by side (sidebar, Foundry theme)
+   -------------------------------------------------------------------------- */
+#combat .sw25-popcorn .sw25-side {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 4px 2px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgb(0 0 0 / 18%);
+  font-size: var(--font-size-12, 12px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+#combat .sw25-popcorn .sw25-side.acting { opacity: 1; background: rgb(212 160 23 / 28%); box-shadow: inset 3px 0 0 #d4a017; }
+#combat .sw25-popcorn .sw25-side-order {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-size: 11px;
+}
+#combat .sw25-popcorn .sw25-side-label { flex: 1; }
+#combat .sw25-popcorn .sw25-side-state { font-size: 10px; color: #f0c040; }
+#combat .sw25-popcorn .sw25-side-progress { font-size: 11px; font-variant-numeric: tabular-nums; }
+#combat .sw25-popcorn .combatant.acted:not(.active) .token-image,
+#combat .sw25-popcorn .combatant.acted:not(.active) .token-name { opacity: 0.45; }
+#combat .sw25-popcorn .sw25-acted { flex: none; width: 22px; padding: 0; border: none; background: none; font-size: 15px; opacity: 0.7; }
+#combat .sw25-popcorn .sw25-acted.on { color: #6fbf73; opacity: 1; }
+#combat .sw25-popcorn button.sw25-acted:hover { opacity: 1; }
+#combat .sw25-popcorn .sw25-take-turn {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+  padding: 0;
+  border: 1px solid #d4a017;
+  border-radius: 50%;
+  background: rgb(212 160 23 / 20%);
+  color: #f0c040;
+  font-size: 12px;
+}
+#combat .sw25-popcorn .sw25-take-turn:hover { background: #d4a017; color: #1b1b1b; }
+#combat .sw25-popcorn .sw25-turn-now { flex: none; margin-right: 8px; color: #f0c040; font-size: 15px; }
+#combat .sw25-popcorn-controls { flex-direction: column; align-items: stretch; gap: 4px; }
+#combat .sw25-popcorn-status { padding: 2px 6px; font-size: var(--font-size-12, 12px); text-align: center; opacity: 0.85; }
+#combat .sw25-popcorn-buttons { display: flex; align-items: center; justify-content: center; gap: 4px; }
